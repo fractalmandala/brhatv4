@@ -99,25 +99,25 @@
 	.blog-pad {
 		padding: 2rem 16vw 4rem 8vw;
 	}
-	.blog-pad p, .blog-pad pre { font-size: 1.24rem; line-height: 1.32em; }
-	.blog-pad h1 { font-size: 3.2rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
+	.blog-pad p, .blog-pad pre { font-size: 1.12rem; line-height: 1.32em; }
+	.blog-pad h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
 	.blog-pad { padding: 2rem 12vw 4rem 8vw; }
-	.blog-pad p { font-size: 1.2rem; line-height: 1.32em;}
-	.blog-pad h1 { font-size: 3.2rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
+	.blog-pad p { font-size: 1.12rem; line-height: 1.32em;}
+	.blog-pad h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
 	.blog-pad { padding: 2rem 4.8vw 4rem 4.8vw;}
-	.blog-pad p { font-size: 1.2rem; line-height: 1.32em;}
+	.blog-pad p { font-size: 1.12rem; line-height: 1.32em;}
 	.blog-pad h1 { font-size: 2.6rem; font-weight: 700;  margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem; }
 }
 
 @media screen and (max-width: 575px) {
 	.blog-pad { padding: 2rem 3.6vw 4rem 3.6vw;}
-	.blog-pad p { font-size: 1.2rem; line-height: 1.32em;}
+	.blog-pad p { font-size: 1.12rem; line-height: 1.32em;}
 	.blog-pad h1 { font-size: 2.6rem; font-weight: 700;  margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem; }
 }
 

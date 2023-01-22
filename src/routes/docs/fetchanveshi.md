@@ -6,7 +6,7 @@ category: codes
 ---
 
 1. all chapters
-```
+```js
 export async function fetchChapters(){
 	const { data } = await supabase
 	.from('brhat-anveshi')
