@@ -1,4 +1,5 @@
 <script>
+import '$lib/styles/prism.css'
 import FlyingBox from '$lib/components/animations/FlyingPage.svelte'
 import DocSidebar from '$lib/components/globals/DocSiderbar.svelte'
   /**
