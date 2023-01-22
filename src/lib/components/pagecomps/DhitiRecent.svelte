@@ -1,9 +1,9 @@
 <script>
  import supabase from '$lib/db'
+	import '$lib/styles/componentstyles.css'
  import Container from '$lib/components/reuse/Container.svelte'
  import BoxHeader from '$lib/components/reuse/BoxHeader.svelte'
  import EffectBox from '$lib/components/reuse/EffectBox.svelte'
- import PostCard from '$lib/components/reuse/Postcard.svelte'
  import SwiperPrev from '$lib/components/reuse/SwiperPrev.svelte'
  import SwiperNext from '$lib/components/reuse/SwiperNext.svelte'
  import { Swiper, SwiperSlide } from 'swiper/svelte'
@@ -36,7 +36,7 @@ keyboard={true}
 spaceBetween={16}
 loop={true}
 autoHeight={true}
-slidePerView={1}
+slidesPerView={1}
 breakpoints={{
  "576": {
    slidesPerView: 2,
@@ -56,18 +56,18 @@ on:slideChange={() => console.log('slide change')}
 >
     {#each data as item}
     <SwiperSlide>
-     <PostCard --cardwidth="100%">
-      <small class="sticker mb05" slot="meta">{item.category}</small>
+     <div class=base-col>
+      <small class="sticker mb05">{item.category}</small>
       <img src={item.image} alt={item.id} />
       <h5><a href={item.link}>{item.title}</a></h5>
       <p>{item.excerpt.slice(0,250)}...<br>
       <a class="readmore" href={item.link}>Read More</a>
       </p>
-      <div class="rowcol" slot="lowmeta">
+      <div class="base-row">
        <small>{item.author}</small>
        <small class="mini">{item.tags}</small>
       </div>
-     </PostCard>
+     </div>
     </SwiperSlide>
     {/each}
 </Swiper>
