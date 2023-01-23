@@ -11,7 +11,7 @@
 </div>
 
 <style>
-.genrow { display: flex; width: 100vw; height: 100vh; }
+.genrow { display: flex; height: 100vh; }
 
  button { 
    z-index: 3;
@@ -85,60 +85,51 @@
  }
 
 @media screen and (min-width: 900px) {  
-.genrow { flex-direction: row; }
-.genrow { flex-direction: row; }
+
+.genrow { flex-direction: row; width: calc(100vw - 16px); margin-left: 8px;}
 .gencol { width: 33.33%; height: 100%; }
- .genrow:hover .gencol {
-   width: 25%;
- }
-
-
-
- .genrow:hover .gencol:hover {
-   width: 50%;
- }
-
- button { font-size: 20px; margin-bottom: 64px;}
+.genrow:hover .gencol {
+  width: 25%;
+}
+.genrow:hover .gencol:hover {
+  width: 50%;
+}
+button { font-size: 20px; margin-bottom: 64px;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
-.genrow { flex-direction: row; }
+.genrow { flex-direction: row; width: calc(100vw - 8px); margin-left: 4px; }
 .gencol { width: 33.33%; height: 100%; }
- .genrow:hover .gencol {
-   width: 25%;
- }
-
- .genrow:hover .gencol:hover {
-   width: 50%;
- }
-
- button { font-size: 0.875rem; margin-bottom: 64px; }
+.genrow:hover .gencol {
+  width: 25%;
+}
+.genrow:hover .gencol:hover {
+	width: 50%;
+}
+button { font-size: 0.875rem; margin-bottom: 64px; }
 }
 
 @media screen and (min-width: 767px) and (max-width: 576px) {
-.genrow { flex-direction: column; }
+.genrow { flex-direction: column; width: calc(100vw - 8px); margin-left: 4px; }
 .gencol { flex-direction: column; width: 100%; height: 33.33%; }
- .genrow:hover .gencol {
-   height: 25%;
- }
- .genrow:hover .gencol:hover {
-   height: 50%;
- }
-
- button { font-size: 0.875rem; margin-bottom: 16px; }
+.genrow:hover .gencol {
+  height: 25%;
+}
+.genrow:hover .gencol:hover {
+  height: 50%;
+}
+button { font-size: 0.875rem; margin-bottom: 16px; }
 }
 
-
 @media screen and (max-width: 575px) {
-.genrow { flex-direction: column; }
+.genrow { flex-direction: column; width: calc(100vw - 8px); margin-left: 4px; }
 .gencol { flex-direction: column; width: 100%; height: 33.33%; }
- .genrow:hover .gencol {
-   height: 25%;
- }
- .genrow:hover .gencol:hover {
-   height: 50%;
- }
-
- button { font-size: 0.875rem; margin-bottom: 16px; }
+.genrow:hover .gencol {
+	height: 25%;
+}
+.genrow:hover .gencol:hover {
+  height: 50%;
+}
+button { font-size: 0.875rem; margin-bottom: 16px; }
 }
 </style>
