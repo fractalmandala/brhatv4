@@ -21,13 +21,15 @@ body, html { margin: 0; box-sizing: border-box; }
 #anveshi-side p:hover a { color: #fe4a49;}
 .base-col img { object-fit: contain; width: 100%;}
 #duration, #price, #date { background-size: cover; background-position: center center; background-repeat: no-repeat;}
-.base-col p { color: #878787;}
+.base-col p, .base-col pre { color: #878787;}
 
 /*** alignments ***/
 .cc { text-align: center;}
 .col-y { justify-content: space-between;}
 .col-y-cent { justify-content: center;}
+.col-y-top { justify-content: flex-start; }
 .col-x-cent { align-items: center;}
+.col-x-left { align-items: flex-start;}
 .row-x-cent { justify-content: center;}
 .row-x-left { justify-content: flex-start;}
 
@@ -55,7 +57,8 @@ body, html { margin: 0; box-sizing: border-box; }
 	.base-col:hover h5 a { color: #fe4a49;}
 	.base-col small { text-transform: capitalize; font-size: 12px; color: #255F85;}
 	.pagesheet { width: calc(82vw - 8px); }
-	.pagesheet2 { width: calc(78vw - 8px); }
+	.pagesheet2 { width: calc(78vw - 8px); padding: 2rem 8vw 4rem 8vw; }
+	.pagesheet2 h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem; }
 	.base-row { flex-direction: row; gap: 24px;}
 	.px4 { padding-left: 4rem; padding-right: 4rem;}
 	.py2 { padding-top: 2rem; padding-bottom: 2rem;}
@@ -68,11 +71,23 @@ body, html { margin: 0; box-sizing: border-box; }
 	.side-bar h5 { line-height: 2rem;}
 	.side-bar p { margin-top: 0; margin-bottom: 4px; }
 	.pagesheet, .pagesheet2 { width: calc(80vw - 8px); }
+	.pagesheet2 { padding: 2rem 4vw 4rem 4vw;}
+	.pagesheet2 h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
 }
 
 @media screen and (max-width: 767px) {
 	.side-bar, .side-bar2 { display: none; }
-	.pagesheet, .pagesheet2 { width: calc(100% - 8px); margin-left: 4px; padding-top: 4.8rem;}
+	.pagesheet { width: calc(100% - 8px); margin-left: 4px; padding-top: 4.8rem;}
+}
+
+@media screen and (max-width: 767px) and (min-width: 576px) {
+	.pagesheet2 { padding: 6.8rem 6.4vw 4rem 4.8vw; width: calc(100% - 8px); margin-left: 4px; }
+	.pagesheet2 h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
+}
+
+@media screen and (max-width: 575px) {
+	.pagesheet2 { padding: 6.8rem 6.4vw 4rem 4.8vw;}
+	.pagesheet2 h1 { font-size: 2.6rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem;}
 }
 
 /************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -106,6 +121,7 @@ body, html { margin: 0; box-sizing: border-box; }
 	padding-top: 2rem;
 }
 .blog-pad p { color:#878787; margin-top: 6px; margin-bottom: 8px;}
+.blog-pad pre { color: #878787; }
 .blog-pad h3 {border-bottom: 4px solid var(--blue); margin-top: 0; padding-bottom: 1rem; margin-bottom: 0;}
 .blog-pad h4 { color: #676767; font-weight: 900; margin-bottom: 0;}
 
@@ -124,18 +140,21 @@ body, html { margin: 0; box-sizing: border-box; }
 	.blog-pad { padding: 2rem 12vw 4rem 8vw; }
 	.blog-pad p { font-size: 1.12rem; line-height: 1.4em;}
 	.blog-pad h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
+	.blog-pad h4 { font-size: 1.8rem;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
 	.blog-pad { padding: 2rem 4.8vw 4rem 4.8vw;}
 	.blog-pad p { font-size: 1.12rem; line-height: 1.4em;}
 	.blog-pad h1 { font-size: 2.6rem; font-weight: 700;  margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem; }
+	.blog-pad h4 { font-size: 1.56rem;}
 }
 
 @media screen and (max-width: 575px) {
 	.blog-pad { padding: 2rem 3.6vw 4rem 3.6vw;}
 	.blog-pad p { font-size: 1.12rem; line-height: 1.4em;}
 	.blog-pad h1 { font-size: 2.6rem; font-weight: 700;  margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem; }
+	.blog-pad h4 { font-size: 1.4rem;}
 }
 
 /************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -149,8 +168,8 @@ body, html { margin: 0; box-sizing: border-box; }
 }
 .swiper-button img {
   object-fit: contain;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   opacity: 0.3;
   transition: var(--snap);
   transform-origin: center center;
