@@ -64,7 +64,7 @@ function hideMenu() {
 				<a href="/drashta">Draṣṭā</a>
 				{#if isHovered}
 				<div class="second-row">
-					<div class="rowitems"><a href="/drashta/course/ramswarup">Intro to Shri Ram Swarup</a></div>
+					<div class="rowitems"><a href="/drashta/course/shriramswarup">Intro to Shri Ram Swarup</a></div>
 					<div class="rowitems"><a href="/drashta/course/sitaramgoel">Intro to Shri Sita Ram Goel</a></div>
 					<div class="rowitems"><a href="/drashta/course/hinduiconography">Hindu Iconography</a></div>
 				</div>

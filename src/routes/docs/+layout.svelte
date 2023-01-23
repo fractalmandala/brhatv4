@@ -1,9 +1,10 @@
 <script>
-import '$lib/styles/prism.css'
-import '$lib/styles/componentstyles.css'
+import FlyingPage from '$lib/components/animations/FlyingPage.svelte'
 import DocSidebar from '$lib/components/globals/DocSiderbar.svelte'
+import '$lib/styles/prism.css'
 </script>
 
+<FlyingPage>
 <div class="primecontainer-row">
 <DocSidebar></DocSidebar>
 <div class="pagesheet2">
@@ -12,4 +13,5 @@ import DocSidebar from '$lib/components/globals/DocSiderbar.svelte'
 </div>
 </div>
 </div>
+</FlyingPage>
 

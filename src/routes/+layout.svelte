@@ -4,8 +4,9 @@
 import { onMount } from 'svelte'
 import Footer from '$lib/components/globals/Footer.svelte'
 import Header from '$lib/components/globals/Header.svelte'
- import AOS from 'aos';
- import '$lib/styles/globals.css'
+import AOS from 'aos';
+import '$lib/styles/globals.css'
+import '$lib/styles/componentstyles.css'
  import 'aos/dist/aos.css'; // You can also use <link> for styles
  // ..
  onMount(() => {

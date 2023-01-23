@@ -1,13 +1,8 @@
 <script>
-import FlyingBox from '$lib/components/animations/FlyingPage.svelte'
-  /**
-	 * @type {any}
-	 */
-   export let refresh
+import FlyingPage from '$lib/components/animations/FlyingPage.svelte'
 </script>
 
-{#key refresh}
-<FlyingBox>
+<FlyingPage>
 <slot></slot>
-</FlyingBox>
-{/key}
+</FlyingPage>
+
