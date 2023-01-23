@@ -37,7 +37,6 @@
 		"aos": "^2.3.4",
 		"lottie-web": "^5.10.1",
 		"photoswipe": "^5.3.4",
-		"svelte-routing": "^1.6.0",
 		"swiper": "^8.4.6"
 	}
 }

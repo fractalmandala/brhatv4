@@ -16,9 +16,6 @@ export const allDocumentation = async () => {
       }
     })
   )
-
-  
-
   return allDocs
 }
 </script>
@@ -29,15 +26,14 @@ export const allDocumentation = async () => {
 <small>....</small>
 {:then data}
 {#each data as item}
-<p>{item.meta.title}</p>
-<small>{item.meta.category}</small>
-<cite>{item.meta.tag}</cite>
+<p><a href={item.path}>{item.meta.title}</a></p>
 {/each}
 {/await}
 
 
 <style>
 h4 { margin-top: 1rem; color: #d7d7d7;}
+p { text-transform: capitalize;}
 </style>
 
 

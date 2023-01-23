@@ -4,19 +4,20 @@
 body, html { margin: 0; box-sizing: border-box; }
 
 .side-bar { flex-direction: column; height: 100%; border-right: 1px solid #e7e7e7; transition: all 0.2s var(--cube1);}
-.pagesheet { display: flex; flex-direction: column; height: 100%; }
+.side-bar2 { flex-direction: column; height: 100%; border-right: 1px solid #e7e7e7; transition: all 0.2s var(--cube1);}
+.pagesheet, .pagesheet2 { display: flex; flex-direction: column; height: 100%; }
 .pagetext { display: flex; flex-direction: column; width: 100%; }
 .base-row { display: flex; width: 100%; }
 .base-row-in { display: flex; width: 100%; flex-direction: row; flex-wrap: wrap; justify-content: space-between;}
 .base-col { display: flex; flex-direction: column;}
-.side-bar p { font-size: 14px; font-weight: 500; transform-origin: center left; transition: all 0.18s var(--cube4); color: #878787; }
-.side-bar h5 { font-size: 14px; letter-spacing: 0px; font-weight: 600; text-transform: uppercase; margin-top: 16px; transform-origin: center left; transition: all 0.18s var(--cube4); color: #a7a7a7; }
-.side-bar small { font-size: 12px; }
-.side-bar img { object-fit: contain; width: 120px; }
-.side-bar a { color: inherit; }
-.side-bar h5 a:hover { color: #474747; }
-.side-bar p:hover { transform: scale(1.1);}
-.side-bar h5:hover { transform: scale(0.9); color: #474747; }
+.side-bar p, .side-bar2 p { font-size: 14px; font-weight: 500; transform-origin: center left; transition: all 0.18s var(--cube4); color: #878787; }
+.side-bar h5, .side-bar2 h5 { font-size: 14px; letter-spacing: 0px; font-weight: 600; text-transform: uppercase; margin-top: 16px; transform-origin: center left; transition: all 0.18s var(--cube4); color: #a7a7a7; }
+.side-bar small, .side-bar2 small { font-size: 12px; }
+.side-bar img, .side-bar2 img { object-fit: contain; width: 120px; }
+.side-bar a, .side-bar2 a { color: inherit; }
+.side-bar h5 a:hover, .side-bar2 h5 a:hover { color: #474747; }
+.side-bar p:hover, .side-bar2 p:hover { transform: scale(1.1);}
+.side-bar h5:hover, .side-bar2 h5:hover { transform: scale(0.9); color: #474747; }
 #anveshi-side p:hover a { color: #fe4a49;}
 .base-col img { object-fit: contain; width: 100%;}
 #duration, #price, #date { background-size: cover; background-position: center center; background-repeat: no-repeat;}
@@ -46,13 +47,15 @@ body, html { margin: 0; box-sizing: border-box; }
 
 @media screen and (min-width: 900px) {
 	.side-bar { width: 18vw; display: flex; padding-left: 2rem; padding-top: 2rem; }
-	.side-bar h5 { line-height: 2rem;}
-	.side-bar p { margin-top: 0; margin-bottom: 4px; }
+	.side-bar2 { width: 22vw; display: flex; padding-left: 2rem; padding-top: 2rem; padding-right: 1rem; }
+	.side-bar h5, .side-bar2 h5 { line-height: 2rem;}
+	.side-bar p, .side-bar2 p { margin-top: 0; margin-bottom: 4px; }
 	.base-col h5 { font-size: 1.24rem;}
 	.base-col p, .base-col pre { font-size: 1rem; line-height: 1.24rem; margin-bottom: 1.44rem;}
 	.base-col:hover h5 a { color: #fe4a49;}
 	.base-col small { text-transform: capitalize; font-size: 12px; color: #255F85;}
 	.pagesheet { width: calc(82vw - 8px); }
+	.pagesheet2 { width: calc(78vw - 8px); }
 	.base-row { flex-direction: row; gap: 24px;}
 	.px4 { padding-left: 4rem; padding-right: 4rem;}
 	.py2 { padding-top: 2rem; padding-bottom: 2rem;}
@@ -61,15 +64,15 @@ body, html { margin: 0; box-sizing: border-box; }
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
-	.side-bar { width: 20vw; display: flex; padding-left: 1.6rem; }
+	.side-bar, .side-bar2 { width: 20vw; display: flex; padding-left: 1.6rem; }
 	.side-bar h5 { line-height: 2rem;}
 	.side-bar p { margin-top: 0; margin-bottom: 4px; }
-	.pagesheet { width: calc(80vw - 8px); }
+	.pagesheet, .pagesheet2 { width: calc(80vw - 8px); }
 }
 
 @media screen and (max-width: 767px) {
-	.side-bar { display: none; }
-	.pagesheet { width: calc(100% - 8px); margin-left: 4px; padding-top: 4.8rem;}
+	.side-bar, .side-bar2 { display: none; }
+	.pagesheet, .pagesheet2 { width: calc(100% - 8px); margin-left: 4px; padding-top: 4.8rem;}
 }
 
 /************************************************************************************************************************************************************************************************************************************************************************************************/

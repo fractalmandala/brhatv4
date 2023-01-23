@@ -18,7 +18,7 @@ export const postgrePosts = async () => {
     })
   )
 
-  const filteredDocs = allDocs.filter((doc) => doc.meta.tag === "postgreSQL")
+  const filteredDocs = allDocs.filter((doc) => doc.meta.category === "documentation")
 
   return filteredDocs
 }
@@ -39,7 +39,7 @@ export const supabasePosts = async () => {
     })
   )
 
-  const filteredDocs = allDocs.filter((doc) => doc.meta.tag === "supabase")
+  const filteredDocs = allDocs.filter((doc) => doc.meta.category === "codes")
 
   return filteredDocs
 }
@@ -81,7 +81,7 @@ export const guidePosts = async () => {
     })
   )
 
-  const filteredDocs = allDocs.filter((doc) => doc.meta.tag === "general" || doc.meta.category === "troubleshooting")
+  const filteredDocs = allDocs.filter((doc) => doc.meta.category === "troubleshooting")
 
   return filteredDocs
 }
@@ -108,11 +108,11 @@ export const sveltePosts = async () => {
 }
 </script>
 
-<div class="side-bar">	
+<div class="side-bar2">	
 {#await postgrePosts()}
 <small>...</small>
 {:then data}
-	<h5><span class=".green" style="color: #10c56d"><b>| </b></span>postgresql</h5>
+	<h5><span class=".green" style="color: #10c56d"><b>| </b></span>documentation</h5>
   {#each data as doc}
 	<p><a href={doc.path}>{doc.meta.title}</a></p>
 	{/each}
@@ -120,7 +120,7 @@ export const sveltePosts = async () => {
 {#await supabasePosts()}
 <small>...</small>
 {:then data}
-	<h5 class="tagger"><span class=".green" style="color: #10c56d"><b>| </b></span>supabase</h5>
+	<h5 class="tagger"><span class=".green" style="color: #10c56d"><b>| </b></span>codes</h5>
   {#each data as doc}
 	<p><a href={doc.path}>{doc.meta.title}</a></p>
 	{/each}
@@ -136,7 +136,7 @@ export const sveltePosts = async () => {
 {#await guidePosts()}
 <small>...</small>
 {:then data}
-	<h5 class="tagger"><span class=".green" style="color: #10c56d"><b>| </b></span>helpers and guides</h5>
+	<h5 class="tagger"><span class=".green" style="color: #10c56d"><b>| </b></span>troubleshooting</h5>
   {#each data as doc}
 	<p><a href={doc.path}>{doc.meta.title}</a></p>
 	{/each}

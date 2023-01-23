@@ -11,7 +11,7 @@
 </div>
 
 <style>
-.genrow { display: flex; height: 100vh; }
+.genrow { display: flex;}
 
  button { 
    z-index: 3;
@@ -86,7 +86,7 @@
 
 @media screen and (min-width: 900px) {  
 
-.genrow { flex-direction: row; width: calc(100vw - 16px); margin-left: 8px;}
+.genrow { flex-direction: row; width: calc(100vw - 16px); margin-left: 8px; height: calc(100vh - 16px); margin-top: 8px; border-radius: 4px;}
 .gencol { width: 33.33%; height: 100%; }
 .genrow:hover .gencol {
   width: 25%;
