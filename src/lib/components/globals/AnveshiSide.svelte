@@ -12,9 +12,6 @@
 	<p><a href="/anveshi/chapter/chamba/temples">Temples</a></p>
 	<p><a href="/anveshi/chapter/chamba/itinerary">Itinerary</a></p>
 	<h5><b class="isred">| </b><a href="/anveshi/diaries">Travel Diaries</a></h5>
-	<p><a href="/anveshi/diaries">Ashish Kundalia</a></p>
-	<p><a href="/anveshi/diaries/kriteesh">Kriteesh Parashar</a></p>
-	<p><a href="/anveshi/diaries">Gallery</a></p>
 </div>
 
 <style>

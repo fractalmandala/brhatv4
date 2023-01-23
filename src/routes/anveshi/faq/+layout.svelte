@@ -1,6 +1,10 @@
 <script>
-import FlyingPage from '$lib/components/animations/FlyingPage.svelte'
+import AnveshiSide from '$lib/components/globals/AnveshiSide.svelte'
 </script>
-<FlyingPage>
+
+<div class="primecontainer-row">
+<AnveshiSide></AnveshiSide>
+<div class="pagesheet">
 <slot></slot>
-</FlyingPage>
+</div>
+</div>

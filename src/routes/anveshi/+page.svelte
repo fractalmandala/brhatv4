@@ -1,5 +1,6 @@
 <script>
 import supabase from '$lib/db'
+import AnveshiSide from '$lib/components/globals/AnveshiSide.svelte'
 
 export async function allChapters() {
 	const { data, error } = await supabase
@@ -11,7 +12,10 @@ export async function allChapters() {
 }
 </script>
 
-
+<div class="imagecontainer-hero"></div>
+<div class="primecontainer-row">
+<AnveshiSide></AnveshiSide>
+<div class="pagesheet">
 <h5 class="cc px4">
 Bṛhat Anveṣī is a travel program to contemporize ancient Indian tradition by guiding travel groups through hitherto rarely explored sacred kṣetras of India. We seek to satisfy the wanderlust in you in a way which will leave you not just intellectually satisfied but also elevate your understanding and knowledge.
 </h5>
@@ -34,9 +38,11 @@ Bṛhat Anveṣī is a travel program to contemporize ancient Indian tradition b
 {:catch error}
 <pre>{error}</pre>
 {/await}
+</div>
+</div>
 
 <style>
-:root { --image: url('/images/anveshi/keykar.webp');}
+.imagecontainer-hero { background-image: url('/images/herocovers/brhatanveshi.webp');}
 </style>
 
 

@@ -1,10 +1,9 @@
 <script>
-import AnveshiSide from '$lib/components/globals/AnveshiSide.svelte'
+import DrashtaSide from '$lib/components/globals/DrashtaSide.svelte'
 </script>
 
-
 <div class="primecontainer-row">
-<AnveshiSide></AnveshiSide>
+<DrashtaSide></DrashtaSide>
 <div class="pagesheet">
 <div class="blog-pad">
 <slot></slot>
