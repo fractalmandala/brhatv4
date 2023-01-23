@@ -101,26 +101,3 @@ The final destination of the trip was the Chowlikere Ganapathi, situated on a hi
 ##### Outro
 
 The Anveṣī trip did not really end with the team bus dropping us off at the Mangalore railway station. It continued in my mindspace for many days. I was in those soapstone temples for many dreams, for many nights following. The lovely souvenir which Reena ji of the Bṛhat team had put together I couldn't open untill I reached home in Delhi. Now the Bṛhat water bottle and T-shirt are constant companions, reminding me of a very memorable and transformative trip to Karnataka.
-
-<style>
-p { font-size: 18px;}
-h3 { color: var(--red);}
-
-h4 { 
-	font-size: 24px;
-	color: #d7d7d7;
-}
-
-h5 {
-	font-size: 20px;
-}
-
-h6 {
-font-size: 1rem;
-}
-
-p {
-	padding-left: 0;
-	padding-right: 4rem;
-}
-</style>
