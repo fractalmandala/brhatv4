@@ -17,7 +17,7 @@ export async function fetchChapters(){
 ```
 
 2. any single chapter
-```
+```js
 export async function Karnataka(){
 	const { data } = await supabase
 	.from('brhat-anveshi')
@@ -29,7 +29,7 @@ export async function Karnataka(){
 ```
 
 3. temples of a chapter
-```
+```js
 export async function KarnatakaTemples(){
 	const { data } = await supabase
 	.from('brhat-anveshi')
@@ -41,7 +41,7 @@ export async function KarnatakaTemples(){
 ```
 
 4. detailed chapter page
-```
+```js
 export async function KarnatakaDetailed(){
 	const { data } = await supabase
 	.from('chapter-details')

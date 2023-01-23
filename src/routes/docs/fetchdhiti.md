@@ -5,7 +5,7 @@ tag: supabase
 category: codes
 ---
 
-```
+```js
 export async function latestDhiti(){
 	const { data } = await supabase
 	.from('brhat-dhiti')

@@ -112,7 +112,7 @@ export const sveltePosts = async () => {
 {#await postgrePosts()}
 <small>...</small>
 {:then data}
-	<h5 class="tagger"><span class=".green" style="color: #10c56d"><b>| </b></span>postgresql</h5>
+	<h5><span class=".green" style="color: #10c56d"><b>| </b></span>postgresql</h5>
   {#each data as doc}
 	<p><a href={doc.path}>{doc.meta.title}</a></p>
 	{/each}
@@ -150,67 +150,3 @@ export const sveltePosts = async () => {
 	{/each}
 {/await}
 </div>
-<style>
-
-
-.side-bar {
-	display: flex;
-	flex-direction: column;
-	width: 22%;
-	background-color: white;
-	border-right: 1px solid var(--grey);
-	transition: all 0.28s var(--cube3);	
-}
-
-.tagger { 
-	color: var(--green);
-}
-
-.side-bar:hover {
-/*
-	box-shadow: 5px 5px 10px #d9d9d9,
-             -8px -10px 10px #ffffff;
-*/
-	background-color: white;
-	border-right: 1px solid var(--green);
-}	
-
-
-.side-bar p {
-	line-height: 1.1em;
-	margin-top: 0;
-	margin-bottom: 0.48em;
-	font-size: 14px;
-	color: #878787;
-	transform-origin: center left;
-	transition: all 0.2s var(--cube3);
-}
-
-.side-bar h5 a:hover {
-	color: #474747;
-}
-.side-bar p:hover {
-	transform: scale(1.1);
-}
-
-.side-bar p a {
-	font-weight: 500;
-	font-size: 14px;
-	color: #878787;
-}	
-
-
-.side-bar h5, .side-bar h5 a {
-	font-size: 1.2rem;
-	color: #878787;
-	opacity: 0.95;
-	margin-bottom: 0.88rem;
-	font-variant: small-caps;
-}
-
-.side-bar a:hover {
-	color: var(--green);	
-}
-
-
-</style>

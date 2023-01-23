@@ -13,7 +13,7 @@ basic code to toggle sublist visibility on hover.
 
 For each 'list' where 'sublist' is to be toggled:
 
-```
+```js
 let isVisible = false;
 function showSubList() {
 isVisible = true;
@@ -33,32 +33,32 @@ there are other styling matters. but above is basic toggle for visibility on hov
 
 ##### Mobile Menu
 For mobile menu, entire component 
-```
-<div class="mobilemenu"  
+```html
+<div class="mobilemenu">  
 ```
 
 is set at display = hidden at window width less than 767px. Conversely, it is set hidden for 
 
-```
-class="desktopmenu"
+```html
+<div class="desktopmenu">
 ```
 
 at 768px and above. Full-screen menu is toggled by button clicks on open button and close button. Close button should be embedded in the fullscreen section that opens.
 
 In HTML, it is set conditionally similar to how sublists are set in previous case;
 
-```
+```html
 {#if isFull}
-<div class="fullscreen"
-  <button on:click={closeFull} on:keydown={closeFull}</button
-</div
+<div class="fullscreen">
+  <button on:click={closeFull} on:keydown={closeFull}</button>
+</div>
 {/if}
 ```
 
 It is opened by the mobile menu:
 
-```
-class="mobilemenu" on:click={showFull} on:keydown={showFull}
+```html
+<div class="mobilemenu" on:click={showFull} on:keydown={showFull}>
 ```
 
 

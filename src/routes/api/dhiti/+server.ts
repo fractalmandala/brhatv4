@@ -1,10 +1,14 @@
-import supabase from '$lib/db'
+import { postsPerPage } from '$lib/utils'
+import fetchPosts from '$lib/fetchPosts'
+import { json } from '@sveltejs/kit'
 
-export const getDhiti = async() => {
-	const { data, error } = await supabase 
-		.from('brhat-dhiti')
-		.select()
-		.order('sequence',{ascending: false})
-		if (error) throw new Error(error.message)
-		return data
+export const prerender = true
+
+export const GET = async () => {
+  const options = {
+    limit: postsPerPage
+  }
+
+  const { posts } = await fetchPosts(options)
+  return json(posts)
 }

@@ -1,8 +1,6 @@
 
 <script>
 // @ts-nocheck
-
-
 /**
 	 * @type {{ posts: any; }}
 	 */

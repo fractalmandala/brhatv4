@@ -6,7 +6,7 @@ category: codes
 ---
 
 1. IKS
-```
+```js
 export async function vidsIKS() {
 	const { data } = await supabase
 	.from('brhat-iksvids')
@@ -16,7 +16,7 @@ export async function vidsIKS() {
 ```
 
 2. mrdanga
-```
+```js
 export async function mrdangaVids() {
 	const { data } = await supabase
 	.from('brhat-youtube')

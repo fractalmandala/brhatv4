@@ -6,7 +6,7 @@ category: codes
 ---
 
 //1.all drashta courses
-```
+```js
 export async function fetchCourses() {
 const { data } = await supabase
 .from('brhat-drashta')
@@ -17,7 +17,7 @@ return data;
 ``` 
  
 //2. hindu iconography
-```
+```js
 export async function courseIconography() {
 const { data } = await supabase
 .from('brhat-drashta')
@@ -28,7 +28,7 @@ return data;
 ```
 
 //3. intro to srg
-```
+```js
 export async function courseSRG() {
 const { data } = await supabase
 .from('brhat-drashta')
@@ -39,7 +39,7 @@ return data;
 ```
 
 //4. intro to srs
-```
+```js
 export async function courseSRS() {
 const { data } = await supabase
 .from('brhat-drashta')
@@ -50,7 +50,7 @@ return data;
 ```
 
 //5. all drashtas
-```
+```js
 export async function Drashtas() {
 const { data } = await supabase
 .from('brhat-drashta')
@@ -62,7 +62,7 @@ return data;
 
 
 //6. all schools of thought
-```
+```js
 export async function Darshanas() {
 const { data } = await supabase
 .from('brhat-drashta')
@@ -73,7 +73,7 @@ return data;
 ```
 
 //7.all anveshi chapters
-```
+```js
 export async function fetchChapters(){
 const { data } = await supabase
 .from('brhat-anveshi')
@@ -84,7 +84,7 @@ return data;
 ```
 
 //8, karnataka chapter
-```
+```js
 export async function Karnataka(){
 const { data } = await supabase
 .from('brhat-anveshi')
@@ -96,7 +96,7 @@ return data;
 ```
 
 //9. karnataka temples
-```
+```js
 export async function KarnatakaTemples(){
 const { data } = await supabase
 .from('brhat-anveshi')
@@ -108,7 +108,7 @@ return data;
 ```
 
 //10. detailed karnataka page
-```
+```js
 export async function KarnatakaDetailed(){
 const { data } = await supabase
 .from('chapter-details')
@@ -119,7 +119,7 @@ return data;
 ```
 
 //11, odisha chapter
-```
+```js
 export async function odisha(){
 const { data } = await supabase
 .from('brhat-anveshi')
@@ -131,7 +131,7 @@ return data;
 ```
 
 //12. odisha temples
-```
+```js
 export async function odishaTemples(){
 const { data } = await supabase
 .from('brhat-anveshi')
@@ -143,7 +143,7 @@ return data;
 ```
 
 //13. detailed odisha page
-```
+```js
 export async function odishaDetailed(){
 const { data } = await supabase
 .from('chapter-details')
@@ -154,8 +154,7 @@ return data;
 ```
 
 //14. chamba chapter
-
-```
+```js
 export async function chamba(){
 const { data } = await supabase
 .from('brhat-anveshi')
@@ -167,7 +166,7 @@ return data;
 ```
 
 //15. chamba temples
-```
+```js
 export async function chambaTemples(){
 const { data } = await supabase
 .from('brhat-anveshi')
@@ -179,7 +178,7 @@ return data;
 ```
 
 //16. detailed chamba page
-```  
+```js
 export async function chambaDetailed(){
 const { data } = await supabase
 .from('chapter-details')
@@ -190,7 +189,7 @@ return data;
 ```
 
 //17. dhiti posts descending sorted
-```
+```js
 export async function latestDhiti(){
 const { data } = await supabase
 .from('brhat-dhiti')
@@ -201,7 +200,7 @@ return data;
 ```
 
 //18. openlibrary uploads descending sorted
-```
+```js
 export async function latestBOL(){
 const { data } = await supabase
 .from('brhat-openlibrary')
@@ -212,7 +211,7 @@ return data;
 ```
 
 //19. iks videos descending sorted
-```
+```js
 export async function vidsIKS() {
 const { data } = await supabase
 .from('brhat-iksvids')
@@ -222,7 +221,7 @@ return data;
 ```
 
 //20. mrdanga videos descending sorted
-```
+```js
 export async function mrdangaVids() {
 const { data } = await supabase
 .from('brhat-youtube')
@@ -233,7 +232,7 @@ return data;
 ```
 
 //21. shabdavali videos
-```
+```js
 export async function shabdavaliVids() {
 const { data } = await supabase
 .from('brhat-shabdavali')
@@ -243,7 +242,7 @@ return data
 ```
 
 //22. brhat project cards
-```
+```js
 export async function brhatActions() {
 const { data } = await supabase
 .from('brhat-actions')
@@ -255,7 +254,7 @@ return data
 ```
 
 //23. brhat advisory board
-```
+```js
 export async function brhatAdvisory() {
 const { data } = await supabase
 .from('brhat-advisory')
@@ -266,7 +265,7 @@ return data
 ```
 
 //24. brhat three areas
-```
+```js
 export async function brhatAreas() {
 const { data } = await supabase
 .from('brhat-areas')
@@ -277,7 +276,7 @@ return data
 ```
 
 //25. iks events
-```
+```js
 export async function eventsIKS() {
 const { data } = await supabase
 .from('brhat-iks')
@@ -288,7 +287,7 @@ return data
 ```
 
 //26. create, curate, consult
-```
+```js
 export async function brhatPillars() {
 const { data } = await supabase
 .from('brhat-pillars')
@@ -299,7 +298,7 @@ return data
 ```
 
 //27. brhat three views
-```
+```js
 export async function brhatViews() {
 const { data } = await supabase
 .from('brhat-pillars')
@@ -310,7 +309,7 @@ return data
 ```
 
 //28. brhat team
-```
+```js
 export async function brhatTeam() {
 const { data } = await supabase
 .from('brhat-team')
@@ -320,7 +319,7 @@ return data
 ```
 
 //29. midjourney gallery
-```
+```js
 export async function galleryMid() {
 const { data, error } = await supabase
 .from('MidjourneyImages')

@@ -1,15 +1,9 @@
-// @ts-ignore
-export const load = async ({ fetch, params }) => {
-  const { category } = params
-  const response = await fetch(`/api/docs`)
-  const allPosts = await response.json()
+export async function load({ params }: { params: { docs: string } }){
+	const post = await import(`../${params.docs}.md`)
+	const { category, title } = post.metadata
 
-  const posts = allPosts
-    // @ts-ignore
-    .filter(post => post.meta.category.includes(category))
-
-  return {
-    category,
-		posts
-  }
+	return {
+		category,
+		title
+	}
 }
