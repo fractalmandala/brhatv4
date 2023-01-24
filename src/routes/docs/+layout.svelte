@@ -8,9 +8,7 @@ import '$lib/styles/prism.css'
 <div class="primecontainer-row">
 <DocSidebar></DocSidebar>
 <div class="pagesheet2">
-<div class="blog-pad">
 <slot></slot>
-</div>
 </div>
 </div>
 </FlyingPage>

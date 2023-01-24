@@ -59,8 +59,8 @@ export async function dhitiFourmore() {
 <style>
 	#bigscreen h1 a, #bigscreen p { color: white;}
 	#bigscreen a { transition: all 0.13s var(--cube1);}
-	#bigscreen h1:hover a { color: var(--red);}
-	#bigscreen h1 { margin-top: 6px; text-shadow: 4px 4px 20px #171717;}
+	#bigscreen h1:hover a { color: #11B5E4;}
+	#bigscreen h1 { margin-top: 6px;}
 	cite { color: white; background-color: var(--red); font-style: normal; text-transform: uppercase; width: max-content; margin-bottom: 0;}
 	#bigscreen { justify-content: space-between;}
 	.postcol { box-shadow: 5px 5px 12px #171717, -4px -6px 12px #272727; transition: all 0.33s var(--cube2); border: 1px solid white;border-radius: 4px; background-size: cover; background-position: center center; background-repeat: no-repeat; }
@@ -108,7 +108,7 @@ export async function dhitiFourmore() {
 }
 
 @media screen and (max-width: 575px) {
-	#bigscreen h1 { font-size: 1.6rem; font-weight: 600; text-shadow: 3px 3px 6px #171717; letter-spacing: -0.5px; } 
+	#bigscreen h1 { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.5px; } 
 	#bigscreen { padding: 1rem;}
 	cite { padding: 3px 12px; font-size: 12px;}
 	#bigscreen-p { font-size: 0.8rem; width: 100%; line-height: 1.24rem; margin-top: 0;}

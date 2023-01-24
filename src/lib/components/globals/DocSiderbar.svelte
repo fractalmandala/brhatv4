@@ -23,6 +23,28 @@ export const postgrePosts = async () => {
   return filteredDocs
 }
 
+export const postgrPosts = async () => {
+  const allDocFiles = import.meta.glob('/src/routes/docs/*.md')
+  const iterableDocFiles = Object.entries(allDocFiles)
+  
+  const allDocs = await Promise.all(
+    iterableDocFiles.map(async ([path, resolver]) => {
+      // @ts-ignore
+      const { metadata } = await resolver()
+      const docPath = path.slice(11, -3)
+
+      return {
+        meta: metadata,
+        path: docPath,
+      }
+    })
+  )
+
+  const filteredDocs = allDocs.filter((doc) => doc.meta.tag === "supabase")
+
+  return filteredDocs
+}
+
 export const supabasePosts = async () => {
   const allDocFiles = import.meta.glob('/src/routes/docs/*.md')
   const iterableDocFiles = Object.entries(allDocFiles)
@@ -113,6 +135,14 @@ export const sveltePosts = async () => {
 <small>...</small>
 {:then data}
 	<h5><span class=".green" style="color: #10c56d"><b>| </b></span>documentation</h5>
+  {#each data as doc}
+	<p><a href={doc.path}>{doc.meta.title}</a></p>
+	{/each}
+{/await}
+{#await postgrPosts()}
+<small>...</small>
+{:then data}
+	<h5><span class=".green" style="color: #10c56d"><b>| </b></span>supabase</h5>
   {#each data as doc}
 	<p><a href={doc.path}>{doc.meta.title}</a></p>
 	{/each}

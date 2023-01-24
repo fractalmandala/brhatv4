@@ -44,19 +44,20 @@ body, html { margin: 0; box-sizing: border-box; }
 .allcap { text-transform: uppercase;}
 .iswhite { color: white;}
 .isred, .isred:hover { color: #FE4A49; }
+.isorange { color: #4F9D69;}
 .background { background-color: #f8f8f8; transition: all 0.18s var(--snap) ;}
 .background:hover { background-color: #FFFFFF; box-shadow: 5px 8px 14px #e4e4e4, -5px -4px 12px #f1f1f1;}
 
 @media screen and (min-width: 900px) {
-	.side-bar { width: 18vw; display: flex; padding-left: 2rem; padding-top: 2rem; }
+	.side-bar { width: 20vw; display: flex; padding-left: 2rem; padding-top: 2rem; }
 	.side-bar2 { width: 22vw; display: flex; padding-left: 2rem; padding-top: 2rem; padding-right: 1rem; }
 	.side-bar h5, .side-bar2 h5 { line-height: 2rem;}
 	.side-bar p, .side-bar2 p { margin-top: 0; margin-bottom: 4px; }
 	.base-col h5 { font-size: 1.24rem;}
 	.base-col p, .base-col pre { font-size: 1rem; line-height: 1.24rem; margin-bottom: 1.44rem;}
-	.base-col:hover h5 a { color: #fe4a49;}
+	.base-col:hover h5:hover a { color: var(--blue);}
 	.base-col small { text-transform: capitalize; font-size: 12px; color: #255F85;}
-	.pagesheet { width: calc(82vw - 8px); }
+	.pagesheet { width: calc(80vw - 8px); }
 	.pagesheet2 { width: calc(78vw - 8px); padding: 2rem 8vw 4rem 8vw; }
 	.pagesheet2 h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem; }
 	.base-row { flex-direction: row; gap: 24px;}
@@ -146,14 +147,14 @@ body, html { margin: 0; box-sizing: border-box; }
 @media screen and (max-width: 767px) and (min-width: 576px) {
 	.blog-pad { padding: 2rem 4.8vw 4rem 4.8vw;}
 	.blog-pad p { font-size: 1.12rem; line-height: 1.4em;}
-	.blog-pad h1 { font-size: 2.6rem; font-weight: 700;  margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem; }
+	.blog-pad h1 { font-size: 2.4rem; font-weight: 700;  margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem; }
 	.blog-pad h4 { font-size: 1.56rem;}
 }
 
 @media screen and (max-width: 575px) {
 	.blog-pad { padding: 2rem 3.6vw 4rem 3.6vw;}
 	.blog-pad p { font-size: 1.12rem; line-height: 1.4em;}
-	.blog-pad h1 { font-size: 2.6rem; font-weight: 700;  margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem; }
+	.blog-pad h1 { font-size: 2.4rem; font-weight: 700;  margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem; }
 	.blog-pad h4 { font-size: 1.4rem;}
 }
 
@@ -203,20 +204,26 @@ body, html { margin: 0; box-sizing: border-box; }
 .dhiti-post { display: flex; flex-direction: column; width: 100%; height: 100%; border-top: 1px solid #e1e1e1;}
 .dhitisheet { display: flex; flex-direction: column; height: 100%;font-family: 'STIX Two Text', serif; }
 .dhiti-bar { flex-direction: column; height: 100%; border-right: 1px solid #e7e7e7; transition: all 0.2s var(--cube1);}
-.dhiti-post p { font-family: 'STIX Two Text', serif;}
+.dhiti-post p, .dhiti-post li, .dhiti-post li a { font-family: 'STIX Two Text', serif;}
+.dhiti-post li a { color: var(--red);}
 .stix { font-family: 'STIX Two Text', serif;}
-.source { font-family: 'Source Serif 4', serif;}
+.source, .source a, .dhiti-post h4 { font-family: 'Source Serif 4', serif;}
 .dhitisheet h1 { font-weight: 900;}
 .dhitisheet small { font-family: 'Source Serif 4', serif; font-size: 1.12rem; line-height: 1.4em;}
 .label, .label2 { width: max-content; margin-bottom: 8px; font-family:'Source Serif 4', serif; }
-
+.dhiti-post blockquote { border-left: 4px solid var(--red); padding-left: 1rem; font-style: italic; background-color: #f7f7f7;}
 
 @media screen and (min-width: 900px) {
-	.dhiti-post { margin-top: 2rem; padding: 2.4rem 16vw 2rem 2vw;}
-	.dhiti-bar { width: 8vw; display: flex; padding-left: 2rem; padding-top: 2rem; }
-	.dhitisheet { width: calc(94vw - 8px); padding-right: 12vw; }
-	.dhitisheet h1 { font-size: 4.8rem; letter-spacing: -3px; line-height: 1.12em; margin-top: 0;}
-	.dhiti-post p { font-size: 24px; line-height: 1.4em;}
+	.dhiti-post { margin-top: 2rem; padding: 2.4rem 4vw 2rem 2vw;}
+	.dhiti-bar { width: 6vw; display: flex; padding-left: 2rem; padding-top: 2rem; }
+	.list { width: 28vw;}
+	.dhitisheet { width: 66vw; }
+	.dhitisheet h1 { font-size: 4.8rem; letter-spacing: -3px; line-height: 1.12em; margin-top: 0; margin-right: -12vw;}
+	.dhiti-post p { font-size: 24px; line-height: 1.4em; margin: 6px 0 16px 0;}
+	.dhiti-post h4 { margin-top: 8px; margin-bottom: 0; font-weight: 800;}
+	.dhiti-post h5 { margin-top: 0; margin-left: 1rem; margin-bottom: 16px;}
+	.hindi h5 { margin-bottom: 0;}
+	.dhiti-post blockquote { padding-top: 8px; padding-right: 1rem; margin-right: 4rem;}
 }
 
 @media screen and (max-width:899px) and (min-width: 768px) {

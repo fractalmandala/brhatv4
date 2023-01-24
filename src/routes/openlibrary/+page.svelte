@@ -1,8 +1,17 @@
+<script>
+
+import BolSidebar from '$lib/components/globals/BolSidebar.svelte'
+</script>
+
 <div class="imagecontainer-hero" style="background-image: url('/images/herocovers/bolherobrhat.webp')"></div>
 <div class="primecontainer-row">
-	<div class="side-bar">
-		<h5 class="side-bar-header"><a href="/openlibrary">Bṛhat Open Library</a></h5>
-		<p><a href="/openlibrary/books">Books</a></p>
-		<p><a href="/openlibrary/dictionary">Dictionary</a></p>
-	</div>
+<BolSidebar></BolSidebar>
+<div class="pagesheet cc px4">
+<h5>
+Bṛhat Open Library is an Online Repository for Texts, Papers, Learning Material and More.
+
+It is a tribute to the hard labor of people known and unknown that have created for us an unbelievable repository of Indian knowledge
+</h5>
+
+</div>
 </div>

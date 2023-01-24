@@ -40,7 +40,7 @@
       <small>contact@brhat.in</small>
       <div class="innerrow">
       <small><a href="/docs">Site Documentation</a></small>
-      <small><a href="/corporate/privacy">Privacy Policy</a></small>
+      <small><a href="/about/docs/privacy">Privacy Policy</a></small>
     </div>
   	</div>
   		<div class="socialicons">

@@ -6,11 +6,25 @@ category: codes
 ---
 
 ```js
+import supabase from '$lib/db'
 export async function latestDhiti(){
-	const { data } = await supabase
+	const { data, error } = await supabase
 	.from('brhat-dhiti')
 	.select()
 	.order('sequence',{ascending: false})
-	return data;
+	.limit(1)
+	if (error) throw new Error(error.message)
+	return data
 }
+```
+
+```html
+{#await latestDhiti()}
+<small>...</small>
+{:then data}
+{#each data as item}
+{/each}
+{:catch error}
+<pre>{error}</pre>
+{/await}
 ```

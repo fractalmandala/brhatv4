@@ -11,17 +11,22 @@ import AuthorBox from '$lib/components/pagecomps/AuthorBox.svelte'
 <div class="primecontainer-row">
 <div class="dhiti-bar"></div>
 <div class="dhitisheet">
-<small style="color: #a7a7a7; font-variant: small-caps"><b class="isred">| </b>{data.tags}</small>
-<h1 class="source">{data.title}</h1>
-<div class="base-row">
-<p class="label" style="text-transform: uppercase">{data.category}</p>
-<AuthorBox>{data.author}</AuthorBox>
-<p class="label2" style="text-transform: uppercase">{data.author}</p>
+	<small style="color: #a7a7a7; font-variant: small-caps"><b class="isred">| </b>{data.tags}</small>
+	<h1 class="source">{data.title}</h1>
+	<div class="base-row">
+		<p class="label" style="text-transform: uppercase">{data.category}</p>
+		<p class="label2" style="text-transform: uppercase">{data.author}</p>
+	</div>
+	<div class="dhiti-post">
+		<svelte:component this={data.content} />
+	</div>
 </div>
-<div class="dhiti-post">
-<svelte:component this={data.content} />
-</div>
+<div class="base-col list">
 </div>
 </div>
 
 
+<style>
+.dhiti-bar { border: none;}
+
+</style>

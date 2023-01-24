@@ -71,7 +71,3 @@ It is this ascent, this assumption of regency, of noble Intent, that underpins o
 ##### It matters little whether one imagines Mind as Man-in-Sky or Blind-Watchmaker. That may be the focus of desert and oasis metastories. But ours is the metastory of river and forest- of flow and rhythm. Of Harmony. That is our quest. 
 
 And if harmonious the existence, it preserves itself. It continues to flow, like a river. This metastory, passed from campfire to campfire, generation upon generation, is the metastory of resilience. It possesses the obstinacy of that old Shrew. It possesses the capability to outlast, like the Shrew did over the Saurus. Even in the whirring, even amid the dhvamsana, it can abide. It can stay tethered. It can survive. Tethering, or as Pāṇini might have said- dhāraṇa, emerging from the root sound of dhṛ, or ava-dhvamsana. The resilience to hold, to suffer, to be. What pursues this resilience with all the intent of Mind, individual or collective, you might now be able to guess- is dhṛ + man, or Dharman. Yes, not entirely as Pāṇini would have put it, but it still points us to that most distinct fundamental that makes this Ape that Walks unique above all that preceded it. Ours is not the surrender to a selfish gene, it is the ascent towards the Dhārmika gene. What memes would rule us today, what tomorrow may yet come, if the Standard Metastory of Reality was composed not by the Selfish Gene, but by the Dhārmika?
-
-<style>
-  p { font-family: var(--stix);}
-</style>

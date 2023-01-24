@@ -94,12 +94,11 @@ function hideMenu() {
 			<div class="menuitems opener" on:mouseenter={showAbout} on:mouseleave={hideAbout}><a href="/about">About</a>
 				{#if isAbout}
 				<div class="second-row">
-					<div class="rowitems"><a href="/about">Introduction</a></div>
+					<div class="rowitems"><a href="/about/#actions">Introduction</a></div>
 					<div class="rowitems"><a href="/about/#namarupa">Nāmarūpa</a></div>
 					<div class="rowitems"><a href="/about/#values">Pratijña</a></div>
 					<div class="rowitems"><a href="/about/#advisory">Advisory Board</a></div>
 					<div class="rowitems"><a href="/about/#team">Team</a></div>
-					<div class="rowitems"><a href="/about/#anatomy">Why Now</a></div>
 					<div class="rowitems lastone"><a href="/about/#svatah">Why</a></div>
 				</div>
 				{/if}
