@@ -68,15 +68,15 @@
  }
 
  #col1 { 
-   background-image: url('/images/creative-culture-1024-1.webp');
+   background-image: url('/images/corpimages/creative-culture-1024-1.webp');
  }
 
  #col2 {
-   background-image: url('/images/research-policy-1024-1.webp');
+   background-image: url('/images/corpimages/research-policy-1024-1.webp');
  }
 
  #col3 {
-   background-image: url('/images/develop-leader-1024-1.webp');
+   background-image: url('/images/corpimages/develop-leader-1024-1.webp');
  }
 
  .gencol:hover button {

@@ -69,7 +69,6 @@ pre {
 }
 .headercontainer h3, .headercontainer h4, .headercontainer h5, .headercontainer h6, .headercontainer p, .headercontainer pre, .headercontainer a, .headercontainer small, .headercontainer caption, .headercontainer cite, .headercontainer code { font-family: 'Inter Tight', sans-serif;}
 code { font-family: 'JetBrains Mono', monospace; color: #878787; margin-bottom: 0; padding-bottom: 0; margin-top: 0; padding-top: 0;}
-.hindi p, .hindi h5, .hindi h4 { font-family: 'Noto Serif Devanagari', serif;}
 .serif p, .serif { font-family: 'STIX Two Text', serif;}
 .bdr { border: 1px solid red; }
 .sheet1 h3, .sheet1 h5, .sheet1 h4 { color: var(--green);}

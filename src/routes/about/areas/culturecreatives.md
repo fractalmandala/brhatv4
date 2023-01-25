@@ -4,7 +4,7 @@ image: "/images/areas-cc.webp"
 ---
 
 <div class="marginbox">
-<img src="/images/ganapati.webp" alt="ganapati" />
+<img src="/images/corpimages/ganapati.webp" alt="ganapati" />
 </div>
 
 

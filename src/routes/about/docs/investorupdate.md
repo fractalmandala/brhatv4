@@ -22,13 +22,17 @@ Access to funds remains one of the biggest challenges in the development of a Dh
 
 For some years Sarayu Trust has been financially supporting individuals (academics, activists, researchers) as well as organizations that appear well-aligned with our stated purpose and mission. This is where Sarayu Trust is committed to playing an even more active role in the years to come.
 
-- Sarayu Trust
+ -Sarayu Trust
 
-<blockquote>“We hope to become an organization offering fellowships to Dhārmika individuals to pursue projects that inspire them as well as create a seed fund for organizations with Dhārmika missions.”<br>
-<cite>Shri Rahul Dewan<br>President, Sarayu Foundation Trust</cite></blockquote>
+> “We hope to become an organization offering fellowships to Dhārmika individuals to pursue projects that inspire them as well as create a seed fund for organizations with Dhārmika missions.”
+> <cite>Shri Rahul Dewan<br>President, Sarayu Foundation Trust</cite>
 
-<img src="/images/partners/sarayusangam.png" alt="sarayusangam" />
+<img src="/images/corpimages/partners/sarayusangam.webp" alt="sarayusangam" />
 
 Bṛhat is grateful for this show of support. It provides not just a bit of runway to continue our creative foray but the act of trust gives us confidence in ourselves.
 
 We look forward to partnering with Sarayu Trust to advance the urgent work of our civilizational reclamation through culture building.
+
+<style>
+img { width: 200px; text-align: center; margin-bottom: 1rem;}
+</style>

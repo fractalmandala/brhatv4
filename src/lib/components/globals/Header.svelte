@@ -50,10 +50,10 @@ function hideMenu() {
 <div class="headerbox">
   <div class="logoarea">
      <div class="motif" id="scroll-container">
-       <a href="/"><img src="/images/motif.png" id="rotate-img" class="rotate" alt="motif" /></a>
+       <a href="/"><img src="/images/corpimages/motif.png" id="rotate-img" class="rotate" alt="motif" /></a>
      </div>
      <div class="logotype">
-       <a href="/"><img src="/images/logotype.png" alt="logotype"
+       <a href="/"><img src="/images/corpimages/logotype.png" alt="logotype"
        /></a>
      </div>
   </div>
@@ -95,11 +95,11 @@ function hideMenu() {
 				{#if isAbout}
 				<div class="second-row">
 					<div class="rowitems"><a href="/about/#actions">Introduction</a></div>
-					<div class="rowitems"><a href="/about/#namarupa">Nāmarūpa</a></div>
-					<div class="rowitems"><a href="/about/#values">Pratijña</a></div>
+					<div class="rowitems"><a href="/about/docs/namelogo">Nāmarūpa</a></div>
+					<div class="rowitems"><a href="/about/docs/values">Pratijña</a></div>
 					<div class="rowitems"><a href="/about/#advisory">Advisory Board</a></div>
 					<div class="rowitems"><a href="/about/#team">Team</a></div>
-					<div class="rowitems lastone"><a href="/about/#svatah">Why</a></div>
+					<div class="rowitems lastone"><a href="/about/docs/svatahsiddha">Why</a></div>
 				</div>
 				{/if}
 			</div>
@@ -109,9 +109,9 @@ function hideMenu() {
 	<div class="mobilemenu">
 		
 		{#if isRed}
-		<img class="menu-red" src="/images/socialicons/hamburger-red.png" alt="menuicon" on:mouseleave={hideRed} on:click={showMenu} on:keydown={showMenu}/>
+		<img class="menu-red" src="/images/icons/hamburger-red.png" alt="menuicon" on:mouseleave={hideRed} on:click={showMenu} on:keydown={showMenu}/>
 		{:else}
-		<img class="menu-white" src="/images/socialicons/hamburger-white.png" alt="menuicon" on:mouseenter={showRed} on:mouseleave={hideRed} on:click={showMenu} on:keydown={showMenu}/>	
+		<img class="menu-white" src="/images/icons/hamburger-white.png" alt="menuicon" on:mouseenter={showRed} on:mouseleave={hideRed} on:click={showMenu} on:keydown={showMenu}/>	
 		{/if}
 	</div>
 	{#if isMenu}
@@ -121,14 +121,14 @@ function hideMenu() {
 	>
 		<div class="innerheading">
 			<div class="motif" id="scroll-container">
-       	<a href="/"><img src="/images/motif.png" id="rotate-img" class="rotate" alt="motif" /></a>
+       	<a href="/"><img src="/images/corpimages/motif.png" id="rotate-img" class="rotate" alt="motif" /></a>
      	</div>
      	<div class="logotype">
-       		<a href="/"><img src="/images/logotype.png" alt="logotype"
+       		<a href="/"><img src="/images/corpimages/logotype.png" alt="logotype"
        		/></a>
      	</div>
 			<div class="closebuttonstrip" on:click={hideMenu} on:keydown={hideMenu}>
-				<img src="/images/socialicons/hamburger-close.png" alt="closemenu"/>
+				<img src="/images/icons/hamburger-close.png" alt="closemenu"/>
 			</div>
 		</div>
 		<div class="fullscreenpage">
@@ -159,11 +159,11 @@ function hideMenu() {
 			</div>
 		</div>
 		<div class="socialicons">
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/socialicons/122-twitter.png" alt="twitter"/></a>
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/socialicons/124-fb.png" alt="facebook"/></a>
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/socialicons/123-linked.png" alt="linkedin"/></a>
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/socialicons/121-insta.png" alt="instagram"/></a>
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/socialicons/125-ytube.png" alt="youtube"/></a>
+      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/122-twitter.png" alt="twitter"/></a>
+      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/124-fb.png" alt="facebook"/></a>
+      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/123-linked.png" alt="linkedin"/></a>
+      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/121-insta.png" alt="instagram"/></a>
+      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/125-ytube.png" alt="youtube"/></a>
   	</div>
 	</div>
 	{/if}

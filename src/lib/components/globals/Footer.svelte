@@ -44,11 +44,11 @@
     </div>
   	</div>
   		<div class="socialicons">
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/socialicons/122-twitter.png" alt="twitter"/></a>
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/socialicons/124-fb.png" alt="facebook"/></a>
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/socialicons/123-linked.png" alt="linkedin"/></a>
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/socialicons/121-insta.png" alt="instagram"/></a>
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/socialicons/125-ytube.png" alt="youtube"/></a>
+      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/122-twitter.png" alt="twitter"/></a>
+      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/124-fb.png" alt="facebook"/></a>
+      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/123-linked.png" alt="linkedin"/></a>
+      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/121-insta.png" alt="instagram"/></a>
+      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/125-ytube.png" alt="youtube"/></a>
   	</div>
 	</div>
 </div>

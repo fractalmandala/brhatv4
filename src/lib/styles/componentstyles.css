@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,700;8..60,800;8..60,900&display=swap');
+
 body, html { margin: 0; box-sizing: border-box; }
 
 .side-bar { flex-direction: column; height: 100%; border-right: 1px solid #e7e7e7; transition: all 0.2s var(--cube1);}
@@ -62,6 +63,7 @@ body, html { margin: 0; box-sizing: border-box; }
 	.pagesheet2 h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem; }
 	.base-row { flex-direction: row; gap: 24px;}
 	.px4 { padding-left: 4rem; padding-right: 4rem;}
+	.mx4 { margin-left: 4rem; margin-right: 4rem;}
 	.py2 { padding-top: 2rem; padding-bottom: 2rem;}
 	.px1 { padding-left: 0.75rem; padding-right: 0.75rem;}
 	.p1 { padding: 12px 8px; }
@@ -74,21 +76,29 @@ body, html { margin: 0; box-sizing: border-box; }
 	.pagesheet, .pagesheet2 { width: calc(80vw - 8px); }
 	.pagesheet2 { padding: 2rem 4vw 4rem 4vw;}
 	.pagesheet2 h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
+	.px4 { padding-left: 3.2rem; padding-right: 3.2rem;}
+	.mx4 { margin-left: 3.2rem; margin-right: 3.2rem;}
 }
 
 @media screen and (max-width: 767px) {
 	.side-bar, .side-bar2 { display: none; }
 	.pagesheet { width: calc(100% - 8px); margin-left: 4px; padding-top: 4.8rem;}
+	.px4 { padding-left: 2.4rem; padding-right: 2.4rem;}
+	.mx4 { margin-left: 2.4rem; margin-right: 2.4rem;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
 	.pagesheet2 { padding: 6.8rem 6.4vw 4rem 4.8vw; width: calc(100% - 8px); margin-left: 4px; }
 	.pagesheet2 h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
+	.px4 { padding-left: 2rem; padding-right: 2rem;}
+	.mx4 { margin-left: 2rem; margin-right: 2rem;}
 }
 
 @media screen and (max-width: 575px) {
 	.pagesheet2 { padding: 6.8rem 6.4vw 4rem 4.8vw;}
 	.pagesheet2 h1 { font-size: 2.6rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem;}
+	.px4 { padding-left: 1rem; padding-right: 1rem;}
+	.mx4 { margin-left: 1rem; margin-right: 1rem;}
 }
 
 /************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -115,19 +125,20 @@ body, html { margin: 0; box-sizing: border-box; }
 
 /************************************************************************************************************************************************************************************************************************************************************************************************/
 
-.blog-pad {
+.blog-pad, .corp-docs {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	padding-top: 2rem;
 }
+
 .blog-pad p { color:#878787; margin-top: 6px; margin-bottom: 8px;}
 .blog-pad pre { color: #878787; }
 .blog-pad h3 {border-bottom: 4px solid var(--blue); margin-top: 0; padding-bottom: 1rem; margin-bottom: 0;}
-.blog-pad h4 { color: #676767; font-weight: 900; margin-bottom: 0;}
+.blog-pad h4 { color: #676767; font-weight: 900; margin-bottom: 0; }
 
 @media screen and (min-width: 900px) {
-	.blog-pad {
+	.blog-pad, .corp-docs {
 		padding: 2rem 16vw 4rem 8vw;
 	}
 	.blog-pad p, .blog-pad pre { font-size: 1.12rem; line-height: 1.4em;}
@@ -138,21 +149,21 @@ body, html { margin: 0; box-sizing: border-box; }
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
-	.blog-pad { padding: 2rem 12vw 4rem 8vw; }
+	.blog-pad, .corp-docs { padding: 2rem 12vw 4rem 8vw; }
 	.blog-pad p { font-size: 1.12rem; line-height: 1.4em;}
 	.blog-pad h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
 	.blog-pad h4 { font-size: 1.8rem;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
-	.blog-pad { padding: 2rem 4.8vw 4rem 4.8vw;}
+	.blog-pad, .corp-docs { padding: 2rem 4.8vw 4rem 4.8vw;}
 	.blog-pad p { font-size: 1.12rem; line-height: 1.4em;}
 	.blog-pad h1 { font-size: 2.4rem; font-weight: 700;  margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem; }
 	.blog-pad h4 { font-size: 1.56rem;}
 }
 
 @media screen and (max-width: 575px) {
-	.blog-pad { padding: 2rem 3.6vw 4rem 3.6vw;}
+	.blog-pad, .corp-docs { padding: 2rem 3.6vw 4rem 3.6vw;}
 	.blog-pad p { font-size: 1.12rem; line-height: 1.4em;}
 	.blog-pad h1 { font-size: 2.4rem; font-weight: 700;  margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem; }
 	.blog-pad h4 { font-size: 1.4rem;}
@@ -222,7 +233,6 @@ body, html { margin: 0; box-sizing: border-box; }
 	.dhiti-post p { font-size: 24px; line-height: 1.4em; margin: 6px 0 16px 0;}
 	.dhiti-post h4 { margin-top: 8px; margin-bottom: 0; font-weight: 800;}
 	.dhiti-post h5 { margin-top: 0; margin-left: 1rem; margin-bottom: 16px;}
-	.hindi h5 { margin-bottom: 0;}
 	.dhiti-post blockquote { padding-top: 8px; padding-right: 1rem; margin-right: 4rem;}
 }
 
@@ -242,4 +252,51 @@ body, html { margin: 0; box-sizing: border-box; }
 .outlinebutton:hover { border: 2px solid var(--blue); color: var(--blue);}
 .outlineutton a {letter-spacing: 0px;font-weight: bold; font-size: 1.12rem; color: var(--red); }
 .outlinebutton:hover a, .outlinebutton a:hover { color: var(--blue) !important;}
-.blog-pad button a { color: var(--red);}
+.blog-pad button a, .corp-docs button a { color: var(--red);}
+
+/*corp-docs typography*****************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.hindi { font-family: 'Noto Serif Devanagari', serif;}
+
+.corp-docs h1 { margin-top: 0; font-weight: 700; border-bottom: 1px solid #e1e1e1; padding-bottom: 8px;}
+.corp-docs p, .corp-docs li { color: #676767; }
+.corp-docs a { color: var(--red);}
+.corp-docs blockquote { font-style: italic; color: #676767; border-left: 2px solid var(--red); }
+.corp-docs ul, .corp-docs ol { margin-left: 0; padding-left: 1rem;}
+.corp-docs li { margin-bottom: 8px;}
+.corp-docs p, .corp-docs h5 { margin-top: 0; margin-bottom: 1rem;}
+.corp-docs h4 { border-top: 1px solid #e1e1e1; padding-top: 16px; margin-bottom: 1rem; margin-top: 1rem;}
+.corp-docs h5 { color: #878787;}
+.corp-docs blockquote cite { text-transform: uppercase; font-style: normal; font-size: 14px; margin-top: 0;}
+
+@media screen and (min-width: 900px) {
+	.corp-docs h1 { font-size: 3rem;}
+	.corp-docs p, .corp-docs li { font-size: 1.2rem; line-height: 1.4em;}
+	.corp-docs h4 { font-size: 1.8rem;}
+	.corp-docs h5 { font-size: 1.32rem;}
+	.corp-docs blockquote { margin-bottom: 2rem; margin-top: 1rem; padding-left: 1rem; margin-left: 4rem; padding-top: 0; line-height: 1.12em;}
+}
+
+@media screen and (max-width:899px) and (min-width: 768px) {
+	.corp-docs h1 { font-size: 2.4rem;}
+	.corp-docs p, .corp-docs li { font-size: 1.12rem; line-height: 1.4em;}
+	.corp-docs h4 { font-size: 1.6rem;}
+	.corp-docs h5 { font-size: 1.32rem;}
+	.corp-docs blockquote { margin-bottom: 2rem; margin-top: 1rem; padding-left: 1rem; margin-left: 2rem; padding-top: 0; line-height: 1.12em;}
+}
+
+@media screen and (max-width: 767px) and (min-width: 576px) {
+	.corp-docs h1 { font-size: 2.4rem;}
+	.corp-docs p, .corp-docs li { font-size: 1.12rem; line-height: 1.4em;}
+	.corp-docs h4 { font-size: 1.48rem;}
+	.corp-docs h5 { font-size: 1.32rem;}
+	.corp-docs blockquote { margin-bottom: 2rem; margin-top: 1rem; padding-left: 1rem; margin-left: 2rem; padding-top: 0; line-height: 1.12em;}
+}
+
+@media screen and (max-width: 575px) {
+	.corp-docs h1 { font-size: 2.4rem;}
+	.corp-docs p, .corp-docs li { font-size: 1.12rem; line-height: 1.4em;}
+	.corp-docs h4 { font-size: 1.48rem;}
+	.corp-docs h5 { font-size: 1.24rem;}
+	.corp-docs blockquote { margin-bottom: 2rem; margin-top: 1rem; padding-left: 1rem; margin-left: 1rem; padding-top: 0; line-height: 1.12em;}
+}

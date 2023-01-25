@@ -6,8 +6,8 @@ title: What Śrī Kṛṣṇa Means to Us
 यतो धर्मस्ततो कृष्णः यतो कृष्णः ततो जयः।
 </h5>
 
-#### Where there is Dharma, there is Kṛṣṇa,  
-#### Where there is Kṛṣṇa, there is victory.
+##### Where there is Dharma, there is Kṛṣṇa,  
+##### Where there is Kṛṣṇa, there is victory.
 
 > “Put down the truest word you know, you will be the greatest writer.”<br>
 > <cite>– ERNEST HEMINGWAY</cite> 

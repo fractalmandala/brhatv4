@@ -4,7 +4,7 @@ title: Pratijñā
 
 At Bṛhat, while we take on the ambition of designing the self-perpetuating civilizational moment, we are humbly mindful that our ācāra-vyavahāra must be refined. The values an organisation imbibes define its character, and on matters of value and ethic our tradition has much to offer- a single chapter of the Bhagavad Gītā lists 26 virtues for example. Our values are thus a minimum benchmark- a threshold we profess to keep sacred as individuals and organisation even as we strive for more.
 
-##### 1 - Satya and Maitri (Truth and Kindness)
+#### 1 - Satya and Maitri (Truth and Kindness)
 
 Articulation of truth should be kind. Our fundamental identity is a sincere pursuit of truth, and the ability to live that with kindness. There are facts, and there is truth. Facts are true when transposed via kindness, and one must cultivate the ability to discern this.
 
@@ -18,7 +18,7 @@ Articulation of truth should be kind. Our fundamental identity is a sincere purs
 यं च नानृतं ब्रूयादेष धर्मः सनातनः ॥
 </h5>
 
-##### 2 - Saundarya and Samiti (Beauty and Harmony)
+#### 2 - Saundarya and Samiti (Beauty and Harmony)
 
 Whatever we do, there will be emphasis on beauty and harmony- these are complementary. There will be beauty in our living, in our research, in our writing. Whatever processes that bṛhat wants to design into the civilizational moment need aim for these.
 
@@ -30,7 +30,7 @@ Whatever we do, there will be emphasis on beauty and harmony- these are compleme
 विद्याहीना न शोभन्ते निर्गन्धा इव किंशुकाः ॥
 </h5>
 
-##### 3 - Vyaṣṭi and Samaṣṭi (Fractal and Networked)
+#### 3 - Vyaṣṭi and Samaṣṭi (Fractal and Networked)
 
 We understand linkages between things and how they group up. bṛhat will grow by an ability to integrate. None of us is better than all of us, and our collective output will be larger than the sum of us. A civilizational mahāvākya leads us here.
 
@@ -42,7 +42,7 @@ We understand linkages between things and how they group up. bṛhat will grow b
 यथा ब्रह्मण्डे तथा पिंडे ॥
 </h5>
 
-##### 4 - Medha and Viveka (Wisdom and Discernment)
+#### 4 - Medha and Viveka (Wisdom and Discernment)
 
 To deliberate upon and cultivate excellence actively is a given at bṛhat, but what informs our discernment? How and when do we say yes or no to a project, a person, a plan? When and where do we say this? An ability to emphasise on discernment is the key to our fourth cornerstone. A differentiated, contextual and sustainable framework based on dharma will be our solution.
 

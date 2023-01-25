@@ -23,7 +23,7 @@ export async function getEssentials(){
 	<button class="dropdown"><h5><b class="isorange">| </b>All Books</h5></button>
 		<div class="base-block">
 			{#each data as item}
-			<p><a href="/drashta/books/{item.slug}">{item.Text}</a></p>
+			<p><a href="/openlibrary/book/{item.slug}">{item.Text}</a></p>
 			{/each}
 		</div>
 		{:catch error}
