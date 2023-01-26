@@ -9,6 +9,12 @@ let data = [
 	}
 ]
 let isAnswer = Array(data.length).fill(false);
+let isToggle = Array(data.length).fill(false);
+
+function toggleFunction(index) {
+	isToggle[index] = !isToggle[index];
+}
+
 function showAnswer(index) {
 	isAnswer[index] = true;
 }
@@ -30,20 +36,18 @@ export async function Faq(){
 {#await Faq()}
 <small>...</small>
 {:then data}
-<div class="blog-pad">
 <h1>Frequently Asked Questions</h1>
 {#each data as item, i}
-<div class="upper"  on:mouseenter={() => showAnswer(i)} on:mouseleave={() => hideAnswer(i)}>
-	<img src="/images/socialicons/accordion.png" alt="icon"/>
+<div class="upper"  on:click={() => toggleFunction(i)} on:keydown={() => toggleFunction(i)}>
+	<img src="/images/icons/accordion.png" alt="icon"/>
 	<p class="m0"><b>{item.name}</b></p>
 </div>
-	{#if isAnswer[i]}
+	{#if isToggle[i]}
 	<p class="answer"
 		transition:slide="{{delay: 100, duration: 300, easing: cubicIn}}"
 	>{item.content}</p>
 	{/if}
 {/each}
-</div>
 {:catch error}
 <pre>{error}</pre>
 {/await}
@@ -53,7 +57,7 @@ export async function Faq(){
 .upper {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: flex-start;
 	width: 100%;
 	margin-top: 0;
 	margin-bottom: 8px;

@@ -77,13 +77,10 @@ export async function fetchFacilitator(){
 		<h1>Introduction to sita ram goel</h1>
 	</div>
 </div>
+<div class="primecontainer-row">
+<div class="pagesheet">
 <div class="blog-pad">
 <pre>{item.content}</pre>
-</div>
-{/each}
-{:catch error}
-<pre>{error}</pre>
-{/await}
 <div class="blog-pad" id="secondpad">
 <h4 id="secondpad-h4-1">Course Details</h4>
 {#await fetchDetails()}
@@ -155,6 +152,13 @@ export async function fetchFacilitator(){
 <pre>{error}</pre>
 {/await}
 </div>
+</div>
+</div>
+</div>
+{/each}
+{:catch error}
+<pre>{error}</pre>
+{/await}
 
 
 <style>

@@ -3,10 +3,9 @@
 
 import { onMount } from 'svelte'
 import Footer from '$lib/components/globals/Footer.svelte'
-import Header from '$lib/components/globals/Header.svelte'
 import AOS from 'aos';
-import '$lib/styles/globals.css'
 import '$lib/styles/componentstyles.css'
+import '$lib/styles/globals.css'
  import 'aos/dist/aos.css'; // You can also use <link> for styles
  // ..
  onMount(() => {
@@ -19,14 +18,12 @@ import '$lib/styles/componentstyles.css'
       	image.style.transform = `rotate(${rotation}deg)`;
     	}
 		}
+		AOS.init();
+    AOS.refresh();
   }) 
 
- if (typeof window !== 'undefined') {
-    AOS.init();
-    AOS.refresh();
-  }
 </script>
 
-<Header></Header>
-  <slot></slot>
+
+<slot></slot>
 <Footer></Footer>

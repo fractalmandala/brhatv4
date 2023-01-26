@@ -22,18 +22,16 @@ async function anveshiVids(){
 }
 </script>
 
-<div class="blog-pad">
+<div class="corp-docs">
 <h1>Anveṣī Travel Diaries<br>
-<cite>submissions from fellow anveṣīs</cite>
 </h1>
-<h5>Karnataka Travel Diary</h5>
+<h4>Karnataka Travel Diary</h4>
 <p>an essay by <a href="https://twitter.com/Vajrapani4" target="_blank" rel="noreferrer">Kriteesh Vajrapani</a></p>
 <button class="outlinebutton"><a href="/anveshi/diaries/kriteesh">Read</a></button>
-<div class="sectioner mt2"></div>
 {#await travelDiary()}
 <small>...</small>
 {:then data}
-<h5>Artwork Inspired by the Hoysala Temples</h5>
+<h4>Artwork Inspired by the Hoysala Temples</h4>
 <p>by <a href="https://twitter.com/AshishKundalia" target="_blank" rel="noreferrer">Ashish Kundalia</a></p>
 <div class="base-row">
 	{#each data as item}
@@ -50,8 +48,7 @@ async function anveshiVids(){
 {#await anveshiVids()}
 <small>...</small>
 {:then data}
-<div class="sectioner mt2"></div>
-<h5>Video Testimonials</h5>
+<h4>Video Testimonials</h4>
 <p>view on <a href="https://www.youtube.com/watch?v=avph4IjI6Ig&list=PLMUDDn9Mulpxxqr6Gd-8H0NBNg9I84vR7" target="_blank" rel="noreferrer">YouTube</a></p>
 <div class="base-row">
 	{#each data as item}
@@ -75,8 +72,7 @@ async function anveshiVids(){
 
 
 <style>
-h1, h1 cite { line-height: 1em; margin-bottom: 0; margin-top: 0;}	
-h1 cite { font-variant: small-caps; font-size: 16px; font-weight: 400; letter-spacing: 0px; font-style: normal; color: #a7a7a7;}
+h1 { line-height: 1em; margin-bottom: 0; margin-top: 0;}	
 p { margin-top: 0; }
 a { color: #fe4a49;}
 .base-col { width: 22%;}

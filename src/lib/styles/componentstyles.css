@@ -45,39 +45,43 @@ body, html { margin: 0; box-sizing: border-box; }
 .allcap { text-transform: uppercase;}
 .iswhite { color: white;}
 .isred, .isred:hover { color: #FE4A49; }
+.isblue { color: var(--blue);}
 .isorange { color: #4F9D69;}
 .background { background-color: #f8f8f8; transition: all 0.18s var(--snap) ;}
 .background:hover { background-color: #FFFFFF; box-shadow: 5px 8px 14px #e4e4e4, -5px -4px 12px #f1f1f1;}
+.side-bar p:hover a { color: var(--red);}
 
 @media screen and (min-width: 900px) {
-	.side-bar { width: 20vw; display: flex; padding-left: 2rem; padding-top: 2rem; }
+	.side-bar { width: 0vw; display: flex; padding-left: 1.48rem; padding-right: 1rem; padding-top: 2rem; }
 	.side-bar2 { width: 22vw; display: flex; padding-left: 2rem; padding-top: 2rem; padding-right: 1rem; }
 	.side-bar h5, .side-bar2 h5 { line-height: 2rem;}
 	.side-bar p, .side-bar2 p { margin-top: 0; margin-bottom: 4px; }
-	.base-col h5 { font-size: 1.24rem;}
-	.base-col p, .base-col pre { font-size: 1rem; line-height: 1.24rem; margin-bottom: 1.44rem;}
 	.base-col:hover h5:hover a { color: var(--blue);}
-	.base-col small { text-transform: capitalize; font-size: 12px; color: #255F85;}
-	.pagesheet { width: calc(80vw - 8px); }
+	.base-col small { text-transform: capitalize; color: #255F85;}
+	.pagesheet { width: 100vw; }
 	.pagesheet2 { width: calc(78vw - 8px); padding: 2rem 8vw 4rem 8vw; }
-	.pagesheet2 h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem; }
+	.pagesheet2 h1 { font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem; }
 	.base-row { flex-direction: row; gap: 24px;}
 	.px4 { padding-left: 4rem; padding-right: 4rem;}
 	.mx4 { margin-left: 4rem; margin-right: 4rem;}
+	.mx2 { margin-left: 2rem; margin-right: 2rem;}
+	.px2 { padding-left: 2rem; padding-right: 2rem;}
 	.py2 { padding-top: 2rem; padding-bottom: 2rem;}
 	.px1 { padding-left: 0.75rem; padding-right: 0.75rem;}
 	.p1 { padding: 12px 8px; }
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
-	.side-bar, .side-bar2 { width: 20vw; display: flex; padding-left: 1.6rem; }
+	.side-bar, .side-bar2 { width: 0vw; display: flex; padding-left: 1.2rem; padding-right: 0.8rem; }
 	.side-bar h5 { line-height: 2rem;}
 	.side-bar p { margin-top: 0; margin-bottom: 4px; }
-	.pagesheet, .pagesheet2 { width: calc(80vw - 8px); }
+	.pagesheet, .pagesheet2 { width: 100vw; }
 	.pagesheet2 { padding: 2rem 4vw 4rem 4vw;}
-	.pagesheet2 h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
+	.pagesheet2 h1 { font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
 	.px4 { padding-left: 3.2rem; padding-right: 3.2rem;}
+	.px2 { padding-left: 1.2rem; padding-right: 1.2rem;}
 	.mx4 { margin-left: 3.2rem; margin-right: 3.2rem;}
+	.mx2 { margin-left: 1.2rem; margin-right: 1.2rem;}
 }
 
 @media screen and (max-width: 767px) {
@@ -85,20 +89,27 @@ body, html { margin: 0; box-sizing: border-box; }
 	.pagesheet { width: calc(100% - 8px); margin-left: 4px; padding-top: 4.8rem;}
 	.px4 { padding-left: 2.4rem; padding-right: 2.4rem;}
 	.mx4 { margin-left: 2.4rem; margin-right: 2.4rem;}
+	.mx2 { margin-left: 1rem; margin-right: 1rem;}
+	.px2 { padding-left: 1rem; padding-right: 1rem;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
+	.pagesheet { width: calc(100% - 8px); margin-left: 4px;}
 	.pagesheet2 { padding: 6.8rem 6.4vw 4rem 4.8vw; width: calc(100% - 8px); margin-left: 4px; }
-	.pagesheet2 h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
+	.pagesheet2 h1 { font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
 	.px4 { padding-left: 2rem; padding-right: 2rem;}
 	.mx4 { margin-left: 2rem; margin-right: 2rem;}
+	.mx2 { margin-left: 1rem; margin-right: 1rem;}
+	.px2 { padding-left: 1rem; padding-right: 1rem;}
 }
 
 @media screen and (max-width: 575px) {
 	.pagesheet2 { padding: 6.8rem 6.4vw 4rem 4.8vw;}
-	.pagesheet2 h1 { font-size: 2.6rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem;}
+	.pagesheet2 h1 { font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem;}
 	.px4 { padding-left: 1rem; padding-right: 1rem;}
 	.mx4 { margin-left: 1rem; margin-right: 1rem;}
+	.mx2 { margin-left: 1rem; margin-right: 1rem;}
+	.px2 { padding-left: 1rem; padding-right: 1rem;}
 }
 
 /************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -118,7 +129,7 @@ body, html { margin: 0; box-sizing: border-box; }
 }
 
 @media screen and (max-width: 767px) {
-	.primecontainer-row { flex-direction: column; }
+	.primecontainer-row { flex-direction: column; padding-top: 96px;}
 	.primecontainer-inrow { flex-direction: column; }
 	.imagecontainer-hero { width: calc(100vw - 8px); height: calc(100vh - 8px); margin-left: 4px; margin-top: 4px; }
 }
@@ -132,46 +143,30 @@ body, html { margin: 0; box-sizing: border-box; }
 	padding-top: 2rem;
 }
 
-.blog-pad p { color:#878787; margin-top: 6px; margin-bottom: 8px;}
-.blog-pad pre { color: #878787; }
-.blog-pad h3 {border-bottom: 4px solid var(--blue); margin-top: 0; padding-bottom: 1rem; margin-bottom: 0;}
-.blog-pad h4 { color: #676767; font-weight: 900; margin-bottom: 0; }
 
 @media screen and (min-width: 900px) {
-	.blog-pad, .corp-docs {
+	.blog-pad{
 		padding: 2rem 16vw 4rem 8vw;
 	}
-	.blog-pad p, .blog-pad pre { font-size: 1.12rem; line-height: 1.4em;}
-	.blog-pad h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
-	.blog-pad h3 { font-size: 2.56rem;}
-	.blog-pad h4 { font-size: 1.8rem;}
-	.blog-pad h5 { font-size: 1.2rem;}
+	.corp-docs { padding: 2rem 4vw;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
-	.blog-pad, .corp-docs { padding: 2rem 12vw 4rem 8vw; }
-	.blog-pad p { font-size: 1.12rem; line-height: 1.4em;}
-	.blog-pad h1 { font-size: 3rem; font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
-	.blog-pad h4 { font-size: 1.8rem;}
+	.blog-pad { padding: 2rem 12vw 4rem 8vw; }
+	.corp-docs { padding: 2rem 2vw;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
-	.blog-pad, .corp-docs { padding: 2rem 4.8vw 4rem 4.8vw;}
-	.blog-pad p { font-size: 1.12rem; line-height: 1.4em;}
-	.blog-pad h1 { font-size: 2.4rem; font-weight: 700;  margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem; }
-	.blog-pad h4 { font-size: 1.56rem;}
+	.blog-pad, .corp-docs { padding: 2rem 2vw 4rem 2vw;}
 }
 
 @media screen and (max-width: 575px) {
-	.blog-pad, .corp-docs { padding: 2rem 3.6vw 4rem 3.6vw;}
-	.blog-pad p { font-size: 1.12rem; line-height: 1.4em;}
-	.blog-pad h1 { font-size: 2.4rem; font-weight: 700;  margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem; }
-	.blog-pad h4 { font-size: 1.4rem;}
+	.blog-pad, .corp-docs { padding: 2rem 0 4rem 0;}
 }
 
 /************************************************************************************************************************************************************************************************************************************************************************************************/
 
-.swiper { height: 100%; width: 100%; position: relative; }
+.swiper { height: 100%; width: 100%; position: relative; overflow: hidden; }
 .swiper-slide { display: flex; overflow: hidden;}
 .swiper-button {
   width: 32px;
@@ -248,15 +243,20 @@ body, html { margin: 0; box-sizing: border-box; }
 
 /*buttons***********************************************************************************************************************************************************************************************************************************************************************************************/
 
-.outlinebutton { background: none; border: 2px solid var(--red); width: max-content; color: var(--red); margin: 0; font-weight: bold; font-size: 1.12rem;}
+.outlinebutton { background: none; border: 2px solid var(--red); width: max-content; color: var(--red); margin: 0; font-weight: 500; font-size: 1rem; text-align: center;}
 .outlinebutton:hover { border: 2px solid var(--blue); color: var(--blue);}
-.outlineutton a {letter-spacing: 0px;font-weight: bold; font-size: 1.12rem; color: var(--red); }
+.outlineutton a {letter-spacing: 0px;font-weight: bold; font-size: 1rem; color: var(--red); }
 .outlinebutton:hover a, .outlinebutton a:hover { color: var(--blue) !important;}
 .blog-pad button a, .corp-docs button a { color: var(--red);}
+.isblack { color: #474747;}
+
+@media screen and (max-width: 899px) and (min-width: 768px) {
+	.outlinebutton { padding: 6px 16px;}
+}
 
 /*corp-docs typography*****************************************************************************************************************************************************************************************************************************************************************************************************/
 
-.hindi { font-family: 'Noto Serif Devanagari', serif;}
+.hindi { font-family: 'Noto Serif Devanagari', serif; }
 
 .corp-docs h1 { margin-top: 0; font-weight: 700; border-bottom: 1px solid #e1e1e1; padding-bottom: 8px;}
 .corp-docs p, .corp-docs li { color: #676767; }
@@ -265,38 +265,79 @@ body, html { margin: 0; box-sizing: border-box; }
 .corp-docs ul, .corp-docs ol { margin-left: 0; padding-left: 1rem;}
 .corp-docs li { margin-bottom: 8px;}
 .corp-docs p, .corp-docs h5 { margin-top: 0; margin-bottom: 1rem;}
-.corp-docs h4 { border-top: 1px solid #e1e1e1; padding-top: 16px; margin-bottom: 1rem; margin-top: 1rem;}
-.corp-docs h5 { color: #878787;}
+.base-col h5 { margin-top: 1em; margin-bottom: 0.24em;}
+h4 { border-top: 1px solid #e1e1e1; padding-top: 16px; margin-bottom: 1rem; margin-top: 1rem;}
+.isgrey { color: #878787;}
 .corp-docs blockquote cite { text-transform: uppercase; font-style: normal; font-size: 14px; margin-top: 0;}
+.corp-docs cite, .corp-docs h5 cite, cite { font-size: 14px; font-style: normal; color: #878787;}
+.ft14 { font-size: 14px !important; }
+.wd100 { width: 100%; }
+.base-col small { margin-top: 0;}
+.base-col p { margin-top: 1rem;}
+.blog-pad p, .blog-pad pre { color:#878787; margin-top: 6px; margin-bottom: 8px;}
+.blog-pad pre { color: #878787; }
+.blog-pad h3 {border-bottom: 4px solid var(--blue); margin-top: 0; padding-bottom: 1rem; margin-bottom: 0;}
+.type-small { font-weight: bold; text-transform: uppercase;}
+
+pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
 
 @media screen and (min-width: 900px) {
-	.corp-docs h1 { font-size: 3rem;}
-	.corp-docs p, .corp-docs li { font-size: 1.2rem; line-height: 1.4em;}
-	.corp-docs h4 { font-size: 1.8rem;}
-	.corp-docs h5 { font-size: 1.32rem;}
+	.cc-left { text-align: center;}
+	.text-pads { padding: 0 26vw 0 8vw;}
+	.full-pads { padding: 0 8vw;}
+	.in-card { font-size: 1rem;}
+	.blog-pad p, .blog-pad pre { font-size: 1.12rem; line-height: 1.4em;}
+	.blog-pad h3 { font-size: 2.56rem;}
+	h4 { font-size: 1.8rem;}
+	h1 { font-size: 3rem;}
+	.corp-docs p, .corp-docs li, .corp-docs pre { font-size: 1.2rem; line-height: 1.4em;}
+	.base-col p, .base-col pre { font-size: 1rem; line-height: 1.2rem;}
+	.card { padding: 1rem 2rem;}
+	h5 { font-size: 1.32rem; line-height: 1.2em; font-weight: 600;}
 	.corp-docs blockquote { margin-bottom: 2rem; margin-top: 1rem; padding-left: 1rem; margin-left: 4rem; padding-top: 0; line-height: 1.12em;}
 }
 
 @media screen and (max-width:899px) and (min-width: 768px) {
-	.corp-docs h1 { font-size: 2.4rem;}
-	.corp-docs p, .corp-docs li { font-size: 1.12rem; line-height: 1.4em;}
-	.corp-docs h4 { font-size: 1.6rem;}
-	.corp-docs h5 { font-size: 1.32rem;}
+	.cc-left { text-align: center;}
+	.text-pads { padding: 0 24vw 0 4vw;}
+	.full-pads { padding: 0 4vw;}
+	.in-card { font-size: 12px;}
+	.blog-pad p, .blog-pad pre { font-size: 1.12rem; line-height: 1.4em;}
+	h4 { font-size: 1.8rem;}
+	.card { padding: 1rem;}
+	h1 { font-size: 2.4rem;}
+	.corp-docs p, .corp-docs li, .corp-docs pre { font-size: 1.12rem; line-height: 1.4em;}
+	h5 { font-size: 1.24rem; line-height: 1.2em; font-weight: 600;}
 	.corp-docs blockquote { margin-bottom: 2rem; margin-top: 1rem; padding-left: 1rem; margin-left: 2rem; padding-top: 0; line-height: 1.12em;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
-	.corp-docs h1 { font-size: 2.4rem;}
-	.corp-docs p, .corp-docs li { font-size: 1.12rem; line-height: 1.4em;}
-	.corp-docs h4 { font-size: 1.48rem;}
-	.corp-docs h5 { font-size: 1.32rem;}
+	.cc-left { text-align: center;}
+	.text-pads, .full-pads { padding: 0 1vw;}
+	.card { padding: 1rem;}
+	.blog-pad p, .blog-pad pre { font-size: 1.12rem; line-height: 1.4em;}
+	h1 { font-size: 2.4rem;}
+	.corp-docs p, .corp-docs li, .corp-docs pre { font-size: 1.12rem; line-height: 1.4em;}
+	h4 { font-size: 1.8rem;}
+	h5 { font-size: 1.24rem; line-height: 1.2em; font-weight: 600;}
 	.corp-docs blockquote { margin-bottom: 2rem; margin-top: 1rem; padding-left: 1rem; margin-left: 2rem; padding-top: 0; line-height: 1.12em;}
 }
 
 @media screen and (max-width: 575px) {
-	.corp-docs h1 { font-size: 2.4rem;}
-	.corp-docs p, .corp-docs li { font-size: 1.12rem; line-height: 1.4em;}
-	.corp-docs h4 { font-size: 1.48rem;}
-	.corp-docs h5 { font-size: 1.24rem;}
+	.temp-pads { padding: 0 1em;}
+	.cc-left { text-align: left;}
+	.text-pads, .full-pads { padding: 0 1rem;}
+	.blog-pad p, .blog-pad pre { font-size: 1.12rem; line-height: 1.4em;}
+	h1 { font-size: 2rem; letter-spacing: 0px;}
+	.corp-docs p, .corp-docs li, .base-col p, .base-col pre, .corp-docs pre { font-size: 1.12rem; line-height: 1.4em;}
+	h4 { font-size: 1.6rem;}
+	h5 { font-size: 1.24rem; line-height: 1.2em; font-weight: 600;}
 	.corp-docs blockquote { margin-bottom: 2rem; margin-top: 1rem; padding-left: 1rem; margin-left: 1rem; padding-top: 0; line-height: 1.12em;}
 }

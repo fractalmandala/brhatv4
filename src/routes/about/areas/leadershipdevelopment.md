@@ -3,15 +3,12 @@ title: Leadership Development
 image: "/images/areas-ld.webp"
 ---
 
-<div class="hindi">
-<h5>लौकिकानां हि साधूनाम् अर्थं वागनुवर्तते।<br>
+<h5 class="hindi">लौकिकानां हि साधूनाम् अर्थं वागनुवर्तते।<br>
 ऋषीणां पुनराद्यानां वाचमर्थोनुधावति ॥</h5>
-</div>
 
-<h5>In the case of ordinary beings, the words follow the meaning. <br>   
+<h5>In the case of ordinary beings, the words follow the meaning.<br> 
 For ṛṣis, the meaning follows their words.<br>
-<cite class="t-left">उत्तररामचरितम्; भवभूति | Uttararāmacaritam; Bhavabhūti</cite>
-</h5>
+<cite class="t-left"><span class="hindi ft14">उत्तररामचरितम्; भवभूति |</span> Uttararāmacaritam; Bhavabhūti</cite></h5>
 
 
 An 8th century Indian poet made a ‘Truth claim’. He would have us believe that what the ṛṣis speak, becomes the Truth. He sees it as clearly as daylight from his reading of Rāmāyaṇa.
@@ -28,15 +25,13 @@ An impossible ideal that is held up as perfection, an exemplar to try and emulat
 
 That is of the ṛṣis, but what of the Kings. Surely, they are more ‘pragmatic’.
 
-<div class="hindi">
-<h5>
+<h5 class="hindi">
 कृतं त्रेतायुगं चैव द्वापरं कलिरेव च । <br>
 राज्ञो वृत्तानि सर्वाणि राजा हि युगमुच्यते ॥
 </h5>
-</div>
 
 <h5>The actions of the king constitute the Kṛta, the Tretā, the Dvāpara and the Kali cycles; as it is the king that is called the ‘cycle.’<br>
-<cite>मनुस्मृति | Manusmṛti 301 – 302</cite></h5>
+<cite><span class="hindi ft14">मनुस्मृति |</span> Manusmṛti 301 – 302</cite></h5>
 
 The king is called ‘the cycle’, a force who shapes time through action. Does the modern mind have a theory of time to grasp the import, can it take an intuitive leap to ‘perceive’ the multi-dimensional nature of time and its complexity.
 

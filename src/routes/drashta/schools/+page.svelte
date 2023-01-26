@@ -1,6 +1,5 @@
 <script>
 import supabase from '$lib/db'
-import DrashtaSide from '$lib/components/globals/DrashtaSide.svelte'
 import { Swiper, SwiperSlide } from 'swiper/svelte'
 import { Keyboard, Navigation } from 'swiper'
 import 'swiper/css'
@@ -18,7 +17,6 @@ export async function getSchools(){
 </script>
 
 <div class="primecontainer-row">
-<DrashtaSide></DrashtaSide>
 <div class="pagesheet2">
 <h1>The Schools of Thought</h1>
 {#await getSchools()}

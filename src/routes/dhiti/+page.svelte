@@ -1,45 +1,24 @@
 <script>
-import supabase from '$lib/db'
-export async function latestDhiti(){
-	const { data, error } = await supabase
-	.from('brhat-dhiti')
-	.select()
-	.order('sequence',{ascending: false})
-	.limit(1)
-	if (error) throw new Error(error.message)
-	return data
-}
 
-export async function nextDhiti(){
-	const { data, error } = await supabase
-	.from('brhat-dhiti')
-	.select()
-	.order('sequence',{ascending: false})
-	.range(1,3)
-	.limit(3)
-	if (error) throw new Error(error.message)
-	return data
-}
+/**
+	 * @type {{ posts: any; }}
+	 */
+ export let data
 
-export async function listDhiti(){
-	const { data, error } = await supabase
-	.from('brhat-dhiti')
-	.select()
-	.order('sequence',{ascending: false})
-	.range(4,9)
-	.limit(6)
-	if (error) throw new Error(error.message)
-	return data
-}
 </script>
 
 
 <div class="primecontainer-col">
-<div class="base-col col1">
-<img src="/images/brhatlogos/blackwhite/dhiti-white.png" alt="dhiti" />
-</div>
 <div class="primecontainer-inrow pt2">
 <div class="side-dhiti colA">
+{#each data.posts as post}
+<h2>
+        <a href={post.path}>
+          {post.meta.title}
+        </a>
+ </h2>
+{/each}
+<!--
 {#await listDhiti()}
 <small>...</small>
 {:then data}
@@ -91,13 +70,13 @@ export async function listDhiti(){
 {:catch error}
 <pre>{error}</pre>
 {/await}
+-->
+
 </div>
 </div>
 </div>
 
 <style>
-.col1 img { width: 240px; object-fit: contain;}
-.col1 { height: 160px; align-items: center; justify-content: flex-end; border-bottom: 1px solid #e1e1e1; width: calc(100% - 64px); margin-left: 32px;}
 .source { font-weight: 900;}
 .colpost img { border-radius: 6px;}
 .colpost h3, .colpost h3 a { transition: all 0.18s var(--cube4);}
@@ -107,6 +86,7 @@ export async function listDhiti(){
 .mainpost { border-top: 1px solid #d7d7d7;}
 
 @media screen and (min-width: 900px) {
+	.primecontainer-inrow { margin-top: 88px;}
 	.colA { width: 24vw; padding: 0 2rem;}
 	.colB { width: 46vw; padding: 0 2rem;}
 	.colC { width: 30vw; padding: 0 2rem 0 2rem;}

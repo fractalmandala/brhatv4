@@ -1,6 +1,5 @@
 <script>
 import supabase from '$lib/db'
-import DrashtaSide from '$lib/components/globals/DrashtaSide.svelte'
 import { fly } from 'svelte/transition'
 import { expoOut } from 'svelte/easing'
 export async function getDrashtas(){
@@ -32,7 +31,6 @@ function toggleText(index) {
 </script>
 
 <div class="primecontainer-row">
-<DrashtaSide></DrashtaSide>
 <div class="pagesheet2">
 <h1>Draṣṭās that Inspire Us</h1>
 {#await getDrashtas()}

@@ -6,7 +6,7 @@
 </script>
 
 
-<div class="blog-pad">
+<div class="corp-docs">
 <h1>{data.title}</h1>
 <svelte:component this={data.content} />
 </div>

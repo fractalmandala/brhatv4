@@ -69,12 +69,6 @@ export async function odisha(){
 <pre>{error}</pre>
 {/await}
 
-<style>
-@media screen and (min-width: 900px) {
-	.base-col { width: 100%;}
-	.imagecontainer { width: 100%; height: 400px; background-size: cover; background-position: center center; }
-	#navbuttons { margin-top: -2.8rem; z-index: 2;}
-}
-</style>
+
 
 
