@@ -6,29 +6,30 @@
    <button><a href="/about/areas/policyresearch">Policy Research</a></button>
  </div>
  <div class="gencol" id="col3">
-   <button><a href="/about/areas/leadershipdevelopment">Leadership Development</a></button>
+   <button class="trans-red"><a href="/about/areas/leadershipdevelopment">Leadership Development</a></button>
  </div>
 </div>
 
 <style>
 .genrow { display: flex;}
 
- button { 
-   z-index: 3;
-   cursor: pointer;
-   background: rgba(0,0,0,0.0);
-   backdrop-filter: blur(0.3);
-   border-radius: 4px;
-   opacity: 0.5;
-   border: 1px solid white;
-   color: white;
-   font-weight: 500;
-   letter-spacing: 0;
-   padding: 8px 16px;
-   transform-origin: center center;
+button { 
+  z-index: 3;
+  cursor: pointer;
+  background: rgba(0,0,0,0.0);
+  backdrop-filter: blur(0.3);
+  border-radius: 4px;
+  border: 1px solid white;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0;
+  padding: 8px 16px;
+  transform-origin: center center;
 	text-transform: uppercase;
-   transition: all 0.12s ease-in-out;
- }
+  transition: all 0.12s ease-in-out;
+}
+
+button a { color: white;}
 
  button:hover {
   background: rgba(0,0,0,0.8);

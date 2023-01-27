@@ -64,62 +64,7 @@ code { font-family: 'JetBrains Mono', monospace; color: #878787; margin-bottom: 
 .bdr { border: 1px solid red; }
 .sheet1 h3, .sheet1 h5, .sheet1 h4 { color: var(--green);}
 
-button {
-	background: linear-gradient(to right,#fe4a49,#fe4a49,#EA2E5B);
-	padding: 0.64rem 2rem;
-	border-radius: 4px;
-	border: none;
-	font-size: 1rem;
-	font-weight: 500;
-	text-transform: capitalize;
-	transform-origin: center center;
-	color: white;
-	transition: all 0.18s var(--cube4);
-	margin-top: 1.6rem;
-	margin-bottom: 1rem;
-	position: relative;
-	overflow: hidden;
-	cursor: pointer;
-}
 
-button, button a, button:hover a, button a:hover { color: white; text-decoration: none;}
-button:hover { 
-transform: scale(0.9);
-}
-
-button::after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin-left: 0%;
-	margin-right: 0%;
-	content: '';
-	opacity: 0;
-	width: 0%;
-	height: 100%;
-	background: linear-gradient(90.04deg, rgba(255, 255, 255, 0) 10.57%, rgba(255, 255, 255, 0.67) 52.95%, rgba(255, 255, 255, 0) 99.97%)
-}
-
-button:hover::after {
-	animation: onbutton 0.08s var(--cube3) forwards, onbuttontwo 0.18s var(--cube2) 0.08s forwards;
-}
-@keyframes onbutton {
-0% { width: 50%; margin-left: 25%; margin-right: 0%; }
-30% { width: 100%; margin-left: 0%; margin-right: 25%; }
-60% { width: 100%; margin-left: 0; margin-right: 100%; }
-70% { width: 100%; margin-left: 0%; margin-right: 0%; }
-100% { width: 100%; margin-left: 100%; margin-right: 0%; }
-}
-
-@keyframes onbuttontwo {
-0% { width: 100%; margin-left: 100%; margin-right: 0%;}
-30% { width: 100%; margin-left: 0%; margin-right: 0%; }
-60% { width: 100%; margin-left: 0; margin-right: 100%; }
-70% { width: 100%; margin-left: 0%; margin-right: 25%; }
-100% { width: 0%; margin-left: 0%; margin-right: 0%; }
-
-
-}
 .imagehero img {
 	object-fit: cover;
 	width: 100%;

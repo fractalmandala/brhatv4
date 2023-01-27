@@ -10,6 +10,4 @@ import BrhatActions from '$lib/components/pagecomps/BrhatActions.svelte'
 <HeadGeneral></HeadGeneral>
 <HomeAccordion></HomeAccordion>
 <DhitiRecent></DhitiRecent>
-<TwoColumns></TwoColumns>
 <HomeVids></HomeVids>
-<BrhatActions></BrhatActions>

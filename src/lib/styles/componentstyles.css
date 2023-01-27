@@ -154,16 +154,31 @@ body, html { margin: 0; box-sizing: border-box; }
 .imagecontainer { display: flex; flex-direction: column; align-items: center; justify-content: center; background-position: center center; background-size: cover; background-repeat: no-repeat; border-radius: 4px;}
 .imagecontainer img { object-fit: cover; width: 100%; }
 
+@media screen and (min-width: 900px) {
+	.imagecontainer-hero { width: calc(100vw - 16px);height: calc(100vh - 16px); margin-left: 8px; margin-top: 8px;}
+}
+
+@media screen and (max-width: 899px) and (min-width: 768px) {
+		.imagecontainer-hero { width: calc(100% - 16px);height: calc(100vh - 16px); margin-left: 8px; margin-top: 8px; }
+}
+
+@media screen and (max-width: 767px) and (min-width: 576px) {
+		.imagecontainer-hero { width: calc(100% - 8px); height: calc(100vh - 8px); margin-top: 4px; margin-left: 4px; }
+}
+
+@media screen and (max-width: 575px) {
+	.imagecontainer-hero { width: calc(100% - 8px); height: calc(100vh - 8px); margin-top: 4px; }	
+}
+
+
 @media screen and (min-width: 768px) {
 	.primecontainer-row { flex-direction: row; padding-top: 96px; padding-bottom: 80px; }
 	.primecontainer-inrow { flex-direction: row; }
-	.imagecontainer-hero { width: calc(100vw - 16px); height: calc(100vh - 16px); margin-left: 8px; margin-top: 8px; }
 }
 
 @media screen and (max-width: 767px) {
 	.primecontainer-row { flex-direction: column; padding-top: 96px;}
 	.primecontainer-inrow { flex-direction: column; }
-	.imagecontainer-hero { width: calc(100vw - 8px); height: calc(100vh - 8px); margin-left: 4px; margin-top: 4px; }
 }
 
 /************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -201,21 +216,17 @@ body, html { margin: 0; box-sizing: border-box; }
 .swiper { height: 100%; width: 100%; position: relative; overflow: hidden; }
 .swiper-slide { display: flex; overflow: hidden;}
 .swiper-button {
-  width: 32px;
-  height: 32px;
   display: flex;
+	transition: var(--snap);
+  transform-origin: center center;
 }
 .swiper-button img {
   object-fit: contain;
-  width: 24px;
-  height: 24px;
-  opacity: 0.3;
   transition: var(--snap);
   transform-origin: center center;
 }
 .swiper-button:hover img {
   transform: scale(0.9);
-  opacity: 1;
 }
 
 /*dhiti posts***********************************************************************************************************************************************************************************************************************************************************************************************/
@@ -252,6 +263,7 @@ body, html { margin: 0; box-sizing: border-box; }
 .dhiti-post blockquote { border-left: 4px solid var(--red); padding-left: 1rem; font-style: italic; background-color: #f7f7f7;}
 
 @media screen and (min-width: 900px) {
+	.swiper-button, .swiper-button img { width: 32px; height: 32px; }
 	.dhiti-post { margin-top: 2rem; padding: 2.4rem 4vw 2rem 2vw;}
 	.dhiti-bar { width: 6vw; display: flex; padding-left: 2rem; padding-top: 2rem; }
 	.list { width: 28vw;}
@@ -264,11 +276,13 @@ body, html { margin: 0; box-sizing: border-box; }
 }
 
 @media screen and (max-width:899px) and (min-width: 768px) {
+	.swiper-button, .swiper-button img { width: 32px; height: 32px; }
 	.dhiti-bar { width: 8vw; display: flex; padding-left: 1.6rem; }
 	.dhitisheet { width: calc(92vw - 8px); }
 }
 
 @media screen and (max-width: 767px) {
+	.swiper-button, .swiper-button img { width: 24px; height: 24px; }
 	.dhiti-bar { display: none; }
 	.dhitisheet { width: calc(100% - 8px); margin-left: 4px; padding-top: 4.8rem;}
 }
@@ -281,6 +295,35 @@ body, html { margin: 0; box-sizing: border-box; }
 .outlinebutton:hover a, .outlinebutton a:hover { color: var(--blue) !important;}
 .blog-pad button a, .corp-docs button a { color: var(--red);}
 .isblack { color: #474747;}
+
+.trans-red {
+  z-index: 3;
+  cursor: pointer;
+  border-radius: 8px 0 8px 0;
+	background: linear-gradient(to right,#fe4a49,#fe4a49,#EA2E5B);
+	border: none;
+	padding: 0.64rem 2rem;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0;
+	font-size: 16px;
+  padding: 8px 16px;
+  transform-origin: center center;
+	text-transform: uppercase;
+  transition: all 0.12s ease-in-out;
+	cursor: pointer;
+}
+
+.trans-red a { color: white;}
+
+.trans-red:hover {
+	border-radius: 0 8px 0 8px;
+	transform: scale(0.92);
+}
+
+.trans-red:active{
+	transform: scale(1.1);
+}
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
 	.outlinebutton { padding: 6px 16px;}
