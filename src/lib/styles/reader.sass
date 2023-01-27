@@ -1,0 +1,101 @@
+
+.read-box
+	display: flex
+	flex-direction: column
+
+	.bol-label
+		text-transform: uppercase
+		font-weight: bold
+		font-size: 12px
+		color: #d7d7d7
+		text-align: right
+
+	.reader-topline
+		height: 1px
+		background-color: #d7d7d7
+		margin-top: 4px
+		margin-bottom: 1em
+
+	.breadcrumb
+		text-transform: uppercase
+		font-weight: bold
+		color: #878787
+		letter-spacing: 0.5px
+
+		a
+			color: #474747
+			&:hover
+				color: #fe4a49
+
+		.divider
+			font-size: 12px
+			font-weight: 900
+			color: #474747
+
+	.inner-tab
+		display: flex
+		flex-direction: column
+
+.a-row
+	display: flex
+
+@media screen and (min-width: 900px) 
+	.read-box 
+		width: calc(100% - 16px)
+		margin-left: 8px
+
+		.breadcrumb
+			font-size: 14px
+
+		.inner-tab
+			padding: 2em 8vw
+
+			.hin-og
+				font-size: 32px	
+				font-weight: bold
+
+			.eng-iast
+				font-family: 'STIX Two Text', serif
+				font-weight: 400
+				font-size: 24px
+				margin-bottom: 2em
+
+			.eng-trans
+				font-family: 'STIX Two Text', serif
+				font-weight: 400
+				font-size: 20px
+				color: #676767
+
+			.sticker
+				color: #878787
+				font-size: 12px
+				margin-left: 0
+				padding-left: 0
+				width: max-content
+				border-bottom: 1px solid #d7d7d7
+				margin-bottom: 8px
+
+			.equal
+				font-family: 'STIX Two Text', serif
+				font-weight: 400
+				font-size: 20px
+				color: #676767
+				a
+					font-family: inherit
+					&:hover
+						color: #fe4a49
+
+			.data-meta
+				line-height: 1.8em
+
+			.level-1
+				font-family: 'STIX Two Text', serif
+				font-weight: 400
+				font-size: 20px
+				color: #676767
+
+	.a-row 
+		flex-direction: row
+		gap: 4em
+		margin-top: 1em
+		margin-bottom: 1em

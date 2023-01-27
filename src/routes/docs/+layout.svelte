@@ -9,9 +9,17 @@ import '$lib/styles/prism.css'
 <HeadGeneral></HeadGeneral>
 <div class="primecontainer-row">
 <DocSidebar></DocSidebar>
-<div class="pagesheet2">
+<div class="pagesheet2 md-doc">
 <slot></slot>
 </div>
 </div>
 </FlyingPage>
 
+<style>
+
+.md-doc {
+	font-size: 14px;
+}
+
+
+</style>

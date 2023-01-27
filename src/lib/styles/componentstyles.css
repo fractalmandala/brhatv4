@@ -155,7 +155,7 @@ body, html { margin: 0; box-sizing: border-box; }
 .imagecontainer img { object-fit: cover; width: 100%; }
 
 @media screen and (min-width: 900px) {
-	.imagecontainer-hero { width: calc(100vw - 16px);height: calc(100vh - 16px); margin-left: 8px; margin-top: 8px;}
+	.imagecontainer-hero { width: calc(100% - 16px);height: calc(100vh - 16px); margin-top: 8px;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {

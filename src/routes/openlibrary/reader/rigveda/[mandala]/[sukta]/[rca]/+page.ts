@@ -1,0 +1,14 @@
+import supabase from '$lib/db'
+export async function load({ params }:{ params: { mandala: number, sukta: number, rca: number }}){
+	
+	const { data, error } = await supabase
+	.from('db-rigveda')
+	.select()
+	.eq('rca',`${params.rca}`)
+	.eq('suktacorrected',`${params.sukta}`)
+	.eq('mandala',`${params.mandala}`)
+	.order('primvalue')
+	.single()
+	if (error) throw new Error(error.message)
+	return data
+}

@@ -5,8 +5,6 @@ tag: hover, functions
 category: codes
 ---
 
-indexing the functions for hover/show/visibility etc.
-
 ```js
 let data = [
 	{
@@ -21,10 +19,11 @@ function showFunction(index) {
 function hideFunction(index) {
 	isShow[index] = false;
 }
+// indexing the functions for hover/show/visibility etc.
 ```
 
 ```html
-//can be used with on:click also
+<!--can be used with on:click also-->
 <div on:mouseenter={()=>showFunction(i)} on:mouseleave={() => hideFunction(i)}>
 ```
 
