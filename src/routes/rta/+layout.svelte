@@ -1,10 +1,10 @@
 <script>
-import HeadBol from '$lib/components/headers/HeadBol.svelte'
+import HeadRid from '$lib/components/headers/HeadRid.svelte'
 import FlyingPage from '$lib/components/animations/FlyingPage.svelte'
 </script>
 
 <FlyingPage>
-<HeadBol></HeadBol>
+<HeadRid></HeadRid>
 <slot></slot>
 </FlyingPage>
 

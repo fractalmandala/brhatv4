@@ -1,12 +1,12 @@
 <div class="genrow">
  <div class="gencol" id="col1">
-   <button>Culture Creatives</button>
+   <button><a href="/about/areas/culturecreatives">Culture Creatives</a></button>
  </div>
  <div class="gencol" id="col2">
-   <button>Policy Research</button>
+   <button><a href="/about/areas/policyresearch">Policy Research</a></button>
  </div>
  <div class="gencol" id="col3">
-   <button>Leadership Development</button>
+   <button><a href="/about/areas/leadershipdevelopment">Leadership Development</a></button>
  </div>
 </div>
 
@@ -22,10 +22,11 @@
    opacity: 0.5;
    border: 1px solid white;
    color: white;
-   font-weight: 600;
+   font-weight: 500;
    letter-spacing: 0;
    padding: 8px 16px;
    transform-origin: center center;
+	text-transform: uppercase;
    transition: all 0.12s ease-in-out;
  }
 
@@ -94,7 +95,7 @@
 .genrow:hover .gencol:hover {
   width: 50%;
 }
-button { font-size: 20px; margin-bottom: 64px;}
+button { font-size: 16px; margin-bottom: 64px;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
@@ -106,7 +107,7 @@ button { font-size: 20px; margin-bottom: 64px;}
 .genrow:hover .gencol:hover {
 	width: 50%;
 }
-button { font-size: 0.875rem; margin-bottom: 64px; }
+button { font-size: 16px; margin-bottom: 64px; }
 }
 
 @media screen and (min-width: 767px) and (max-width: 576px) {
@@ -130,6 +131,6 @@ button { font-size: 0.875rem; margin-bottom: 16px; }
 .genrow:hover .gencol:hover {
   height: 50%;
 }
-button { font-size: 0.875rem; margin-bottom: 16px; }
+button { font-size: 14px; margin-bottom: 16px; }
 }
 </style>

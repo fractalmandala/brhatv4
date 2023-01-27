@@ -1,10 +1,11 @@
 <script>
-import HeadBol from '$lib/components/headers/HeadBol.svelte'
+import '$lib/styles/anim-scrolls.css'
+import HeadSoa from '$lib/components/headers/HeadSoa.svelte'
 import FlyingPage from '$lib/components/animations/FlyingPage.svelte'
 </script>
 
 <FlyingPage>
-<HeadBol></HeadBol>
+<HeadSoa></HeadSoa>
 <slot></slot>
 </FlyingPage>
 

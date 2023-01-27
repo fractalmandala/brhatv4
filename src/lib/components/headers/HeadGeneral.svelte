@@ -87,7 +87,7 @@ function hideMenu() {
 					<div class="rowitems"><a href="/mrdanga">Mṛdaṅga</a></div>
 					<div class="rowitems"><a href="/mandala">Maṇḍala</a></div>
 					<div class="rowitems"><a href="/aryavarta">Āryavarta</a></div>
-					<div class="rowitems lastone"><a href="/rtaindesign">Ṛta</a></div>
+					<div class="rowitems lastone"><a href="/rta">Ṛta</a></div>
 					</div>
 				{/if}
 			</div>
