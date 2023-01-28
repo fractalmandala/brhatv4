@@ -28,7 +28,7 @@ function hideMenu() {
 <div class="headerbox">
   <div class="logoarea">
      <div class="logotype">
-      	<a href="/aryavarta">
+      	<a href="/openlibrary">
 					<div class="logo-svg-box">
 						<img src="/images/headerlogos/logo-bol.png" alt="brhat open library" />
 					</div>
@@ -153,7 +153,6 @@ transition: all 0.5s linear;
 margin: 0;
 padding: 0 !important;
 align-items: center;
-background: rgba(255,255,255,0.6);
 backdrop-filter: blur(0.4);
 top: 0;
 }
