@@ -13,16 +13,16 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 						<a href="https://twitter.com/brhat_in" target="_blank" rel="noreferrer"><img src="/images/icons/twitter-red.png" alt="twitter icon" /></a>
 					</div>
 					<div class="c-c-c-c icon-box" id="icon-facebook">
-						<a href="https://www.facebook.com/brhat.in" target="_blank" rel="noreferrer"><img src="/images/icons/facebook-red.png" alt="facebook icon" />
+						<a href="https://www.facebook.com/brhat.in" target="_blank" rel="noreferrer"><img src="/images/icons/facebook-red.png" alt="facebook icon" /></a>
 					</div>
 					<div class="c-c-c-c icon-box" id="icon-youtube">
-						<a href="https://www.youtube.com/@brhat" target="_blank" rel="noreferrer"><img src="/images/icons/youtube-red.png" alt="youtube icon" />
+						<a href="https://www.youtube.com/@brhat" target="_blank" rel="noreferrer"><img src="/images/icons/youtube-red.png" alt="youtube icon" /></a>
 					</div>
 					<div class="c-c-c-c icon-box" id="icon-linkedin">
-						<a href="https://www.linkedin.com/company/brhat" target="_blank" rel="noreferrer"><img src="/images/icons/linkedin-red.png" alt="linkedin icon" />
+						<a href="https://www.linkedin.com/company/brhat" target="_blank" rel="noreferrer"><img src="/images/icons/linkedin-red.png" alt="linkedin icon" /></a>
 					</div>
 					<div class="c-c-c-c icon-box" id="icon-instagram">
-						<a href="https://www.instagram.com/brhat_in/" target="_blank" rel="noreferrer"><img src="/images/icons/instagram-red.png" alt="instagram icon" />
+						<a href="https://www.instagram.com/brhat_in/" target="_blank" rel="noreferrer"><img src="/images/icons/instagram-red.png" alt="instagram icon" /></a>
 					</div>
 				</div>
 			</div>
@@ -134,7 +134,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	.margin-box
 		height: calc(100vh - 14em)
 		width: calc(100% - 16vw)
-		margin: 2em 8vw 0em 8vw
+		margin: 2em 8vw 0 8vw
 
 	#row-one
 		padding-top: 4em
@@ -230,7 +230,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		margin: 2em 4vw 0em 4vw
 
 	#last-row
-		height: 2em
+		height: 4em
 		width: calc(100% - 8vw)
 		margin: 0 4vw
 		padding-top: 1em
