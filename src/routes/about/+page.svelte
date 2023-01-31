@@ -58,25 +58,25 @@ const { data, error } = await supabase
 <div class="pagesheet px2">
 <div class="corp-docs">
 <h4 id="lead-text">
-B<span class="isred">ṛ</span>hat is a Culture Engine
+	B<span class="isred">ṛ</span>hat is a Culture Engine
 </h4>
 <h5 class="cc-left" id="actions">
-To power creatives, research and design rooted
-in the Indian civilizational consciousness.<br><br>We convert individual, institutional 
-and collective intent into action, across 3 dimensions:
+	To power creatives, research and design rooted
+	in the Indian civilizational consciousness.<br><br>We convert individual, institutional 
+	and collective intent into action, across 3 dimensions:
 </h5>
 {#await brhatPillars()}
-<small>...</small>
-{:then data}
-<div class="base-row pillars-row">
-{#each data as item, index}
-<div class="base-col card pillars" data-aos="flip-up" data-aos-delay={50 + (index * 100)}>
-	<img src={item.image} alt={item.name}/>
-	<h5 class="mt2 cc-left isblack wd100">{item.name}</h5>
-	<pre class="cc-left in-card">{item.content}</pre>
-</div>
-{/each}
-</div>
+	<small>...</small>
+	{:then data}
+	<div class="base-row pillars-row">
+		{#each data as item, index}
+		<div class="base-col card pillars" data-aos="flip-up" data-aos-delay={50 + (index * 100)}>
+			<img src={item.image} alt={item.name}/>
+			<h5 class="mt2 cc-left isblack wd100">{item.name}</h5>
+			<pre class="cc-left in-card">{item.content}</pre>
+		</div>
+		{/each}
+	</div>
 {:catch error}
 <pre>{error}</pre>
 {/await}

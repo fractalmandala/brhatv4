@@ -19,7 +19,7 @@
   height: 50px;
   background-color: white;
   margin: 20px;
-  color: #568fa6;
+  color: #272727;
   position: relative;
   overflow: hidden;
   font-size: 14px;
@@ -35,12 +35,25 @@
   border-radius: 3px;
 }
 
+.buttons p, .btn p {
+	font-family: 'Readex Pro', sans-serif;
+	font-weight: 500;
+	text-transform: capitalize;
+	font-size: 16px;
+	z-index: 2;
+	color: white;
+}
+
+.btn { transition: all 0.2s cubic-bezier(0.35, 0.1, 0.25, 1); transform-origin: center center;}
+.btn:hover { transform: scale(0.9);}
+.btn p:hover, .btn:hover p { color: #474747;}
+
 .buttons button:before, .buttons button:after {
   content: "";
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: #44d8a4;
+  background-color: #fe4a49;
   transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
 }
 
@@ -66,12 +79,12 @@
   z-index: 1;
 }
 
-.buttons button span:before, .buttons button span:after {
+.buttons button span:after {
   content: "";
   position: absolute;
   width: 2px;
   height: 0;
-  background-color: #44d8a4;
+  background-color: #fe4a49;
   transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
 }
 
@@ -79,6 +92,13 @@
   right: 0;
   top: 0;
   transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fe4a49;
+  transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+	z-index: 0;
 }
 
 .buttons button span:after {
@@ -86,34 +106,7 @@
   bottom: 0;
 }
 
-.buttons button p {
-  padding: 0;
-  margin: 0;
-  transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
 
-.buttons button p:before, .buttons button p:after {
-  position: absolute;
-  width: 100%;
-  transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
-  z-index: 1;
-  left: 0;
-}
-
-.buttons button p:before {
-  content: attr(data-title);
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.buttons button p:after {
-  content: attr(data-text);
-  top: 150%;
-  color: #44d8a4;
-}
 
 .buttons button:hover:before, .buttons button:hover:after {
   width: 100%;
@@ -123,8 +116,12 @@
   z-index: 1;
 }
 
-.buttons button:hover span:before, .buttons button:hover span:after {
-  height: 100%;
+.buttons button:hover span:after {
+  height: 0;
+}
+
+.buttons button:hover span:before {
+	height: 0;
 }
 
 .buttons button:hover p:before {
@@ -137,11 +134,6 @@
   transform: translateY(-50%);
 }
 
-.buttons button.start {
-  background-color: #44d8a4;
-  box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease;
-}
 
 .buttons button.start p:before {
   top: -50%;
@@ -162,10 +154,6 @@
   from {
     top: -50%;
   }
-}
-
-.buttons button.start:hover:before, .buttons button.start:hover:after {
-  display: none;
 }
 
 .buttons button.start:hover span {
