@@ -1,11 +1,5 @@
 <script>
-// @ts-nocheck
-export let data;
-
+import Header from '$lib/components/globals/Header2023.svelte'
 </script>
 
-<h4>{data.title}</h4>
-<cite class="category">{data.tag}</cite>
-<div class="sheet mt1">
-	<svelte:component this={data.content} />
-</div>
+<Header></Header>

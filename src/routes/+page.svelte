@@ -1,7 +1,7 @@
 <script>
 
 import supabase from '$lib/db'
-import HeadGeneral from '$lib/components/globals/Header.svelte'
+import HeadGeneral from '$lib/components/globals/Header2023.svelte'
 import HomeAccordion from '$lib/components/pagecomps/HomeAccordion.svelte'
 import DhitiRecent from '$lib/components/pagecomps/DhitiSlider.svelte'
 import HomeVids from '$lib/components/pagecomps/HomeVids.svelte'
