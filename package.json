@@ -27,6 +27,7 @@
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
 		"svelte-lightbox": "^1.1.0",
+		"svelte-parallax": "^0.6.0",
 		"tslib": "^2.4.1",
 		"typescript": "^4.9.3",
 		"vite": "^4.0.0"
@@ -35,6 +36,7 @@
 	"dependencies": {
 		"@lottiefiles/svelte-lottie-player": "^0.3.0",
 		"@supabase/supabase-js": "^2.4.1",
+		"@sveltejs/svelte-scroller": "^2.0.7",
 		"aos": "^2.3.4",
 		"lottie-web": "^5.10.1",
 		"photoswipe": "^5.3.4",

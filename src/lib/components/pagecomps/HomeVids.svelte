@@ -47,15 +47,13 @@ import 'swiper/css/navigation'
 {#each data as item}
 <SwiperSlide>
 <div class="imagecontainer-hero" style="background-image: url({item.image})">
-<h4 class="titleclass">Latest Videos</h4>
-<h5>{item.name}</h5>
-<iframe
-  class="m-1"
-  width=72%
-  height=88%
-  src="https://www.youtube.com/embed/{item.videoid}"
-  title={item.name}
-  ></iframe>
+	<iframe
+  	class="m-1"
+  	width=100%
+  	height=100%
+  	src="https://www.youtube.com/embed/{item.videoid}"
+  	title={item.name}
+  	></iframe>
 		<div class="base-row row-x-left" id="navbuttons">
 			<div class="swiper-button custom-prev">
   			<img src="/images/icons/prevwhite.png" alt="prev" />
@@ -76,11 +74,8 @@ import 'swiper/css/navigation'
 <style>
 	
 #navbuttons { position: absolute; z-index: 400; }
-h4 { margin-bottom: 0;}
-h5 { margin-top: 0;}
 
 	small { color: white;}
-
 
 	@media screen and (min-width: 900px) {
 		#navbuttons { right: 0; bottom: 128px; width: 12%; padding: 8px 0 8px 8px; background-color: rgba(0,0,0,0.6); border-radius: 32px 0 0 32px;}

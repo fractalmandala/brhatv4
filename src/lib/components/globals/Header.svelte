@@ -1,22 +1,18 @@
-<script>
-
+<script lang="ts">
+import { fade } from 'svelte/transition';
 import { fly } from 'svelte/transition'
 import { circOut } from 'svelte/easing'
-let isRed = false;
 let isMenu = false;
 
-function showRed() {
-	isRed = true;
-}
-function hideRed() {
-	isRed = false;
-}
+
 function showMenu() {
 	isMenu = true;
 }
 function hideMenu() {
 	isMenu = false;
 }
+
+
 </script>
 <div class="header">
 <div class="headerbox padding-base">
@@ -39,7 +35,7 @@ function hideMenu() {
 		out:fly="{{ delay: 0, duration: 300, x: 1000, y: 0, opacity: 0, easing: circOut}}">
 		<div class="innerheading">
      	<div class="logotype inside-logotype">
-       		<a href="/"><img src="/images/brhatlogos/horizontalwhite.png" alt="logotype"
+       		<a href="/"><img class="the-inner" src="/images/brhatlogos/horizontalwhite.png" alt="logotype"
        		/></a>
      	</div>
 			<div class="closebuttonstrip" on:click={hideMenu} on:keydown={hideMenu}>
@@ -47,33 +43,95 @@ function hideMenu() {
 			</div>
 		</div>
 		<div class="fullscreenpage">
-			<div class="fullscreencol" id="columnleft">
-				<div class="fslinks aboutfs"><a href="/about">About</a>
-					<div class="nowitems"><a href="/about">Introduction</a></div>
-					<div class="nowitems"><a href="/about/#namarupa">Nāmarūpa</a></div>
-					<div class="nowitems"><a href="/about/#values">Pratijña</a></div>
-					<div class="nowitems"><a href="/about/#advisory">Advisory Board</a></div>
-					<div class="nowitems"><a href="/about/#team">Team</a></div>
-					<div class="nowitems"><a href="/about/#anatomy">Why Now</a></div>
-					<div class="nowitems"><a href="/about/#svatah">Why</a></div>
+			<div class="r-r-r-r inner-marginbox">
+				<div class="c-c-c-c" id="columnleft">
+					<div class="oglinks linka" in:fly="{{delay: 0, duration: 100, x: 0, y: 48, opacity: 0, easing: circOut}}"><a href="/about">About</a>
+						<div class="ogsub">
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/about/docs/svatahsiddha">Svataḥsiddha</a></p>
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a></p>
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/about/#team">Team</a></p>
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/about/docs/namelogo">Nāmarūpa</a></p>
+						</div>
+					</div>
+					<div class="oglinks linka" in:fly="{{delay: 100, duration: 100, x: 0, y: 48, opacity: 0, easing: circOut}}"><a href="/anveshi">Anveṣī</a>
+						<div class="ogsub">
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/anveshi/chapter/odisha">Odisha Chapter</a></p>
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/anveshi/chapter/chamba">Chamba Chapter</a></p>
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/anveshi/chapter/karnataka">Karnataka Chapter</a></p>
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/anveshi/diaries">Travelogue</a></p>
+						</div>	
+					</div>
+					<div class="oglinks linka" in:fly="{{delay: 200, duration: 100, x: 0, y: 48, opacity: 0, easing: circOut}}"><a href="/drashta">Draṣṭā</a>
+						<div class="ogsub">
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/drashta/course/hinduiconography">Hindu Iconography</a></p>
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/drashta/course/shriramswarup">Introduction to Shri Ram Swarup</a></p>
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/drashta/course/sitaramgoel">Introduction to Sita Ram Goel</a></p>
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/drashta/drashtas">Draṣṭās</a></p>
+						</div>
+					</div>
 				</div>
-				<div class="fslinks drashtafs"><a href="/about">Draṣṭā</a>
-						<div class="nowitems"><a href="/">Main Page</a></div>
-						<div class="nowitems"><a href="/">Karnataka</a></div>
-						<div class="nowitems lastone"><a href="/">Odisha</a></div>
+				<div class="c-c-c-c" id="columnright">
+					<div class="oglinks linka" in:fly="{{delay: 300, duration: 100, x: 0, y: 48, opacity: 0, easing: circOut}}"><a href="/mrdanga">Mṛdaṅga</a>
+						<div class="ogsub">
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/drashta/course/hinduiconography">Rasa</a></p>
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/drashta/course/shriramswarup">Kalā</a></p>
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/drashta/course/sitaramgoel">Kavitā</a></p>
+						</div>
+					</div>
+					<div class="oglinks linka" in:fly="{{delay: 400, duration: 100, x: 0, y: 48, opacity: 0, easing: circOut}}"><a href="/mandala">Maṇḍala</a>
+						<div class="ogsub">
+						<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/about/docs/svatahsiddha">Primary Essays</a></p>
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/about/docs/anatomy">Caturasūtra</a></p>
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/about/#team">Synaptic Reconnection</a></p>
+							<p
+							in:fly="{{delay: 900, duration: 100, x: 0, y: -20, opacity: 0, easing: circOut}}"
+							><a href="/about/docs/namelogo">Ancestors Outside of Time</a></p>
+						</div>
+					</div>
+					<div class="oglinks linka" in:fly="{{delay: 500, duration: 100, x: 0, y: 48, opacity: 0, easing: circOut}}"><a href="/aryavarta">Āryavarta</a></div>
+					<div class="oglinks linka" in:fly="{{delay: 600, duration: 100, x: 0, y: 48, opacity: 0, easing: circOut}}"><a href="/rta">Ṛta in Design</a></div>
+					<div class="oglinks linka" in:fly="{{delay: 700, duration: 100, x: 0, y: 48, opacity: 0, easing: circOut}}"><a href="/openlibrary">Open Library</a></div>
+					<div class="oglinks linka" in:fly="{{delay: 800, duration: 100, x: 0, y: 48, opacity: 0, easing: circOut}}"><a href="/dhiti">Dhīti</a></div>
 				</div>
-				<div class="oglinks1"><a href="/openlibrary">Open Library</a></div>
-				<div class="oglinks2"><a href="/dhiti">Dhīti</a></div>
-			</div>
-			<div class="fullscreencol" id="columnright">
-				<div class="fslinks"><a href="/about">Anveṣī</a></div>
-				<div class="fslinks"><a href="/mrdanga">Mṛdaṅga</a></div>
-					<div class="fslinks"><a href="/mandala">Maṇḍala</a></div>
-					<div class="fslinks"><a href="/aryavarta">Āryavarta</a></div>
-					<div class="fslinks"><a href="/rta">Ṛta</a></div>
 			</div>
 		</div>
-		<div class="socialicons">
+		<div class="socialicons soc2">
       	<a href="https://twitter.com/brhat_in" target="_blank" rel="noreferrer"><img src="/images/icons/twitter-red.png" alt="twitter icon" /></a>
       	<a href="https://www.facebook.com/brhat.in" target="_blank" rel="noreferrer"><img src="/images/icons/facebook-red.png" alt="facebook icon" /></a>
       	<a href="https://www.youtube.com/@brhat" target="_blank" rel="noreferrer"><img src="/images/icons/youtube-red.png" alt="youtube icon" /></a>
@@ -87,8 +145,10 @@ function hideMenu() {
 
 <style>
 
-.nowitems { height: 20px;}
-
+.oglinks a, .ogsub a { transition: all 0.11s ease-out;}
+.oglinks a:hover, .ogsub a:hover { color: #fe4a49;}
+.oglinks a { color: #373737;}
+.ogsub a { color: #414141;}
 .socialicons { border-top: 1px solid #474747; gap: 1em; padding-top: 1em; display: flex; height: 4em;}
 
 .socialicons img {
@@ -123,10 +183,7 @@ function hideMenu() {
 }
 
 a { 
-	color: white;
 	font-size: 12px;
-	text-transform: uppercase;
-	font-weight: 500;
 	font-family: 'Inter Tight', sans-serif;
 	letter-spacing: 0.5px;
 }
@@ -226,8 +283,7 @@ a {
 	.fullscreener {
 		display: flex;
 		flex-direction: column;
-		position: absolute;
-		border-radius: 4px;
+		position: fixed;
 		background: linear-gradient(40deg,#272727,#1B2023);
 		top: 0;
 		left: 0;
@@ -250,11 +306,69 @@ a {
 		width: 32px;
 		height: 32px;
 	}
+
+	.ogsub {
+		display: flex;
+		flex-direction: column;
+		text-transform: capitalize;
+	}
+
+	.oglinks {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		transform-origin: left center;
+		transition: all 0.24s var(--cube1);
+	}
+
+	.inner-marginbox:hover .oglinks:hover {
+		transform: translateX(8px) scale(1.2);
+	}
+
+	.linka {
+		text-transform: uppercase;
+		font-weight: 800;
+		color: #d7d7d7;
+	}
+
+	.inner-marginbox:hover .oglinks { transform: scale(0.9);}
+
 @media screen and (min-width: 900px) {
 
 	.padding-base {
 		padding-left: 6vw;
 		padding-right: 6vw;
+	}
+
+	.oglinks a {
+		font-size: 20px;
+		color: #d7d7d7;
+	}
+
+	.ogsub {
+		width: 80%;
+		margin-bottom: 0;
+		margin-top: 0;
+		padding-top: 8px;
+	}
+	.ogsub p {
+		margin-top: 0;
+		margin-bottom: 8px;
+		font-weight: 400;
+	}
+
+
+	.oglinks { margin-bottom: 2em;}
+
+	.ogsub a {
+		font-size: 14px;
+		margin-top: 0;
+		margin-bottom: 0;
+		color: #474747;
+	}
+	
+	#columnleft, #columnright {
+		width: 50%;
 	}
 
 	.logoarea { width: 35%; }
@@ -303,6 +417,40 @@ a {
 		padding-right: 6vw;
 		padding-left: 6vw;
 	}
+		
+	.inner-marginbox { height: calc(100vh - 8em); padding-top: 4em;}
+	
+
+	.oglinks a {
+		font-size: 20px;
+		color: #d7d7d7;
+	}
+
+	.ogsub {
+		width: 80%;
+		margin-bottom: 0;
+		margin-top: 0;
+		padding-top: 8px;
+	}
+	.ogsub p {
+		margin-top: 0;
+		margin-bottom: 8px;
+		font-weight: 400;
+	}
+
+
+	.oglinks { margin-bottom: 2em;}
+
+	.ogsub a {
+		font-size: 14px;
+		margin-top: 0;
+		margin-bottom: 0;
+		color: #474747;
+	}
+	
+	#columnleft, #columnright {
+		width: 50%;
+	}
 
 	.logoarea { width: 25%; }
 	.motif img {
@@ -313,6 +461,7 @@ a {
 		height: 40px;
 		margin-left: 12px;
 		margin-top: 8px;
+		object-fit: contain;
 	}
 
 	.headerbox { 
@@ -326,7 +475,9 @@ a {
 		padding-right: 8vw;
 	}
 
+	.the-inner { object-fit: contain; width: 128px;}
 
+	.soc2 { height: 4em;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
@@ -334,6 +485,42 @@ a {
 		padding-right: 4vw;
 		padding-left: 4vw;
 	}
+	
+	.inner-marginbox { height: calc(100vh - 8em); padding-top: 4em; width: 100%; gap: 2em; padding-left: 4vw;}
+
+
+	.oglinks a {
+		font-size: 20px;
+		color: #d7d7d7;
+	}
+
+	.ogsub {
+		width: 80%;
+		margin-bottom: 0;
+		margin-top: 0;
+		padding-top: 8px;
+	}
+	.ogsub p {
+		margin-top: 0;
+		margin-bottom: 8px;
+		font-weight: 400;
+	}
+
+
+	.oglinks { margin-bottom: 2em;}
+
+	.ogsub a {
+		font-size: 14px;
+		margin-top: 0;
+		margin-bottom: 0;
+		color: #474747;
+	}
+	
+	#columnleft, #columnright {
+		width: 50%;
+	}
+
+
 	.logoarea { width: 50%; padding-top: 2px; }
 	.motif img {
 		width: 42px;
@@ -387,7 +574,7 @@ a {
 		width: 30%;
 	}
 	.innerheading .logotype img {
-		width: 88px;
+		height: 48px;
 		object-fit: contain;
 	}
 	
@@ -403,57 +590,9 @@ a {
 		height: 100%;
 		padding: 16px 8px;
 		margin-top: 16px;
-			border-top: 1px solid #474747;
+		border-top: 1px solid #474747;
 	}
-	.fullscreencol {
-		display: flex;
-		flex-direction: column;
-		height: max-content;
-		padding: 0 8px;
-	
-	}
-	#columnright {
-		align-items: flex-end;
-		font-size: 20px;
-	}
-	#columnright a {
-		text-transform: capitalize;
-		font-size: 20px;
-		font-weight: 400;
-		color: white;
-		width: 44%;
-	}
-	#columnleft {
-		align-items: flex-start;
-		width: 56%;
-		line-height: 1.4rem;
-	}
-	#columnleft a {
-		text-transform: capitalize;
-		font-size: 16px;
-		line-height: 1.4rem;
-	}
-	.nowitems a {
-		font-size: 14px !important;
-		color: #878787;
-		font-weight: 400;
-	}
-	.nowitems {
-		padding: 8px 0;
-	}
-	.fslinks {
-		height: 100%;
-	}
-	#columnleft .fslinks { line-height: 0.48rem;}
-	#columnright .fslinks {
-		line-height: 2rem;
-	}
-	.aboutfs, .drashtafs {
-		height: max-content;
-	}
-	.drashtafs {
-		margin-top: 2rem;
-	}
+
 
   .socialicons {
     display: flex;
@@ -478,18 +617,6 @@ a {
     transform: scale(1.1);
   }
 
-	.oglinks1 {
-		margin-top: 32px;
-		text-transform: uppercase;
-	}
-	.oglinks2 {
-		margin-top: 20px;
-		text-transform: uppercase;
-	}
-	.oglinks1 a, .oglinks2 a {
-		font-size: 18px !important;
-	}
-
 
 }
 
@@ -512,23 +639,6 @@ a {
 	.logoarea .logotype img {
 		height: 35px;
 	}
-
-
-	.fullscreener {
-		display: flex;
-		flex-direction: column;
-		position: absolute;
-		border-radius: 4px;
-		background-color: #272727;
-		top: 0;
-		margin-left: 4px;
-		margin-top: 4px;
-		left: 0;
-		width: calc(100% - 8px);
-		height: calc(100vh - 8px);
-		z-index: 999;
-		padding: 1rem;
-  }
 	
 	.closebuttonstrip {
 		display: flex;
@@ -552,12 +662,12 @@ a {
 		width: 30%;
 	}
 	.innerheading .logotype img {
-		width: 88px;
+		height: 48px;
 		object-fit: contain;
 	}
 	
 	.innerheading .logotype {
-		padding-bottom: 8px;
+		padding-bottom: 1px;
 	}
 	
 	.fullscreenpage {
@@ -570,55 +680,7 @@ a {
 		margin-top: 16px;
 			border-top: 1px solid #474747;
 	}
-	.fullscreencol {
-		display: flex;
-		flex-direction: column;
-		height: max-content;
-		padding: 0 8px;
-	
-	}
-	#columnright {
-		align-items: flex-end;
-		font-size: 20px;
-	}
-	#columnright a {
-		text-transform: capitalize;
-		font-size: 20px;
-		font-weight: 400;
-		color: white;
-		width: 44%;
-	}
-	#columnleft {
-		align-items: flex-start;
-		width: 56%;
-		line-height: 1.4rem;
-	}
-	#columnleft a {
-		text-transform: capitalize;
-		font-size: 16px;
-		line-height: 1.4rem;
-	}
-	.nowitems a {
-		font-size: 14px !important;
-		color: #878787;
-		font-weight: 400;
-	}
-	.nowitems {
-		padding: 8px 0;
-	}
-	.fslinks {
-		height: 100%;
-	}
-	#columnleft .fslinks { line-height: 0.48rem;}
-	#columnright .fslinks {
-		line-height: 2rem;
-	}
-	.aboutfs, .drashtafs {
-		height: max-content;
-	}
-	.drashtafs {
-		margin-top: 2rem;
-	}
+
 	
 	.socialicons {
 	  display: flex;
@@ -643,19 +705,42 @@ a {
     transform: scale(1.1);
   }
 
-	.oglinks1 {
-	margin-top: 32px;
-	text-transform: uppercase;
-	}
 	
-	.oglinks2 {
-		margin-top: 20px;
-		text-transform: uppercase;
+	.inner-marginbox { height: calc(100vh - 8em); padding-top: 4em; width: 100%; gap: 2em; padding-left: 4vw;}
+
+
+	.oglinks a {
+		font-size: 18px;
+		color: #d7d7d7;
 	}
 
-	.oglinks1 a, .oglinks2 a {
-		font-size: 18px !important;
+	.ogsub {
+		width: 90%;
+		margin-bottom: 0;
+		margin-top: 0;
+		padding-top: 8px;
 	}
+	.ogsub p {
+		margin-top: 0;
+		margin-bottom: 8px;
+		font-weight: 400;
+	}
+
+
+	.oglinks { margin-bottom: 2em;}
+
+	.ogsub a {
+		font-size: 14px;
+		margin-top: 0;
+		margin-bottom: 0;
+		color: #474747;
+	}
+	
+	#columnleft, #columnright {
+		width: 50%;
+	}
+
+
 }
 
 </style>

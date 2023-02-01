@@ -1,6 +1,7 @@
 <script>
 import supabase from '$lib/db'
 import { Swiper, SwiperSlide } from 'swiper/svelte'
+import ButtonOutline from '$lib/components/animations/ButtonOutline.svelte'
 import { Keyboard, Navigation } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/keyboard'
@@ -52,7 +53,7 @@ export async function dhitiLatest(){
 		<small class="home-author">{item.author}</small>
 		<h1>{item.title}</h1>
 		<p id="bigscreen-p">{item.excerpt}</p>
-		<button class="trans-red"><a href={item.link}>Read Essay</a></button>
+		<button class="tempo"><a class="buttonlinker" href={item.link}>Read Essay</a></button>
 		<div class="base-row row-x-left" id="navbuttons">
 			<div class="swiper-button custom-prev">
   			<img src="/images/icons/prevwhite.png" alt="prev" />
@@ -71,10 +72,43 @@ export async function dhitiLatest(){
 {/await}
 
 <style>
+
+	.tempo {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 2px solid #fe4a49;
+  border-radius: 0.6em;
+  color: #fe4a49;
+  cursor: pointer;
+  display: flex;
+  align-self: flex-start;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+	}
+
+	.tempo:hover, .tempo:focus {
+		color: #fff;
+  	outline: 0;
+	}
+
+	.tempo:hover {
+		box-shadow: 0 0 40px 40px #e74c3c inset;
+		transform: scale(0.9);
+	}
+
+	.tempo a { color: white;}
+
 	cite { color: white; background-color: var(--red); font-style: normal; text-transform: uppercase; width: max-content; margin-bottom: 1em;}
 	#bigscreen { justify-content: flex-start; position: relative; align-items: flex-start;}
 	#navbuttons { position: absolute; z-index: 400; }
-	h1 { color: white; font-weight: 700; margin-bottom: 0;}
+	h1 { color: white; font-weight: 600; margin-bottom: 0;}
 	p { color: white;}
 	.imagecontainer-screen {
 		background: linear-gradient(90deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 100%);
@@ -84,22 +118,22 @@ export async function dhitiLatest(){
 	.home-author { text-transform: uppercase; }
 
 	@media screen and (min-width: 900px) {
-		.home-tag { font-size: 14px;}
-		.home-author { font-size: 16px;}
-		#bigscreen h1 { font-size: 4rem;}
+		.home-tag { font-size: 12px;}
+		.home-author { font-size: 14px;}
+		#bigscreen h1 { font-size: 2.4rem;}
 		#bigscreen { padding: 6em 10vw 0 4vw;}
-		cite { padding: 6px 16px; font-size: 14px;}
-		#bigscreen-p { font-size: 1.24rem; width: 56%; line-height: 1.4em; margin-bottom: 2em;}
+		cite { padding: 6px 16px; font-size: 12px;}
+		#bigscreen-p { font-size: 1em; width: 56%; line-height: 1.4em; margin-bottom: 2em;}
 		#navbuttons { right: 0; bottom: 128px; width: 12%; padding: 8px 0 8px 8px; background-color: rgba(0,0,0,0.6); border-radius: 32px 0 0 32px;}
 	}
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
-	.home-tag { font-size: 14px;}
-	.home-author { font-size: 16px;}
+	.home-tag { font-size: 12px;}
+	.home-author { font-size: 14px;}
 	#bigscreen h1 { font-size: 2.4rem;}
 	#bigscreen { padding: 2rem}
 	cite { padding: 4px 12px; font-size: 12px;}
-	#bigscreen-p { font-size: 1.12rem; width: 72%; line-height: 1.4em; margin-top: 1em; margin-bottom: 2em;}
+	#bigscreen-p { font-size: 1em; width: 72%; line-height: 1.4em; margin-top: 1em; margin-bottom: 2em;}
 	#navbuttons { right: 0; bottom: 128px; width: 20%; gap: 16px; padding: 8px 0 8px 8px; background-color: rgba(0,0,0,0.6); border-radius: 32px 0 0 32px;}
 }	
 
@@ -107,19 +141,19 @@ export async function dhitiLatest(){
 	.home-tag { font-size: 12px;}
 	.home-author { font-size: 14px;}
 	#bigscreen h1 { font-size: 2rem; width: 80%;}
-	#bigscreen { padding: 2.4em 4vw;}
+	#bigscreen { padding: 8em 8vw 4em 8vw;}
 	cite { padding: 4px 12px; font-size: 12px;}
-	#bigscreen-p { font-size: 1rem; width: 72%; line-height: 1.4em; margin-top: 1em; margin-bottom: 2em;}
+	#bigscreen-p { font-size: 1em; width: 72%; line-height: 1.4em; margin-top: 1em; margin-bottom: 2em;}
 	#navbuttons { right: 0; bottom: 128px; width: 20%; gap: 16px; padding: 8px 0 8px 8px; background-color: rgba(0,0,0,0.6); border-radius: 32px 0 0 32px;}
 }
 
 @media screen and (max-width: 575px) {
 	.home-tag { font-size: 12px;}
 	.home-author { font-size: 14px;}
-	#bigscreen h1 { font-size: 1.6rem; font-weight: 600; letter-spacing: 0px; width: 100%; } 
-	#bigscreen { padding: 2.4em 4vw;}
+	#bigscreen h1 { font-size: 1.6em; font-weight: 600; letter-spacing: 0px; width: 100%; } 
+	#bigscreen { padding: 8em 8vw 4em 8vw;}
 	cite { padding: 3px 12px; font-size: 12px;}
-	#bigscreen-p { font-size: 1em; width: 88%; line-height: 1.24rem; margin-top: 1em; margin-bottom: 2em;}
+	#bigscreen-p { font-size: 1em; width: 96%; line-height: 1.24rem; margin-top: 1em; margin-bottom: 2em;}
 	#navbuttons { right: 0; bottom: 64px; width: 30%; gap: 16px; padding: 8px 0 8px 8px; background-color: rgba(0,0,0,0.8); border-radius: 32px 0 0 32px;}
 }
 </style>

@@ -70,7 +70,6 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 
 .big-box
 	background: linear-gradient(40deg,#272727,#1B2023)
-	border-radius: 4px 4px 0 0 
 	small
 		color: #676767
 		font-size: 12px
@@ -113,7 +112,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		color: #878787
 		font-weight: 300
 		letter-spacing: 0
-		margin-bottom: 1em
+		margin-bottom: 8px
 		margin-top: 0
 		&:hover a
 			color: #fe4a49
@@ -127,23 +126,28 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		opacity: 1
 		filter: saturate(1)
 
+#last-row
+	flex-direction: row
+
+		
 @media screen and (min-width: 900px) 
 	.big-box
-		padding-top: 2em
-	
+		padding-top: 1em
+		
 	.margin-box
-		height: calc(100vh - 14em)
-		width: calc(100% - 16vw)
-		margin: 2em 8vw 0 8vw
+		height: calc(100vh - 12em)
+		width: 100%
+		padding: 0 6vw
+		margin-top: 2em
 
 	#row-one
 		padding-top: 4em
 
 	#last-row
 		height: 8em
-		margin: 0 8vw
-		width: calc(100% - 16vw)
-		padding-top: 1em
+		margin: 0
+		width: 100%
+		padding: 1em 6vw
 
 	#logoimage
 		width: 200px
@@ -180,14 +184,13 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		padding-top: 2em
 
 	.margin-box
-		height: calc(100vh - 10em)
-		width: calc(100% - 16vw)
-		margin: 2em 8vw 0em 8vw
-
+		height: calc(100vh - 8em)
+		width: calc(100% - 12vw)
+		margin: 2em 6vw 0 6vw
+	
 	#last-row
-		height: 2em
-		width: calc(100% - 16vw)
-		margin: 0 8vw
+		height: 6em
+		width: calc(100vw - 12vw)
 		padding-top: 1em
 
 	#logoimage
@@ -225,13 +228,13 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		padding-top: 2em
 
 	.margin-box
-		height: calc(100vh - 10em)
-		width: calc(100% - 8vw)
+		height: calc(100vh - 12em)
+		width: calc(100vw - 8vw)
 		margin: 2em 4vw 0em 4vw
 
 	#last-row
 		height: 4em
-		width: calc(100% - 8vw)
+		width: calc(100vw - 8vw)
 		margin: 0 4vw
 		padding-top: 1em
 
@@ -270,8 +273,8 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		padding-top: 2em
 
 	.margin-box
-		width: calc(100% - 12vw)	
-		min-height: calc(100vh - 10em)
+		width: calc(100% - 12vw)
+		height: calc(100% - 12em)
 		margin: 2em 6vw 0em 6vw
 
 	#last-row

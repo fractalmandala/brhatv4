@@ -1,10 +1,10 @@
 <script>
+
 import supabase from '$lib/db'
 import HeadGeneral from '$lib/components/globals/Header.svelte'
 import HomeAccordion from '$lib/components/pagecomps/HomeAccordion.svelte'
 import DhitiRecent from '$lib/components/pagecomps/DhitiSlider.svelte'
 import HomeVids from '$lib/components/pagecomps/HomeVids.svelte'
-import BrhatActions from '$lib/components/pagecomps/BrhatActions.svelte'
 import ButtonOutline from '$lib/components/animations/ButtonOutline.svelte'
 
 async function brhatPillars() {
@@ -16,20 +16,21 @@ const { data , error } = await supabase
 if (error) throw new Error(error.message)
 return data
 }
+
 </script>
 
 <HeadGeneral></HeadGeneral>
 <HomeAccordion></HomeAccordion>
 <div class="big-box">
-<h3 id="lead-text" data-aos="fade-up">
+	<h3 id="lead-text" data-aos="fade-up">
 	B<span class="isred">ṛ</span>hat is a Culture Engine
-</h3>
-<h5 class="cc-left" id="actions" data-aos="fade-up">
+	</h3>
+	<h5 class="cc-left" id="actions" data-aos="fade-up">
 	To power creatives, research and design rooted
 	in the Indian civilizational consciousness.<br>We convert individual, institutional 
 	and collective intent into action, across 3 dimensions:
-</h5>
-{#await brhatPillars()}
+	</h5>
+	{#await brhatPillars()}
 	<small>...</small>
 	{:then data}
 	<div class="base-row pillars-row padding-base">
@@ -41,16 +42,16 @@ return data
 		</div>
 		{/each}
 	</div>
-{:catch error}
-<pre>{error}</pre>
-{/await}
-<ButtonOutline><a href="/about">About Us</a></ButtonOutline>
+	{:catch error}
+	<pre>{error}</pre>
+	{/await}
+	<ButtonOutline><a href="/about">About Us</a></ButtonOutline>
 </div>
 <HomeVids></HomeVids>
 <DhitiRecent></DhitiRecent>
 
 <style>
-.big-box { justify-content: center;}
+.big-box { justify-content: center; align-items: center;}
 .card.pillars img {
 	object-fit: contain;
 	margin-left: auto;
@@ -63,7 +64,7 @@ return data
 a { color: inherit;}
 
 @media screen and (min-width: 900px) {
-
+	
 	.padding-base {
 		padding-left: 6vw;
 		padding-right: 6vw;
