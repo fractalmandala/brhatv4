@@ -258,7 +258,7 @@ body, html { margin: 0; box-sizing: border-box;}
 	.dhitisheet { width: 66vw; }
 	.dhitisheet h1 { font-size: 4.8rem; letter-spacing: -3px; line-height: 1.12em; margin-top: 0; margin-right: -12vw;}
 	.dhiti-post p { font-size: 24px; line-height: 1.4em; margin: 6px 0 16px 0;}
-	.dhiti-post h4 { margin-top: 8px; margin-bottom: 0; font-weight: 800;}
+	.dhiti-post h4 { margin-top: 8px; margin-bottom: 0; font-weight: 600;}
 	.dhiti-post h5 { margin-top: 0; margin-left: 1rem; margin-bottom: 16px;}
 	.dhiti-post blockquote { padding-top: 8px; padding-right: 1rem; margin-right: 4rem;}
 }
@@ -329,7 +329,8 @@ body, html { margin: 0; box-sizing: border-box;}
 .corp-docs li { margin-bottom: 8px;}
 .corp-docs p, .corp-docs h5 { margin-top: 0; margin-bottom: 1rem;}
 .base-col h5 { margin-top: 1em; margin-bottom: 0.24em;}
-h4 { padding-top: 16px; margin-bottom: 1rem; margin-top: 1rem;}
+h4 { padding-top: 16px; margin-bottom: 1rem; margin-top: 1rem; font-weight: 600;}
+h5 { margin-bottom: 0;}
 .isgrey { color: #878787;}
 .corp-docs blockquote cite { text-transform: uppercase; font-style: normal; font-size: 14px; margin-top: 0;}
 .corp-docs cite, .corp-docs h5 cite, cite { font-size: 14px; font-style: normal; color: #878787;}

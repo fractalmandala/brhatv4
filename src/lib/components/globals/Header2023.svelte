@@ -5,10 +5,10 @@ import { Keyboard, Navigation } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/keyboard'
 import 'swiper/css/navigation'
-import FlatScreen from '$lib/components/globals/FlatScreen.svelte'
 import { fade } from 'svelte/transition';
 import { fly } from 'svelte/transition'
 import { circOut } from 'svelte/easing'
+import { expoIn } from 'svelte/easing'
 let isMenu = false;
 
 function showMenu() {
@@ -47,8 +47,8 @@ export async function latestDhiti(){
 	</div>
 	{#if isMenu}
 	<div class="fullscreener"
-		in:fly="{{ delay: 0, duration: 200, x: 1000, opacity: 0, easing: circOut}}"
-		out:fly="{{ delay: 0, duration: 300, x: 1000, y: 0, opacity: 0, easing: circOut}}">
+		in:fly="{{ delay: 0, duration: 600, x: 1000, opacity: 0, easing: expoIn}}"
+		out:fly="{{ delay: 0, duration: 600, x: 1000, y: 0, opacity: 0, easing: expoIn}}">
 		<div class="innerheading">
      	<div class="logotype inside-logotype">
        		<a href="/"><img class="the-inner" src="/images/brhatlogos/horizontalwhite.png" alt="logotype"
@@ -143,6 +143,44 @@ export async function latestDhiti(){
 								</div>
 						</div>
 					</div>
+					<div class="listlist">
+						<p class="isdont" in:fly="{{delay: 600, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/dhiti">Dhīti</a></p>
+						<p class="isdont" in:fly="{{delay: 600, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/openlibrary">Open Library</a></p>
+						<p in:fly="{{delay: 300, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/about">About</a></p>
+							<small in:fly="{{delay: 550, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/about/#actions">Actions</a></small>
+							<small in:fly="{{delay: 600, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/about/docs/namelogo">Nāmarūpa</a></small>
+							<small in:fly="{{delay: 650, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/about/docs/values">Pratijñā</a></small>
+						<p in:fly="{{delay: 350, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/anveshi">Anveṣī</a></p>
+							<small in:fly="{{delay: 600, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/anveshi/chapter/odisha">Odisha Chapter</a></small>
+							<small in:fly="{{delay: 650, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/anveshi/chapter/chamba">Chamba Chapter</a></small>
+							<small in:fly="{{delay: 700, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/anveshi/chapter/karnataka">Karnataka Chapter</a></small>
+							<small in:fly="{{delay: 750, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/anveshi/diaries">Travel Diaries</a></small>
+							<small in:fly="{{delay: 800, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/anveshi/faq">FAQs</a></small>
+							<small in:fly="{{delay: 850, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/anveshi/gallery">Gallery</a></small>
+						<p in:fly="{{delay: 400, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/drashta">Draṣṭā</a></p>
+							<small in:fly="{{delay: 650, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/course/hinduiconography">Hindu Iconography</a></small>
+							<small in:fly="{{delay: 700, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/course/shriramswarup">Shri Ram Swarup</a></small>
+							<small in:fly="{{delay: 750, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/anveshi/course/sitaramgoel">Sita Ram Goel</a></small>
+							<small in:fly="{{delay: 800, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/drashtas">Draṣṭās</a></small>
+							<small in:fly="{{delay: 850, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/schools">Schools</a></small>
+							<small in:fly="{{delay: 900, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/firekeepers">Firekeepers</a></small>
+						<p class="isdo" in:fly="{{delay: 450, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/mrdanga">Mṛdaṅga</a></p>
+							<small in:fly="{{delay: 700, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/mrdanga/kala">Kalā</a></small>
+							<small in:fly="{{delay: 750, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/mdranga/rasa">Rasa</a></small>
+							<small in:fly="{{delay: 800, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/mrdanga/kavita">Kavitā</a></small>
+						<p class="isdo" in:fly="{{delay: 500, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/mandala">Maṇḍala</a></p>
+							<small in:fly="{{delay: 750, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/mandala/essays">Essays</a></small>
+							<small in:fly="{{delay: 800, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/mandala/aphorisms">Caturasūtra</a></small>
+							<small in:fly="{{delay: 850, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/mandala/synaptic">Synaptic Reconnection</a></small>
+						<p class="isdo" in:fly="{{delay: 550, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/aryavarta">Āryavarta</a></p>
+							<small in:fly="{{delay: 800, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/drashtas">Kaśyapa's Lament</a></small>
+							<small in:fly="{{delay: 850, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/schools">Sūta and Sudā</a></small>
+							<small in:fly="{{delay: 900, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/firekeepers">Gallery</a></small>
+						<p class="isdo" in:fly="{{delay: 600, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/rta">Ṛta</a></p>
+							<small in:fly="{{delay: 850, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/drashtas">Schema</a></small>
+							<small in:fly="{{delay: 900, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/schools">Principles</a></small>
+							<small in:fly="{{delay: 950, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/firekeepers">Phases</a></small>
+					</div>
 				</div>
 				<div class="c-c-c-c col2 iscol">
 					<div class="c-c-c-c slide1">
@@ -190,6 +228,8 @@ export async function latestDhiti(){
 						</div>
 					</div>
 					<div class="c-c-c-c slide2">
+						<p class="isdont" in:fly="{{delay: 600, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/dhiti">Dhīti</a></p>
+						<p class="isdont" in:fly="{{delay: 600, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/openlibrary">Open Library</a></p>
 					</div>
 				</div>
 			</div>
@@ -208,7 +248,9 @@ export async function latestDhiti(){
 <style>
 .nav-row img { object-fit: contain; width: 24px; height: 24px;}
 .nav-row { gap: 1em;}
-
+.col1 {
+	overflow-y: scroll;
+}
 
 .socialicons { border-top: 1px solid #474747; gap: 1em; padding-top: 1em; display: flex; height: 4em;}
 
@@ -349,7 +391,6 @@ a {
 		top: 0;
 		left: 0;
 		width: 100vw;
-		height: 100vh;
 		z-index: 999;
 		padding: 1rem;
 	}
@@ -368,13 +409,12 @@ a {
 		height: 32px;
 	}
 
-	.item1, .item2, .item3, .item4, .item5, .item6, .item7 { border: 1px solid #373737; border-radius: 4px; transition: all 0.39s var(--cube3);}
-	.item1:hover, .item2:hover, .item3:hover, .item4:hover, .item5:hover, .item6:hover, .item7:hover { border: 1px solid #fe4a49;}
-	.col1 p { font-weight: bold; text-transform: uppercase; transition: all 0.12s var(--cube1); }
-	.col1 small a { color: #676767;}
-	.item1:hover small a, .item2:hover small a, .item3:hover small a, .item4:hover small a, .item5:hover small a, .item6:hover small a, .item7:hover small a { color: white;}
+	.item1, .item2, .item3, .item4, .item5, .item6, .item7 { border-radius: 4px; transition: all 0.39s var(--cube3);}
+	.col1 p, .slide2 p { font-weight: bold; text-transform: uppercase; transition: all 0.12s var(--cube1); }
+	.col1 small a, .slide3 small a { color: #676767;}
+	.item1:hover small a, .item2:hover small a, .item3:hover small a, .item4:hover small a, .item5:hover small a, .item6:hover small a, .item7:hover small a, .slide3:hover small:hover a { color: white;}
 	.col1 small a:hover { color: #fe4a49;}
-	.col1 p a { color: #474747;}
+	.col1 p a, .slide3 p a, .slide2 p a { color: #474747;}
 	.dhitislide { background-size: cover; background-position: center center; background-repeat: no-repeat;}
 	.dhitiscreen h5 a { color: white;}
 	.dhitiscreen:hover a { color: #fe4a49;}
@@ -382,28 +422,30 @@ a {
 	.isitem { transition: all 0.41s var(--cube2);}
 	.dhitislide, .dhitiscreen { border-radius: 4px;}
 
+
 @media screen and (min-width: 900px) {
-	
+	.fullscreener { height: 100vh;}
 	.col1, .col2 { gap: 1em; justify-content: center;}
 	.col1 { width: 60%;}
 	.col2 { width: 40%;}
-	.col1 p a { font-size: 1.44em;}
-	.col1 p { margin-bottom: 8px;}
+	.col1 p a, .slide2 p a { font-size: 1.44em;}
+	.col1 p, .slide2 p { margin-bottom: 8px;}
 	.col1 small a { font-size: 1em;}
 	.col1 small { line-height: 1.6em;}
 	.main-row { gap: 1em; height: calc(50% - 2.5em);}
-	.item1:hover p a, .item2:hover p a, .item3:hover p a, .item4:hover p a, .item5:hover p a, .item6:hover p a, .item7:hover p a { color: #fe4a49;}
+	.item1:hover p a, .item2:hover p a, .item3:hover p a, .item4:hover p a, .item5:hover p a, .item6:hover p a, .item7:hover p a, .slide2 p:hover a { color: #fe4a49;}
 	.item1 { width: 100%; height: calc(25% - 1.25em); padding-left: 1em; }
 	.item2, .item3, .item4, .item5, .item6, .item7 { width: calc(50% - 0.5em); padding-left: 1em;}
 	.row-top, .row-mid, .row-low { height: calc(25% - 1.25em); gap: 1em;}
 	.slide1 { width: 100%; height: calc(75% - 1.75em);}
-	.slide2 { width: 100%; height: calc(25% - 1.25em); border: 1px solid #373737; border-radius: 4px;}
+	.slide2 { width: 100%; height: calc(25% - 1.25em); border: 1px solid #373737; border-radius: 4px; padding-left: 1em;}
 	.dhitislide { width: 100%; height: 100%;}
 	.dhitiscreen { width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); padding-left: 2em; padding-right: 2em;}
 	.dhitiscreen a { font-size: 1.12em;}
 	.dhitiscreen h5 { line-height: 1.44em;}
 	.nav-row { margin-top: -3em; margin-bottom: 0em ;z-index: 4; padding-left: 2em; }
 	.the-in { gap: 2em;}
+	.isitem { border: 1px solid #373737;}
 
 	.padding-base {
 		padding-left: 6vw;
@@ -444,13 +486,40 @@ a {
 		cursor: pointer;
 	}
 
-	.col1, .col2 {
-		height: 100%;
+	.listlist { 
+		flex-direction: column;
+		display: none;
 	}
 
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
+	.isitem { justify-content: flex-start;}
+	.fullscreener { height: 100%;}
+	.col1, .col2 { gap: 1em; justify-content: flex-start; height: 100%;}
+	.col1 { width: 100%; padding-top: 1em; }
+	.col2 { display: none;}
+	.col1 p a { font-size: 2.56em;}
+	.col1 p { margin-bottom: 8px; margin-top: 1.44em;}
+	.col1 small a { font-size: 1.6em;}
+	.col1 small { line-height: 2.16em;}
+	.isdo { margin-bottom: 8px; margin-top: 1.44em;}
+	.isdont { margin-bottom: 4px; margin-top: 4px;}
+	.main-row { gap: 1em; height: calc(100% - 2.5em);}
+	.item1:hover p a, .item2:hover p a, .item3:hover p a, .item4:hover p a, .item5:hover p a, .item6:hover p a, .item7:hover p a { color: #fe4a49;}
+	.item1 { width: 100%; height: calc(25% - 1.25em); padding-left: 1em; }
+	.item2, .item3, .item4, .item5, .item6, .item7 { width: calc(50% - 0.5em); padding-left: 1em;}
+	.row-top { height: calc(25% - 1.25em); gap: 1em;}
+	.row-mid, .row-low { height: calc(25% - 1.25em); gap: 1em;}
+	.slide1 { width: 100%; height: calc(75% - 1.75em);}
+	.slide2 { width: 100%; height: calc(25% - 1.25em); border: 1px solid #373737; border-radius: 4px;}
+	.dhitislide { width: 100%; height: 100%;}
+	.dhitiscreen { width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); padding-left: 2em; padding-right: 2em;}
+	.dhitiscreen a { font-size: 1.12em;}
+	.dhitiscreen h5 { line-height: 1.44em;}
+	.nav-row { margin-top: -3em; margin-bottom: 0em ;z-index: 4; padding-left: 2em; }
+	.the-in { gap: 1em;}
+	
 	.padding-base {
 		padding-right: 6vw;
 		padding-left: 6vw;
@@ -475,19 +544,27 @@ a {
 	}
 
 	.fullscreener {
-		padding-left: 8vw;
-		padding-right: 8vw;
+		padding-left: 6vw;
+		padding-right: 6vw;
 	}
 
-	.the-inner { object-fit: contain; width: 128px;}
+	.the-inner { object-fit: contain; width: 160px; margin-bottom: 8px;}
 
 	.soc2 { height: 4em;}
+
+	.isitem, .slide1, .slide2 { display: none;}
+	.row-top, .row-mid, .row-low { display: none;}
+	.listlist { 
+		flex-direction: column;
+		display: flex;
+	}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
+	.fullscreener { min-height: 100vh; padding-left: 6vw; padding-right: 6vw;}
 	.padding-base {
-		padding-right: 4vw;
-		padding-left: 4vw;
+		padding-right: 6vw;
+		padding-left: 6vw;
 	}
 
 	.logoarea { width: 50%; padding-top: 2px; }
@@ -574,10 +651,45 @@ a {
     transform: scale(1.1);
   }
 
+		.isitem, .slide1, .slide2 { display: none;}
+	.row-top, .row-mid, .row-low { display: none;}
+	.listlist { 
+		flex-direction: column;
+		display: flex;
+	}
+
+	.isitem { justify-content: flex-start;}
+	.fullscreener { height: 100%;}
+	.col1, .col2 { gap: 1em; justify-content: flex-start; height: 100%;}
+	.col1 { width: 100%; padding-top: 1em; padding-bottom: 1em; }
+	.col2 { display: none;}
+	.col1 p a { font-size: 2.56em;}
+	.col1 p { margin-bottom: 8px; margin-top: 1.44em;}
+	.col1 small a { font-size: 1.6em;}
+	.col1 small { line-height: 2.16em;}
+	.isdo { margin-bottom: 8px; margin-top: 1.44em;}
+	.isdont { margin-bottom: 4px; margin-top: 4px;}
+	.main-row { gap: 1em; height: calc(100% - 2.5em);}
+	.item1:hover p a, .item2:hover p a, .item3:hover p a, .item4:hover p a, .item5:hover p a, .item6:hover p a, .item7:hover p a { color: #fe4a49;}
+	.item1 { width: 100%; height: calc(25% - 1.25em); padding-left: 1em; }
+	.item2, .item3, .item4, .item5, .item6, .item7 { width: calc(50% - 0.5em); padding-left: 1em;}
+	.row-top { height: calc(25% - 1.25em); gap: 1em;}
+	.row-mid, .row-low { height: calc(25% - 1.25em); gap: 1em;}
+	.slide1 { width: 100%; height: calc(75% - 1.75em);}
+	.slide2 { width: 100%; height: calc(25% - 1.25em); border: 1px solid #373737; border-radius: 4px;}
+	.dhitislide { width: 100%; height: 100%;}
+	.dhitiscreen { width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); padding-left: 2em; padding-right: 2em;}
+	.dhitiscreen a { font-size: 1.12em;}
+	.dhitiscreen h5 { line-height: 1.44em;}
+	.nav-row { margin-top: -3em; margin-bottom: 0em ;z-index: 4; padding-left: 2em; }
+	.the-in { gap: 1em;}
+
 
 }
 
 @media screen and (max-width: 575px) {
+
+	.fullscreener { min-height: 100vh;}
 
 	.padding-base {
 		padding-left: 4vw;
@@ -649,6 +761,39 @@ a {
   .socialicons img:hover {
     transform: scale(1.1);
   }
+
+		.isitem, .slide1, .slide2 { display: none;}
+	.row-top, .row-mid, .row-low { display: none;}
+	.listlist { 
+		flex-direction: column;
+		display: flex;
+	}
+
+	.isitem { justify-content: flex-start;}
+	.fullscreener { height: 100%;}
+	.col1, .col2 { gap: 1em; justify-content: flex-start; height: 100%;}
+	.col1 { width: 100%; padding-top: 1em; padding-bottom: 1em; }
+	.col2 { display: none;}
+	.col1 p a { font-size: 2.56em;}
+	.col1 p { margin-bottom: 8px; margin-top: 1.44em;}
+	.col1 small a { font-size: 1.6em;}
+	.col1 small { line-height: 2.16em;}
+	.isdo { margin-bottom: 8px; margin-top: 1.44em;}
+	.isdont { margin-bottom: 4px; margin-top: 4px;}
+	.main-row { gap: 1em; height: calc(100% - 2.5em);}
+	.item1:hover p a, .item2:hover p a, .item3:hover p a, .item4:hover p a, .item5:hover p a, .item6:hover p a, .item7:hover p a { color: #fe4a49;}
+	.item1 { width: 100%; height: calc(25% - 1.25em); padding-left: 1em; }
+	.item2, .item3, .item4, .item5, .item6, .item7 { width: calc(50% - 0.5em); padding-left: 1em;}
+	.row-top { height: calc(25% - 1.25em); gap: 1em;}
+	.row-mid, .row-low { height: calc(25% - 1.25em); gap: 1em;}
+	.slide1 { width: 100%; height: calc(75% - 1.75em);}
+	.slide2 { width: 100%; height: calc(25% - 1.25em); border: 1px solid #373737; border-radius: 4px;}
+	.dhitislide { width: 100%; height: 100%;}
+	.dhitiscreen { width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); padding-left: 2em; padding-right: 2em;}
+	.dhitiscreen a { font-size: 1.12em;}
+	.dhitiscreen h5 { line-height: 1.44em;}
+	.nav-row { margin-top: -3em; margin-bottom: 0em ;z-index: 4; padding-left: 2em; }
+	.the-in { gap: 1em;}
 
 }
 
