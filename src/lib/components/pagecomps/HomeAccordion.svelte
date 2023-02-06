@@ -1,4 +1,4 @@
-<div class="genrow" data-scroll-section>
+<div class="genrow">
  <div class="gencol" id="col1">
    <button><a href="/about/areas/culturecreatives">Culture Creatives</a></button>
  </div>

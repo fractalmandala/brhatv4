@@ -1,96 +1,91 @@
-<script lang="ts">
-import supabase from '$lib/db'
-import { onMount } from 'svelte';
-import LocomotiveScroll from 'locomotive-scroll';
-
-let scroll;
-
-onMount(() => {
-    const el = document.querySelector('[data-scroll-container]');
-    if (el) {
-        scroll = new LocomotiveScroll({
-            el: el as HTMLElement,
-            smooth: true
-        });
-    }
-});
-
-export async function chapter(){
-	const { data, error } = await supabase
-	.from('soaChapter2')
-	.select()
-	.order('id')
-	if (error) throw new Error(error.message)
-	return data
-}
+<script>
+/**
+	 * @type {any}
+	 */
+ export let data
+let { soaChapter2 } = data;
+$: ({ soaChapter2 } = data)
 </script>
 
-<div data-scroll-container>
-	<div class="c-c-c-c the-top" data-scroll-section>
-		<h1 data-scroll data-scroll-speed="1">
-			Chapter 2<br>
-			<span class="colorange">Sūta and Sudā</span>
-		</h1>
-		<p>Bhārata, somewhere near ~2300 B.C., perhaps...</p>
+<div class="c-c-c-c prelude" data-scroll-section>
+	<h1>
+		Chapter 2<br><span class="colorange">Sūta and Sudā</span>
+	</h1>
+	<h5>
+		Bhārata, 34 years after the War...
+	</h5>
+</div>
+{#each soaChapter2 as chapter}
+<div class="r-r-r-r full-box" data-scroll-section>
+	<div class="c-c-c-c image-box" data-scroll>
+		<img src={chapter.image} alt={chapter.id} />
 	</div>
-
-	<div class="r-r-r-r item-box" data-scroll-section>
-		{#await chapter()}
-	<small>...</small>
-	{:then data}
-	{#each data as item}
-		<div class="c-c-c-c image-box">
-			<img src={item.image} alt={item.id} data-scroll data-scroll-speed="1"/>
-		</div>
-		<div class="c-c-c-c text-box">
-			<p data-scroll data-scroll-speed="2">{item.text}</p>
-		</div>
-	
-	{/each}
-	{:catch error}
-	<pre>{error}</pre>
-	{/await}
+	<div class="c-c-c-c text-box" data-scroll data-scroll-speed="7">
+		<small>{chapter.id}</small>
+		<p>{chapter.text}</p>
+	</div>
 </div>
-</div>
+{/each}
 
 
-<style>
+<style lang="sass">
 
+.image-box img
+	object-fit: cover
+
+.text-box p
+	color: white
+	font-family: 'Readex Pro',sans-serif
+	font-weight: 300
 	
-@media screen and (min-width: 900px) {
-	.the-top {
-		width: 100vw;
-		height: 100vh;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-	}
+.prelude
+	justify-content: center
 
-	.the-top h1 {
-		margin-bottom: 0.5em;
-	}
+.prelude a
+	color: #ff3d00
 
-	.the-top p {
-		margin-top: 0;
-	}
-
-	.item-box {
-		width: 100vw;
-		height: 100vh;
-		z-index: 2;
-	}
+.text-box
+	justify-content: flex-start
 	
-	.image-box img {
-		object-fit: cover;
-		width: 100%;
-	}
-		
-	.image-box {
-		width: 56%;
-	}
 
-	.text-box {
-		width: 44%;
-	}
-}
+@media screen and (min-width: 900px)
+
+	.prelude
+		height: 100vh
+		width: 100vw
+		padding: 0 8vw
+	
+	.prelude h1
+		margin-bottom: 0
+
+	.prelude h5
+		color: white
+		font-weight: 300
+
+	.full-box
+		width: 100vw
+		height: 100vh
+
+	.image-box
+		width: 60%
+
+	.image-box img
+		height: 88%
+		width: 100%
+
+	.text-box
+		width: 40%
+		padding: 4em 2em 0 2em
+		background-color: transparent
+
+	.text-box p
+		font-size: 20px
+		line-height: 1.44em
+
+	.text-box small
+		font-size: 12px
+		color: #fe4a49
+		font-weight: bold
+
+
 </style>

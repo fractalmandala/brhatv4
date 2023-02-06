@@ -1,17 +1,27 @@
 <script lang="ts">
-import { onMount } from 'svelte'
+import { onMount } from 'svelte';
 import LocomotiveScroll from 'locomotive-scroll';
+import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
 import supabase from '$lib/db'
 import HeadGeneral from '$lib/components/globals/Header2023.svelte'
 import HomeAccordion from '$lib/components/pagecomps/HomeAccordion.svelte'
 import DhitiRecent from '$lib/components/pagecomps/DhitiSlider.svelte'
 import HomeVids from '$lib/components/pagecomps/HomeVids.svelte'
 import ButtonOutline from '$lib/components/animations/ButtonOutline.svelte'
+import '$lib/styles/locomotive-scroll.css'
 
-let scroll
+let scroll;
 
 onMount(() => {
-  const scroll = new LocomotiveScroll();
+    const container = document.querySelector('[data-scroll-container]');
+    if (container) {
+        scroll = new LocomotiveScroll({
+            el: container as HTMLElement,
+            smooth: true,
+						reloadOnContextChange: true,
+						repeat: true
+        });
+    }
 });
 
 async function brhatPillars() {
@@ -27,8 +37,10 @@ return data
 </script>
 
 <HeadGeneral></HeadGeneral>
-<div class="big-scroll" data-scroll-container>
-	<HomeAccordion></HomeAccordion>
+<div class="c-c-c-c" data-scroll-container>
+	<div class="c-c-c-c holder" data-scroll-section>
+		<HomeAccordion></HomeAccordion>
+	</div>
 	<div class="big-box" data-scroll-section>
 		<h3 id="lead-text">
 			B<span class="isred">ṛ</span>hat is a Culture Engine
@@ -54,21 +66,21 @@ return data
 		<pre>{error}</pre>
 		{/await}
 		<ButtonOutline><a href="/about">About Us</a></ButtonOutline>
-		</div>
-	<HomeVids></HomeVids>
-	<DhitiRecent></DhitiRecent>
+	</div>
+	<div class="c-c-c-c holder" data-scroll-section>
+		<HomeVids></HomeVids>
+	</div>
+	<div class="c-c-c-c holder" data-scroll-section>
+		<DhitiRecent></DhitiRecent>
+	</div>
 </div>
 
 
 
 <style>
 
-.big-scroll {
-	width: 100vw;
-	height: 100%;
-	}
 
-.big-box { justify-content: center; align-items: center; z-index: 2; background: white;}
+.big-box { justify-content: center; align-items: center; background: white;}
 .card.pillars img {
 	object-fit: contain;
 	margin-left: auto;
@@ -92,6 +104,7 @@ a { color: inherit;}
 	}
 	.card { width: 33.33%; background-color: #fefefe; box-shadow: 4px 2px 5px #f1f1f1, -4px -3px 6px #f7f7f7;}
 	.pillars-row { gap: 2em; margin-top: 1em;}
+	.holder { height: 100vh; width: 100vw;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {

@@ -18,7 +18,7 @@ import 'swiper/css/navigation'
 
 </script>
 
-<div class="c-c-c-c" data-scroll-section>
+<div class="c-c-c-c">
 {#await Videos()}
 <small>loading...</small>
 {:then data}

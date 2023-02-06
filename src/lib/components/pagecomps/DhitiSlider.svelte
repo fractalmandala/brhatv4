@@ -21,7 +21,7 @@ export async function dhitiLatest(){
 </script>
 
 
-<div class="c-c-c-c" data-scroll-section>
+<div class="c-c-c-c">
 {#await dhitiLatest()}
 <small>loading...</small>
 {:then data}
@@ -49,7 +49,7 @@ export async function dhitiLatest(){
 >
 {#each data as item}
 <SwiperSlide>
-<div class="imagecontainer-hero" style="background-image: url({item.image})" data-scroll-section>
+<div class="imagecontainer-hero" style="background-image: url({item.image})">
 	<div class="imagecontainer-screen" id="bigscreen">
 		<cite>{item.category}</cite>
 		<small class="home-tag">{item.tags}</small>

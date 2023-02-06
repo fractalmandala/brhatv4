@@ -1,104 +1,86 @@
 <script>
-import supabase from '$lib/db'
-import { Swiper, SwiperSlide } from 'swiper/svelte'
-import { Keyboard, Navigation, Mousewheel } from 'swiper'
-import 'swiper/css'
-import 'swiper/css/keyboard'
-import 'swiper/css/navigation'
-import 'swiper/css/mousewheel'
-export async function chapter(){
-	const { data, error } = await supabase
-	.from('soaChapter1')
-	.select()
-	.order('id')
-	if (error) throw new Error(error.message)
-	return data
-}
+/**
+	 * @type {any}
+	 */
+ export let data
+let { soaChapter1 } = data;
+$: ({ soaChapter1 } = data)
 </script>
 
-<div class="c-c-c-c big-box">
-{#await chapter()}
-<small>...</small>
-{:then data}
-<Swiper
-	modules={[Keyboard, Navigation, Mousewheel]}
-	keyboard={true}
-  loop={true}
-	mousewheel={true}
-  slidesPerView={1}
-	breakpoints={{
-    "576": {
-      slidesPerView: 1,
-      spaceBetween: 24,
-    },
-    "768": {
-      slidesPerView: 1,
-      spaceBetween: 24,
-    },
-    "1024": {
-      slidesPerView: 1,
-      spaceBetween: 32,
-    },
-  }}
-	navigation={{ nextEl: '.custom-next', prevEl: '.custom-prev' }}
-	on:slideChange={() => console.log('slide change')}
->
-{#each data as item}
-<SwiperSlide>
-<div class="r-r-r-r image-box">
-	<img src={item.image} alt={item.id} />
-	<div class="c-c-c-c text-box">
-		<small>{item.id}</small>
-		<p>{item.text}</p>
+<div class="c-c-c-c prelude" data-scroll-section>
+	<h1>
+		Chapter 1<br><span class="colorange">Kaśyapa's Lament</span>
+	</h1>
+	<h5>
+		Chapter 1 is a collaboration with The Emissary, an eminently follow-able handle on Twitter that engages with AI-rendered imagery to create visuals of an Indian context. At Bṛhat, his art evoked in us nostalgia for a cultural past we’ve lost, and some futuristic renditions brought to life imaginations of a dhārmika sci-fi! A collaboration appeared obvious.<br><br>
+		The Emissary is a keen explorer of Indian history, politics and economics. His highly detailed studies can be found at his <a href="http://theemissary.co/" target="_blank" rel="noreferrer">website,</a> and his unique voice is on <a href="https://twitter.com/TheEmissaryCo" target="_blank" rel="noreferrer">Twitter.</a>
+	</h5>
+</div>
+{#each soaChapter1 as chapter}
+<div class="r-r-r-r full-box" data-scroll-section>
+	<div class="c-c-c-c image-box" data-scroll>
+		<img src={chapter.image} alt={chapter.id} />
+	</div>
+	<div class="c-c-c-c text-box" data-scroll data-scroll-speed="7">
+		<small>{chapter.id}</small>
+		<p>{chapter.text}</p>
 	</div>
 </div>
-</SwiperSlide>
 {/each}
-</Swiper>
-<div class="r-r-r-r nav-row">
-	<div class="custom-prev"><img src="/images/icons/prevgrey.png" alt="previous"></div>
-	<div class="custom-next"><img src="/images/icons/nextgrey.png" alt="next"></div>
-</div>
-{:catch error}
-<pre>{error}</pre>
-{/await}
-</div>
+
 
 <style lang="sass">
 
 .image-box img
-	object-fit: contain
-	height: 100vh
+	object-fit: cover
 
-.nav-row 
-	z-index: 200
-	margin-top: -4em
+.text-box p
+	color: white
+	font-family: 'Readex Pro',sans-serif
+	font-weight: 300
+	
+.prelude
+	justify-content: center
 
-.custom-prev img, .custom-next img
-	object-fit: contain
-	width: 30px
-	height: 30px
-	cursor: pointer
-	transform-origin: center center
-	transition: all 0.12s var(--cube4)
+.prelude a
+	color: #ff3d00
 
-.custom-prev:hover img, .custom-next:hover img
-	transform: scale(0.9)
+.text-box
+	justify-content: flex-start
 	
 
 @media screen and (min-width: 900px)
-	.big-box
+
+	.prelude
+		height: 100vh
+		width: 100vw
+		padding: 0 8vw
+	
+	.prelude h1
+		margin-bottom: 0
+
+	.prelude h5
+		color: white
+		font-weight: 300
+
+	.full-box
 		width: 100vw
 		height: 100vh
-		padding: 0
-		margin: 0
+
+	.image-box
+		width: 60%
+
+	.image-box img
+		height: 88%
+		width: 100%
 
 	.text-box
-		padding: 8em 2em 0 2em
+		width: 40%
+		padding: 4em 2em 0 2em
 		background-color: transparent
 
 	.text-box p
-		font-size: 1.12em
+		font-size: 20px
 		line-height: 1.44em
 
 	.text-box small
@@ -106,17 +88,5 @@ export async function chapter(){
 		color: #fe4a49
 		font-weight: bold
 
-	.nav-row
-		width: 100%
-		position: relative
-		gap: 2em
-
-	.custom-next
-		position: absolute
-		right: 2em
-
-	.custom-prev
-		position: absolute
-		right: 5em
 
 </style>

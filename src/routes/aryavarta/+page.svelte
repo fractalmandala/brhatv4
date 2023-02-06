@@ -1,15 +1,10 @@
-<script lang="ts">
-import { fly } from 'svelte/transition'
-
-</script>
-
 <div class="imagecontainer-hero" data-scroll-section></div>
 <div class="r-r-r-r box2" data-scroll-section>
 	<div class="c-c-c-c cola">
     <img data-scroll data-scroll-speed="3" class="ini-img" src="/images/scrolls/anc1.webp" alt="part1"/>
 	</div>
 	<div class="c-c-c-c colb">
-		<h4 data-scroll data-scroll-speed="1">
+		<h4 data-scroll data-scroll-speed="6">
 			There is a place.<br>
 			It lies outside of space and time as we know it,<br>
 			but many of us have been there.<br>
@@ -19,7 +14,7 @@ import { fly } from 'svelte/transition'
 </div>
 <div class="r-r-r-r box3" data-scroll-section>
 	<div class="c-c-c-c colc">
-		<h4 data-scroll data-scroll-speed="3">
+		<h4 data-scroll data-scroll-speed="6">
 			Hive mind. Race memory. Blood bond.<br>
 			We may call it many things, but we know it best when we see it,<br>
 			and it feels warm and familiar…as if a memory we once lived.<br>
@@ -27,15 +22,15 @@ import { fly } from 'svelte/transition'
 		</h4>
 	</div>
 	<div class="c-c-c-c cold">
-		<img src="/images/scrolls/anc2.webp" alt="part2" data-scroll data-scroll-speed="1" class="ini-img"/>
+		<img src="/images/scrolls/anc2.webp" alt="part2" data-scroll data-scroll-speed="3" class="ini-img"/>
 	</div>
 </div>
 <div class="r-r-r-r box2" data-scroll-section>
 	<div class="c-c-c-c cola">
-    <img data-scroll data-scroll-speed="1" class="ini-img" src="/images/scrolls/anc3.webp" alt="part3"/>
+    <img data-scroll data-scroll-speed="3" class="ini-img" src="/images/scrolls/anc3.webp" alt="part3"/>
 	</div>
 	<div class="c-c-c-c colb">
-		<h4 data-scroll data-scroll-speed="4">
+		<h4 data-scroll data-scroll-speed="6">
 			<span class="colorange">For countless times before have you been here,</span><br>
 			and a countless times I.<br>
 			You there, in one incarnation you were a master of mantra.<br>
@@ -45,7 +40,7 @@ import { fly } from 'svelte/transition'
 </div>
 <div class="r-r-r-r box3" data-scroll-section>
 	<div class="c-c-c-c colc">
-		<h4 data-scroll data-scroll-speed="5">			
+		<h4 data-scroll data-scroll-speed="6">			
 			And you? A pioneer of tilled grain you were.<br>
 			Your hard, seasoned hands fed a civilization.<br>
 			Another among us was quite a daredevil,<br>
@@ -66,13 +61,14 @@ import { fly } from 'svelte/transition'
 	</h4>
 </div>
 <div class="c-c-c-c box6" data-scroll-section id="tostick">
-	<h3 data-scroll>
+	<h3 data-scroll data-scroll-speed="2">
 		The Scrolls of Āryavarta is a project to celebrate, express and engage in this shared lore- <span class="colorange"> the dhārmika lore.</span> A calling to all who dream of the Bhārata that once was, or Bhāratas that could have been.
 	</h3>
-	<div class="r-r-r-r buttonsbox">
-		<button data-scroll data-scroll-speed="1"><a href="/aryavarta/chapter/01">1 - Kaśyapa's Lament</a></button>
-		<button data-scroll data-scroll-speed="1"><a href="/aryavarta/chapter/02">2 - Sūta and Sudā</a></button>
-		<button data-scroll data-scroll-speed="1"><a href="/aryavarta/gallery">Gallery</a></button>
+	<div class="r-r-r-r buttonsbox" data-scroll data-scroll-speed="1">
+		<button><a href="/aryavarta/chapter/01">1 - Kaśyapa's Lament</a></button>
+		<button><a href="/aryavarta/chapter/02">2 - Sūta and Sudā</a></button>
+		<button><a href="/aryavarta/gallery">Gallery</a></button>
+		<button><a href="/aryavarta/getinvolved">Get Involved</a></button>
 	</div>
 </div>
 
@@ -110,7 +106,7 @@ button a
 
 .cola img, .cold img
 	object-fit: cover
-	height: 100%
+	height: 88%
 	width: 100%
 
 h4
