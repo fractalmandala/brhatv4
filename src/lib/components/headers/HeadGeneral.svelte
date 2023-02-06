@@ -198,8 +198,6 @@ a, .menuitems a {
  margin: 0;
  padding: 0 !important;
  align-items: center;
-	background: rgba(255,255,255,0.6);
-	backdrop-filter: blur(0.4);
 top: 0;
 }
 

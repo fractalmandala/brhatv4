@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import supabase from '$lib/db'
 import { Swiper, SwiperSlide } from 'swiper/svelte'
 import { Keyboard, Navigation } from 'swiper'
@@ -18,7 +18,7 @@ import 'swiper/css/navigation'
 
 </script>
 
-
+<div class="c-c-c-c" data-scroll-section>
 {#await Videos()}
 <small>loading...</small>
 {:then data}
@@ -62,7 +62,6 @@ import 'swiper/css/navigation'
   			<img src="/images/icons/nextwhite.png" alt="next" />
 			</div>
 		</div>
-
 </div>
 </SwiperSlide>
 {/each}
@@ -70,9 +69,12 @@ import 'swiper/css/navigation'
 {:catch error}
 <pre>{error}</pre>
 {/await}
+</div>
 
 <style>
-	
+.imagecontainer-hero {
+	z-index: 2;
+}
 #navbuttons { position: absolute; z-index: 400; }
 
 	small { color: white;}

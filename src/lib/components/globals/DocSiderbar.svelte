@@ -1,6 +1,5 @@
 <script>
 // @ts-nocheck
-
 export const postgrePosts = async () => {
   const allDocFiles = import.meta.glob('/src/routes/docs/*.md')
   const iterableDocFiles = Object.entries(allDocFiles)
@@ -130,7 +129,7 @@ export const sveltePosts = async () => {
 }
 </script>
 
-<div class="side-bar2">	
+<div class="side-bars">	
 {#await postgrePosts()}
 <small>...</small>
 {:then data}
@@ -180,3 +179,61 @@ export const sveltePosts = async () => {
 	{/each}
 {/await}
 </div>
+
+<style>
+	.side-bars {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.side-bars h5 {
+		margin-top: 1em;
+		margin-bottom: 4px;
+		text-transform: uppercase;
+		font-size: 1em;
+	}
+
+	.side-bars p {
+		margin-top: 4px;
+		margin-bottom: 6px;
+		font-size: 14px;
+		text-transform: capitalize;
+		color: #878787;
+	}
+
+	.side-bars p:hover {
+		transform: scale(1.1);
+		transform-origin: center left;
+	}
+
+	.side-bars p a {
+		transition: all 0.08s var(--cube1);
+		text-transform: capitalize;
+		color: #878787;
+	}
+
+	.side-bars a:hover {
+		color: #10c56D;
+	}
+
+	@media screen and (min-width: 900px) {
+		.side-bars {
+			width: 25vw;
+			padding-left: 2em;
+			border-right: 1px solid #373737;
+			padding-bottom: 2em;
+			height: 88vh;
+			position: sticky;
+			top: 0;
+			left: 0;
+			overflow-y: scroll;
+		}
+	}
+
+	@media screen and (max-width: 899px) and (min-width: 768px) {
+		.side-bars {
+			width: 25vw;
+		}
+	}
+
+</style>

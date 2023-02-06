@@ -6,6 +6,7 @@ body, html { margin: 0; box-sizing: border-box; }
 *, :root {
  box-sizing: border-box;
  --red: #FE4A49;
+ --orange: #ff3d00;
  --blue: #255F85;
 --lblue: #11B5E4;
 --green: #10c56d;
@@ -29,6 +30,8 @@ body, html { margin: 0; box-sizing: border-box; }
  --wshadow3: 6px 8px 10px #c1c1c1, -2px -5px 6px #e7e7e7;
  --beau: linear-gradient(40deg,#272727,#1B2023);
 }
+
+.colorange { color: #ff3d00;}
 
 .green { color: var(--green);}
 

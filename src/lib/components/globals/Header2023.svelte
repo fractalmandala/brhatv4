@@ -446,6 +446,7 @@ a {
 	.nav-row { margin-top: -3em; margin-bottom: 0em ;z-index: 4; padding-left: 2em; }
 	.the-in { gap: 2em;}
 	.isitem { border: 1px solid #373737;}
+	.isitem:hover { border: 1px solid #fe4a49;}
 
 	.padding-base {
 		padding-left: 6vw;

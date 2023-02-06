@@ -1,7 +1,4 @@
 <script lang="ts">
-import '$lib/styles/anim-scrolls.css'
-import HeadSoa from '$lib/components/headers/HeadSoa.svelte'
-import FlyingPage from '$lib/components/animations/FlyingPage.svelte'
 import { onMount } from 'svelte';
 import LocomotiveScroll from 'locomotive-scroll';
 
@@ -18,16 +15,12 @@ onMount(() => {
 });
 </script>
 
-<FlyingPage>
-<HeadSoa></HeadSoa>
-<div class="is-a-screen" data-scroll-container>
+<div class="loco-con" data-locomotive-container style="flex-direction: var(--flexdir)">
 <slot></slot>
 </div>
-</FlyingPage>
 
 <style>
-	.is-a-screen {
-		background: var(--beau);
-	}
+.loco-con {
+	display: flex;
+}
 </style>
-

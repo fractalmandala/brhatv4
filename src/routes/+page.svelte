@@ -1,11 +1,18 @@
-<script>
-
+<script lang="ts">
+import { onMount } from 'svelte'
+import LocomotiveScroll from 'locomotive-scroll';
 import supabase from '$lib/db'
 import HeadGeneral from '$lib/components/globals/Header2023.svelte'
 import HomeAccordion from '$lib/components/pagecomps/HomeAccordion.svelte'
 import DhitiRecent from '$lib/components/pagecomps/DhitiSlider.svelte'
 import HomeVids from '$lib/components/pagecomps/HomeVids.svelte'
 import ButtonOutline from '$lib/components/animations/ButtonOutline.svelte'
+
+let scroll
+
+onMount(() => {
+  const scroll = new LocomotiveScroll();
+});
 
 async function brhatPillars() {
 const { data , error } = await supabase
@@ -20,38 +27,48 @@ return data
 </script>
 
 <HeadGeneral></HeadGeneral>
-<HomeAccordion></HomeAccordion>
-<div class="big-box">
-	<h3 id="lead-text" data-aos="fade-up">
-	B<span class="isred">ṛ</span>hat is a Culture Engine
-	</h3>
-	<h5 class="cc-left" id="actions" data-aos="fade-up">
-	To power creatives, research and design rooted
-	in the Indian civilizational consciousness.<br>We convert individual, institutional 
-	and collective intent into action, across 3 dimensions:
-	</h5>
-	{#await brhatPillars()}
-	<small>...</small>
-	{:then data}
-	<div class="base-row pillars-row padding-base">
-		{#each data as item, index}
-		<div class="base-col card pillars" data-aos="fade-up" data-aos-delay={50 + (index * 100)}>
-			<img src={item.image} alt={item.name}/>
-			<h5 class="mt2 cc-left isblack wd100">{item.name}</h5>
-			<pre class="cc-left in-card">{item.content}</pre>
-		</div>
+<div class="big-scroll" data-scroll-container>
+	<HomeAccordion></HomeAccordion>
+	<div class="big-box" data-scroll-section>
+		<h3 id="lead-text">
+			B<span class="isred">ṛ</span>hat is a Culture Engine
+		</h3>
+		<h5 class="cc-left" id="actions">
+			To power creatives, research and design rooted
+			in the Indian civilizational consciousness.<br>We convert individual, institutional 
+			and collective intent into action, across 3 dimensions:
+		</h5>
+		{#await brhatPillars()}
+		<small>...</small>
+		{:then data}
+		<div class="base-row pillars-row padding-base">
+		{#each data as item}
+			<div class="base-col card pillars"> 
+				<img src={item.image} alt={item.name}/>
+				<h5 class="mt2 cc-left isblack wd100">{item.name}</h5>
+				<pre class="cc-left in-card">{item.content}</pre>
+			</div>
 		{/each}
-	</div>
-	{:catch error}
-	<pre>{error}</pre>
-	{/await}
-	<ButtonOutline><a href="/about">About Us</a></ButtonOutline>
+		</div>
+		{:catch error}
+		<pre>{error}</pre>
+		{/await}
+		<ButtonOutline><a href="/about">About Us</a></ButtonOutline>
+		</div>
+	<HomeVids></HomeVids>
+	<DhitiRecent></DhitiRecent>
 </div>
-<HomeVids></HomeVids>
-<DhitiRecent></DhitiRecent>
+
+
 
 <style>
-.big-box { justify-content: center; align-items: center;}
+
+.big-scroll {
+	width: 100vw;
+	height: 100%;
+	}
+
+.big-box { justify-content: center; align-items: center; z-index: 2; background: white;}
 .card.pillars img {
 	object-fit: contain;
 	margin-left: auto;
@@ -74,7 +91,7 @@ a { color: inherit;}
 		width: 64px;
 	}
 	.card { width: 33.33%; background-color: #fefefe; box-shadow: 4px 2px 5px #f1f1f1, -4px -3px 6px #f7f7f7;}
-	.pillars-row { gap: 2em;}
+	.pillars-row { gap: 2em; margin-top: 1em;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {

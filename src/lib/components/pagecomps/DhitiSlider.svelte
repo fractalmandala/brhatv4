@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import supabase from '$lib/db'
 import { Swiper, SwiperSlide } from 'swiper/svelte'
 import ButtonOutline from '$lib/components/animations/ButtonOutline.svelte'
@@ -6,6 +6,7 @@ import { Keyboard, Navigation } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/keyboard'
 import 'swiper/css/navigation'
+
 
 export async function dhitiLatest(){
 	const { data, error } = await supabase
@@ -19,6 +20,8 @@ export async function dhitiLatest(){
 
 </script>
 
+
+<div class="c-c-c-c" data-scroll-section>
 {#await dhitiLatest()}
 <small>loading...</small>
 {:then data}
@@ -46,7 +49,7 @@ export async function dhitiLatest(){
 >
 {#each data as item}
 <SwiperSlide>
-<div class="imagecontainer-hero" style="background-image: url({item.image})">
+<div class="imagecontainer-hero" style="background-image: url({item.image})" data-scroll-section>
 	<div class="imagecontainer-screen" id="bigscreen">
 		<cite>{item.category}</cite>
 		<small class="home-tag">{item.tags}</small>
@@ -70,6 +73,7 @@ export async function dhitiLatest(){
 {:catch error}
 <pre>{error}</pre>
 {/await}
+</div>
 
 <style>
 
