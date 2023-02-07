@@ -40,55 +40,55 @@ export async function chambaTemps(){
 </script>
 
 <div class="imagecontainer-hero"></div>
-<div class="blog-pad temp-pads">
-{#await chamba()}
-<small>loading...</small>
-{:then data}
-{#each data as item}
-<h1>{item.name}</h1>
-<div class="base-row icons-row row-x-left">
-	<div class="base-col col-y-cent col-x-cent" id="duration">
-		<img src="/images/icons/icon-duration.webp" alt="duration" />
-		<caption class="cc">{item.duration}<br>
-			<cite>duration</cite>
-		</caption>
+<div class="blog-pad">
+	{#await chamba()}
+	<small>loading...</small>
+	{:then data}
+	{#each data as item}
+	<h1>{item.name}</h1>
+	<div class="base-row icons-row row-x-left">
+		<div class="base-col col-y-cent col-x-cent" id="duration">
+			<img src="/images/icons/icon-duration.webp" alt="duration" />
+			<caption class="cc">{item.duration}<br>
+				<cite>duration</cite>
+			</caption>
+		</div>
+		<div class="base-col col-y-cent col-x-cent" id="price">
+			<img src="/images/icons/icon-price.webp" alt="price" />
+			<caption class="cc">{item.price}<br>
+				<cite>price</cite>
+			</caption>
+		</div>
+		<div class="base-col col-y-cent col-x-cent" id="date">
+			<img src="/images/icons/icon-date.webp" alt="date" />
+			<caption class="cc">{item.dates}<br>
+				<cite>next trip</cite>
+			</caption>
+		</div>
 	</div>
-	<div class="base-col col-y-cent col-x-cent" id="price">
-		<img src="/images/icons/icon-price.webp" alt="price" />
-		<caption class="cc">{item.price}<br>
-			<cite>price</cite>
-		</caption>
+	<p>{item.content}</p>
+	{/each}
+	{:catch error}
+	<pre>{error}</pre>
+	{/await}
+	<h4>Itinerary</h4>
+	{#await chambaItin()}
+	<small>loading...</small>
+	{:then data}
+	{#each data as item}
+	<div class="base-col items">
+		<p><b>{item.name}</b></p>
+		<pre class="pre-is-list">{item.content}</pre>
 	</div>
-	<div class="base-col col-y-cent col-x-cent" id="date">
-		<img src="/images/icons/icon-date.webp" alt="date" />
-		<caption class="cc">{item.dates}<br>
-			<cite>next trip</cite>
-		</caption>
-	</div>
-</div>
-<p>{item.content}</p>
-{/each}
-{:catch error}
-<pre>{error}</pre>
-{/await}
-<h4>Itinerary</h4>
-{#await chambaItin()}
-<small>loading...</small>
-{:then data}
-{#each data as item}
-<div class="base-col items">
-<p><b>{item.name}</b></p>
-<pre class="pre-is-list">{item.content}</pre>
-</div>
-{/each}
-{:catch error}
-<pre>{error}</pre>
-{/await}
-<h4>Temples</h4>
-{#await chambaTemps()}
-<small>loading...</small>
-{:then data}
-<Swiper
+	{/each}
+	{:catch error}
+	<pre>{error}</pre>
+	{/await}
+	<h4>Temples</h4>
+	{#await chambaTemps()}
+	<small>loading...</small>
+	{:then data}
+	<Swiper
 	modules={[Keyboard, Navigation]}
 	keyboard={true}
   loop={true}
@@ -109,29 +109,29 @@ export async function chambaTemps(){
   }}
 	navigation={{ nextEl: '.custom-next', prevEl: '.custom-prev' }}
 	on:slideChange={() => console.log('slide change')}
->
-{#each data as item}
-<SwiperSlide>
+	>
+	{#each data as item}
+	<SwiperSlide>
 	<div class="base-col swipers-col">
 		<div class="imagecontainer-col" style="background-image: url({item.image})">
 		</div>
 		<h5>{item.name}</h5>
 		<p>{item.content}</p>
 	</div>
-</SwiperSlide>
-{/each}
-</Swiper>
-<div class="base-row row-x-cent" id="navbuttons">
+	</SwiperSlide>
+	{/each}
+	</Swiper>
+	<div class="base-row row-x-cent" id="navbuttons">
 	<div class="swiper-button custom-prev">
   	<img src="/images/icons/prevarrow.png" alt="prev" />
 	</div>
 	<div class="swiper-button custom-next">
   	<img src="/images/icons/nextarrow.png" alt="next" />
 	</div>
-</div>
-{:catch error}
-<pre>{error}</pre>
-{/await}
+	</div>
+	{:catch error}
+	<pre>{error}</pre>
+	{/await}
 </div>
 
 
@@ -148,6 +148,7 @@ caption cite { font-variant: small-caps; font-size: 12px; font-style: normal; vi
 #date, #duration, #price { height: 80px; justify-content: space-between;}
 .swipers-col { width: 100%;}
 .imagecontainer-col { width: 100%; background-size: cover; background-position: center center; overflow: hidden; }
+.blog-pad { height: max-content;}
 
 @media screen and (min-width: 900px) {
 	.imagecontainer-col { height: 560px;}

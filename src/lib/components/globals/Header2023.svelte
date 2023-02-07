@@ -8,7 +8,7 @@ import 'swiper/css/navigation'
 import { fade } from 'svelte/transition';
 import { fly } from 'svelte/transition'
 import { circOut } from 'svelte/easing'
-import { expoIn } from 'svelte/easing'
+import { circIn } from 'svelte/easing'
 let isMenu = false;
 
 function showMenu() {
@@ -47,8 +47,8 @@ export async function latestDhiti(){
 	</div>
 	{#if isMenu}
 	<div class="fullscreener"
-		in:fly="{{ delay: 0, duration: 600, x: 1000, opacity: 0, easing: expoIn}}"
-		out:fly="{{ delay: 0, duration: 600, x: 1000, y: 0, opacity: 0, easing: expoIn}}">
+		in:fly="{{ delay: 0, duration: 300, x: 0, y:-700, opacity: 1, easing: circIn}}"
+		out:fly="{{ delay: 0, duration: 300, x: 0, y: -700, opacity: 1, easing: circIn}}">
 		<div class="innerheading">
      	<div class="logotype inside-logotype">
        		<a href="/"><img class="the-inner" src="/images/brhatlogos/horizontalwhite.png" alt="logotype"
@@ -129,8 +129,8 @@ export async function latestDhiti(){
 						<div class="c-c-c-c item6 isitem" in:fade="{{delay: 300, duration: 300}}">
 							<p in:fly="{{delay: 550, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/aryavarta">Āryavarta</a></p>
 							<div class="c-c-c-c in-col">
-									<small in:fly="{{delay: 800, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/drashtas">Kaśyapa's Lament</a></small>
-									<small in:fly="{{delay: 850, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/schools">Sūta and Sudā</a></small>
+									<small in:fly="{{delay: 800, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/aryavarta/chapter/01">Kaśyapa's Lament</a></small>
+									<small in:fly="{{delay: 850, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/aryavarta/chapter/02">Sūta and Sudā</a></small>
 									<small in:fly="{{delay: 900, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/firekeepers">Gallery</a></small>
 								</div>
 						</div>
@@ -173,8 +173,8 @@ export async function latestDhiti(){
 							<small in:fly="{{delay: 800, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/mandala/aphorisms">Caturasūtra</a></small>
 							<small in:fly="{{delay: 850, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/mandala/synaptic">Synaptic Reconnection</a></small>
 						<p class="isdo" in:fly="{{delay: 550, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/aryavarta">Āryavarta</a></p>
-							<small in:fly="{{delay: 800, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/drashtas">Kaśyapa's Lament</a></small>
-							<small in:fly="{{delay: 850, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/schools">Sūta and Sudā</a></small>
+							<small in:fly="{{delay: 800, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/aryavarta/chapter/01">Kaśyapa's Lament</a></small>
+							<small in:fly="{{delay: 850, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/aryavarta/chapter/02">Sūta and Sudā</a></small>
 							<small in:fly="{{delay: 900, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/firekeepers">Gallery</a></small>
 						<p class="isdo" in:fly="{{delay: 600, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/rta">Ṛta</a></p>
 							<small in:fly="{{delay: 850, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/drashtas">Schema</a></small>
@@ -301,12 +301,10 @@ a {
 	margin: 0;
 	padding: 0;
 	align-items: center;
-	background: rgba(0,0,0,0);
-	backdrop-filter: blur(0.4);
 	top: 0;
 }
 
-.headerbox { width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center; background: var(--beau); border-radius: 4px;}
+.headerbox { width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center; background: var(--beau);}
 .logoarea { display: flex; flex-direction: row; align-items: center;}
 
 @keyframes spreadingout {
@@ -414,7 +412,7 @@ a {
 	.col1 small a, .slide3 small a { color: #676767;}
 	.item1:hover small a, .item2:hover small a, .item3:hover small a, .item4:hover small a, .item5:hover small a, .item6:hover small a, .item7:hover small a, .slide3:hover small:hover a { color: white;}
 	.col1 small a:hover { color: #fe4a49;}
-	.col1 p a, .slide3 p a, .slide2 p a { color: #474747;}
+	.col1 p a, .slide3 p a, .slide2 p a { color: white;}
 	.dhitislide { background-size: cover; background-position: center center; background-repeat: no-repeat;}
 	.dhitiscreen h5 a { color: white;}
 	.dhitiscreen:hover a { color: #fe4a49;}
@@ -462,14 +460,13 @@ a {
 	.logoarea .logotype img { height: 36px;}
 
 	.headerbox { 
-		margin-top: 8px;
 		padding-top: 0;
 		padding-bottom: 0;
-		width: calc(100% - 16px);
+		width: 100%;
 		height: 64px
 	}
 
-	.header { padding: 0; height: 72px; }
+	.header { padding: 0; height: 64px; }
 
 	.fullscreener {
 		padding-right: 8vw;
@@ -539,9 +536,8 @@ a {
 	}
 
 	.headerbox { 
-		height: 72px; 
-		margin-top: 8px;
-		width: calc(100% - 16px);
+		height: 64px; 
+		width: 100%;
 	}
 
 	.fullscreener {
@@ -582,13 +578,12 @@ a {
 		height: 35px;
 	}
 
- 	.headerbox { height: 64px;
-		margin-top: 4px;
-		width: calc(100% - 8px);
+ 	.header {
+		height: 64px;
+		width: 100%;
 		position: relative;
 
  	}
-	.header { height: 72px;}
 
 	.closebuttonstrip {
 		display: flex;
@@ -697,8 +692,8 @@ a {
 		padding-right: 4vw;
 	}
 	.logoarea { width: 50%; }
-	.header { height: 72px;}
-	.headerbox { height: 64px; margin-top: 4px; margin-left: 4px; margin-right: 4px; width: calc(100% - 8px);  }
+	.header { height: 64px;}
+	.headerbox { height: 64px; width: 100%;  }
 	
 	.motif img {
 		width: 42px;

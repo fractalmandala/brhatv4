@@ -10,11 +10,11 @@ export async function allCourses() {
 }
 </script>
 
-<div class="imagecontainer-hero" style="background-image: url('/images/herocovers/hinduiconography.webp')">
+<div class="imagecontainer-hero" style="background-image: url('/images/herocovers/hinduiconography.webp')" data-scroll-section>
 <div class="imagecontainer-screen">
 </div>
 </div>
-<div class="primecontainer-row">
+<div class="primecontainer-row" data-scroll-section>
 <div class="pagesheet">
 <h5 class="cc px4">
 Bṛhat Draṣṭā is our offering in deep learning where we will offer courses on some of the greatest ancient and contemporary philosophers (draṣṭās) and schools of thoughts (darśana). It also seeks to impart the ways of looking and seeing, darśana, so that the learners can also proceed on the path of being draṣṭās.

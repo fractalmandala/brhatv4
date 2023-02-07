@@ -68,39 +68,40 @@ export async function fetchFacilitator(){
 }
 </script>
 
+
 {#await fetchCourse()}
 <small>...loading</small>
 {:then data}
 {#each data as item}
-<div class="imagecontainer col-y-top col-x-left" style="background-image: url({item.image})">
+<div class="imagecontainer col-y-top col-x-left" style="background-image: url({item.image})" data-scroll-section>
 	<div class="imagecontainer-screen">
 		<h1>hindu iconography</h1>
 	</div>
 </div>
-<div class="blog-pad">
-<pre>{item.content}</pre>
+<div class="blog-pad" data-scroll-section>
+	<pre>{item.content}</pre>
 </div>
 {/each}
 {:catch error}
 <pre>{error}</pre>
 {/await}
-<div class="blog-pad" id="secondpad">
-<h4 id="secondpad-h4-1">Course Details</h4>
-{#await fetchDetails()}
-<small>...loading</small>
-{:then data}
-<div class="base-row" id="detailsrow">
-{#each data as item}
+<div class="blog-pad" id="secondpad" data-scroll-section>
+	<h4 id="secondpad-h4-1">Course Details</h4>
+	{#await fetchDetails()}
+	<small>...loading</small>
+	{:then data}
+	<div class="base-row" id="detailsrow">
+	{#each data as item}
 		<div class="base-col" id="detailscol">
 			<img src={item.image} alt={item.name} />
 			<small>{item.name}</small>
 			<p>{item.content}</p>
 		</div>
-{/each}
+	{/each}
 </div>
-	{:catch error}
-	<pre>{error}</pre>
-	{/await}
+{:catch error}
+<pre>{error}</pre>
+{/await}
 {#await fetchWhofor()}
 <small>...loading</small>
 {:then data}
@@ -114,46 +115,46 @@ export async function fetchFacilitator(){
 {#await fetchTakeaways()}
 <small>loading...</small>
 {:then data}
-<div class="base-row pt2" id="takeawaysrow">
-	{#each data as item}
-	<div class="base-col" id="takeawayscol">
-		<h5>{item.name}</h5>
-		<pre>{item.content}</pre>
+<div class="base-row pt2" id="takeawaysrow" data-scroll-section>
+		{#each data as item}
+		<div class="base-col" id="takeawayscol">
+			<h5>{item.name}</h5>
+			<pre>{item.content}</pre>
+		</div>
+		{/each}
 	</div>
-	{/each}
-</div>
-{:catch error}
-<pre>{error}</pre>
-{/await}
-<h4 id="secondpad-h4-3">Course Content</h4>
-{#await fetchContent()}
-<small>loading...</small>
-{:then data}
-<div class="base-row" id="contentrow">
-	{#each data as item}
-	<div class="base-col contentcol" id="contentcol">
-		<h5>{item.name}</h5>
-		<pre class="coursecont">{item.content}</pre>
-		<pre class="small">Books: {item.books}</pre>
+	{:catch error}
+	<pre>{error}</pre>
+	{/await}
+	<h4 id="secondpad-h4-3">Course Content</h4>
+	{#await fetchContent()}
+	<small>loading...</small>
+	{:then data}
+	<div class="base-row" id="contentrow">
+		{#each data as item}
+		<div class="base-col contentcol" id="contentcol">
+			<h5>{item.name}</h5>
+			<pre class="coursecont">{item.content}</pre>
+			<pre class="small">Books: {item.books}</pre>
+		</div>
+		{/each}
 	</div>
-	{/each}
-</div>
-{:catch error}
-<pre>{error}</pre>
-{/await}
-<h4 id="secondpad-h4-4">Instructor</h4>
-{#await fetchFacilitator()}
-<small>loading...</small>
-{:then data}
-{#each data as item}
-<div class="base-row" id="instructorrow">
+	{:catch error}
+	<pre>{error}</pre>
+	{/await}
+	<h4 id="secondpad-h4-4">Instructor</h4>
+	{#await fetchFacilitator()}
+	<small>loading...</small>
+	{:then data}
+	{#each data as item}
+	<div class="base-row" id="instructorrow">
 		<img src={item.image} alt={item.name} />
 		<pre>{item.content}</pre>
-</div>
-{/each}
-{:catch error}
-<pre>{error}</pre>
-{/await}
+	</div>
+	{/each}
+	{:catch error}
+	<pre>{error}</pre>
+	{/await}
 </div>
 
 

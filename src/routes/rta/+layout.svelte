@@ -1,10 +1,10 @@
 <script>
-import HeadRid from '$lib/components/headers/HeadRid.svelte'
-import FlyingPage from '$lib/components/animations/FlyingPage.svelte'
+import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
 </script>
 
-<FlyingPage>
-<HeadRid></HeadRid>
+
+<LocomotiveContainer>
 <slot></slot>
-</FlyingPage>
+</LocomotiveContainer>
+
 

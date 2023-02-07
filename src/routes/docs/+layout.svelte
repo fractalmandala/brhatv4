@@ -1,22 +1,13 @@
 <script>
-import { onMount } from 'svelte'
-import LocomotiveScroll from 'locomotive-scroll'
 import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
-import FlyingPage from '$lib/components/animations/FlyingPage.svelte'
-import HeadGeneral from '$lib/components/headers/HeadGeneral.svelte'
 import DocSidebar from '$lib/components/globals/DocSiderbar.svelte'
 import '$lib/styles/prism.css'
 
 
-let scroll
-onMount(() => {
-  const scroll = new LocomotiveScroll();
-});
-
 </script>
 
-<FlyingPage>
-<HeadGeneral></HeadGeneral>
+
+
 <LocomotiveContainer>
 <div class="primecontainer-row">
 <DocSidebar></DocSidebar>
@@ -25,7 +16,7 @@ onMount(() => {
 </div>
 </div>
 </LocomotiveContainer>
-</FlyingPage>
+
 
 <style>
 *, :root { 

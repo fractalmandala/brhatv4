@@ -18,7 +18,7 @@ $: ({ soaChapter2 } = data)
 {#each soaChapter2 as chapter}
 <div class="r-r-r-r full-box" data-scroll-section>
 	<div class="c-c-c-c image-box" data-scroll>
-		<img src={chapter.image} alt={chapter.id} />
+		<img src={chapter.image} alt={chapter.id} data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal"/>
 	</div>
 	<div class="c-c-c-c text-box" data-scroll data-scroll-speed="7">
 		<small>{chapter.id}</small>
@@ -29,6 +29,7 @@ $: ({ soaChapter2 } = data)
 
 
 <style lang="sass">
+
 
 .image-box img
 	object-fit: cover

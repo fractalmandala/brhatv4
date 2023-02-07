@@ -317,6 +317,35 @@ body, html { margin: 0; box-sizing: border-box;}
 	transform: scale(1.1);
 }
 
+	.tempo {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 2px solid #fe4a49;
+  border-radius: 0.6em;
+  cursor: pointer;
+  display: flex;
+  align-self: flex-start;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+	}
+
+	.tempo:hover, .tempo:focus {
+  	outline: 0;
+	}
+
+	.tempo:hover {
+		box-shadow: 0 0 40px 40px #e74c3c inset;
+		transform: scale(0.9);
+	}
+
+
 @media screen and (max-width: 899px) and (min-width: 768px) {
 	.outlinebutton { padding: 6px 16px;}
 }
@@ -333,6 +362,7 @@ body, html { margin: 0; box-sizing: border-box;}
 .corp-docs li { margin-bottom: 8px;}
 .corp-docs p, .corp-docs h5 { margin-top: 0; margin-bottom: 1rem;}
 .base-col h5 { margin-top: 1em; margin-bottom: 0.24em;}
+h2 { margin-top: 0; margin-bottom: 1em; font-weight: 800;}
 h4 { padding-top: 16px; margin-bottom: 1rem; margin-top: 1rem; font-weight: 600;}
 h5 { margin-bottom: 0;}
 .isgrey { color: #878787;}
@@ -365,6 +395,7 @@ pre {
 	h3 { font-size: 2.56rem;}
 	h4 { font-size: 1.8rem;}
 	h1 { font-size: 3rem;}
+	h2 { font-size: 2.4em;}
 	.corp-docs p, .corp-docs li, .corp-docs pre { font-size: 1.2rem; line-height: 1.4em;}
 	.base-col p, .base-col pre { font-size: 1rem; line-height: 1.2rem;}
 	.card { padding: 1rem 2rem;}

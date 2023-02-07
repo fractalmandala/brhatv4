@@ -1,6 +1,7 @@
 <script>
 import supabase from '$lib/db'
-
+import Footer from '$lib/components/globals/FooterGlobal.svelte'
+import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
 export async function getAphorisms() {
 	const { data, error} = await supabase
 	.from('brhat-aphorisms')
@@ -11,10 +12,11 @@ export async function getAphorisms() {
 }
 </script>
 
+<LocomotiveContainer>
 <div class="c-c-c-c sectioner a-1" data-scroll-section>
-	<h5>
+	<p>
 		To be a history in the true sense of the word, a work must be a story of the people inhabiting a country. It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; <span class="green">through efforts of the people to will themselves into organic unity.</span>
-	</h5>
+	</p>
 	<h4 data-scroll data-scroll-speed="-6">
 		Such a history of India is still to be written.<br>
 		<cite>Shri KM Munshi</cite>
@@ -22,15 +24,15 @@ export async function getAphorisms() {
 </div>
 <div class="r-r-c-c scrollyboard a-2" data-scroll-section id="sec-one">
 	<div class="c-c-c-c colA">
-		<h4 data-scroll data-scroll-speed="2">
+		<p data-scroll data-scroll-speed="2">
 			with a continuity of untold millennia, the passage of time visible to us in
-		</h4>
+		</p>
 		<h1 data-scroll data-scroll-speed="6">
 			itihāsa
 		</h1>
 	</div>
 	<div class="c-c-c-c colB">
-		<img src="/images/mandala/itihaas.webp" alt="itihasa" data-scroll data-scroll-speed="3" data-scroll-sticky data-scroll-target="#sec-one"/>
+		<img src="/images/mandala/itihaas.webp" alt="itihasa" data-scroll data-scroll-speed="3" />
 	</div>
 </div>
 <div class="r-r-c-c scrollyboard a-3" data-scroll-section>
@@ -38,9 +40,9 @@ export async function getAphorisms() {
 		<img src="/images/mandala/bharata.webp" alt="bharata" data-scroll data-scroll-speed="-3" data-scroll-direction="horizontal"/>
 	</div>
 	<div class="c-c-c-c colB">
-		<h4 data-scroll data-scroll-speed="2">
+		<p data-scroll data-scroll-speed="2">
 			information was processed in increasingly complex ways within the physical environment best described as
-		</h4>
+		</p>
 		<h1 data-scroll data-scroll-speed="6">
 			bhārata
 		</h1>
@@ -48,9 +50,9 @@ export async function getAphorisms() {
 </div>
 <div class="r-r-c-c scrollyboard a-2" data-scroll-section>
 	<div class="c-c-c-c colA">
-		<h4 data-scroll data-scroll-speed="2">
+		<p data-scroll data-scroll-speed="2">
 			emerged a civilizational consciousness, with multi-level coherence. It is known to us as
-		</h4>
+		</p>
 		<h1 data-scroll data-scroll-speed="6">
 			dharma
 		</h1>
@@ -62,6 +64,8 @@ export async function getAphorisms() {
 <div class="c-c-c-c a-4" data-scroll-section>
 	<h1 data-scroll data-scroll-speed="4">And it is Alive...</h1>
 	<img src="/images/mandala/rotator.png" alt="rotator" data-scroll data-scroll-speed="8"/>
+</div>
+<div class="c-c-c-c a-5" data-scroll-section>
 	<div class="c-c-c-c fractal" data-scroll data-scroll-speed="6" data-scroll-direction="horizontal">
 		<div class="title">
 			Fractal
@@ -81,15 +85,28 @@ export async function getAphorisms() {
 		</div>
 	</div>	
 </div>
-<div class="c-c-c-c a-6" data-scroll-section>
-	<div class="r-r-c-c buttons-row">
-		<button class="greenbuttons"><a href="/mandala/aphorisms">Caturasūtra - 4 Aphorisms for Civilizational Consciousness</a></button>
-		<button class="greenbuttons"><a href="/mandala/synaptic">Synaptic Reconnection to Civilizational Consciousness</a></button>
+<div class="my-gridder" data-scroll-section>
+	<div class="grid-col gc1">
+		<div class="c-c-c-c a-simple-box"></div>
+		<div class="c-c-c-c a-simple-box"></div>
+		<div class="c-c-c-c a-simple-box"></div>
+		<div class="c-c-c-c a-simple-box"></div>
 	</div>
-	<div class="r-r-r-r essays">
-
+	<div class="grid-col gc2">
+		<div class="c-c-c-c two-simple-box"></div>
+		<div class="c-c-c-c two-simple-box"></div>
+	</div>
+	<div class="grid-col gc3">
+				<div class="c-c-c-c a-simple-box"></div>
+		<div class="c-c-c-c a-simple-box"></div>
+		<div class="c-c-c-c a-simple-box"></div>
+		<div class="c-c-c-c a-simple-box"></div>
 	</div>
 </div>
+<div class="c-c-c-c" data-scroll-section>
+	<Footer></Footer>
+</div>
+</LocomotiveContainer>
 
 
 <style>
@@ -104,10 +121,10 @@ export async function getAphorisms() {
 }
 
 .a-1 h4 { color: white;}
-.a-1 h5 { color: #878787; font-weight: 300; margin-bottom: 1em;}
+.a-1 p { color: #878787; font-weight: 300; margin-bottom: 1em;}
 .a-1 h4, .a-4 h1 { color: white; font-weight: 600;}
 .a-1 h1 cite { color: white; letter-spacing: 0; font-weight: 300; text-transform: uppercase;}
-
+.colA p, .colB p { font-weight: 300; color: white; margin-bottom: 0;}
 .sectioner, .scrollyboard {
 	width: 100vw;
 	height: 100vh;
@@ -119,26 +136,12 @@ export async function getAphorisms() {
 	background: none;
 }
 
-
-.a-6 {
-	min-height: 100vh;
-}
-
-.buttons-row {
-	justify-content: center;
-}
-
 .colA h1, .colB h1 {
 	color: #10c56d;
 }
 
-.colA h4, .colB h4 {
-	color: white;
-}
-
 .colA img, .colB img {
 	object-fit: cover;
-	border-radius: 8px;
 }
 
 .a-4 h1 {
@@ -147,40 +150,8 @@ export async function getAphorisms() {
 
 .a-4 {
 	align-items: center;
+	justify-content: center;
 }
-
-
-	.greenbuttons {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: transparent;
-  border: 2px solid #10C56D;
-  border-radius: 0.6em;
-  color: #10C56D;
-  cursor: pointer;
-  display: flex;
-  align-self: flex-start;
-  font-size: 1rem;
-  line-height: 1;
-  padding: 1.2em 2.8em;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-	}
-
-	.greenbuttons:hover, .greenbuttons:focus {
-		color: #fff;
-  	outline: 0;
-	}
-
-	.greenbuttons:hover {
-		box-shadow: 0 0 40px 40px #10C56D inset;
-		transform: scale(0.9);
-	}
-
-	.greenbuttons a { color: white;}
 
 @keyframes rotation {
 	from {
@@ -191,6 +162,9 @@ export async function getAphorisms() {
 	}
 }
 
+.a-simple-box, .two-simple-box { transition: all 0.22s var(--cube3);}
+.a-simple-box:hover, .two-simple-box:hover {backdrop-filter: blur(0); border: 1px solid #10c56d;}
+
 @media screen and (min-width: 900px) {
 	.sectioner {
 		padding-left: 8vw;
@@ -200,20 +174,27 @@ export async function getAphorisms() {
 		width: 50%;
 		justify-content: center;
 	}
+
+	.a-1 p { width: 64%;}
 	.a-2 .colA {
-		text-align: right;
+		text-align: left;
 		padding-left: 8vw;
+		padding-right: 2em;
 	}
+	.colA h1, .colB h1 { margin-top: 0.5em; font-weight: 600; letter-spacing: 0;}
 	.a-3 .colB {
 		padding-right: 8vw;
+		padding-left: 2em;
 	}
 	.colA img, .colB img {
-		height: 80%;
-		width: 88%;
+		height: 100%;
+		width: 100%;
 	}
 	.a-2 .colB {
 		align-items: flex-end;
 	}
+
+	.a-4 { height: 100vh;}
 
 	.a-4 img {
 		width: 256px;
@@ -224,15 +205,31 @@ export async function getAphorisms() {
 	}
 	
 	.fractal, .mandala {
-		min-height: 100vh;
+		height: 100vh;
+		padding: 0 6vw;
+		justify-content: center;
 	}
 
-	.title { font-size: 120px; color: #10C56d; text-transform: uppercase; font-weight: bold;}
-	.def { font-size: 48px; color: white;}
-	.buttons-row { gap: 2em;}
-	.greenbuttons {
-		width: 30%;
+	.title { font-size: 90px; color: #10C56d; text-transform: uppercase; font-weight: bold;}
+	.def { font-size: 20px; color: white; width: 70%;}
+
+	.my-gridder {
+		display: flex;
+		flex-direction: row;
+		height: 100vh;
+		width: 100vw;
+		background-image: url('/images/mandala/fractalwallpaper2.webp');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		gap: 8px;
+	}
+	.gc1, .gc3 {
+		width: calc(25% - 8px);
 	}
 
+	.gc2 { width: calc(50% - 8px);}
+	.a-simple-box { height: calc(25% - 10px); border: 1px solid white; margin-top: 8px; margin-bottom: 8px; backdrop-filter: blur(8px);}
+	.two-simple-box { height: calc(50% - 12px); border: 1px solid white; margin-top: 8px; margin-bottom: 8px; backdrop-filter: blur(8px); }
 }
 </style>

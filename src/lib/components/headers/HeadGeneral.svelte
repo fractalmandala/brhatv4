@@ -116,7 +116,7 @@ function hideMenu() {
 	</div>
 	{#if isMenu}
 	<div class="fullscreener"
-		in:fly="{{ delay: 100, duration: 200, x: 0, y: 700, opacity: 0.3, easing: circOut}}"
+		in:fly="{{ delay: 0, duration: 200, x: 0, y: 700, opacity: 0.3, easing: circOut}}"
 		out:fly="{{ delay: 0, duration: 400, x: 0, y: 700, opacity: 0.3, easing: circOut}}"
 	>
 		<div class="innerheading">

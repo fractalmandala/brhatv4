@@ -1,3 +1,9 @@
+<script>
+import Footer from '$lib/components/globals/FooterGlobal.svelte'
+import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
+</script>
+
+<LocomotiveContainer>
 <div class="imagecontainer-hero" data-scroll-section></div>
 <div class="r-r-r-r box2" data-scroll-section>
 	<div class="c-c-c-c cola">
@@ -71,6 +77,10 @@
 		<button><a href="/aryavarta/getinvolved">Get Involved</a></button>
 	</div>
 </div>
+<div class="c-c-c-c" data-scroll-section>
+<Footer></Footer>
+</div>
+</LocomotiveContainer>
 
 <style lang="sass">
 

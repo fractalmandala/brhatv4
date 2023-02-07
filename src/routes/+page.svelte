@@ -1,8 +1,6 @@
 <script lang="ts">
 import { onMount } from 'svelte';
-import Footer from '$lib/components/globals/FooterGlobal.svelte'
 import supabase from '$lib/db'
-import HeadGeneral from '$lib/components/globals/Header2023.svelte'
 import HomeAccordion from '$lib/components/pagecomps/HomeAccordion.svelte'
 import DhitiRecent from '$lib/components/pagecomps/DhitiSlider.svelte'
 import HomeVids from '$lib/components/pagecomps/HomeVids.svelte'
@@ -22,7 +20,7 @@ return data
 
 </script>
 
-<HeadGeneral></HeadGeneral>
+
 	<div class="c-c-c-c holder" data-scroll-section>
 		<HomeAccordion></HomeAccordion>
 	</div>
@@ -30,7 +28,7 @@ return data
 		<h3 id="lead-text">
 			B<span class="isred">ṛ</span>hat is a Culture Engine
 		</h3>
-		<h5 class="cc-left" id="actions">
+		<h5 id="actions">
 			To power creatives, research and design rooted
 			in the Indian civilizational consciousness.<br>We convert individual, institutional 
 			and collective intent into action, across 3 dimensions:
@@ -58,9 +56,6 @@ return data
 	<div class="c-c-c-c holder" data-scroll-section>
 		<DhitiRecent></DhitiRecent>
 	</div>
-	<div class="c-c-c-c holder" data-scroll-section>
-		<Footer></Footer>
-	</div>
 
 
 
@@ -68,7 +63,7 @@ return data
 <style>
 
 
-.big-box { justify-content: center; align-items: center; background: white;}
+.big-box { justify-content: center; background: white;}
 .card.pillars img {
 	object-fit: contain;
 	margin-left: auto;
@@ -81,6 +76,12 @@ return data
 a { color: inherit;}
 
 @media screen and (min-width: 900px) {
+	.big-box {
+		padding: 0 6vw;
+	}
+	#lead-text, #actions {
+		text-align: left;
+	}
 	
 	.padding-base {
 		padding-left: 6vw;

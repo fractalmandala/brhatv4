@@ -1,21 +1,12 @@
-<script lang="ts">
-import '$lib/styles/anim-mandala.css'
-import HeadMandala from '$lib/components/headers/HeadMandala.svelte'
-import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
 
 
-</script>
-
-
-<HeadMandala></HeadMandala>
-<LocomotiveContainer>
+<div class="a-black-box">
 <slot></slot>
-</LocomotiveContainer>
+</div>
 
 <style>
-	*, :root {
-		--main-beau: var(--beau);
-	}
+.a-black-box { background: var(--beau);}
 </style>
+
 
 

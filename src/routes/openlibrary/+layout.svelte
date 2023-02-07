@@ -1,14 +1,14 @@
 <script>
-import HeadBol from '$lib/components/headers/HeadBol.svelte'
-import FlyingPage from '$lib/components/animations/FlyingPage.svelte'
+import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
 
 </script>
 
 
-<FlyingPage>
-<HeadBol></HeadBol>
+
+<LocomotiveContainer>
 <slot></slot>
-</FlyingPage>
+</LocomotiveContainer>
+
 
 <style>
 

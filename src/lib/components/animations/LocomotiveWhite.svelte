@@ -12,6 +12,8 @@ const initScroll = () => {
     smooth: true,
     repeat: true,
     reloadOnContextChange: true,
+		multiplier: 1,
+		scrollFromAnywhere: true
   });
 };
 
@@ -36,7 +38,12 @@ onDestroy(() => {
 
 </script>
 
-<div class="black-beauty" data-scroll-container style="background: var(--onpage)">
+<div class="white-beauty" data-scroll-container>
 <slot></slot>
 </div>
 
+<style>
+.white-beauty {
+	background: white;
+}
+</style>
