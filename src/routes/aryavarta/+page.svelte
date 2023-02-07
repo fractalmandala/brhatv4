@@ -74,6 +74,9 @@
 
 <style lang="sass">
 
+.box2, .box3, .box5, .box6
+	background: none
+
 .buttonsbox button
 	background-color: #ff3d00
 	border: none

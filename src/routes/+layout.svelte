@@ -6,35 +6,17 @@ import '$lib/styles/reader.sass'
 import '$lib/styles/globals.css'
 import '$lib/styles/componentstyles.css'
 import 'aos/dist/aos.css'; // You can also use <link> for styles
-import '$lib/styles/locomotive-scroll.css'
-import LocomotiveScroll from 'locomotive-scroll';
 
 
  // ..
  onMount(() => {
-    window.addEventListener("scroll", handleScroll);
-		let rotation = 0;
-  	function handleScroll() {
-    	rotation = window.pageYOffset / 4;
-    	let image = document.getElementById("rotate-img");
-    	if(image){
-      	image.style.transform = `rotate(${rotation}deg)`;
-    	}
-		}
-		const scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    smooth: true,
-		repeat: true,
-		reloadOnContextChange: true,
-		
-		});
 		AOS.init();
     AOS.refresh();
   }) 
 
 </script>
 
-<div class="locobox" data-scroll-container>
+
 <slot></slot>
-</div>
+
 

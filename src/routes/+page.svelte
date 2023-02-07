@@ -7,7 +7,6 @@ import HomeAccordion from '$lib/components/pagecomps/HomeAccordion.svelte'
 import DhitiRecent from '$lib/components/pagecomps/DhitiSlider.svelte'
 import HomeVids from '$lib/components/pagecomps/HomeVids.svelte'
 import ButtonOutline from '$lib/components/animations/ButtonOutline.svelte'
-import '$lib/styles/locomotive-scroll.css'
 
 
 
