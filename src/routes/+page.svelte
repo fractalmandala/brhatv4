@@ -1,5 +1,6 @@
 <script lang="ts">
 import { onMount } from 'svelte';
+import Footer from '$lib/components/globals/FooterGlobal.svelte'
 import LocomotiveScroll from 'locomotive-scroll';
 import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
 import supabase from '$lib/db'
@@ -73,7 +74,11 @@ return data
 	<div class="c-c-c-c holder" data-scroll-section>
 		<DhitiRecent></DhitiRecent>
 	</div>
+	<div class="c-c-c-c holder" data-scroll-section>
+		<Footer></Footer>
+	</div>
 </div>
+
 
 
 

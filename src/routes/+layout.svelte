@@ -1,7 +1,6 @@
 <script>
 // @ts-nocheck
 import { onMount } from 'svelte'
-import Footer from '$lib/components/globals/FooterGlobal.svelte'
 import AOS from 'aos';
 import '$lib/styles/reader.sass'
 import '$lib/styles/globals.css'
@@ -27,4 +26,4 @@ import '$lib/styles/locomotive-scroll.css'
 
 
 <slot></slot>
-<Footer></Footer>
+

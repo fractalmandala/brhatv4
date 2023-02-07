@@ -1,11 +1,36 @@
-<script>
+<script lang="ts">
 import '$lib/styles/anim-mandala.css'
 import HeadMandala from '$lib/components/headers/HeadMandala.svelte'
-import FlyingPage from '$lib/components/animations/FlyingPage.svelte'
+import { onMount } from 'svelte';
+import LocomotiveScroll from 'locomotive-scroll';
+import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
+import '$lib/styles/locomotive-scroll.css'
+
+let scroll;
+
+onMount(() => {
+    const container = document.querySelector('[data-scroll-container]');
+    if (container) {
+        scroll = new LocomotiveScroll({
+            el: container as HTMLElement,
+            smooth: true,
+						reloadOnContextChange: true,
+						repeat: true
+        });
+    }
+});
 </script>
 
-<FlyingPage>
+
 <HeadMandala></HeadMandala>
+<LocomotiveContainer>
 <slot></slot>
-</FlyingPage>
+</LocomotiveContainer>
+
+<style>
+	*, :root {
+		--container-background: var(--beau);
+	}
+</style>
+
 
