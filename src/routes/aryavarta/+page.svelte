@@ -1,7 +1,7 @@
 <div class="imagecontainer-hero" data-scroll-section></div>
 <div class="r-r-r-r box2" data-scroll-section>
 	<div class="c-c-c-c cola">
-    <img data-scroll data-scroll-speed="3" class="ini-img" src="/images/scrolls/anc1.webp" alt="part1"/>
+    <img data-scroll data-scroll-speed="3" data-scroll-direction="horizontal" class="ini-img" src="/images/scrolls/anc1.webp" alt="part1"/>
 	</div>
 	<div class="c-c-c-c colb">
 		<h4 data-scroll data-scroll-speed="6">
@@ -22,12 +22,12 @@
 		</h4>
 	</div>
 	<div class="c-c-c-c cold">
-		<img src="/images/scrolls/anc2.webp" alt="part2" data-scroll data-scroll-speed="3" class="ini-img"/>
+		<img src="/images/scrolls/anc2.webp" alt="part2" data-scroll data-scroll-speed="-3" data-scroll-direction="horizontal" class="ini-img"/>
 	</div>
 </div>
 <div class="r-r-r-r box2" data-scroll-section>
 	<div class="c-c-c-c cola">
-    <img data-scroll data-scroll-speed="3" class="ini-img" src="/images/scrolls/anc3.webp" alt="part3"/>
+    <img data-scroll data-scroll-speed="3" data-scroll-direction="horizontal" class="ini-img" src="/images/scrolls/anc3.webp" alt="part3"/>
 	</div>
 	<div class="c-c-c-c colb">
 		<h4 data-scroll data-scroll-speed="6">
@@ -49,7 +49,7 @@
 		</h4>
 	</div>
 	<div class="c-c-c-c cold">
-		<img src="/images/scrolls/anc4.webp" alt="part4" data-scroll data-scroll-speed="3" class="ini-img"/>
+		<img src="/images/scrolls/anc4.webp" data-scroll-direction="horizontal" alt="part4" data-scroll data-scroll-speed="-3" class="ini-img"/>
 	</div>
 </div>
 <div class="c-c-c-c box5" data-scroll-section>

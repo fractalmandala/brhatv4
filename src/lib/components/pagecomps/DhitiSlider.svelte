@@ -1,7 +1,6 @@
 <script lang="ts">
 import supabase from '$lib/db'
 import { Swiper, SwiperSlide } from 'swiper/svelte'
-import ButtonOutline from '$lib/components/animations/ButtonOutline.svelte'
 import { Keyboard, Navigation } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/keyboard'

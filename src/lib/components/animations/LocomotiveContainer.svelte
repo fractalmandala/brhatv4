@@ -1,12 +1,47 @@
-<div class="locomotive-container" data-scroll-container style="background: var(--container-background)">
+<script lang="ts">
+import { onMount } from 'svelte'
+import { onDestroy } from 'svelte'
+import '$lib/styles/locomotive-scroll.css'
+import LocomotiveScroll from 'locomotive-scroll';
+
+let scroll: LocomotiveScroll | null = null;
+
+const initScroll = () => {
+  scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]') as HTMLElement,
+    smooth: true,
+    repeat: true,
+    reloadOnContextChange: true,
+  });
+};
+
+onMount(() => {
+  initScroll();
+  if (process.browser) {
+    window.addEventListener('resize', () => {
+      if (scroll) {
+        scroll.destroy();
+      }
+      initScroll();
+    });
+  }
+});
+
+onDestroy(() => {
+  if (scroll) {
+    scroll.destroy();
+  }
+  scroll = null;
+});
+
+</script>
+
+<div class="black-beauty" data-scroll-container>
 <slot></slot>
 </div>
 
 <style>
-	.locomotive-container {
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-		width: 100vw;
-	}
+.black-beauty {
+	background: var(--beau);
+}
 </style>
