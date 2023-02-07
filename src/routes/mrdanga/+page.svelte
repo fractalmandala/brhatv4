@@ -1,6 +1,6 @@
 <script>
 // @ts-nocheck
-
+	import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
   import supabase from '$lib/db'
   import { Swiper, SwiperSlide } from 'swiper/svelte';
   import { Keyboard, Navigation} from 'swiper'
@@ -39,6 +39,7 @@
 
 </script>
 
+<LocomotiveContainer>
 <div class="imagecontainer-hero"></div>
 <div class="sc-pad-row">
 	<div class="pad-col w50 tx-pad">
@@ -62,7 +63,7 @@
 		</p>		
 	</div>
 	<div class="pad-col w50 tx-pad">
-		<h4>
+		<h4 data-scroll data-scroll-speed="4">
 			Mṛdaṅga is one of the sacred trinity of musical instruments. It is a ‘Deva Vādyam’, the instrument which Nandi, the prime gaṇa of Śiva plays when he does his Tāṇḍava. Mṛdaṅga is capable of sounding the divine rhythm across the multiple planes of consciousness. It is so divine because the sound that it emanates is not just a human creation. It is a tapping into the divine sound which is always playing but not accessible to our senses normally.
 		</h4>
 	</div>
@@ -169,6 +170,8 @@
 	<pre>{error}</pre>
 	{/await}
 </div>
+</LocomotiveContainer>
+
 <style>
 .imagecontainer-hero {
 	background-image: url('/images/herocovers/mrdanga-hero.webp');
@@ -176,6 +179,7 @@
 .sc-pad h4 { text-align: center;}
 .vid-box p { text-align: center;}
 .shabdavali video { object-fit: contain; width: 100%;}
+.sc-pad-row, .sc-pad { background: white;}
 
 @media screen and (min-width: 900px) {
 	.vid-box { height: 160px;}

@@ -1,5 +1,4 @@
 <script lang="ts">
-import { onMount } from 'svelte';
 import supabase from '$lib/db'
 import HomeAccordion from '$lib/components/pagecomps/HomeAccordion.svelte'
 import DhitiRecent from '$lib/components/pagecomps/DhitiSlider.svelte'

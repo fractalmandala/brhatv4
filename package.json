@@ -41,6 +41,7 @@
 		"locomotive-scroll": "^4.1.4",
 		"lottie-web": "^5.10.1",
 		"photoswipe": "^5.3.4",
+		"svelte-inview": "^3.0.2",
 		"swiper": "^8.4.6",
 		"twitter-v2": "^1.1.0"
 	}

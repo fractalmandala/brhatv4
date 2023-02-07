@@ -82,6 +82,7 @@ import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.
 </div>
 </LocomotiveContainer>
 
+
 <style lang="sass">
 
 .box2, .box3, .box5, .box6
