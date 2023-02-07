@@ -7,6 +7,9 @@ import '$lib/styles/globals.css'
 import '$lib/styles/componentstyles.css'
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import '$lib/styles/locomotive-scroll.css'
+import LocomotiveScroll from 'locomotive-scroll';
+
+
  // ..
  onMount(() => {
     window.addEventListener("scroll", handleScroll);
@@ -18,12 +21,20 @@ import '$lib/styles/locomotive-scroll.css'
       	image.style.transform = `rotate(${rotation}deg)`;
     	}
 		}
+		const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true,
+		repeat: true,
+		reloadOnContextChange: true,
+		
+		});
 		AOS.init();
     AOS.refresh();
   }) 
 
 </script>
 
-
+<div class="locobox" data-scroll-container>
 <slot></slot>
+</div>
 

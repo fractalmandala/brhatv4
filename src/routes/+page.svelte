@@ -1,8 +1,6 @@
 <script lang="ts">
 import { onMount } from 'svelte';
 import Footer from '$lib/components/globals/FooterGlobal.svelte'
-import LocomotiveScroll from 'locomotive-scroll';
-import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
 import supabase from '$lib/db'
 import HeadGeneral from '$lib/components/globals/Header2023.svelte'
 import HomeAccordion from '$lib/components/pagecomps/HomeAccordion.svelte'
@@ -11,19 +9,7 @@ import HomeVids from '$lib/components/pagecomps/HomeVids.svelte'
 import ButtonOutline from '$lib/components/animations/ButtonOutline.svelte'
 import '$lib/styles/locomotive-scroll.css'
 
-let scroll;
 
-onMount(() => {
-    const container = document.querySelector('[data-scroll-container]');
-    if (container) {
-        scroll = new LocomotiveScroll({
-            el: container as HTMLElement,
-            smooth: true,
-						reloadOnContextChange: true,
-						repeat: true
-        });
-    }
-});
 
 async function brhatPillars() {
 const { data , error } = await supabase
@@ -38,7 +24,6 @@ return data
 </script>
 
 <HeadGeneral></HeadGeneral>
-<div class="c-c-c-c" data-scroll-container>
 	<div class="c-c-c-c holder" data-scroll-section>
 		<HomeAccordion></HomeAccordion>
 	</div>
@@ -77,7 +62,6 @@ return data
 	<div class="c-c-c-c holder" data-scroll-section>
 		<Footer></Footer>
 	</div>
-</div>
 
 
 
