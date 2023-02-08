@@ -131,7 +131,7 @@ export async function latestDhiti(){
 							<div class="c-c-c-c in-col">
 									<small in:fly="{{delay: 800, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/aryavarta/chapter/01">Kaśyapa's Lament</a></small>
 									<small in:fly="{{delay: 850, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/aryavarta/chapter/02">Sūta and Sudā</a></small>
-									<small in:fly="{{delay: 900, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/firekeepers">Gallery</a></small>
+									<small in:fly="{{delay: 900, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/aryavarta/gallery">Gallery</a></small>
 								</div>
 						</div>
 						<div class="c-c-c-c item7 isitem" in:fade="{{delay: 300, duration: 300}}">
@@ -175,7 +175,7 @@ export async function latestDhiti(){
 						<p class="isdo" in:fly="{{delay: 550, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/aryavarta">Āryavarta</a></p>
 							<small in:fly="{{delay: 800, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/aryavarta/chapter/01">Kaśyapa's Lament</a></small>
 							<small in:fly="{{delay: 850, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/aryavarta/chapter/02">Sūta and Sudā</a></small>
-							<small in:fly="{{delay: 900, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/firekeepers">Gallery</a></small>
+							<small in:fly="{{delay: 900, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/aryavarta/gallery">Gallery</a></small>
 						<p class="isdo" in:fly="{{delay: 600, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/rta">Ṛta</a></p>
 							<small in:fly="{{delay: 850, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/drashtas">Schema</a></small>
 							<small in:fly="{{delay: 900, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/drashta/schools">Principles</a></small>

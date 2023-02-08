@@ -43,6 +43,7 @@
 		"photoswipe": "^5.3.4",
 		"svelte-inview": "^3.0.2",
 		"swiper": "^8.4.6",
+		"textify.js": "^2.4.3",
 		"twitter-v2": "^1.1.0"
 	}
 }

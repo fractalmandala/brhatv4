@@ -1,5 +1,6 @@
 <script>
 import supabase from '$lib/db'
+import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
 
 export async function allChapters() {
 	const { data, error } = await supabase
@@ -11,13 +12,14 @@ export async function allChapters() {
 }
 </script>
 
+<LocomotiveContainer>
 <div class="imagecontainer-hero"></div>
-<div class="primecontainer-col" data-scroll-section>
+<div class="primecontainer-col">
 		<h3 data-scroll data-scroll-speed="3">
 			B<span class="isred">ṛ</span>hat Anveṣī is a travel program to contemporize ancient Indian tradition by guiding travel groups through hitherto rarely explored sacred kṣetras of India. We seek to satisfy the wanderlust in you in a way which will leave you not just intellectually satisfied but also elevate your understanding and knowledge.
 		</h3>
 </div>
-<div class="c-c-c-c a1" data-scroll-section>
+<div class="c-c-c-c a1">
 	<h1>Chapters</h1>
 	{#await allChapters()}
 		<small>loading chapters...</small>
@@ -39,10 +41,11 @@ export async function allChapters() {
 		<pre>{error}</pre>
 	{/await}
 </div>
+</LocomotiveContainer>
 
 <style>
 .imagecontainer-hero { background-image: url('/images/herocovers/brhatanveshi.webp');}
-.a1 { background-color: white;}
+.a1, .primecontainer-col { background-color: white;}
 .primecontainer-col h3 {
 	background-color: rgba(0,0,0,0.8);
 	color: white;

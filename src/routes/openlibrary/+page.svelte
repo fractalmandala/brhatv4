@@ -9,13 +9,13 @@ import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.
 		<p>It is a tribute to the hard labor of people known and unknown that have created for us an unbelievable repository of Indian knowledge. Read more on our sources and credits here.</p>	
 	</div>
 	<div class="c-c-c-c layer1">
-		<h5><a href="/openlibrary/categories/essentials">Essentials</a></h5>
-		<h5><a href="/openlibrary/categories/essentials">IKS</a></h5>
-		<h5><a href="/openlibrary/categories/essentials">The Two Bodhas</a></h5>
-		<h5><a href="/openlibrary/categories/essentials">History</a></h5>
-		<h5><a href="/openlibrary/categories/essentials">The Āryan Issue</a></h5>
-		<h5><a href="/openlibrary/categories/essentials">Repository of Scripture</a></h5>
-		<h5><a href="/openlibrary/categories/essentials">Synaptic Connection</a></h5>
+		<h5 data-textify><a href="/openlibrary/categories/essentials">Essentials</a></h5>
+		<h5 data-textify><a href="/openlibrary/categories/essentials">IKS</a></h5>
+		<h5 data-textify><a href="/openlibrary/categories/essentials">The Two Bodhas</a></h5>
+		<h5 data-textify><a href="/openlibrary/categories/essentials">History</a></h5>
+		<h5 data-textify><a href="/openlibrary/categories/essentials">The Āryan Issue</a></h5>
+		<h5 data-textify><a href="/openlibrary/categories/essentials">Repository of Scripture</a></h5>
+		<h5 data-textify><a href="/openlibrary/categories/essentials">Synaptic Connection</a></h5>
 	</div>
 </LocomotiveContainer>
 
