@@ -1,9 +1,40 @@
-<script>
+<script lang="ts">
+import { onMount } from 'svelte'
+import { onDestroy } from 'svelte'
 import Footer from '$lib/components/globals/FooterGlobal.svelte'
-import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
+import LocomotiveScroll from 'locomotive-scroll';
+let scroll: LocomotiveScroll | null = null;
+
+const initScroll = () => {
+  scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]') as HTMLElement,
+    smooth: true,
+    repeat: true,
+    reloadOnContextChange: true,
+		scrollFromAnywhere: true,
+		lerp: 0.1,
+  });
+};
+
+onMount(() => {
+  initScroll();
+  window.addEventListener('resize', () => {
+    if (scroll) {
+      scroll.destroy();
+    }
+    initScroll();
+  });
+});
+
+onDestroy(() => {
+  if (scroll) {
+    scroll.destroy();
+  }
+  scroll = null;
+});
 </script>
 
-<LocomotiveContainer>
+<div class="black-beauty" data-scroll-container>
 <div class="imagecontainer-hero" data-scroll-section></div>
 <div class="r-r-r-r box2" data-scroll-section>
 	<div class="c-c-c-c cola">
@@ -80,10 +111,13 @@ import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.
 <div class="c-c-c-c" data-scroll-section>
 <Footer></Footer>
 </div>
-</LocomotiveContainer>
+</div>
 
 
 <style lang="sass">
+.black-beauty
+	background: var(--beau)
+
 
 .box2, .box3, .box5, .box6
 	background: none
