@@ -1,5 +1,16 @@
-<script lang="ts">
-import '$lib/styles/anim-rid.css'
+<script>
+import { onMount } from 'svelte'
+import Animations from "textify.js";
+import '$lib/styles/anim-rid.css';
+
+onMount(() => {
+const { Textify } = Animations;
+	new Textify({
+		duration: 300,
+		threshold: 0.3,
+		once: false
+	})
+	})
 </script>
 
 <div class="black-beauty" data-scroll-container>
@@ -56,7 +67,7 @@ import '$lib/styles/anim-rid.css'
 
 	<div class="c-c-c-c l2" data-scroll-section>
 		<div>
-			<h1>
+			<h1 data-scroll data-scroll-direction="horizontal" data-scroll-speed="2">
 				Science converts information into knowledge.
 			</h1>
 		</div>
@@ -75,14 +86,12 @@ knowledge into utility.
 utility into culture.
 		</h1>
 	</div>
-	<div class="r-r-r-r l5">
+	<div class="r-r-r-r l5" data-scroll-section>
 		<div class="c-c-c-c colA" data-scroll data-scroll-speed="2">
 			<p data-textify>
-In the distant past, 
-
-The sound instruments of mental scientists converted information to knowledge,
-
-And engineers of praxis and ritual converted knowledge to utility.
+				In the distant past, 
+				The sound instruments of mental scientists converted information to knowledge,
+				And engineers of praxis and ritual converted knowledge to utility.
 			</p>
 			<p data-textify>
 				Dharma is the conversion and manifestation of utility in the cultural context, ie.:
@@ -115,14 +124,17 @@ And engineers of praxis and ritual converted knowledge to utility.
 <style>
 .black-beauty { background: var(--beau);}
 .l1, .l2, .l3, .l4, .l5, .l6 { min-height: 100vh;}
+.l2 h1, .l3 h1 { color: white;}
+
 
 @media screen and (min-width: 900px) {
 
-	.colA p { font-size:1.6em; font-weight: 300; color: white;}
-	.colA { width: 60%;}
+	.colA p { font-size:1.28em; font-weight: 300; color: #676767;}
+	.colA { width: 45%;}
 	.colA { padding: 0 0 0 4vw;}
 	.l1 { align-items: center;}
 	.l5 { align-items: center;}
+	.l2 { width: 100%; padding-left: 6vw;}
 	.l2 h1, .l3 h1, .l4 h1 { font-size: 8em;}
 	.l4 h1 { color: #10c56d;}
 	.l6 { padding: 0 4vw;}

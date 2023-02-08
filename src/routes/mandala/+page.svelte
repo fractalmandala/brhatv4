@@ -1,6 +1,17 @@
 <script lang="ts">
+import { onMount } from 'svelte'
+import Animations from "textify.js";
 import supabase from '$lib/db'
 import Footer from '$lib/components/globals/FooterGlobal.svelte'
+
+onMount(() => {
+const { Textify } = Animations;
+	new Textify({
+		duration: 300,
+		threshold: 0.3,
+		once: false
+	})
+	})
 
 export async function getAphorisms() {
 	const { data, error} = await supabase
@@ -123,7 +134,6 @@ export async function getAphorisms() {
 		</div>
 	</div>
 </div>
-<Footer></Footer>
 
 </div>
 

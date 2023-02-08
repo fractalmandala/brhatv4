@@ -1,5 +1,16 @@
 <script>
+import { onMount } from 'svelte'
+import Animations from "textify.js";
 import supabase from '$lib/db'
+
+onMount(() => {
+const { Textify } = Animations;
+	new Textify({
+		duration: 300,
+		threshold: 0.3,
+		once: false
+	})
+	})
 
 async function brhatPillars() {
 const { data , error } = await supabase
@@ -51,9 +62,7 @@ const { data, error } = await supabase
 
 </script>
 
-
-
-
+<div data-scroll-container>
 <div class="imagecontainer-hero" data-scroll-section></div>
 <div class="c-c-c-c x0" data-scroll-section>
 	<h1 id="lead-text" data-scroll data-scroll-speed="1">
@@ -161,7 +170,7 @@ const { data, error } = await supabase
 	<h1 id="team">Team</h1>
 	<div class="r-r-r-r team-row" data-scroll>
 		{#each data as item}
-		<div class="c-c-c-c team-box">
+		<div class="c-c-c-c team-box" data-scroll data-scroll-speed="2">
 			<img src={item.image} alt={item.name} />
 			<h5 data-textify>{item.name}</h5>
 			<small data-textify>{item.title}</small>
@@ -173,13 +182,15 @@ const { data, error } = await supabase
 	<pre>{error}</pre>
 	{/await}
 </div>
-
+</div>
 
 
 <style>
-.x4, .x5, .x0 {
+.x4, .x0 {
 	min-height: 100vh;
 }
+
+.x2 { background: var(--beau);}
 
 .x6 { min-height: 300vh;}
 
@@ -197,9 +208,9 @@ const { data, error } = await supabase
 .x0 h5, .x2 h5 { font-weight: 300;}
 
 .x0, .x3, .x4, .x5 { background: white;}
-.team-box h5, .team-box small, .team-box p { color: white;}
+.team-box h5, .team-box small, .team-box p { color: #272727;}
 .x6 { height: max-content;}
-.x6 h1 {color: white;}
+.x6 h1 {color: #272727;}
 
 @media screen and (min-width: 768px) {
 	.base-row { gap: 32px;}
@@ -227,7 +238,7 @@ const { data, error } = await supabase
 	.x3 { padding-bottom: 6em;}
 	.x4, .x5 { padding-left: 6vw; padding-right: 6vw; padding-bottom: 6em; }
 	.advisors-row { gap: 2em;}
-	.team-row { width: 100%; padding-left: 6vw; padding-right: 6vw; flex-wrap: wrap; background: var(--beau); justify-content: center; align-items: center; gap: 2em;}
+	.team-row { width: 100%; padding-left: 6vw; padding-right: 6vw; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 2em;}
 	.team-box { width: 30%; height: 100%; }
 	.team-box img { object-fit: contain; width: 50%;}
 }

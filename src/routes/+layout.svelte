@@ -3,6 +3,7 @@
 import { onMount } from 'svelte'
 import Footer from '$lib/components/globals/FooterGlobal.svelte'
 import HeadGeneral from '$lib/components/globals/Header2023.svelte'
+import lax from 'lax.js'
 import Animations from "textify.js";
 import LocomotiveScrollProvider from 'svelte-locomotive-scroll';
 import { page } from '$app/stores'
@@ -19,16 +20,14 @@ let scroll = {
 
 	onMount(() => {
 		 if (typeof window !== 'undefined') {
-		const { Textify } = Animations;
-		new Textify({
-			duration: 300,
-			threshold: 0.1,
-		}),
 			scrollInstance.on('scroll', (/** @type {any} */ obj) => {
 		});
+		 lax.init()
+    lax.addDriver('scrollY', function () {
+      return window.scrollY
+    })
   }
-
-		
+	
 	});
 
 </script>
@@ -38,6 +37,8 @@ let scroll = {
 		smooth: true,
 		smoothMobile: false,
 		getDirection: true,
+		lerp: 0.1,
+		reloadOnContextChange: true,
 		getSpeed: true,
 		inertia: 0.5
 	}}

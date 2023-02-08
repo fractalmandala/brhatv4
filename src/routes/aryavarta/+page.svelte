@@ -1,15 +1,15 @@
 <script lang="ts">
 import { onMount } from 'svelte'
-import Footer from '$lib/components/globals/FooterGlobal.svelte'
-import Scrollbar from 'smooth-scrollbar';
+import Animations from "textify.js";
+
 onMount(() => {
-  if (typeof window !== 'undefined') {
-    const myScrollbar = document.querySelector('#my-scrollbar');
-    if (myScrollbar) {
-      Scrollbar.init(myScrollbar as HTMLElement);
-    }
-  }
-});
+const { Textify } = Animations;
+	new Textify({
+		duration: 300,
+		threshold: 0.3,
+		once: false
+	})
+	})
 
 </script>
 
@@ -20,11 +20,11 @@ onMount(() => {
     	<img data-scroll data-scroll-speed="3" data-scroll-direction="horizontal" class="ini-img" src="/images/scrolls/anc1.webp" alt="part1"/>
 		</div>
 		<div class="c-c-c-c colb">
-			<h4 data-scroll data-scroll-speed="6">
-				There is a place.<br>
-				It lies outside of space and time as we know it,<br>
-				but many of us have been there.<br>
-				It lies in that cultural mid-space so distant <span class="colorange">yet ever palpable.</span>
+			<h4 data-textify data-scroll data-scroll-speed="6">
+				There is a place.
+				It lies outside of space and time as we know it,
+				but many of us have been there.
+				It lies in that cultural mid-space so distant yet ever palpable.
 			</h4>
 		</div>
 	</div>
@@ -77,8 +77,10 @@ onMount(() => {
 	</h4>
 </div>
 <div class="c-c-c-c box6" data-scroll-section id="tostick">
-	<h3 data-scroll data-scroll-speed="2">
-		The Scrolls of Āryavarta is a project to celebrate, express and engage in this shared lore- <span class="colorange"> the dhārmika lore.</span> A calling to all who dream of the Bhārata that once was, or Bhāratas that could have been.
+	<h3 data-textify data-scroll>
+		The Scrolls of Āryavarta is a project to celebrate, express and engage in this shared lore- the dhārmika lore.</h3>
+	<h3 data-textify>
+		A calling to all who dream of the Bhārata that once was, or Bhāratas that could have been.
 	</h3>
 	<div class="r-r-r-r buttonsbox" data-scroll data-scroll-speed="1">
 		<button><a href="/aryavarta/chapter/01">1 - Kaśyapa's Lament</a></button>
@@ -87,7 +89,6 @@ onMount(() => {
 		<button><a href="/aryavarta/getinvolved">Get Involved</a></button>
 	</div>
 </div>
-<Footer></Footer>
 </div>
 
 
@@ -136,6 +137,8 @@ button a
 
 h4
 	color: white
+	font-weight: 300
+	line-height: 1.4em
 
 @media screen and (min-width: 900px)
 
@@ -154,11 +157,18 @@ h4
 		align-items: center
 		justify-content: center
 		text-align: center
+
+	.box6
+		padding-left: 6vw
+		padding-right: 6vw
 	
 	.box5 h4
 		color: white
 		background: rgba(0,0,0,0.7)
 		padding: 2em
+	
+	.box6 h3
+		font-weight: 700
 
 	.cola, .colb, .colc, .cold
 		width: 50%
