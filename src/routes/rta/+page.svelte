@@ -1,9 +1,20 @@
-<script>
+<script lang="ts">
+import { onMount } from 'svelte'
 import '$lib/styles/anim-rid.css'
+import LocomotiveScroll from 'locomotive-scroll';
+import '$lib/styles/locomotive-scroll.css'
+onMount(() => {
+	if (typeof window !== 'undefined') {
+	const scroll = new LocomotiveScroll({
+  	el: document.querySelector('[data-scroll-container]') as HTMLElement,
+  	smooth: true
+	});
+}
+})
 
 </script>
 
-
+<div class="black-beauty" data-scroll-container>
 	<div class="imagecontainer-hero">
 		<svg width="696" height="136" viewBox="0 0 696 136" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<g id="RID">
@@ -107,10 +118,10 @@ And engineers of praxis and ritual converted knowledge to utility.
 	<div class="r-r-r-r l7">
 		<button>Introduction to Ṛta in Design</button>
 	</div>
-
+</div>
 
 <style>
-
+.black-beauty { background: var(--beau);}
 .l1, .l2, .l3, .l4, .l5, .l6 { min-height: 100vh;}
 
 @media screen and (min-width: 900px) {
