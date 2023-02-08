@@ -11,6 +11,7 @@ body, html { margin: 0; box-sizing: border-box;}
 	--myblu: #3C80BF;
 }
 
+.fadinger img { object-fit: contain;}
 .green { color: #10c56d;}
 .side-bar { flex-direction: column; height: 100%; border-right: 1px solid #e7e7e7; transition: all 0.2s var(--cube1);}
 .side-bar2 { flex-direction: column; height: 100%; border-right: 1px solid #e7e7e7; transition: all 0.2s var(--cube1);}

@@ -1,5 +1,7 @@
 <script>
 import supabase from '$lib/db'
+import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
+import Locomotive from '$lib/components/animations/Locomotive.svelte'
 
 async function brhatPillars() {
 const { data , error } = await supabase
@@ -53,27 +55,26 @@ const { data, error } = await supabase
 
 
 
-
+<LocomotiveContainer>
 <div class="imagecontainer-hero" data-scroll-section></div>
 <div class="c-c-c-c x0" data-scroll-section>
 	<h1 id="lead-text" data-scroll data-scroll-speed="1">
 		B<span class="isred">ṛ</span>hat is a Culture Engine
 	</h1>
-	<h5 class="cc-left" id="actions" data-scroll data-scroll-speed="1">
+	<h5 id="actions" data-textify>
 		To power creatives, research and design rooted
-		in the Indian civilizational consciousness.<br>We convert individual, institutional 
+		in the Indian civilizational consciousness. We convert individual, institutional 
 		and collective intent into action, across 3 dimensions:
 	</h5>
-	<div class="base-row pillars-row" data-scroll data-scroll-speed="4">
+	<div class="r-r-r-r first-one" data-scroll data-scroll-speed="4">
 		{#await brhatPillars()}
 		<small>...</small>
 		{:then data}
 		{#each data as item}
-		<div class="base-col card pillars">
-			<img src={item.image} alt={item.name}/>
-			<h5 class="mt2 cc-left isblack wd100">{item.name}</h5>
-			<pre class="cc-left in-card">{item.content}</pre>
-		</div>
+			<div class="c-c-c-c a-box">
+				<h5 data-textify>{item.name}</h5>
+				<pre data-textify>{item.content}</pre>
+			</div>
 		{/each}
 		{:catch error}
 		<pre>{error}</pre>
@@ -82,47 +83,54 @@ const { data, error } = await supabase
 </div>
 
 <div class="c-c-c-c x2" data-scroll-section>
-	<h5 class="cc-left" data-scroll data-scroll-speed="3">
-	An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment.<br>
-	How does one go about doing that?<br>At B<span class="isred">ṛ</span>hat, we’re acutely aware of three constraints:
+	<h1 id="lead-text" data-scroll data-scroll-speed="6" data-scroll-direction="horizontal">
+	An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment.
+	</h1>
+	<h5 data-scroll data-scroll-speed="-3" data-scroll-direction="horizontal" data-textify>
+	How does one go about doing that? At Bṛhat, we’re acutely aware of three constraints:
 	</h5>
+</div>
+
+<div class="r-r-r-r second-one" data-scroll-section>
 	{#await threePillars()}
 	<small>...</small>
 	{:then data}
-	<div class="base-row pillars-row">
 	{#each data as item}
-		<div class="base-col card pillars">
+	<div class="c-c-c-c a-box box2" data-scroll data-scroll-class="whensee">
 		<img src={item.image} alt={item.name}/>
-		<h5 class="mt2 cc-left">{item.name}</h5>
-		<pre class="cc-left in-card">{item.content}</pre>
-		</div>
-	{/each}
+		<h5 data-scroll data-textify>{item.name}</h5>
+		<pre data-scroll data-textify>{item.content}</pre>
 	</div>
+	{/each}
 	{:catch error}
 	<pre>{error}</pre>
 	{/await}
 </div>
+	
+
 <!-------------------------------------------------------------------------------------------------->
 <div class="c-c-c-c x3" data-scroll-section>
-	<h2 id="beliefs">Our Beliefs</h2>
-	<div class="base-row buttons-row">
-		<button class="outlinebutton"><a href="/about/docs/svatahsiddha">Svataḥsiddha</a></button>
-		<button class="outlinebutton"><a href="/about/docs/whatkrishnameanstous">What Śrī Kṛṣṇa Means to Us</a></button>
-		<button class="outlinebutton"><a href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a></button>
+	<h1 data-scroll data-scroll-speed="-3" id="beliefs">More About Us</h1>
+	<div class="r-r-r-r third-one" data-scroll data-scroll-speed="1">
+		<a data-textify href="/about/docs/svatahsiddha">Svataḥsiddha - the Seed of Our Being</a>
+		<a data-textify href="/about/docs/whatkrishnameanstous">What Śrī Kṛṣṇa Means to Us</a>
+		<a data-textify href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a>
+		<a data-textify href="/about/docs/namelogo">Nāmarūpa - About Our Name and Logo</a>
+		<a data-textify href="/about/docs/values">Pratijñā - Values We Hold Dear</a>
 	</div>
 </div>
 <!-------------------------------------------------------------------------------------------------->
 <div class="c-c-c-c x4" data-scroll-section>
-	<h4 id="advisory">Advisory Board</h4>
 	{#await advisors()}
 	<small>...</small>
 	{:then data}
-	<div class="base-row advisors-row" data-scroll-section>
+	<h1 data-scroll data-scroll-speed="1" id="advisory">Advisory Board</h1>
+	<div class="r-r-r-r advisors-row">
 		{#each data as item}
-		<div class="base-col advisors">
-		<img src={item.image} alt={item.name} />
-		<h5>{item.name}</h5>
-		<p class="in-card">{item.title}</p>
+		<div class="c-c-c-c advisors">
+			<img src={item.image} alt={item.name} />
+			<h5 data-textify>{item.name}</h5>
+			<p data-textify>{item.title}</p>
 		</div>
 		{/each}
 	</div>
@@ -132,7 +140,7 @@ const { data, error } = await supabase
 </div>
 <!-------------------------------------------------------------------------------------------------->
 <div class="c-c-c-c x5" data-scroll-section>
-	<h4 id="partners">Partner Brands</h4>
+	<h1 id="partners">Partner Brands</h1>
 	{#await partners()}
 	<small>...</small>
 	{:then data}
@@ -149,19 +157,17 @@ const { data, error } = await supabase
 </div>
 <!-------------------------------------------------------------------------------------------------->
 <div class="c-c-c-c x6" data-scroll-section>
-	<h4 id="team">Team</h4>
 	{#await team()}
 	<small>...</small>
 	{:then data}
-	<div class="base-row team-row">
+	<h1 id="team">Team</h1>
+	<div class="r-r-r-r team-row" data-scroll>
 		{#each data as item}
-		<div class="base-col team">
-			<div class="base-col image">
-				<img src={item.image} alt={item.name} />
-			</div>
-			<h5 class="cc-left">{item.name}</h5>
-			<small class="cc-left">{item.title}</small>
-			<p class="cc-left in-card">{item.bio}</p>
+		<div class="c-c-c-c team-box">
+			<img src={item.image} alt={item.name} />
+			<h5 data-textify>{item.name}</h5>
+			<small data-textify>{item.title}</small>
+			<p data-textify>{item.bio}</p>
 		</div>
 		{/each}
 	</div>
@@ -169,76 +175,87 @@ const { data, error } = await supabase
 	<pre>{error}</pre>
 	{/await}
 </div>
+</LocomotiveContainer>
 
 
 <style>
-.x2, .x3, .x4, .x5, .x6, .x0 {
+.x4, .x5, .x0 {
 	min-height: 100vh;
 }
+
+.x6 { min-height: 300vh;}
+
+.second-one, .x3, .x4 { background: white;}
+
+.x2 #lead-text { color: #fe4a49; text-align: left;}
+.x2 h5 { text-align: left; color: white;}
 .imagecontainer-hero {
 	background-image: url('/images/herocovers/about-parambika.png');
 }
 
-.base-row { justify-content: center; width: 100%;}
-.pillars img { object-fit: contain; width: 128px;}
+.base-row { justify-content: center; width: 100%; background: white;}
 .advisors img, .partners img { object-fit: contain; width: 100%;}
 .advisors img { border-radius: 8px;}
-.pillars { align-items: center; text-align: center; border: 1px solid #e1e1e1; border-radius: 4px;}
-.pillars { background-color: #f7f7f7; transition: all 0.18s var(--cube3);}
-.team small { color: var(--blue); font-weight: bold; text-transform: uppercase;}
-.image { width: 100%; align-items: center; border-radius: 100px;}
-.team p { color: #676767;}
-.image img { object-fit: contain; width: 100%; height: 100%;}
 .x0 h5, .x2 h5 { font-weight: 300;}
 
+.x0, .x3, .x4, .x5 { background: white;}
+.team-box h5, .team-box small, .team-box p { color: white;}
+.x6 { height: max-content;}
+.x6 h1 {color: white;}
 
 @media screen and (min-width: 768px) {
-	.pillars { width: 30%;}
-	.pillars:hover { background-color: white; box-shadow: var(--wshadow);}
-	.pillars-row { margin-top: 2rem; padding: 0 8vw 4rem 8vw;}
 	.base-row { gap: 32px;}
 	.advisors { width: 25%;}
 	#advisory, #partners, #team { margin-bottom: 2rem; border-top: 1px solid #e1e1e1; padding-top: 1em;}
-	.team { width: 30%; border-radius: 4px;}
-	.team-row { flex-wrap: wrap; padding: 0 0 4rem 0;}
-	.image { align-self: center; width: 48%;}
-	#team, #partners, #advisory, #lead-text, .cc-left, #beliefs { text-align: center;}
+	#team, #partners, #advisory, #lead-text, #beliefs { text-align: center;}
 	#lead-text { margin-bottom: 0;}
-	#actions { margin-top: 0;}
-	.x0 { justify-content: center;}
+	#actions { margin-top: 0; width: 60%;}
+	.x0 { justify-content: center; text-align: left; align-items: flex-start; padding: 0 6vw;}
 	.x0 h1 { font-size: 3em;}
-	h2 { font-size: 2.4em; font-weight: bold;}
+	.a-box { width: 33%;}
+	.a-box h5 { font-size: 1.2em; font-weight: bold;}
+	.first-one { gap: 2em;}
+	.x2 { padding-bottom: 2em;}
+	.second-one .a-box img {
+		object-fit: contain;
+		width: 40%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.second-one { gap: 2em; padding-top: 2em; padding-bottom: 2em; padding-left: 6vw; padding-right: 6vw;}
+	.box2 h5, .box2 pre { text-align: center;}
+	.third-one { width: 100%; gap: 2em; justify-content: center; padding-left: 6vw; padding-right: 6vw;}
+	.third-one a { font-size: 1.28em; text-align: center; font-weight: bold;}
+	.x3 { padding-bottom: 6em;}
+	.x4, .x5 { padding-left: 6vw; padding-right: 6vw; padding-bottom: 6em; }
+	.advisors-row { gap: 2em;}
+	.team-row { width: 100%; padding-left: 6vw; padding-right: 6vw; flex-wrap: wrap; background: var(--beau); justify-content: center; align-items: center; gap: 2em;}
+	.team-box { width: 30%; height: 100%; }
+	.team-box img { object-fit: contain; width: 50%;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
-	.in-card { font-size: 14px;}
+
 	.partners-row { flex-wrap: wrap; justify-content: center;}
 	.partners { width: calc(100%/5);}
 	.partners img { width: 120px;}
 	.team-row { flex-wrap: wrap;}
-	.team, .pillars { width: 30%;}
+
 	.base-row { gap: 20px;}
-	.pillars-row, .advisors-row, .partners-row, .team-row { gap: 24px;}
-	.pillars-row { padding: 0 0 4rem 0;}
+
 	.advisors { width: 20%;}	
-	.image { align-self: center; width: 64%;}
-	#team, #partners, #advisory, #lead-text, .cc-left, #beliefs { text-align: center;}
+	#team, #partners, #advisory, #lead-text, #beliefs { text-align: center;}
 }
 
 @media screen and (max-width: 575px) {
 	.team-row { flex-wrap: wrap;}
-	.team { width: 100%; padding-bottom: 1rem;}
-	.team .image { width: 24%;}
-	.pillars { width: 100%; margin-bottom: 1rem; padding: 1rem; align-items: flex-start;}
-	.pillars-row { flex-wrap: wrap; padding-bottom: 2rem;}
-	.base-col h5 { margin-bottom: 0;}
+
 	.advisors { width: 45%;}
 	.advisors-row, .partners-row { flex-wrap: wrap; gap: 1rem;}
 	.partners { width: 30%; }
-	#team, #partners, #advisory, #lead-text, .cc-left, #beliefs { text-align: left;}
+	#team, #partners, #advisory, #lead-text, #beliefs { text-align: left;}
 	#lead-text { margin-bottom: 0;}
 	#actions { margin-top: 1rem;}
-	.outlinebutton { width: 100%; margin-bottom: 1rem;}
-	.buttons-row { flex-wrap: wrap;}
+
 }
 </style>

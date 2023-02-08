@@ -1,26 +1,21 @@
 <script lang="ts">
-import { onMount } from 'svelte';
-import LocomotiveScroll from 'locomotive-scroll';
-
-let scroll;
-
-onMount(() => {
-    const el = document.querySelector('[data-scroll-container]');
-    if (el) {
-        scroll = new LocomotiveScroll({
-            el: el as HTMLElement,
-            smooth: true
-        });
-    }
-});
+	import { scale } from 'svelte/transition'
+	import { cubicOut } from 'svelte/easing'
+	import { inview } from 'svelte-inview'
+	let isInView: boolean
 </script>
 
-<div class="loco-con" data-locomotive-container style="flex-direction: var(--flexdir)">
-<slot></slot>
+<div
+	class="view-wrap"
+	use:inview={{ unobserveOnEnter: true, rootMargin: '-20%' }}
+	on:change={({ detail}) => {
+		isInView = detail.inView;
+	}}
+>
+{#if isInView}
+	<div in:scale="{{duration: 400, opacity: 0, start: 0.2, easing: cubicOut}}" class="fadinger">
+		<slot></slot>
+	</div>
+{/if}
 </div>
 
-<style>
-.loco-con {
-	display: flex;
-}
-</style>

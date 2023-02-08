@@ -27,6 +27,7 @@ onMount(() => {
       initScroll();
     });
   }
+	
 });
 
 onDestroy(() => {
