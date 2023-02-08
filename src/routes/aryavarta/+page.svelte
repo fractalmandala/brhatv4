@@ -1,9 +1,17 @@
 <script lang="ts">
-
+import LocomotiveScroll from 'locomotive-scroll';
 import Footer from '$lib/components/globals/FooterGlobal.svelte'
 
+let scroll
+if (typeof window !== 'undefined') {
+    scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]') as HTMLElement,
+        smooth: true
+    });
+}
 </script>
 
+<div class="data-scroll-container">
 <div class="imagecontainer-hero" data-scroll-section></div>
 <div class="r-r-r-r box2" data-scroll-section>
 	<div class="c-c-c-c cola">
@@ -77,8 +85,6 @@ import Footer from '$lib/components/globals/FooterGlobal.svelte'
 		<button><a href="/aryavarta/getinvolved">Get Involved</a></button>
 	</div>
 </div>
-<div class="c-c-c-c" data-scroll-section>
-<Footer></Footer>
 </div>
 
 
