@@ -2,8 +2,8 @@
 import '$lib/styles/anim-rid.css'
 </script>
 
-<div class="black-beauty">
-	<div class="imagecontainer-hero">
+<div class="black-beauty" data-scroll-container>
+	<div class="imagecontainer-hero" data-scroll-section>
 		<svg width="696" height="136" viewBox="0 0 696 136" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<g id="RID">
 		<path id="r" fill-rule="evenodd" clip-rule="evenodd" d="M0 99.9217V30.8184H24.4835V35.2179C28.9674 31.3428 34.7835 29.4053 41.9316 29.4053C45.2148 29.4053 48.029 29.8292 50.3742 30.6771C52.8131 31.525 54.8769 32.844 56.5654 34.6339L42.3537 53.7115C41.6032 52.8636 40.5245 52.2042 39.1174 51.7331C37.8041 51.1679 36.3032 50.8852 34.6146 50.8852C31.4252 50.8852 28.9393 51.8744 27.157 53.8529C25.3747 55.7371 24.4835 58.5634 24.4835 62.3318V65.3701L24.3428 82.0813C24.3428 99.9217 7.51439 99.9217 0 99.9217Z" fill="#16DB65" class="svg-elem-1"></path>
@@ -33,8 +33,8 @@ import '$lib/styles/anim-rid.css'
 		</svg>
 
 	</div>
-	<div class="r-r-r-r l1">
-		<div class="c-c-c-c colA scroll-content">
+	<div class="r-r-r-r l1" data-scroll-section>
+		<div class="c-c-c-c colA" data-scroll>
 			<p data-textify>
 			From user flows
 			to adoption curves,
@@ -54,7 +54,7 @@ import '$lib/styles/anim-rid.css'
 		</div>
 	</div>
 
-	<div class="c-c-c-c l2">
+	<div class="c-c-c-c l2" data-scroll-section>
 		<div>
 			<h1>
 				Science converts information into knowledge.
@@ -63,13 +63,13 @@ import '$lib/styles/anim-rid.css'
 		
 	</div>
 		
-	<div class="c-c-c-c l3">
+	<div class="c-c-c-c l3" data-scroll-section>
 		<h1 data-scroll data-scroll-direction="horizontal" data-scroll-speed="-8">
 			Engineering converts
 knowledge into utility.
 		</h1>
 	</div>
-	<div class="c-c-c-c l4">
+	<div class="c-c-c-c l4" data-scroll-section>
 		<h1 data-scroll data-scroll-direction="horizontal" data-scroll-speed="8">
 			Design converts
 utility into culture.
@@ -92,7 +92,7 @@ And engineers of praxis and ritual converted knowledge to utility.
 			</h1>
 		</div>
 	</div>
-	<div class="r-r-r-r l6">
+	<div class="r-r-r-r l6" data-scroll-section>
 		<div class="c-c-c-c-">
 		<p class="green"><b>Principles</b></p>
 		<p data-textify>Agency</p>

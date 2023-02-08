@@ -50,6 +50,7 @@
 		"scrollmagic": "^2.0.8",
 		"smooth-scrollbar": "^8.8.1",
 		"svelte-inview": "^3.0.2",
+		"svelte-locomotive-scroll": "^0.0.5",
 		"swiper": "^8.4.6",
 		"textify.js": "^2.4.3",
 		"twitter-v2": "^1.1.0"

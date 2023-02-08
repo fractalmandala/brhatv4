@@ -1,49 +1,18 @@
-<script lang="ts">
-import { onMount } from 'svelte'
-import { onDestroy } from 'svelte'
-import '$lib/styles/locomotive-scroll.css'
-import LocomotiveScroll from 'locomotive-scroll';
+<script>
+	import { getContext } from 'svelte';
+	const { getScroll } = getContext('locomotiveScroll');
+	const scrollInstance = getScroll();
+	import { onMount } from 'svelte';
 
-let scroll: LocomotiveScroll | null = null;
+	let scroll = {
+		cache: 0,
+		current: 0
+	};
 
-const initScroll = () => {
-  scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]') as HTMLElement,
-    smooth: true,
-    repeat: true,
-    reloadOnContextChange: true,
-		multiplier: 1,
-		scrollFromAnywhere: true
-  });
-};
-
-onMount(() => {
-  initScroll();
-  if (process.browser) {
-    window.addEventListener('resize', () => {
-      if (scroll) {
-        scroll.destroy();
-      }
-      initScroll();
-    });
-  }
-});
-
-onDestroy(() => {
-  if (scroll) {
-    scroll.destroy();
-  }
-  scroll = null;
-});
-
+	onMount(() => {
+		scrollInstance.on('scroll', (/** @type {any} */ obj) => {
+		});
+	});
 </script>
 
-<div class="white-beauty" data-scroll-container>
 <slot></slot>
-</div>
-
-<style>
-.white-beauty {
-	background: white;
-}
-</style>

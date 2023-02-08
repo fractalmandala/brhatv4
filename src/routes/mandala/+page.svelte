@@ -1,5 +1,4 @@
 <script lang="ts">
-import '$lib/styles/locomotive-scroll.css'
 import supabase from '$lib/db'
 import Footer from '$lib/components/globals/FooterGlobal.svelte'
 
