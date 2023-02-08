@@ -7,7 +7,7 @@
 
 <div
 	class="view-wrap"
-	use:inview={{ unobserveOnEnter: true, rootMargin: '-20%' }}
+	use:inview={{ unobserveOnEnter: true, rootMargin: '0' }}
 	on:change={({ detail}) => {
 		isInView = detail.inView;
 	}}

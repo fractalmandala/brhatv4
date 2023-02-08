@@ -1,20 +1,8 @@
 <script lang="ts">
-import { onMount } from 'svelte'
 import '$lib/styles/anim-rid.css'
-import LocomotiveScroll from 'locomotive-scroll';
-import '$lib/styles/locomotive-scroll.css'
-onMount(() => {
-	if (typeof window !== 'undefined') {
-	const scroll = new LocomotiveScroll({
-  	el: document.querySelector('[data-scroll-container]') as HTMLElement,
-  	smooth: true
-	});
-}
-})
-
 </script>
 
-<div class="black-beauty" data-scroll-container>
+<div class="black-beauty">
 	<div class="imagecontainer-hero">
 		<svg width="696" height="136" viewBox="0 0 696 136" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<g id="RID">
@@ -46,7 +34,7 @@ onMount(() => {
 
 	</div>
 	<div class="r-r-r-r l1">
-		<div class="c-c-c-c colA" data-scroll data-scroll-speed="2">
+		<div class="c-c-c-c colA scroll-content">
 			<p data-textify>
 			From user flows
 			to adoption curves,
@@ -65,12 +53,16 @@ onMount(() => {
 			</p>
 		</div>
 	</div>
+
 	<div class="c-c-c-c l2">
-		<h1 data-scroll data-scroll-direction="horizontal" data-scroll-speed="8">
-			Science converts
-information into knowledge.
-		</h1>
+		<div>
+			<h1>
+				Science converts information into knowledge.
+			</h1>
+		</div>
+		
 	</div>
+		
 	<div class="c-c-c-c l3">
 		<h1 data-scroll data-scroll-direction="horizontal" data-scroll-speed="-8">
 			Engineering converts

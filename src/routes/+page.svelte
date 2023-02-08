@@ -5,17 +5,6 @@ import HomeAccordion from '$lib/components/pagecomps/HomeAccordion.svelte'
 import DhitiRecent from '$lib/components/pagecomps/DhitiSlider.svelte'
 import HomeVids from '$lib/components/pagecomps/HomeVids.svelte'
 import ButtonOutline from '$lib/components/animations/ButtonOutline.svelte'
-import LocomotiveScroll from 'locomotive-scroll';
-import '$lib/styles/locomotive-scroll.css'
-
-onMount(() => {
-	if (typeof window !== 'undefined') {
-	const scroll = new LocomotiveScroll({
-  	el: document.querySelector('[data-scroll-container]') as HTMLElement,
-  	smooth: true
-	});
-}
-})
 
 async function brhatPillars() {
 const { data , error } = await supabase

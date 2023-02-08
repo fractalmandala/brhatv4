@@ -1,18 +1,15 @@
 <script lang="ts">
 import { onMount } from 'svelte'
 import Footer from '$lib/components/globals/FooterGlobal.svelte'
-import LocomotiveScroll from 'locomotive-scroll';
-import '$lib/styles/locomotive-scroll.css'
-
+import Scrollbar from 'smooth-scrollbar';
 onMount(() => {
-	if (typeof window !== 'undefined') {
-	const scroll = new LocomotiveScroll({
-  	el: document.querySelector('[data-scroll-container]') as HTMLElement,
-  	smooth: true,
-		reloadOnContextChange: true
-	});
-}
-})
+  if (typeof window !== 'undefined') {
+    const myScrollbar = document.querySelector('#my-scrollbar');
+    if (myScrollbar) {
+      Scrollbar.init(myScrollbar as HTMLElement);
+    }
+  }
+});
 
 </script>
 
