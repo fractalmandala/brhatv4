@@ -3,7 +3,6 @@
 import { onMount } from 'svelte'
 import Footer from '$lib/components/globals/FooterGlobal.svelte'
 import HeadGeneral from '$lib/components/globals/Header2023.svelte'
-import lax from 'lax.js'
 import Animations from "textify.js";
 import LocomotiveScrollProvider from 'svelte-locomotive-scroll';
 import { page } from '$app/stores'
@@ -13,22 +12,17 @@ import '$lib/styles/globals.css'
 import '$lib/styles/componentstyles.css'
 import '$lib/styles/textify.css'
 
-let scroll = {
-		cache: 0,
-		current: 0
-	};
-
-	onMount(() => {
-		 if (typeof window !== 'undefined') {
-			scrollInstance.on('scroll', (/** @type {any} */ obj) => {
+onMount(() => {
+	const { Textify } = Animations;
+	new Textify({
+	duration: 300,
+	threshold: 0.3,
+	})
+	if (typeof window !== 'undefined') {
+		scrollInstance.on('scroll', (/** @type {any} */ obj) => {
 		});
-		 lax.init()
-    lax.addDriver('scrollY', function () {
-      return window.scrollY
-    })
-  }
-	
-	});
+	}
+});
 
 </script>
 

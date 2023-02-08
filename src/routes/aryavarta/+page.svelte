@@ -1,18 +1,3 @@
-<script lang="ts">
-import { onMount } from 'svelte'
-import Animations from "textify.js";
-
-onMount(() => {
-const { Textify } = Animations;
-	new Textify({
-		duration: 300,
-		threshold: 0.3,
-		once: false
-	})
-	})
-
-</script>
-
 <div class="data-scroll-container" data-scroll-container>
 	<div class="imagecontainer-hero" data-scroll-section></div>
 	<div class="r-r-r-r box2" data-scroll-section>

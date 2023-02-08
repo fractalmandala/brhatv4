@@ -1,16 +1,5 @@
 <script>
-import { onMount } from 'svelte'
-import Animations from "textify.js";
 import '$lib/styles/anim-rid.css';
-
-onMount(() => {
-const { Textify } = Animations;
-	new Textify({
-		duration: 300,
-		threshold: 0.3,
-		once: false
-	})
-	})
 </script>
 
 <div class="black-beauty" data-scroll-container>

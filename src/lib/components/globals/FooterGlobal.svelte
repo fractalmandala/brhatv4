@@ -1,5 +1,15 @@
 <script>
+import { onMount } from 'svelte'
+import Animations from "textify.js";
 import ToTop from '$lib/components/globals/ToTop.svelte'
+onMount(() => {
+const { Textify } = Animations;
+	new Textify({
+		duration: 300,
+		threshold: 0.3,
+		once: false
+	})
+})
 </script>
 
 <div class="big-box" data-scroll-section>

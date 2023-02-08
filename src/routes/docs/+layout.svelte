@@ -1,25 +1,33 @@
 <script>
+import { onMount } from 'svelte'
+import Animations from "textify.js";
 import DocSidebar from '$lib/components/globals/DocSiderbar.svelte'
 import '$lib/styles/prism.css'
-
+onMount(() => {
+const { Textify } = Animations;
+	new Textify({
+		duration: 300,
+		threshold: 0.3,
+		once: false
+	})
+	})
 
 </script>
 
-
-
-
-<div class="primecontainer-row">
+<div class="black-beauty" data-scroll-container>
+<div class="primecontainer-row" data-scroll-section>
 <DocSidebar></DocSidebar>
-<div class="c-c-c-c">
+<div class="c-c-c-c" data-scroll data-scroll-speed="1">
 <slot></slot>
+</div>
 </div>
 </div>
 
 
 
 <style>
-*, :root { 
-	--container-background: var(--beau);
+.black-beauty { 
+	background: var(--beau);
 }
 
 .c-c-c-c {
