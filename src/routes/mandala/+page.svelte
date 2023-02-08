@@ -1,9 +1,18 @@
 <script lang="ts">
 import { onMount } from 'svelte'
+import LocomotiveScroll from 'locomotive-scroll';
+import '$lib/styles/locomotive-scroll.css'
 import supabase from '$lib/db'
 import Footer from '$lib/components/globals/FooterGlobal.svelte'
 
-
+onMount(() => {
+  if (typeof window !== 'undefined') {
+		const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]') as HTMLElement,
+    smooth: true
+		});
+	}
+})
 
 
 export async function getAphorisms() {
