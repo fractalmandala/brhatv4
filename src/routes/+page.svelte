@@ -1,11 +1,21 @@
 <script lang="ts">
+import { onMount } from 'svelte'
 import supabase from '$lib/db'
 import HomeAccordion from '$lib/components/pagecomps/HomeAccordion.svelte'
 import DhitiRecent from '$lib/components/pagecomps/DhitiSlider.svelte'
 import HomeVids from '$lib/components/pagecomps/HomeVids.svelte'
 import ButtonOutline from '$lib/components/animations/ButtonOutline.svelte'
+import LocomotiveScroll from 'locomotive-scroll';
+import '$lib/styles/locomotive-scroll.css'
 
-
+onMount(() => {
+	if (typeof window !== 'undefined') {
+	const scroll = new LocomotiveScroll({
+  	el: document.querySelector('[data-scroll-container]') as HTMLElement,
+  	smooth: true
+	});
+}
+})
 
 async function brhatPillars() {
 const { data , error } = await supabase
@@ -19,7 +29,7 @@ return data
 
 </script>
 
-
+<div id="data-scroll-container" class="data-scroll-container" data-scroll-container>
 	<div class="c-c-c-c holder" data-scroll-section>
 		<HomeAccordion></HomeAccordion>
 	</div>
@@ -55,7 +65,7 @@ return data
 	<div class="c-c-c-c holder" data-scroll-section>
 		<DhitiRecent></DhitiRecent>
 	</div>
-
+</div>
 
 
 

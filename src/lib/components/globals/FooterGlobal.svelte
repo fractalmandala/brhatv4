@@ -2,7 +2,7 @@
 import ToTop from '$lib/components/globals/ToTop.svelte'
 </script>
 
-<div class="big-box">
+<div class="big-box" data-scroll-section>
 <ToTop></ToTop>
 	<div class="margin-box">
 		<div class="r-r-r-r" id="row-one">

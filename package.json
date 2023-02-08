@@ -48,6 +48,7 @@
 		"photoswipe": "^5.3.4",
 		"scrollcue": "^2.0.0",
 		"scrollmagic": "^2.0.8",
+		"smooth-scrollbar": "^8.8.1",
 		"svelte-inview": "^3.0.2",
 		"swiper": "^8.4.6",
 		"textify.js": "^2.4.3",

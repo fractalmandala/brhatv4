@@ -1,44 +1,49 @@
 <script lang="ts">
-import LocomotiveScroll from 'locomotive-scroll';
+import { onMount } from 'svelte'
 import Footer from '$lib/components/globals/FooterGlobal.svelte'
+import LocomotiveScroll from 'locomotive-scroll';
+import '$lib/styles/locomotive-scroll.css'
 
-let scroll
-if (typeof window !== 'undefined') {
-    scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]') as HTMLElement,
-        smooth: true
-    });
+onMount(() => {
+	if (typeof window !== 'undefined') {
+	const scroll = new LocomotiveScroll({
+  	el: document.querySelector('[data-scroll-container]') as HTMLElement,
+  	smooth: true,
+		reloadOnContextChange: true
+	});
 }
+})
+
 </script>
 
-<div class="data-scroll-container">
-<div class="imagecontainer-hero" data-scroll-section></div>
-<div class="r-r-r-r box2" data-scroll-section>
-	<div class="c-c-c-c cola">
-    <img data-scroll data-scroll-speed="3" data-scroll-direction="horizontal" class="ini-img" src="/images/scrolls/anc1.webp" alt="part1"/>
+<div class="data-scroll-container" data-scroll-container>
+	<div class="imagecontainer-hero" data-scroll-section></div>
+	<div class="r-r-r-r box2" data-scroll-section>
+		<div class="c-c-c-c cola">
+    	<img data-scroll data-scroll-speed="3" data-scroll-direction="horizontal" class="ini-img" src="/images/scrolls/anc1.webp" alt="part1"/>
+		</div>
+		<div class="c-c-c-c colb">
+			<h4 data-scroll data-scroll-speed="6">
+				There is a place.<br>
+				It lies outside of space and time as we know it,<br>
+				but many of us have been there.<br>
+				It lies in that cultural mid-space so distant <span class="colorange">yet ever palpable.</span>
+			</h4>
+		</div>
 	</div>
-	<div class="c-c-c-c colb">
-		<h4 data-scroll data-scroll-speed="6">
-			There is a place.<br>
-			It lies outside of space and time as we know it,<br>
-			but many of us have been there.<br>
-			It lies in that cultural mid-space so distant <span class="colorange">yet ever palpable.</span>
-		</h4>
+	<div class="r-r-r-r box3" data-scroll-section>
+		<div class="c-c-c-c colc">
+			<h4 data-scroll data-scroll-speed="6">
+				Hive mind. Race memory. Blood bond.<br>
+				We may call it many things, but we know it best when we see it,<br>
+				and it feels warm and familiar…as if a memory we once lived.<br>
+				<span class="colorange">Perhaps we did, is it not?</span>
+			</h4>
+		</div>
+		<div class="c-c-c-c cold">
+			<img src="/images/scrolls/anc2.webp" alt="part2" data-scroll data-scroll-speed="-3" data-scroll-direction="horizontal" class="ini-img"/>
+		</div>
 	</div>
-</div>
-<div class="r-r-r-r box3" data-scroll-section>
-	<div class="c-c-c-c colc">
-		<h4 data-scroll data-scroll-speed="6">
-			Hive mind. Race memory. Blood bond.<br>
-			We may call it many things, but we know it best when we see it,<br>
-			and it feels warm and familiar…as if a memory we once lived.<br>
-			<span class="colorange">Perhaps we did, is it not?</span>
-		</h4>
-	</div>
-	<div class="c-c-c-c cold">
-		<img src="/images/scrolls/anc2.webp" alt="part2" data-scroll data-scroll-speed="-3" data-scroll-direction="horizontal" class="ini-img"/>
-	</div>
-</div>
 <div class="r-r-r-r box2" data-scroll-section>
 	<div class="c-c-c-c cola">
     <img data-scroll data-scroll-speed="3" data-scroll-direction="horizontal" class="ini-img" src="/images/scrolls/anc3.webp" alt="part3"/>
@@ -85,6 +90,7 @@ if (typeof window !== 'undefined') {
 		<button><a href="/aryavarta/getinvolved">Get Involved</a></button>
 	</div>
 </div>
+<Footer></Footer>
 </div>
 
 
