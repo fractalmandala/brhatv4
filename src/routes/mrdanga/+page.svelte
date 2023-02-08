@@ -1,6 +1,6 @@
 <script>
 // @ts-nocheck
-	import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
+	
   import supabase from '$lib/db'
   import { Swiper, SwiperSlide } from 'swiper/svelte';
   import { Keyboard, Navigation} from 'swiper'
@@ -39,7 +39,7 @@
 
 </script>
 
-<LocomotiveContainer>
+
 <div class="imagecontainer-hero"></div>
 <div class="sc-pad-row">
 	<div class="pad-col w50 tx-pad">
@@ -170,7 +170,7 @@
 	<pre>{error}</pre>
 	{/await}
 </div>
-</LocomotiveContainer>
+
 
 <style>
 .imagecontainer-hero {

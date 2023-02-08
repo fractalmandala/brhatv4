@@ -1,7 +1,5 @@
 <script>
 import supabase from '$lib/db'
-import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
-import Locomotive from '$lib/components/animations/Locomotive.svelte'
 
 async function brhatPillars() {
 const { data , error } = await supabase
@@ -55,7 +53,7 @@ const { data, error } = await supabase
 
 
 
-<LocomotiveContainer>
+
 <div class="imagecontainer-hero" data-scroll-section></div>
 <div class="c-c-c-c x0" data-scroll-section>
 	<h1 id="lead-text" data-scroll data-scroll-speed="1">
@@ -175,7 +173,7 @@ const { data, error } = await supabase
 	<pre>{error}</pre>
 	{/await}
 </div>
-</LocomotiveContainer>
+
 
 
 <style>

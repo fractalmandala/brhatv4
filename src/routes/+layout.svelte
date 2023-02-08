@@ -22,12 +22,7 @@ import '$lib/styles/scrollCue.css'
 		new Textify({
 			duration: 700,
 			threshold: 0.4,
-		}),
-		scrollCue.init({
-			duration: 200,
-			interval: 150,
-			enable: true,
-		});
+		})
   }) 
 
 </script>

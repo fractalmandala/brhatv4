@@ -1,9 +1,6 @@
-<script lang="ts">
-import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
-</script>
-  
 
-<LocomotiveContainer>
+
+
 	<div class="c-c-c-c layer1">
 		<h1>Bṛhat Open Library is an Online Repository for Texts, Papers, Learning Material and More.</h1>
 		<p>It is a tribute to the hard labor of people known and unknown that have created for us an unbelievable repository of Indian knowledge. Read more on our sources and credits here.</p>	
@@ -17,7 +14,7 @@ import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.
 		<h5 data-textify><a href="/openlibrary/categories/essentials">Repository of Scripture</a></h5>
 		<h5 data-textify><a href="/openlibrary/categories/essentials">Synaptic Connection</a></h5>
 	</div>
-</LocomotiveContainer>
+
 
 
 <style>

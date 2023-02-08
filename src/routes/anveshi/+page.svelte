@@ -1,6 +1,6 @@
 <script>
 import supabase from '$lib/db'
-import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
+
 
 export async function allChapters() {
 	const { data, error } = await supabase
@@ -12,7 +12,7 @@ export async function allChapters() {
 }
 </script>
 
-<LocomotiveContainer>
+
 <div class="imagecontainer-hero"></div>
 <div class="primecontainer-col">
 		<h3 data-scroll data-scroll-speed="3">
@@ -41,7 +41,7 @@ export async function allChapters() {
 		<pre>{error}</pre>
 	{/await}
 </div>
-</LocomotiveContainer>
+
 
 <style>
 .imagecontainer-hero { background-image: url('/images/herocovers/brhatanveshi.webp');}

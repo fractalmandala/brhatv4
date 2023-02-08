@@ -1,5 +1,4 @@
 <script>
-import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
 import DocSidebar from '$lib/components/globals/DocSiderbar.svelte'
 import '$lib/styles/prism.css'
 
@@ -8,14 +7,14 @@ import '$lib/styles/prism.css'
 
 
 
-<LocomotiveContainer>
+
 <div class="primecontainer-row">
 <DocSidebar></DocSidebar>
 <div class="c-c-c-c">
 <slot></slot>
 </div>
 </div>
-</LocomotiveContainer>
+
 
 
 <style>

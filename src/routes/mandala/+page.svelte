@@ -1,7 +1,6 @@
 <script>
 import supabase from '$lib/db'
 import Footer from '$lib/components/globals/FooterGlobal.svelte'
-import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
 export async function getAphorisms() {
 	const { data, error} = await supabase
 	.from('brhat-aphorisms')
@@ -12,7 +11,7 @@ export async function getAphorisms() {
 }
 </script>
 
-<LocomotiveContainer>
+
 <div class="c-c-c-c sectioner a-1" data-scroll-section>
 	<p data-textify>
 		To be a history in the true sense of the word, a work must be a story of the people inhabiting a country. It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
@@ -126,7 +125,7 @@ export async function getAphorisms() {
 <div class="c-c-c-c" data-scroll-section>
 	<Footer></Footer>
 </div>
-</LocomotiveContainer>
+
 
 
 <style>
