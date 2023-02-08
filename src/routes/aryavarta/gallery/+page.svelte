@@ -1,8 +1,7 @@
-<script>
-import LocomotiveContainer from '$lib/components/animations/LocomotiveContainer.svelte'
-import { scale } from 'svelte/transition'
-import { circOut } from 'svelte/easing'
+<script lang="ts">
 import supabase from '$lib/db'
+
+
 
 export async function getImages(){
 	const { data, error } = await supabase
@@ -13,32 +12,23 @@ export async function getImages(){
 	return data
 }
 </script>
+
+
 {#await getImages()}
 <small>...</small>
 {:then data}
-<LocomotiveContainer>
-<div id="attract" data-scroll-section>
+<div class="r-r-r-r">
 {#each data as item}
-	<img class="the-image" src={item.link} alt={item.imagenumber} data-scroll />
+		<img class="the-image" src={item.link} alt={item.imagenumber} data-aos="flip-up" data-aos-delay="50"/>
 {/each}
 </div>
-</LocomotiveContainer>
 {:catch error}
 <pre>{error}</pre>
 {/await}
 
+
+
 <style>
-
-#attract { min-height: 100%; width: 100vw;}
-
-@media screen and (min-width: 900px) {
-	#attract { display: flex; flex-wrap: wrap; overflow-y: scroll; justify-content: center;}
-	.the-image { width: 30%; object-fit: cover;}
-	
-	#attract { 
-		padding: 0 8vw; gap: 16px;
-	}
-}
-
-
+.the-image{ width: calc(25% - 2em); object-fit: contain;}
+.r-r-r-r { width: 100%; flex-wrap: wrap; gap: 2em;}
 </style>

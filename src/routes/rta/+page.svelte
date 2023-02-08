@@ -89,11 +89,29 @@ And engineers of praxis and ritual converted knowledge to utility.
 			</h1>
 		</div>
 	</div>
+	<div class="r-r-r-r l6">
+		<div class="c-c-c-c-">
+		<p class="green"><b>Principles</b></p>
+		<p data-textify>Agency</p>
+		<p data-textify>Intent</p>
+		<p data-textify>Consonance</p>
+		<p data-textify>Grounding</p>
+		</div>	
+		<div class="c-c-c-c-">
+		<p class="green"><b>Phases</b></p>
+		<p data-textify>Svataḥsiddha</p>
+		<p data-textify>Purohita</p>
+		<p data-textify>Samskārtṛ</p>
+		</div>
+	</div>
+	<div class="r-r-r-r l7">
+		<button>Introduction to Ṛta in Design</button>
+	</div>
 </LocomotiveContainer>
 
 <style>
 
-.l1, .l2, .l3, .l4, .l5 { min-height: 100vh;}
+.l1, .l2, .l3, .l4, .l5, .l6 { min-height: 100vh;}
 
 @media screen and (min-width: 900px) {
 
@@ -104,6 +122,12 @@ And engineers of praxis and ritual converted knowledge to utility.
 	.l5 { align-items: center;}
 	.l2 h1, .l3 h1, .l4 h1 { font-size: 8em;}
 	.l4 h1 { color: #10c56d;}
+	.l6 { padding: 0 4vw;}
+	.l6 p { margin-bottom: 0; margin-top: 6px; font-size: 2em; transform-origin: center left; transition: all 0.22s var(--cube1);}
+	.l6 p:hover { transform: scale(0.9) translateX(8px); color: #10c56d;}
+	.l6 p b { color: #878787;}
+	.l6 p { color: white;}
+	.l6 {gap: 8em;}
 }
 
 
