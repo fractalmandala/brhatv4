@@ -19,15 +19,12 @@ const initScroll = () => {
 
 onMount(() => {
   initScroll();
-  if (process.browser) {
-    window.addEventListener('resize', () => {
-      if (scroll) {
-        scroll.destroy();
-      }
-      initScroll();
-    });
-  }
-	
+  window.addEventListener('resize', () => {
+    if (scroll) {
+      scroll.destroy();
+    }
+    initScroll();
+  });
 });
 
 onDestroy(() => {
