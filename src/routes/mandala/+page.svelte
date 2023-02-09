@@ -12,35 +12,31 @@ export async function getAphorisms(): Promise<any[]> {
 }
 </script>
 
-<div class="greenfile" data-scroll-container>
+<div class="black-beauty" data-scroll-container>
 	<div class="c-c-c-c sectioner a-1" data-scroll-section>
 		<div class="is-svg">
 			<LogFm></LogFm>
 		</div>
-		<div class="opener" style="text-align: left" data-textify>
-			To be a history in the true sense of the word, a work must be a story of the people inhabiting a country. It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
+	</div>
+	<div class="c-c-c-c sectioner a-1" data-scroll-section>
+		<div class="opener" style="text-align: left">
+			<p data-textify>To be a history in the true sense of the word, a work must be a story of the people inhabiting a country. It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.</p>
+			<h2 data-textify>Such a history of India is still to be written.</h2>
+			<cite data-textify>Shri KM Munshi</cite>
 		</div>
 	</div>
-	<div class="c-c-c-c f-s" data-scroll-section>
-		<div data-textify class="sachin" data-scroll data-scroll-speed="3">Such a history of India is still to be written.</div>
-		<cite data-scroll data-scroll-speed="1">Shri KM Munshi</cite> 
-	</div>
-
-	<div class="r-r-c-c columnas" data-scroll-section>
+	<div class="r-r-c-c columnas colitihas" id="trial" data-scroll-section>
 		<div class="c-c-c-c onleft">
 			<div class="opener">
 				<h5 data-scroll data-textify>with a continuity of untold millennia, the passage of time visible to us in</h5>
 				<h1 data-textify data-scroll data-scroll-speed="-4" data-scroll-direction="horizontal">itihāsa</h1>
 			</div>
 		</div>
-		<div class="c-c-c-c onright">
-			<img data-scroll data-scroll-speed="8" data-scroll-direction="horizontal" src="/images/mandala/itihaas.webp" alt="itihas"/>
-		</div>
+			<div class="c-c-c-c onright" id="firstpaper" data-scroll data-scroll-speed="4">
+			</div>
 	</div>
-
-
-		<div class="r-r-c-c columnas" data-scroll-section>
-			<div class="c-c-c-c onleft">
+	<div class="r-r-c-c columnas" data-scroll-section>
+		<div class="c-c-c-c onleft">
 				<div class="opener">
 					<h5 data-scroll data-textify>information was processed in increasingly complex ways within the physical environment best described as</h5>
 					<h1 data-textify data-scroll data-scroll-speed="-4" data-scroll-direction="horizontal">bhārata</h1>
@@ -49,24 +45,22 @@ export async function getAphorisms(): Promise<any[]> {
 			<div class="c-c-c-c onright">
 				<img data-scroll data-scroll-speed="8" data-scroll-direction="horizontal" src="/images/mandala/bharata.webp" alt="itihas"/>
 			</div>
-		</div>
+	</div>
 
 	<div class="r-r-c-c columnas" data-scroll-section>
 			<div class="c-c-c-c onleft">
+					<img data-scroll data-scroll-speed="-8" data-scroll-direction="horizontal" src="/images/mandala/dharma.webp" alt="itihas"/>
+			</div>
+			<div class="c-c-c-c onright">
 				<div class="opener">
 					<h5 data-scroll data-textify>emerged a civilizational consciousness, with multi-level coherence. It is known to us as</h5>
 					<h1 data-textify data-scroll data-scroll-speed="-4" data-scroll-direction="horizontal">dharma</h1>
 				</div>
 			</div>
-			<div class="c-c-c-c onright">
-				<img data-scroll data-scroll-speed="8" data-scroll-direction="horizontal" src="/images/mandala/dharma.webp" alt="itihas"/>
-			</div>
-		</div>
-
-	<div class="c-c-c-c explain" data-scroll-section data-textify>
-		<h1>and it is alive. it is a</h1>
 	</div>
-
+	<div class="c-c-c-c explain" data-scroll-section data-textify>
+		<h1>and it is alive...</h1>
+	</div>
 	<div class="c-c-c-c fractal" data-scroll-section>
 		<div class="sachin">
 			fractal
@@ -75,7 +69,6 @@ export async function getAphorisms(): Promise<any[]> {
 			A curve or geometrical figure, each part of which has the same statistical character as the whole. Any of various extremely irregular curves or shapes for which any suitably chosen part is similar in shape to a given larger or smaller part. A fractal displays the same properties at any magnification level, ie., it is multi-level.
 		</div>
 	</div>
-
 	<div class="c-c-c-c mandala" data-scroll-section>
 		<div class="sachin">
 			maṇḍala
@@ -83,30 +76,26 @@ export async function getAphorisms(): Promise<any[]> {
 		<div class="opener" style="text-align: left" data-textify>
 			A circle or anything circular- globe, circumference, orbit of a celestial object, an array of troops. From the root √maṇḍ (मण्ड्) meaning satisfaction, adornment, wholeness, complete, satisfied (√bhūṣ, √hṛṣ, tuṣṭa, alaṅkāra). A circle- śūnya or pūrṇam- is where all constituents form a unified whole, ie., it is coherent.
 		</div>	
-</div>  
-
+	</div>  
 	<div class="r-r-c-c" data-scroll-section id="holdsit">
-		<div class="slide-col imb1" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal" data-scroll-target="#holdsit">
+		<div class="slide-col imb1" data-scroll data-scroll-speed="1" data-scroll-direction="horizontal" data-scroll-target="#holdsit">
 			<h5>Fractal Māṇḍala Essays</h5>
 		</div>
-		<div class="slide-col imb2" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal" data-scroll-target="#holdsit">
+		<div class="slide-col imb2" data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal" data-scroll-target="#holdsit">
 			<h5>Schema for Synaptic Reconnection</h5>
 		</div>
-		<div class="slide-col imb3" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal" data-scroll-target="#holdsit">
+		<div class="slide-col imb3" data-scroll data-scroll-speed="1" data-scroll-direction="horizontal" data-scroll-target="#holdsit">
 			<h5>Caturasūtra - 4 Aphorisms for Civilizational Consciousness</h5>
 		</div>
-		<div class="slide-col imb4" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal" data-scroll-target="#holdsit">
+		<div class="slide-col imb4" data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal" data-scroll-target="#holdsit">
 			<h5>Roadmap</h5>
 		</div>
 	</div>
-
 </div>
 
 
 
 <style>
-
-
 
 .a-1 {
 	background-size: cover;
@@ -114,7 +103,6 @@ export async function getAphorisms(): Promise<any[]> {
 	background-repeat: no-repeat;
 	justify-content: center;
 	text-align: center;
-	background: var(--beau);
 }
 
 .imb1, .imb2, .imb3, .imb4 {
@@ -122,6 +110,7 @@ export async function getAphorisms(): Promise<any[]> {
 	background-position: center center;
 	background-repeat: no-repeat;
 	justify-content: center;
+	border: 2px solid white;
 }
 
 .imb1 {
@@ -152,24 +141,42 @@ export async function getAphorisms(): Promise<any[]> {
 	}
 }
 
+#firstpaper {
+	background-image: url('/images/mandala/itihaas.webp');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
 
+.onright img {
+	object-fit: cover;
+	width: 100%;
+}
+
+#trial { overflow: hidden;}
+
+.black-beauty { position: relative;}
+#holdsit { top: 800vh; position: absolute; left: 0; position: sticky; z-index: 0;}
 
 @media screen and (min-width: 900px) {
 
 	.is-svg {
 		height: 200px;
+		display: flex;
 	}
 
 	.columnas {
 		padding-left: 4vw;
 	}
 
-	.opener {
+	.opener, .opener p {
 		font-weight: 200;
 		font-size: 32px;
 		letter-spacing: -2px;
-		width: 88%;
+		color: white;
 	}
+
+	.opener p { width: 64%;}
 
 	.opener h5 {
 		font-weight: 200;
@@ -186,6 +193,18 @@ export async function getAphorisms(): Promise<any[]> {
 		text-shadow: 4px 4px 8px #111111;
 	}
 
+	.opener h2 {
+		font-size: 64px;
+		margin-top: 8px;
+		margin-bottom: 8px;
+		color: #10C56D;
+	}
+
+	.opener cite {
+		font-size: 20px;
+		letter-spacing: 0px;
+	}
+
 	.sachin {
 		text-transform: uppercase;
 		font-weight: 700;
@@ -194,11 +213,6 @@ export async function getAphorisms(): Promise<any[]> {
 		color: #10C56D;
 	}
 
-	.f-s {
-		height: 100vh;
-		padding: 0 4vw;
-		justify-content: center;
-	}
 
 	cite {
 		font-size: 1.4em;
@@ -235,7 +249,7 @@ export async function getAphorisms(): Promise<any[]> {
 		margin-top: 8px;
 	}
 
-	.slide-col {
+	#holdsit .slide-col {
 		width: 25%;
 		height: 100%;
 		position: relative;
@@ -244,11 +258,29 @@ export async function getAphorisms(): Promise<any[]> {
 		padding: 0 1em;
 	}
 
+	#holdsit:hover .slide-col {
+		z-index: 1;
+		transition: width 0.4s ease-out;
+	}
+
+	#holdsit:hover .slide-col:hover {
+		z-index: 2;
+		width: 50%;
+	}
+
 	.slide-col h5 {
 		font-size: 1.8em;
 		color: white;
 		text-align: center;
 		z-index: 2;
+		transition: all 0.2s var(--cube3);
+		opacity: 0;
+		transform: translateY(-80px);
+	}
+
+	.slide-col:hover h5 {
+		opacity: 1;
+		transform: translateY(0);
 	}
 
 	.slide-col:hover::after {
@@ -272,18 +304,17 @@ export async function getAphorisms(): Promise<any[]> {
 	}
 
 	.onleft {
-		width: 90%;
-		margin-right: -20%;
+		width: 50%;
+		padding-right: 1em;
 		justify-content: center;
+		z-index: 1;
 	}
 	.onright {
-		width: 30%;
+		width: 50%;
+		justify-content: center;
+		padding-right: 4vw;
 	}
-	.onright img {
-		object-fit: cover;
-		height: 100%;
-		width: 600px;
-	}
+
 
 	.fractal, .mandala {
 		width: 70%;
@@ -298,6 +329,11 @@ export async function getAphorisms(): Promise<any[]> {
 		text-align: left;
 	}
 
+	#holdsit {
+		height: 100vh;
+		position: sticky;
+		top: 0;
+	}
 
 }
 </style>

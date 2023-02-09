@@ -14,10 +14,10 @@ const { Textify } = Animations;
 
 </script>
 
-<div class="black-beauty" data-scroll-container>
-<div class="primecontainer-row" data-scroll-section>
+<div class="black-beauty">
+<div class="primecontainer-row">
 <DocSidebar></DocSidebar>
-<div class="c-c-c-c" data-scroll data-scroll-speed="1">
+<div class="c-c-c-c">
 <slot></slot>
 </div>
 </div>

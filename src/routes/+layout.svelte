@@ -14,13 +14,7 @@ import '$lib/styles/textify.css'
 
 onMount(() => {
 	const { Textify } = Animations;
-	new Textify({
-	threshold: 0.2,
-	duration: 4200,
-	stagger: 500,
-	easing: cubicOut,
-	fade: true
-	})
+	new Textify()
 	if (typeof window !== 'undefined') {
 		scrollInstance.on('scroll', (/** @type {any} */ obj) => {
 		});
@@ -32,13 +26,13 @@ onMount(() => {
 <LocomotiveScrollProvider
 	options={{
 		smooth: true,
-		smoothMobile: false,
+		smoothMobile: true,
 		getDirection: true,
-		multiplier: 2,
+		multiplier: 1,
 		lerp: 0.1,
 		reloadOnContextChange: true,
 		getSpeed: true,
-		inertia: 0.2
+		inertia: 0.8
 	}}
 	watch={$page}
 	location={$page.url}

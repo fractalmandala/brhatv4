@@ -39,8 +39,9 @@ export async function chambaTemps(){
 
 </script>
 
-<div class="imagecontainer-hero"></div>
-<div class="blog-pad">
+<div data-scroll-container>
+<div class="imagecontainer-hero" data-scroll-section></div>
+<div class="blog-pad" data-scroll-section>
 	{#await chamba()}
 	<small>loading...</small>
 	{:then data}
@@ -133,7 +134,7 @@ export async function chambaTemps(){
 	<pre>{error}</pre>
 	{/await}
 </div>
-
+</div>
 
 <style>
 .items { padding: 1em 0 0 0;}

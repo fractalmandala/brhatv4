@@ -5,7 +5,7 @@
     	<img data-scroll data-scroll-speed="3" data-scroll-direction="horizontal" class="ini-img" src="/images/scrolls/anc1.webp" alt="part1"/>
 		</div>
 		<div class="c-c-c-c colb">
-			<h4 data-textify data-scroll data-scroll-speed="6">
+			<h4 class="white" data-textify data-scroll data-scroll-speed="6">
 				There is a place.
 				It lies outside of space and time as we know it,
 				but many of us have been there.
@@ -15,11 +15,13 @@
 	</div>
 	<div class="r-r-r-r box3" data-scroll-section>
 		<div class="c-c-c-c colc">
-			<h4 data-scroll data-scroll-speed="6">
-				Hive mind. Race memory. Blood bond.<br>
-				We may call it many things, but we know it best when we see it,<br>
-				and it feels warm and familiar…as if a memory we once lived.<br>
-				<span class="colorange">Perhaps we did, is it not?</span>
+			<h4 class="white" data-textify data-scroll data-scroll-speed="6">
+				Hive mind. Race memory. Blood bond.
+				We may call it many things, but we know it best when we see it,
+				and it feels warm and familiar…as if a memory we once lived.
+			</h4>
+			<h4 class="colorange" data-textify>
+				Perhaps we did, is it not?
 			</h4>
 		</div>
 		<div class="c-c-c-c cold">
@@ -31,26 +33,28 @@
     <img data-scroll data-scroll-speed="3" data-scroll-direction="horizontal" class="ini-img" src="/images/scrolls/anc3.webp" alt="part3"/>
 	</div>
 	<div class="c-c-c-c colb">
-		<h4 data-scroll data-scroll-speed="6">
-			<span class="colorange">For countless times before have you been here,</span><br>
-			and a countless times I.<br>
-			You there, in one incarnation you were a master of mantra.<br>
+		<h4 data-textify class="colorange" data-scroll data-scroll-speed="6">
+			For countless times before have you been here,
+			and a countless times I.
+		</h4>
+		<h4 data-textify class="white">
+			You there, in one incarnation you were a master of mantra.
 			You wrapped meaning into syllable and metre.
 		</h4>
 	</div>
 </div>
-<div class="r-r-r-r box3" data-scroll-section>
+<div class="r-r-r-r box3" data-scroll-section id="mydad">
 	<div class="c-c-c-c colc">
-		<h4 data-scroll data-scroll-speed="6">			
-			And you? A pioneer of tilled grain you were.<br>
-			Your hard, seasoned hands fed a civilization.<br>
-			Another among us was quite a daredevil,<br>
-			boldly he grabbed a wild bull by the horns,<br>
-			<span class="colorange">First to do so...</span>
+		<h4 class="white" data-textify data-scroll data-scroll-speed="6">			
+			And you? A pioneer of tilled grain you were.
+			Your hard, seasoned hands fed a civilization.
+			Another among us was quite a daredevil,
+			boldly he grabbed a wild bull by the horns,
+			First to do so...
 		</h4>
 	</div>
-	<div class="c-c-c-c cold">
-		<img src="/images/scrolls/anc4.webp" data-scroll-direction="horizontal" alt="part4" data-scroll data-scroll-speed="-3" class="ini-img"/>
+	<div class="c-c-c-c cold" data-scroll data-scroll-speed="9" data-scroll-target="#mydad">
+		<img src="/images/scrolls/anc4.webp" alt="part4" class="ini-img"/>
 	</div>
 </div>
 <div class="c-c-c-c box5" data-scroll-section>
@@ -62,9 +66,9 @@
 	</h4>
 </div>
 <div class="c-c-c-c box6" data-scroll-section id="tostick">
-	<h3 data-textify data-scroll>
+	<h3 data-textify class="white" data-scroll>
 		The Scrolls of Āryavarta is a project to celebrate, express and engage in this shared lore- the dhārmika lore.</h3>
-	<h3 data-textify>
+	<h3 data-textify class="white">
 		A calling to all who dream of the Bhārata that once was, or Bhāratas that could have been.
 	</h3>
 	<div class="r-r-r-r buttonsbox" data-scroll data-scroll-speed="1">
@@ -79,6 +83,7 @@
 
 
 <style lang="sass">
+
 .black-beauty
 	background: var(--beau)
 
@@ -121,7 +126,6 @@ button a
 	width: 100%
 
 h4
-	color: white
 	font-weight: 300
 	line-height: 1.4em
 
@@ -153,7 +157,8 @@ h4
 		padding: 2em
 	
 	.box6 h3
-		font-weight: 700
+		font-weight: 600
+		margin-bottom: 1em
 
 	.cola, .colb, .colc, .cold
 		width: 50%

@@ -54,6 +54,7 @@
 		"svelte-locomotive-scroll": "^0.0.5",
 		"swiper": "^8.4.6",
 		"textify.js": "^2.4.3",
-		"twitter-v2": "^1.1.0"
+		"twitter-v2": "^1.1.0",
+		"vagajs": "^0.1.7"
 	}
 }

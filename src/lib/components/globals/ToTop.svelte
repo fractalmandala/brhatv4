@@ -12,11 +12,11 @@ button:hover { background-image: url('/images/icons/go-up-red.png'); transform: 
 
 @media screen and (min-width: 768px) {
 	button { width: 24px; height: 24px; }
-	.to-top { margin: 32px 0 0 0; }
+	.to-top { margin: 0; }
 }
 
 @media screen and (max-width: 767px) {
 	button { width: 24px; height: 24px;}
-	.to-top { margin: 32px 0 0 0; }
+	.to-top { margin: 0 0 0 0; }
 }
 </style>

@@ -22,7 +22,8 @@ async function anveshiVids(){
 }
 </script>
 
-<div class="corp-docs">
+<div data-scroll-container>
+<div class="corp-docs" data-scroll-section>
 <h1>Anveṣī Travel Diaries<br>
 </h1>
 <h4>Karnataka Travel Diary</h4>
@@ -67,7 +68,7 @@ async function anveshiVids(){
 {/await}
 </div>
 
-
+</div>
 
 
 

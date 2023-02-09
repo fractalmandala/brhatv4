@@ -39,9 +39,9 @@
 
 </script>
 
-
-<div class="imagecontainer-hero"></div>
-<div class="sc-pad-row">
+<div data-scroll-container>
+<div class="imagecontainer-hero" data-scroll-section></div>
+<div class="sc-pad-row" data-scroll-section>
 	<div class="pad-col w50 tx-pad">
 		<p>
 		Sanātana Dharma is a view of immanence. It sees the divine everywhere. The transcendent is the Ultimate Truth, the Supreme Consciousness. The view of immanence says that although nothing that we perceive is the Ultimate Truth, it is at the same time a form of the Ultimate. In this view of immanence a gradient of divinity is created in which individual consciousness is always encouraged to elevate itself and ultimately realize its true form as the Supreme Consciousness.
@@ -68,7 +68,7 @@
 		</h4>
 	</div>
 </div>
-<div class="sc-pad">
+<div class="sc-pad" data-scroll-section>
 	<h4 class="titleclass">
 		Bṛhadmṛdaṅga Videos
 	</h4>
@@ -111,7 +111,7 @@
 	<pre>{error}</pre>
 	{/await}
 </div>
-<div class="sc-pad">
+<div class="sc-pad" data-scroll-section>
 	<h4 class="hindi titleclass">
 		हिन्दी कविता 
 	</h4>
@@ -154,7 +154,7 @@
 	<pre>{error}</pre>
 	{/await}
 </div>
-<div class="sc-pad">
+<div class="sc-pad" data-scroll-section>
 	<h4 class="titleclass">Śabdāvalī</h4>
 	{#await Shabdavali()}
 	<small>Loading...</small>
@@ -169,6 +169,7 @@
 	{:catch error}
 	<pre>{error}</pre>
 	{/await}
+</div>
 </div>
 
 

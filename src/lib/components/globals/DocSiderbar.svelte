@@ -1,5 +1,8 @@
 <script>
 // @ts-nocheck
+import { fly } from 'svelte/transition'
+import { quartIn } from 'svelte/easing'
+
 export const postgrePosts = async () => {
   const allDocFiles = import.meta.glob('/src/routes/docs/*.md')
   const iterableDocFiles = Object.entries(allDocFiles)
@@ -127,60 +130,124 @@ export const sveltePosts = async () => {
 
   return filteredDocs
 }
+
+
+
 </script>
 
 <div class="side-bars">	
-{#await postgrePosts()}
-<small>...</small>
-{:then data}
-	<h5><span class=".green" style="color: #10c56d"><b>| </b></span>documentation</h5>
-  {#each data as doc}
-	<p><a href={doc.path}>{doc.meta.title}</a></p>
-	{/each}
-{/await}
-{#await postgrPosts()}
-<small>...</small>
-{:then data}
-	<h5><span class=".green" style="color: #10c56d"><b>| </b></span>supabase</h5>
-  {#each data as doc}
-	<p><a href={doc.path}>{doc.meta.title}</a></p>
-	{/each}
-{/await}
-{#await supabasePosts()}
-<small>...</small>
-{:then data}
-	<h5 class="tagger"><span class=".green" style="color: #10c56d"><b>| </b></span>codes</h5>
-  {#each data as doc}
-	<p><a href={doc.path}>{doc.meta.title}</a></p>
-	{/each}
-{/await}
-{#await animatePosts()}
-<small>...</small>
-{:then data}
-	<h5 class="tagger"><span class=".green" style="color: #10c56d"><b>| </b></span>libraries</h5>
-  {#each data as doc}
-	<p><a href={doc.path}>{doc.meta.title}</a></p>
-	{/each}
-{/await}
-{#await guidePosts()}
-<small>...</small>
-{:then data}
-	<h5 class="tagger"><span class=".green" style="color: #10c56d"><b>| </b></span>troubleshooting</h5>
-  {#each data as doc}
-	<p><a href={doc.path}>{doc.meta.title}</a></p>
-	{/each}
-{/await}
-{#await sveltePosts()}
-<small>...</small>
-{:then data}
-	<h5 class="tagger"><span class=".green" style="color: #10c56d"><b>| </b></span>svelte codes</h5>
-  {#each data as doc}
-	<p><a href={doc.path}>{doc.meta.title}</a></p>
-	{/each}
-{/await}
-</div>
+	<div class="accordions">
+		<h5>documentation</h5>
+		{#await postgrePosts()}
+		<small>...</small>
+		{:then data}
+			<div class="content">
+			{#each data as doc}
+			<p
+				transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"
+			><a href={doc.path}>{doc.meta.title}</a></p>
+			{/each}
+			</div>
+		{/await}
+	</div>
+	<div class="accordions">
+		<h5>docs</h5>
+		{#await postgrPosts()}
+		<small>...</small>
+		{:then data}
+			<div class="content">
+			{#each data as doc}
+			<p
+				transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"
+			><a href={doc.path}>{doc.meta.title}</a></p>
+			{/each}
+			</div>
+		{/await}
+	</div>
+	<div class="accordions">
+		<h5>supabase</h5>
+		{#await supabasePosts()}
+		<small>...</small>
+		{:then data}
+			<div class="content">
+			{#each data as doc}
+			<p
+				transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"
+			><a href={doc.path}>{doc.meta.title}</a></p>
+			{/each}
+			</div>
+		{/await}
+	</div>
+	<div class="accordions">
+		<h5>animate</h5>
+		{#await animatePosts()}
+		<small>...</small>
+		{:then data}
+			<div class="content">
+			{#each data as doc}
+			<p
+				transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"
+			><a href={doc.path}>{doc.meta.title}</a></p>
+			{/each}
+			</div>
+		{/await}
+	</div>
+	<div class="accordions">
+		<h5>guide</h5>
+		{#await sveltePosts()}
+		<small>...</small>
+		{:then data}
+			<div class="content">
+			{#each data as doc}
+			<p
+				transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"
+			><a href={doc.path}>{doc.meta.title}</a></p>
+			{/each}
+			</div>
+		{/await}
+	</div>
+	<div class="accordions">
+		<h5>svelte</h5>
+		{#await sveltePosts()}
+		<small>...</small>
+		{:then data}
+			<div class="content">
+			{#each data as doc}
+			<p
+				transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"
+			><a href={doc.path}>{doc.meta.title}</a></p>
+			{/each}
+			</div>
+		{/await}
+	</div>
+</div>	
+
 
 <style>
+  .accordions {
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+
+	.accordions:hover .content {
+		display: flex;
+	}
+
+	.content {
+		display: none;
+		flex-direction: column;
+		height: 100%;
+		z-index: 300;
+		transition: all 0.33s var(--cube2);
+	}
+
 	.side-bars {
 		display: flex;
 		flex-direction: column;
@@ -189,16 +256,18 @@ export const sveltePosts = async () => {
 	.side-bars h5 {
 		margin-top: 1em;
 		margin-bottom: 4px;
-		text-transform: uppercase;
-		font-size: 1em;
+		text-transform: capitalize;
+		font-size: 1.2em;
+		color: white;
+		font-weight: 400;
 	}
 
 	.side-bars p {
 		margin-top: 4px;
 		margin-bottom: 6px;
-		font-size: 14px;
+		font-size: 16px;
 		text-transform: capitalize;
-		color: #878787;
+		color: white;
 	}
 
 	.side-bars p:hover {
@@ -209,7 +278,7 @@ export const sveltePosts = async () => {
 	.side-bars p a {
 		transition: all 0.08s var(--cube1);
 		text-transform: capitalize;
-		color: #878787;
+		color: white;
 	}
 
 	.side-bars a:hover {

@@ -1,7 +1,14 @@
-<div class="imagecontainer-hero"></div>
-
+<div class="homebox">
+<div class="vaga-fade-in">I will animate in!</div>
+</div>
+<div class="homebox">
+<div class="vaga-fade-in">I will animate in!</div>
+</div>
 <style>
-.imagecontainer-hero {
-	background-image: url('/images/herocovers/ridhero1.webp');
+	.homebox {
+		justify-content: center;
+		align-items: center;
+		padding-top: 4em;
 	}
+
 </style>

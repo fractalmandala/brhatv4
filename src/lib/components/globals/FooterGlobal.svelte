@@ -1,15 +1,6 @@
 <script>
-import { onMount } from 'svelte'
 import Animations from "textify.js";
 import ToTop from '$lib/components/globals/ToTop.svelte'
-onMount(() => {
-const { Textify } = Animations;
-	new Textify({
-		duration: 300,
-		threshold: 0.3,
-		once: false
-	})
-})
 </script>
 
 <div class="big-box" data-scroll-section>
@@ -80,7 +71,7 @@ const { Textify } = Animations;
 
 .big-box
 	background: linear-gradient(40deg,#272727,#1B2023)
-	z-index:900
+	z-index:1900
 	small
 		color: #676767
 		font-size: 12px
@@ -292,11 +283,11 @@ const { Textify } = Animations;
 @media screen and (max-width: 575px)
 
 	.big-box
-		padding-top: 2em
+		padding-top: 4em
 
 	.margin-box
 		width: calc(100% - 12vw)
-		height: calc(100% - 12em)
+		height: calc(100% - 14em)
 		margin: 2em 6vw 0em 6vw
 
 	#last-row
@@ -304,9 +295,11 @@ const { Textify } = Animations;
 		margin: 0 6vw
 		height: 4em
 		padding-top: 1em
+		small
+			font-size: 14px
 
 	#logoimage
-		width: 160px
+		width: 280px
 		margin-bottom: 1em
 		margin-top: 2em
 
@@ -316,28 +309,30 @@ const { Textify } = Animations;
 
 	#logo-col
 		width: 100%
+		
 
 	#icons-row
 		width: 50%
 		justify-content: space-between
 		margin-bottom: 1em
+		margin-top: 8px
 		img
-			width: 20px
-			height: 20px
+			width: 32px
+			height: 32px
 
 	#links-row
 		width: 100%
 		height: 100%
 		flex-wrap: wrap
-		margin-top: 1em
+		margin-top: 2em
 		gap: 5vw
 		padding-bottom: 1em
 		.link-box
 			width: calc(50% - 2.5vw)
 			p
-				font-size: 14px
+				font-size: 18px
 			h6
-				font-size: 16px
+				font-size: 18px
 
 	
 </style>
