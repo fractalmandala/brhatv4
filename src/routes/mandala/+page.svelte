@@ -1,5 +1,7 @@
 <script lang="ts">
 import supabase from '$lib/db'
+import LogFm from '$lib/components/logos/LogFm.svelte'
+
 export async function getAphorisms(): Promise<any[]> {
 	const { data, error} = await supabase
 	.from('brhat-aphorisms')
@@ -10,167 +12,136 @@ export async function getAphorisms(): Promise<any[]> {
 }
 </script>
 
-<div data-scroll-container>
-<div class="c-c-c-c sectioner a-1" data-scroll-section>
-	<p data-textify>
-		To be a history in the true sense of the word, a work must be a story of the people inhabiting a country. It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
-	</p>
-	<h4 class="green" data-scroll data-scroll-speed="-6" data-textify>
-		Such a history of India is still to be written.
-	</h4>
-	<cite data-textify>Shri KM Munshi</cite>
-</div>
-<div class="r-r-c-c scrollyboard a-2" data-scroll-section id="sec-one">
-	<div class="c-c-c-c colA" data-scroll data-scroll-speed="4">
-		<p data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
-			with a continuity of untold millennia, the passage of time visible to us in
-		</p>
-		<h1 data-scroll data-scroll-speed="-4" data-scroll-direction="horizontal">
-			itihāsa
-		</h1>
-	</div>
-	<div class="c-c-c-c colB">
-		<img src="/images/mandala/itihaas.webp" alt="itihasa"/>
-	</div>
-</div>
-<div class="r-r-c-c scrollyboard a-3" data-scroll-section>
-	<div class="c-c-c-c colA">
-		<img src="/images/mandala/bharata.webp" alt="bharata"/>
-	</div>
-	<div class="c-c-c-c colB">
-		<p data-scroll data-scroll-speed="4" data-scroll-direction="horizontal">
-			information was processed in increasingly complex ways within the physical environment best described as
-		</p>
-		<h1 data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">
-			bhārata
-		</h1>
-	</div>
-</div>
-<div class="r-r-c-c scrollyboard a-2" data-scroll-section>
-	<div class="c-c-c-c colA">
-		<p data-scroll data-scroll-speed="2">
-			emerged a civilizational consciousness, with multi-level coherence. It is known to us as
-		</p>
-		<h1 data-scroll data-scroll-speed="6">
-			dharma
-		</h1>
-	</div>
-	<div class="c-c-c-c colB">
-		<img src="/images/mandala/dharma.webp" alt="dharma"/>
-	</div>
-</div>
-<div class="c-c-c-c a-4" data-scroll-section>
-	<h1 data-scroll data-scroll-speed="4">And it is Alive...</h1>
-	<img src="/images/mandala/rotator.png" alt="rotator" data-scroll data-scroll-speed="8"/>
-</div>
-<div class="c-c-c-c a-5" data-scroll-section>
-	<div class="c-c-c-c fractal" data-scroll data-scroll-speed="6" data-scroll-direction="horizontal">
-		<div class="title">
-			Fractal
+<div class="greenfile" data-scroll-container>
+	<div class="c-c-c-c sectioner a-1" data-scroll-section>
+		<div class="is-svg">
+			<LogFm></LogFm>
 		</div>
-		<div class="def">
-			A curve or geometrical figure, each part of which has the same statistical character as the whole. Any of various extremely irregular curves or shapes for which any suitably chosen part is similar in shape to a given larger or smaller part.<br><br>
-			<span class="green">A fractal displays the same properties at any magnification level, ie., it is multi-level.</span>
+		<div class="opener" style="text-align: left" data-textify>
+			To be a history in the true sense of the word, a work must be a story of the people inhabiting a country. It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
 		</div>
 	</div>
-	<div class="c-c-c-c mandala" data-scroll data-scroll-speed="-6" data-scroll-direction="horizontal">
-		<div class="title">
-			Maṇḍala
+	<div class="c-c-c-c f-s" data-scroll-section>
+		<div data-textify class="sachin" data-scroll data-scroll-speed="3">Such a history of India is still to be written.</div>
+		<cite data-scroll data-scroll-speed="1">Shri KM Munshi</cite> 
+	</div>
+
+	<div class="r-r-c-c columnas" data-scroll-section>
+		<div class="c-c-c-c onleft">
+			<div class="opener">
+				<h5 data-scroll data-textify>with a continuity of untold millennia, the passage of time visible to us in</h5>
+				<h1 data-textify data-scroll data-scroll-speed="-4" data-scroll-direction="horizontal">itihāsa</h1>
+			</div>
 		</div>
-		<div class="def">
-			A circle or anything circular- globe, circumference, orbit of a celestial object, an array of troops. From the root √maṇḍ (मण्ड्) meaning satisfaction, adornment, wholeness, complete, satisfied (√bhūṣ, √hṛṣ, tuṣṭa, alaṅkāra).<br><br>
-				<span class="green">A circle- śūnya or pūrṇam- is where all constituents form a unified whole, ie., it is coherent.</span>
-		</div>
-	</div>	
-</div>
-<div class="my-gridder" data-scroll-section>
-	<div class="grid-col gc1">
-		<div class="c-c-c-c a-simple-box">
-			<p>Macrohistoric Case for India's Civilizational Primacy</p>
-		</div>
-		<div class="c-c-c-c a-simple-box">
-			<p>Ratha as a Bīja of Civilizational DNA</p>
-		</div>
-		<div class="c-c-c-c a-simple-box">
-			<p>History is Ontic, Itihāsa Ontologic</p>
-		</div>
-		<div class="c-c-c-c a-simple-box">
-			<p>The Avatāra in You</p>
+		<div class="c-c-c-c onright">
+			<img data-scroll data-scroll-speed="8" data-scroll-direction="horizontal" src="/images/mandala/itihaas.webp" alt="itihas"/>
 		</div>
 	</div>
-	<div class="grid-col gc2">
-		<div class="c-c-c-c two-simple-box">
-			<h4>Synaptic Reconnection 1</h4>
+
+
+		<div class="r-r-c-c columnas" data-scroll-section>
+			<div class="c-c-c-c onleft">
+				<div class="opener">
+					<h5 data-scroll data-textify>information was processed in increasingly complex ways within the physical environment best described as</h5>
+					<h1 data-textify data-scroll data-scroll-speed="-4" data-scroll-direction="horizontal">bhārata</h1>
+				</div>
+			</div>
+			<div class="c-c-c-c onright">
+				<img data-scroll data-scroll-speed="8" data-scroll-direction="horizontal" src="/images/mandala/bharata.webp" alt="itihas"/>
+			</div>
 		</div>
-		<div class="c-c-c-c two-simple-box">
-			<h4>Synaptic Reconnection 2</h4>
+
+	<div class="r-r-c-c columnas" data-scroll-section>
+			<div class="c-c-c-c onleft">
+				<div class="opener">
+					<h5 data-scroll data-textify>emerged a civilizational consciousness, with multi-level coherence. It is known to us as</h5>
+					<h1 data-textify data-scroll data-scroll-speed="-4" data-scroll-direction="horizontal">dharma</h1>
+				</div>
+			</div>
+			<div class="c-c-c-c onright">
+				<img data-scroll data-scroll-speed="8" data-scroll-direction="horizontal" src="/images/mandala/dharma.webp" alt="itihas"/>
+			</div>
+		</div>
+
+	<div class="c-c-c-c explain" data-scroll-section data-textify>
+		<h1>and it is alive. it is a</h1>
+	</div>
+
+	<div class="c-c-c-c fractal" data-scroll-section>
+		<div class="sachin">
+			fractal
+		</div>
+		<div class="opener" data-textify>
+			A curve or geometrical figure, each part of which has the same statistical character as the whole. Any of various extremely irregular curves or shapes for which any suitably chosen part is similar in shape to a given larger or smaller part. A fractal displays the same properties at any magnification level, ie., it is multi-level.
 		</div>
 	</div>
-	<div class="grid-col gc3">
-		<div class="c-c-c-c a-simple-box">
-			<p>Indian Civilizational Consciousness</p>
+
+	<div class="c-c-c-c mandala" data-scroll-section>
+		<div class="sachin">
+			maṇḍala
 		</div>
-		<div class="c-c-c-c a-simple-box">
-			<p>Ancestors Outside of Time</p>
+		<div class="opener" style="text-align: left" data-textify>
+			A circle or anything circular- globe, circumference, orbit of a celestial object, an array of troops. From the root √maṇḍ (मण्ड्) meaning satisfaction, adornment, wholeness, complete, satisfied (√bhūṣ, √hṛṣ, tuṣṭa, alaṅkāra). A circle- śūnya or pūrṇam- is where all constituents form a unified whole, ie., it is coherent.
+		</div>	
+</div>  
+
+	<div class="r-r-c-c" data-scroll-section id="holdsit">
+		<div class="slide-col imb1" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal" data-scroll-target="#holdsit">
+			<h5>Fractal Māṇḍala Essays</h5>
 		</div>
-		<div class="c-c-c-c a-simple-box">
-			<p>Caturasūtra - 4 Essential Aphorisms</p>
+		<div class="slide-col imb2" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal" data-scroll-target="#holdsit">
+			<h5>Schema for Synaptic Reconnection</h5>
 		</div>
-		<div class="c-c-c-c a-simple-box">
-			<p>Recommended Readings</p>
+		<div class="slide-col imb3" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal" data-scroll-target="#holdsit">
+			<h5>Caturasūtra - 4 Aphorisms for Civilizational Consciousness</h5>
+		</div>
+		<div class="slide-col imb4" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal" data-scroll-target="#holdsit">
+			<h5>Roadmap</h5>
 		</div>
 	</div>
-</div>
 
 </div>
 
 
 
 <style>
+
+
+
 .a-1 {
-	background-image: url('/images/mandala/fractallogo.png');
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
 	justify-content: center;
-	align-items: center;
 	text-align: center;
+	background: var(--beau);
 }
 
-
-.a-1 p { color: #878787; font-weight: 300; margin-bottom: 1em;}
-.a-1 h4, .a-4 h1 { font-weight: 600;}
-.a-1 h1 cite { color: white; letter-spacing: 0; font-weight: 300; text-transform: uppercase;}
-.colA p, .colB p { font-weight: 300; color: white; margin-bottom: 0;}
-.sectioner, .scrollyboard {
-	width: 100vw;
-	height: 100vh;
-	background: none;
-}
-
-.a-4 {
-	width: 100vw;
-	background: none;
-}
-
-.colA h1, .colB h1 {
-	color: #10c56d;
-}
-
-.colA img, .colB img {
-	object-fit: cover;
-	height: 72%;
-}
-
-
-.a-4 h1 {
-	font-weight: 600;
-}
-
-.a-4 {
-	align-items: center;
+.imb1, .imb2, .imb3, .imb4 {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
 	justify-content: center;
 }
+
+.imb1 {
+	background-image: url('/images/mandala/itihaas.webp');
+}
+.imb2 {
+	background-image: url('/images/mandala/bharata.webp');
+}
+.imb3 {
+	background-image: url('/images/mandala/dharma.webp');
+}
+.imb4 {
+	background-image: url('/images/mandala/lotus.webp');
+}
+	@keyframes curtains {
+		0% { width: 100%;}
+	100% { width: 0%;}
+	}	
+
+.opener { color: white;}
 
 @keyframes rotation {
 	from {
@@ -181,82 +152,152 @@ export async function getAphorisms(): Promise<any[]> {
 	}
 }
 
-.a-simple-box, .two-simple-box { transition: all 0.22s var(--cube3); padding: 1em;}
-.a-simple-box:hover, .two-simple-box:hover {backdrop-filter: blur(0); border: 1px solid #10c56d;}
-.a-simple-box p, .two-simple-box h4 { color: white;}
-.a-simple-box p { transform-origin: center center; transition: all 0.22s var(--cube4);}
-.a-simple-box:hover p { transform: scale(0.9);}
+
 
 @media screen and (min-width: 900px) {
-	.sectioner {
-		padding-left: 8vw;
-		padding-right: 8vw;
-		height: 100vh;
+
+	.is-svg {
+		height: 200px;
 	}
-	.colA, .colB {
-		width: 50%;
+
+	.columnas {
+		padding-left: 4vw;
+	}
+
+	.opener {
+		font-weight: 200;
+		font-size: 32px;
+		letter-spacing: -2px;
+		width: 88%;
+	}
+
+	.opener h5 {
+		font-weight: 200;
+		font-size: 32px;
+		letter-spacing: -2px;
+		width: 100%;
+		color: white;
+	}
+
+	.opener h1 {
+		font-size: 120px;
+		margin-top: 0;
+		color: #10C56D;
+		text-shadow: 4px 4px 8px #111111;
+	}
+
+	.sachin {
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 96px;
+		margin-bottom: 8px;
+		color: #10C56D;
+	}
+
+	.f-s {
+		height: 100vh;
+		padding: 0 4vw;
 		justify-content: center;
 	}
-	.colB {
-		align-items: flex-start !important;
-	}
-	.colA { 
-		align-items: flex-end !important;
-	}
 
-	.a-1 p { width: 64%;}
-	.a-2 .colA {
+	cite {
+		font-size: 1.4em;
+		color: white;
+		padding-left: 4px;
+	}
+	.a-1 {
+		width: 100%;
 		text-align: left;
-		padding-left: 8vw;
-		padding-right: 2em;
-	}
-	.colA h1, .colB h1 { font-size: 5em; margin-top: 0.5em; font-weight: 600; letter-spacing: 0;}
-	.a-3 .colB {
-		padding-right: 8vw;
-		padding-left: 2em;
-	}
-
-	.a-2 .colB {
-		align-items: flex-end;
-	}
-
-	.a-4 { height: 100vh;}
-
-	.a-4 img {
-		width: 256px;
-		height: 256px;
-		object-fit: contain;
-		transform-origin: center center;
-		animation: rotation 4s ease-in infinite alternate-reverse;
+		height: 100vh;
+		padding: 0 4vw;
 	}
 	
-	.fractal, .mandala {
+	.r-r-c-c {
 		height: 100vh;
-		padding: 0 6vw;
+	}
+
+	.sectioner {
+		padding-left: 4vw;
+		padding-right: 4vw;
+		height: 100vh;
+	}
+
+	.explain {
+		height: 100vh;
+		align-items: center;
 		justify-content: center;
 	}
 
-	.title { font-size: 90px; color: #10C56d; text-transform: uppercase; font-weight: bold;}
-	.def { font-size: 20px; color: white; width: 70%;}
+	.explain h1 {
+		font-size: 96px;
+		color: white;
+		margin-bottom: 0;
+		margin-top: 8px;
+	}
 
-	.my-gridder {
-		display: flex;
-		flex-direction: row;
+	.slide-col {
+		width: 25%;
+		height: 100%;
+		position: relative;
+		justify-content: center;
+		align-items: center;
+		padding: 0 1em;
+	}
+
+	.slide-col h5 {
+		font-size: 1.8em;
+		color: white;
+		text-align: center;
+		z-index: 2;
+	}
+
+	.slide-col:hover::after {
+		background: rgba(0,0,0,0.8);
+	}
+
+	.slide-col::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: '';
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.2);
+		backdrop-filter: blur(1px);
+		opacity: 1;
+	}
+
+	.slide-col::after {
+		z-index: 1;
+	}
+
+	.onleft {
+		width: 90%;
+		margin-right: -20%;
+		justify-content: center;
+	}
+	.onright {
+		width: 30%;
+	}
+	.onright img {
+		object-fit: cover;
+		height: 100%;
+		width: 600px;
+	}
+
+	.fractal, .mandala {
+		width: 70%;
+		align-items: flex-start;
+		text-align: left;
 		height: 100vh;
-		width: 100vw;
-		background-image: url('/images/mandala/fractalwallpaper2.webp');
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center center;
-		gap: 8px;
-	}
-	.gc1, .gc3 {
-		width: calc(25% - 8px);
+		padding-left: 4vw;
 	}
 
-	.gc2 { width: calc(50% - 8px);}
-	.a-simple-box { height: calc(25% - 10px); border: 1px solid white; margin-top: 8px; margin-bottom: 8px; backdrop-filter: blur(8px);}
-	.two-simple-box { height: calc(50% - 12px); border: 1px solid white; margin-top: 8px; margin-bottom: 8px; backdrop-filter: blur(8px); }
-	.a-simple-box p { font-size: 1.2em;}
+	.fractal .sachin, .fractal .opener {
+		align-items: flex-start;
+		text-align: left;
+	}
+
+
 }
 </style>

@@ -15,8 +15,11 @@ import '$lib/styles/textify.css'
 onMount(() => {
 	const { Textify } = Animations;
 	new Textify({
-	duration: 300,
-	threshold: 0.3,
+	threshold: 0.2,
+	duration: 4200,
+	stagger: 500,
+	easing: cubicOut,
+	fade: true
 	})
 	if (typeof window !== 'undefined') {
 		scrollInstance.on('scroll', (/** @type {any} */ obj) => {
@@ -31,10 +34,11 @@ onMount(() => {
 		smooth: true,
 		smoothMobile: false,
 		getDirection: true,
+		multiplier: 2,
 		lerp: 0.1,
 		reloadOnContextChange: true,
 		getSpeed: true,
-		inertia: 0.5
+		inertia: 0.2
 	}}
 	watch={$page}
 	location={$page.url}

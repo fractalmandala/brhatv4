@@ -139,8 +139,19 @@ const { Textify } = Animations;
 
 #last-row
 	flex-direction: row
-
+.revealit
+	position: relative
 		
+.revealit::after
+	position: absolute
+	top: 0
+	left: 0
+	content:''
+	width: 100%
+	height: 48
+	background: var(--beau)
+	z-index: 300
+	
 @media screen and (min-width: 900px) 
 	.big-box
 		padding-top: 1em

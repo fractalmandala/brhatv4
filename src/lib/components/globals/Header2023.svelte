@@ -246,6 +246,9 @@ export async function latestDhiti(){
 </div>
 
 <style>
+.row-top, .row-mid, .row-low {
+	overflow: visible;
+}
 .nav-row img { object-fit: contain; width: 24px; height: 24px;}
 .nav-row { gap: 1em;}
 .col1 {
@@ -407,7 +410,7 @@ a {
 		height: 32px;
 	}
 
-	.item1, .item2, .item3, .item4, .item5, .item6, .item7 { border-radius: 4px; transition: all 0.39s var(--cube3);}
+	.item1, .item2, .item3, .item4, .item5, .item6, .item7 { border-radius: 4px; transition: all 0.39s var(--cube3); overflow: visible;}
 	.col1 p, .slide2 p { font-weight: bold; text-transform: uppercase; transition: all 0.12s var(--cube1); }
 	.col1 small a, .slide3 small a { color: #676767;}
 	.item1:hover small a, .item2:hover small a, .item3:hover small a, .item4:hover small a, .item5:hover small a, .item6:hover small a, .item7:hover small a, .slide3:hover small:hover a { color: white;}
@@ -424,7 +427,7 @@ a {
 @media screen and (min-width: 900px) {
 	.fullscreener { height: 100vh;}
 	.col1, .col2 { gap: 1em; justify-content: center;}
-	.col1 { width: 60%;}
+	.col1 { width: 60%; overflow: visible;}
 	.col2 { width: 40%;}
 	.col1 p a, .slide2 p a { font-size: 1.44em;}
 	.col1 p, .slide2 p { margin-bottom: 8px;}
@@ -443,12 +446,12 @@ a {
 	.dhitiscreen h5 { line-height: 1.44em;}
 	.nav-row { margin-top: -3em; margin-bottom: 0em ;z-index: 4; padding-left: 2em; }
 	.the-in { gap: 2em;}
-	.isitem { border: 1px solid #373737;}
-	.isitem:hover { border: 1px solid #fe4a49;}
+	.isitem { border: 1px solid #373737; box-shadow: 4px 4px 6px #171717, -6px -8px 10px #272727; overflow: visible;}
+	.isitem:hover { border: 1px solid #fe4a49; box-shadow: none;}
 
 	.padding-base {
-		padding-left: 6vw;
-		padding-right: 6vw;
+		padding-left: 4vw;
+		padding-right: 4vw;
 	}
 
 	.main-row { width: 100%; height: calc(100vh - 8em); margin-top: 4px;}
@@ -579,11 +582,17 @@ a {
 	}
 
  	.header {
-		height: 64px;
+		height: 72px;
 		width: 100%;
 		position: relative;
-
  	}
+	.headerbox {
+		height: 72px;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
 
 	.closebuttonstrip {
 		display: flex;
@@ -692,8 +701,8 @@ a {
 		padding-right: 4vw;
 	}
 	.logoarea { width: 50%; }
-	.header { height: 64px;}
-	.headerbox { height: 64px; width: 100%;  }
+	.header { height: 72px;}
+	.headerbox { height: 72px; width: 100%;  }
 	
 	.motif img {
 		width: 42px;
