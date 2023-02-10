@@ -32,18 +32,19 @@ const { data, error } = await supabase
 <div class="loco" data-scroll-container>
 <div class="col-full img-fix"></div>
 <div class="col-full l1 pad4" data-scroll-section>
-	<h1 data-textify>Bṛhat is a</h1>
-	<h1 class="isred" data-textify>
+	<h1 class="bigger1" data-textify>Bṛhat is a</h1>
+	<h1 class="smaller1 isred" data-textify>
 	Culture Engine</h1>
 	<h3 data-textify>
 		To power creatives, research and design rooted
 		in the Indian civilizational consciousness. We convert individual, institutional 
 		and collective intent into action, across 3 dimensions:
 	</h3>
-	<div class="r-r-c-c l2" data-textify>
+	<img data-scroll data-scroll-speed="6" class="aboutim1" src="/images/corpimages/about1.png" alt="aboutone" />
+	<div class="r-r-c-c l2">
 		<div class="c-c-c-c l2row1">
-			<h5>Create</h5>
-			<p>
+			<h5 data-textify>Create</h5>
+			<p data-textify>
 				- visual and literary stories;
 				- design thinking and methods;
 				- research output on education and ecology;
@@ -51,8 +52,8 @@ const { data, error } = await supabase
 			</p>
 		</div>
 		<div class="c-c-c-c l2row2">
-			<h5>Curate</h5>
-			<p>
+			<h5 data-textify>Curate</h5>
+			<p data-textify>
 				- heritage experience journeys;
 				- culture-fit in mass media;
 				- NEP-relevant IKS curriculum;
@@ -60,18 +61,18 @@ const { data, error } = await supabase
 			</p>
 		</div>
 		<div class="c-c-c-c l2row3">
-			<h5>Consult</h5>
-			<p>
+			<h5 data-textify>Consult</h5>
+			<p data-textify>
 			- NEP-IKS implementation;
 			- policy thinking on education and ecology;
 			- organizational structure and leadership frameworks
 			</p>			
 		</div>
 	</div>
-	<h3 data-scroll data-scroll-speed="2" data-scroll-direction="horizontal" data-textify>
+	<h3 class="reducer" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal" data-textify>
 		An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment.
 	</h3>
-	<h3 data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal" data-textify>
+	<h3 class="reducer" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal" data-textify>
 		How does one go about doing that? At Bṛhat, we're acutely aware of three constraints:
 	</h3>
 	<div class="r-r-c-c l3" data-textify>
@@ -100,10 +101,11 @@ const { data, error } = await supabase
 			</p>
 		</div>
 	</div>
-	<h3 data-textify>
+	<img data-scroll data-scroll-speed="-5" class="aboutim2" src="/images/corpimages/logo-culture.png" alt="icon"/>
+	<h3 class="cushion" data-textify data-scroll data-scroll-speed="4">
 		But the severest constraint of them all is Time, and more specifically – Moment. The time for a Culture Engine is now, because we are in the midst of a civilizational moment. What is a civilizational moment? How rare or regular are such moments? How must we respond to them?
 	</h3>
-	<h3 data-textify>
+	<h3 class="cushion" data-textify data-scroll data-scroll-speed="3">
 		Read more on the need we see, why we think this is the time to address it, and about our self-identity:
 	</h3>
 </div>
@@ -184,13 +186,15 @@ const { data, error } = await supabase
 
 <style>
 
+h3 { color: #474747;}
+
 .loco { position: relative;}
 .col-full {
 	background-image: url('/images/herocovers/about-parambika.png');
 }
 .l1 { background: white; justify-content: center; height: 100%; padding-top: 4em; padding-bottom: 2em; margin-bottom: -2em;}
 
-.l2, .l3 { margin-bottom: 4em;}
+
 .l2 .c-c-c-c, .l3 .c-c-c-c { border-top: 1px solid #474747;}
 
 .l4 { 
@@ -221,15 +225,39 @@ const { data, error } = await supabase
 	justify-content: center;
 }
 
+.aboutim1 {
+	object-fit: contain;
+	width: 600px;
+	height: 800px;
+	margin-left: auto;
+}
+
+.l1 { position: relative;}
+.aboutim1 { position: absolute; top: 30%; right: 2%;}
+.aboutim2 {
+	object-fit: contain;
+	width: 500px;
+	margin-right: auto;	
+	z-index: 1;
+}
+
 
 @media screen and (min-width: 768px) {
-	.l2, .l3 { gap: 2em; padding-bottom: 2em; margin-top: 3em; }
+	.l2 { gap: 2em; padding-bottom: 2em; margin-top: 3em; }
+	.l2 { margin-bottom: 10em;}
 	.l2 h5, .l3 h5 { padding-top: 12px;}
+	.l3 { padding-top: 10em; padding-bottom: 10em; gap: 2em; margin-top: 3em; background: white; z-index: 3;}
 	.l4 h3 {
 		font-size: 3.2em;
 	}
 	.l4 {
 		height: 100vh;
+	}
+
+	.cushion {
+		background: white;
+		z-index: 2;
+		padding: 8px 16px;
 	}
 
 	.col-typevary img {
@@ -258,6 +286,13 @@ const { data, error } = await supabase
 	h2 {
 		margin-bottom: 32px;
 	}
+
+	.reducer {
+		width: 64%;
+	}
+
+	.smaller1 { font-size: 160px; line-height: 1.2em;}	
+	.bigger1 { font-size: 160px; margin-bottom: 0;}
 }
 
 @media screen and (max-width: 767px) {

@@ -7,10 +7,9 @@ import { onMount } from 'svelte'
 onMount(() => {
 	const { Textify } = Animations;
 	new Textify({
-		duration: 1000,
+		duration: 500,
 		once: false,
-		top: false,
-		stagger: 100,
+		stagger: 200,
 		threshold: 0.1
 	})
 })

@@ -29,10 +29,10 @@ onMount(() => {
 		smoothMobile: true,
 		getDirection: true,
 		multiplier: 1,
-		lerp: 0.1,
+		lerp: 0.9,
 		reloadOnContextChange: true,
 		getSpeed: true,
-		inertia: 0.8
+		inertia: 0.2
 	}}
 	watch={$page}
 	location={$page.url}
