@@ -1,16 +1,15 @@
 <script>
- import { scale } from 'svelte/transition'
+
+ import { fly } from 'svelte/transition'
  import { expoOut } from 'svelte/easing'
- /**
-	 * @type {any}
-	 */
-  export let refresh
+
 </script>
-{#key refresh}
+
+
+
 <div
-in:scale="{{ duration: 250, delay: 750, opacity: 0.2, start: 1.3, easing: expoOut }}"
-out:scale="{{ duration: 650, delay: 0, opacity: 0, start: 0.3, easing: expoOut  }}"
+in:fly="{{ duration: 250, delay: 300, opacity: 0.2, y: 800, x:0, easing: expoOut }}"
+out:fly="{{ duration: 200, delay: 0, opacity: 0, y: 800, easing: expoOut  }}"
 >
-<slot />
+<slot></slot>
 </div>
-{/key}

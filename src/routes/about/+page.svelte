@@ -1,36 +1,5 @@
 <script>
-import { onMount } from 'svelte'
-import Animations from "textify.js";
 import supabase from '$lib/db'
-
-onMount(() => {
-const { Textify } = Animations;
-	new Textify({
-		duration: 300,
-		threshold: 0.3,
-		once: false
-	})
-	})
-
-async function brhatPillars() {
-const { data , error } = await supabase
-.from('brhat-about')
-.select()
-.eq('type','actions')
-.order('sequence')
-if (error) throw new Error(error.message)
-return data
-}
-
-async function threePillars() {
-const { data, error } = await supabase
-  .from('brhat-about')
-  .select()
-	.eq('type','areas')
-  .order('sequence')
-  if (error) throw new Error(error.message)
-  return data
-}
 
 async function advisors() {
 const { data, error } = await supabase
@@ -50,7 +19,6 @@ const { data, error } = await supabase
   if (error) throw new Error(error.message)
   return data
 }
-
 async function team() {
 const { data, error } = await supabase
   .from('brhat-team')
@@ -59,80 +27,111 @@ const { data, error } = await supabase
   if (error) throw new Error(error.message)
   return data
 }
-
 </script>
 
-<div data-scroll-container>
-<div class="imagecontainer-hero" data-scroll-section></div>
-<div class="c-c-c-c x0" data-scroll-section>
-	<h1 id="lead-text" data-scroll data-scroll-speed="1">
-		B<span class="isred">ṛ</span>hat is a Culture Engine
-	</h1>
-	<h5 id="actions" data-textify>
+<div class="loco" data-scroll-container>
+<div class="col-full img-fix"></div>
+<div class="col-full l1 pad4" data-scroll-section>
+	<h1 data-textify>Bṛhat is a</h1>
+	<h1 class="isred" data-textify>
+	Culture Engine</h1>
+	<p data-textify>
 		To power creatives, research and design rooted
 		in the Indian civilizational consciousness. We convert individual, institutional 
 		and collective intent into action, across 3 dimensions:
-	</h5>
-	<div class="r-r-r-r first-one" data-scroll data-scroll-speed="4">
-		{#await brhatPillars()}
-		<small>...</small>
-		{:then data}
-		{#each data as item}
-			<div class="c-c-c-c a-box">
-				<h5 data-textify>{item.name}</h5>
-				<pre data-textify>{item.content}</pre>
-			</div>
-		{/each}
-		{:catch error}
-		<pre>{error}</pre>
-		{/await}
+	</p>
+	<div class="r-r-c-c l2" data-textify>
+		<div class="c-c-c-c l2row1">
+			<h5>Create</h5>
+			<p>
+				- visual and literary stories;
+				- design thinking and methods;
+				- research output on education and ecology;
+				- culture-rooted thought models
+			</p>
+		</div>
+		<div class="c-c-c-c l2row2">
+			<h5>Curate</h5>
+			<p>
+				- heritage experience journeys;
+				- culture-fit in mass media;
+				- NEP-relevant IKS curriculum;
+				- culture rooting in product design and thinking
+			</p>
+		</div>
+		<div class="c-c-c-c l2row3">
+			<h5>Consult</h5>
+			<p>
+			- NEP-IKS implementation;
+			- policy thinking on education and ecology;
+			- organizational structure and leadership frameworks
+			</p>			
+		</div>
 	</div>
-</div>
-
-<div class="c-c-c-c x2" data-scroll-section>
-	<h1 id="lead-text" data-scroll data-scroll-speed="6" data-scroll-direction="horizontal">
-	An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment.
-	</h1>
-	<h5 data-scroll data-scroll-speed="-3" data-scroll-direction="horizontal" data-textify>
-	How does one go about doing that? At Bṛhat, we’re acutely aware of three constraints:
-	</h5>
-</div>
-
-<div class="r-r-r-r second-one" data-scroll-section>
-	{#await threePillars()}
-	<small>...</small>
-	{:then data}
-	{#each data as item}
-	<div class="c-c-c-c a-box box2" data-scroll data-scroll-class="whensee">
-		<img src={item.image} alt={item.name}/>
-		<h5 data-scroll data-textify>{item.name}</h5>
-		<pre data-scroll data-textify>{item.content}</pre>
+	<h3 data-scroll data-scroll-speed="2" data-scroll-direction="horizontal" data-textify>
+		An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment.
+	</h3>
+	<h3 data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal" data-textify>
+		How does one go about doing that? At Bṛhat, we're acutely aware of three constraints:
+	</h3>
+	<div class="r-r-c-c l3" data-textify>
+		<div class="c-c-c-c l3col1">
+			<h5>
+				Civilization is Culture in Action
+			</h5>
+			<p>
+				The civilizational moment needs rooting in Dharma - of this there is no doubt. Thus a core part of our work is culture creatives that draw from the deep pool of Dhārmika heritage.
+			</p>
+		</div>
+		<div class="c-c-c-c l3col2">
+			<h5>
+				It Needs Culture-Compatible Policy
+			</h5>
+			<p>
+				Radical reorientations are needed in education and ecology. To this end, our focus will be on generating policy currency for culture through frameworks, curriculum and more.
+			</p>
+		</div>
+		<div class="c-c-c-c l3col3">
+			<h5>
+				The Work is Inter-Generational
+			</h5>
+			<p>
+				It needs leadership with cultural-cognition to carry the Agni. This cognition needs to permeate even brand and organisation - essential quarters for the overton window shift.
+			</p>
+		</div>
 	</div>
-	{/each}
-	{:catch error}
-	<pre>{error}</pre>
-	{/await}
+	<p data-textify>
+		But the severest constraint of them all is Time, and more specifically – Moment. The time for a Culture Engine is now, because we are in the midst of a civilizational moment. What is a civilizational moment? How rare or regular are such moments? How must we respond to them?
+	</p>
+	<p data-textify>
+		Read more on the need we see, why we think this is the time to address it, and about our self-identity:
+	</p>
 </div>
-	
-
-<!-------------------------------------------------------------------------------------------------->
-<div class="c-c-c-c x3" data-scroll-section>
-	<h1 data-scroll data-scroll-speed="-3" id="beliefs">More About Us</h1>
-	<div class="r-r-r-r third-one" data-scroll data-scroll-speed="1">
-		<a data-textify href="/about/docs/svatahsiddha">Svataḥsiddha - the Seed of Our Being</a>
-		<a data-textify href="/about/docs/whatkrishnameanstous">What Śrī Kṛṣṇa Means to Us</a>
-		<a data-textify href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a>
-		<a data-textify href="/about/docs/namelogo">Nāmarūpa - About Our Name and Logo</a>
-		<a data-textify href="/about/docs/values">Pratijñā - Values We Hold Dear</a>
-	</div>
+<div class="row-full l4 pad4" data-scroll-section>
+	<h3 data-textify>
+		<a href="/about/docs/svatahsiddha">
+		Svataḥsiddha
+		</a>
+	</h3>
+	<h3 data-textify>
+		<a href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a>
+	</h3>
+	<h3 data-textify>
+		<a href="/about/docs/whatkrishnameanstous">What Śrī Kṛṣṇa Means to Us</a>
+	</h3>
+	<h3 data-textify>
+		<a href="/about/docs/namelogo">Nāmarūpa - our Name and Logo</a>
+	</h3>
+	<h3 data-textify>
+		<a href="/about/docs/values">Pratijñā - Values We Hold Dear</a>
+	</h3>
 </div>
-<!-------------------------------------------------------------------------------------------------->
-<div class="c-c-c-c x4" data-scroll-section>
+<div class="c-c-c-c l5 pad4" data-scroll-section>
+	<h2 data-textify>Advisory Board</h2>
 	{#await advisors()}
 	<small>...</small>
 	{:then data}
-	<h1 data-scroll data-scroll-speed="1" id="advisory">Advisory Board</h1>
-	<div class="r-r-r-r advisors-row">
+	<div class="r-r-r-r l6">
 		{#each data as item}
 		<div class="c-c-c-c advisors">
 			<img src={item.image} alt={item.name} />
@@ -145,15 +144,14 @@ const { data, error } = await supabase
 	<pre>{error}</pre>
 	{/await}
 </div>
-<!-------------------------------------------------------------------------------------------------->
-<div class="c-c-c-c x5" data-scroll-section>
-	<h1 id="partners">Partner Brands</h1>
+<div class="c-c-c-c l7 pad4" data-scroll-section>
+	<h2 data-textify>Partners</h2>
 	{#await partners()}
 	<small>...</small>
 	{:then data}
-	<div class="base-row partners-row">
+	<div class="r-r-r-r l8">
 		{#each data as item}
-		<div class="base-col partners">
+		<div class="c-c-c-c partners">
 			<a href={item.link} target="_blank" rel="noreferrer"><img src={item.image} alt={item.name} /></a>
 		</div>
 		{/each}
@@ -162,15 +160,14 @@ const { data, error } = await supabase
 	<pre>{error}</pre>
 	{/await}
 </div>
-<!-------------------------------------------------------------------------------------------------->
-<div class="c-c-c-c x6" data-scroll-section>
+<div class="c-c-c-c l9 pad4" data-scroll-section>
+	<h2 data-textify>The Team</h2>
 	{#await team()}
 	<small>...</small>
 	{:then data}
-	<h1 id="team">Team</h1>
-	<div class="r-r-r-r team-row" data-scroll>
-		{#each data as item}
-		<div class="c-c-c-c team-box" data-scroll data-scroll-speed="2">
+	<div class="r-r-r-r l10">
+			{#each data as item}
+		<div class="c-c-c-c team-box">
 			<img src={item.image} alt={item.name} />
 			<h5 data-textify>{item.name}</h5>
 			<small data-textify>{item.title}</small>
@@ -182,89 +179,95 @@ const { data, error } = await supabase
 	<pre>{error}</pre>
 	{/await}
 </div>
+
 </div>
 
-
 <style>
-.x4, .x0 {
-	min-height: 100vh;
-}
-
-.x2 { background: var(--beau);}
-
-.x6 { min-height: 300vh;}
-
-.second-one, .x3, .x4 { background: white;}
-
-.x2 #lead-text { color: #fe4a49; text-align: left;}
-.x2 h5 { text-align: left; color: white;}
-.imagecontainer-hero {
+.isred { color: #fe4a49 !important;}
+.loco { position: relative;}
+.col-full {
 	background-image: url('/images/herocovers/about-parambika.png');
 }
-
-.base-row { justify-content: center; width: 100%; background: white;}
-.advisors img, .partners img { object-fit: contain; width: 100%;}
-.advisors img { border-radius: 8px;}
-.x0 h5, .x2 h5 { font-weight: 300;}
-
-.x0, .x3, .x4, .x5 { background: white;}
-.team-box h5, .team-box small, .team-box p { color: #272727;}
-.x6 { height: max-content;}
-.x6 h1 {color: #272727;}
-
-@media screen and (min-width: 768px) {
-	.base-row { gap: 32px;}
-	.advisors { width: 25%;}
-	#advisory, #partners, #team { margin-bottom: 2rem; border-top: 1px solid #e1e1e1; padding-top: 1em;}
-	#team, #partners, #advisory, #lead-text, #beliefs { text-align: center;}
-	#lead-text { margin-bottom: 0;}
-	#actions { margin-top: 0; width: 60%;}
-	.x0 { justify-content: center; text-align: left; align-items: flex-start; padding: 0 6vw;}
-	.x0 h1 { font-size: 3em;}
-	.a-box { width: 33%;}
-	.a-box h5 { font-size: 1.2em; font-weight: bold;}
-	.first-one { gap: 2em;}
-	.x2 { padding-bottom: 2em;}
-	.second-one .a-box img {
-		object-fit: contain;
-		width: 40%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.second-one { gap: 2em; padding-top: 2em; padding-bottom: 2em; padding-left: 6vw; padding-right: 6vw;}
-	.box2 h5, .box2 pre { text-align: center;}
-	.third-one { width: 100%; gap: 2em; justify-content: center; padding-left: 6vw; padding-right: 6vw;}
-	.third-one a { font-size: 1.28em; text-align: center; font-weight: bold;}
-	.x3 { padding-bottom: 6em;}
-	.x4, .x5 { padding-left: 6vw; padding-right: 6vw; padding-bottom: 6em; }
-	.advisors-row { gap: 2em;}
-	.team-row { width: 100%; padding-left: 6vw; padding-right: 6vw; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 2em;}
-	.team-box { width: 30%; height: 100%; }
-	.team-box img { object-fit: contain; width: 50%;}
+.l1 { background: white; justify-content: center; height: 100%; padding-top: 4em; padding-bottom: 2em; margin-bottom: -2em;}
+.l1 h1 {
+	font-size: 160px;
+	margin: 4px 0 6px 0;
+	letter-spacing: -2px;
+	line-height: 1.125em;
+	font-weight: 500;
+}
+.l1 p {
+	font-size: 2em;
+	margin-bottom: 1em;
+}
+.l2, .l3 { gap: 2em; padding-bottom: 2em; margin-top: 3em;}
+.l2, .l3 { margin-bottom: 4em;}
+.l2 .c-c-c-c, .l3 .c-c-c-c { border-top: 1px solid #474747;}
+.l2 h5, .l3 h5, .l6 h5, .l10 h5 {
+	font-size: 2em;
+	font-weight: 500;
+	margin-top: 1em;
+	margin-bottom: 0;
+}
+.l2 p, .l3 p, .l6 p, .l10 p {
+	font-size: 1.12em;
+}
+.l1 h3 {
+	font-weight: 500;
+	font-size: 3.2em;
+	margin-top: 1em;
+}
+.l4 { 
+	background: white;
+	height: 100vh;
+	margin-top: 0;
+	padding-top: 2em;
+}
+.l4 h3 {
+	font-weight: 500;
+	font-size: 3.2em;
+	border-bottom: 1px solid #474747;
+	padding-bottom: 0.4em;
+	margin: 0 0 0.8em 0;
+}
+.l4 h3:hover a {
+	color: #fe4a49;
+}
+.advisors {
+	width: calc(25% - 1em);
+}
+.l5, .l7, .l9 {
+	background: white;
+	padding-top: 2em;
+	padding-bottom: 4em;
+}
+.l5 h2, .l7 h2, .l9 h2 {
+	font-size: 4.8em;
+	font-weight: 600;
+	margin-bottom: 0.8em;
+}
+.l6, .l8 {
+	gap: 1em;
+}
+.l10 { 
+	flex-wrap: wrap;
+	gap: 2em;
+	justify-content: center;
+}
+.partners {
+	width: calc(100%/6);
+}
+.partners img  {
+	object-fit: contain;
+	width: 100%;
+}
+.team-box {
+	width: calc(33.33% - 2em);
+	padding: 8px 1em;
+}
+.team-box img {
+	object-fit: contain;
+	width: 70%;
 }
 
-@media screen and (max-width: 767px) and (min-width: 576px) {
-
-	.partners-row { flex-wrap: wrap; justify-content: center;}
-	.partners { width: calc(100%/5);}
-	.partners img { width: 120px;}
-	.team-row { flex-wrap: wrap;}
-
-	.base-row { gap: 20px;}
-
-	.advisors { width: 20%;}	
-	#team, #partners, #advisory, #lead-text, #beliefs { text-align: center;}
-}
-
-@media screen and (max-width: 575px) {
-	.team-row { flex-wrap: wrap;}
-
-	.advisors { width: 45%;}
-	.advisors-row, .partners-row { flex-wrap: wrap; gap: 1rem;}
-	.partners { width: 30%; }
-	#team, #partners, #advisory, #lead-text, #beliefs { text-align: left;}
-	#lead-text { margin-bottom: 0;}
-	#actions { margin-top: 1rem;}
-
-}
 </style>
