@@ -57,3 +57,8 @@ That is why he too is bound to people but not as blindly as Dhṛtarāṣṭra. 
 So, the question of ‘how do we respond’ when things break down – We respond by building, by turning the moments that test us in our lives into opportunity to be in the service of a larger good. We do that not as a burden but by submitting ourselves to HIS līlā, that is liberated action.
 
 ##### So, Here We Are – Śri Kṛṣṇa Is Both The Source And The Destination For Us. The Impulse And The Restraint.
+
+
+<style>
+p { font-size: 21px;}
+</style>

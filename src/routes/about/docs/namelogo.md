@@ -34,4 +34,7 @@ Thus is our logo.
 
 <style>
 img { object-fit: contain; width: 200px;}
+
+p { font-size: 21px;}
+
 </style>

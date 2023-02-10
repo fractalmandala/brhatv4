@@ -1,5 +1,6 @@
 <script>
 import PageTransitions from '$lib/components/animations/PageTransitions.svelte'
+import '$lib/styles/globaltemplate.sass'
 /**
 	 * @type {any}
 	 */

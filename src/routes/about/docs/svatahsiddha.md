@@ -74,3 +74,7 @@ It is only when people experience culture in such intimate way that they would r
     
 - **Public Policy Research**: If cultural immersion is the way for demand generation, the culmination of that consciousness into an institutional form requires specific policy recommendations. This is a highly focused, specialized activity that needs a long gestation but the outcomes have inter-generational impact.
 - **Leadership Development**: Beyond a point, all institutions and efforts at culture building boil down to embodied cognition. Individuals who embody and live that culture and inspire others. Our third vector is the cultivation of such leadership. People who understand the civilizational frameworks and can creatively synthesize them for contemporary contexts to solve problems that matter.
+
+<style>
+p { font-size: 21px;}
+</style>

@@ -35,11 +35,11 @@ const { data, error } = await supabase
 	<h1 data-textify>Bṛhat is a</h1>
 	<h1 class="isred" data-textify>
 	Culture Engine</h1>
-	<p data-textify>
+	<h3 data-textify>
 		To power creatives, research and design rooted
 		in the Indian civilizational consciousness. We convert individual, institutional 
 		and collective intent into action, across 3 dimensions:
-	</p>
+	</h3>
 	<div class="r-r-c-c l2" data-textify>
 		<div class="c-c-c-c l2row1">
 			<h5>Create</h5>
@@ -100,12 +100,12 @@ const { data, error } = await supabase
 			</p>
 		</div>
 	</div>
-	<p data-textify>
+	<h3 data-textify>
 		But the severest constraint of them all is Time, and more specifically – Moment. The time for a Culture Engine is now, because we are in the midst of a civilizational moment. What is a civilizational moment? How rare or regular are such moments? How must we respond to them?
-	</p>
-	<p data-textify>
+	</h3>
+	<h3 data-textify>
 		Read more on the need we see, why we think this is the time to address it, and about our self-identity:
-	</p>
+	</h3>
 </div>
 <div class="row-full l4 pad4" data-scroll-section>
 	<h3 data-textify>
@@ -133,7 +133,7 @@ const { data, error } = await supabase
 	{:then data}
 	<div class="r-r-r-r l6">
 		{#each data as item}
-		<div class="c-c-c-c advisors">
+		<div class="c-c-c-c col-type50">
 			<img src={item.image} alt={item.name} />
 			<h5 data-textify>{item.name}</h5>
 			<p data-textify>{item.title}</p>
@@ -151,7 +151,7 @@ const { data, error } = await supabase
 	{:then data}
 	<div class="r-r-r-r l8">
 		{#each data as item}
-		<div class="c-c-c-c partners">
+		<div class="c-c-c-c col-typevary">
 			<a href={item.link} target="_blank" rel="noreferrer"><img src={item.image} alt={item.name} /></a>
 		</div>
 		{/each}
@@ -167,7 +167,7 @@ const { data, error } = await supabase
 	{:then data}
 	<div class="r-r-r-r l10">
 			{#each data as item}
-		<div class="c-c-c-c team-box">
+		<div class="c-c-c-c simplex-card team-box">
 			<img src={item.image} alt={item.name} />
 			<h5 data-textify>{item.name}</h5>
 			<small data-textify>{item.title}</small>
@@ -183,69 +183,35 @@ const { data, error } = await supabase
 </div>
 
 <style>
-.isred { color: #fe4a49 !important;}
+
 .loco { position: relative;}
 .col-full {
 	background-image: url('/images/herocovers/about-parambika.png');
 }
 .l1 { background: white; justify-content: center; height: 100%; padding-top: 4em; padding-bottom: 2em; margin-bottom: -2em;}
-.l1 h1 {
-	font-size: 160px;
-	margin: 4px 0 6px 0;
-	letter-spacing: -2px;
-	line-height: 1.125em;
-	font-weight: 500;
-}
-.l1 p {
-	font-size: 2em;
-	margin-bottom: 1em;
-}
-.l2, .l3 { gap: 2em; padding-bottom: 2em; margin-top: 3em;}
+
 .l2, .l3 { margin-bottom: 4em;}
 .l2 .c-c-c-c, .l3 .c-c-c-c { border-top: 1px solid #474747;}
-.l2 h5, .l3 h5, .l6 h5, .l10 h5 {
-	font-size: 2em;
-	font-weight: 500;
-	margin-top: 1em;
-	margin-bottom: 0;
-}
-.l2 p, .l3 p, .l6 p, .l10 p {
-	font-size: 1.12em;
-}
-.l1 h3 {
-	font-weight: 500;
-	font-size: 3.2em;
-	margin-top: 1em;
-}
+
 .l4 { 
 	background: white;
-	height: 100vh;
 	margin-top: 0;
 	padding-top: 2em;
 }
 .l4 h3 {
-	font-weight: 500;
-	font-size: 3.2em;
 	border-bottom: 1px solid #474747;
 	padding-bottom: 0.4em;
-	margin: 0 0 0.8em 0;
 }
 .l4 h3:hover a {
 	color: #fe4a49;
 }
-.advisors {
-	width: calc(25% - 1em);
-}
+
 .l5, .l7, .l9 {
 	background: white;
 	padding-top: 2em;
 	padding-bottom: 4em;
 }
-.l5 h2, .l7 h2, .l9 h2 {
-	font-size: 4.8em;
-	font-weight: 600;
-	margin-bottom: 0.8em;
-}
+
 .l6, .l8 {
 	gap: 1em;
 }
@@ -254,20 +220,84 @@ const { data, error } = await supabase
 	gap: 2em;
 	justify-content: center;
 }
-.partners {
-	width: calc(100%/6);
+
+
+@media screen and (min-width: 768px) {
+	.l2, .l3 { gap: 2em; padding-bottom: 2em; margin-top: 3em; }
+	.l2 h5, .l3 h5 { padding-top: 12px;}
+	.l4 h3 {
+		font-size: 3.2em;
+	}
+	.l4 {
+		height: 100vh;
+	}
+
+	.col-typevary img {
+		object-fit: contain;
+		width: 100%;
+	}
+
+	.simplex-card {
+		width: calc(33.33% - 2em);
+		padding: 8px 1em;
+	}
+
+	.simplex-card img {
+		object-fit: contain;
+		width: 70%;
+	}
+	
+	.simplex-card small {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	.simplex-card p {
+		margin-top: 8px;
+	}
+
+	h2 {
+		margin-bottom: 32px;
+	}
 }
-.partners img  {
-	object-fit: contain;
-	width: 100%;
-}
-.team-box {
-	width: calc(33.33% - 2em);
-	padding: 8px 1em;
-}
-.team-box img {
-	object-fit: contain;
-	width: 70%;
+
+@media screen and (max-width: 767px) {
+	.l2, .l3 { gap: 2em; padding-bottom: 16px; margin-top: 1em;}
+	.l2 p, .l3 p { margin-bottom: 0;}
+	.l2 h5, .l3 h5 { padding-top: 8px;}
+	h2 {
+		margin-bottom: 32px;
+	}
+	.l4 h3 {
+		font-size: 1.6em;
+	}
+	.col-typevary {
+		width: calc(50% - 2em);
+	}
+
+	.col-typevary img {
+		object-fit: contain;
+		width: 100%;
+	}
+
+	.col-type50 h5 {
+		margin-top: 12px;
+	}
+
+	.col-type50 img {
+		width: 70%;
+	}
+
+	.simplex-card {
+		width: calc(100%);
+	}
+
+	.simplex-card img {
+		width: 50%;
+	}
+
+	.simplex-card small {
+		font-weight: bold;
+	}
 }
 
 </style>

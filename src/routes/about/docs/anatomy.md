@@ -37,3 +37,6 @@ from intent to manifestation,
 Bridging the gap between yearning and realization,
 Bṛhat is your perpetuating agent.
 
+<style>
+p { font-size: 21px;}
+</style>

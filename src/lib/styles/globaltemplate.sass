@@ -1,4 +1,31 @@
-/*containers**************************************************************************************************/
+
+
+/*containers********************************************************* *****************************************/
+
+body, html
+	box-sizing: border-box
+	margin: 0
+
+*, :root, div
+	box-sizing: border-box
+
+p, h4, h3, h2, h1
+	margin-bottom: 16px
+	margin-top: 0
+
+h5
+	margin-bottom: 8px
+	margin-top: 12px
+
+a
+	color: #004F2D
+
+p
+	color: #878787
+
+small
+	color: #878787
+
 
 .homebox
 	width: 100vw
@@ -19,16 +46,21 @@
 	display: flex
 	flex-direction: row
 
+.r-r-r-r
+	display: flex
+	flex-direction: row
+
 .img-fix
 	background-size: cover
 	background-position: center center
 	background-repeat: no-repeat
 
-.marker p
-	font-size: 18px
-
 .marker h5
 	font-size: 24px
+
+.simplex-card img
+	object-fit: contain
+
 
 @media screen and (min-width: 900px)
 	.homebox
@@ -61,6 +93,38 @@
 	.endx-col
 		align-items: flex-end
 
+	.for-text
+		padding-right: 25vw
+
+	.col-type50
+		width: calc(25% - 1em)
+
+	h5
+		font-size: 24px
+		font-weight: 600
+
+	h2
+		font-size: 4em
+		font-weight: 600
+
+	h3
+		font-weight: 500
+		font-size: 40px
+
+	h1
+		font-size: 160px
+		letter-spacing: -2px
+		font-weight: 600
+
+	p
+		font-size: 18px
+
+	.simplex-card p
+		font-size: 16px
+
+	small
+		font-size: 16px
+
 @media screen and (max-width: 899px) and (min-width: 768px)
 	.homebox
 		padding-right: 5%
@@ -73,6 +137,9 @@
 		padding-right: 4vw
 		padding-left: 4vw
 
+	.col-type50
+		width: calc(25% - 1em)
+
 @media screen and (max-width: 767px) and (min-width: 576px)
 	.col-full
 		height: 100%
@@ -81,14 +148,60 @@
 		padding-right: 8vw
 		padding-left: 8vw
 
+	.col-type50
+		width: calc(25% - 1em)
+
 @media screen and (max-width: 575px) 
+	.loco
+		padding-top: 60px
 
 	.centy-col
 		justify-content: center
 
 	.pad4
-		padding-right: 24px
-		padding-left: 24px
+		padding-right: 16px
+		padding-left: 16px
+
+	.col-type50
+		width: 100%
+
+	.r-r-r-r
+		justify-content: center
+		flex-wrap: wrap
+		gap: 2em !important
+
+	h2
+		font-size: 3em
+		font-weight: 500
+
+	h3
+		font-size: 28px
+
+	h1
+		font-size: 48px
+		letter-spacing: -1px
+		font-weight: 600
+
+	h5
+		font-size: 24px
+		font-weight: 500
+
+	p 
+		font-size: 18px
+
+	small
+		font-size: 16px !important
+		line-height: 1.2em !important
+	
+	.simplex-card p 
+		font-size: 18px
+		margin-top: 12px
+
+	.simplex-card h5
+		font-size: 24px
+		margin-bottom: 8px
+		margin-top: 16px
+		
 
 
 /*colors*******************************************/
@@ -98,3 +211,11 @@ h2, h3, h4, h5
 
 h1
 	color: #070707
+	line-height: 1.1em
+
+
+h3
+	font-weight: 500
+
+.isred
+	color: #fe4a49

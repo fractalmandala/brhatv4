@@ -26,23 +26,10 @@ body, html { margin: 0; box-sizing: border-box;}
 .base-row { display: flex; width: 100%; }
 .base-row-in { display: flex; width: 100%; flex-direction: row; flex-wrap: wrap; justify-content: space-between;}
 .base-col { display: flex; flex-direction: column;}
-.side-bar p, .side-bar2 p { font-size: 14px; font-weight: 500; transform-origin: center left; transition: all 0.18s var(--cube4); color: #878787; }
-.side-bar h5, .side-bar2 h5 { font-size: 14px; letter-spacing: 0px; font-weight: 600; text-transform: uppercase; margin-top: 16px; transform-origin: center left; transition: all 0.18s var(--cube4); color: #a7a7a7; }
-.side-bar small, .side-bar2 small { font-size: 12px; }
-.side-bar img, .side-bar2 img { object-fit: contain; width: 120px; }
-.side-bar a, .side-bar2 a { color: inherit; }
-.side-bar h5 a:hover, .side-bar2 h5 a:hover { color: #474747; }
-.side-bar p:hover, .side-bar2 p:hover { transform: scale(1.1);}
-.side-bar h5:hover, .side-bar2 h5:hover { transform: scale(0.9); color: #474747; }
-#anveshi-side p:hover a { color: #fe4a49;}
-.base-col img { object-fit: contain; width: 100%;}
-#duration, #price, #date { background-size: cover; background-position: center center; background-repeat: no-repeat;}
-.base-col p, .base-col pre { color: #878787;}
+
 .sc-pad { display: flex; flex-direction: column; align-items: stretch;}
 .sc-pad-row, .sc-in-row { display: flex;}
 .pad-col { display: flex; flex-direction: column;}
-.sc-pad p, .sc-pad-row p { color: #676767; letter-spacing: 0px; font-size: 1em; line-height: 1.4em; margin-top: 4px; margin-bottom: 12px;}
-.sc-pad h4, .sc-pad-row h4 { line-height: 1.4em; margin-top: 0;}
 
 /*** alignments ***/
 .cc { text-align: center;}
@@ -69,7 +56,7 @@ body, html { margin: 0; box-sizing: border-box;}
 .isorange { color: #4F9D69;}
 .background { background-color: #f8f8f8; transition: all 0.18s var(--snap) ;}
 .background:hover { background-color: #FFFFFF; box-shadow: 5px 8px 14px #e4e4e4, -5px -4px 12px #f1f1f1;}
-.side-bar p:hover a { color: var(--red);}
+
 .titleclass { text-transform: uppercase; font-weight: 900; letter-spacing: 0px;}
 
 @media screen and (min-width: 900px) {
@@ -85,13 +72,8 @@ body, html { margin: 0; box-sizing: border-box;}
 	.tx-pad { padding: 2em;}
 	.side-bar { width: 0vw; display: flex; padding-left: 1.48rem; padding-right: 1rem; padding-top: 2rem; }
 	.side-bar2 { width: 22vw; display: flex; padding-left: 2rem; padding-top: 2rem; padding-right: 1rem; }
-	.side-bar h5, .side-bar2 h5 { line-height: 2rem;}
-	.side-bar p, .side-bar2 p { margin-top: 0; margin-bottom: 4px; }
-	.base-col:hover h5:hover a { color: var(--blue);}
-	.base-col small { text-transform: capitalize; color: #255F85;}
 	.pagesheet { width: 100vw; }
 	.pagesheet2 { width: calc(78vw - 8px); padding: 2rem 8vw 4rem 8vw; }
-	.pagesheet2 h1 { font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem; }
 	.base-row { flex-direction: row; gap: 24px;}
 	.px4 { padding-left: 4rem; padding-right: 4rem;}
 	.mx4 { margin-left: 4rem; margin-right: 4rem;}
@@ -111,11 +93,8 @@ body, html { margin: 0; box-sizing: border-box;}
 	.w50 { width: 50%;}
 	.al-x-c { justify-content: center;}
 	.side-bar, .side-bar2 { width: 0vw; display: flex; padding-left: 1.2rem; padding-right: 0.8rem; }
-	.side-bar h5 { line-height: 2rem;}
-	.side-bar p { margin-top: 0; margin-bottom: 4px; }
 	.pagesheet, .pagesheet2 { width: 100vw; }
 	.pagesheet2 { padding: 2rem 4vw 4rem 4vw;}
-	.pagesheet2 h1 { font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
 	.px4 { padding-left: 3.2rem; padding-right: 3.2rem;}
 	.px2 { padding-left: 1.2rem; padding-right: 1.2rem;}
 	.mx4 { margin-left: 3.2rem; margin-right: 3.2rem;}
@@ -143,7 +122,6 @@ body, html { margin: 0; box-sizing: border-box;}
 	.sc-pad, .sc-pad-row { padding-left: 5vw; padding-right: 5vw; padding-top: 1em; padding-bottom: 1em;}
 	.pagesheet { width: calc(100% - 8px); margin-left: 4px;}
 	.pagesheet2 { padding: 6.8rem 6.4vw 4rem 4.8vw; width: calc(100% - 8px); margin-left: 4px; }
-	.pagesheet2 h1 { font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 2rem;}
 	.px4 { padding-left: 2rem; padding-right: 2rem;}
 	.mx4 { margin-left: 2rem; margin-right: 2rem;}
 	.mx2 { margin-left: 1rem; margin-right: 1rem;}
@@ -154,7 +132,6 @@ body, html { margin: 0; box-sizing: border-box;}
 	.sc-pad, .sc-pad-row { padding-left: 5vw; padding-right: 5vw;}
 	.swiper-slide { align-items: center; justify-content: center;}
 	.pagesheet2 { padding: 6.8rem 6.4vw 4rem 4.8vw;}
-	.pagesheet2 h1 { font-weight: 700; margin-top: 0; padding-top: 0; border-bottom: 1px solid #e7e7e7; padding-bottom: 1rem; margin-bottom: 1rem;}
 	.px4 { padding-left: 1rem; padding-right: 1rem;}
 	.mx4 { margin-left: 1rem; margin-right: 1rem;}
 	.mx2 { margin-left: 1rem; margin-right: 1rem;}
@@ -258,8 +235,6 @@ body, html { margin: 0; box-sizing: border-box;}
 .dhiti-post li a { color: var(--red);}
 .stix { font-family: 'STIX Two Text', serif;}
 .source, .source a, .dhiti-post h4 { font-family: 'Source Serif 4', serif;}
-.dhitisheet h1 { font-weight: 900;}
-.dhitisheet small { font-family: 'Source Serif 4', serif; font-size: 1.12rem; line-height: 1.4em;}
 .label, .label2 { width: max-content; margin-bottom: 8px; font-family:'Source Serif 4', serif; }
 .dhiti-post blockquote { border-left: 4px solid var(--red); padding-left: 1rem; font-style: italic; background-color: #f7f7f7;}
 
@@ -363,27 +338,11 @@ body, html { margin: 0; box-sizing: border-box;}
 
 .hindi { font-family: 'Noto Serif Devanagari', serif; }
 
-.corp-docs h1 { margin-top: 0; font-weight: 700; border-bottom: 1px solid #e1e1e1; padding-bottom: 8px;}
-.corp-docs p, .corp-docs li { color: #676767; }
-.corp-docs a { color: var(--red);}
-.corp-docs blockquote { font-style: italic; color: #676767; border-left: 2px solid var(--red); }
-.corp-docs ul, .corp-docs ol { margin-left: 0; padding-left: 1rem;}
-.corp-docs li { margin-bottom: 8px;}
-.corp-docs p, .corp-docs h5 { margin-top: 0; margin-bottom: 1rem;}
-.base-col h5 { margin-top: 1em; margin-bottom: 0.24em;}
-h2 { margin-top: 0; margin-bottom: 1em; font-weight: 800;}
-h4 { padding-top: 16px; margin-bottom: 1rem; margin-top: 1rem; font-weight: 600;}
-h5 { margin-bottom: 0;}
 .isgrey { color: #878787;}
 .corp-docs blockquote cite { text-transform: uppercase; font-style: normal; font-size: 14px; margin-top: 0;}
 .corp-docs cite, .corp-docs h5 cite, cite { font-size: 14px; font-style: normal; color: #878787;}
 .ft14 { font-size: 14px !important; }
 .wd100 { width: 100%; }
-.base-col small { margin-top: 0;}
-.base-col p { margin-top: 1rem;}
-.blog-pad p, .blog-pad pre { color:#878787; margin-top: 6px; margin-bottom: 8px;}
-.blog-pad pre { color: #878787; }
-.blog-pad h3 {border-bottom: 4px solid var(--blue); margin-top: 0; padding-bottom: 1rem; margin-bottom: 0;}
 .type-small { font-weight: bold; text-transform: uppercase;}
 
 pre {
@@ -400,16 +359,7 @@ pre {
 	.text-pads { padding: 0 26vw 0 8vw;}
 	.full-pads { padding: 0 8vw;}
 	.in-card { font-size: 1rem;}
-	.blog-pad p, .blog-pad pre { font-size: 1.12rem; line-height: 1.4em;}
-	h3 { font-size: 2.56rem;}
-	h4 { font-size: 1.8rem;}
-	h1 { font-size: 3rem;}
-	h2 { font-size: 2.4em;}
-	.corp-docs p, .corp-docs li, .corp-docs pre { font-size: 1.2rem; line-height: 1.4em;}
-	.base-col p, .base-col pre { font-size: 1rem; line-height: 1.2rem;}
-	.card { padding: 1rem 2rem;}
-	h5 { font-size: 1.32rem; line-height: 1.2em; font-weight: 600;}
-	.corp-docs blockquote { margin-bottom: 2rem; margin-top: 1rem; padding-left: 1rem; margin-left: 4rem; padding-top: 0; line-height: 1.12em;}
+
 }
 
 @media screen and (max-width:899px) and (min-width: 768px) {
@@ -417,36 +367,16 @@ pre {
 	.text-pads { padding: 0 24vw 0 4vw;}
 	.full-pads { padding: 0 4vw;}
 	.in-card { font-size: 12px;}
-	.blog-pad p, .blog-pad pre { font-size: 1.12rem; line-height: 1.4em;}
-	h3 { font-size: 2em;}
-	h4 { font-size: 1.44rem;}
-	.card { padding: 1rem;}
-	h1 { font-size: 2.4rem;}
-	.corp-docs p, .corp-docs li, .corp-docs pre { font-size: 1.12rem; line-height: 1.4em;}
-	h5 { font-size: 1.24rem; line-height: 1.2em; font-weight: 600;}
-	.corp-docs blockquote { margin-bottom: 2rem; margin-top: 1rem; padding-left: 1rem; margin-left: 2rem; padding-top: 0; line-height: 1.12em;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
 	.cc-left { text-align: center;}
 	.text-pads, .full-pads { padding: 0 1vw;}
 	.card { padding: 1rem;}
-	.blog-pad p, .blog-pad pre { font-size: 1.12rem; line-height: 1.4em;}
-	h1 { font-size: 2.4rem;}
-	.corp-docs p, .corp-docs li, .corp-docs pre { font-size: 1.12rem; line-height: 1.4em;}
-	h4 { font-size: 1.28rem;}
-	h5 { font-size: 1.24rem; line-height: 1.2em; font-weight: 600;}
-	.corp-docs blockquote { margin-bottom: 2rem; margin-top: 1rem; padding-left: 1rem; margin-left: 2rem; padding-top: 0; line-height: 1.12em;}
 }
 
 @media screen and (max-width: 575px) {
 	.temp-pads { padding: 0 1em;}
 	.cc-left { text-align: left;}
 	.text-pads, .full-pads { padding: 0 1rem;}
-	.blog-pad p, .blog-pad pre { font-size: 1.12rem; line-height: 1.4em;}
-	h1 { font-size: 2rem; letter-spacing: 0px;}
-	.corp-docs p, .corp-docs li, .base-col p, .base-col pre, .corp-docs pre { font-size: 1.12rem; line-height: 1.4em;}
-	h4 { font-size: 1.28rem;}
-	h5 { font-size: 1.24rem; line-height: 1.2em; font-weight: 600;}
-	.corp-docs blockquote { margin-bottom: 2rem; margin-top: 1rem; padding-left: 1rem; margin-left: 1rem; padding-top: 0; line-height: 1.12em;}
 }

@@ -43,24 +43,10 @@ body, html { margin: 0; box-sizing: border-box; }
 
 .herocontainer img { object-fit: cover; width: 100%;}
 
-div, p, h1, h2, h3, h4, h5, h6, small, pre, cite, caption, a { font-family: 'Inter Tight', sans-serif; color: #474747; }
+div, p, h1, h2, h3, h4, h5, h6, small, pre, cite, caption, a { font-family: 'Inter Tight', sans-serif; }
 a { text-decoration: none;}
-h1 { 		font-weight: 800;
-	letter-spacing: -1px;}
-h2 { font-weight: 600; }
 .sticker { text-transform: uppercase;}
-small { line-height: 1rem;}
 .fl-c { display: flex; flex-direction: column;}
-.pageoftext h3 {
-	margin-bottom: 2rem !important;
-	padding-bottom: 1rem;
-}
-.pageoftext h3 {
-	border-bottom: 1px solid #d7d7d7;
-}
-.pageoftext p {
-	padding-left: 2rem;
-}
 
 .headercontainer h3, .headercontainer h4, .headercontainer h5, .headercontainer h6, .headercontainer p, .headercontainer pre, .headercontainer a, .headercontainer small, .headercontainer caption, .headercontainer cite, .headercontainer code { font-family: 'Inter Tight', sans-serif;}
 code { font-family: 'JetBrains Mono', monospace; color: #878787; margin-bottom: 0; padding-bottom: 0; margin-top: 0; padding-top: 0;}

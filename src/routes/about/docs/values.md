@@ -52,3 +52,7 @@ To deliberate upon and cultivate excellence actively is a given at bṛhat, but 
 आ मां मे॒धा सु॒रभि॑-र्वि॒श्वरू॑पा॒ हिर॑ण्यवर्णा॒ जग॑ती जग॒म्या ।<br> 
 ऊर्ज॑स्वती॒ पय॑सा॒ पिन्व॑माना॒ सा मे॒धा सु॒प्रती॑का जुषन्ताम् ॥
 </h5>
+
+<style>
+p { font-size: 21px;}
+</style>
