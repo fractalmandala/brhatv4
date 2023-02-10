@@ -72,6 +72,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 .big-box
 	background: linear-gradient(40deg,#272727,#1B2023)
 	z-index:1900
+	border-top: 1px solid white
 	small
 		color: #676767
 		font-size: 12px
@@ -130,18 +131,8 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 
 #last-row
 	flex-direction: row
-.revealit
-	position: relative
-		
-.revealit::after
-	position: absolute
-	top: 0
-	left: 0
-	content:''
-	width: 100%
-	height: 48
-	background: var(--beau)
-	z-index: 300
+
+	
 	
 @media screen and (min-width: 900px) 
 	.big-box
@@ -187,9 +178,9 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		width: 25%
 		padding-left: 2em
 		h6
-			font-size: 16px
+			font-size: 18px
 		p
-			font-size: 14px
+			font-size: 16px
 
 @media screen and (max-width: 899px) and (min-width: 768px) 
 
@@ -231,9 +222,9 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		.link-box
 			width: 25%
 			h6
-				font-size: 16px
+				font-size: 18px
 			p
-				font-size: 14px
+				font-size: 16px
 
 @media screen and (max-width: 767px) and (min-width: 576px) 
 

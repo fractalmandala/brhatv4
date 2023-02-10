@@ -25,7 +25,7 @@
 <style>
 svg { width: 100%;}
 
-svg { filter: drop-shadow(0px 0px 0px transparent); transition: all 0.22s var(--cube3);}
+svg { filter: drop-shadow(-10px -15px 10px #070707); transition: all 0.22s var(--cube3);}
 .logo-svg-box:hover svg { filter: drop-shadow(6px 6px 12px #010101);}
 
 @media screen and (max-width: 575px) {

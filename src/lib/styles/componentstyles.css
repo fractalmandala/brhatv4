@@ -337,7 +337,7 @@ body, html { margin: 0; box-sizing: border-box;}
 /*corp-docs typography*****************************************************************************************************************************************************************************************************************************************************************************************************/
 
 .hindi { font-family: 'Noto Serif Devanagari', serif; }
-
+p { color: #878787;}
 .isgrey { color: #878787;}
 .corp-docs blockquote cite { text-transform: uppercase; font-style: normal; font-size: 14px; margin-top: 0;}
 .corp-docs cite, .corp-docs h5 cite, cite { font-size: 14px; font-style: normal; color: #878787;}

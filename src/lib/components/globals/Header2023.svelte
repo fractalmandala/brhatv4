@@ -313,7 +313,7 @@ a {
 	top: 0;
 }
 
-.headerbox { width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center; background: linear-gradient(40deg, rgba(39, 39, 39, 0.8), rgba(27, 32, 35, 0.8)); backdrop-filter: blur(10px);}
+.headerbox { width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center; background: linear-gradient(40deg, rgba(29, 19, 9, 0.8), rgba(7, 12, 25, 0.8)); backdrop-filter: blur(10px);}
 .logoarea { display: flex; flex-direction: row; align-items: center;}
 
 @keyframes spreadingout {
@@ -433,25 +433,26 @@ a {
 	.col1, .col2 { gap: 1em; justify-content: center;}
 	.col1 { width: 60%; overflow: visible;}
 	.col2 { width: 40%;}
-	.col1 p a, .slide2 p a { font-size: 1.44em;}
-	.col1 p, .slide2 p { margin-bottom: 8px;}
+	.col1 p a, .slide2 p a { font-size: 1.14em;}
+	.col1 p, .slide2 p { margin-bottom: 6px;}
 	.col1 small a { font-size: 1em;}
-	.col1 small { line-height: 1.6em;}
+	.col1 small { line-height: 1.4em;}
 	.main-row { gap: 1em; height: calc(50% - 2.5em);}
 	.item1:hover p a, .item2:hover p a, .item3:hover p a, .item4:hover p a, .item5:hover p a, .item6:hover p a, .item7:hover p a, .slide2 p:hover a { color: #fe4a49;}
 	.item1 { width: 100%; height: calc(25% - 1.25em); padding-left: 1em; }
 	.item2, .item3, .item4, .item5, .item6, .item7 { width: calc(50% - 0.5em); padding-left: 1em;}
 	.row-top, .row-mid, .row-low { height: calc(25% - 1.25em); gap: 1em;}
 	.slide1 { width: 100%; height: calc(75% - 1.75em);}
-	.slide2 { width: 100%; height: calc(25% - 1.25em); border: 1px solid #373737; border-radius: 4px; padding-left: 1em;}
+	.slide2 { width: 100%; height: calc(25% - 1.25em); border: 1px solid #373737; border-radius: 4px; padding-left: 1em; padding-top: 8px;}
 	.dhitislide { width: 100%; height: 100%;}
 	.dhitiscreen { width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); padding-left: 2em; padding-right: 2em;}
 	.dhitiscreen a { font-size: 1.12em;}
-	.dhitiscreen h5 { line-height: 1.44em;}
+	.dhitiscreen h5 { line-height: 1.14em;}
 	.nav-row { margin-top: -3em; margin-bottom: 0em ;z-index: 4; padding-left: 2em; }
 	.the-in { gap: 2em;}
-	.isitem { border: 1px solid #373737; box-shadow: 4px 4px 6px #171717, -6px -8px 10px #272727; overflow: visible;}
+	.isitem { border: 1px solid #373737; box-shadow: 4px 4px 6px #171717, -6px -8px 10px #272727; overflow: visible; padding-top: 8px;}
 	.isitem:hover { border: 1px solid #fe4a49; box-shadow: none;}
+	.isitem p, .slide2 p { margin-top: 6px; }
 	.mobilemenu {
 		width: 32px;
 		height: 32px;
@@ -483,10 +484,7 @@ a {
 		padding-left: 8vw;
 	}
 
-	.inside-logotype img {
-		object-fit: contain;
-		height: 48px;
-	}
+
 
 	.closebuttonstrip img {
 		width: 32px;
@@ -555,7 +553,7 @@ a {
 		padding-right: 6vw;
 	}
 
-	.the-inner { object-fit: contain; width: 160px; margin-bottom: 8px;}
+
 
 	.soc2 { height: 4em;}
 
@@ -637,17 +635,12 @@ a {
 		justify-content: space-between;
 	}
 
-	.innerheading .logotype  {
-		width: 30%;
-	}
+
 	.innerheading .logotype img {
 		height: 48px;
 		object-fit: contain;
 	}
 	
-	.innerheading .logotype {
-		padding-bottom: 8px;
-	}
 
   .socialicons {
     display: flex;

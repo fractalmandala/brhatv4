@@ -187,7 +187,7 @@ const { data, error } = await supabase
 <style>
 
 h3 { color: #474747;}
-
+p { color: #878787;}
 .loco { position: relative;}
 .col-full {
 	background-image: url('/images/herocovers/about-parambika.png');

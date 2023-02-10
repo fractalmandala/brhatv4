@@ -22,6 +22,13 @@
 </div>
 
 <style>
+:root {
+	color: #171717;
+	}
+
+:root p, p {
+	color: #171717 !important;
+}
 .corp-docs {
 	padding-top: 8em;
 }
@@ -33,4 +40,5 @@
 	margin-top: 16px;
 }
 .breadcrumb { gap: 1em;}
+p { color: #878787 !important;}
 </style>
