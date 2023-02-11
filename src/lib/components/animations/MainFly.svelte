@@ -1,10 +1,14 @@
 <script>
 import { fly } from 'svelte/transition'
-import { quintOut } from 'svelte/easing'
+import { circOut } from 'svelte/easing'
 </script>
 
-<div
-	in:fly={{ duration: 500, delay: 500, x:1300, y: 0, easing: quintOut }}
-	out:fly={{ duration: 300, delay: 0, x:1300, y: 0, easing: quintOut }}>
+<div class="mainfly"
+	in:fly={{ duration: 500, delay: 500, x:1300, y: 0, easing: circOut }}
+	out:fly={{ duration: 100, delay: 0, x:1300, y: 0, easing: circOut }}>
 <slot></slot>
 </div>
+
+<style>
+.mainfly { display: flex; flex-direction: column;}
+</style>

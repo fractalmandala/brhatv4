@@ -1,5 +1,4 @@
-
-
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
 
 
 /*containers********************************************************* *****************************************/
@@ -7,6 +6,7 @@
 body, html
 	box-sizing: border-box
 	margin: 0
+	font-family: 'Inter Tight', sans-serif
 
 *, :root, div
 	box-sizing: border-box
@@ -15,13 +15,23 @@ body, html
 p, h4, h3, h2, h1
 	margin-bottom: 16px
 	margin-top: 0
+	font-family: 'Inter Tight', sans-serif
+
+h3
+	font-weight: 700
+
 
 h5
 	margin-bottom: 8px
 	margin-top: 12px
+	font-weight: 600
 
 a
-	color: #1982c4
+	text-decoration: none
+	font-weight: inherit
+	transition: all 0.12s var(--cube1)
+	&:hover
+		color: #fe4a49
 
 p
 	color: white
@@ -65,8 +75,49 @@ small
 .simplex-card img
 	object-fit: contain
 
+.primecontainer-col 
+	display: flex
+	flex-direction: column
+	width: 100vw
+
+.primecontainer-row
+	display: flex
+	flex-direction: row
+	width: 100vw
+
+.imagecontainer-hero
+	display: flex
+	flex-direction: column
+	background-size: cover
+	background-position: center center
+	background-repeat: no-repeat
+
+.a-col, .col-in-col
+	display: flex
+
+.full-row
+	display: flex
+	flex-direction: row
+	min-height: 100vh
+
+.full-col
+	display: flex
+	flex-direction: column
+	min-height: 100vh
 
 @media screen and (min-width: 900px)
+
+	.primecontainer-col, .primecontainer-row
+		height: 100vh
+	
+	.imagecontainer-hero
+		width: 100vw
+		height: 100vh
+
+	.full-row, .full-col
+		width: calc(100vw - 16px)
+		margin-left: 8px
+
 	.homebox
 		padding-left: 5%
 		padding-right: 5%
@@ -113,33 +164,47 @@ small
 	.col-type50
 		width: calc(25% - 1em)
 
+	.typeh4
+		font-size: 32px
+		line-height: 1.4
+
 	h5
 		font-size: 24px
-		font-weight: 600
 
 	h3
-		font-weight: 500
-		font-size: 40px
+		font-size: 80px
+		letter-spacing: -2px
 
 	h2
 		font-size: 100px
-		font-weight: 600
 
 	h1
 		font-size: 160px
 		letter-spacing: -2px
-		font-weight: 600
 
 	p
-		font-size: 18px
+		font-size: 16px
+		line-height: 1.25
 
 	.simplex-card p
 		font-size: 16px
 
 	small
-		font-size: 16px
+		font-size: 12px
 
 @media screen and (max-width: 899px) and (min-width: 768px)
+
+	.primecontainer-col, .primecontainer-row
+		height: 100vh
+
+	.imagecontainer-hero
+		width: 100vw
+		height: 100vh
+
+	.full-row, .full-col
+		width: calc(100vw - 16px)
+		margin-left: 8px
+
 	.homebox
 		padding-right: 5%
 		padding-left: 5%
@@ -159,6 +224,21 @@ small
 		width: calc(25% - 1em)
 
 @media screen and (max-width: 767px) and (min-width: 576px)
+
+
+	.imagecontainer-hero
+		width: 100vw
+		height: 100vh
+
+	.full-row
+		width: calc(100vw - 8px)
+		margin-left: 4px
+		flex-wrap: wrap
+
+	.full-col
+		width: calc(100vw - 8px)
+		margin-left: 4px
+
 	.col-full
 		height: 100%
 
@@ -170,6 +250,20 @@ small
 		width: calc(25% - 1em)
 
 @media screen and (max-width: 575px) 
+
+	.imagecontainer-hero
+		width: 100vw
+		height: 100vh
+
+	.full-row
+		width: calc(100vw - 8px)
+		margin-left: 4px
+		flex-wrap: wrap
+
+	.full-col
+		width: calc(100vw - 8px)
+		margin-left: 4px
+
 	.loco
 		padding-top: 60px
 
@@ -198,14 +292,13 @@ small
 	h1
 		font-size: 48px
 		letter-spacing: -1px
-		font-weight: 600
 
 	h5
 		font-size: 24px
-		font-weight: 500
 
-	p 
-		font-size: 18px
+	p
+		font-size: 16px
+		line-height: 1.25
 
 	small
 		font-size: 16px !important
@@ -231,6 +324,10 @@ h1
 	color: #070707
 	line-height: 1.1em
 
+.typeh4
+	font-size: 24px
+	line-height: 1.24
+	padding: 16px
 
 h3
 	font-weight: 500

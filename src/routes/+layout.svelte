@@ -8,9 +8,9 @@ import LocomotiveScrollProvider from 'svelte-locomotive-scroll';
 import { page } from '$app/stores'
 import '$lib/styles/locomotive-scroll.css'
 import '$lib/styles/reader.sass'
-import '$lib/styles/globals.css'
 import '$lib/styles/componentstyles.css'
 import '$lib/styles/textify.css'
+import '$lib/styles/globaltemplate.sass'
 
 onMount(() => {
 	const { Textify } = Animations;

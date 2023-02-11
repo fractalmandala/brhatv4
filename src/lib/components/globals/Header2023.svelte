@@ -706,7 +706,6 @@ a {
 	.menu-red, .menu-white {
 		height: 40px;
 		width: 40px;
-		margin-top: -8px;
 	}
 
 	.fullscreener { min-height: 100vh;}
@@ -720,13 +719,13 @@ a {
 	.headerbox { height: 72px; width: 100%; align-items: center; }
 	
 	.motif img {
-		width: 56px;
-		height: 56px
+		width: 48px;
+		height: 48px
 	}
 
 	.logoarea .logotype { margin-left: 12px; padding-top: 8px;}	
 	.logoarea .logotype img {
-		height: 40px;
+		height: 32px;
 	}
 	.mobilemenu {
 		width: 40px;
@@ -794,8 +793,8 @@ a {
 	.col2 { display: none;}
 	.col1 p a { font-size: 2em;}
 	.col1 p { margin-bottom: 8px; margin-top: 1.44em; border-top: 1px solid #fe4a49; padding-top: 16px;}
-	.col1 small a { font-size: 1.6em;}
-	.col1 small { line-height: 2.16em;}
+	.col1 small a { font-size: 1.2em;}
+	.listlist small { line-height: 1.4 !important;}
 	.isdo { margin-bottom: 8px; margin-top: 1.44em;}
 	.isdont { margin-bottom: 4px; margin-top: 4px;}
 	.main-row { gap: 1em; height: calc(100% - 2.5em); padding: 0 1em;}

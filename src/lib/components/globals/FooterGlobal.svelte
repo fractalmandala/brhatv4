@@ -132,6 +132,9 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 #last-row
 	flex-direction: row
 
+#links-row
+	display: flex
+
 	
 	
 @media screen and (min-width: 900px) 
@@ -164,6 +167,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		width: 75%
 		padding-left: 12%
 		padding-top: 2em
+		flex-direction: row
 
 	#icons-row
 		width: 200px
@@ -219,6 +223,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		width: 100%
 		padding-top: 2em
 		gap: 3em
+		flex-direction: row
 		.link-box
 			width: 25%
 			h6
@@ -263,6 +268,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	#links-row
 		width: 100%
 		padding-top: 2em
+		flex-direction: row
 		gap: 2em
 		.link-box
 			width: 25%
@@ -277,20 +283,21 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		padding-top: 4em
 
 	.margin-box
-		width: calc(100% - 12vw)
+		width: calc(100% - 2vw)
 		height: calc(100% - 14em)
-		margin: 2em 6vw 0em 6vw
+		margin: 2em 1vw 0em 1vw
+		padding: 0 8vw
 
 	#last-row
-		width: calc(100% - 12vw)
-		margin: 0 6vw
+		width: calc(100% - 2vw)
+		margin: 0 1vw
 		height: 4em
 		padding-top: 1em
 		small
 			font-size: 14px
 
 	#logoimage
-		width: 280px
+		width: 240px
 		margin-bottom: 1em
 		margin-top: 2em
 
@@ -300,11 +307,12 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 
 	#logo-col
 		width: 100%
+		align-items: center
 		
 
 	#icons-row
-		width: 50%
-		justify-content: space-between
+		width: 100%
+		justify-content: center
 		margin-bottom: 1em
 		margin-top: 8px
 		img
@@ -314,12 +322,10 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	#links-row
 		width: 100%
 		height: 100%
-		flex-wrap: wrap
-		margin-top: 2em
-		gap: 5vw
 		padding-bottom: 1em
+		flex-direction: column
 		.link-box
-			width: calc(50% - 2.5vw)
+			width: calc(100% - 8vw)
 			p
 				font-size: 18px
 			h6
