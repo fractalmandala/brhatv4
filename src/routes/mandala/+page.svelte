@@ -8,9 +8,41 @@ let scroll: any
 let speed = 40
 
 let isEss1 = false
+let isEss2 = false
+let isEss3 = false
+let isEss4 = false
+let isEss5 = false
+let isEss6 = false
+let isEss7 = false
+let isEss8 = false
+let isEss9 = false
 
 function showEss1() {
 	isEss1 = !isEss1
+}
+function showEss2() {
+	isEss2 = !isEss2
+}
+function showEss3() {
+	isEss3 = !isEss3
+}
+function showEss4() {
+	isEss4 = !isEss4
+}
+function showEss5() {
+	isEss5 = !isEss5
+}
+function showEss6() {
+	isEss6 = !isEss6
+}
+function showEss7() {
+	isEss7 = !isEss7
+}
+function showEss8() {
+	isEss8 = !isEss8
+}
+function showEss9() {
+	isEss9 = !isEss9
 }
 
 export async function getAphorisms(): Promise<any[]> {
@@ -90,34 +122,82 @@ export async function getAphorisms(): Promise<any[]> {
 			<div class="c-c-c-c essbox1" data-scroll on:mouseenter={showEss1} on:mouseleave={showEss1}>
 				<h5 data-textify>On Indian Civilizational Consciousness</h5>
 			</div>
-			<div class="c-c-c-c essbox2" data-scroll>
+			<div class="c-c-c-c essbox2" data-scroll on:mouseenter={showEss2} on:mouseleave={showEss2}>
 				<h5 data-textify>Fractal Maṇḍala - Meaning, Instances</h5>
 			</div>
-			<div class="c-c-c-c essbox3" data-scroll>
+			<div class="c-c-c-c essbox3" data-scroll on:mouseenter={showEss3} on:mouseleave={showEss3}>
 				<h5 data-textify>Macrohistoric Case for Civilizational Primacy</h5>
 			</div>
-			<div class="c-c-c-c essbox4" data-scroll>
+			<div class="c-c-c-c essbox4" data-scroll on:mouseenter={showEss4} on:mouseleave={showEss4}>
 				<h5 data-textify>Caturasūtra - 4 Aphorisms for a True History</h5>
 			</div>
-			<div class="c-c-c-c essbox5" data-scroll>
+			<div class="c-c-c-c essbox5" data-scroll on:mouseenter={showEss5} on:mouseleave={showEss5}>
 				<h5 data-textify>Ratha as a Bīja</h5>
 			</div>
-			<div class="c-c-c-c essbox6" data-scroll>
+			<div class="c-c-c-c essbox6" data-scroll on:mouseenter={showEss6} on:mouseleave={showEss6}>
 				<h5 data-textify>Ancestors Outside of Time</h5>
 			</div>
-			<div class="c-c-c-c essbox7" data-scroll>
+			<div class="c-c-c-c essbox7" data-scroll on:mouseenter={showEss7} on:mouseleave={showEss7}>
 				<h5 data-textify>History is Ontic, Itihāsa Ontologic</h5>
 			</div>
-			<div class="c-c-c-c essbox8" data-scroll>
+			<div class="c-c-c-c essbox8" data-scroll on:mouseenter={showEss8} on:mouseleave={showEss8}>
 				<h5 data-textify>Synaptic Reconnection</h5>
 			</div>
-			<div class="c-c-c-c essbox9" data-scroll>
+			<div class="c-c-c-c essbox9" data-scroll on:mouseenter={showEss9} on:mouseleave={showEss9}>
 				<h5 data-textify>Rāma's Journey, the Avatāra in You</h5>
 			</div>
 		</div>
 		<div class="c-c-c-c l9">
 			{#if isEss1}
-			<img src="/images/mandala/2-4.webp" alt="alt1"
+			<img src="/images/mandala/web4.webp" alt="alt1"
+				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
+				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
+			 />
+			{/if}
+			{#if isEss2}
+			<img src="/images/mandala/web3.webp" alt="alt1"
+				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
+				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
+			 />
+			{/if}
+			{#if isEss3}
+			<img src="/images/mandala/web4.webp" alt="alt1"
+				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
+				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
+			 />
+			{/if}
+			{#if isEss4}
+			<img src="/images/mandala/web1.webp" alt="alt1"
+				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
+				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
+			 />
+			{/if}
+			{#if isEss5}
+			<img src="/images/mandala/web8.webp" alt="alt1"
+				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
+				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
+			 />
+			{/if}
+			{#if isEss6}
+			<img src="/images/mandala/web5.webp" alt="alt1"
+				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
+				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
+			 />
+			{/if}
+			{#if isEss7}
+			<img src="/images/mandala/web9.webp" alt="alt1"
+				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
+				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
+			 />
+			{/if}
+			{#if isEss8}
+			<img src="/images/mandala/web7.webp" alt="alt1"
+				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
+				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
+			 />
+			{/if}
+			{#if isEss9}
+			<img src="/images/mandala/web6.webp" alt="alt1"
 				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
 				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
 			 />
