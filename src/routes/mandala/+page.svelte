@@ -1,6 +1,17 @@
 <script lang="ts">
 import supabase from '$lib/db'
-import LogFm from '$lib/components/logos/LogFm.svelte'
+import BannerImage from '$lib/components/headers/BannerImage.svelte'
+import { fly } from 'svelte/transition'
+import { circOut } from 'svelte/easing'
+
+let scroll: any
+let speed = 40
+
+let isEss1 = false
+
+function showEss1() {
+	isEss1 = !isEss1
+}
 
 export async function getAphorisms(): Promise<any[]> {
 	const { data, error} = await supabase
@@ -12,233 +23,281 @@ export async function getAphorisms(): Promise<any[]> {
 }
 </script>
 
-
-<div class="black-beauty" data-scroll-container id="homebase">
-	<div class="c-c-c-c l1">
-		<p data-textify>
-		To be a history in the true sense of the word, a work must be a story of the people inhabiting a country. It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
+<svelte:window bind:scrollY={scroll} />
+<div data-scroll-container id="homebase">
+	<div class="c-c-c-c pad4 l1">
+		<h5 class="onlyone" data-textify>
+		To be a history in the true sense of the word, a work must be a story of the people inhabiting a country.
+		</h5>
+		<h5 class="onlyone" data-textify id="onlyone">
+		It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
+		</h5>
+	</div>
+	<div class="c-c-c-c pad4 l2" data-scroll-section>
+		<h3 data-scroll data-scroll-speed="1">
+			Such a history of India is still to be written.
+		</h3>
+		<p class="grey" data-scroll>
+			Shri KM Munshi
 		</p>
 	</div>
-	<div class="c-c-c-c screener" data-scroll-section>
-			<h2 data-textify>
-				Such a history of India is still to be written.
-			</h2>
-<LogFm></LogFm>
-	</div>
-	<div class="c-c-c-c l2" data-scroll-section>
-		<div data-scroll data-scroll-speed="-8">
-			
-		</div>
-	</div>
-	<div class="r-r-r-r l0" id="tohook" data-scroll-section>
-		<div class="col-gen maj1" data-scroll data-scroll-speed="1">
-			<div class="c-c-c-c col1">
-				<p>What is Fractal Maṇḍala?</p>
-			</div>
-			<div class="c-c-c-c col2">
-				<p>Indian Civilizational Consciousness</p>
-			</div>
-			<div class="c-c-c-c col3">
-				<p>Ancestors Outside of Time</p>
-			</div>
-		</div>
-		<div class="col-gen maj2" data-scroll data-scroll-speed="-2">
-			<div class="c-c-c-c col4">
-				<p>The Macrohistorical Case for Civilizational Primacy</p>
-			</div>
-			<div class="c-c-c-c col5">
-				<p>Ratha as a Bīja of Civilizational DNA</p>
-			</div>
-			<div class="c-c-c-c col6">
-				<p>Rāma's Journey, the Avatāra in You</p>
-			</div>
-		</div>
-		<div class="col-gen maj3" data-scroll data-scroll-speed="1">
-			<div class="c-c-c-c col7">
-				<p>History is Ontic, Itihāsa is Ontologic</p>
-			</div>
-			<div class="c-c-c-c col8">
-				<p>Synaptic Reconnection to Civilizational Consciousness</p>
-			</div>
-			<div class="c-c-c-c col9">
-				<p>Caturasūtra - 4 Aphorisms for a True History</p>
-			</div>
-		</div>
-		<div class="col-gen maj4" data-scroll data-scroll-speed="-2">
-			<div class="c-c-c-c col10">
-				<p>On and Towards a Chronology</p>
-			</div>
-			<div class="c-c-c-c col11">
-				<p>Core Glossary</p>
-			</div>
-			<div class="c-c-c-c col12">
 
+	<div class="r-r-r-r l3" data-scroll-section>
+		<div class="c-c-c-c col-image group2">	
+		</div>
+		<div class="colthree c-c-c-c group3">
+			<p>
+				A curve or geometrical figure, each part of which has the same statistical character as the whole.
+			</p>
+			<p>
+				Any of various extremely irregular curves or shapes for which any suitably chosen part is similar in shape to a given larger or smaller part.
+			</p>
+			<h5>
+				A fractal displays the same properties at any magnification level, ie., it is multi-level.
+			</h5>
+		</div>
+		<div class="colthree c-c-c-c group1">
+			<h2 data-textify data-scroll data-scroll-speed="3">Fractal</h2>
+		</div>
+	</div>
+
+	<div class="r-r-r-r l4" data-scroll-section>
+		<div class="c-c-c-c colthree group1">
+			<h2 data-textify data-scroll data-scroll-speed="3">Maṇḍala</h2>
+		</div>
+		<div class="c-c-c-c colthree group3">
+			<p>
+				A circle or anything circular- globe, circumference, orbit of a celestial object, an array of troops.
+			</p>
+			<p>
+				From the root √maṇḍ (मण्ड्) meaning satisfaction, adornment, wholeness, complete, satisfied (√bhūṣ, √hṛṣ, tuṣṭa, alaṅkāra).
+			</p>
+			<h5>
+				A circle- śūnya or pūrṇam- is where all constituents form a unified whole, ie., it is coherent.
+			</h5>
+		</div>
+		<div class="c-c-c-c col-image group2"></div>
+	</div>
+	<div class="c-c-c-c l5" data-scroll-section>
+		<h3 data-scroll data-scroll-direction="horizontal" data-scroll-speed="-2">
+			The Fractal Maṇḍala is a project to study the emergence and nature of <span class="green">Indian civilizational consciousness.</span>
+		</h3>
+	</div>
+	<div class="c-c-c-c l7" data-scroll-section style:transform={`translate3d(0, ${scroll / speed}px, 0)`}>
+	</div>
+	<div class="r-r-r-r l8" data-scroll-section>
+		<div class="c-c-c-c l6">
+			<div class="c-c-c-c essbox1" data-scroll on:mouseenter={showEss1} on:mouseleave={showEss1}>
+				<h5 data-textify>On Indian Civilizational Consciousness</h5>
 			</div>
+			<div class="c-c-c-c essbox2" data-scroll>
+				<h5 data-textify>Fractal Maṇḍala - Meaning, Instances</h5>
+			</div>
+			<div class="c-c-c-c essbox3" data-scroll>
+				<h5 data-textify>Macrohistoric Case for Civilizational Primacy</h5>
+			</div>
+			<div class="c-c-c-c essbox4" data-scroll>
+				<h5 data-textify>Caturasūtra - 4 Aphorisms for a True History</h5>
+			</div>
+			<div class="c-c-c-c essbox5" data-scroll>
+				<h5 data-textify>Ratha as a Bīja</h5>
+			</div>
+			<div class="c-c-c-c essbox6" data-scroll>
+				<h5 data-textify>Ancestors Outside of Time</h5>
+			</div>
+			<div class="c-c-c-c essbox7" data-scroll>
+				<h5 data-textify>History is Ontic, Itihāsa Ontologic</h5>
+			</div>
+			<div class="c-c-c-c essbox8" data-scroll>
+				<h5 data-textify>Synaptic Reconnection</h5>
+			</div>
+			<div class="c-c-c-c essbox9" data-scroll>
+				<h5 data-textify>Rāma's Journey, the Avatāra in You</h5>
+			</div>
+		</div>
+		<div class="c-c-c-c l9">
+			{#if isEss1}
+			<img src="/images/mandala/2-4.webp" alt="alt1"
+				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
+				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
+			 />
+			{/if}
 		</div>
 	</div>
 </div>
 
 <style>
+.l3, .l4, .l5, .l8, .l7 { background: white;}
 
+.l5 h3 { text-transform: uppercase;}
 
-.screener {
-	height: 100vh;
-	width: 100vw;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	background: var(--beau);
+.colthree h2 { color: #10c56d;}
+
+.l2 h3 {
+	font-family: 'Readex Pro', sans-serif;
+	font-weight: 300;
+	text-align: right;
+	line-height: 1.12;
+	color: #10C56D;
 }
 
+.essbox1 { cursor: pointer; transform-origin: center left; transition: all 0.3s var(--cube3);}
+.essbox1:hover { transform: scale(0.9);}
+.grey { color: #676767;}
 
-.col-gen .c-c-c-c {
+.l3 .col-image {
+	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-image: url('/images/mandala/defone.webp');
+}
+.l4 .col-image {
 	background-position: center center;
-	transition: all 0.42s var(--cube1);
-	transform-origin: center center;
-	position: relative;
-	z-index: 4;
-	transform: scale(0.9);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url('/images/mandala/deftwo.webp');
 }
-
-
-.col-gen .c-c-c-c:hover {
-	transform: scale(1.2);
-	z-index: 500;
-}
-
-.col-gen .c-c-c-c:hover p {
-	opacity: 1;
-}
-
-.col-gen .c-c-c-c p {
-	z-index: 5;
-	opacity: 0;
-	transition: all 0.45s var(--cube2);
-}
-
-.col-gen .c-c-c-c::after {
-	content: '';
-	width: 100%;
-	height: 0%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: rgba(9,9,9,0.0);
-	transition: all 0.42s var(--cube1);
-}
-
-.col-gen .c-c-c-c:hover::after {
-	height: 100%;
-	background: rgba(9,10,9,0.9);
-}
-
-.col1 {
-	background-image: url('/images/mandala/1-1.webp');
-}
-
-
-.col2 {
-	background-image: url('/images/mandala/1-2.webp');
-}
-
-.col3 {
-	background-image: url('/images/mandala/1-3.webp');
-}
-
-.col4 {
-	background-image: url('/images/mandala/1-4.webp');
-}
-
-.col5 {
-	background-image: url('/images/mandala/2-1.webp');
-}
-
-.col6 {
-	background-image: url('/images/mandala/2-2.webp');
-}
-
-.col7 {
-	background-image: url('/images/mandala/2-3.webp');
-}
-
-.col8 {
-	background-image: url('/images/mandala/2-4.webp');
-}
-
-.col9 {
-	background-image: url('/images/mandala/3-1.webp');
-}
-
-.col10 {
-	background-image: url('/images/mandala/3-2.webp');
-}
-
-.col11 {
-	background-image: url('/images/mandala/3-3.webp');
-}
-
-.col12 {
-	background-image: url('/images/mandala/3-4.webp');
-}
-
 
 @media screen and (min-width: 768px) {
-	.col-gen .c-c-c-c {
-		width: 100%;
-		height: calc(33.33% - 32px);
-		border: 1px solid white;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		padding-left: 12px;
-		padding-right: 12px;
-	}
 
-	.l0 .col-gen {
-		width: calc(25% - 10px);
-		height: 100%;
-		gap: 8px;
-	}
-	
-	.l0 { 
-		gap: 8px;
-		justify-content: center;
-		align-items: center;
-		height: 100vh; 
-		flex-wrap: wrap;
-
+	.l1 h5 {
+		font-size: 18px;
+		font-family: 'Readex Pro',sans-serif;
+		font-weight: 300;
+		letter-spacing: -0.5px;
+		color: #171717;
+		text-shadow: none;
+		filter: none;
+		width: 45%;
 	}
 
 	.l1 {
 		width: 100%;
 		height: 100vh;
 		justify-content: center;
-		align-items: center;
-		text-align: center;
-	}
-
-	.l1 p {
-		width: 60%;
-	}
-
-	.screener {
-		padding-left: 4vw;
-		padding-right: 4vw;
-		z-index: 4;
-	}
-
-	.screener h2 {
-		color: white;
+		align-items: flex-start;
+		text-align: left;
 	}
 
 	.l2 {
 		height: 100vh;
 		width: 100%;
-		background: var(--beau);
 		justify-content: center;
+		align-items: flex-end;
+	}
+
+	.l5 {
+		padding: 0 6vw;
+		height: 100vh;
+		justify-content: center;
+	}
+
+	.l3, .l4 {
+		height: 400px;
+		width: 100vw;
+		padding-left: 6vw;
+		padding-right: 6vw;
+		gap: 32px;
+		align-items: flex-start;
+		padding-bottom: 32px;
+		padding-top: 32px;
+	}
+	.col-image { width: 35%; }
+	.l3 .col-image {
+		height: 100%;
+	}
+	.l4 .col-image {
+		height: 100%;
+	}
+	.l3 .colthree h2 { text-align: right;}
+	.l3 .colthree h2, .l4 .colthree h2 { font-size: 72px; text-transform: uppercase; margin-top: -16px; padding-top: 0; }
+	.l3 h5, .l3 p, .l4 p, .l4 h5 { margin-top: 0;}
+
+	.colthree {
+		width: calc(35% - 32px);
+		height: 100%;
+	}
+
+	.colthree p { color: #171717;}
+
+	.l2 h3 {
+		width: 50%;
+	}
+
+	.l8 {
+		padding: 4em 6vw 64px 6vw;
+		justify-content: flex-start;
+		min-height: 100vh;
 		align-items: center;
+	}
+	
+	.l6, .l9 { width: 50%;}
+	.l9 { 
+		height: 100%;
+		justify-content: center;
+	}
+	.l9 img {
+		object-fit: cover;
+		width: 100%;
+		height: 80%;
+	}	
+
+	.l6 .c-c-c-c {
+		width: 100%;
+		margin-bottom: 32px;
+	}
+
+	.l6 .c-c-c-c h5 {
+		margin: 0;
+		font-weight: 400;
+		font-size: 32px;
+	}
+	
+	.l7 {
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-image: url('/images/mandala/realitywall.webp');
+		margin-left: 6vw;
+		margin-right: 6vw;
+		width: 88vw;
+		height: 80vh;
+	}
+
+}
+
+@media screen and (max-width: 767px) {
+
+	.l1 { padding: 8em 4vw 0 4vw;}
+	.l2, .l3, .l4, .l6, .l5 { padding-right: 5vw; padding-left: 5vw;}
+	.l2 h3 { text-align: left; margin-top: 8px; }
+	.l3, .l4 { flex-wrap: wrap; justify-content: flex-start; margin-top: 32px; margin-bottom: 32px;}
+	.group1 { order: 1;}
+	.group2 { order: 2;}
+	.group3 { order: 3;}
+	.l3 .col-image, .l4 .col-image { height: 300px; width: 100%;}
+	.l3 .colthree h2, .l4 .colthree h2 {
+		text-align: left;
+		margin-bottom: 0;
+	}
+	.l3 .colthree h5, .l4 .colthree h5 {
+		margin-top: 0;
+		margin-bottom: 16px;
+	}
+	.l6 .c-c-c-c {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	.l6 {
+		padding-top: 2em;
+		padding-bottom: 2em;
+	}
+
+	.l6 .c-c-c-c h5 {
+		margin: 0;
+		font-weight: 300;
+		font-size: 21px;
 	}
 
 

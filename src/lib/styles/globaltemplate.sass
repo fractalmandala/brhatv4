@@ -11,6 +11,13 @@ body, html
 *, :root, div
 	box-sizing: border-box
 	--mygreen: linear-gradient(90deg, #10C56D -3.3%, #53D66C 95.75%)
+	--play: 'Playfair Display',serif
+	--cube1: cubic-bezier(0.995, 0.225, 0.750, 0.750)
+	--cube2: cubic-bezier(0.995, 0.225, 0.000, 0.965)
+	--cube3: cubic-bezier(0.320, 0.760, 0.875, 0.490)
+	--cube4: cubic-bezier(0.000, 1.240, 0.875, 0.490)
+	--cube5: cubic-bezier(1.000, 0.005, 1.000, 0.005)
+	--snap: all 0.18s cubic-bezier(0.925, 0.235, 1.000, -0.065)
 
 p, h4, h3, h2, h1
 	margin-bottom: 16px
@@ -40,6 +47,8 @@ p
 small
 	color: #878787
 
+.bdr
+	border: 1px solid red
 
 .homebox
 	width: 100vw
@@ -63,6 +72,10 @@ small
 .r-r-r-r
 	display: flex
 	flex-direction: row
+
+.c-c-c-c
+	display: flex
+	flex-direction: column
 
 .img-fix
 	background-size: cover
@@ -127,8 +140,8 @@ small
 		height: 100vh
 
 	.pad4
-		padding-right: 4vw
-		padding-left: 4vw
+		padding-right: 6vw
+		padding-left: 6vw
 
 	.pady4
 		padding-top: 4em
@@ -171,12 +184,16 @@ small
 	h5
 		font-size: 24px
 
+	h4
+		font-size: 48px
+
 	h3
 		font-size: 80px
 		letter-spacing: -2px
 
 	h2
 		font-size: 100px
+		line-height: 1.12
 
 	h1
 		font-size: 160px
@@ -191,6 +208,13 @@ small
 
 	small
 		font-size: 12px
+
+	.smallfair
+		font-size: 14px
+		font-family: 'Playfair Display',serif
+
+	.isbot
+		padding-bottom: 48px
 
 @media screen and (max-width: 899px) and (min-width: 768px)
 
@@ -243,8 +267,8 @@ small
 		height: 100%
 
 	.pad4
-		padding-right: 8vw
-		padding-left: 8vw
+		padding-right: 4vw
+		padding-left: 4vw
 
 	.col-type50
 		width: calc(25% - 1em)
@@ -271,8 +295,8 @@ small
 		justify-content: center
 
 	.pad4
-		padding-right: 16px
-		padding-left: 16px
+		padding-right: 4vw
+		padding-left: 4vw
 
 	.col-type50
 		width: 100%
@@ -287,7 +311,7 @@ small
 		font-weight: 500
 
 	h3
-		font-size: 28px
+		font-size: 32px
 
 	h1
 		font-size: 48px
@@ -297,7 +321,7 @@ small
 		font-size: 24px
 
 	p
-		font-size: 16px
+		font-size: 18px
 		line-height: 1.25
 
 	small

@@ -307,12 +307,12 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 
 	#logo-col
 		width: 100%
-		align-items: center
+		align-items: flex-start
 		
 
 	#icons-row
 		width: 100%
-		justify-content: center
+		justify-content: flex-start
 		margin-bottom: 1em
 		margin-top: 8px
 		img

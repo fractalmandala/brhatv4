@@ -55,7 +55,6 @@ body, html { margin: 0; box-sizing: border-box;}
 .isblue { color: var(--blue);}
 .isorange { color: #4F9D69;}
 .background { background-color: #f8f8f8; transition: all 0.18s var(--snap) ;}
-.background:hover { background-color: #FFFFFF; box-shadow: 5px 8px 14px #e4e4e4, -5px -4px 12px #f1f1f1;}
 
 .titleclass { text-transform: uppercase; font-weight: 900; letter-spacing: 0px;}
 
@@ -308,7 +307,6 @@ body, html { margin: 0; box-sizing: border-box;}
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-	transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 	}
 
 	.tempo:hover, .tempo:focus {
@@ -316,7 +314,6 @@ body, html { margin: 0; box-sizing: border-box;}
 	}
 
 	.tempo:hover {
-		box-shadow: 0 0 40px 40px #e74c3c inset;
 		transform: scale(0.9);
 	}
 
