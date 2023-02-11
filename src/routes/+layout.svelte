@@ -8,7 +8,6 @@ import LocomotiveScrollProvider from 'svelte-locomotive-scroll';
 import { page } from '$app/stores'
 import '$lib/styles/locomotive-scroll.css'
 import '$lib/styles/reader.sass'
-import '$lib/styles/componentstyles.css'
 import '$lib/styles/textify.css'
 import '$lib/styles/globaltemplate.sass'
 
@@ -28,10 +27,8 @@ onMount(() => {
 		smooth: true,
 		smoothMobile: true,
 		getDirection: true,
-		multiplier: 1,
-		lerp: 0.9,
+		lerp: 0.1,
 		reloadOnContextChange: true,
-		getSpeed: true,
 		inertia: 0.2
 	}}
 	watch={$page}

@@ -1,6 +1,5 @@
 <script lang="ts">
 import supabase from '$lib/db'
-import BannerImage from '$lib/components/headers/BannerImage.svelte'
 import { fly } from 'svelte/transition'
 import { circOut } from 'svelte/easing'
 
@@ -55,7 +54,7 @@ export async function getAphorisms(): Promise<any[]> {
 }
 </script>
 
-<svelte:window bind:scrollY={scroll} />
+
 <div data-scroll-container id="homebase">
 	<div class="c-c-c-c pad4 l1">
 		<h5 class="onlyone" data-textify>
@@ -115,93 +114,41 @@ export async function getAphorisms(): Promise<any[]> {
 			The Fractal Maṇḍala is a project to study the emergence and nature of <span class="green">Indian civilizational consciousness.</span>
 		</h3>
 	</div>
-	<div class="c-c-c-c l7" data-scroll-section style:transform={`translate3d(0, ${scroll / speed}px, 0)`}>
+	<div class="c-c-c-c l7" data-scroll-section>
 	</div>
 	<div class="r-r-r-r l8" data-scroll-section>
 		<div class="c-c-c-c l6">
-			<div class="c-c-c-c essbox1" data-scroll on:mouseenter={showEss1} on:mouseleave={showEss1}>
+			<div class="r-r-r-r essbox1">
 				<h5 data-textify>On Indian Civilizational Consciousness</h5>
+				<img src="/images/mandala/web4.webp" alt="web1" />
 			</div>
-			<div class="c-c-c-c essbox2" data-scroll on:mouseenter={showEss2} on:mouseleave={showEss2}>
+			<div class="r-r-r-r essbox2">
 				<h5 data-textify>Fractal Maṇḍala - Meaning, Instances</h5>
+				<img src="/images/mandala/web3.webp" alt="web1" />
 			</div>
-			<div class="c-c-c-c essbox3" data-scroll on:mouseenter={showEss3} on:mouseleave={showEss3}>
+			<div class="r-r-r-r essbox3">
 				<h5 data-textify>Macrohistoric Case for Civilizational Primacy</h5>
+				<img src="/images/mandala/web2.webp" alt="web1" />
 			</div>
-			<div class="c-c-c-c essbox4" data-scroll on:mouseenter={showEss4} on:mouseleave={showEss4}>
+			<div class="r-r-r-r essbox4">
 				<h5 data-textify>Caturasūtra - 4 Aphorisms for a True History</h5>
+				<img src="/images/mandala/web1.webp" alt="web1" />
 			</div>
-			<div class="c-c-c-c essbox5" data-scroll on:mouseenter={showEss5} on:mouseleave={showEss5}>
+			<div class="r-r-r-r essbox5" data-scroll on:mouseenter={showEss5} on:mouseleave={showEss5}>
 				<h5 data-textify>Ratha as a Bīja</h5>
 			</div>
-			<div class="c-c-c-c essbox6" data-scroll on:mouseenter={showEss6} on:mouseleave={showEss6}>
+			<div class="r-r-r-r essbox6" data-scroll on:mouseenter={showEss6} on:mouseleave={showEss6}>
 				<h5 data-textify>Ancestors Outside of Time</h5>
 			</div>
-			<div class="c-c-c-c essbox7" data-scroll on:mouseenter={showEss7} on:mouseleave={showEss7}>
+			<div class="r-r-r-r essbox7" data-scroll on:mouseenter={showEss7} on:mouseleave={showEss7}>
 				<h5 data-textify>History is Ontic, Itihāsa Ontologic</h5>
 			</div>
-			<div class="c-c-c-c essbox8" data-scroll on:mouseenter={showEss8} on:mouseleave={showEss8}>
+			<div class="r-r-r-r essbox8" data-scroll on:mouseenter={showEss8} on:mouseleave={showEss8}>
 				<h5 data-textify>Synaptic Reconnection</h5>
 			</div>
-			<div class="c-c-c-c essbox9" data-scroll on:mouseenter={showEss9} on:mouseleave={showEss9}>
+			<div class="r-r-r-r essbox9" data-scroll on:mouseenter={showEss9} on:mouseleave={showEss9}>
 				<h5 data-textify>Rāma's Journey, the Avatāra in You</h5>
 			</div>
-		</div>
-		<div class="c-c-c-c l9">
-			{#if isEss1}
-			<img src="/images/mandala/web4.webp" alt="alt1"
-				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
-				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
-			 />
-			{/if}
-			{#if isEss2}
-			<img src="/images/mandala/web3.webp" alt="alt1"
-				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
-				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
-			 />
-			{/if}
-			{#if isEss3}
-			<img src="/images/mandala/web4.webp" alt="alt1"
-				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
-				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
-			 />
-			{/if}
-			{#if isEss4}
-			<img src="/images/mandala/web1.webp" alt="alt1"
-				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
-				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
-			 />
-			{/if}
-			{#if isEss5}
-			<img src="/images/mandala/web8.webp" alt="alt1"
-				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
-				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
-			 />
-			{/if}
-			{#if isEss6}
-			<img src="/images/mandala/web5.webp" alt="alt1"
-				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
-				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
-			 />
-			{/if}
-			{#if isEss7}
-			<img src="/images/mandala/web9.webp" alt="alt1"
-				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
-				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
-			 />
-			{/if}
-			{#if isEss8}
-			<img src="/images/mandala/web7.webp" alt="alt1"
-				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
-				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
-			 />
-			{/if}
-			{#if isEss9}
-			<img src="/images/mandala/web6.webp" alt="alt1"
-				in:fly="{{delay: 100, opacity: 1, duration: 200, x: 0, y: 800, easing: circOut}}"
-				out:fly="{{delay: 0, opacity: 1, x: 0, y: 800, duration: 200, easing: circOut}}"
-			 />
-			{/if}
 		</div>
 	</div>
 </div>
@@ -221,8 +168,27 @@ export async function getAphorisms(): Promise<any[]> {
 	color: #10C56D;
 }
 
-.essbox1 { cursor: pointer; transform-origin: center left; transition: all 0.3s var(--cube3);}
-.essbox1:hover { transform: scale(0.9);}
+.l6 { position: relative;}
+
+.essbox1 img, .essbox2 img, .essbox3 img, .essbox4 img { 
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	right: 0;
+	transform: scale(0.8);
+}
+
+.essbox1:hover img, .essbox2:hover img, .essbox3:hover img, .essbox4:hover img {
+	animation: comingimage 0.5s ease-in forwards;
+}
+
+@keyframes comingimage {
+	0% { opacity: 0; transform: translateX(600px);}
+	100% { opacity: 1; transform: translateX(120px);}
+}
+
+.essbox1, .essbox2, .essbox3, .essbox4 { cursor: pointer; transform-origin: center left; transition: all 0.3s var(--cube3);}
+.essbox1:hover, .essbox2:hover, .essbox3:hover, .essbox4:hover { transform: scale(0.9);}
 .grey { color: #676767;}
 
 .l3 .col-image {
@@ -311,26 +277,18 @@ export async function getAphorisms(): Promise<any[]> {
 		align-items: center;
 	}
 	
-	.l6, .l9 { width: 50%;}
-	.l9 { 
-		height: 100%;
-		justify-content: center;
-	}
-	.l9 img {
-		object-fit: cover;
-		width: 100%;
-		height: 80%;
-	}	
+	.l6  { width: 100%;}
 
-	.l6 .c-c-c-c {
+	.l6 .r-r-r-r {
 		width: 100%;
-		margin-bottom: 32px;
+		margin-bottom: 24px;
 	}
 
-	.l6 .c-c-c-c h5 {
+	.l6 .r-r-r-r h5 {
 		margin: 0;
 		font-weight: 400;
 		font-size: 32px;
+		width: 60%;
 	}
 	
 	.l7 {
@@ -363,10 +321,6 @@ export async function getAphorisms(): Promise<any[]> {
 	.l3 .colthree h5, .l4 .colthree h5 {
 		margin-top: 0;
 		margin-bottom: 16px;
-	}
-	.l6 .c-c-c-c {
-		width: 100%;
-		margin-bottom: 20px;
 	}
 
 	.l6 {

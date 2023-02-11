@@ -1,5 +1,23 @@
 <script>
 import supabase from '$lib/db'
+import { fly } from 'svelte/transition'
+import Modal from '$lib/components/reuse/Modal.svelte'
+import LogMrd from '$lib/components/logos/LogMrd.svelte'
+import LogFm from '$lib/components/logos/LogFm.svelte'
+import LogBol from '$lib/components/logos/LogoBol.svelte'
+import LogDr from '$lib/components/logos/LogDr.svelte'	
+import LogAnv from '$lib/components/logos/LogAnv.svelte'
+import LogRid from '$lib/components/logos/LogRid.svelte'
+import LogMan from '$lib/components/logos/LogMan.svelte'
+import MainH1 from '$lib/components/headers/MainH1.svelte'
+import Partners from '$lib/components/headers/MainH1.svelte'
+import Team from '$lib/components/headers/MainH1.svelte'
+let showModal = false;
+let isBrands = false;
+
+function toggleBrands(){
+	isBrands = !isBrands;
+}
 
 async function advisors() {
 const { data, error } = await supabase
@@ -31,7 +49,7 @@ const { data, error } = await supabase
 
 <div class="loco" data-scroll-container>
 <div class="col-full img-fix"></div>
-<div class="col-full l1 pad4" data-scroll-section>
+<div class="col-full pad4 l1" data-scroll-section>
 	<h1 class="bigger1" data-textify>Bṛhat is a</h1>
 	<h1 class="smaller1 isred" data-textify>
 	Culture Engine</h1>
@@ -40,7 +58,6 @@ const { data, error } = await supabase
 		in the Indian civilizational consciousness. We convert individual, institutional 
 		and collective intent into action, across 3 dimensions:
 	</h3>
-	<img data-scroll data-scroll-speed="6" class="aboutim1" src="/images/corpimages/about1.png" alt="aboutone" />
 	<div class="r-r-c-c l2">
 		<div class="c-c-c-c l2row1">
 			<h5 data-textify>Create</h5>
@@ -69,13 +86,13 @@ const { data, error } = await supabase
 			</p>			
 		</div>
 	</div>
-	<h3 class="reducer" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal" data-textify>
+	<h3 class="reducer" data-textify>
 		An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment.
 	</h3>
-	<h3 class="reducer" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal" data-textify>
+	<h3 class="reducer" data-textify>
 		How does one go about doing that? At Bṛhat, we're acutely aware of three constraints:
 	</h3>
-	<div class="r-r-c-c l3" data-textify>
+	<div class="r-r-c-c l3">
 		<div class="c-c-c-c l3col1">
 			<h5>
 				Civilization is Culture in Action
@@ -101,13 +118,13 @@ const { data, error } = await supabase
 			</p>
 		</div>
 	</div>
-	<img data-scroll data-scroll-speed="-5" class="aboutim2" src="/images/corpimages/logo-culture.png" alt="icon"/>
-	<h3 class="cushion" data-textify data-scroll data-scroll-speed="4">
-		But the severest constraint of them all is Time, and more specifically – Moment. The time for a Culture Engine is now, because we are in the midst of a civilizational moment. What is a civilizational moment? How rare or regular are such moments? How must we respond to them?
+	<h3 class="cushion" data-textify data-scroll>
+		But the severest constraint of them all is Time, and more specifically – Moment.
 	</h3>
-	<h3 class="cushion" data-textify data-scroll data-scroll-speed="3">
+	<p class="cushion smallp" data-textify data-scroll>
+		The time for a Culture Engine is now, because we are in the midst of a civilizational moment. What is a civilizational moment? How rare or regular are such moments? How must we respond to them?
 		Read more on the need we see, why we think this is the time to address it, and about our self-identity:
-	</h3>
+	</p>
 </div>
 <div class="row-full l4 pad4" data-scroll-section>
 	<h3 data-textify>
@@ -128,8 +145,8 @@ const { data, error } = await supabase
 		<a href="/about/docs/values">Pratijñā - Values We Hold Dear</a>
 	</h3>
 </div>
+<MainH1>Advisors</MainH1>
 <div class="c-c-c-c l5 pad4" data-scroll-section>
-	<h2 data-textify>Advisory Board</h2>
 	{#await advisors()}
 	<small>...</small>
 	{:then data}
@@ -146,8 +163,8 @@ const { data, error } = await supabase
 	<pre>{error}</pre>
 	{/await}
 </div>
+<Partners>Partners</Partners>
 <div class="c-c-c-c l7 pad4" data-scroll-section>
-	<h2 data-textify>Partners</h2>
 	{#await partners()}
 	<small>...</small>
 	{:then data}
@@ -162,8 +179,8 @@ const { data, error } = await supabase
 	<pre>{error}</pre>
 	{/await}
 </div>
+<Team>Team</Team>
 <div class="c-c-c-c l9 pad4" data-scroll-section>
-	<h2 data-textify>The Team</h2>
 	{#await team()}
 	<small>...</small>
 	{:then data}
@@ -186,6 +203,7 @@ const { data, error } = await supabase
 
 <style>
 
+.img-fix { z-index: 0;}
 h3 { color: #474747;}
 p { color: #878787;}
 .loco { position: relative;}
@@ -206,6 +224,8 @@ p { color: #878787;}
 	border-bottom: 1px solid #474747;
 	padding-bottom: 0.4em;
 }
+
+.l4 h3 a { color: #272727;}
 .l4 h3:hover a {
 	color: #fe4a49;
 }
@@ -225,28 +245,15 @@ p { color: #878787;}
 	justify-content: center;
 }
 
-.aboutim1 {
-	object-fit: contain;
-	width: 600px;
-	height: 800px;
-	margin-left: auto;
-}
 
 .l1 { position: relative;}
-.aboutim1 { position: absolute; top: 30%; right: 2%;}
-.aboutim2 {
-	object-fit: contain;
-	width: 500px;
-	margin-right: auto;	
-	z-index: 1;
-}
+
 
 
 @media screen and (min-width: 768px) {
-	.l2 { gap: 2em; padding-bottom: 2em; margin-top: 3em; }
-	.l2 { margin-bottom: 10em;}
+	.l2 { gap: 32px; padding-bottom: 2em; margin-top: 3em; margin-bottom: 64px; }
 	.l2 h5, .l3 h5 { padding-top: 12px;}
-	.l3 { padding-top: 10em; padding-bottom: 10em; gap: 2em; margin-top: 3em; background: white; z-index: 3;}
+	.l3 { padding-bottom: 10em; gap: 2em; margin-top: 3em; background: white; z-index: 3;}
 	.l4 h3 {
 		font-size: 3.2em;
 	}
@@ -258,6 +265,10 @@ p { color: #878787;}
 		background: white;
 		z-index: 2;
 		padding: 8px 16px;
+	}
+
+	.cushion.smallp {
+		width: 70%;
 	}
 
 	.col-typevary img {
@@ -283,25 +294,21 @@ p { color: #878787;}
 		margin-top: 8px;
 	}
 
-	h2 {
-		margin-bottom: 32px;
-	}
+	
 
 	.reducer {
-		width: 64%;
+		width: 84%;
 	}
 
-	.smaller1 { font-size: 160px; line-height: 1.2em;}	
-	.bigger1 { font-size: 160px; margin-bottom: 0;}
+	.smaller1 { font-size: 120px; line-height: 1.2em; font-weight: 500;}	
+	.bigger1 { font-size: 120px; margin-bottom: 0; font-weight: 500;}
 }
 
 @media screen and (max-width: 767px) {
 	.l2, .l3 { gap: 2em; padding-bottom: 16px; margin-top: 1em;}
 	.l2 p, .l3 p { margin-bottom: 0;}
 	.l2 h5, .l3 h5 { padding-top: 8px;}
-	h2 {
-		margin-bottom: 32px;
-	}
+
 	.l4 h3 {
 		font-size: 1.6em;
 	}
