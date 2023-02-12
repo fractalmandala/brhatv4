@@ -1,4 +1,4 @@
-<div class="standardtwo">
+<div class="standardtwo" data-scroll-section style="background: var(--thistime)">
 	<div class="col col-left">
 	<slot name="col-left"></slot>
 	</div>
@@ -19,7 +19,7 @@
 
 @media screen and (min-width: 900px) {
 	.col { width: calc(50% - 24px); height: 100%;}
-	.standardtwo { gap: 48px;}
+	.standardtwo { gap: 48px; padding: 4em 6vw; height: 60vh;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {

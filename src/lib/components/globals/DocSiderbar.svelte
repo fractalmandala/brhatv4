@@ -131,7 +131,26 @@ export const sveltePosts = async () => {
   return filteredDocs
 }
 
+export const Codes = async () => {
+  const allDocFiles = import.meta.glob('/src/routes/docs/*.md')
+  const iterableDocFiles = Object.entries(allDocFiles)
+  
+  const allDocs = await Promise.all(
+    iterableDocFiles.map(async ([path, resolver]) => {
+      const { metadata } = await resolver()
+      const docPath = path.slice(11, -3)
 
+      return {
+        meta: metadata,
+        path: docPath,
+      }
+    })
+  )
+
+  const filteredDocs = allDocs.filter((doc) => doc.meta.category === "codes")
+
+  return filteredDocs
+}
 
 </script>
 
@@ -220,6 +239,20 @@ export const sveltePosts = async () => {
 			</div>
 		{/await}
 	</div>
+	<div class="accordions">
+		<h5>codes</h5>
+		{#await Codes()}
+		<small>...</small>
+		{:then data}
+			<div class="content">
+			{#each data as doc}
+			<p
+				transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"
+			><a href={doc.path}>{doc.meta.title}</a></p>
+			{/each}
+			</div>
+		{/await}
+	</div>
 </div>	
 
 
@@ -265,7 +298,7 @@ export const sveltePosts = async () => {
 	.side-bars p {
 		margin-top: 4px;
 		margin-bottom: 6px;
-		font-size: 16px;
+		font-size: 14px;
 		text-transform: capitalize;
 		color: white;
 	}
@@ -287,7 +320,7 @@ export const sveltePosts = async () => {
 
 	@media screen and (min-width: 900px) {
 		.side-bars {
-			width: 25vw;
+			width: 20vw;
 			padding-left: 2em;
 			border-right: 1px solid #373737;
 			padding-bottom: 2em;

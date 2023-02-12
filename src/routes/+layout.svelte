@@ -26,10 +26,11 @@ onMount(() => {
 	options={{
 		smooth: true,
 		smoothMobile: true,
+		repeat: true,
 		getDirection: true,
 		lerp: 0.1,
 		reloadOnContextChange: true,
-		inertia: 0.2
+		inertia: 0.4
 	}}
 	watch={$page}
 	location={$page.url}

@@ -1,10 +1,6 @@
 <script lang="ts">
 import supabase from '$lib/db'
-import { Swiper, SwiperSlide } from 'swiper/svelte'
-import { Keyboard, Navigation } from 'swiper'
-import 'swiper/css'
-import 'swiper/css/keyboard'
-import 'swiper/css/navigation'
+
 import { fade } from 'svelte/transition';
 import { fly } from 'svelte/transition'
 import { circOut } from 'svelte/easing'
@@ -23,6 +19,16 @@ export async function latestDhiti(){
 	.from('brhat-dhiti')
 	.select()
 	.order('sequence',{ascending: false})
+	.limit(4)
+	if (error) throw new Error(error.message)
+	return data
+}
+
+export async function latestBol(){
+	const { data, error } = await supabase
+	.from('brhat-openlibrary')
+	.select()
+	.order('Sno',{ascending: false})
 	.limit(4)
 	if (error) throw new Error(error.message)
 	return data
@@ -180,52 +186,32 @@ export async function latestDhiti(){
 				</div>
 				<div class="c-c-c-c col2 iscol">
 					<div class="c-c-c-c slide1">
-						{#await latestDhiti()}
-						<small>...</small>
-						{:then data}
-						<Swiper
-							modules={[Keyboard, Navigation]}
-							keyboard={true}
-  						loop={true}
-  						slidesPerView={1}
-							breakpoints={{
-    					"576": {
-      					slidesPerView: 1,
-      					spaceBetween: 16,
-    					},
-    					"768": {
-      					slidesPerView: 1,
-      					spaceBetween: 16,
-    					},
-    					"1024": {
-      					slidesPerView: 1,
-      					spaceBetween: 16,
-    					},
-  						}}
-								navigation={{ nextEl: '.custom-next', prevEl: '.custom-prev' }}
-								on:slideChange={() => console.log('slide change')}
-							>
-							{#each data as item}
-							<SwiperSlide>
-								<div class="c-c-c-c dhitislide" style="background-image: url('{item.image}')">
-									<div class="c-c-c-c dhitiscreen">
-										<h5><a href={item.link}>{item.title}</a></h5>
-									</div>
-								</div>
-							</SwiperSlide>
-							{/each}
-							</Swiper>
+						<p class="isdont" in:fly="{{delay: 600, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/dhiti">Dhīti</a></p>
+							{#await latestDhiti()}
+							<small>....</small>
+							{:then data}
+							<div class="c-c-c-c in-col">		
+								{#each data as item}
+								<small in:fly="{{delay: 550, duration: 100, x: -100, y: 0, easing: circOut}}"><a href={item.link}>{item.title}</a></small>
+								{/each}
+							</div>
 							{:catch error}
-						<pre>{error}</pre>
-						{/await}
-						<div class="r-r-r-r nav-row">
-							<div class="custom-prev"><img src="/images/icons/prevwhite.png" alt="previous"></div>
-							<div class="custom-next"><img src="/images/icons/nextwhite.png" alt="next"></div>
-						</div>
+							<pre>{error}</pre>
+							{/await}
 					</div>
 					<div class="c-c-c-c slide2">
-						<p class="isdont" in:fly="{{delay: 600, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/dhiti">Dhīti</a></p>
 						<p class="isdont" in:fly="{{delay: 600, duration: 200, x: 0, y: -24, easing: circOut}}"><a href="/openlibrary">Open Library</a></p>
+							{#await latestBol()}
+							<small>....</small>
+							{:then data}
+							<div class="c-c-c-c in-col">		
+								{#each data as item}
+								<small in:fly="{{delay: 550, duration: 100, x: -100, y: 0, easing: circOut}}"><a href="/openlibrary/books/{item.slug}">{item.Text}</a></small>
+								{/each}
+							</div>
+							{:catch error}
+							<pre>{error}</pre>
+							{/await}
 					</div>
 				</div>
 			</div>
@@ -245,13 +231,11 @@ export async function latestDhiti(){
 .row-top, .row-mid, .row-low {
 	overflow: visible;
 }
-.nav-row img { object-fit: contain; width: 24px; height: 24px;}
-.nav-row { gap: 1em;}
 .col1 {
 	overflow-y: scroll;
 }
 
-.socialicons { border-top: 1px solid #474747; gap: 1em; padding-top: 1em; display: flex; height: 4em;}
+.socialicons { border-top: 1px solid #474747; gap: 1em; padding-top: 1em; display: flex; }
 
 .socialicons img {
 	transition: all 0.04s ease-in;
@@ -391,6 +375,7 @@ a {
 	.fullscreener {
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
 		position: fixed;
 		background: linear-gradient(40deg, rgba(39, 39, 39, 1), rgba(27, 32, 35, 1));
 		top: 0;
@@ -404,7 +389,6 @@ a {
 		display: flex;
 		flex-direction: row;
 		width: 100%;
-		height: 48px;
 		align-items: center;
 		justify-content: space-between;
 	}
@@ -415,44 +399,42 @@ a {
 	}
 
 	.item1, .item2, .item3, .item4, .item5, .item6, .item7 { border-radius: 4px; transition: all 0.39s var(--cube3); overflow: visible;}
-	.col1 p, .slide2 p { font-weight: bold; text-transform: uppercase; transition: all 0.12s var(--cube1); }
-	.col1 small a, .slide3 small a { color: #676767;}
+	.col1 p, .slide2 p, .slide1 p { font-weight: bold; text-transform: uppercase; transition: all 0.12s var(--cube1); }
+	.col1 small a, .slide3 small a, .in-col small a { color: #676767;}
 	.item1:hover small a, .item2:hover small a, .item3:hover small a, .item4:hover small a, .item5:hover small a, .item6:hover small a, .item7:hover small a, .slide3:hover small:hover a { color: white;}
-	.col1 small a:hover { color: #fe4a49;}
-	.col1 p a, .slide3 p a, .slide2 p a { color: white;}
-	.dhitislide { background-size: cover; background-position: center center; background-repeat: no-repeat;}
-	.dhitiscreen h5 a { color: white;}
-	.dhitiscreen:hover a { color: #fe4a49;}
+	.col1 small a:hover, .in-col small a:hover { color: #fe4a49;}
+	.col1 p a, .slide3 p a, .slide2 p a, .slide1 p a { color: white;}
+
 	.slide1 { border: 1px solid white; border-radius: 4px;}
 	.isitem { transition: all 0.41s var(--cube2);}
-	.dhitislide, .dhitiscreen { border-radius: 4px;}
+
 
 
 @media screen and (min-width: 900px) {
 	.fullscreener { height: 100vh;}
+	.innerheading {height: 6vh; padding-top: 16px;}
+	.main-row { height: 86vh;}
+	.soc2 { height :8vh;}
 	.col1, .col2 { gap: 1em; justify-content: center;}
 	.col1 { width: 60%; overflow: visible;}
 	.col2 { width: 40%;}
-	.col1 p a, .slide2 p a { font-size: 1.14em;}
-	.col1 p, .slide2 p { margin-bottom: 6px;}
-	.col1 small a { font-size: 1em;}
-	.col1 small { line-height: 1.4em;}
-	.main-row { gap: 1em; height: calc(50% - 2.5em);}
-	.item1:hover p a, .item2:hover p a, .item3:hover p a, .item4:hover p a, .item5:hover p a, .item6:hover p a, .item7:hover p a, .slide2 p:hover a { color: #fe4a49;}
+	.col1 p a, .slide2 p a, .slide1 p a { font-size: 1.44em;}
+	.isitem p { margin-bottom: 4px;}
+	.in-col small { margin: 4px 0;}
+	.col1 small a { font-size: 1.2em;}
+	.slide1 .in-col small a, .slide2 .in-col small a { font-size: 1.28em; line-height: 1.4; }
+	.slide1 .in-col small, .slide2 .in-col small {padding-bottom: 8px;}
+	.col1 small { line-height: 1.12;}
+	.main-row { gap: 1em; }
+	.item1:hover p a, .item2:hover p a, .item3:hover p a, .item4:hover p a, .item5:hover p a, .item6:hover p a, .item7:hover p a, .slide2 p:hover a, .slide1 p:hover a { color: #fe4a49;}
 	.item1 { width: 100%; height: calc(25% - 1.25em); padding-left: 1em; }
 	.item2, .item3, .item4, .item5, .item6, .item7 { width: calc(50% - 0.5em); padding-left: 1em;}
 	.row-top, .row-mid, .row-low { height: calc(25% - 1.25em); gap: 1em;}
-	.slide1 { width: 100%; height: calc(75% - 1.75em);}
-	.slide2 { width: 100%; height: calc(25% - 1.25em); border: 1px solid #373737; border-radius: 4px; padding-left: 1em; padding-top: 8px;}
-	.dhitislide { width: 100%; height: 100%;}
-	.dhitiscreen { width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); padding-left: 2em; padding-right: 2em;}
-	.dhitiscreen a { font-size: 1.12em;}
-	.dhitiscreen h5 { line-height: 1.14em;}
-	.nav-row { margin-top: -3em; margin-bottom: 0em ;z-index: 4; padding-left: 2em; }
+	.slide1 { width: 100%; height: calc(50% - 1.75em);border: 1px solid #373737; border-radius: 4px; padding-left: 1em; padding-top: 16px; padding-right: 1em;}
+	.slide2 { width: 100%; height: calc(50% - 1.25em); border: 1px solid #373737; border-radius: 4px; padding-left: 1em; padding-top: 16px; padding-right: 1em;}
 	.the-in { gap: 2em;}
-	.isitem { border: 1px solid #373737; box-shadow: 4px 4px 6px #171717, -6px -8px 10px #272727; overflow: visible; padding-top: 8px;}
-	.isitem:hover { border: 1px solid #fe4a49; box-shadow: none;}
-	.isitem p, .slide2 p { margin-top: 6px; }
+	.isitem { border: 1px solid #373737; box-shadow: none; overflow: visible; padding-top: 16px; padding-bottom: 8px;}
+	.isitem:hover { border: 1px solid #fe4a49; box-shadow: 4px 4px 6px #171717, -6px -8px 10px #272727;}
 	.mobilemenu {
 		width: 32px;
 		height: 32px;
@@ -462,7 +444,6 @@ a {
 		padding-right: 4vw;
 	}
 
-	.main-row { width: 100%; height: calc(100vh - 8em); margin-top: 4px;}
 
 	.logoarea { width: 35%; }
 	.motif { padding-top: 0.08rem; margin-right: 10px;}
@@ -480,11 +461,8 @@ a {
 	.header { padding: 0; height: 64px; }
 
 	.fullscreener {
-		padding-right: 8vw;
-		padding-left: 8vw;
+		padding: 0 8vw;
 	}
-
-
 
 	.closebuttonstrip img {
 		width: 32px;
@@ -519,11 +497,7 @@ a {
 	.row-mid, .row-low { height: calc(25% - 1.25em); gap: 1em;}
 	.slide1 { width: 100%; height: calc(75% - 1.75em);}
 	.slide2 { width: 100%; height: calc(25% - 1.25em); border: 1px solid #373737; border-radius: 4px;}
-	.dhitislide { width: 100%; height: 100%;}
-	.dhitiscreen { width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); padding-left: 2em; padding-right: 2em;}
-	.dhitiscreen a { font-size: 1.12em;}
-	.dhitiscreen h5 { line-height: 1.44em;}
-	.nav-row { margin-top: -3em; margin-bottom: 0em ;z-index: 4; padding-left: 2em; }
+
 	.the-in { gap: 1em;}
 	
 	.padding-base {
@@ -691,11 +665,8 @@ a {
 	.row-mid, .row-low { height: calc(25% - 1.25em); gap: 1em;}
 	.slide1 { width: 100%; height: calc(75% - 1.75em);}
 	.slide2 { width: 100%; height: calc(25% - 1.25em); border: 1px solid #373737; border-radius: 4px;}
-	.dhitislide { width: 100%; height: 100%;}
-	.dhitiscreen { width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); padding-left: 2em; padding-right: 2em;}
-	.dhitiscreen a { font-size: 1.12em;}
-	.dhitiscreen h5 { line-height: 1.44em;}
-	.nav-row { margin-top: -3em; margin-bottom: 0em ;z-index: 4; padding-left: 2em; }
+
+
 	.the-in { gap: 1em;}
 
 
@@ -793,8 +764,8 @@ a {
 	.col2 { display: none;}
 	.col1 p a { font-size: 2em;}
 	.col1 p { margin-bottom: 8px; margin-top: 1.44em; border-top: 1px solid #fe4a49; padding-top: 16px;}
-	.col1 small a { font-size: 1.2em;}
-	.listlist small { line-height: 1.4 !important;}
+	.col1 small { font-size: 1.2em;}
+	.listlist small { line-height: 1.12;}
 	.isdo { margin-bottom: 8px; margin-top: 1.44em;}
 	.isdont { margin-bottom: 4px; margin-top: 4px;}
 	.main-row { gap: 1em; height: calc(100% - 2.5em); padding: 0 1em;}
@@ -805,11 +776,7 @@ a {
 	.row-mid, .row-low { height: calc(25% - 1.25em); gap: 1em;}
 	.slide1 { width: 100%; height: calc(75% - 1.75em);}
 	.slide2 { width: 100%; height: calc(25% - 1.25em); border: 1px solid #373737; border-radius: 4px;}
-	.dhitislide { width: 100%; height: 100%;}
-	.dhitiscreen { width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); padding-left: 2em; padding-right: 2em;}
-	.dhitiscreen a { font-size: 1.12em;}
-	.dhitiscreen h5 { line-height: 1.44em;}
-	.nav-row { margin-top: -3em; margin-bottom: 0em ;z-index: 4; padding-left: 2em; }
+
 	.the-in { gap: 1em;}
 
 }

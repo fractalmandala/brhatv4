@@ -24,6 +24,12 @@ body, html
 .w-box
 	background: white
 
+.white
+	color: white
+
+.orange
+	color: #ff3d00
+
 .m-2
 	margin-top: -2px
 
@@ -31,6 +37,9 @@ body, html
 	background: none
 	border: none
 	font-size: 32px
+
+.thin
+	font-weight: 300 !important
 
 p, h4, h3, h2, h1, small
 	margin-bottom: 16px
@@ -75,9 +84,14 @@ small
 	display: flex
 	flex-direction: column
 
-.col-gen
+.col-gen, .col
 	display: flex
 	flex-direction: column
+
+.col img
+	object-fit: cover
+	width: 100%
+	height: 100%
 
 .all-row
 	display: flex
@@ -131,6 +145,16 @@ small
 	display: flex
 	flex-direction: column
 	min-height: 100vh
+
+.swiper
+	height: 100%
+	width: 100%
+	position: relative
+	overflow: hidden
+
+.swiper-slide
+	display: flex
+	overflow: hidden
 
 @media screen and (min-width: 900px)
 
@@ -199,6 +223,9 @@ small
 		font-size: 24px
 		font-weight: 300
 
+	.bigger5
+		font-size: 48px
+
 	h5
 		font-size: 24px
 
@@ -209,12 +236,18 @@ small
 		font-size: 40px
 		letter-spacing: -1px
 
+	.bigger3
+		font-size: 64px
+
+	.cutter
+		width: 60%
+
 	h2
 		font-size: 100px
 		line-height: 1.12
 
 	h1
-		font-size: 160px
+		font-size: 120px
 		letter-spacing: -2px
 
 	p
@@ -237,6 +270,9 @@ small
 
 	.isbot
 		padding-bottom: 48px
+
+	.istop
+		padding-top: 120px
 
 @media screen and (max-width: 899px) and (min-width: 768px)
 
@@ -348,7 +384,6 @@ small
 
 	small
 		font-size: 16px !important
-		line-height: 1.2em !important
 	
 	.simplex-card p 
 		font-size: 18px
@@ -358,6 +393,10 @@ small
 		font-size: 24px
 		margin-bottom: 8px
 		margin-top: 16px
+	
+	.swiper-slide
+		align-items: center
+		justify-content: center
 		
 
 
