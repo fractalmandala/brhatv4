@@ -38,10 +38,10 @@ onMount(() => {
 })
 </script>
 
-	<div class="c-c-c-c pad4 l0" data-scroll-section>
+	<div class="c-c-c-c pad4 l0">
 		<Accordion></Accordion>
 	</div>
-	<div class="c-c-c-c pad4 l1" data-scroll-section>
+	<div class="c-c-c-c pad4 l1">
 		<h1 class="bigger1" data-textify>Bṛhat is a</h1>
 		<h1 class="smaller1 isred" data-textify>
 			Culture Engine</h1>
