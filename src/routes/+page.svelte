@@ -35,7 +35,7 @@ async function dhiti() {
 		Culture Engine</h1>
 		<h3>
 			To power creatives, research and design rooted
-			in the Indian civilizational conscioussness. We convert individual, institutional 
+			in the Indian civilizational consciousness. We convert individual, institutional 
 			and collective intent into action, across 3 dimensions:
 		</h3>
 		<div class="r-r-c-c l2">
@@ -59,11 +59,11 @@ async function dhiti() {
 			</div>
 			<div class="c-c-c-c l2row3">
 				<h5>Consult</h5>
-				<p>
-			- NEP-IKS implementation;
-			- policy thinking on education and ecology;
-			- organizational structure and leadership frameworks
-				</p>			
+					<p>
+						- NEP-IKS implementation;
+						- policy thinking on education and ecology;
+						- organizational structure and leadership frameworks
+					</p>			
 			</div>
 		</div>
 	</div>
@@ -93,19 +93,19 @@ async function dhiti() {
 	</StaticH1>
 	<Dhiti>
 		<div slot="header">Essays on Dhīti</div>
-		<div slot="body">
-			{#await dhiti()}
-			<small>...</small>
-			{:then data}
-			<div class="r-r-r-r pad4 l5">
-				{#each data as item}
-				<div class="c-c-c-c dhitibox">
-					<img src={item.image} alt={item.title} />
-					<h5><a href={item.link}>{item.title}</a></h5>
-					<p>{item.excerpt.slice(0,200)}</p>
+			<div slot="body">
+				{#await dhiti()}
+				<small>...</small>
+				{:then data}
+				<div class="r-r-r-r pad4 l5">
+					{#each data as item}
+					<div class="c-c-c-c dhitibox">
+						<img src={item.image} alt={item.title} />
+						<h5><a href={item.link}>{item.title}</a></h5>
+						<p>{item.excerpt.slice(0,200)}</p>
+					</div>
+					{/each}
 				</div>
-				{/each}
-			</div>
 			{:catch error}
 			<pre>{error}</pre>
 			{/await}
@@ -122,14 +122,15 @@ p { color: #474747;}
 @media screen and (min-width: 900px) {
 	.l0 { height: 100vh; padding-top: 88px; padding-bottom: 32px; justify-content: flex-end;}
 	.lzz { height: 100vh; justify-content: center;}
-	.l2 { gap: 32px; padding-bottom: 4em; padding-top: 3em; }
+	.l2 { gap: 48px; padding-bottom: 4em; padding-top: 3em; }
 	.l2 h5 { padding-top: 12px;}
+	.l2 .c-c-c-c { width: calc(33% - 32px);}
 	.smaller1 { font-size: 96px; line-height: 1.2em; font-weight: 500;}	
 	.bigger1 { font-size: 96px; margin-bottom: 0; font-weight: 500;}
-	.l3 { height: 100%; flex-wrap: wrap; gap: 32px; align-items: center;}
-	.vidbox { height: 240px; width: 30%;}
-	.dhitibox { width: calc(33% - 48px);}
-	.l5 { gap: 32px; flex-wrap: wrap;}
+	.l3 { height: 100%; flex-wrap: wrap; gap: 48px; align-items: center;}
+	.vidbox { height: 240px; width: calc(33% - 32px);}
+	.dhitibox { width: calc(33% - 32px);}
+	.l5 { gap: 48px; flex-wrap: wrap;}
 	.dhitibox h5 { margin-top: 12px; margin-bottom: 8px; font-size: 20px;}
 	.dhitibox h5 a { color: #272727;}
 	.dhitibox a:hover { color: #fe4a49;}
@@ -148,8 +149,7 @@ p { color: #474747;}
 	.l2 { gap: 2em; padding-bottom: 16px; margin-top: 1em;}
 	.l2 p { margin-bottom: 0;}
 	.l2 h5 { padding-top: 8px;}
-
-	h5 { font-size: 1.44em; padding-left: 4vw; padding-right: 4vw;}
+	h5 { padding-left: 4vw; padding-right: 4vw;}
 
 }
 
@@ -157,8 +157,6 @@ p { color: #474747;}
 	.l2 { gap: 2em; padding-bottom: 16px; margin-top: 1em;}
 	.l2 p { margin-bottom: 0;}
 	.l2 h5 { padding-top: 8px;}
-
-	h5 { font-size: 1.44em;  padding-left: 4vw; padding-right: 4vw; }
-
+	h5 { padding-left: 4vw; padding-right: 4vw; }
 }
 </style>

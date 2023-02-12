@@ -192,13 +192,6 @@
 	display: flex
 	transition: all 0.53s cubic-bezier(0.875, 0.145, 0.555, 0.905)
 	position: relative
-	&:hover
-		.gencol
-			width: 0%	
-			visibility: hidden
-			&:hover
-				visibility: visible
-				width: 100% !important
 
 .gencol
 	display: flex
@@ -279,12 +272,11 @@
 		height: 100%
 		justify-content: center
 		align-items: flex-end
-		gap: 32px
+		gap: 48px
 
 	.gencol
-		width: 33%
+		width: calc(33% - 32px)
 		height: 100%
-		padding-left: 4vw
 
 	.genrow
 		&:hover
