@@ -22,6 +22,7 @@ onMount(() => {
 
 </script>
 
+<HeadGeneral></HeadGeneral>
 <LocomotiveScrollProvider
 	options={{
 		smooth: true,
@@ -37,7 +38,6 @@ onMount(() => {
 	onLocationChange={(scroll) => scroll.scrollTo(0, { duration: 2, disableLerp: false })}
 	imageTarget={'.grid-item-media'}
 >
-<HeadGeneral></HeadGeneral>
 <slot></slot>
 <Footer></Footer>
 </LocomotiveScrollProvider>

@@ -55,7 +55,7 @@ export async function getAphorisms(): Promise<any[]> {
 </script>
 
 
-<div data-scroll-container id="homebase">
+<div data-scroll-container>
 	<div class="c-c-c-c pad4 l1">
 		<h5 class="onlyone" data-textify>
 		To be a history in the true sense of the word, a work must be a story of the people inhabiting a country.

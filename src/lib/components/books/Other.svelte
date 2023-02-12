@@ -5,7 +5,7 @@ export async function getBooks(){
 	const { data, error } = await supabase
 	.from('brhat-openlibrary')
 	.select()
-	.eq('Type','IKS')
+	.or('Type.eq.Sanskrit,Type.eq.History')
 	.order('Sno',{ascending: false})
 	if (error) throw new Error(error.message)
 	return data

@@ -14,8 +14,7 @@ function toggleWid(e: {currentTarget: {id: any;};}) {
 
 </script>
 
-<div class="padsj">
-<div class="aa r-r-r-r">
+<div class="aa r-r-r-r" data-scroll-section>
 	<div id="element-1" class="element {activeDivId === 'element-1' ? 'active' : ''}" on:click={toggleWid} on:keydown={toggleWid}>
 		<h5>Essentials</h5>
 		<div class="c-c-c-c">
@@ -50,12 +49,11 @@ function toggleWid(e: {currentTarget: {id: any;};}) {
 		</div>
 	</div>
 	<div id="element-7" class="element {activeDivId === 'element-7' ? 'active' : ''}" on:click={toggleWid} on:keydown={toggleWid}>
-		<div class="c-c-c-c" data-scroll-section>
-		<slot></slot>
+		<div class="c-c-c-c">
+		<h5>Use our Digitized Tools and Repositories to discover on your own:</h5>
 		</div>
 	</div>
 </div>	
-</div>
 
 <style>
 
@@ -103,15 +101,13 @@ function toggleWid(e: {currentTarget: {id: any;};}) {
 	width: 70%;
 	font-weight: 500;
 }
-
+#element-7 h5 {color: #272727; text-transform: capitalize; width: 90%;}
 
 .aa {
 	height: 120vh;
 	padding: 0 4vw;
 	background: white;
 }
-
-.padsj { padding: 120px 0;}
 
 
 </style>

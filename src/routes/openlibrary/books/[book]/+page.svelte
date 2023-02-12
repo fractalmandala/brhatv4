@@ -3,7 +3,7 @@ export let data: { author: any; Description: any; Type: any; Text: any; Extract:
 </script>
 
 <small>{data.Type} | <span class="isred">{data.author}</span></small>
-<h1>{data.Text}</h1>
+<h3 class="bigger3">{data.Text}</h3>
 <p>{data.Description}</p>
 <div class="base-col">
 <iframe 
@@ -18,11 +18,11 @@ export let data: { author: any; Description: any; Type: any; Text: any; Extract:
 
 <style>
 small { text-transform: uppercase; font-weight: bold; color: var(--blue);}
-h1 { border-bottom: 4px solid var(--blue); margin-top: 6px;}
+
 .base-col { border-radius: 8px;}
 
 @media screen and (min-width: 768px) {
-	.base-col { padding: 2rem; height: 560px;}	
+	.base-col { padding: 2rem; height: 700px;}	
 	p { font-size: 1.12rem; color: #878787;}
 }
 
