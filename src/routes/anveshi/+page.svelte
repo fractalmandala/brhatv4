@@ -40,17 +40,17 @@ export async function allChapters() {
 }
 </script>
 
-<div class="w-box" data-scroll-container>
+<div class="w-box" data-scroll-section>
 <div class="imagecontainer-hero"></div>
-<div class="primecontainer-col" data-scroll-section>
+<div class="primecontainer-col">
 		<div class="typeh4" data-scroll data-scroll-speed="3">
 			B<span class="isred">ṛ</span>hat Anveṣī is a travel program to contemporize ancient Indian tradition by guiding travel groups through hitherto rarely explored sacred kṣetras of India.
 		</div>
 </div>
-<div class="headbox" data-scroll-section>
+<div class="headbox">
 <h1 data-scroll data-scroll-direction="horizontal" data-scroll-speed="3">Chapters</h1>
 </div>
-<div class="c-c-c-c a1" data-scroll-section>
+<div class="c-c-c-c a1">
 	{#await allChapters()}
 		<small>loading chapters...</small>
 		{:then data}
@@ -72,11 +72,11 @@ export async function allChapters() {
 	{/await}
 </div>
 <MainH1>Anveṣī Diaries</MainH1>
-<div class="c-c-c-c filler m2" data-scroll-section>
+<div class="c-c-c-c filler m2">
 <h5>Anveṣī Diaries is a collection of traveller images, trip videos, testimonials and writings from our trips. To submit your own experience, please write to anveshi@brhat.in</h5>
 <h4>Artwork by Ashish Kundalia</h4>
 </div>
-<div class="r-r-r-r l1 m2" data-scroll-section>
+<div class="r-r-r-r l1 m2">
 	{#await allImages()}
 	<small>...</small>
 	{:then data}
@@ -91,7 +91,7 @@ export async function allChapters() {
 </div>
 <div class="holder" on:click={toggleFull} on:keydown={toggleFull}>
 <Who>Who is Bṛhat Anveṣī</Who>
-<div class="padding c-c-c-c" data-scroll-section></div>
+<div class="padding c-c-c-c"></div>
 </div>
 	{#if isFull}
 		<div class="c-c-c-c whois" data-scroll-section>
@@ -113,7 +113,7 @@ export async function allChapters() {
 		</div>
 	{/if}
 <FAQ>FAQs</FAQ>
-<div class="c-c-c-c l2" data-scroll-section>
+<div class="c-c-c-c l2">
 	{#await allFaq()}
 	<small>....</small>
 	{:then data}

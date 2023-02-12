@@ -2,6 +2,7 @@
 import '$lib/styles/globaltemplate.sass'
 import Animations from "textify.js";
 import { onMount } from 'svelte'
+import '$lib/styles/textify.css'
 
 
 onMount(() => {

@@ -47,9 +47,9 @@ const { data, error } = await supabase
 }
 </script>
 
-<div class="loco" data-scroll-container>
+<div class="loco" data-scroll-section>
 <div class="col-full img-fix"></div>
-<div class="col-full pad4 l1" data-scroll-section>
+<div class="col-full pad4 l1">
 	<h1 class="bigger1" data-textify>Bṛhat is a</h1>
 	<h1 class="smaller1 isred" data-textify>
 	Culture Engine</h1>
@@ -126,7 +126,7 @@ const { data, error } = await supabase
 		Read more on the need we see, why we think this is the time to address it, and about our self-identity:
 	</p>
 </div>
-<div class="row-full l4 pad4" data-scroll-section>
+<div class="row-full l4 pad4">
 	<h3 data-textify>
 		<a href="/about/docs/svatahsiddha">
 		Svataḥsiddha
@@ -146,7 +146,7 @@ const { data, error } = await supabase
 	</h3>
 </div>
 <MainH1>Advisors</MainH1>
-<div class="c-c-c-c l5 pad4" data-scroll-section>
+<div class="c-c-c-c l5 pad4">
 	{#await advisors()}
 	<small>...</small>
 	{:then data}
@@ -164,7 +164,7 @@ const { data, error } = await supabase
 	{/await}
 </div>
 <Partners>Partners</Partners>
-<div class="c-c-c-c l7 pad4" data-scroll-section>
+<div class="c-c-c-c l7 pad4">
 	{#await partners()}
 	<small>...</small>
 	{:then data}
@@ -180,7 +180,7 @@ const { data, error } = await supabase
 	{/await}
 </div>
 <Team>Team</Team>
-<div class="c-c-c-c l9 pad4" data-scroll-section>
+<div class="c-c-c-c l9 pad4">
 	{#await team()}
 	<small>...</small>
 	{:then data}

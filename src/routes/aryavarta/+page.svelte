@@ -6,7 +6,7 @@ import Four from '$lib/components/reuse/StandardTwo.svelte'
 import { reveal } from 'svelte-reveal';
 </script>
 
-<div class="black-beauty" data-scroll-container>
+<div class="black-beauty" data-scroll-section>
 	<div class="imagecontainer-hero"></div>
 	<StandardTwo
 	--thistime="white"
@@ -57,7 +57,7 @@ And you? A pioneer of tilled grain you were.
 	</Four>
 	
 
-<div class="c-c-c-c box5" data-scroll-section> 
+<div class="c-c-c-c box5"> 
 	<h3 class="bigger3 orange" data-scroll data-textify>
 		We can access this place,
 	</h3>

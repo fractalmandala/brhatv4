@@ -6,7 +6,7 @@ import '$lib/styles/anim-rid.css';
 </script>
 
 
-<div class="black-beauty" data-scroll-container>
+<div class="black-beauty" data-scroll-section>
 	<div class="col-full centy-col endx-col pad4" id="isfirst">
 		<div class="col-gen wid50 child-on-left">
 			<svg width="696" height="136" viewBox="0 0 696 136" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +39,7 @@ import '$lib/styles/anim-rid.css';
 		</div>
 	</div>
 
-	<div class="col-full centy-col pad4 l0" data-scroll-section>
+	<div class="col-full centy-col pad4 l0">
 		<div class="col-gen wid50 child-on-right pad8r" data-scroll data-scroll-speed="1">
 			<p data-textify>
 				From user flows to adoption curves, learning paths to zoning regulations, we live in a world of Design.
@@ -53,7 +53,7 @@ import '$lib/styles/anim-rid.css';
 		</div>
 	</div>
 
-	<div class="col-full centy-col pad4 l0" data-scroll-section>
+	<div class="col-full centy-col pad4 l0">
 		<div class="col-gen wid50 child-on-right pad8r" data-scroll data-scroll-speed="1">
 			<h5 data-textify>Design is what gives agency to the natural and continuous phenomenon of creativity.</h5>
 			<p data-textify>
@@ -68,13 +68,13 @@ import '$lib/styles/anim-rid.css';
 		</div>
 	</div>
 
-	<div class="col-gen onewhosticks pad4" data-scroll-section id="stickybox">
+	<div class="col-gen onewhosticks pad4" id="stickybox">
 		<h1 class="claim" data-scroll data-scroll-speed="10" data-scroll-direction="horizontal">
 			Ṛta in Design is a system for modern design thinking and creatorship, informed by the design principles of Dharma.
 		</h1>
 	</div>
 
-	<div class="all-row pad4" id="panelsacco" data-scroll-section>
+	<div class="all-row pad4" id="panelsacco">
 		<div data-scroll data-scroll-speed="1" class="col-gen panel1">
 			<p>Introduction to Ṛta in Design</p>
 		</div>

@@ -1,4 +1,4 @@
-<div class="standardtwo" data-scroll-section style="background: var(--thistime)">
+<div class="standardtwo" style="background: var(--thistime)">
 	<div class="col col-left">
 	<slot name="col-left"></slot>
 	</div>

@@ -55,7 +55,7 @@ export async function getAphorisms(): Promise<any[]> {
 </script>
 
 
-<div data-scroll-container>
+<div data-scroll-section>
 	<div class="c-c-c-c pad4 l1">
 		<h5 class="onlyone" data-textify>
 		To be a history in the true sense of the word, a work must be a story of the people inhabiting a country.
@@ -64,7 +64,7 @@ export async function getAphorisms(): Promise<any[]> {
 		It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
 		</h5>
 	</div>
-	<div class="c-c-c-c pad4 l2" data-scroll-section>
+	<div class="c-c-c-c pad4 l2">
 		<h3 data-scroll data-scroll-speed="1">
 			Such a history of India is still to be written.
 		</h3>
@@ -73,7 +73,7 @@ export async function getAphorisms(): Promise<any[]> {
 		</p>
 	</div>
 
-	<div class="r-r-r-r l3" data-scroll-section>
+	<div class="r-r-r-r l3">
 		<div class="c-c-c-c col-image group2">	
 		</div>
 		<div class="colthree c-c-c-c group3">
@@ -92,7 +92,7 @@ export async function getAphorisms(): Promise<any[]> {
 		</div>
 	</div>
 
-	<div class="r-r-r-r l4" data-scroll-section>
+	<div class="r-r-r-r l4">
 		<div class="c-c-c-c colthree group1">
 			<h2 data-textify data-scroll data-scroll-speed="3">Maṇḍala</h2>
 		</div>
@@ -109,14 +109,14 @@ export async function getAphorisms(): Promise<any[]> {
 		</div>
 		<div class="c-c-c-c col-image group2"></div>
 	</div>
-	<div class="c-c-c-c l5" data-scroll-section>
+	<div class="c-c-c-c l5">
 		<h3 data-scroll data-scroll-direction="horizontal" data-scroll-speed="-2">
 			The Fractal Maṇḍala is a project to study the emergence and nature of <span class="green">Indian civilizational consciousness.</span>
 		</h3>
 	</div>
-	<div class="c-c-c-c l7" data-scroll-section>
+	<div class="c-c-c-c l7">
 	</div>
-	<div class="r-r-r-r l8" data-scroll-section>
+	<div class="r-r-r-r l8">
 		<div class="c-c-c-c l6">
 			<div class="r-r-r-r essbox1">
 				<h5 data-textify>On Indian Civilizational Consciousness</h5>

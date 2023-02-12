@@ -1,57 +1,97 @@
 <script lang="ts">
 import supabase from '$lib/db'
-import HomeAccordion from '$lib/components/pagecomps/HomeAccordion.svelte'
-import DhitiRecent from '$lib/components/pagecomps/DhitiSlider.svelte'
-import HomeVids from '$lib/components/pagecomps/HomeVids.svelte'
-import ButtonOutline from '$lib/components/animations/ButtonOutline.svelte'
+import Animations from "textify.js";
+import { onMount } from 'svelte'
+import '$lib/styles/textify.css'
+import MainH1 from '$lib/components/headers/StaticH1.svelte'
+import Dhiti from '$lib/components/headers/MainH1.svelte'
 
-async function brhatPillars() {
-const { data , error } = await supabase
-.from('brhat-about')
-.select()
-.eq('type','actions')
-.order('sequence')
-if (error) throw new Error(error.message)
-return data
+async function Videos() {
+  const { data, error } = await supabase
+  .from('brhat-youtube')
+  .select()
+  .order('id',{ascending: false})
+  .limit(6)
+  if (error) throw new Error(error.message)
+  return data
 }
 
+
+onMount(() => {
+	const { Textify } = Animations;
+	new Textify({
+		duration: 500,
+		once: false,
+		stagger: 200,
+		threshold: 0.1
+	})
+})
 </script>
 
-<div id="data-scroll-container" class="data-scroll-container" data-scroll-container>
-	<div class="c-c-c-c holder" data-scroll-section>
-		<HomeAccordion></HomeAccordion>
-	</div>
-	<div class="big-box" data-scroll-section>
-		<h3 id="lead-text">
-			B<span class="isred">ṛ</span>hat is a Culture Engine
+<div data-scroll-section>
+	<div class="c-c-c-c pad4 l1">
+		<h1 class="bigger1" data-textify>Bṛhat is a</h1>
+		<h1 class="smaller1 isred" data-textify>
+			Culture Engine</h1>
+		<h3 data-textify>
+		To power creatives, research and design rooted
+		in the Indian civilizational consciousness. We convert individual, institutional 
+		and collective intent into action, across 3 dimensions:
 		</h3>
-		<h5 id="actions">
-			To power creatives, research and design rooted
-			in the Indian civilizational consciousness.<br>We convert individual, institutional 
-			and collective intent into action, across 3 dimensions:
-		</h5>
-		{#await brhatPillars()}
+		<div class="r-r-c-c l2" data-textify>
+			<div class="c-c-c-c l2row1">
+			<h5>Create</h5>
+			<p>
+				- visual and literary stories;
+				- design thinking and methods;
+				- research output on education and ecology;
+				- culture-rooted thought models
+			</p>
+			</div>
+			<div class="c-c-c-c l2row2">
+			<h5>Curate</h5>
+			<p>
+				- heritage experience journeys;
+				- culture-fit in mass media;
+				- NEP-relevant IKS curriculum;
+				- culture rooting in product design and thinking
+			</p>
+			</div>
+			<div class="c-c-c-c l2row3">
+			<h5>Consult</h5>
+			<p>
+			- NEP-IKS implementation;
+			- policy thinking on education and ecology;
+			- organizational structure and leadership frameworks
+			</p>			
+			</div>
+		</div>
+	</div>
+	<div class="c-c-c-c l2">
+		<MainH1>Latest Events</MainH1>
+		{#await Videos()}
 		<small>...</small>
 		{:then data}
-		<div class="base-row pillars-row padding-base">
-		{#each data as item}
-			<div class="base-col card pillars"> 
-				<img src={item.image} alt={item.name}/>
-				<h5 class="mt2 cc-left isblack wd100">{item.name}</h5>
-				<pre class="cc-left in-card">{item.content}</pre>
-			</div>
-		{/each}
+		<div class="r-r-r-r pad4 l3">
+			{#each data as item}
+				<div class="c-c-c-c vidbox">
+					<iframe
+  				class="m-1"
+  					width=100%
+  					height=100%
+  					src="https://www.youtube.com/embed/{item.videoid}"
+  					title={item.name}
+  					></iframe>
+				</div>
+			{/each}
 		</div>
 		{:catch error}
 		<pre>{error}</pre>
 		{/await}
-		<ButtonOutline><a href="/about">About Us</a></ButtonOutline>
 	</div>
-	<div class="c-c-c-c holder" data-scroll-section>
-		<HomeVids></HomeVids>
-	</div>
-	<div class="c-c-c-c holder" data-scroll-section>
-		<DhitiRecent></DhitiRecent>
+	<div class="c-c-c-c l4">
+		<Dhiti>On Dhīti, our Blog</Dhiti>
+		<div class="r-r-r-r pad4 l5" data-scroll-section></div>
 	</div>
 </div>
 
@@ -60,88 +100,42 @@ return data
 <style>
 
 
-.big-box { justify-content: center; background: white;}
-.card.pillars img {
-	object-fit: contain;
-	margin-left: auto;
-	margin-right: auto;
-}
-.pillars-row, h3, h5 { text-align: center;}
-.card h5 { text-align: center;}
-.pillars-row { justify-content: center;}
-.card { align-items: center; border-radius: 4px;}
-a { color: inherit;}
+.l2 .c-c-c-c { border-top: 1px solid #474747;}
+p { color: #474747;}
 
 @media screen and (min-width: 900px) {
-	.big-box {
-		padding: 0 6vw;
-	}
-	#lead-text, #actions {
-		text-align: left;
-	}
-	
-	.padding-base {
-		padding-left: 6vw;
-		padding-right: 6vw;
-	}
+	.l1 { height: 100vh; justify-content: center;}
+	.l2 { gap: 32px; padding-bottom: 2em; margin-top: 3em; margin-bottom: 64px; }
+	.l2 h5 { padding-top: 12px;}
+	.smaller1 { font-size: 96px; line-height: 1.2em; font-weight: 500;}	
+	.bigger1 { font-size: 96px; margin-bottom: 0; font-weight: 500;}
+	.l1 { padding-top: 63px;}
+	.l3, .l5 { height: 80vh; flex-wrap: wrap; gap: 48px; align-items: center;}
+	.vidbox { height: 240px; width: 30%;}
 
-	.card.pillars img {
-		width: 64px;
-	}
-	.card { width: 33.33%; background-color: #fefefe; box-shadow: 4px 2px 5px #f1f1f1, -4px -3px 6px #f7f7f7;}
-	.pillars-row { gap: 2em; margin-top: 1em;}
-	.holder { height: 100vh; width: 100vw;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
-		.padding-base {
-		padding-right: 4vw;
-		padding-left: 4vw;
-	}
-	.card.pillars img {
-		width: 64px;
-	}
-	.card { width: 33.33%; background-color: #fefefe; box-shadow: 4px 2px 5px #f1f1f1, -4px -3px 6px #f7f7f7;}
-	.pillars-row { gap: 2em;}
+.l2 h5 { padding-top: 12px;}
+.smaller1 { font-size: 120px; line-height: 1.2em; font-weight: 500;}	
+.bigger1 { font-size: 120px; margin-bottom: 0; font-weight: 500;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
-	.big-box { 
-		padding-top: 2em;
-		padding-bottom: 2em;
-	}
-	.big-box h3 { font-size: 2em;padding-left: 4vw; padding-right: 4vw;}
-	h5 { font-size: 1.44em; padding-left: 4vw; padding-right: 4vw;}
-	pre { font-size: 1.2em;}
+	.l2 { gap: 2em; padding-bottom: 16px; margin-top: 1em;}
+	.l2 p { margin-bottom: 0;}
+	.l2 h5 { padding-top: 8px;}
 
-			.padding-base {
-		padding-right: 4vw;
-		padding-left: 4vw;
-	}
-		.card.pillars img {
-		width: 64px;
-	}
-	.card { width: 100%; background-color: #fefefe; box-shadow: 4px 2px 5px #f1f1f1, -4px -3px 6px #f7f7f7;}
-	.pillars-row { gap: 2em; flex-wrap: wrap;}
+	h5 { font-size: 1.44em; padding-left: 4vw; padding-right: 4vw;}
+
 }
 
 @media screen and (max-width: 575px) {
-	.big-box {
-		padding-top: 2em;
-		padding-bottom: 2em;
-	}
+	.l2 { gap: 2em; padding-bottom: 16px; margin-top: 1em;}
+	.l2 p { margin-bottom: 0;}
+	.l2 h5 { padding-top: 8px;}
 
-	.big-box h3 { font-size: 2em; padding-left: 4vw; padding-right: 4vw; }
 	h5 { font-size: 1.44em;  padding-left: 4vw; padding-right: 4vw; }
-	pre { font-size: 1.2em;}
-	.padding-base {
-		padding-right: 4vw;
-		padding-left: 4vw;
-	}
-		.card.pillars img {
-		width: 64px;
-	}
-	.card { width: 100%; padding-top: 1em;background-color: #fefefe; box-shadow: 4px 2px 5px #f1f1f1, -4px -3px 6px #f7f7f7;}
-	.pillars-row { gap: 2em; flex-wrap: wrap;}
+
 }
 </style>

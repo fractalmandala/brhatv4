@@ -22,22 +22,22 @@ onMount(() => {
 
 </script>
 
-<HeadGeneral></HeadGeneral>
 <LocomotiveScrollProvider
 	options={{
 		smooth: true,
 		smoothMobile: true,
 		repeat: true,
-		getDirection: true,
 		lerp: 0.1,
 		reloadOnContextChange: true,
-		inertia: 0.4
+		multiplier: 0.5,
+		inertia: 0.7
 	}}
 	watch={$page}
 	location={$page.url}
 	onLocationChange={(scroll) => scroll.scrollTo(0, { duration: 2, disableLerp: false })}
 	imageTarget={'.grid-item-media'}
 >
+<HeadGeneral></HeadGeneral>
 <slot></slot>
 <Footer></Footer>
 </LocomotiveScrollProvider>
