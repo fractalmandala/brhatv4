@@ -75,3 +75,53 @@ gsap.to("#my-image", {
   ease: "none"
 });
 ```
+
+
+horizontal
+```js
+const sections = document.querySelectorAll(".section");
+const controller = new ScrollMagic.Controller();
+
+sections.forEach((section, index) => {
+  const nextSection = sections[index + 1];
+
+  const scene = new ScrollMagic.Scene({
+    triggerElement: section,
+    triggerHook: "onLeave",
+    duration: "100%"
+  })
+    .setPin(section)
+    .setTween(gsap.to(section, { x: "-100%", ease: "none" }))
+    .addTo(controller);
+
+  if (nextSection) {
+    scene
+      .setTween(
+        gsap.to(nextSection, {
+          x: "0%",
+          ease: "none"
+        })
+      )
+      .addIndicators({
+        colorStart: "white",
+        colorTrigger: "white",
+        indent: 40
+      });
+  }
+});
+```
+
+```css
+.section {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+body {
+  overflow: hidden;
+}
+```

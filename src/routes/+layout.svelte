@@ -7,10 +7,17 @@ import Animations from "textify.js";
 import '$lib/styles/reader.sass'
 import '$lib/styles/textify.css'
 import '$lib/styles/globaltemplate.sass'
+const { Textify } = Animations;
 
 onMount(() => {
-	const { Textify } = Animations;
-	new Textify();
+	const maint = new Textify({
+		duration: 700,
+		reveal: true,
+		stagger: 40,
+		threshold: 0.2,
+		once: false,
+		easing: 'circOut',
+	})
 });
 
 </script>

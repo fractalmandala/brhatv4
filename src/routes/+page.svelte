@@ -41,52 +41,52 @@ onMount(() => {
 	<div class="c-c-c-c pad4 l0">
 		<Accordion></Accordion>
 	</div>
-	<div class="c-c-c-c pad4 l1">
-		<h1 class="bigger1" data-textify>Bṛhat is a</h1>
-		<h1 class="smaller1 isred" data-textify>
-			Culture Engine</h1>
-		<h3 data-textify>
-		To power creatives, research and design rooted
-		in the Indian civilizational consciousness. We convert individual, institutional 
-		and collective intent into action, across 3 dimensions:
+	<div class="c-c-c-c pad4 lzz">
+		<h1 class="bigger1">Bṛhat is a</h1>
+		<h1 class="smaller1 isred">
+		Culture Engine</h1>
+		<h3>
+			To power creatives, research and design rooted
+			in the Indian civilizational conscioussness. We convert individual, institutional 
+			and collective intent into action, across 3 dimensions:
 		</h3>
-		<div class="r-r-c-c l2" data-textify>
+		<div class="r-r-c-c l2">
 			<div class="c-c-c-c l2row1">
-			<h5>Create</h5>
-			<p>
+				<h5>Create</h5>
+				<p>
 				- visual and literary stories;
 				- design thinking and methods;
 				- research output on education and ecology;
 				- culture-rooted thought models
-			</p>
+				</p>
 			</div>
 			<div class="c-c-c-c l2row2">
-			<h5>Curate</h5>
-			<p>
+				<h5>Curate</h5>
+				<p>
 				- heritage experience journeys;
 				- culture-fit in mass media;
 				- NEP-relevant IKS curriculum;
 				- culture rooting in product design and thinking
-			</p>
+				</p>
 			</div>
 			<div class="c-c-c-c l2row3">
-			<h5>Consult</h5>
-			<p>
+				<h5>Consult</h5>
+				<p>
 			- NEP-IKS implementation;
 			- policy thinking on education and ecology;
 			- organizational structure and leadership frameworks
-			</p>			
+				</p>			
 			</div>
 		</div>
 	</div>
 	<StaticH1>
 		<div slot="header">Latest Events</div>
 		<div slot="body">
-		{#await Videos()}
-		<small>...</small>
-		{:then data}
-		<div class="r-r-r-r pad4 l3">
-			{#each data as item}
+			{#await Videos()}
+			<small>...</small>
+			{:then data}
+			<div class="r-r-r-r pad4 l3">
+				{#each data as item}
 				<div class="c-c-c-c vidbox">
 					<iframe
   				class="m-1"
@@ -96,11 +96,11 @@ onMount(() => {
   					title={item.name}
   					></iframe>
 				</div>
-			{/each}
-		</div>
-		{:catch error}
-		<pre>{error}</pre>
-		{/await}
+				{/each}
+			</div>
+			{:catch error}
+			<pre>{error}</pre>
+			{/await}
 		</div>
 	</StaticH1>
 	<Dhiti>
@@ -123,21 +123,21 @@ onMount(() => {
 			{/await}
 		</div>
 	</Dhiti>
+
+
 <style>
-.l0, .l1, .l2, .l3, .l5 { background: white;}
+.l0, .lzz, .l2, .l3, .l5 { background: white;}
 .dhitibox img { object-fit: cover; width: 100%;}
 .l2 .c-c-c-c { border-top: 1px solid #474747;}
 p { color: #474747;}
-.l1, .l2, .l3 { background: white;}
 
 @media screen and (min-width: 900px) {
 	.l0 { height: 100vh; padding-top: 88px; padding-bottom: 32px; justify-content: flex-end;}
-	.l1 { height: 100vh; justify-content: center;}
+	.lzz { height: 100vh; justify-content: center;}
 	.l2 { gap: 32px; padding-bottom: 4em; padding-top: 3em; }
 	.l2 h5 { padding-top: 12px;}
 	.smaller1 { font-size: 96px; line-height: 1.2em; font-weight: 500;}	
 	.bigger1 { font-size: 96px; margin-bottom: 0; font-weight: 500;}
-	.l1 { padding-top: 64px;}
 	.l3 { height: 100%; flex-wrap: wrap; gap: 32px; align-items: center;}
 	.vidbox { height: 240px; width: 30%;}
 	.dhitibox { width: calc(33% - 48px);}

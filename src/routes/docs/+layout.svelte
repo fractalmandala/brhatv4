@@ -1,7 +1,7 @@
 <script>
 import { onMount } from 'svelte'
 import Animations from "textify.js";
-import DocSidebar from '$lib/components/globals/DocSiderbar.svelte'
+import '$lib/styles/textify.css'
 import '$lib/styles/prism.css'
 onMount(() => {
 const { Textify } = Animations;
@@ -14,17 +14,6 @@ const { Textify } = Animations;
 
 </script>
 
-<div class="r-r-r-r cc">
-<DocSidebar></DocSidebar>
+
 <slot></slot>
-</div>
 
-
-
-
-<style>
-.r-r-r-r.cc { 
-	background: var(--beau);
-}
-
-</style>
