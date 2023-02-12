@@ -1,10 +1,7 @@
 <script lang="ts">
 import supabase from '$lib/db'
-import Animations from "textify.js";
 import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte'
 import StaticH1 from '$lib/components/headers/StaticH1.svelte'
-import { onMount } from 'svelte'
-import '$lib/styles/textify.css'
 import Dhiti from '$lib/components/headers/StaticH1.svelte'
 
 async function Videos() {
@@ -27,15 +24,6 @@ async function dhiti() {
   return data
 }
 
-onMount(() => {
-	const { Textify } = Animations;
-	new Textify({
-		duration: 500,
-		once: false,
-		stagger: 200,
-		threshold: 0.1
-	})
-})
 </script>
 
 	<div class="c-c-c-c pad4 l0">

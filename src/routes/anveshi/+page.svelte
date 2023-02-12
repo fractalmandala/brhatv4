@@ -40,15 +40,15 @@ export async function allChapters() {
 }
 </script>
 
-<div class="w-box" data-scroll-section>
+<div class="w-box">
 <div class="imagecontainer-hero"></div>
 <div class="primecontainer-col">
-		<div class="typeh4" data-scroll data-scroll-speed="3">
+		<div class="typeh4">
 			B<span class="isred">ṛ</span>hat Anveṣī is a travel program to contemporize ancient Indian tradition by guiding travel groups through hitherto rarely explored sacred kṣetras of India.
 		</div>
 </div>
 <div class="headbox">
-<h1 data-scroll data-scroll-direction="horizontal" data-scroll-speed="3">Chapters</h1>
+<h1>Chapters</h1>
 </div>
 <div class="c-c-c-c a1">
 	{#await allChapters()}
@@ -56,7 +56,7 @@ export async function allChapters() {
 		{:then data}
 		<div class="r-r-r-r a1a">
 			{#each data as item}
-			<div class="c-c-c-c a1col" data-scroll>
+			<div class="c-c-c-c a1col">
 				<img class="rd4" src={item.image} alt={item.name}>
 				<h5 class="px1"><a href={item.link}>{item.name}</a></h5>
 				<p class="px1">{item.content.slice(0,250)}<a class="isred" href={item.link}>...Read More</a></p>
@@ -94,9 +94,9 @@ export async function allChapters() {
 <div class="padding c-c-c-c"></div>
 </div>
 	{#if isFull}
-		<div class="c-c-c-c whois" data-scroll-section>
+		<div class="c-c-c-c whois">
 			<button class="plain" on:click={toggleFull} on:keydown={toggleFull}>Close</button>
-			<p data-scroll>
+			<p>
 				A human being is born to search: for truth; for beauty; for meaning in life. Kaśmīra Śaiva darśana tells us that, vimarṣa – Śiva reflecting upon himself – is one of the highest goals of existence itself. According to another school of thought, Nature nudged evolution to a point where a species would emerge capable of reflecting upon itself and the mysteries of the cosmos, life and existence.
 			
 			Without getting deep into darśana, the point is that, humans are born to search, born for anveṣaṇa. The word anveṣaṇa means discovering, seeking, or searching, and the one who searches is called – anveṣī – the discoverer. This element of discovery has mainly two dimensions – inner and outer. And the two are connected. The favorite theme of literature is wanderlust/ fernweh – the innate urge of humans to go out and discover the world.

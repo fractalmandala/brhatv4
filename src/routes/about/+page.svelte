@@ -47,21 +47,21 @@ const { data, error } = await supabase
 }
 </script>
 
-<div class="loco" data-scroll-section>
+<div class="loco">
 <div class="col-full img-fix"></div>
 <div class="col-full pad4 l1">
-	<h1 class="bigger1" data-textify>Bṛhat is a</h1>
-	<h1 class="smaller1 isred" data-textify>
+	<h1 class="bigger1">Bṛhat is a</h1>
+	<h1 class="smaller1 isred">
 	Culture Engine</h1>
-	<h3 data-textify>
+	<h3>
 		To power creatives, research and design rooted
 		in the Indian civilizational consciousness. We convert individual, institutional 
 		and collective intent into action, across 3 dimensions:
 	</h3>
 	<div class="r-r-c-c l2">
 		<div class="c-c-c-c l2row1">
-			<h5 data-textify>Create</h5>
-			<p data-textify>
+			<h5>Create</h5>
+			<p>
 				- visual and literary stories;
 				- design thinking and methods;
 				- research output on education and ecology;
@@ -69,8 +69,8 @@ const { data, error } = await supabase
 			</p>
 		</div>
 		<div class="c-c-c-c l2row2">
-			<h5 data-textify>Curate</h5>
-			<p data-textify>
+			<h5>Curate</h5>
+			<p>
 				- heritage experience journeys;
 				- culture-fit in mass media;
 				- NEP-relevant IKS curriculum;
@@ -78,18 +78,18 @@ const { data, error } = await supabase
 			</p>
 		</div>
 		<div class="c-c-c-c l2row3">
-			<h5 data-textify>Consult</h5>
-			<p data-textify>
+			<h5>Consult</h5>
+			<p>
 			- NEP-IKS implementation;
 			- policy thinking on education and ecology;
 			- organizational structure and leadership frameworks
 			</p>			
 		</div>
 	</div>
-	<h3 class="reducer" data-textify>
+	<h3 class="reducer">
 		An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment.
 	</h3>
-	<h3 class="reducer" data-textify>
+	<h3 class="reducer">
 		How does one go about doing that? At Bṛhat, we're acutely aware of three constraints:
 	</h3>
 	<div class="r-r-c-c l3">
@@ -118,30 +118,30 @@ const { data, error } = await supabase
 			</p>
 		</div>
 	</div>
-	<h3 class="cushion" data-textify data-scroll>
+	<h3 class="cushion">
 		But the severest constraint of them all is Time, and more specifically – Moment.
 	</h3>
-	<p class="cushion smallp" data-textify data-scroll>
+	<p class="cushion smallp">
 		The time for a Culture Engine is now, because we are in the midst of a civilizational moment. What is a civilizational moment? How rare or regular are such moments? How must we respond to them?
 		Read more on the need we see, why we think this is the time to address it, and about our self-identity:
 	</p>
 </div>
 <div class="row-full l4 pad4">
-	<h3 data-textify>
+	<h3>
 		<a href="/about/docs/svatahsiddha">
 		Svataḥsiddha
 		</a>
 	</h3>
-	<h3 data-textify>
+	<h3>
 		<a href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a>
 	</h3>
-	<h3 data-textify>
+	<h3>
 		<a href="/about/docs/whatkrishnameanstous">What Śrī Kṛṣṇa Means to Us</a>
 	</h3>
-	<h3 data-textify>
+	<h3>
 		<a href="/about/docs/namelogo">Nāmarūpa - our Name and Logo</a>
 	</h3>
-	<h3 data-textify>
+	<h3>
 		<a href="/about/docs/values">Pratijñā - Values We Hold Dear</a>
 	</h3>
 </div>
@@ -154,8 +154,8 @@ const { data, error } = await supabase
 		{#each data as item}
 		<div class="c-c-c-c col-type50">
 			<img src={item.image} alt={item.name} />
-			<h5 data-textify>{item.name}</h5>
-			<p data-textify>{item.title}</p>
+			<h5>{item.name}</h5>
+			<p>{item.title}</p>
 		</div>
 		{/each}
 	</div>
@@ -188,9 +188,9 @@ const { data, error } = await supabase
 			{#each data as item}
 		<div class="c-c-c-c simplex-card team-box">
 			<img src={item.image} alt={item.name} />
-			<h5 data-textify>{item.name}</h5>
-			<small data-textify>{item.title}</small>
-			<p data-textify>{item.bio}</p>
+			<h5>{item.name}</h5>
+			<small>{item.title}</small>
+			<p>{item.bio}</p>
 		</div>
 		{/each}
 	</div>

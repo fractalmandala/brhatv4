@@ -2,7 +2,7 @@
 import Selection from '$lib/components/books/Selection.svelte'
 </script>
 
-<div class="black-beauty" data-scroll-section>
+<div class="black-beauty">
 	<Selection></Selection>
 </div>
 

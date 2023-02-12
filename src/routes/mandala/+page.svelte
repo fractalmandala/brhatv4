@@ -1,10 +1,5 @@
 <script lang="ts">
 import supabase from '$lib/db'
-import { fly } from 'svelte/transition'
-import { circOut } from 'svelte/easing'
-
-let scroll: any
-let speed = 40
 
 let isEss1 = false
 let isEss2 = false
@@ -55,20 +50,20 @@ export async function getAphorisms(): Promise<any[]> {
 </script>
 
 
-<div data-scroll-section>
+<div>
 	<div class="c-c-c-c pad4 l1">
-		<h5 class="onlyone" data-textify>
+		<h5 class="onlyone">
 		To be a history in the true sense of the word, a work must be a story of the people inhabiting a country.
 		</h5>
-		<h5 class="onlyone" data-textify id="onlyone">
+		<h5 class="onlyone" id="onlyone">
 		It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
 		</h5>
 	</div>
 	<div class="c-c-c-c pad4 l2">
-		<h3 data-scroll data-scroll-speed="1">
+		<h3>
 			Such a history of India is still to be written.
 		</h3>
-		<p class="grey" data-scroll>
+		<p class="grey">
 			Shri KM Munshi
 		</p>
 	</div>
@@ -88,13 +83,13 @@ export async function getAphorisms(): Promise<any[]> {
 			</h5>
 		</div>
 		<div class="colthree c-c-c-c group1">
-			<h2 data-textify data-scroll data-scroll-speed="3">Fractal</h2>
+			<h2>Fractal</h2>
 		</div>
 	</div>
 
 	<div class="r-r-r-r l4">
 		<div class="c-c-c-c colthree group1">
-			<h2 data-textify data-scroll data-scroll-speed="3">Maṇḍala</h2>
+			<h2>Maṇḍala</h2>
 		</div>
 		<div class="c-c-c-c colthree group3">
 			<p>
@@ -110,7 +105,7 @@ export async function getAphorisms(): Promise<any[]> {
 		<div class="c-c-c-c col-image group2"></div>
 	</div>
 	<div class="c-c-c-c l5">
-		<h3 data-scroll data-scroll-direction="horizontal" data-scroll-speed="-2">
+		<h3>
 			The Fractal Maṇḍala is a project to study the emergence and nature of <span class="green">Indian civilizational consciousness.</span>
 		</h3>
 	</div>
@@ -119,35 +114,35 @@ export async function getAphorisms(): Promise<any[]> {
 	<div class="r-r-r-r l8">
 		<div class="c-c-c-c l6">
 			<div class="r-r-r-r essbox1">
-				<h5 data-textify>On Indian Civilizational Consciousness</h5>
+				<h5>On Indian Civilizational Consciousness</h5>
 				<img src="/images/mandala/web4.webp" alt="web1" />
 			</div>
 			<div class="r-r-r-r essbox2">
-				<h5 data-textify>Fractal Maṇḍala - Meaning, Instances</h5>
+				<h5>Fractal Maṇḍala - Meaning, Instances</h5>
 				<img src="/images/mandala/web3.webp" alt="web1" />
 			</div>
 			<div class="r-r-r-r essbox3">
-				<h5 data-textify>Macrohistoric Case for Civilizational Primacy</h5>
+				<h5>Macrohistoric Case for Civilizational Primacy</h5>
 				<img src="/images/mandala/web2.webp" alt="web1" />
 			</div>
 			<div class="r-r-r-r essbox4">
-				<h5 data-textify>Caturasūtra - 4 Aphorisms for a True History</h5>
+				<h5>Caturasūtra - 4 Aphorisms for a True History</h5>
 				<img src="/images/mandala/web1.webp" alt="web1" />
 			</div>
 			<div class="r-r-r-r essbox5" data-scroll on:mouseenter={showEss5} on:mouseleave={showEss5}>
-				<h5 data-textify>Ratha as a Bīja</h5>
+				<h5>Ratha as a Bīja</h5>
 			</div>
 			<div class="r-r-r-r essbox6" data-scroll on:mouseenter={showEss6} on:mouseleave={showEss6}>
-				<h5 data-textify>Ancestors Outside of Time</h5>
+				<h5>Ancestors Outside of Time</h5>
 			</div>
 			<div class="r-r-r-r essbox7" data-scroll on:mouseenter={showEss7} on:mouseleave={showEss7}>
-				<h5 data-textify>History is Ontic, Itihāsa Ontologic</h5>
+				<h5>History is Ontic, Itihāsa Ontologic</h5>
 			</div>
 			<div class="r-r-r-r essbox8" data-scroll on:mouseenter={showEss8} on:mouseleave={showEss8}>
-				<h5 data-textify>Synaptic Reconnection</h5>
+				<h5>Synaptic Reconnection</h5>
 			</div>
 			<div class="r-r-r-r essbox9" data-scroll on:mouseenter={showEss9} on:mouseleave={showEss9}>
-				<h5 data-textify>Rāma's Journey, the Avatāra in You</h5>
+				<h5>Rāma's Journey, the Avatāra in You</h5>
 			</div>
 		</div>
 	</div>

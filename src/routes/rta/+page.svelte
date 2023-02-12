@@ -1,5 +1,4 @@
 <script lang="ts">
-import { slide } from 'svelte/transition'
 import '$lib/styles/anim-rid.css';
 
 

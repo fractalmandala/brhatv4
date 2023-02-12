@@ -6,13 +6,13 @@ import Four from '$lib/components/reuse/StandardTwo.svelte'
 import { reveal } from 'svelte-reveal';
 </script>
 
-<div class="black-beauty" data-scroll-section>
+<div class="black-beauty">
 	<div class="imagecontainer-hero"></div>
 	<StandardTwo
 	--thistime="white"
 	>
 		<img slot="col-left" src="/images/scrolls/anc1.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
-		<h5 data-textify slot="col-right" data-scroll> 
+		<h5 slot="col-right"> 
 				There is a place.
 				It lies outside of space and time as we know it,
 				but many of us have been there.
@@ -22,11 +22,11 @@ import { reveal } from 'svelte-reveal';
 	<Two
 		--thistime="white"
 		>
-		<h5 slot="col-left" data-scroll data-scroll-speed="-2">
+		<h5 slot="col-left">
 		Hive mind. Race memory. Blood bond.
 				We may call it many things, but we know it best when we see it,
 				and it feels warm and familiar…as if a memory we once lived.<br><br>
-						<span data-textify class="bigger5 orange">	Perhaps we did, is it not?</span>
+						<span class="bigger5 orange">	Perhaps we did, is it not?</span>
 		</h5>
 		<img slot="col-right" src="/images/scrolls/anc2.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
 	</Two>
@@ -35,7 +35,7 @@ import { reveal } from 'svelte-reveal';
 	--thistime="white"
 	>
 	<img slot="col-left" src="/images/scrolls/anc3.webp" alt="part3" use:reveal={{ transition: "slide" }}/>
-	<h5 slot="col-right" data-scroll data-textify>
+	<h5 slot="col-right">
 	For countless times before have you been here,
 			and a countless times I.
 	You there, in one incarnation you were a master of mantra.
@@ -46,7 +46,7 @@ import { reveal } from 'svelte-reveal';
 		<Four
 		--thistime="white"
 		>
-		<h5 slot="col-left" data-scroll>
+		<h5 slot="col-left">
 And you? A pioneer of tilled grain you were.
 			Your hard, seasoned hands fed a civilization.
 			Another among us was quite a daredevil,
@@ -58,15 +58,15 @@ And you? A pioneer of tilled grain you were.
 	
 
 <div class="c-c-c-c box5"> 
-	<h3 class="bigger3 orange" data-scroll data-textify>
+	<h3 class="bigger3 orange">
 		We can access this place,
 	</h3>
-	<h3 class="bigger3" data-scroll data-textify>
+	<h3 class="bigger3">
 		outside of space and time though it lies.
 		In images and words, in sounds and vistas,
 		In streams of imagi/memory that can flow through us…
 	</h3>
-	<h5 class="cutter thin" data-textify data-scroll>
+	<h5 class="cutter thin">
 		The Scrolls of Āryavarta is a project to celebrate, express and engage in this shared lore- the dhārmika lore.
 		A calling to all who dream of the Bhārata that once was, or Bhāratas that could have been.
 	</h5>

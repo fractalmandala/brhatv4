@@ -1,24 +1,13 @@
 <script lang="ts">
 // @ts-nocheck
-import { onMount } from 'svelte'
 import Footer from '$lib/components/globals/FooterGlobal.svelte'
 import HeadGeneral from '$lib/components/globals/Header2023.svelte'
-import Animations from "textify.js";
 import '$lib/styles/reader.sass'
 import '$lib/styles/textify.css'
 import '$lib/styles/globaltemplate.sass'
-const { Textify } = Animations;
 
-onMount(() => {
-	const maint = new Textify({
-		duration: 700,
-		reveal: true,
-		stagger: 40,
-		threshold: 0.2,
-		once: false,
-		easing: 'circOut',
-	})
-});
+
+
 
 </script>
 
