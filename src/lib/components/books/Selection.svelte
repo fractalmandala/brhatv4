@@ -1,4 +1,5 @@
 <script lang="ts">
+ import { onMount } from 'svelte';
 import Essentials from '$lib/components/books/Essentials.svelte'
 import IKS from '$lib/components/books/IKS.svelte'
 import Bodhas from '$lib/components/books/Bodhas.svelte'
@@ -8,10 +9,16 @@ import Aryan from '$lib/components/books/Aryan.svelte'
 
 let activeDivId = 'element-7';
   
-function toggleWid(e: {currentTarget: {id: any;};}) {
-  const currentDivId = e.currentTarget.id;
-  activeDivId = activeDivId === currentDivId ? '' : currentDivId;
-}
+  function toggleWid(e) {
+    if (activeDivId === e.currentTarget.id) {
+      return;
+    }
+    activeDivId = e.currentTarget.id;
+  }
+
+  onMount(() => {
+    document.getElementById(activeDivId).focus();
+  });
 
 </script>
 
@@ -54,8 +61,8 @@ function toggleWid(e: {currentTarget: {id: any;};}) {
 		</div>
 	</div>
 	<div id="element-7" class="element {activeDivId === 'element-7' ? 'active' : ''}" on:click={toggleWid} on:keydown={toggleWid}>
+		<h5>{activeDivId === 'element-7' ? 'Bṛhat Open Library is an Online Repository for Texts, Papers, Learning Material and More.' : 'Main'}</h5>
 		<div class="c-c-c-c">
-			<h5>Bṛhat Open Library is an Online Repository for Texts, Papers, Learning Material and More.</h5>
 			<p>It is a tribute to the hard labor of people known and unknown that have created for us an unbelievable repository of Indian knowledge. Read more on our sources and credits here.</p>
 		</div>
 	</div>
@@ -86,15 +93,22 @@ function toggleWid(e: {currentTarget: {id: any;};}) {
 	height: 100%;
 }
 
+
 .element h5 {
 	writing-mode: vertical-rl;
 	transform: rotate(180deg);
 	margin-left: 10px;
 	font-size: 16px;
-	color: #676767;
 	font-weight: 500;
+	color: #474747;
 	text-transform: uppercase;
+	cursor: pointer;
 }
+
+.element:hover { background: #272727;}
+.element.active:hover { background: white;}
+.element:hover h5 { color: white;}
+.element h5:hover { color: #fe4a49;}
 
 .element p, .element.active p { font-size: 24px;color: #474747; margin-top: 0; margin-bottom: 48px;}
 
@@ -109,8 +123,9 @@ function toggleWid(e: {currentTarget: {id: any;};}) {
 	font-size: 40px;
 	width: 70%;
 	font-weight: 500;
+	cursor: pointer;
 }
-#element-7 h5 {color: #272727; text-transform: capitalize; width: 100%; margin-left: 0;}
+.element.active#element-7 h5 { text-transform: capitalize; font-size: 56px; width: 80%; color: #272727; font-weight: 600;}
 #element-7 p { font-size: 18px;}
 
 .aa {
