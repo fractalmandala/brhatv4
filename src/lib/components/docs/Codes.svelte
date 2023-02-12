@@ -18,9 +18,7 @@ export const postgrePosts = async () => {
     })
   )
 
-  const filteredDocs = allDocs.filter((doc) => doc.meta.category === "documentation")
-
-  return filteredDocs
+  return allDocs
 }
 </script>
 
@@ -33,6 +31,7 @@ export const postgrePosts = async () => {
 			<p
 				transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"
 			><a href={doc.path}>{doc.meta.title}</a></p>
+			<small>{doc.meta.tag}</small>
 			</div>
 		{/each}
 		{/await}
@@ -45,6 +44,6 @@ p { font-size: 1.12em;}
 
 @media screen and (min-width: 768px) {
 	.content { width: 100%; margin-bottom: 16px;}
-	.c-c-c-c { flex-wrap: wrap; width: 100%; display: flex; justify-content: space-between; flex-direction: row; padding-top: 16px;}
+	.c-c-c-c { flex-wrap: wrap; width: 100%; display: flex; flex-direction: row; padding-top: 16px;}
 }
 </style>

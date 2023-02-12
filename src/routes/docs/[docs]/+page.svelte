@@ -5,9 +5,9 @@ export let data;
 </script>
 
 
-<h4>{data.title}</h4>
-<small class="metatags"><a href="/docs/category/{data.category}">{data.category}  </a><span> </span><span>    | </span><a class="black" href="/docs">docs home</a></small>
-<cite class="category"><a href="/docs/tag/{data.tag}">{data.tag}</a></cite>
+<h5>{data.title}</h5>
+<small><a class="black" href="/docs">HOME</a></small>
+<cite class="category green">{data.tag}</cite>
 <div class="line"></div>
 <div class="sheet">
 	<svelte:component this={data.content} />
@@ -15,17 +15,10 @@ export let data;
 	
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+* { color: #272727;}
+
 .black { color: #878787;}
-h4 { 
-padding-bottom: 0.4rem; 
-font-size: 2.4rem;
-font-weight: 600;
-text-align: left;
-margin-bottom: 0;
-color: var(--green);
-margin-top: 1rem;
-}
+h5 { text-transform: capitalize;}
 
 .line { width: 60%; height: 1px; background-color: var(--grey); margin-top: 1rem;}
 
@@ -35,7 +28,10 @@ margin-top: 1rem;
 	display: flex;
 	flex-direction: column;
 	padding: 0 6rem 0 2rem;
+	color: #272727;
 }
+
+.sheet, .sheet h5, .sheet p { color: #272727 !important;}
 
 .category, .metatags {
 	text-align: left;
@@ -49,9 +45,7 @@ text-align: right;
 	text-transform: uppercase;
 	font-weight: 600;
 	font-family: 'JetBrains Mono', monospace;
-color: var(--glight); 
 width: 100%;	
-margin-top: 8px;
 }
 
 small a {

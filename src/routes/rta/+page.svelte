@@ -6,7 +6,7 @@ import '$lib/styles/anim-rid.css';
 </script>
 
 
-<div class="black-beauty" data-scroll-section>
+<div class="black-beauty">
 	<div class="col-full centy-col endx-col pad4" id="isfirst">
 		<div class="col-gen wid50 child-on-left">
 			<svg width="696" height="136" viewBox="0 0 696 136" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,51 +40,51 @@ import '$lib/styles/anim-rid.css';
 	</div>
 
 	<div class="col-full centy-col pad4 l0">
-		<div class="col-gen wid50 child-on-right pad8r" data-scroll data-scroll-speed="1">
-			<p data-textify>
+		<div class="col-gen wid50 child-on-right pad8r">
+			<p>
 				From user flows to adoption curves, learning paths to zoning regulations, we live in a world of Design.
 			</p>
-			<p data-textify>
+			<p>
 				But human creation is breaking the planet, and bringing the ruin of life and species. Introspection and a radical recalibration are our only chance of reversing the situation.
 			</p>
-			<p class="quote" data-scroll data-textify data-scroll-speed="-1">
+			<p class="quote">
 				“We are approaching the power of gods, without the wisdom of gods.”
 			</p>
 		</div>
 	</div>
 
 	<div class="col-full centy-col pad4 l0">
-		<div class="col-gen wid50 child-on-right pad8r" data-scroll data-scroll-speed="1">
-			<h5 data-textify>Design is what gives agency to the natural and continuous phenomenon of creativity.</h5>
-			<p data-textify>
+		<div class="col-gen wid50 child-on-right pad8r">
+			<h5>Design is what gives agency to the natural and continuous phenomenon of creativity.</h5>
+			<p>
 				It is how we can give an order to things. And the best design to emerge is one filtered through our collective iteration, over deep time. Of course, modern design isn’t the first to comprehend the emergent mesh of iteration, creativity, intelligence and adaptation.
 			</p>
-			<p data-textify>
+			<p>
 				It was well-known in ancient Bhārata as well. Which is why its very word for our design, for culture, was saṃskṛti - our well-put-together creation. How do we know their saṃskṛti was the output of iterative creativity? That it was what adapted and what worked over the long haul of time?
 			</p>
-			<h5 data-textify class="green">
+			<h5 class="green">
 				We know through their other name for their culture. They literally referred to it as that which has been practice, what’s worked, what bears ahead. They called it Dharma.
 			</h5>
 		</div>
 	</div>
 
 	<div class="col-gen onewhosticks pad4" id="stickybox">
-		<h1 class="claim" data-scroll data-scroll-speed="10" data-scroll-direction="horizontal">
+		<h1 class="claim">
 			Ṛta in Design is a system for modern design thinking and creatorship, informed by the design principles of Dharma.
 		</h1>
 	</div>
 
 	<div class="all-row pad4" id="panelsacco">
-		<div data-scroll data-scroll-speed="1" class="col-gen panel1">
+		<div class="col-gen panel1">
 			<p>Introduction to Ṛta in Design</p>
 		</div>
-		<div data-scroll data-scroll-speed="-1" class="col-gen panel2">
+		<div class="col-gen panel2">
 			<p>Design vs. Art</p>
 		</div>
-		<div data-scroll data-scroll-speed="1" class="col-gen panel3">
+		<div class="col-gen panel3">
 			<p>Dharma is Design</p>
 		</div>
-		<div data-scroll data-scroll-speed="-1" class="col-gen panel4">
+		<div class="col-gen panel4">
 			<p>Framework</p>
 		</div>
 	</div>

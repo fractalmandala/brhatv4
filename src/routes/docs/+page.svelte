@@ -1,8 +1,9 @@
-<script>
-import Documentation from '$lib/components/docs/Documentation.svelte'
+<script lang="ts">
+import AllDocs from '$lib/components/docs/AllDocs.svelte'
 </script>
 
-<div class="c-c-c-c">
-	<Documentation></Documentation>
-</div>
+<AllDocs></AllDocs>
 
+<style>
+* { color: #272727;}
+</style>

@@ -9,7 +9,7 @@ import Aryan from '$lib/components/books/Aryan.svelte'
 
 let activeDivId = 'element-7';
   
-  function toggleWid(e) {
+  function toggleWid(e: {currentTarget: {id: string;};}) {
     if (activeDivId === e.currentTarget.id) {
       return;
     }

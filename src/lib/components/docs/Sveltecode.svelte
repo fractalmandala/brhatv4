@@ -17,8 +17,8 @@ export const postgrePosts = async () => {
       }
     })
   )
-
-  const filteredDocs = allDocs.filter((doc) => doc.meta.category === "documentation")
+	
+	const filteredDocs = allDocs.filter((doc) => doc.meta.tag === "sveltecode")
 
   return filteredDocs
 }
@@ -29,11 +29,7 @@ export const postgrePosts = async () => {
 		<small>...</small>
 		{:then data}
 		{#each data as doc}
-			<div class="content">
-			<p
-				transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"
-			><a href={doc.path}>{doc.meta.title}</a></p>
-			</div>
+		<small><a href={doc.path}>{doc.meta.title}</a></small>
 		{/each}
 		{/await}
 </div>
@@ -41,10 +37,9 @@ export const postgrePosts = async () => {
 <style>
 p, small { margin: 0; text-transform: capitalize;}
 a { color: #272727;}
-p { font-size: 1.12em;}
+.c-c-c-c p, .c-c-c-c a { font-size: 1.12em; margin-top: 0; margin-bottom: 0;}
 
 @media screen and (min-width: 768px) {
-	.content { width: 100%; margin-bottom: 16px;}
-	.c-c-c-c { flex-wrap: wrap; width: 100%; display: flex; justify-content: space-between; flex-direction: row; padding-top: 16px;}
+	.c-c-c-c { flex-wrap: wrap; width: 100%; display: flex; flex-direction: row; padding-top: 16px;}
 }
 </style>
