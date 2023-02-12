@@ -192,14 +192,21 @@
 	display: flex
 	transition: all 0.53s cubic-bezier(0.875, 0.145, 0.555, 0.905)
 	position: relative
+	&:hover
+		.gencol
+			width: 0%	
+			visibility: hidden
+			&:hover
+				visibility: visible
+				width: 100% !important
 
 .gencol
 	display: flex
 	flex-direction: column
 	position: relative
-	justify-content: flex-end
+	justify-content: center
 	transform-origin: center center
-	align-items: center
+	align-items: flex-start
 	transition: all 0.53s cubic-bezier(0.875, 0.145, 0.555, 0.905)
 	&::after 
 		position: absolute
@@ -208,7 +215,7 @@
 		width: 100%
 		height: 100%
 		content: ''
-		background: rgba(0,0,0,0.1)
+		background: rgba(0,0,0,0.7)
 	&:hover
 		&::after 
 			animation: lightenup 0.53s ease-in-out forwards
@@ -238,11 +245,11 @@
 
 @keyframes lightenup 
 	0%
-		background: rgba(0,0,0,0.1) 
+		background: rgba(0,0,0,0.8) 
 	75%
 		background: rgba(0,0,0,0.4)
 	100%
-		background: rgba(0,0,0,0.8)
+		background: rgba(0,0,0,0.1)
 
 #col1, #col2, #col3, .genrow 
 	background-position: center center
@@ -268,26 +275,20 @@
 
 	.genrow
 		flex-direction: row
-		width: 100vw
-		height: 100vh
+		width: 100%
+		height: 100%
 		justify-content: center
-		gap: 48px
 		align-items: flex-end
-		padding-bottom: 40px
-		padding-left: 4vw
-		padding-right: 4vw
-
+		gap: 32px
 
 	.gencol
-		width: 30%
+		width: 33%
 		height: 100%
-
+		padding-left: 4vw
 
 	.genrow
 		&:hover
 			padding-bottom: 0
-
-
 		button
 			font-size: 24px 
 			margin-bottom: 64px

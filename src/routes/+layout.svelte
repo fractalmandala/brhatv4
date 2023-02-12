@@ -14,10 +14,7 @@ import '$lib/styles/globaltemplate.sass'
 onMount(() => {
 	const { Textify } = Animations;
 	new Textify()
-	if (typeof window !== 'undefined') {
-		scrollInstance.on('scroll', (/** @type {any} */ obj) => {
-		});
-	}
+
 });
 
 </script>
@@ -25,12 +22,12 @@ onMount(() => {
 <LocomotiveScrollProvider
 	options={{
 		smooth: true,
-		smoothMobile: true,
 		repeat: true,
-		lerp: 0.1,
-		reloadOnContextChange: true,
-		multiplier: 0.5,
-		inertia: 0.7
+		reloadOnContextChange: false,
+		scrollFromAnywhere: true,
+		multiplier: 1,
+		inertia: 0.1,
+		lerp: 0.1
 	}}
 	watch={$page}
 	location={$page.url}
@@ -41,6 +38,7 @@ onMount(() => {
 <slot></slot>
 <Footer></Footer>
 </LocomotiveScrollProvider>
+
 
 
 

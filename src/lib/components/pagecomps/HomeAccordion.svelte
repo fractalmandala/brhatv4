@@ -1,40 +1,24 @@
-<script lang="ts">
-const parent = document.querySelector('.genrow') as HTMLElement;
-
-function thewall() {
-  parent.style.backgroundImage = 'url(/images/corpimages/creative-culture-1024-1.webp)';
-}
-
-</script>
-
 <div class="genrow">
  <div class="gencol col1" id="col1">
-   <button><a href="/about/areas/culturecreatives">Culture Creatives</a></button>
+   <h3 class="bigger3"><a href="/about/areas/culturecreatives">Culture Creatives</a></h3>
  </div>
  <div class="gencol col2" id="col2">
-   <button><a href="/about/areas/policyresearch">Policy Research</a></button>
+   <h3 class="bigger3"><a href="/about/areas/policyresearch">Policy Research</a></h3>
  </div>
  <div class="gencol col3" id="col3">
-   <button class="trans-red"><a href="/about/areas/leadershipdevelopment">Leadership Development</a></button>
+   <h3 class="bigger3"><a href="/about/areas/leadershipdevelopment">Leadership Development</a></h3>
  </div>
 </div>
 
 <style>
-.genrow {
-	position: relative;
+h3 { color: white; opacity: 0; transition: opacity 2s ease;}
+a {color: white;}
+a:hover { color: #fe4a49;}
+
+
+.gencol:hover h3 {
+	opacity: 1;
+	color: white;
 }
 
-.genrow:hover .gencol:hover {
-	position: absolute;
-	display: flex;
-	top: 0;
-	bottom: 0;
-	width: 100%;
-	height: 100vh;
-	z-index: 500;
-}
-
-.genrow:hover .gencol {
-	display: none;
-}
 </style>

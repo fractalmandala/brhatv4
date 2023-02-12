@@ -1,10 +1,11 @@
 <script lang="ts">
 import supabase from '$lib/db'
 import Animations from "textify.js";
+import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte'
+import StaticH1 from '$lib/components/headers/StaticH1.svelte'
 import { onMount } from 'svelte'
 import '$lib/styles/textify.css'
-import MainH1 from '$lib/components/headers/StaticH1.svelte'
-import Dhiti from '$lib/components/headers/MainH1.svelte'
+import Dhiti from '$lib/components/headers/StaticH1.svelte'
 
 async function Videos() {
   const { data, error } = await supabase
@@ -16,6 +17,15 @@ async function Videos() {
   return data
 }
 
+async function dhiti() {
+  const { data, error } = await supabase
+  .from('brhat-dhiti')
+  .select()
+  .order('id',{ascending: false})
+  .limit(6)
+  if (error) throw new Error(error.message)
+  return data
+}
 
 onMount(() => {
 	const { Textify } = Animations;
@@ -28,8 +38,10 @@ onMount(() => {
 })
 </script>
 
-<div data-scroll-section>
-	<div class="c-c-c-c pad4 l1">
+	<div class="c-c-c-c pad4 l0" data-scroll-section>
+		<Accordion></Accordion>
+	</div>
+	<div class="c-c-c-c pad4 l1" data-scroll-section>
 		<h1 class="bigger1" data-textify>Bṛhat is a</h1>
 		<h1 class="smaller1 isred" data-textify>
 			Culture Engine</h1>
@@ -67,8 +79,9 @@ onMount(() => {
 			</div>
 		</div>
 	</div>
-	<div class="c-c-c-c l2">
-		<MainH1>Latest Events</MainH1>
+	<StaticH1>
+		<div slot="header">Latest Events</div>
+		<div slot="body">
 		{#await Videos()}
 		<small>...</small>
 		{:then data}
@@ -88,30 +101,52 @@ onMount(() => {
 		{:catch error}
 		<pre>{error}</pre>
 		{/await}
-	</div>
-	<div class="c-c-c-c l4">
-		<Dhiti>On Dhīti, our Blog</Dhiti>
-		<div class="r-r-r-r pad4 l5" data-scroll-section></div>
-	</div>
-</div>
-
-
-
+		</div>
+	</StaticH1>
+	<Dhiti>
+		<div slot="header">Essays on Dhīti</div>
+		<div slot="body">
+			{#await dhiti()}
+			<small>...</small>
+			{:then data}
+			<div class="r-r-r-r pad4 l5">
+				{#each data as item}
+				<div class="c-c-c-c dhitibox">
+					<img src={item.image} alt={item.title} />
+					<h5><a href={item.link}>{item.title}</a></h5>
+					<p>{item.excerpt.slice(0,200)}</p>
+				</div>
+				{/each}
+			</div>
+			{:catch error}
+			<pre>{error}</pre>
+			{/await}
+		</div>
+	</Dhiti>
 <style>
-
-
+.l0, .l1, .l2, .l3, .l5 { background: white;}
+.dhitibox img { object-fit: cover; width: 100%;}
 .l2 .c-c-c-c { border-top: 1px solid #474747;}
 p { color: #474747;}
+.l1, .l2, .l3 { background: white;}
 
 @media screen and (min-width: 900px) {
+	.l0 { height: 100vh; padding-top: 88px; padding-bottom: 32px; justify-content: flex-end;}
 	.l1 { height: 100vh; justify-content: center;}
-	.l2 { gap: 32px; padding-bottom: 2em; margin-top: 3em; margin-bottom: 64px; }
+	.l2 { gap: 32px; padding-bottom: 4em; padding-top: 3em; }
 	.l2 h5 { padding-top: 12px;}
 	.smaller1 { font-size: 96px; line-height: 1.2em; font-weight: 500;}	
 	.bigger1 { font-size: 96px; margin-bottom: 0; font-weight: 500;}
-	.l1 { padding-top: 63px;}
-	.l3, .l5 { height: 80vh; flex-wrap: wrap; gap: 48px; align-items: center;}
+	.l1 { padding-top: 64px;}
+	.l3 { height: 100%; flex-wrap: wrap; gap: 32px; align-items: center;}
 	.vidbox { height: 240px; width: 30%;}
+	.dhitibox { width: calc(33% - 48px);}
+	.l5 { gap: 32px; flex-wrap: wrap;}
+	.dhitibox h5 { margin-top: 12px; margin-bottom: 8px; font-size: 20px;}
+	.dhitibox h5 a { color: #272727;}
+	.dhitibox a:hover { color: #fe4a49;}
+	.dhitibox p { font-size: 14px;}
+	.dhitibox img { height: 160px;}
 
 }
 
