@@ -1,6 +1,5 @@
 <script lang="ts">
 import supabase from '$lib/db'
-
 import { fade } from 'svelte/transition';
 import { fly } from 'svelte/transition'
 import { circOut } from 'svelte/easing'
@@ -14,9 +13,6 @@ function hideMenu() {
 	isMenu = false;
 }
 
-function toggleMenu() {
-	isMenu = !isMenu
-}
 
 export async function latestDhiti(){
 	const { data, error } = await supabase
@@ -51,7 +47,7 @@ export async function latestBol(){
        /></a>
      </div>
   </div>
-	<div class="mobilemenu" on:click={toggleMenu} on:keydown={toggleMenu}>
+	<div class="mobilemenu" on:click={showMenu} on:keydown={showMenu}>
 		<img class="menu-red" src="/images/icons/icon-menu-r.png" alt="menuicon"/>
 		<img class="menu-white" src="/images/icons/icon-menu-w.png" alt="menuicon"/>	
 	</div>
@@ -60,7 +56,7 @@ export async function latestBol(){
 		in:fly="{{ delay: 0, duration: 300, x: 0, y:-700, opacity: 1, easing: circIn}}"
 		out:fly="{{ delay: 0, duration: 300, x: 0, y: -700, opacity: 1, easing: circIn}}">
 		<div class="innerheading">
-			<div class="closebuttonstrip" on:click={toggleMenu} on:keydown={toggleMenu}>
+			<div class="closebuttonstrip" on:click={hideMenu} on:keydown={hideMenu}>
 				<img src="/images/icons/hamburger-close.png" alt="closemenu"/>
 			</div>
 		</div>

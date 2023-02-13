@@ -50,18 +50,18 @@ const { data, error } = await supabase
 <div class="loco">
 <div class="col-full img-fix"></div>
 <div class="col-full pad4 l1">
-	<h1 class="bigger1">Bṛhat is a</h1>
-	<h1 class="smaller1 isred">
+	<h1 class="bigger1" data-textify>Bṛhat is a</h1>
+	<h1 class="smaller1 isred" data-textify-title>
 	Culture Engine</h1>
-	<h3>
+	<h3 data-textify>
 		To power creatives, research and design rooted
 		in the Indian civilizational consciousness. We convert individual, institutional 
 		and collective intent into action, across 3 dimensions:
 	</h3>
 	<div class="r-r-c-c l2">
 		<div class="c-c-c-c l2row1">
-			<h5>Create</h5>
-			<p>
+			<h5 data-textify-title>Create</h5>
+			<p data-textify>
 				- visual and literary stories;
 				- design thinking and methods;
 				- research output on education and ecology;
@@ -69,8 +69,8 @@ const { data, error } = await supabase
 			</p>
 		</div>
 		<div class="c-c-c-c l2row2">
-			<h5>Curate</h5>
-			<p>
+			<h5 data-textify-title>Curate</h5>
+			<p data-textify>
 				- heritage experience journeys;
 				- culture-fit in mass media;
 				- NEP-relevant IKS curriculum;
@@ -78,8 +78,8 @@ const { data, error } = await supabase
 			</p>
 		</div>
 		<div class="c-c-c-c l2row3">
-			<h5>Consult</h5>
-			<p>
+			<h5 data-textify-title>Consult</h5>
+			<p data-textify>
 			- NEP-IKS implementation;
 			- policy thinking on education and ecology;
 			- organizational structure and leadership frameworks
@@ -118,10 +118,10 @@ const { data, error } = await supabase
 			</p>
 		</div>
 	</div>
-	<h3 class="cushion">
+	<h4 class="reducer">
 		But the severest constraint of them all is Time, and more specifically – Moment.
-	</h3>
-	<p class="cushion smallp">
+	</h4>
+	<p class="cushion red smallp">
 		The time for a Culture Engine is now, because we are in the midst of a civilizational moment. What is a civilizational moment? How rare or regular are such moments? How must we respond to them?
 		Read more on the need we see, why we think this is the time to address it, and about our self-identity:
 	</p>
@@ -206,6 +206,7 @@ const { data, error } = await supabase
 .img-fix { z-index: 0;}
 h3 { color: #474747;}
 p { color: #878787;}
+.red { color: #fe4a49;}
 .loco { position: relative;}
 .col-full {
 	background-image: url('/images/herocovers/about-parambika.png');
@@ -251,20 +252,20 @@ p { color: #878787;}
 
 
 @media screen and (min-width: 768px) {
-	.l2 { gap: 32px; padding-bottom: 2em; margin-top: 3em; margin-bottom: 64px; }
+	.l2 { gap: 48px; padding-bottom: 2em; margin-top: 3em; margin-bottom: 64px; }
+	.l2 .c-c-c-c { width: calc(33% - 32px);}
 	.l2 h5, .l3 h5 { padding-top: 12px;}
-	.l3 { padding-bottom: 10em; gap: 2em; margin-top: 3em; background: white; z-index: 3;}
+	.l3 { padding-bottom: 10em; gap: 48px; margin-top: 3em; background: white; z-index: 3;}
+	.l3 .c-c-c-c { width: calc(33% - 32px);}
 	.l4 h3 {
 		font-size: 3.2em;
 	}
 	.l4 {
 		height: 100vh;
 	}
-
 	.cushion {
 		background: white;
 		z-index: 2;
-		padding: 8px 16px;
 	}
 
 	.cushion.smallp {

@@ -1,5 +1,6 @@
 <script lang="ts">
 import supabase from '$lib/db'
+import Header from '$lib/components/globals/Header2023.svelte'
 import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte'
 import StaticH1 from '$lib/components/headers/StaticH1.svelte'
 import Dhiti from '$lib/components/headers/StaticH1.svelte'
@@ -26,22 +27,23 @@ async function dhiti() {
 
 </script>
 
+<Header></Header>
 	<div class="c-c-c-c pad4 l0">
 		<Accordion></Accordion>
 	</div>
 	<div class="c-c-c-c pad4 lzz">
-		<h1 class="bigger1">Bṛhat is a</h1>
-		<h1 class="smaller1 isred">
+		<h1 class="bigger1" data-textify>Bṛhat is a</h1>
+		<h1 class="smaller1 isred" data-textify-title>
 		Culture Engine</h1>
-		<h3>
+		<h3 data-textify>
 			To power creatives, research and design rooted
 			in the Indian civilizational consciousness. We convert individual, institutional 
 			and collective intent into action, across 3 dimensions:
 		</h3>
 		<div class="r-r-c-c l2">
 			<div class="c-c-c-c l2row1">
-				<h5>Create</h5>
-				<p>
+				<h5 data-textify-title>Create</h5>
+				<p data-textify>
 				- visual and literary stories;
 				- design thinking and methods;
 				- research output on education and ecology;
@@ -49,8 +51,8 @@ async function dhiti() {
 				</p>
 			</div>
 			<div class="c-c-c-c l2row2">
-				<h5>Curate</h5>
-				<p>
+				<h5 data-textify-title>Curate</h5>
+				<p data-textify>
 				- heritage experience journeys;
 				- culture-fit in mass media;
 				- NEP-relevant IKS curriculum;
@@ -58,8 +60,8 @@ async function dhiti() {
 				</p>
 			</div>
 			<div class="c-c-c-c l2row3">
-				<h5>Consult</h5>
-					<p>
+				<h5 data-textify-title>Consult</h5>
+					<p data-textify>
 						- NEP-IKS implementation;
 						- policy thinking on education and ecology;
 						- organizational structure and leadership frameworks
