@@ -1,5 +1,6 @@
 <script>
 import ToTop from '$lib/components/globals/ToTop.svelte'
+import '$lib/styles/newglobals.sass'
 </script>
 
 <div class="footer">

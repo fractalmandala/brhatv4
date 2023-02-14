@@ -2,6 +2,7 @@
 import { reveal } from 'svelte-reveal'
 import { fly } from 'svelte/transition'
 import { quadIn } from 'svelte/easing'
+import '$lib/styles/newglobals.sass'
 let isMenu = false;
 let y = 1
 

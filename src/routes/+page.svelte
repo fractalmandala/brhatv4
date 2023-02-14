@@ -1,4 +1,5 @@
 <script lang="ts">
+import '$lib/styles/newglobals.sass'
 import supabase from '$lib/db'
 import { fly } from 'svelte/transition';
 import { quintOut, expoInOut } from 'svelte/easing';
