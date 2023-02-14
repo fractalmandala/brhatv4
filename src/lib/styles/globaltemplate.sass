@@ -1,18 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&display=swap')
 /*containers********************************************************* *****************************************/
 
 body, html
 	box-sizing: border-box
 	margin: 0
-	font-family: 'Inter Tight', sans-serif
 	color: #474747
 	scroll-behavior: smooth
 
 *, :root, div
 	box-sizing: border-box
 	--mygreen: linear-gradient(90deg, #10C56D -3.3%, #53D66C 95.75%)
-	--play: 'Playfair Display',serif
 	--cube1: cubic-bezier(0.995, 0.225, 0.750, 0.750)
 	--cube2: cubic-bezier(0.995, 0.225, 0.000, 0.965)
 	--cube3: cubic-bezier(0.320, 0.760, 0.875, 0.490)
@@ -21,8 +20,20 @@ body, html
 	--snap: all 0.18s cubic-bezier(0.925, 0.235, 1.000, -0.065)
 	--beau: linear-gradient(40deg,#272727,#1B2023)
 	--green: #62AC40
+	--rid: #10C56D
 	--blue: #255F85
 	--lightblue: #41EAD4
+	--ridor: #FC7753
+	--ridtwo: #136F63
+	--ridthree: #8F2D56
+	--test: rgba(16, 197, 109, 1)
+	--black: rgba(29, 29, 29, 1)
+
+.jet
+	h2, h3, h1
+		font-family: 'Frank Ruhl Libre',serif
+	h5, h6, p, pre, small, cite, h4
+		font-family: 'Mulish', sans-serif
 
 .lay
 	z-index: 5
@@ -36,6 +47,8 @@ body, html
 
 .w-box
 	background: white
+	display: flex
+	flex-direction: column
 
 .white
 	color: white
@@ -45,6 +58,9 @@ body, html
 
 .green
 	color: #62AC40
+
+.rid
+	color: #10C56D
 
 .red
 	color: #fe4a49
@@ -63,24 +79,19 @@ body, html
 .readmore
 	font-weight: bold
 
-p, h4, h3, h2, h1
-	margin-bottom: 16px
-	margin-top: 0
-	font-family: 'Inter Tight', sans-serif
-	color: #272727
+.int
+	p, h4, h3, h2, h1
+		margin-bottom: 16px
+		margin-top: 0
+		color: #272727
 
 small
 	margin-top: 0
-	font-family: 'Inter Tight', sans-serif
 	color: #272727
-
-h3
-	font-weight: 700
 
 h5
 	margin-bottom: 8px
 	margin-top: 12px
-	font-weight: 500
 	letter-spacing: 0px
 
 a
@@ -135,6 +146,14 @@ small
 .row-of-3
 	display: flex
 	flex-direction: row
+
+.row-of-2
+	display: flex
+	flex-direction: row
+
+.twobox
+	display: flex
+	flex-direction: column
 
 .fourbox
 	display: flex
@@ -218,6 +237,13 @@ small
 
 	.col-full
 		height: 100vh
+	
+	.row-of-2
+		height: 100%	
+		gap: 32px
+
+	.twobox
+		width: calc(50% - 16px)
 
 	.row-of-3
 		height: 100%
@@ -287,16 +313,50 @@ small
 
 	h5
 		font-size: 24px
+		font-weight: 500
 
 	.small5 h5
 		font-size: 20px
 
 	h4
 		font-size: 64px
+		font-weight: 600
 
 	h3
 		font-size: 32px
 		letter-spacing: -1px
+		font-weight: 600
+		cite
+			font-size: 16px
+			font-weight: 300
+			font-style: normal
+
+	.jet
+		h1
+			font-size: 104px
+			line-height: 1.1
+			font-weight: 800
+		h2
+			font-size: 72px
+			line-height: 1.1
+			margin-top: 8px
+		h3
+			line-height: 1.1
+			font-size: 40px
+			font-weight: 700
+			margin-bottom: 12px
+		h4
+			line-height: 1.1
+			font-size: 48px
+			margin-top: 8px
+			margin-bottom: 12px
+		p
+			font-size: 20px
+			margin-top: 2px
+		cite
+			letter-spacing: 0px
+			font-size: 16px
+			margin-top: 0
 
 	.cutter
 		width: 60%
@@ -333,10 +393,6 @@ small
 	small
 		font-size: 12px
 
-	.smallfair
-		font-size: 14px
-		font-family: 'Playfair Display',serif
-
 	.metatype1
 		color: var(--blue)
 		font-size: 14px
@@ -370,6 +426,10 @@ small
 
 	.col-full
 		height: 100vh
+
+	.row-of-2
+		gap: 32px !important
+		
 
 	.row-of-3
 		gap: 40px
@@ -425,6 +485,25 @@ small
 
 	h4
 		font-size: 64px
+
+	.jet
+		h1
+			font-size: 56px
+		h3
+			line-height: 1.1
+			font-size: 32px
+			margin-bottom: 12px
+		cite
+			font-size: 16px
+			font-style: normal
+			letter-spacing: 0px
+		h4
+			line-height: 1.1
+			font-size: 48px
+		p
+			font-size: 18px
+			margin-top: 4px
+			margin-bottom: 12px
 
 @media screen and (max-width: 767px) and (min-width: 576px)
 
@@ -497,6 +576,19 @@ small
 		font-size: 24px
 		letter-spacing: -0.5px
 
+	.jet
+		h1
+			font-size: 48px
+		h3
+			font-size: 30px
+			margin-bottom: 8px
+		cite
+			font-size: 16px
+			font-style: normal
+		p
+			font-size: 18px
+			margin-bottom: 8px
+
 @media screen and (max-width: 575px) 
 
 	.smaller1
@@ -526,6 +618,14 @@ small
 
 	.row-of-3
 		flex-wrap: wrap
+		
+
+	.row-of-2
+		flex-wrap: wrap
+		gap: 16px
+
+	.twobox
+		width: calc(50% - 16px)
 
 	.threebox
 		width: 100%
@@ -548,8 +648,8 @@ small
 		padding: 4px
 
 	.pad4
-		padding-right: 6vw
-		padding-left: 6vw
+		padding-right: 4vw
+		padding-left: 4vw
 
 	.col-type50
 		width: 100%
@@ -589,6 +689,30 @@ small
 
 	small
 		font-size: 16px !important
+
+	.jet
+		h1
+			font-size: 40px
+		h2
+			line-height: 1.1
+			font-weight: 700
+		h3
+			line-height: 1.1
+			font-size: 24px
+			font-weight: 500
+			letter-spacing: -1px
+			margin-bottom: 8px
+			cite
+				font-size: 16px
+				font-weight: 300
+				font-style: normal
+		h4
+			line-height: 1.1
+			font-size: 48px
+		p
+			font-size: 18px
+			margin-top: 4px
+			margin-bottom: 8px
 	
 	.simplex-card p 
 		font-size: 18px

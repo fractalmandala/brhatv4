@@ -301,7 +301,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 
 	#last-row
 		width: calc(100% - 2vw)
-		margin: 0 1vw
+		margin: 0
 		height: 4em
 		padding-top: 1em
 		small

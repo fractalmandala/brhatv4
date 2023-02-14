@@ -1,21 +1,36 @@
 <script lang="ts">
-	import { scale } from 'svelte/transition'
-	import { cubicOut } from 'svelte/easing'
-	import { inview } from 'svelte-inview'
-	let isInView: boolean
+export let left
+export let top
+	
+let moving = false;
+	
+	function onMouseDown() {
+		moving = true;
+	}
+
+	function onMouseMove(e) {
+		if (moving) {
+			left += e.movementX;
+			top += e.movementY;
+		}
+	}
+	
+	function onMouseUp() {
+		moving = false;
+	}
+	
+// 	$: console.log(moving);
 </script>
 
-<div
-	class="view-wrap"
-	use:inview={{ unobserveOnEnter: true, rootMargin: '0' }}
-	on:change={({ detail}) => {
-		isInView = detail.inView;
-	}}
->
-{#if isInView}
-	<div in:scale="{{duration: 400, opacity: 0, start: 0.2, easing: cubicOut}}" class="fadinger">
-		<slot></slot>
-	</div>
-{/if}
+<svelte:window on:mouseup={onMouseUp} on:mousemove={onMouseMove} />
+
+<div on:mousedown={onMouseDown} style="left: {left}px; top: {top}px;" class="draggable">
+	<slot></slot>
 </div>
 
+<style>
+	.draggable {
+		user-select: none;
+		cursor: move;
+	}
+</style>

@@ -435,18 +435,19 @@ function hideMenu() {
 }
 
 @media screen and (max-width: 575px) {
-	.headerbox, .header { height: 72px;}
+	.headerbox, .header { height: 80px;}
+	.header { margin-bottom: -80px;}
 	.headerbox { padding: 0 16px; justify-content: space-between;}
 	.logo { width: calc(100% - 80px); height: 100%; gap: 0;align-items: center; justify-content: flex-start;}
 	.motif { width: 52px; height: 52px;}
 	.logotype { width: 90px; height: 48px; margin-top: 12px; margin-left: -18px; }
-	.mobilemenu { width: 48px; height: 100%;}
+	.mobilemenu { width: 48px;}
 	.mobilemenu img { width: 48px; height: 48px;}
 	.menu-red { margin-bottom: -48px;}
 	.fullscreen { padding: 16px 4vw;}
 	.topstrip { justify-content: space-between; border-bottom: 1px solid #373737; align-items: center; margin-bottom: 32px;}
-	.socialicons { gap: 32px; width: 70%; padding-top: 32px;}
-	.closebuttonstrip { width: 20%;}
+	.socialicons { gap: 32px; width: 100%; padding-top: 32px; justify-content: flex-start;}
+	.closebuttonstrip { width: 20%; height: 48px;}
 	.closebuttonstrip img {
 		width: 32px;
 		height: 32px;
@@ -459,7 +460,7 @@ function hideMenu() {
 	.mob-nav p { margin: 8px 0 5px 0; font-size: 24px;}
 	.section { border-bottom: 1px solid #373737; padding-bottom: 16px; padding-top: 8px;}
 	.mob-nav h5 { font-size: 32px; text-transform: uppercase; font-weight: 700;}
-	.sec7 img { object-fit: contain; width: 50%;}
+	.sec7 img { object-fit: contain; width: 60%;}
 	.sec7 { padding: 8px 0 16px 0; width: 70%;}
 	.desk-nav { display: none;}
 }
