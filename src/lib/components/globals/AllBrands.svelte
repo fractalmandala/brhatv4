@@ -1,6 +1,5 @@
 <script lang="ts">
 import { fly } from 'svelte/transition'
-import Modal from '$lib/components/reuse/Modal.svelte'
 import LogMrd from '$lib/components/logos/LogMrd.svelte'
 import LogFm from '$lib/components/logos/LogFm.svelte'
 import LogBol from '$lib/components/logos/LogoBol.svelte'
@@ -9,41 +8,146 @@ import LogAnv from '$lib/components/logos/LogAnv.svelte'
 import LogRid from '$lib/components/logos/LogRid.svelte'
 import LogMan from '$lib/components/logos/LogMan.svelte'
 
-let showModal = false;
 let isBrands = true;
+
+function linkMrdanga(){
+	window.location.href = '/mrdanga';
+}
+
+function linkMandala(){
+	window.location.href = '/mandala';
+}
+
+function linkBol(){
+	window.location.href = '/openlibrary';
+}
+
+function linkSoa(){
+	window.location.href = '/aryavarta';
+}
+
+function linkAnveshi(){
+	window.location.href = '/anveshi';
+}
+
+function linkDrashta(){
+	window.location.href = '/drashta';
+}
+
+function linkRid(){
+	window.location.href = '/rta';
+}
+
+
+
 
 function toggleBrands(){
 	isBrands = !isBrands;
 }
 
+  const hover = async () => {
+    const edge8 = document.getElementById('edge8') as HTMLElement;
+    edge8.style.transform = 'translate(-40%, -10%)';
+    await new Promise(resolve => setTimeout(resolve, 300));
+  };
+
+  const unhover = async () => {
+    const edge8 = document.getElementById('edge8') as HTMLElement;
+    edge8.style.transform = 'translateX(0%)';
+    await new Promise(resolve => setTimeout(resolve, 300));
+  };
+
+	const hover7 = async () => {
+		const edge7 = document.getElementById('edge7') as HTMLElement
+		edge7.style.transform = 'translate(-30%, 0)'
+		await new Promise(resolve => setTimeout(resolve, 300));
+	};
+
+	const unhover7 = async () => {
+		const edge7 = document.getElementById('edge7') as HTMLElement
+		edge7.style.transform = 'translate(0, 0)'
+		await new Promise(resolve => setTimeout(resolve, 300))
+	}
+
+	const hover6 = async () => {
+		const edge6 = document.getElementById('edge6') as HTMLElement
+		edge6.style.transform = 'translate(-40%, 10%)'
+		await new Promise(resolve => setTimeout(resolve, 300));
+	};
+
+	const unhover6 = async () => {
+		const edge6 = document.getElementById('edge6') as HTMLElement
+		edge6.style.transform = 'translate(0, 0)'
+		await new Promise(resolve => setTimeout(resolve, 300))
+	}
+
+	const hover5 = async () => {
+		const edge2= document.getElementById('edge2') as HTMLElement
+		edge2.style.transform = 'translate(40%, -10%)'
+		await new Promise(resolve => setTimeout(resolve, 300));
+	};
+
+	const unhover5 = async () => {
+		const edge2 = document.getElementById('edge2') as HTMLElement
+		edge2.style.transform = 'translate(0, 0)'
+		await new Promise(resolve => setTimeout(resolve, 300))
+	}
+
+	const hover4 = async () => {
+		const edge3= document.getElementById('edge3') as HTMLElement
+		edge3.style.transform = 'translate(30%, 0%)'
+		await new Promise(resolve => setTimeout(resolve, 300));
+	};
+
+	const unhover4 = async () => {
+		const edge3 = document.getElementById('edge3') as HTMLElement
+		edge3.style.transform = 'translate(0, 0)'
+		await new Promise(resolve => setTimeout(resolve, 300))
+	}
+
+	const hover3 = async () => {
+		const edge4= document.getElementById('edge4') as HTMLElement
+		edge4.style.transform = 'translate(40%, 10%)'
+		await new Promise(resolve => setTimeout(resolve, 300));
+	};
+
+	const unhover3 = async () => {
+		const edge4 = document.getElementById('edge4') as HTMLElement
+		edge4.style.transform = 'translate(0, 0)'
+		await new Promise(resolve => setTimeout(resolve, 300))
+	}
+
+	const hover2 = async () => {
+		const edge5= document.getElementById('edge5') as HTMLElement
+		edge5.style.transform = 'translate(0%, 20%)'
+		await new Promise(resolve => setTimeout(resolve, 300));
+	};
+
+	const unhover2 = async () => {
+		const edge5 = document.getElementById('edge5') as HTMLElement
+		edge5.style.transform = 'translate(0, 0)'
+		await new Promise(resolve => setTimeout(resolve, 300))
+	}
+
 </script>
-
-
 
 <div class="biggie r-r-r-r">
 	<div class=".espcol col1">
-		<div class=".espcol boxer box-of-mrd" id="logo" on:click="{() => showModal = true}" on:keydown="{() => showModal = true}">
+		<div class=".espcol boxer box-of-mrd" id="logo" on:mouseenter={hover} on:mouseleave={unhover} on:click={linkMrdanga} on:keydown={linkMrdanga}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
 			<span class="typ4"></span>
 			<LogMrd></LogMrd>
 		</div>
-		{#if showModal}
-			<Modal on:close="{() => showModal = false}">
-				<p in:fly="{{delay: 0, duration: 200, x: -200, y: 0}}"><a class="modal-link" href="/mrdanga/kala">Kalā</a></p>
-				<p in:fly="{{delay: 200, duration: 200, x: -200, y: 0}}"><a class="modal-link" href="/mdranga/rasa">Rasa</a></p>
-				<p in:fly="{{delay: 400, duration: 200, x: -200, y: 0}}"><a class="modal-link" href="/mrdanga/kavita">Kavitā</a></p>
-			</Modal>
-		{/if}
-		<div class=".espcol boxer">
+		<div class=".espcol boxer box-of-fm" on:mouseenter={hover7} on:mouseleave={unhover7} on:click={linkMandala} on:keydown={linkMandala}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
 			<span class="typ4"></span>
 			<LogFm></LogFm>
 		</div>
-		<div class=".espcol boxer">
+		<div class=".espcol boxer box-of-bol" on:mouseenter={hover6} on:mouseleave={unhover6} on:click={linkBol} on:keydown={linkBol}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
@@ -53,7 +157,7 @@ function toggleBrands(){
 	</div>
 	<div class=".espcol col2">
 		<div class=".espcol bigbox">
-			<div class="logo-svg-box">
+			<div class="logo-svg-box box-of-motif">
 				<svg width="458" height="458" viewBox="0 0 458 458" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g id="segmente">
 				<g id="edges">
@@ -224,31 +328,30 @@ function toggleBrands(){
 				</svg>
 			</div>
 		</div>
-		<div class=".espcol boxer" id="soalogo">
+		<div class=".espcol boxer box-of-soa" on:mouseenter={hover2} on:mouseleave={unhover2} on:click={linkSoa} on:keydown={linkSoa}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
 			<span class="typ4"></span>
 			<LogMan></LogMan>
 		</div>
-		<button on:click={toggleBrands} on:keydown={toggleBrands} class="plain">Close Window</button>
 	</div>
 	<div class=".espcol col3">
-		<div class=".espcol boxer of-dra">
+		<div class=".espcol boxer box-of-dra" on:mouseenter={hover5} on:mouseleave={unhover5} on:click={linkDrashta} on:keydown={linkDrashta}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
 			<span class="typ4"></span>
 			<LogDr></LogDr>
 		</div>
-		<div class=".espcol boxer of-anv">
+		<div class=".espcol boxer box-of-anv" on:mouseenter={hover4} on:mouseleave={unhover4} on:click={linkAnveshi} on:keydown={linkAnveshi}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
 			<span class="typ4"></span>
 			<LogAnv></LogAnv>
 		</div>
-		<div class=".espcol boxer of-rid">
+		<div class=".espcol boxer box-of-rid" on:mouseenter={hover3} on:mouseleave={unhover3} on:click={linkRid} on:keydown={linkRid}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
@@ -260,16 +363,13 @@ function toggleBrands(){
 
 
 <style>
-.biggie { z-index: 700;}
 .biggie { background: var(--beau);}
-.boxer { position: relative; overflow: hidden; transition: all 0.8s var(--cube1) 0.2s; border: 1px solid #373737; box-shadow: 4px 6px 6px #171717, -2px -4px 6px #212121; }
+.boxer { position: relative; overflow: hidden; transition: all 0.8s var(--cube1) 0.2s; border: 1px solid #373737; box-shadow: 4px 6px 6px #171717, -2px -4px 6px #212121; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; }
 .boxer span { position: absolute; top: 0; left: 0;}
 .typ1 { border-top: 1px solid #fe4a49;}
 .typ2 { border-right: 1px solid #fe4a49; width: 100%; }
 .typ3 { border-bottom: 1px solid #fe4a49; height: 100%;}
 .typ4 { border-left: 1px solid #fe4a49;}
-.of-rid { justify-content: center;}
-.plain { margin-top: 24px;}
 .biggie .col1, .biggie .col2, .biggie .col3 { display: flex; flex-direction: column;}
 .boxer:hover .typ1 { animation: typ1 0.4s var(--cube1) forwards;}
 .boxer:hover .typ2 { animation: typ2 0.54s var(--cube2) forwards;}
@@ -327,15 +427,12 @@ function toggleBrands(){
 	100% { transform: rotate(0deg);}
 }
 
-
-
 .logo-svg-box {
 	text-align: center;
 	overflow: visible;
 }
 .logo-svg-box svg {
 	object-fit: contain;
-	width: 72%;
 	transform-origin: center center;
 	margin-left: auto;
 	margin-right: auto;
@@ -376,59 +473,50 @@ function toggleBrands(){
 }
 #lines path, #edges path { filter: drop-shadow(4px 4px 8px #070707); }
 
-.modal-link {
-	color: white;
-	font-size: 32px;
-	text-transform: uppercase;
-	font-weight: bold;
-}
-
 
 @media screen and ( min-width: 900px ) {
-	.biggie { width: 100vw; height: 100vh; padding-left: 4vw; padding-right: 4vw; justify-content: center; gap: 2em;}
-	.col1 { width: 30vw; padding: 0; justify-content: center; align-items: center; gap: 3em; padding-bottom: 4em; }
-	.col2 { width: 30vw; padding: 0; justify-content: flex-end; align-items: center; padding-bottom: 4em; gap: 0;}
-	.col3 { width: 30vw; padding: 0; justify-content: center; align-items: center;gap: 3em; padding-bottom: 4em;}
-	.boxer { padding: 0.4em 2.4em; border-radius: 4px; height: 16vh; justify-content: center;}
+	.biggie { width: 100vw; height: calc(100vh - 96px); justify-content: space-between; padding: 0 4vw;}
+	.col1 { width: 28vw; padding: 0; justify-content: center; align-items: center; gap: 3em; padding-bottom: 4em; }
+	.col2 { width: 28vw; padding: 0; justify-content: center; align-items: center; padding-top: 2.4em; gap: 0;}
+	.col3 { width: 28vw; padding: 0; justify-content: center; align-items: center;gap: 3em; padding-bottom: 4em;}
+	.boxer { border-radius: 4px; height: 16vh; padding: 0 10%; justify-content: center; align-items: center;}
 	.boxer span { border-radius: 4px;}
-	.of-dra { padding-top: 1em;}
-	#soalogo { width: 30vw;}
+	.box-of-soa { width: 26vw;}
+	.box-of-motif svg { width: 85%;}
+
 }
 
 @media screen and ( max-width: 899px) and (min-width: 768px) {
-	.biggie { width: 100vw; height: 100vh; padding-left: 4vw; padding-right: 4vw; justify-content: center; gap: 2em;}
-	.col1 { width: 30vw; padding: 0; justify-content: center; align-items: center; gap: 2em; }
-	.col2 { width: 40vw; padding: 0; justify-content: flex-end; align-items: center; padding-bottom: 4em; gap: 1em;}
-	.col3 { width: 30vw; padding: 0; justify-content: center; align-items: center; gap: 2em;}
-	.boxer { padding: 0.5em 1em; border-radius: 4px; height: 15vh; justify-content: center;}
+	.biggie { width: 100vw; height: calc(100vh - 96px); justify-content: space-between; padding: 0 4vw;}
+	.col1 { width: 28vw; padding: 0; justify-content: center; align-items: center; gap: 3em; padding-bottom: 4em; }
+	.col2 { width: 28vw; padding: 0; justify-content: center; align-items: center; padding-top: 2.4em; gap: 0;}
+	.col3 { width: 28vw; padding: 0; justify-content: center; align-items: center;gap: 3em; padding-bottom: 4em;}
+	.boxer { border-radius: 4px; height: 16vh; padding: 0 10%; justify-content: center; align-items: center;}
 	.boxer span { border-radius: 4px;}
-	.of-dra { padding-top: 1em;}
-	#soalogo { width: 24vw;}
-	.bigbox { height: 420px;}
+	.box-of-soa { width: 26vw;}
+	.box-of-motif svg { width: 85%;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
-	.biggie { width: 100vw; height: 100%; justify-content: center; gap: 1em;}
-	.col1 { width: 100vw; padding: 3em 2vw; justify-content: center; align-items: center; gap: 3em;}
-	.col2 { width: 100vw; padding: 3em 2vw; justify-content: center; align-items: center; gap: 3em; }
-	.col3 { width: 100vw; padding: 1em 2vw 3em 2vw; justify-content: center; align-items: center; gap: 3em;}
-	.boxer { padding: 1em; border-radius: 4px; height: 200px; justify-content: center;}
+	.biggie { width: 100vw; height: calc(100vh - 96px); justify-content: space-between; padding: 0 4vw;}
+	.col1 { width: 28vw; padding: 0; justify-content: center; align-items: center; gap: 3em; padding-bottom: 4em; }
+	.col2 { width: 28vw; padding: 0; justify-content: center; align-items: center; padding-top: 2.4em; gap: 0;}
+	.col3 { width: 28vw; padding: 0; justify-content: center; align-items: center;gap: 3em; padding-bottom: 4em;}
+	.boxer { border-radius: 4px; height: 16vh; padding: 0 10%; justify-content: center; align-items: center;}
 	.boxer span { border-radius: 4px;}
-	.of-dra { padding: 0.2em;}
-	.bigbox { width: 100%; margin-bottom: 2em;}
-	#soalogo {width: 88%;}
+	.box-of-soa { width: 26vw;}
+	.box-of-motif svg { width: 85%;}
 }
 
 @media screen and (max-width: 575px) {
-	.biggie {width: 100vw; height: 100%; justify-content: center; gap: 1em; }
-	.col1 { width: 100vw; padding-top: 6em; justify-content: center; align-items: center; gap: 2em; }
-	.col2 { width: 100vw; padding: 0; justify-content: center; align-items: center;}
-	.col3 { width: 100vw; padding-top: 1em; padding-bottom: 2em; justify-content: center; align-items: center; gap: 2em; }
-	.boxer { padding: 1em; border-radius: 4px; height: 160px; justify-content: center;}
+	.biggie { width: 100vw; height: 100%; justify-content: space-between; padding: 16px 1vw; overflow-y: scroll;}
+	.col1 { width: 100%; padding: 0; justify-content: center; align-items: center; order: 1; gap: 16px;}
+	.col2 { width: 100%; padding: 0; justify-content: center; align-items: center; order: 2; }
+	.col3 { width: 100%; padding: 0; justify-content: center; align-items: center; order: 3; gap: 16px;}
+	.boxer { border-radius: 4px; height: 16vh; padding: 0 10%; justify-content: center; align-items: center;}
 	.boxer span { border-radius: 4px;}
-	.of-dra { padding: 0.4em;}
-	.bigbox { width: 100%; margin-bottom: 2em;}
-	#soalogo { width: 88%;}
+	.box-of-soa { width: 88%;}
+	.box-of-motif svg { width: 75%;}
 }
 
 </style>

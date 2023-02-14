@@ -5,6 +5,7 @@ import Footer from '$lib/components/globals/FooterGlobal.svelte'
 import '$lib/styles/reader.sass'
 import '$lib/styles/globaltemplate.sass'
 
+
 </script>
 
 <Header></Header>

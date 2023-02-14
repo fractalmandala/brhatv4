@@ -270,15 +270,14 @@ export async function latestBol(){
 	filter: saturate(1);
 }
 
-	.closebuttonstrip {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		align-items: flex-end;
-
-		padding-right: 8px;
-		text-align: right;
-	}
+.closebuttonstrip {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: flex-end;
+	padding-right: 8px;
+	text-align: right;
+}
 
 a { 
 	font-size: 12px;
