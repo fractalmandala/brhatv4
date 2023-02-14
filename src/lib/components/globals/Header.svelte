@@ -395,8 +395,8 @@ function hideMenu() {
 	.sec7 img:hover { transform: scale(0.9);}
 	.threebox { min-height: 100%; gap: 24px; justify-content: center;}
 	.linkbox { min-height: 28%; padding-left: 16px; padding-top: 8px; padding-bottom: 8px;}
-	.boxer p { margin-bottom: 6px; font-size: 16px;}
-	.boxer h5 { font-size: 20px;}
+	.boxer p { margin-bottom: 6px; font-size: 18px;}
+	.boxer h5 { font-size: 21px;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
