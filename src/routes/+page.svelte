@@ -1,7 +1,7 @@
 <script lang="ts">
 import supabase from '$lib/db'
-import { draw } from 'svelte/transition';
-import { quintOut } from 'svelte/easing';
+import { fly } from 'svelte/transition';
+import { quintOut, expoInOut } from 'svelte/easing';
 import { reveal } from 'svelte-reveal'
 import { onMount } from 'svelte'
 import Animations from 'textify.js';
@@ -24,10 +24,98 @@ import LogRid from '$lib/components/logos/LogRid.svelte'
 import '$lib/styles/textify.css'
 let textify: {reset: () => void;}, textifyTitle: {reset: () => void;};
 let y = 1
-let motif = 0
 let isAnv = false
+let isMrd = false
+let isFm = false
+let isDra = false
+let isRid = false
+let isSoa = false
+let wid = 0
+let op = 0
 
-function toggleAnv(){ isAnv = !isAnv }
+function toggleAnv(){ 
+	isAnv = !isAnv 
+	if (wid === 0) {
+		wid = 100
+	} else {
+	wid = 0
+	}
+	if (op === 0) {
+		op = 1
+	} else {
+		op = 0
+	}
+}
+
+function toggleDra(){ 
+	isDra = !isDra 
+	if (wid === 0) {
+		wid = 100
+	} else {
+	wid = 0
+	}
+	if (op === 0) {
+		op = 1
+	} else {
+		op = 0
+	}
+}
+
+function toggleMrd(){
+	isMrd = !isMrd
+	if (wid === 0) {
+		wid = 100
+	} else {
+	wid = 0
+	}
+	if (op === 0) {
+		op = 1
+	} else {
+		op = 0
+	}
+}
+
+function toggleFm(){
+	isFm = !isFm
+	if (wid === 0) {
+		wid = 100
+	} else {
+	wid = 0
+	}
+	if (op === 0) {
+		op = 1
+	} else {
+		op = 0
+	}
+}
+
+function toggleRid(){
+	isRid = !isRid
+	if (wid === 0) {
+		wid = 100
+	} else {
+	wid = 0
+	}
+	if (op === 0) {
+		op = 1
+	} else {
+		op = 0
+	}
+}
+
+function toggleSoa(){
+	isSoa = !isSoa
+	if (wid === 0) {
+		wid = 100
+	} else {
+	wid = 0
+	}
+	if (op === 0) {
+		op = 1
+	} else {
+		op = 0
+	}
+}
 
 const { Textify } = Animations;
 const { TextifyTitle } = Animations;
@@ -61,38 +149,6 @@ let currentList = "list-1"
 
 function switchList(newList: string){
 	currentList = newList
-}
-
-let actAnveshi = false
-let actDrashta = false
-let isMrd = false
-let isFm = false
-let isRid = false
-let isSoa = false
-
-
-function showAnveshi(){
-	actAnveshi = !actAnveshi
-}
-
-function showDrashta(){
-	actDrashta = !actDrashta
-}
-
-function toggleMrd(){
-	isMrd = !isMrd
-}
-
-function toggleFm(){
-	isFm = !isFm
-}
-
-function toggleRid(){
-	isRid = !isRid
-}
-
-function toggleSoa(){
-	isSoa = !isSoa
 }
 
 async function dhiti() {
@@ -239,12 +295,32 @@ async function getBooks(){
 	<div slot="body">
 			<h3 class="pad4 special-h" data-textify>Visual forays into the 64 kalās and metaphors of arts, travel discovery programs, online learning courses, design thinking based on Dharma, AI-based creative content or bold explorations of Indian civilizational consciousness, find your engagement here.</h3>
 			<div class="r-r-r-r pad4 actionsrow small5">
-				<div class="c-c-c-c actionbox"><h5 data-textify-title><a href="/anveshi">Bṛhat Anveṣī</a></h5></div>
-				<div class="c-c-c-c actionbox"><h5 data-textify-title><a href="/drashta">Bṛhat Draṣṭā</a></h5></div>
-				<div class="c-c-c-c actionbox"><h5 data-textify-title><a href="/mrdanga">Bṛhatmṛdaṅga</a></h5></div>
-				<div class="c-c-c-c actionbox"><h5 data-textify-title><a href="/mandala">Fractal Maṇḍala</a></h5></div>
-				<div class="c-c-c-c actionbox"><h5 data-textify-title><a href="/rta">Ṛta in Design</a></h5></div>
-				<div class="c-c-c-c actionbox"><h5 data-textify-title><a href="/aryavarta">Scrolls of Āryavarta</a></h5></div>
+				<div class="c-c-c-c actionbox" on:mouseenter={toggleAnv} on:mouseleave={toggleAnv}><h5><a href="/anveshi">Bṛhat Anveṣī</a></h5></div>
+				<div class="c-c-c-c actionbox" on:mouseenter={toggleDra} on:mouseleave={toggleDra}><h5><a href="/drashta">Bṛhat Draṣṭā</a></h5></div>
+				<div class="c-c-c-c actionbox" on:mouseenter={toggleMrd} on:mouseleave={toggleMrd}><h5><a href="/mrdanga">Bṛhatmṛdaṅga</a></h5></div>
+				<div class="c-c-c-c actionbox" on:mouseenter={toggleFm} on:mouseleave={toggleFm}><h5><a href="/mandala">Fractal Maṇḍala</a></h5></div>
+				<div class="c-c-c-c actionbox" on:mouseenter={toggleRid} on:mouseleave={toggleRid}><h5><a href="/rta">Ṛta in Design</a></h5></div>
+				<div class="c-c-c-c actionbox" on:mouseenter={toggleSoa} on:mouseleave={toggleSoa}><h5><a href="/aryavarta">Scrolls of Āryavarta</a></h5></div>
+			</div>
+			<div class="c-c-c-c poster" style="width: {wid}%; opacity: {op}">
+				{#if isAnv}
+				<img src="/images/herocovers/karnatakachapter.webp" alt="anv" in:fly="{{ delay: 200, duration: 500, x: -1400, y: 0, easing: expoInOut}}" out:fly="{{ delay: 0, duration: 200, x: 1400, y: 0, easing: expoInOut}}"/>
+				{/if}
+				{#if isDra}
+				<img src="/images/herocovers/brhatdrashta.webp" alt="dra" in:fly="{{ delay: 200, duration: 500, x: -1400, y: 0, easing: expoInOut}}" out:fly="{{ delay: 0, duration: 200, x: 1400, y: 0, easing: expoInOut}}"/>
+				{/if}
+				{#if isMrd}
+				<img src="/images/herocovers/mrdanga-hero.webp" alt="mrd" in:fly="{{ delay: 200, duration: 500, x: -1400, y: 0, easing: expoInOut}}" out:fly="{{ delay: 0, duration: 200, x: 1400, y: 0, easing: expoInOut}}"/>
+				{/if}
+				{#if isFm}
+				<img src="/images/herocovers/fmhomehero.webp" alt="dra" in:fly="{{ delay: 200, duration: 500, x: -1400, y: 0, easing: expoInOut}}" out:fly="{{ delay: 0, duration: 200, x: 1400, y: 0, easing: expoInOut}}"/>
+				{/if}
+				{#if isRid}
+				<img src="/images/herocovers/ridhero1.webp" alt="dra" in:fly="{{ delay: 200, duration: 500, x: -1400, y: 0, easing: expoInOut}}" out:fly="{{ delay: 0, duration: 200, x: 1400, y: 0, easing: expoInOut}}"/>
+				{/if}
+				{#if isSoa}
+				<img src="/images/scrolls/maphero.webp" alt="dra" in:fly="{{ delay: 200, duration: 500, x: -1400, y: 0, easing: expoInOut}}" out:fly="{{ delay: 0, duration: 200, x: 1400, y: 0, easing: expoInOut}}"/>
+				{/if}
 			</div>
 	</div>
 </Actions>
@@ -252,6 +328,10 @@ async function getBooks(){
 
 
 <style>
+.poster img {
+	object-fit: cover;
+	width: 100%;
+}
 .lzz { z-index: 2; background: white;}
 .lzz, .l2, .row-of-3, .lvid, .lvid-text, .playlists { background: white;}
 .threebox img { object-fit: cover; width: 100%;}
@@ -264,10 +344,18 @@ async function getBooks(){
 .threebox h5 a, .threebox h5 { color: #272727;}
 .threebox a:hover { color: #fe4a49;}
 .threebox p { color: #878787;}
-.special-h { font-weight: 300; width: 75%;}
+.special-h { font-weight: 300;}
 .actionsrow h5 a { color: #272727;}
 .actionsrow a:hover { color: #fe4a49;}
+.actionsrow div { cursor: pointer;}
 
+.poster { background: white; transition: all 0.32s var(--cube2);}
+.poster img { z-index: 5;}
+
+@keyframes swiped {
+	0% { width: 100%;}
+	100% { width: 0;}
+}
 
 @media screen and (min-width: 900px) {
 	.c-c-c-c h3 { font-weight: 300;}
@@ -291,24 +379,29 @@ async function getBooks(){
 	.book h5 { padding-top: 8px; border-top: 1px solid #d7d7d7;}
 	.h5link { font-size: 26px; font-weight: 500; letter-spacing: 0px; color:#255F85; transform-origin: center left;}
 	.h5link:hover { color: #fe4a49; font-size: 24px;}
+	.special-h { width: 75%;}
+	.poster { min-height: 56vh; margin-top: 24px;border-top: 2px solid #fe4a49; border-bottom: 2px solid #fe4a49;}
+	.poster img { height: 56vh;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
 	.c-c-c-c h3 { font-weight: 300;}
-	.c-c-c-c h3 { width: 88%;}
+	.c-c-c-c h3, .special-h { width: 88%;}
 	.row-of-3 { flex-wrap: wrap;}
 	.playlists { gap: 40px; padding: 2px 0 24px 0;}
 	.l2 h5 { padding-top: 12px;}
 	.h5link { font-size: 26px; font-weight: 500; letter-spacing: 0px; color:#255F85; transform-origin: center left;}
 	.h5link:hover { color: #fe4a49; font-size: 24px;}
 	.lib { flex-wrap: wrap;}
-	.actionbox { width: calc(16.67% - 12px);}
-	.actionsrow { justify-content: space-between;}
+	.actionbox { width: calc(16.67% - 2px);}
+	.actionsrow { justify-content: center; gap: 12px;}
 	.actionsrow h5 { font-weight: 500; margin: 32px 0 12px 0; border-top: 1px solid #d7d7d7; padding-top: 12px;}
+	.poster { min-height: 56vh; margin-top: 24px;border-top: 2px solid #fe4a49; border-bottom: 2px solid #fe4a49;}
+	.poster img { height: 56vh;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
-	.c-c-c-c h3 { font-weight: 300;}
+	.c-c-c-c h3, .special-h { font-weight: 300; width: 100%;}
 	.l2 { gap: 2em; padding-bottom: 16px; margin-top: 1em;}
 	.l2 p { margin-bottom: 0;}
 	.l2 h5 { padding-top: 8px;}
@@ -319,11 +412,12 @@ async function getBooks(){
 	.actionbox { width: calc(33.33% - 24px);}
 	.actionsrow { justify-content: space-between; flex-wrap: wrap; padding-bottom: 64px;}
 	.actionsrow h5 { font-weight: 500; margin: 32px 0 12px 0; border-top: 1px solid #d7d7d7; padding-top: 12px;}
-
+	.poster { min-height: 40vh; margin-top: 24px;border-top: 2px solid #fe4a49; border-bottom: 2px solid #fe4a49;}
+	.poster img { height: 40vh;}
 }
 
 @media screen and (max-width: 575px) {
-	.c-c-c-c h3 { font-weight: 400;}
+	.c-c-c-c h3, .special-h { font-weight: 400; width: 100%;}
 	.lzz h3 { margin-top: 0;}
 	.l2 { gap: 16px;}
 	.l2 .threebox { padding: 0;}
@@ -337,7 +431,10 @@ async function getBooks(){
 		width: 100%;
 	}
 	.actionbox { width: 100%;}
-	.actionsrow { justify-content: space-between; flex-wrap: wrap; padding-bottom: 64px;}
+	.actionsrow { justify-content: space-between; flex-wrap: wrap;}
+
 	.actionsrow h5 { font-weight: 500; margin: 0; border-top: 1px solid #d7d7d7; padding-top: 12px;}
+	.poster { min-height: 40vh; margin-top: 24px;border-top: 2px solid #fe4a49; border-bottom: 2px solid #fe4a49;}
+	.poster img { height: 40vh;}
 }
 </style>
