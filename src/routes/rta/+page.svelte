@@ -194,6 +194,8 @@ let isf4 = true
 	border-left: 8px solid #10c56d;
 }
 
+.intro, .links { background: var(--beau);}
+
 .box7 h1 {
 	text-transform: uppercase;
 }
@@ -325,9 +327,9 @@ cite { color: #878787;}
 		width: 60%;
 	}
 	.intro {
-		margin-left: 6vw;
-		margin-right: 6vw;
-		width: 88vw;
+		padding-left: 6vw;
+		padding-right: 6vw;
+		width: 100vw;
 		align-items: center;
 	}
 	.box11, .box12 { height: 88%; align-items: center; justify-content: center; padding-left: 32px;}
