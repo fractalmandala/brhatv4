@@ -20,7 +20,7 @@ function toggleBrands(){
 
 
 
-<div class="biggie">
+<div class="biggie r-r-r-r">
 	<div class=".espcol col1">
 		<div class=".espcol boxer box-of-mrd" id="logo" on:click="{() => showModal = true}" on:keydown="{() => showModal = true}">
 			<span class="typ1"></span>

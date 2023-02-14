@@ -48,8 +48,7 @@
 
 <style>
 .logo-svg-box svg {
-	object-fit: contain;
-	width: 100%;
+	object-fit: cover;
 }
 
 	svg { filter: drop-shadow(0px 0px 0px transparent); transition: all 0.22s var(--cube3);}

@@ -64,7 +64,9 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 			</div>
 		</div>
 	</div>
-	<div class="r-r-r-r" id="last-row"><small>2023 All Rights Reserved | <span><a href="/docs">Documentation</a> | </span><span><a href="/about/privacy">Privacy</a></span></small></div>
+	<div class="r-r-r-r" id="last-row"><small>2023 All Rights Reserved | <span><a href="/docs">Documentation</a> | </span><span><a href="/about/privacy">Privacy</a></span><br>
+	<span class="white">Write to us: contact@brhat.in</span>
+	</small></div>
 </div>
 
 <style lang="sass">
@@ -139,13 +141,13 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	
 @media screen and (min-width: 900px) 
 	.big-box
-		padding-top: 1em
+		padding-top: 20px
 		
 	.margin-box
 		height: calc(100vh - 12em)
 		width: 100%
-		padding: 0 6vw
-		margin-top: 2em
+		padding: 0 4vw
+		margin-top: 20px
 
 	#row-one
 		padding-top: 4em
@@ -155,6 +157,10 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		margin: 0
 		width: 100%
 		padding: 1em 6vw
+	
+	#last-row small
+		line-height: 1.5
+		font-size: 14px
 
 	#logoimage
 		width: 200px
@@ -165,7 +171,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 
 	#links-row
 		width: 75%
-		padding-left: 12%
+		padding-left: 8%
 		padding-top: 2em
 		flex-direction: row
 
@@ -246,6 +252,9 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		width: calc(100vw - 8vw)
 		margin: 0 4vw
 		padding-top: 1em
+		small
+			font-size: 14px
+			line-height: 1.5
 
 	#logoimage
 		width: 160px
@@ -269,24 +278,26 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		width: 100%
 		padding-top: 2em
 		flex-direction: row
-		gap: 2em
+		gap: 1.2em
 		.link-box
 			width: 25%
 			h6
-				font-size: 16px
+				font-size: 18px
 			p
-				font-size: 14px
+				font-size: 16px
 	
 @media screen and (max-width: 575px)
 
 	.big-box
-		padding-top: 4em
+		padding-top: 2em
+		padding-bottom: 20px
+		width: 100vw
 
 	.margin-box
-		width: calc(100% - 2vw)
+		width: 100%
 		height: calc(100% - 14em)
-		margin: 2em 1vw 0em 1vw
-		padding: 0 8vw
+		margin-top: 2em
+		padding: 0 6vw
 
 	#last-row
 		width: calc(100% - 2vw)
@@ -295,9 +306,10 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		padding-top: 1em
 		small
 			font-size: 14px
+			line-height: 1.5
 
 	#logoimage
-		width: 240px
+		width: 200px
 		margin-bottom: 1em
 		margin-top: 2em
 
@@ -316,8 +328,8 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		margin-bottom: 1em
 		margin-top: 8px
 		img
-			width: 32px
-			height: 32px
+			width: 26px
+			height: 26px
 
 	#links-row
 		width: 100%
@@ -327,9 +339,12 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		.link-box
 			width: calc(100% - 8vw)
 			p
-				font-size: 18px
+				font-size: 20px
+				margin-top: 6px
+				margin-bottom: 8px
 			h6
-				font-size: 18px
+				font-size: 32px
+				margin-bottom: 8px
 
 	
 </style>

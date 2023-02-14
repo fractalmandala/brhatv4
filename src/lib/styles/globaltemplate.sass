@@ -7,6 +7,7 @@ body, html
 	margin: 0
 	font-family: 'Inter Tight', sans-serif
 	color: #474747
+	scroll-behavior: smooth
 
 *, :root, div
 	box-sizing: border-box
@@ -19,6 +20,15 @@ body, html
 	--cube5: cubic-bezier(1.000, 0.005, 1.000, 0.005)
 	--snap: all 0.18s cubic-bezier(0.925, 0.235, 1.000, -0.065)
 	--beau: linear-gradient(40deg,#272727,#1B2023)
+	--blue: #255F85
+	--lightblue: #41EAD4
+
+.lay
+	z-index: 5
+	background: white
+
+.low
+	z-index: 0
 
 .header
 	z-index: 999
@@ -49,8 +59,16 @@ body, html
 .thin
 	font-weight: 300 !important
 
-p, h4, h3, h2, h1, small
+.readmore
+	font-weight: bold
+
+p, h4, h3, h2, h1
 	margin-bottom: 16px
+	margin-top: 0
+	font-family: 'Inter Tight', sans-serif
+	color: #272727
+
+small
 	margin-top: 0
 	font-family: 'Inter Tight', sans-serif
 	color: #272727
@@ -58,14 +76,15 @@ p, h4, h3, h2, h1, small
 h3
 	font-weight: 700
 
-
 h5
 	margin-bottom: 8px
 	margin-top: 12px
-	font-weight: 600
+	font-weight: 500
+	letter-spacing: 0px
 
 a
 	text-decoration: none
+	color: #fe4a49
 	font-weight: inherit
 	transition: all 0.12s var(--cube1)
 	&:hover
@@ -108,12 +127,21 @@ small
 	display: flex
 	flex-direction: row
 
-.c-c-c-c
+.row-of-4
+	display: flex
+	flex-direction: row
+
+.row-of-3
+	display: flex
+	flex-direction: row
+
+.fourbox
 	display: flex
 	flex-direction: column
 
-.r-r-c-c
+.c-c-c-c
 	display: flex
+	flex-direction: column
 
 .img-fix
 	background-size: cover
@@ -166,6 +194,9 @@ small
 	display: flex
 	overflow: hidden
 
+.logo-svg-box
+	z-index: 2
+
 @media screen and (min-width: 900px)
 
 	.primecontainer-col, .primecontainer-row
@@ -187,6 +218,23 @@ small
 	.col-full
 		height: 100vh
 
+	.row-of-3
+		height: 100%
+		gap: 48px
+		justify-content: space-between
+
+	.row-of-4
+		height: 100%
+		gap: 32px
+		align-items: center
+		justify-content: space-between
+
+	.fourbox
+		width: calc(25% - 24px)
+
+	.threebox
+		width: calc(33% - 32px)
+
 	.pad4
 		padding-right: 6vw
 		padding-left: 6vw
@@ -202,10 +250,10 @@ small
 		padding-bottom: 4em
 
 	.pad4l
-		padding-left: 4vw
+		padding-left: 6vw
 
 	.pad4r
-		padding-right: 4vw
+		padding-right: 6vw
 
 	.pad8r
 		padding-right: 8vw
@@ -239,15 +287,15 @@ small
 	h5
 		font-size: 24px
 
+	.small5 h5
+		font-size: 20px
+
 	h4
-		font-size: 48px
+		font-size: 64px
 
 	h3
 		font-size: 32px
-		letter-spacing: -0.5px
-
-	.bigger3
-		font-size: 64px
+		letter-spacing: -1px
 
 	.cutter
 		width: 60%
@@ -259,6 +307,16 @@ small
 	h1
 		font-size: 120px
 		letter-spacing: -2px
+
+	.smaller1
+		font-size: 96px
+		line-height: 1.2em
+		font-weight: 500
+	
+	.bigger1
+		font-size: 96px
+		margin-bottom: 0
+		font-weight: 500
 
 	p
 		font-size: 16px
@@ -277,6 +335,11 @@ small
 	.smallfair
 		font-size: 14px
 		font-family: 'Playfair Display',serif
+
+	.metatype1
+		color: var(--blue)
+		font-size: 14px
+		font-weight: 500
 
 	.isbot
 		padding-bottom: 48px
@@ -307,6 +370,19 @@ small
 	.col-full
 		height: 100vh
 
+	.row-of-3
+		gap: 40px
+
+	.threebox
+		width: calc(50% - 24px)
+
+	.row-of-4
+		height: 100%
+		gap: 32px
+
+	.fourbox
+		width: calc(25% - 24px)
+
 	.pad4
 		padding-right: 4vw
 		padding-left: 4vw
@@ -321,8 +397,35 @@ small
 	.r-r-c-c
 		flex-direction: row
 
-@media screen and (max-width: 767px) and (min-width: 576px)
+	.smaller1
+		font-size: 80px
+		line-height: 1.2em
+		font-weight: 500
+	
+	.bigger1
+		font-size: 80px
+		margin-bottom: 0
+		font-weight: 500
+		margin-top: 32px
 
+	p
+		font-size: 14px
+		line-height: 1.25
+
+	h5
+		font-size: 21px
+
+	.small5 h5
+		font-size: 20px
+
+	h3
+		font-size: 28px
+		letter-spacing: -1px
+
+	h4
+		font-size: 64px
+
+@media screen and (max-width: 767px) and (min-width: 576px)
 
 	.imagecontainer-hero
 		width: 100vw
@@ -340,6 +443,21 @@ small
 	.col-full
 		height: 100%
 
+	.row-of-3
+		gap: 40px
+
+	.threebox
+		width: calc(50% - 24px)
+
+	.row-of-4
+		height: 100%
+		gap: 32px
+		flex-wrap: wrap
+		justify-content: space-between
+
+	.fourbox
+		width: calc(50% - 32px)
+
 	.pad4
 		padding-right: 4vw
 		padding-left: 4vw
@@ -350,7 +468,47 @@ small
 	.r-r-c-c
 		flex-direction: column
 
+	h4
+		font-size: 40px
+
+	.smaller1
+		font-size: 64px
+		line-height: 1.2em
+		font-weight: 500
+	
+	.bigger1
+		font-size: 64px
+		margin-bottom: 0
+		font-weight: 500
+		margin-top: 32px
+
+	p
+		font-size: 16px
+		line-height: 1.25
+
+	h5
+		font-size: 21px
+
+	.small5 h5
+		font-size: 18px
+
+	h3
+		font-size: 24px
+		letter-spacing: -0.5px
+
 @media screen and (max-width: 575px) 
+
+	.smaller1
+		font-size: 56px
+		line-height: 1.2em
+		font-weight: 500
+		margin-bottom: 0
+	
+	.bigger1
+		font-size: 56px
+		margin-bottom: 0
+		font-weight: 500
+		margin-top: 32px
 
 	.imagecontainer-hero
 		width: 100vw
@@ -365,15 +523,32 @@ small
 		width: calc(100vw - 8px)
 		margin-left: 4px
 
+	.row-of-3
+		flex-wrap: wrap
+
+	.threebox
+		width: 100%
+		padding: 4px
+
 	.loco
 		padding-top: 60px
 
 	.centy-col
 		justify-content: center
 
+	.row-of-4
+		height: 100%
+		gap: 8px
+		align-items: flex-start
+		justify-content: center
+
+	.fourbox
+		width: 100%
+		padding: 4px
+
 	.pad4
-		padding-right: 4vw
-		padding-left: 4vw
+		padding-right: 6vw
+		padding-left: 6vw
 
 	.col-type50
 		width: 100%
@@ -384,20 +559,27 @@ small
 		gap: 2em !important
 
 	.r-r-c-c
-		flex-direction: row
+		flex-direction: column
 
 	h2
 		font-size: 3em
 		font-weight: 500
 
 	h3
-		font-size: 32px
+		font-size: 21px
+		letter-spacing: 0px
+
+	h4
+		font-size: 36px
 
 	h1
 		font-size: 48px
 		letter-spacing: -1px
 
 	h5
+		font-size: 24px
+
+	.small5 h5
 		font-size: 24px
 
 	p

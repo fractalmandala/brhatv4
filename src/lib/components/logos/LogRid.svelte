@@ -63,12 +63,10 @@
 <style>
 
 .logo-svg-box svg {
-	object-fit: contain;
-	width: 100%;
+	object-fit: cover;
 }
 
-	svg { filter: drop-shadow(0px 0px 0px transparent); transition: all 0.22s var(--cube3);}
-.logo-svg-box:hover svg { filter: drop-shadow(6px 6px 12px #010101);}
+	svg { transition: all 0.22s var(--cube3);}
 
 @media screen and (max-width: 575px) {
 	.logo-svg-box svg {

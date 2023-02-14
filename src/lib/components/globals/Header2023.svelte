@@ -5,6 +5,7 @@ import { fly } from 'svelte/transition'
 import { circOut } from 'svelte/easing'
 import { circIn } from 'svelte/easing'
 let isMenu = false;
+let y = 1
 
 function showMenu() {
 	isMenu = true;
@@ -35,12 +36,13 @@ export async function latestBol(){
 }
 
 </script>
+<svelte:window bind:scrollY={y}/>
 
 <div class="header">
 <div class="headerbox padding-base">
   <div class="logoarea">
      <div class="motif" id="scroll-container">
-       <a href="/"><img src="/images/corpimages/motif.png" id="rotate-img" class="rotate" alt="motif" /></a>
+       <a href="/"><img src="/images/corpimages/motif.png" id="rotate-img" class="rotate" alt="motif" style="transform: rotate({y}deg)"/></a>
      </div>
      <div class="logotype">
        <a href="/"><img src="/images/corpimages/logotype.png" alt="logotype"
@@ -330,9 +332,13 @@ a {
  transform: scale(0.9);
 }
 
-	.rotate {
-   transform: rotateZ(var(--rotation)deg);
-   transition: transform 1s;
+	.motif {
+   transition: all 0.4s var(--cube3);
+	 transform-origin: center center;
+	}
+
+	.motif:hover {
+		transform: scale(0.8);
 	}
 
 	.mobilemenu {
@@ -393,10 +399,6 @@ a {
 		justify-content: space-between;
 	}
 
-	.menu-red, .menu-white {
-		width: 40px;
-		height: 40px;
-	}
 
 	.item1, .item2, .item3, .item4, .item5, .item6, .item7 { border-radius: 4px; transition: all 0.39s var(--cube3); overflow: visible;}
 	.col1 p, .slide2 p, .slide1 p { font-weight: bold; text-transform: uppercase; transition: all 0.12s var(--cube1); }
@@ -675,8 +677,8 @@ a {
 @media screen and (max-width: 575px) {
 
 	.menu-red, .menu-white {
-		height: 40px;
-		width: 40px;
+		height: 48px;
+		width: 48px;
 	}
 
 	.fullscreener { min-height: 100vh;}
@@ -686,21 +688,21 @@ a {
 		padding-right: 4vw;
 	}
 	.logoarea { width: 50%; }
-	.header { height: 72px; align-items: center;}
-	.headerbox { height: 72px; width: 100%; align-items: center; }
+	.header { height: 72px; align-items: center; width: 100vw;}
+	.headerbox { height: 72px; width: 100vw; align-items: center; }
 	
 	.motif img {
-		width: 48px;
-		height: 48px
+		width: 56px;
+		height: 56px
 	}
 
 	.logoarea .logotype { margin-left: 12px; padding-top: 8px;}	
 	.logoarea .logotype img {
-		height: 32px;
+		height: 40px;
 	}
 	.mobilemenu {
-		width: 40px;
 		height: 72px;
+		padding-bottom: 8px;
 	}
 	
 	.closebuttonstrip {

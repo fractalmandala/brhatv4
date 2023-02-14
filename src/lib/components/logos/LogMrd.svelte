@@ -1,4 +1,3 @@
-
 <div class="logo-svg-box">
 	<svg width="412" height="131" viewBox="0 0 412 131" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<g id="mrd">
@@ -76,9 +75,10 @@
 
 <style>
 
+.logo-svg-box { z-index: 2;}
 .logo-svg-box svg {
-	object-fit: contain;
-	width: 100%;
+	object-fit: cover;
+	transition: all 0.22s var(--cube3);
 }
 
 	svg { filter: drop-shadow(0px 0px 0px transparent); transition: all 0.22s var(--cube3);}
