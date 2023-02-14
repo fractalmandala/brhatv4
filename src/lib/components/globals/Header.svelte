@@ -205,7 +205,7 @@ function hideMenu() {
 .boxer:hover .typ2 { animation: typ2 0.54s var(--cube2) forwards;}
 .boxer:hover .typ3 { animation: typ3 0.7s var(--cube3) forwards;}
 .boxer:hover .typ4 { animation: typ4 0.5s var(--cube4) forwards;}
-.boxer:hover { box-shadow: 7px 10px 15px #171717, -8px -8px 16px #212121; animation: redlines 0.7s var(--cube2) 0.5s forwards; }
+.boxer:hover { box-shadow: 7px 10px 15px #171717, -8px -8px 16px #212121;}
 
 .boxer a { color: inherit;}
 .boxer h5 { color: white;}
@@ -236,10 +236,6 @@ function hideMenu() {
 	100% { height: 0; margin-top: 0;}
 }
 
-@keyframes redlines {
- 0% { border: 1px solid transparent;}
-100% { border: 1px solid #ffffff;}
-}
 
 
 
