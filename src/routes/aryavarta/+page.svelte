@@ -4,15 +4,20 @@ import Two from '$lib/components/reuse/StandardTwo.svelte'
 import Three from '$lib/components/reuse/StandardTwo.svelte'
 import Four from '$lib/components/reuse/StandardTwo.svelte'
 import { reveal } from 'svelte-reveal';
+
 </script>
 
-<div class="black-beauty">
-	<div class="imagecontainer-hero"></div>
+<div class="b-box">
+	<div class="r-r-r-r accox">
+		<img src="/images/scrolls/panelim2.webp" />
+		<img src="/images/scrolls/anc2.webp" />
+		<img src="/images/scrolls/scrollsmap.webp" />
+	</div>
 	<StandardTwo
 	--thistime="white"
 	>
 		<img slot="col-left" src="/images/scrolls/anc1.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
-		<h5 slot="col-right"> 
+		<h5 class="blackb" slot="col-right"> 
 				There is a place.
 				It lies outside of space and time as we know it,
 				but many of us have been there.
@@ -20,9 +25,8 @@ import { reveal } from 'svelte-reveal';
 		</h5>
 	</StandardTwo>
 	<Two
-		--thistime="white"
 		>
-		<h5 slot="col-left">
+		<h5 class="white" slot="col-left">
 		Hive mind. Race memory. Blood bond.
 				We may call it many things, but we know it best when we see it,
 				and it feels warm and familiar…as if a memory we once lived.<br><br>
@@ -32,7 +36,6 @@ import { reveal } from 'svelte-reveal';
 	</Two>
 
 	<Three
-	--thistime="white"
 	>
 	<img slot="col-left" src="/images/scrolls/anc3.webp" alt="part3" use:reveal={{ transition: "slide" }}/>
 	<h5 slot="col-right">
@@ -44,7 +47,6 @@ import { reveal } from 'svelte-reveal';
 	</Three>
 
 		<Four
-		--thistime="white"
 		>
 		<h5 slot="col-left">
 And you? A pioneer of tilled grain you were.
@@ -55,8 +57,6 @@ And you? A pioneer of tilled grain you were.
 		</h5>
 		<img slot="col-right" src="/images/scrolls/anc4.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
 	</Four>
-	
-
 <div class="c-c-c-c box5"> 
 	<h3 class="bigger3 orange">
 		We can access this place,
@@ -77,14 +77,26 @@ And you? A pioneer of tilled grain you were.
 
 <style lang="sass">
 
-.black-beauty, .box6
-	background: white
+.record
+	position: fixed
+	z-index: 900
+	top: 200px
+	left: 100px
 
-h5
-	color: #474747
+.b-box
+	background: linear-gradient(40deg,#272727,#1B2023)
+	h5, h3, p
+		font-family: 'Frank Ruhl Libre', serif
+		font-weight: 400
+	.black-b
+		color: #272727
+		font-weight: 400
+
+.box6
+	background: linear-gradient(40deg,#272727,#1B2023)
 
 .box2, .box3, .box5
-	background: none
+	background: linear-gradient(40deg,#272727,#1B2023)
 
 .buttonsbox button
 	background-color: #ff3d00
@@ -106,13 +118,6 @@ button a
 	height: 100vh
 	z-index: 2
 
-.imagecontainer-hero
-	background-image: url('/images/scrolls/scrollsmap.webp')
-	background-position: center -400px
-
-.box5
-	background: white
-
 .cola img, .cold img
 	object-fit: cover
 	height: 88%
@@ -122,11 +127,17 @@ h4
 	font-weight: 300
 	line-height: 1.4em
 
+.accox img
+	object-fit: cover
+
 @media screen and (min-width: 900px)
 
-	.l1
+	.accox img
+		width: 33.3%
+		border: 2px solid white
+
+	.accox
 		height: 100vh
-		padding: 6em 6vw 4em 6vw
 		justify-content: center
 
 	.box2, .box3
@@ -154,7 +165,6 @@ h4
 
 	h5
 		font-weight: 500
-		line-height: 1.4
 
 	.box5 h3
 		text-align: left
