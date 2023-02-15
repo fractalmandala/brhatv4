@@ -1,39 +1,8 @@
 <script lang="ts">
 import { reveal } from 'svelte-reveal'
-import { onMount } from 'svelte'
-import Animations from 'textify.js'
 import '$lib/styles/anim-rid.css';
 import Shape from '$lib/components/logos/RiDShape.svelte'
-import '$lib/styles/textify.css'
-let textify: {reset: () => void;}, textifyTitle: {reset: () => void;};
 let y = 1
-const { Textify } = Animations;
-const { TextifyTitle } = Animations;
-
-function initTextify() {
-  textify = new Textify({
-    duration: 900,
-    stagger: 150,
-    once: false,
-    easing: "circInOut"
-  });
-  textifyTitle = new TextifyTitle({
-    duration: 500,
-    stagger: 50,
-    once: false,
-  });
-}
-
-onMount(() => {
-  initTextify();
-  window.addEventListener('beforeunload', refreshPage);
-});
-
-function refreshPage() {
-  textify.reset();
-  textifyTitle.reset();
-  initTextify();
-}
 
 let isf1 = true
 let isf2 = true
@@ -216,13 +185,10 @@ justify-content: center;
 	.ly { justify-content: center; align-items: flex-start;padding-top: 180px; background: var(--ridthree);}
 	.box7 { padding-bottom: 24px; }
 	.bigger5 { padding: 16px; border-bottom: 1px solid #d7d7d7; margin: 0;}
-	.ly h5 { margin-left: 120px; margin-top: -36px; color: #878787;}
-
 	.l0 { height: 72vh;  align-items: center;background: var(--ridthree);}
 	.box1{ width: 60%; padding-left: 32px;}
 	.box2 { align-items: center; justify-content: center; width: 40%; height: 100%;}
 	.box2 img { object-fit: cover; width: 88%; height: 88%;}
-
  
 }
 

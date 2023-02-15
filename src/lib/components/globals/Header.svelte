@@ -29,7 +29,7 @@ function hideMenu() {
 	</div>
 </div>
 {#if isMenu}
-<div class="c-c-c-c fullscreen" in:fly="{{ duration: 400, x: 0, y: -900, opacity: 1, easing: quadIn}}" out:fly="{{ duration: 400, x: 0, y: -900, opacity: 1, easing: quadIn}}" on:click={hideMenu} on:keydown={hideMenu}>
+<div class="c-c-c-c fullscreen" in:fly="{{ duration: 400, x: 0, y: -900, opacity: 1, easing: quadIn}}" out:fly="{{ duration: 400, x: 0, y: -900, opacity: 1, easing: quadIn}}">
 	<div class="r-r-r-r topstrip">
 		<div class="c-c-c-c sec7"><a href="/">
 			<img src="/images/brhatlogos/horizontalwhite.png" alt="finallogo" /></a>

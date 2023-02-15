@@ -2,10 +2,8 @@
 import '$lib/styles/newglobals.sass'
 import supabase from '$lib/db'
 import { fly } from 'svelte/transition';
-import { quintOut, expoInOut } from 'svelte/easing';
 import { reveal } from 'svelte-reveal'
-import { onMount } from 'svelte'
-import Animations from 'textify.js';
+import { quintOut, expoInOut } from 'svelte/easing';
 import AllBrands from '$lib/components/globals/BrandsWhite.svelte'
 import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte'
 import StaticH1 from '$lib/components/headers/StaticH1.svelte'
@@ -22,8 +20,6 @@ import LogFm from '$lib/components/logos/LogFm.svelte'
 import LogMan from '$lib/components/logos/LogMan.svelte'
 import LogMrd from '$lib/components/logos/LogMrd.svelte'
 import LogRid from '$lib/components/logos/LogRid.svelte'
-import '$lib/styles/textify.css'
-let textify: {reset: () => void;}, textifyTitle: {reset: () => void;};
 let y = 1
 let isAnv = false
 let isMrd = false
@@ -116,34 +112,6 @@ function toggleSoa(){
 	} else {
 		op = 0
 	}
-}
-
-const { Textify } = Animations;
-const { TextifyTitle } = Animations;
-
-function initTextify() {
-  textify = new Textify({
-    duration: 400,
-    stagger: 50,
-    once: false,
-    easing: "circInOut"
-  });
-  textifyTitle = new TextifyTitle({
-    duration: 600,
-    stagger: 100,
-    once: false,
-  });
-}
-
-onMount(() => {
-  initTextify();
-  window.addEventListener('beforeunload', refreshPage);
-});
-
-function refreshPage() {
-  textify.reset();
-  textifyTitle.reset();
-  initTextify();
 }
 
 let currentList = "list-1"

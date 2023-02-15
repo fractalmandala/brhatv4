@@ -1,13 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap')
+@font-face 
+	font-family: 'Singel', serif
+	font-weight: 400
+	src: url('/static/fonts/Singel/Singel-Trial-Regular.woff') format('woff'), url('/static/Singel/Singel/Trial-Regular.woff2') format('woff2')
+
+@font-face 
+	font-family: 'Singel', serif
+	font-weight: 700
+	src: url('/static/fonts/Singel/Singel-Trial-Bold.woff') format('woff'), url('/static/Singel/Singel/Singel-Trial-Bold.woff2') format('woff2')
+
+@font-face
+	font-family: 'Encode Sans', sans-serif
+	font-weight: 400
+	src: url('/static/fonts/EncodeSans-VariableFont_wdth,wght.ttf') format('ttf')
+
+@font-face
+	font-family: 'Encode Sans', sans-serif
+	font-weight: 800
+	src: url('/static/fonts/EncodeSans-VariableFont_wdth,wght.ttf') format('ttf')
+
+@font-face
+	font-family: 'Code Next', sans-serif
+	font-weight: 400
+	src: url('/static/fonts/codenext/CodeNext-Trial-Book.woff') format('woff'), url('/static/fonts/codenext/CodeNext-Trial-Book.woff2') format('woff2')
+
+@font-face
+	font-family: 'Code Next', sans-serif
+	font-weight: 600
+	src: url('/static/fonts/codenext/CodeNext-Trial-SemiBold.woff') format('woff'), url('/static/fonts/codenext/CodeNext-Trial-SemiBold.woff2') format('woff2')
+
+@font-face
+	font-family: 'Code Next', sans-serif
+	font-weight: 700
+	src: url('/static/fonts/codenext/CodeNext-Trial-Bold.woff') format('woff'), url('/static/fonts/codenext/CodeNext-Trial-Bold.woff2') format('woff2')
+
+@font-face
+	font-family: 'Code Next', sans-serif
+	font-weight: 800
+	src: url('/static/fonts/codenext/CodeNext-Trial-ExtraBold.woff') format('woff'), url('/static/fonts/codenext/CodeNext-Trial-ExtraBold.woff2') format('woff2')
+
+@font-face
+	font-family: 'Code Next', sans-serif
+	font-weight: 900
+	src: url('/static/fonts/codenext/CodeNext-Trial-Heavy.woff') format('woff'), url('/static/fonts/codenext/CodeNext-Trial-Heavy.woff2') format('woff2')
+
+@font-face
+	font-family: 'Code Next', sans-serif
+	font-weight: 300
+	src: url('/static/fonts/codenext/CodeNext-Trial-Light.woff') format('woff'), url('/static/fonts/codenext/CodeNext-Trial-Light.woff2') format('woff2')
+
+@font-face
+	font-family: 'Code Next', sans-serif
+	font-weight: 200
+	src: url('/static/fonts/codenext/CodeNext-Trial-Thin.woff') format('woff'), url('/static/fonts/codenext/CodeNext-Trial-Thin.woff2') format('woff2')
+	
+
 /*containers********************************************************* *****************************************/
 
 body, html
 	box-sizing: border-box
 	margin: 0
 	color: #474747
-	scroll-behavior: smooth
 
 *, :root, div
 	box-sizing: border-box
@@ -19,22 +75,26 @@ body, html
 	--cube5: cubic-bezier(1.000, 0.005, 1.000, 0.005)
 	--snap: all 0.18s cubic-bezier(0.925, 0.235, 1.000, -0.065)
 	--beau: linear-gradient(40deg,#272727,#1B2023)
-	--green: #62AC40
+	--green: #10C56D
 	--rid: #10C56D
 	--blue: #255F85
 	--lightblue: #41EAD4
+	--yell: #FFB900
+	--rred: #FF6363
+	--purp: #6A4C93
 	--ridor: #FC7753
 	--ridtwo: #136F63
+	--grey: #878787
 	--ridthree: white
 	--ridfour: #8F2D56
 	--test: rgba(16, 197, 109, 1)
 	--black: rgba(29, 29, 29, 1)
 
-.jet
-	h3
-		font-family: 'Frank Ruhl Libre',serif
-	h5, h6, p, pre, small, cite, h4, h1, h2
-		font-family: 'Mulish', sans-serif
+h2, h4, h3, h5, p, pre, small, cite, h6
+	font-family: 'Encode Sans', sans-serif
+
+h1
+	font-family: 'Encode Sans', sans-serif
 
 .lay
 	z-index: 5
@@ -58,7 +118,7 @@ body, html
 	color: #ff3d00
 
 .green
-	color: #62AC40
+	color: #10C56D
 
 .rid
 	color: #10C56D
@@ -117,6 +177,10 @@ small
 	display: flex
 	flex-direction: column
 	background: #272727
+
+.cc
+	justify-content: center
+	align-items: center
 
 .col-full
 	width: 100vw
@@ -316,9 +380,13 @@ small
 	.bigger5
 		font-size: 48px
 
+	h6
+		font-size: 14px
+		font-weight: 400
+
 	h5
-		font-size: 24px
-		font-weight: 700
+		font-size: 27px
+		font-weight: 600
 
 	.small5 h5
 		font-size: 20px
@@ -340,7 +408,7 @@ small
 		h1
 			font-size: 200px
 			line-height: 1.1
-			font-weight: 900
+			font-weight: 600
 		h2
 			font-size: 72px
 			line-height: 1.2
@@ -349,11 +417,12 @@ small
 		h3
 			line-height: 1.1
 			font-size: 40px
-			font-weight: 700
+			font-weight: 500
 			margin-bottom: 12px
 		h4
 			line-height: 1.1
 			font-size: 48px
+			font-weight: 600
 			margin-top: 8px
 			margin-bottom: 12px
 		p
@@ -370,10 +439,11 @@ small
 	h2
 		font-size: 80px
 		line-height: 1.2
-		font-weight: 400
+		font-weight: 700
 
 	h1
-		font-size: 120px
+		font-size: 104px
+		font-weight: 700
 
 	.smaller1
 		font-size: 96px
