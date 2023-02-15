@@ -4,11 +4,6 @@ import '$lib/styles/anim-rid.css';
 import Shape from '$lib/components/logos/RiDShape.svelte'
 let y = 1
 
-let isf1 = true
-let isf2 = true
-let isf3 = true
-let isf4 = true
-
 
 
 
