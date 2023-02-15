@@ -1,7 +1,6 @@
 <script lang="ts">
 import { reveal } from 'svelte-reveal'
 import '$lib/styles/anim-rid.css';
-import Shape from '$lib/components/logos/RiDShape.svelte'
 let y = 1
 
 

@@ -10,10 +10,6 @@ import '$lib/styles/globaltemplate.sass'
 import '$lib/styles/textify.css'
 inject({ mode: dev ? 'development' : 'production' });
 
-onMount(() => {
-  window.addEventListener('beforeunload', refreshPage);
-})
-
 </script>
 
 <Header></Header>

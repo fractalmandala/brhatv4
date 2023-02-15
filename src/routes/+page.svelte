@@ -3,7 +3,7 @@ import '$lib/styles/newglobals.sass'
 import supabase from '$lib/db'
 import { fly } from 'svelte/transition';
 import { reveal } from 'svelte-reveal'
-import { quintOut, expoInOut } from 'svelte/easing';
+import { expoInOut } from 'svelte/easing';
 import AllBrands from '$lib/components/globals/BrandsWhite.svelte'
 import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte'
 import StaticH1 from '$lib/components/headers/StaticH1.svelte'
@@ -14,12 +14,6 @@ import BrhadMrdanga from '$lib/components/vidplaylists/BrhadMrdanga.svelte'
 import HindiKavita from '$lib/components/vidplaylists/HindiKavita.svelte'
 import IKSVids from '$lib/components/vidplaylists/IKSVids.svelte'
 import OtherVids from '$lib/components/vidplaylists/OtherVids.svelte'
-import LogAnv from '$lib/components/logos/LogAnv.svelte'
-import LogDr from '$lib/components/logos/LogDr.svelte'
-import LogFm from '$lib/components/logos/LogFm.svelte'
-import LogMan from '$lib/components/logos/LogMan.svelte'
-import LogMrd from '$lib/components/logos/LogMrd.svelte'
-import LogRid from '$lib/components/logos/LogRid.svelte'
 let y = 1
 let isAnv = false
 let isMrd = false
