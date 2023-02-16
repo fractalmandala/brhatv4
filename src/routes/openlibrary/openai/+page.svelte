@@ -21,7 +21,7 @@ const handleSubmit: SubmitFunction = () => {
 				loading = false;
 			} else {
 				loading = false;
-					console.log(alert);
+					(alert);
 			}
 		}
 	};
@@ -73,12 +73,12 @@ const handleSubmit: SubmitFunction = () => {
 			</div>
 		</form>
 	</box>
-{#if answer != ''}
+
 	<box class="box">
 		<h3 class="subtitle"><b>Text Response</b></h3>
 		<p>{answer}</p>
 		</box>
-	{/if}
+
 
 {#if imageArray.length > 0}
 	<box class="box">
