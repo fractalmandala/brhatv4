@@ -1,41 +1,40 @@
 <script>
-import Animations from "textify.js";
 import ToTop from '$lib/components/globals/ToTop.svelte'
 </script>
 
-<div class="big-box" data-scroll-section>
+<div class="big-box">
 <ToTop></ToTop>
-	<div class="margin-box">
-		<div class="r-r-r-r" id="row-one">
-			<div class="c-c-c-c" id="logo-col"><a href="/">
-				<img id="logoimage" src="/images/brhatlogos/horizontalwhite.png" alt="brhatlogo" /></a>
-				<div class="r-r-r-r" id="icons-row">
-					<div class="c-c-c-c icon-box" id="icon-twitter">
-						<a href="https://twitter.com/brhat_in" target="_blank" rel="noreferrer"><img src="/images/icons/twitter-red.png" alt="twitter icon" /></a>
-					</div>
-					<div class="c-c-c-c icon-box" id="icon-facebook">
-						<a href="https://www.facebook.com/brhat.in" target="_blank" rel="noreferrer"><img src="/images/icons/facebook-red.png" alt="facebook icon" /></a>
-					</div>
-					<div class="c-c-c-c icon-box" id="icon-youtube">
-						<a href="https://www.youtube.com/@brhat" target="_blank" rel="noreferrer"><img src="/images/icons/youtube-red.png" alt="youtube icon" /></a>
-					</div>
-					<div class="c-c-c-c icon-box" id="icon-linkedin">
-						<a href="https://www.linkedin.com/company/brhat" target="_blank" rel="noreferrer"><img src="/images/icons/linkedin-red.png" alt="linkedin icon" /></a>
-					</div>
-					<div class="c-c-c-c icon-box" id="icon-instagram">
-						<a href="https://www.instagram.com/brhat_in/" target="_blank" rel="noreferrer"><img src="/images/icons/instagram-red.png" alt="instagram icon" /></a>
-					</div>
+<div class="margin-box">
+	<div class="r-r-r-r" id="row-one">
+		<div class="c-c-c-c" id="logo-col"><a href="/">
+			<img id="logoimage" src="/images/brhatlogos/horizontalwhite.png" alt="brhatlogo" /></a>
+			<div class="r-r-r-r" id="icons-row">
+				<div class="c-c-c-c icon-box" id="icon-twitter">
+					<a href="https://twitter.com/brhat_in" target="_blank" rel="noreferrer"><img src="/images/icons/twitter-red.png" alt="twitter icon" /></a>
+				</div>
+				<div class="c-c-c-c icon-box" id="icon-facebook">
+					<a href="https://www.facebook.com/brhat.in" target="_blank" rel="noreferrer"><img src="/images/icons/facebook-red.png" alt="facebook icon" /></a>
+				</div>
+				<div class="c-c-c-c icon-box" id="icon-youtube">
+					<a href="https://www.youtube.com/@brhat" target="_blank" rel="noreferrer"><img src="/images/icons/youtube-red.png" alt="youtube icon" /></a>
+				</div>
+				<div class="c-c-c-c icon-box" id="icon-linkedin">
+					<a href="https://www.linkedin.com/company/brhat" target="_blank" rel="noreferrer"><img src="/images/icons/linkedin-red.png" alt="linkedin icon" /></a>
+				</div>
+				<div class="c-c-c-c icon-box" id="icon-instagram">
+					<a href="https://www.instagram.com/brhat_in/" target="_blank" rel="noreferrer"><img src="/images/icons/instagram-red.png" alt="instagram icon" /></a>
 				</div>
 			</div>
-			<div class="r-r-r-r" id="links-row">
-				<div class="c-c-c-c link-box">
+		</div>
+		<div class="r-r-r-r" id="links-row">
+			<div class="c-c-c-c link-box">
 					<h6><a href="/anveshi">Bṛhatanveṣī</a></h6>
 					<p><a href="/anveshi/chapter/odisha">Odisha Chapter</a></p>
 					<p><a href="/anveshi/chapter/chamba">Chamba Chapter</a></p>
 					<p><a href="/anveshi/chapter/karnataka">Karnataka Chapter</a></p>
 					<p><a href="/anveshi/diaries">Travel Diaries</a></p>
-				</div>
-				<div class="c-c-c-c link-box">
+			</div>
+			<div class="c-c-c-c link-box">
 					<h6><a href="/drashta">Bṛhat Draṣṭā</a></h6>
 					<p><a href="/drashta/course/hinduiconography">Hindu Iconography</a></p>
 					<p><a href="/drashta/course/shriramswarup">Shri Ram Swarup</a></p>
@@ -43,16 +42,16 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 					<p><a href="/drashta/drashtas">Draṣṭās</a></p>
 					<p><a href="/drashta/schools">Schools</a></p>
 					<p><a href="/drashta/firekeepers">Firekeepers</a></p>
-				</div>
-				<div class="c-c-c-c link-box">
+			</div>
+			<div class="c-c-c-c link-box">
 					<h6><a href="/about">About</a></h6>
 					<p><a href="/about/docs/namelogo">Nāmarūpa</a></p>
 					<p><a href="/about/docs/values">Pratijñā</a></p>
 					<p><a href="/about/docs/svatahsiddha">Svataḥsiddha</a></p>
 					<p><a href="/about/#advisory">Advisory Board</a></p>
 					<p><a href="/about/#team">Team</a></p>
-				</div>
-				<div class="c-c-c-c link-box">
+			</div>
+			<div class="c-c-c-c link-box">
 					<h6>Actions</h6>
 					<p><a href="/dhiti">Dhīti</a></p>
 					<p><a href="/openlibrary">Bṛhat Open Library</a></p>
@@ -60,13 +59,14 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 					<p><a href="/mandala">Fractal Maṇḍala</a></p>
 					<p><a href="/aryavarta">Scrolls of Āryavarta</a></p>
 					<p><a href="/rta">Ṛta in Design</a></p>
-				</div>
 			</div>
 		</div>
 	</div>
-	<div class="r-r-r-r" id="last-row"><small>2023 All Rights Reserved | <span><a href="/docs">Documentation</a> | </span><span><a href="/about/privacy">Privacy</a></span><br>
+</div>
+<div class="r-r-r-r" id="last-row"><small>2023 All Rights Reserved | <span><a href="/docs">Documentation</a> | </span><span><a href="/about/privacy">Privacy</a></span><br>
 	<span class="white">Write to us: contact@brhat.in</span>
-	</small></div>
+	</small>
+</div>
 </div>
 
 <style lang="sass">
@@ -77,7 +77,6 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	border-top: 1px solid white
 	small
 		color: #676767
-		font-size: 12px
 		a
 			font-size: inherit
 			color: inherit
@@ -95,8 +94,6 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		transform: scale(0.96)
 
 .icon-box
-	height: 32px
-	width: 32px
 	align-items: center
 	justify-content: center
 
@@ -115,7 +112,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		color: inherit
 	p
 		color: #878787
-		font-weight: 300
+		font-weight: 400
 		letter-spacing: 0
 		margin-bottom: 8px
 		margin-top: 0
@@ -138,8 +135,12 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	display: flex
 
 	
-	
 @media screen and (min-width: 900px) 
+
+	.icon-box
+		height: 32px
+		width: 32px
+	
 	.big-box
 		padding-top: 20px
 		
@@ -290,26 +291,28 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 
 	.big-box
 		padding-top: 2em
-		padding-bottom: 20px
 		width: 100vw
+		padding-left: 0 !important
+		padding-right: 0 !important
+		height: 100%
 
 	.margin-box
 		width: 100%
 		height: calc(100% - 14em)
 		margin-top: 2em
-		padding: 0 6vw
+		padding: 0 32px
 
 	#last-row
-		width: calc(100% - 2vw)
+		width: 100vw
 		margin: 0
-		height: 4em
-		padding-top: 1em
+		padding: 24px 32px
 		small
-			font-size: 14px
+			font-size: 12px !important
 			line-height: 1.5
+			width: 100%
 
 	#logoimage
-		width: 200px
+		width: 160px
 		margin-bottom: 1em
 		margin-top: 2em
 
@@ -320,31 +323,37 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	#logo-col
 		width: 100%
 		align-items: flex-start
-		
 
+	.icon-box
+		height: 24px
+		width: 24px
+		
 	#icons-row
 		width: 100%
 		justify-content: flex-start
 		margin-bottom: 1em
 		margin-top: 8px
+		gap: 16px
 		img
-			width: 26px
-			height: 26px
+			width: 24px
+			height: 24px
 
 	#links-row
 		width: 100%
 		height: 100%
-		padding-bottom: 1em
-		flex-direction: column
+		padding-bottom: 32px
+		flex-direction: row
+		justify-content: space-between
 		.link-box
-			width: calc(100% - 8vw)
+			width: 45%
 			p
-				font-size: 20px
+				font-size: 14px
 				margin-top: 6px
 				margin-bottom: 8px
 			h6
-				font-size: 32px
+				font-size: 18px
 				margin-bottom: 8px
+				margin-top: 32px
 
 	
 </style>

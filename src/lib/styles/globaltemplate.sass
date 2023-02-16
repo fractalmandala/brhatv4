@@ -94,6 +94,14 @@ body, html
 	margin: 0
 	color: #474747
 
+pre
+	overflow-x: auto
+	white-space: pre-wrap
+	white-space: -moz-pre-wrap
+	white-space: -pre-wrap
+	white-space: -o-pre-wrap
+	word-wrap: break-word
+
 *, :root, div
 	box-sizing: border-box
 	--mygreen: linear-gradient(90deg, #10C56D -3.3%, #53D66C 95.75%)
@@ -120,10 +128,16 @@ body, html
 	--black: rgba(29, 29, 29, 1)
 
 h2, h4, h3, h5, p, pre, small, cite, h6
-	font-family: 'Encode Sans', sans-serif
+	font-family: 'Code Next', sans-serif
 
 h1
-	font-family: 'Encode Sans', sans-serif
+	font-family: 'Code Next', sans-serif
+
+.formal3 h2, .formal3 h3, .formal3 h4, .formal3 h5, .formal3 h1, .formal3 p, .formal3 pre
+	font-family: 'Frank Ruhl Libre', serif
+
+.formal3 a
+	color: inherit
 
 .lay
 	z-index: 5
@@ -459,6 +473,9 @@ small
 		p
 			font-size: 20px
 			margin-top: 2px
+		pre
+			font-size: 20px
+			margin-top: 2px
 		cite
 			letter-spacing: 0px
 			font-size: 16px
@@ -487,6 +504,16 @@ small
 		font-weight: 500
 
 	p
+		font-size: 18px
+		line-height: 1.25
+
+	.scaled p
+		font-size: 20px
+
+	.scaled pre
+		font-size: 20px
+
+	pre
 		font-size: 18px
 		line-height: 1.25
 
@@ -784,7 +811,6 @@ small
 	.r-r-r-r
 		justify-content: center
 		flex-wrap: wrap
-		gap: 2em !important
 
 	.r-r-c-c
 		flex-direction: column

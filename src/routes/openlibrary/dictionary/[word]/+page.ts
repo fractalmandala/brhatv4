@@ -6,7 +6,6 @@ export async function load({params}:{params:{word: string}}){
 	.select()
 	.eq('word',`${params.word}`)
 	.single()
-	
 	if (error) throw new Error(error.message)
 	return data
 	
