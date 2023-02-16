@@ -8,7 +8,7 @@ export const actions: Actions = {
         const imagePrompt = promptFormData.get('image-text-submission') as string;
 
         const configuration = new Configuration({
-            apiKey: import.meta.env.OPENAI_API_KEY,
+            apiKey: process.env.OPENAI_API_KEY,
         });
 
         const openai = new OpenAIApi(configuration);
