@@ -1,12 +1,12 @@
 <script>
 import supabase from '$lib/db'
-import DrashtaCourse from '$lib/components/pagecomps/DrashtaRam.svelte'
+import DrashtaCourse from '$lib/components/pagecomps/DrashtaRamayana.svelte'
 let y = 1
 	export async function fetchCourse(){
 	const { data, error } = await supabase
-	.from('brhat-drashta')
+	.from('brhat-drashta2')
 	.select()
-	.eq('course','introduction to shri ram swarup')
+	.eq('coursename','Śrīmad Vālmiki Rāmāyana Pārāyana')
 	.eq('type', 'overview')
 	if (error) throw new Error(error.message)
 	return data

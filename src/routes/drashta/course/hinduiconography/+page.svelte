@@ -1,7 +1,7 @@
 <script>
 import supabase from '$lib/db'
 import DrashtaCourse from '$lib/components/pagecomps/DrashtaCourse.svelte'
-
+let y = 1
 	export async function fetchCourse(){
 	const { data, error } = await supabase
 	.from('brhat-drashta')
@@ -15,7 +15,7 @@ import DrashtaCourse from '$lib/components/pagecomps/DrashtaCourse.svelte'
 </script>
 
 
-
+<svelte:window bind:scrollY={y}/>
 <div class="row-of-2 l1 pad4">
 	{#await fetchCourse()}
 	<small>...loading</small>
@@ -25,7 +25,7 @@ import DrashtaCourse from '$lib/components/pagecomps/DrashtaCourse.svelte'
 			<h1>{item.name}</h1>
 		</div>
 		<div class="twobox two2">
-			<img src={item.image} alt={item.name} />
+			<img src={item.image} alt={item.name} style="transform: translateY({y/4}px)" />
 		</div>
 	{/each}
 	{:catch error}
@@ -37,20 +37,16 @@ import DrashtaCourse from '$lib/components/pagecomps/DrashtaCourse.svelte'
 </div>
 
 
-
-
-
-
-
 <style>
-.l1 { height: 100vh; background-position: center center; background-size: cover; background-repeat: no-repeat; justify-content: flex-start;}
+.l1 { height: 100vh; background-position: center center; background-size: cover; background-repeat: no-repeat; justify-content: flex-start; z-index: 2; background: white;}
+.l2 { z-index: -1;}
 .formal3 h1 { text-transform: capitalize;}
-
+.l1 {overflow-y: hidden;}
 @media screen and (min-width: 900px) {
 	.l1 { align-items: center; height: 100vh;}
 	.twobox img { object-fit: cover; width: 100%; height: 100%;}
-	.two2 { width: 80%; height: 72%; z-index: -1;}
-	.two1 { width: 70vw; margin-right: -56%; height: 100%; justify-content: flex-end;}
+	.two2 { width: 80%; height: 72%;z-index:0;}
+	.two1 { width: 70vw; margin-right: -56%; height: 100%; justify-content: flex-end;z-index: 1;}
 	.two1 h1 { background: #272727; padding: 16px 32px; margin-bottom: 0.5em; color: white;}
 }
 

@@ -93,9 +93,9 @@ function toggle5(){
 
 export async function fetchCourse(){
 	const { data, error } = await supabase
-	.from('brhat-drashta')
+	.from('brhat-drashta2')
 	.select()
-	.eq('course','hindu iconography')
+	.eq('coursename','Śrīmad Vālmiki Rāmāyana Pārāyana')
 	.eq('type', 'overview')
 	if (error) throw new Error(error.message)
 	return data
@@ -103,9 +103,9 @@ export async function fetchCourse(){
 
 export async function fetchDetails(){
 	const { data, error } = await supabase
-	.from('brhat-drashta')
+	.from('brhat-drashta2')
 	.select()
-	.eq('course','hindu iconography')
+	.eq('coursename','Śrīmad Vālmiki Rāmāyana Pārāyana')
 	.eq('type', 'course details')
 	.order('sequence',{ascending: false})
 	.limit(3)
@@ -115,9 +115,9 @@ export async function fetchDetails(){
 
 export async function fetchWhofor(){
 	const { data, error } = await supabase
-	.from('brhat-drashta')
+	.from('brhat-drashta2')
 	.select()
-	.eq('course','hindu iconography')
+	.eq('coursename','Śrīmad Vālmiki Rāmāyana Pārāyana')
 	.eq('type', 'course details')
 	.order('sequence')
 	.limit(1)
@@ -127,9 +127,9 @@ export async function fetchWhofor(){
 
 export async function fetchTakeaways(){
 	const { data, error } = await supabase
-	.from('brhat-drashta')
+	.from('brhat-drashta2')
 	.select()
-	.eq('course','hindu iconography')
+	.eq('coursename','Śrīmad Vālmiki Rāmāyana Pārāyana')
 	.eq('type', 'takeaway')
 	if (error) throw new Error(error.message)
 	return data
@@ -137,9 +137,9 @@ export async function fetchTakeaways(){
 
 export async function fetchContent(){
 	const { data, error } = await supabase
-	.from('brhat-drashta')
+	.from('brhat-drashta2')
 	.select()
-	.eq('course','hindu iconography')
+	.eq('coursename','Śrīmad Vālmiki Rāmāyana Pārāyana')
 	.eq('type', 'course content')
 	.order('sequence')
 	if (error) throw new Error(error.message)
@@ -148,9 +148,9 @@ export async function fetchContent(){
 
 export async function fetchFacilitator(){
 	const { data, error } = await supabase
-	.from('brhat-drashta')
+	.from('brhat-drashta2')
 	.select()
-	.eq('course','hindu iconography')
+	.eq('coursename','Śrīmad Vālmiki Rāmāyana Pārāyana')
 	.eq('type', 'facilitator')
 	.order('sequence')
 	if (error) throw new Error(error.message)
@@ -320,6 +320,7 @@ onMount(() => {
 #detailscol {
 	border: 1px solid #d7d7d7;
 	border-radius: 8px;
+	text-align: center;
 }
 
 #detailscol small {

@@ -1,4 +1,6 @@
 <script lang="ts">
+import { onMount } from 'svelte'
+import { goto } from '$app/navigation'
 import { reveal } from 'svelte-reveal'
 import { fly } from 'svelte/transition'
 import { quadIn } from 'svelte/easing'
@@ -6,11 +8,8 @@ import '$lib/styles/newglobals.sass'
 let isMenu = false;
 let y = 1
 
-function showMenu() {
-	isMenu = true;
-}
-function hideMenu() {
-	isMenu = false;
+function toggleMenu() {
+	isMenu = !isMenu
 }
 
 </script>
@@ -22,19 +21,19 @@ function hideMenu() {
 			<a href="/"><img src="/images/corpimages/motif.png" id="rotate-img" class="rotate motif" alt="motif" style="transform: rotate({y}deg)"/></a>
 			<a href="/"><img src="/images/corpimages/logotype.png" class="logotype" alt="logotype"/></a>
 		</div>
-		<div class="c-c-c-c mobilemenu" on:click={showMenu} on:keydown={showMenu}>
+		<div class="c-c-c-c mobilemenu" on:click={toggleMenu} on:keydown={toggleMenu}>
 			<img class="menu-red" src="/images/icons/icon-menu-r.png" alt="menuicon"/>
 			<img class="menu-white" src="/images/icons/icon-menu-w.png" alt="menuicon"/>	
 		</div>
 	</div>
 </div>
 {#if isMenu}
-<div class="c-c-c-c fullscreen" in:fly="{{ duration: 400, x: 0, y: -900, opacity: 1, easing: quadIn}}" out:fly="{{ duration: 400, x: 0, y: -900, opacity: 1, easing: quadIn}}">
+<div class="c-c-c-c fullscreen" in:fly="{{ duration: 400, x: 0, y: -900, opacity: 1, easing: quadIn}}" out:fly="{{ duration: 400, x: 0, y: -900, opacity: 1, easing: quadIn}}" on:click={toggleMenu} on:keydown={toggleMenu}>
 	<div class="r-r-r-r topstrip">
 		<div class="c-c-c-c sec7"><a href="/">
 			<img src="/images/brhatlogos/horizontalwhite.png" alt="finallogo" /></a>
 		</div>
-		<div class="closebuttonstrip" on:click={hideMenu} on:keydown={hideMenu}>
+		<div class="closebuttonstrip" on:click={toggleMenu} on:keydown={toggleMenu}>
 			<img src="/images/icons/hamburger-close.png" alt="closemenu"/>
 		</div>
 	</div>
@@ -195,7 +194,7 @@ function hideMenu() {
 {/if}
 
 <style>
-.boxer { position: relative; overflow: hidden; transition: all 0.56s var(--cube1); border: 1px solid #373737; box-shadow: 1px 1px 2px #171717, -1px -1px 2px #212121; align-items: flex-start; justify-content: flex-start; cursor: pointer; border-radius: 4px; }
+.boxer { position: relative; overflow: hidden; transition: all 0.56s var(--cube1); border: 1px solid #373737; box-shadow: 1px 1px 2px #171717, -1px -1px 2px #212121; align-items: flex-start; justify-content: flex-start; border-radius: 4px; }
 .boxer span { position: absolute; top: 0; left: 0;}
 .typ1 { border-top: 1px solid #fe4a49;}
 .typ2 { border-right: 1px solid #fe4a49; width: 100%; }

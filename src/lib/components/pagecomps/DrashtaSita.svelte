@@ -95,7 +95,7 @@ export async function fetchCourse(){
 	const { data, error } = await supabase
 	.from('brhat-drashta')
 	.select()
-	.eq('course','hindu iconography')
+	.eq('course','introduction to sita ram goel')
 	.eq('type', 'overview')
 	if (error) throw new Error(error.message)
 	return data
@@ -105,7 +105,7 @@ export async function fetchDetails(){
 	const { data, error } = await supabase
 	.from('brhat-drashta')
 	.select()
-	.eq('course','hindu iconography')
+	.eq('course','introduction to sita ram goel')
 	.eq('type', 'course details')
 	.order('sequence',{ascending: false})
 	.limit(3)
@@ -117,7 +117,7 @@ export async function fetchWhofor(){
 	const { data, error } = await supabase
 	.from('brhat-drashta')
 	.select()
-	.eq('course','hindu iconography')
+	.eq('course','introduction to sita ram goel')
 	.eq('type', 'course details')
 	.order('sequence')
 	.limit(1)
@@ -129,7 +129,7 @@ export async function fetchTakeaways(){
 	const { data, error } = await supabase
 	.from('brhat-drashta')
 	.select()
-	.eq('course','hindu iconography')
+	.eq('course','introduction to sita ram goel')
 	.eq('type', 'takeaway')
 	if (error) throw new Error(error.message)
 	return data
@@ -139,7 +139,7 @@ export async function fetchContent(){
 	const { data, error } = await supabase
 	.from('brhat-drashta')
 	.select()
-	.eq('course','hindu iconography')
+	.eq('course','introduction to sita ram goel')
 	.eq('type', 'course content')
 	.order('sequence')
 	if (error) throw new Error(error.message)
@@ -150,7 +150,7 @@ export async function fetchFacilitator(){
 	const { data, error } = await supabase
 	.from('brhat-drashta')
 	.select()
-	.eq('course','hindu iconography')
+	.eq('course','introduction to sita ram goel')
 	.eq('type', 'facilitator')
 	.order('sequence')
 	if (error) throw new Error(error.message)
