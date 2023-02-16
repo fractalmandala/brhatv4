@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
 @font-face 
 	font-family: 'Singel', serif
 	font-weight: 300
@@ -133,11 +134,36 @@ h2, h4, h3, h5, p, pre, small, cite, h6
 h1
 	font-family: 'Code Next', sans-serif
 
+.mainpage, .bar
+	p, h5, pre, code, caption, cite, small, h6, h4, h3, h2, h1, li, ul, ol
+		font-family: 'Source Code Pro', monospace
+
+.mainpage
+	h5, h1, h2
+		font-weight: bold
+
+.content p
+	a
+		color: #878787
+		&:hover
+			color: #10c56d	
+
+.bar p
+	color: #10c56d
+
+.sheet
+	code, pre
+		font-family: 'Source Code Pro', monospace !important
+		background: white !important
+
 .formal3 h2, .formal3 h3, .formal3 h4, .formal3 h5, .formal3 h1, .formal3 p, .formal3 pre
 	font-family: 'Frank Ruhl Libre', serif
 
 .formal3 a
 	color: inherit
+
+.h5link
+	text-transform: uppercase
 
 .col-y-align
 	justify-content: center
@@ -214,6 +240,16 @@ a
 
 p
 	line-height: 1.5em
+
+.cat p
+	font-weight: 600
+	text-transform: uppercase
+	cursor: pointer
+
+.in-cat p
+	font-weight: 500
+	text-transform: capitalize
+	margin: 0
 
 small
 	color: #878787
@@ -500,14 +536,16 @@ small
 		font-weight: 700
 
 	.smaller1
-		font-size: 96px
+		font-size: 120px
 		line-height: 1.2em
-		font-weight: 500
+		font-weight: 600
+		letter-spacing: -4px
 	
 	.bigger1
-		font-size: 96px
+		font-size: 120px
 		margin-bottom: 0
-		font-weight: 500
+		font-weight: 600
+		letter-spacing: -2px
 
 	p
 		font-size: 18px
@@ -549,6 +587,57 @@ small
 
 	.marg-r
 		margin-left: 512px
+
+	.content p
+		margin-top: 0
+		margin-bottom: 0
+		font-size: 14px
+	
+	.content
+		margin-bottom: 4px
+
+	.mainpage p
+		font-size: 14px
+		font-weight: 500
+		line-height: 1.4
+
+	.mainpage h5
+		font-size: 18px
+
+	.side-m
+		padding-bottom: 0
+		margin-bottom: 4px
+		padding-top: 16px
+
+	.cat
+		padding-bottom: 8px
+
+	.mainpage h4
+		font-weight: bold
+		line-height: 1.2
+		letter-spacing: -2px
+		text-transform: capitalize
+		font-size: 32px
+
+	.sheet h4
+		font-size: 21px
+		letter-spacing: -1px
+		margin-top: 16px
+		color: #10c56d
+
+	.sheet h5
+		font-size: 18px
+
+	.sheet p
+		color: #474747
+
+	.sheet blockquote
+		border-left: 2px solid #10c56d
+		padding-left: 24px
+		font-style: italic
+
+	.sheet code, .sheet pre
+		font-size: 14px !important
 
 @media screen and (max-width: 899px) and (min-width: 768px)
 
@@ -657,6 +746,53 @@ small
 			margin-top: 4px
 			margin-bottom: 12px
 
+	.cat
+		padding-bottom: 8px
+
+	.content
+		margin-bottom: 4px
+		p
+			margin-top: 0
+			margin-bottom: 0
+			font-size: 14px
+
+	.mainpage
+		h4
+			font-weight: bold
+			line-height: 1.2
+			letter-spacing: -2px
+			text-transform: capitalize
+			font-size: 32px
+		h5
+			font-size: 18px
+		p
+			font-size: 14px
+			font-weight: 500
+			line-height: 1.4
+
+	.side-m
+		padding-bottom: 0
+		margin-bottom: 4px
+		padding-top: 16px
+
+	.sheet
+		h4
+			font-size: 21px
+			letter-spacing: -1px
+			margin-top: 16px
+			color: #10c56d
+		h5
+			font-size: 18px
+		p
+			color: #474747
+		blockquote
+			border-left: 2px solid #10c56d
+			padding-left: 24px
+			font-style: italic
+		code, pre
+			font-size: 14px !important
+		
+
 @media screen and (max-width: 767px) and (min-width: 576px)
 
 	.imagecontainer-hero
@@ -744,6 +880,52 @@ small
 		p
 			font-size: 18px
 			margin-bottom: 8px
+
+	.cat
+		padding-bottom: 8px
+
+	.content
+		margin-bottom: 4px
+		p
+			margin-top: 0
+			margin-bottom: 0
+			font-size: 14px
+
+	.mainpage
+		h4
+			font-weight: bold
+			line-height: 1.2
+			letter-spacing: -2px
+			text-transform: capitalize
+			font-size: 32px
+		h5
+			font-size: 18px
+		p
+			font-size: 14px
+			font-weight: 500
+			line-height: 1.4
+
+	.side-m
+		padding-bottom: 0
+		margin-bottom: 4px
+		padding-top: 16px
+
+	.sheet
+		h4
+			font-size: 21px
+			letter-spacing: -1px
+			margin-top: 16px
+			color: #10c56d
+		h5
+			font-size: 18px
+		p
+			color: #474747
+		blockquote
+			border-left: 2px solid #10c56d
+			padding-left: 24px
+			font-style: italic
+		code, pre
+			font-size: 14px !important
 
 @media screen and (max-width: 575px) 
 
@@ -885,6 +1067,52 @@ small
 	.swiper-slide
 		align-items: center
 		justify-content: center
+
+	.cat
+		padding-bottom: 8px
+
+	.content
+		margin-bottom: 4px
+		p
+			margin-top: 0
+			margin-bottom: 0
+			font-size: 14px
+
+	.mainpage
+		h4
+			font-weight: bold
+			line-height: 1.2
+			letter-spacing: -2px
+			text-transform: capitalize
+			font-size: 32px
+		h5
+			font-size: 18px
+		p
+			font-size: 14px
+			font-weight: 500
+			line-height: 1.4
+
+	.side-m
+		padding-bottom: 0
+		margin-bottom: 4px
+		padding-top: 16px
+
+	.sheet
+		h4
+			font-size: 21px
+			letter-spacing: -1px
+			margin-top: 16px
+			color: #10c56d
+		h5
+			font-size: 18px
+		p
+			color: #474747
+		blockquote
+			border-left: 2px solid #10c56d
+			padding-left: 24px
+			font-style: italic
+		code, pre
+			font-size: 14px !important
 		
 
 

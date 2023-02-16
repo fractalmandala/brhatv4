@@ -4,6 +4,7 @@ import { expoInOut } from 'svelte/easing'
 let sat1 = 1
 let sat2 = 1
 let sat3 = 1
+let x = 1
 
 function toggleCC(){
 	sat2 = sat2 === 1 ? 0 : 1;
@@ -22,15 +23,16 @@ function toggleLD(){
 
 </script>
 
+<svelte:window bind:scrollY={x} />
 <div class="genrow low">
 	<div class="gencol col1" id="col1" on:mouseenter={toggleCC} on:mouseleave={toggleCC}>
-		<img src="/images/corpimages/creative-culture-1024-1.webp" alt="cc" style="filter: saturate({sat1}); transition: filter 0.4s ease"/>
+		<img src="/images/corpimages/creative-culture-1024-1.webp" alt="cc" style="filter: saturate({sat1}); transition: filter 0.4s ease; transform: translateY({x}px)"/>
 	</div>
 	<div class="gencol col2" id="col2" on:mouseenter={togglePR} on:mouseleave={togglePR}>
-  	<img src="/images/corpimages/research-policy-1024-1.webp" alt="pr" style="filter: saturate({sat2}); transition: filter 0.4s ease"/>
+  	<img src="/images/corpimages/research-policy-1024-1.webp" alt="pr" style="filter: saturate({sat2}); transition: filter 0.4s ease; transform: translateY({x*1.1}px)"/>
 	</div>
 	<div class="gencol col3" id="col3" on:mouseenter={toggleLD} on:mouseleave={toggleLD}>
-  	<img src="/images/corpimages/develop-leader-1024-1.webp" alt="ld" style="filter: saturate({sat3}); transition: filter 0.4s ease"/>
+  	<img src="/images/corpimages/develop-leader-1024-1.webp" alt="ld" style="filter: saturate({sat3}); transition: filter 0.4s ease; transform: translateY({x*0.9}px)"/>
 	</div>
 </div>
 
@@ -41,6 +43,7 @@ function toggleLD(){
 	transition: all 0.53s cubic-bezier(0.875, 0.145, 0.555, 0.905)
 	align-items: center
 	z-index: 0
+	overflow-y: hidden
 
 .gencol
 	display: flex

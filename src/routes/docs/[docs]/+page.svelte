@@ -5,9 +5,9 @@ export let data;
 </script>
 
 
-<h5>{data.title}</h5>
-<small><a class="black" href="/docs">HOME</a></small>
+<h4>{data.title}</h4>
 <cite class="category green">{data.tag}</cite>
+<cite class="category green">{data.category}</cite>
 <div class="line"></div>
 <div class="sheet">
 	<svelte:component this={data.content} />
@@ -15,41 +15,29 @@ export let data;
 	
 
 <style>
-* { color: #272727;}
 
-.black { color: #878787;}
-h5 { text-transform: capitalize;}
 
-.line { width: 60%; height: 1px; background-color: var(--grey); margin-top: 1rem;}
+.line { height: 1px; background-color: #d7d7d7; margin-top: 1rem; margin-bottom: 16px;}
 
 
 .sheet {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	padding: 0 6rem 0 2rem;
-	color: #272727;
 }
 
-.sheet, .sheet h5, .sheet p { color: #272727 !important;}
-
-.category, .metatags {
+.category {
 	text-align: left;
 	width: 100%;
 }
 
 cite {
 	font-style: normal;
-text-align: right;
+	text-align: right;
 	font-size: 12px;
 	text-transform: uppercase;
 	font-weight: 600;
-	font-family: 'JetBrains Mono', monospace;
-width: 100%;	
-}
-
-small a {
-color: var(--green);
+	width: 100%;	
 }
 
 

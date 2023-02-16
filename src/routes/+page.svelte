@@ -1,5 +1,4 @@
 <script lang="ts">
-import '$lib/styles/newglobals.sass'
 import { goto } from '$app/navigation'
 import supabase from '$lib/db'
 import { fly } from 'svelte/transition';
@@ -162,7 +161,7 @@ async function getBooks(){
 
 <svelte:window bind:scrollY={y} />
 <Accordion></Accordion>
-<div class="c-c-c-c pad4 lay lzz" data-scroll-section>
+<div class="c-c-c-c pad4 lay lzz">
 	<h1 class="bigger1" data-textify>Bṛhat is a</h1>
 	<h1 class="smaller1 isred" data-textify-title>
 	Culture Engine</h1>
@@ -419,7 +418,7 @@ async function getBooks(){
 	.book { width: calc(25% - 24px);}
 	.book p { margin-bottom: 8px; font-size: 14px;}
 	.book h5 { padding-top: 8px; border-top: 1px solid #d7d7d7;}
-	.h5link { font-size: 26px; font-weight: 500; letter-spacing: 0px; color:#255F85; transform-origin: center left;}
+	.h5link { font-size: 26px; font-weight: 800; color:#255F85; transform-origin: center left;}
 	.h5link:hover { color: #fe4a49; font-size: 24px;}
 	.special-h { width: 75%;}
 	.poster { height: 24vh; border-top: 2px solid #272727; border-bottom: 2px solid #272727;}

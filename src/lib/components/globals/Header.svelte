@@ -1,11 +1,33 @@
 <script lang="ts">
+import { onMount } from 'svelte'
+import { beforeUpdate } from 'svelte';
 import { goto } from '$app/navigation'
 import { reveal } from 'svelte-reveal'
 import { fly } from 'svelte/transition'
 import { quadIn } from 'svelte/easing'
+import AllDocs from '$lib/components/docs/AllDocs.svelte'
 import '$lib/styles/newglobals.sass'
 let isMenu = false;
 let y = 1
+let ifShow = false
+
+onMount(() => {
+	if (location.pathname.includes('/docs')) {
+		ifShow = true
+	}
+	else {
+		ifShow = false
+	}
+})
+
+beforeUpdate(() => {
+	if (location.pathname.includes('/docs')) {
+		ifShow = true
+	} else
+	{
+		ifShow = false
+	}
+})
 
 let imageNo = '/images/herocovers/basewallpaper.png'
 let imageAnv = '/images/herocovers/karnatakachapter.webp'
@@ -194,6 +216,11 @@ function closeMen(){
 		</div>
 	</div>
 	<div class="c-c-c-c mob-nav">
+		{#if ifShow}
+		<div class="c-c-c-c new">
+			<AllDocs></AllDocs>
+		</div>
+		{/if}
 		<div class="c-c-c-c section sec0">
 			<h5 use:reveal={{ transition: "scale", duration: 300 }} on:click={closeMen} on:keydown={closeMen}><a href="/openlibrary">Open Library</a></h5>
 			<h5 use:reveal={{ transition: "scale", duration: 300, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/dhiti">Dhīti</a></h5>

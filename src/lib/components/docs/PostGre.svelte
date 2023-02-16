@@ -38,13 +38,8 @@ export const postgrePosts = async () => {
 		{/await}
 </div>
 
-<style>
-p, small { margin: 0; text-transform: capitalize;}
-a { color: #272727;}
-p { font-size: 1.12em;}
 
-@media screen and (min-width: 768px) {
-	.content { width: 100%; margin-bottom: 16px;}
-	.c-c-c-c { flex-wrap: wrap; width: 100%; display: flex; flex-direction: row; padding-top: 16px;}
-}
+<style>
+	.content { width: 100%; }
+	.c-c-c-c { width: 100%; }
 </style>

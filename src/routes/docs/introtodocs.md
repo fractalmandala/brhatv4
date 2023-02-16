@@ -7,7 +7,7 @@ date: "2023-10-10"
 
 Welcome to our website documentation! Here, you will find all the information you need to understand how our website is built and how it works.
 
-General Programs:
+##### General Programs:
 
 Our website is built completely in Sveltekit, which is a framework for building web applications. Sveltekit allows us to easily create reusable components and manage the state of our application. Once the website is built, it is deployed on Vercel, which is a platform for hosting web applications.
 

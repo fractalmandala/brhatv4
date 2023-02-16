@@ -29,17 +29,16 @@ export const postgrePosts = async () => {
 		<small>...</small>
 		{:then data}
 		{#each data as doc}
-		<small><a href={doc.path}>{doc.meta.title}</a></small>
+			<div class="content">
+			<p
+				transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"
+			><a href={doc.path}>{doc.meta.title}</a></p>
+			</div>
 		{/each}
 		{/await}
 </div>
 
 <style>
-p, small { margin: 0; text-transform: capitalize;}
-a { color: #272727;}
-.c-c-c-c p, .c-c-c-c a { font-size: 1.12em; margin-top: 0; margin-bottom: 0;}
-
-@media screen and (min-width: 768px) {
-	.c-c-c-c { flex-wrap: wrap; width: 100%; display: flex; flex-direction: row; padding-top: 16px;}
-}
+	.content { width: 100%; }
+	.c-c-c-c { width: 100%; }
 </style>
