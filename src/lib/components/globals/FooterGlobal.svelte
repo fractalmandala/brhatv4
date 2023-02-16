@@ -300,12 +300,12 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		width: 100%
 		height: calc(100% - 14em)
 		margin-top: 2em
-		padding: 0 32px
+		padding: 0 24px
 
 	#last-row
 		width: 100vw
 		margin: 0
-		padding: 24px 32px
+		padding: 24px
 		small
 			font-size: 12px !important
 			line-height: 1.5

@@ -50,15 +50,23 @@ let y = 1
 	.two1 h1 { background: #272727; padding: 16px 32px; margin-bottom: 0.5em; color: white;}
 }
 
-@media screen and (max-width: 899px) and (min-width: 768px) {
+@media screen and (max-width: 899px) and (min-width: 576px) {
+	.l1 { align-items: center; height: 100vh;}
+	.twobox img { object-fit: cover; width: 100%; height: 100%;}
+	.two2 { width: 80%; height: 72%;z-index:0;}
+	.two1 { width: 70vw; margin-right: -56%; height: 100%; justify-content: flex-end;z-index: 1;}
+	.two1 h1 { background: #272727; padding: 16px 32px; margin-bottom: 0.5em; color: white;}
 
 }
 
-@media screen and (max-width: 767px) and (min-width: 576px) {
-
-}
 
 @media screen and (max-width: 575px) {
-	.l1 h1 { text-align: center; margin-left: 0;}
+	.l1 { text-align: center; margin-left: 0; height: 64vh; padding-top: 88px;}
+	.two1, .two2 { width: 100%; z-index: 1;}
+	.two2 { order: 1; height: auto;}
+	.two1 { order: 2; height: auto;}
+	.two1 h1 { margin-top: 24px; margin-bottom: 16px; padding: 0;}
+	.twobox img { object-fit: cover; height: 100%;}
+	.l2 { padding-bottom: 24px; height: 100%;}
 }
 </style>

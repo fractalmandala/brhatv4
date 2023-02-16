@@ -1,5 +1,4 @@
 <script lang="ts">
-import { onMount } from 'svelte'
 import { goto } from '$app/navigation'
 import { reveal } from 'svelte-reveal'
 import { fly } from 'svelte/transition'
@@ -8,9 +7,16 @@ import '$lib/styles/newglobals.sass'
 let isMenu = false;
 let y = 1
 
+
 function toggleMenu() {
-	isMenu = !isMenu
+	if (isMenu === true) {
+		isMenu = false
+	}
+	else {
+		isMenu = true	
+	}
 }
+
 
 </script>
 <svelte:window bind:scrollY={y}/>
@@ -28,7 +34,7 @@ function toggleMenu() {
 	</div>
 </div>
 {#if isMenu}
-<div class="c-c-c-c fullscreen" in:fly="{{ duration: 400, x: 0, y: -900, opacity: 1, easing: quadIn}}" out:fly="{{ duration: 400, x: 0, y: -900, opacity: 1, easing: quadIn}}" on:click={toggleMenu} on:keydown={toggleMenu}>
+<div class="c-c-c-c fullscreen" in:fly="{{ duration: 400, x: 0, y: -900, opacity: 1, easing: quadIn}}" out:fly="{{ duration: 400, x: 0, y: -900, opacity: 1, easing: quadIn}}">
 	<div class="r-r-r-r topstrip">
 		<div class="c-c-c-c sec7"><a href="/">
 			<img src="/images/brhatlogos/horizontalwhite.png" alt="finallogo" /></a>
@@ -194,7 +200,7 @@ function toggleMenu() {
 {/if}
 
 <style>
-.boxer { position: relative; overflow: hidden; transition: all 0.56s var(--cube1); border: 1px solid #373737; box-shadow: 1px 1px 2px #171717, -1px -1px 2px #212121; align-items: flex-start; justify-content: flex-start; border-radius: 4px; }
+.boxer { position: relative; overflow: hidden; transition: box-shadow 0.36s var(--cube1); border: 1px solid #373737; box-shadow: 1px 1px 2px #171717, -1px -1px 2px #212121; align-items: flex-start; justify-content: flex-start; border-radius: 4px; }
 .boxer span { position: absolute; top: 0; left: 0;}
 .typ1 { border-top: 1px solid #fe4a49;}
 .typ2 { border-right: 1px solid #fe4a49; width: 100%; }
@@ -202,7 +208,7 @@ function toggleMenu() {
 .typ4 { border-left: 1px solid #fe4a49;}
 .boxer:hover .typ1 { animation: typ1 0.4s var(--cube1) forwards;}
 .boxer:hover .typ2 { animation: typ2 0.54s var(--cube2) forwards;}
-.boxer:hover .typ3 { animation: typ3 0.7s var(--cube3) forwards;}
+.boxer:hover .typ3 { animation: typ3 0.27s var(--cube3) forwards;}
 .boxer:hover .typ4 { animation: typ4 0.5s var(--cube4) forwards;}
 .boxer:hover { box-shadow: 7px 10px 15px #171717, -8px -8px 16px #212121;}
 
@@ -391,7 +397,7 @@ function toggleMenu() {
 	.threebox { min-height: 100%; gap: 24px; justify-content: center;}
 	.linkbox { min-height: 28%; padding-left: 16px; padding-top: 8px; padding-bottom: 8px;}
 	.boxer p { margin-bottom: 6px; font-size: 18px;}
-	.boxer h5 { font-size: 21px;}
+	.boxer h5 { font-size: 21px; letter-spacing: 0px; font-weight: 400;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
@@ -431,15 +437,15 @@ function toggleMenu() {
 }
 
 @media screen and (max-width: 575px) {
-	.headerbox, .header { height: 80px;}
-	.header { margin-bottom: -80px;}
+	.headerbox, .header { height: 64px;}
+	.header { margin-bottom: -64px;}
 	.headerbox { padding: 0 16px; justify-content: space-between;}
 	.logo { width: calc(100% - 80px); height: 100%; gap: 0;align-items: center; justify-content: flex-start;}
-	.motif { width: 52px; height: 52px;}
-	.logotype { width: 90px; height: 48px; margin-top: 12px; margin-left: -18px; }
-	.mobilemenu { width: 48px;}
-	.mobilemenu img { width: 48px; height: 48px;}
-	.menu-red { margin-bottom: -48px;}
+	.motif { width: 48px; height: 48px;}
+	.logotype { width: 88px; height: 40px; margin-top: 12px; margin-left: 8px; }
+	.mobilemenu { height: 100%;}
+	.mobilemenu img { width: 40px; height: 40px;}
+	.menu-red { margin-bottom: -40px;}
 	.fullscreen { padding: 16px 4vw;}
 	.topstrip { justify-content: space-between; border-bottom: 1px solid #373737; align-items: center; margin-bottom: 32px;}
 	.socialicons { gap: 32px; width: 100%; padding-top: 32px; justify-content: flex-start;}
@@ -453,9 +459,9 @@ function toggleMenu() {
 		width: 28px;
 	}
 	.mob-nav { display: flex; padding: 16px;}
-	.mob-nav p { margin: 8px 0 5px 0; font-size: 24px;}
+	.mob-nav p { margin: 8px 0 5px 0; font-size: 20px;}
 	.section { border-bottom: 1px solid #373737; padding-bottom: 16px; padding-top: 8px;}
-	.mob-nav h5 { font-size: 32px; text-transform: uppercase; font-weight: 700;}
+	.mob-nav h5 { font-size: 28px; text-transform: capitalize; font-weight: 700;}
 	.sec7 img { object-fit: contain; width: 60%;}
 	.sec7 { padding: 8px 0 16px 0; width: 70%;}
 	.desk-nav { display: none;}

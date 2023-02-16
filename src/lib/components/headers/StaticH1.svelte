@@ -15,9 +15,9 @@
 .small { background: white;}
 .big h4 {
 	background: white;
-	letter-spacing: -1px;
+	letter-spacing: -3px;
 	color: #474747;
-	font-weight: 600;
+	font-weight: 800;
 	margin-top: 0;
 	margin-bottom: 0;
 }
