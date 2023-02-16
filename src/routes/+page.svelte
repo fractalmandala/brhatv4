@@ -1,5 +1,6 @@
 <script lang="ts">
 import '$lib/styles/newglobals.sass'
+import { goto } from '$app/navigation'
 import supabase from '$lib/db'
 import { fly } from 'svelte/transition';
 import { reveal } from 'svelte-reveal'
@@ -23,6 +24,30 @@ let isRid = false
 let isSoa = false
 let wid = 0
 let op = 0
+
+function goAnv(){
+	goto('/anveshi')
+}
+
+function goMrd(){
+	goto('/mrdanga')
+}
+
+function goDra(){
+	goto('/drashta')
+}
+
+function goRid(){
+	goto('/rta')
+}
+
+function goFm(){
+	goto('/mandala')
+}
+
+function goSoa(){
+	goto('/aryavarta')
+}
 
 function toggleAnv(){ 
 	isAnv = !isAnv 
@@ -211,7 +236,7 @@ async function getBooks(){
 				{:then data}
 				<div class="r-r-r-r pad4 l5 row-of-3">
 					{#each data as item, i}
-					<div class="c-c-c-c threebox small5">
+					<div class="c-c-c-c threebox blogbox small5">
 						<img src={item.image} alt={item.title} use:reveal={{ transition: "slide", delay: 50*i, duration: 50, reset: true, easing: "easeOutCirc"}}/>
 						<h5 use:reveal={{ transition: "slide", delay: 50*i, duration: 50, reset: true, easing: "easeOutCirc"}}><a href={item.link}>{item.title}</a></h5>
 						<p>{item.excerpt.slice(0,200)}...<a href={item.link} class="readmore">Read More</a></p>
@@ -238,7 +263,7 @@ async function getBooks(){
 			{#await getBooks()}
 			<small>...</small>
 			{:then data}
-			<div class="row-of-4 lib">
+			<div class="row-of-4 lib small5">
 				{#each data as item, i}
 				<div class="fourbox book" use:reveal={{ transition: "slide", delay: 100*i, duration: 100, reset: true, easing: "easeOutCirc"}}>
 					<h5 data-textify><a href="/openlibrary/books/{item.slug}">{item.Text}</a></h5>
@@ -255,34 +280,34 @@ async function getBooks(){
 </Open>
 <Actions --boxback="white">
 	<div slot="header">Bṛhat <span class="red">Actions</span></div>
-	<div slot="body">
+	<div class="forlocation" slot="body">
 			<h3 class="pad4 special-h" data-textify>Visual forays into the 64 kalās and metaphors of arts, travel discovery programs, online learning courses, design thinking based on Dharma, AI-based creative content or bold explorations of Indian civilizational consciousness, find your engagement here.</h3>
-			<div class="r-r-r-r pad4 actionsrow small5">
-				<div class="c-c-c-c actionbox" on:mouseenter={toggleAnv} on:mouseleave={toggleAnv}><h5><a href="/anveshi">Bṛhat Anveṣī</a></h5></div>
-				<div class="c-c-c-c actionbox" on:mouseenter={toggleDra} on:mouseleave={toggleDra}><h5><a href="/drashta">Bṛhat Draṣṭā</a></h5></div>
-				<div class="c-c-c-c actionbox" on:mouseenter={toggleMrd} on:mouseleave={toggleMrd}><h5><a href="/mrdanga">Bṛhatmṛdaṅga</a></h5></div>
-				<div class="c-c-c-c actionbox" on:mouseenter={toggleFm} on:mouseleave={toggleFm}><h5><a href="/mandala">Fractal Maṇḍala</a></h5></div>
-				<div class="c-c-c-c actionbox" on:mouseenter={toggleRid} on:mouseleave={toggleRid}><h5><a href="/rta">Ṛta in Design</a></h5></div>
-				<div class="c-c-c-c actionbox" on:mouseenter={toggleSoa} on:mouseleave={toggleSoa}><h5><a href="/aryavarta">Scrolls of Āryavarta</a></h5></div>
+			<div class="row-of-3 pad4 actionsrow small5">
+				<div id="box-1" class="cc threebox actionbox" on:mouseenter={toggleAnv} on:mouseleave={toggleAnv} on:click={goAnv} on:keydown={event => event.key === 'Enter' && goAnv()}><h5>Description</h5></div>
+				<div id="box-2" class="cc threebox actionbox" on:mouseenter={toggleDra} on:mouseleave={toggleDra} on:click={goDra} on:keydown={event => event.key === 'Enter' && goDra()}></div>
+				<div id="box-3" class="cc threebox actionbox" on:mouseenter={toggleMrd} on:mouseleave={toggleMrd} on:click={goMrd} on:keydown={event => event.key === 'Enter' && goMrd()}></div>
+				<div id="box-4" class="cc threebox actionbox" on:mouseenter={toggleFm} on:mouseleave={toggleFm} on:click={goFm} on:keydown={event => event.key === 'Enter' && goFm()}></div>
+				<div id="box-5" class="cc threebox actionbox" on:mouseenter={toggleRid} on:mouseleave={toggleRid} on:click={goRid} on:keydown={event => event.key === 'Enter' && goRid()}></div>
+				<div id="box-6" class="cc threebox actionbox" on:mouseenter={toggleSoa} on:mouseleave={toggleSoa} on:click={goSoa} on:keydown={event => event.key === 'Enter' && goSoa()}></div>
 			</div>
 			<div class="c-c-c-c poster" style="width: {wid}%; opacity: {op}">
 				{#if isAnv}
-				<img src="/images/herocovers/karnatakachapter.webp" alt="anv" in:fly="{{ delay: 200, duration: 500, x: -1400, y: 0, easing: expoInOut}}" out:fly="{{ delay: 0, duration: 200, x: 1400, y: 0, easing: expoInOut}}"/>
+				<img src="/images/herocovers/karnatakachapter.webp" alt="anv" />
 				{/if}
 				{#if isDra}
-				<img src="/images/herocovers/brhatdrashta.webp" alt="dra" in:fly="{{ delay: 200, duration: 500, x: -1400, y: 0, easing: expoInOut}}" out:fly="{{ delay: 0, duration: 200, x: 1400, y: 0, easing: expoInOut}}"/>
+				<img src="/images/herocovers/brhatdrashta.webp" alt="dra" />
 				{/if}
 				{#if isMrd}
-				<img src="/images/herocovers/mrdanga-hero.webp" alt="mrd" in:fly="{{ delay: 200, duration: 500, x: -1400, y: 0, easing: expoInOut}}" out:fly="{{ delay: 0, duration: 200, x: 1400, y: 0, easing: expoInOut}}"/>
+				<img src="/images/herocovers/mrdanga-hero.webp" alt="mrd" />
 				{/if}
 				{#if isFm}
-				<img src="/images/herocovers/fmhomehero.webp" alt="dra" in:fly="{{ delay: 200, duration: 500, x: -1400, y: 0, easing: expoInOut}}" out:fly="{{ delay: 0, duration: 200, x: 1400, y: 0, easing: expoInOut}}"/>
+				<img src="/images/herocovers/fmhomehero.webp" alt="dra" />
 				{/if}
 				{#if isRid}
-				<img src="/images/herocovers/ridhero1.webp" alt="dra" in:fly="{{ delay: 200, duration: 500, x: -1400, y: 0, easing: expoInOut}}" out:fly="{{ delay: 0, duration: 200, x: 1400, y: 0, easing: expoInOut}}"/>
+				<img src="/images/herocovers/ridhero1.webp" alt="dra" />
 				{/if}
 				{#if isSoa}
-				<img src="/images/scrolls/maphero.webp" alt="dra" in:fly="{{ delay: 200, duration: 500, x: -1400, y: 0, easing: expoInOut}}" out:fly="{{ delay: 0, duration: 200, x: 1400, y: 0, easing: expoInOut}}"/>
+				<img src="/images/scrolls/maphero.webp" alt="dra" />
 				{/if}
 			</div>
 	</div>
@@ -291,6 +316,61 @@ async function getBooks(){
 
 
 <style>
+#box-1, #box-2, #box-3, #box-4, #box-5, #box-6 {
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.actionbox { position: relative; transition: all 0.2s var(--cube5); transform-origin: center center; text-align: center; justify-content: center !important;}
+
+.actionbox:hover { transform: scale(0.88);}
+
+.actionbox::after {
+	content: '';
+	height: 100%;
+	width: 0%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all 0.2s var(--cube5);
+	background: rgba(0,0,0,0.8);
+	z-index: 0;
+}
+
+.actionbox:hover::after {
+	width: 100%;
+	z-index: 0;
+	
+}
+
+#box-1 {
+	background-image: url('/images/herocovers/karnatakachapter.webp');
+}
+
+#box-2 {
+	background-image: url('/images/herocovers/brhatdrashta.webp');
+}
+
+#box-3 {
+	background-image: url('/images/herocovers/mrdanga-hero.webp');
+}
+
+#box-4 {
+	background-image: url('/images/herocovers/fmhomehero.webp');
+}
+
+#box-5 {
+	background-image: url('/images/herocovers/ridhero1.webp');
+}
+
+#box-6 {
+	background-image: url('/images/scrolls/maphero.webp');
+}
+
+.forlocation { position: relative;}
+.poster { position: absolute; top: 0; left: 0;}
+
 .poster img {
 	object-fit: cover;
 	width: 100%;
@@ -299,17 +379,16 @@ async function getBooks(){
 .lzz, .l2, .row-of-3, .lvid, .lvid-text, .playlists { background: white;}
 .threebox img { object-fit: cover; width: 100%;}
 .l2 .threebox { border-top: 1px solid #474747;}
-.l2 p { color: #878787;}
+.l2 p, .l2row1 p, .l2row2 p, .l2row3 p { color: #878787;}
 .playlists h5 { font-weight: 500; cursor: pointer; color: var(--blue); text-transform: uppercase;}
 .book small { color: var(--blue); font-weight: bold;}
+.book p { color: #878787;}
 .rowcol2 .c-c-c-c h5 { z-index: 2; color: white;}
 .book a { color: #171717;}
 .threebox h5 a, .threebox h5 { color: #272727;}
 .threebox a:hover { color: #fe4a49;}
 .threebox p { color: #878787;}
 .special-h { font-weight: 300;}
-.actionsrow h5 a { color: #272727;}
-.actionsrow a:hover { color: #fe4a49;}
 .actionsrow div { cursor: pointer;}
 
 .poster { background: white; transition: all 0.32s var(--cube2);}
@@ -323,28 +402,28 @@ async function getBooks(){
 @media screen and (min-width: 900px) {
 	.c-c-c-c h3 { font-weight: 300;}
 	.lzz { height: 100vh; justify-content: center; padding-top: 80px;}
-	.l2 h5 { padding-top: 12px;}
+	.l2 h5 { padding-top: 12px; padding-left: 24px;}
 	.c-c-c-c h3 { width: 75%;}
+	.l2 p { font-size: 14px; padding-left: 24px;}
 	.playlists { gap: 40px; padding: 16px 0 24px 0;}
 	.row-of-3 { flex-wrap: wrap;}
-	.threebox h5 { margin-top: 12px; margin-bottom: 8px; padding: 0 24px;}
+	.blogbox h5 { margin-top: 12px; margin-bottom: 8px; padding: 0 24px;}
 	.book h5:hover, .book a:hover { color: #fe4a49;}
-	.threebox p { font-size: 14px; padding: 0 24px;}
+	.blogbox p { font-size: 14px; padding: 0 24px;}
 	.threebox img { height: 200px; padding: 0 12px;}
 	.blog-meta { justify-content: space-between; align-items: center; padding: 0 24px;}
 	.rowcol2 .c-c-c-c h5 { margin-top: 0;}
-	.actionbox { width: calc(16.67% - 32px);}
-	.actionsrow { justify-content: space-between;}
-	.actionsrow h5 { font-weight: 500; margin: 32px 0 12px 0; border-top: 1px solid #d7d7d7; padding-top: 12px;}
+	.actionbox { height: 25vh; width: calc(33.33% - 6px);}
+	.actionsrow { justify-content: center; flex-wrap: wrap; gap: 8px; padding-top: 32px;}
 	.lib { gap: 32px; align-items: flex-start; padding-top: 24px; flex-wrap: wrap;}
 	.book { width: calc(25% - 24px);}
-	.book p { margin-bottom: 8px;}
+	.book p { margin-bottom: 8px; font-size: 14px;}
 	.book h5 { padding-top: 8px; border-top: 1px solid #d7d7d7;}
 	.h5link { font-size: 26px; font-weight: 500; letter-spacing: 0px; color:#255F85; transform-origin: center left;}
 	.h5link:hover { color: #fe4a49; font-size: 24px;}
 	.special-h { width: 75%;}
-	.poster { min-height: 56vh; margin-top: 24px;border-top: 2px solid #fe4a49; border-bottom: 2px solid #fe4a49;}
-	.poster img { height: 56vh;}
+	.poster { height: 24vh; border-top: 2px solid #272727; border-bottom: 2px solid #272727;}
+	.poster img { height: 100%; object-fit: cover;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
@@ -356,9 +435,7 @@ async function getBooks(){
 	.h5link { font-size: 26px; font-weight: 500; letter-spacing: 0px; color:#255F85; transform-origin: center left;}
 	.h5link:hover { color: #fe4a49; font-size: 24px;}
 	.lib { flex-wrap: wrap;}
-	.actionbox { width: calc(16.67% - 2px);}
 	.actionsrow { justify-content: center; gap: 12px;}
-	.actionsrow h5 { font-weight: 500; margin: 32px 0 12px 0; border-top: 1px solid #d7d7d7; padding-top: 12px;}
 	.poster { min-height: 56vh; margin-top: 24px;border-top: 2px solid #fe4a49; border-bottom: 2px solid #fe4a49;}
 	.poster img { height: 56vh;}
 }
@@ -372,9 +449,7 @@ async function getBooks(){
 	.row-of-3 { flex-wrap: wrap;}
 	.h5link { font-size: 24px; font-weight: 500; letter-spacing: 0px; color:#255F85; transform-origin: center left;}
 	.h5link:hover { color: #fe4a49; font-size: 24px;}
-	.actionbox { width: calc(33.33% - 24px);}
 	.actionsrow { justify-content: space-between; flex-wrap: wrap; padding-bottom: 64px;}
-	.actionsrow h5 { font-weight: 500; margin: 32px 0 12px 0; border-top: 1px solid #d7d7d7; padding-top: 12px;}
 	.poster { min-height: 40vh; margin-top: 24px;border-top: 2px solid #fe4a49; border-bottom: 2px solid #fe4a49;}
 	.poster img { height: 40vh;}
 }
@@ -393,10 +468,8 @@ async function getBooks(){
 	.blog-meta {
 		width: 100%;
 	}
-	.actionbox { width: 100%;}
 	.actionsrow { justify-content: space-between; flex-wrap: wrap;}
 
-	.actionsrow h5 { font-weight: 500; margin: 0; border-top: 1px solid #d7d7d7; padding-top: 12px;}
 	.poster { min-height: 40vh; margin-top: 24px;border-top: 2px solid #fe4a49; border-bottom: 2px solid #fe4a49;}
 	.poster img { height: 40vh;}
 }
