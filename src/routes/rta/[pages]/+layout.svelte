@@ -37,8 +37,8 @@ export let refresh = ''
 
 
 @media screen and (min-width: 900px) {
-	.sidebb { width: 20%; padding-left: 24px; height: 100%; position: sticky; top: 120px;}	
-	.main { width: 76%;}
+	.sidebb { width: 20%; padding-left: 24px; height: 100%; position: sticky; top: 200px;}	
+	.main { width: 76%; padding: 0;}
 	.top { width: 100vw; min-height: 100vh; padding-top: 120px;}
 }
 
