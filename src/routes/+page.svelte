@@ -164,8 +164,8 @@
 
 <Accordion />
 <div class="c-c-c-c pad4 lay lzz">
-	<h1 class="bigger1 txtyp1">Bṛhat is a</h1>
-	<h1 class="smaller1 isred txtyp2">&#60;culture_engine&#62</h1>
+	<h1 class="bigger1">Bṛhat is a</h1>
+	<h1 class="smaller1 uppercase isred">&#60;culture_engine&#62</h1>
 	<h3>
 		To power creatives, research and design rooted in the Indian civilizational consciousness. We
 		convert individual, institutional and collective intent into action, across 3 dimensions.
@@ -1077,72 +1077,6 @@
 
 <style>
 
-	.svgbox svg {
-		width: 20%;
-	}
-	
-	#edges, #dottedcircles, #lines path, #core path, #inn path, #mid path, #outermost path, #dots path, #redcore path {
-		transform-origin: center center;
-	}
-
-	.svgbox svg:hover #edges {
-		animation: disintegration 4s var(--cube1) forwards;
-	}
-
-	.svgbox svg:hover #dottedcircles {
-		animation: disintegration 2s var(--cube2) forwards;
-	}
-
-	.svgbox svg:hover #core path {
-		animation: disintegration 8s var(--cube3) forwards;
-	}
-
-	.svgbox svg:hover #mid path {
-		animation: disintegration 3s var(--cube2) infinite alternate;
-	}
-
-	.svgbox svg:hover #outermost path {
-		animation: inandout 30s var(--cube3) infinite
-	}
-
-	@keyframes inandout {
-		0% { transform: scale(1);}
-		50% { transform: scale(1.5);}
-		100% { transform: scale(1);}
-	}
-
-	@keyframes disintegration {
-		0% {
-			transform: scale(1);
-			opacity: 1;
-		}
-		100% {
-			transform: scale(1.5);
-			opacity: 0;
-		}
-	}
-	#box-1,
-	#box-2,
-	#box-3,
-	#box-4,
-	#box-5,
-	#box-6 {
-		background-position: center center;
-		background-size: cover;
-		background-repeat: no-repeat;
-	}
-
-	.svgbox {
-		background: var(--beau);
-	}
-	.svgbox svg,
-	.svgbox {
-		overflow: visible;
-	}
-	#allredders path {
-		transform-origin: center center;
-		fill: #fe4a49;
-	}
 
 	.actionbox {
 		position: relative;
@@ -1236,7 +1170,6 @@
 		color: #878787;
 	}
 	.playlists h5 {
-		font-weight: 500;
 		cursor: pointer;
 		color: var(--blue);
 		text-transform: uppercase;
@@ -1300,9 +1233,7 @@
 		.svgbox svg {
 			object-fit: contain;
 		}
-		.c-c-c-c h3 {
-			font-weight: 300;
-		}
+
 		.lzz {
 			height: 100vh;
 			padding-top: 80px;
@@ -1419,9 +1350,7 @@
 	}
 
 	@media screen and (max-width: 899px) and (min-width: 768px) {
-		.c-c-c-c h3 {
-			font-weight: 300;
-		}
+
 		.c-c-c-c h3,
 		.special-h {
 			width: 88%;
@@ -1468,7 +1397,6 @@
 	@media screen and (max-width: 767px) and (min-width: 576px) {
 		.c-c-c-c h3,
 		.special-h {
-			font-weight: 300;
 			width: 100%;
 		}
 		.l2 {
@@ -1519,7 +1447,6 @@
 	@media screen and (max-width: 575px) {
 		.c-c-c-c h3,
 		.special-h {
-			font-weight: 400;
 			width: 100%;
 		}
 		.lzz h3 {

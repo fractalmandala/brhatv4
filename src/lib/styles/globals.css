@@ -58,7 +58,7 @@ a { text-decoration: none;}
 
 .is-full {display: flex; flex-direction: column; width: 100vw; min-height: 100vh;  }
 .container { display: flex; flex-direction: column; width: 100vw; height: auto; }
-.readmore { color: var(--blue); text-transform: capitalize; font-weight: bold; text-decoration: none; }
+.readmore { color: var(--blue); text-transform: capitalize; text-decoration: none; }
 .readmore a { color: var(--red);}
 .rowcol { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;}
 .colcol { display: flex; flex-direction: column;}
@@ -66,7 +66,7 @@ a { text-decoration: none;}
 	display: flex;
 }
 
-.sticker { padding: 3px 6px; width: max-content; text-align: right; text-transform: uppercase; font-weight: 500;}
+.sticker { padding: 3px 6px; width: max-content; text-align: right; text-transform: uppercase; }
 .boxoftext h1, .boxoftext h3 { text-transform: capitalize;} 
 .metatags { color: var(--green);font-weight: bold; font-variant: small-caps; letter-spacing: 1px;}
 .sheet {

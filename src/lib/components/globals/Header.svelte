@@ -6,7 +6,6 @@ import { reveal } from 'svelte-reveal'
 import { fly } from 'svelte/transition'
 import { quadIn } from 'svelte/easing'
 import AllDocs from '$lib/components/docs/AllDocs.svelte'
-import '$lib/styles/newglobals.sass'
 let isMenu = false;
 let y = 1
 let ifShow = false
@@ -507,9 +506,10 @@ function closeMen(){
 	.desk-nav { display: flex; padding: 0 6vw 16px 6vw;}
 	.mob-nav { display: none;}
 	.sec7 img { object-fit: contain; width: 25%;}
-	.threebox { min-height: 100%; gap: 24px; justify-content: center;}
+	.threebox { height: 100%; gap: 24px; justify-content: center;}
+	.boxer { height: 28%;}
 	.linkbox { min-height: 28%; padding-left: 16px; padding-top: 8px; padding-bottom: 8px;}
-	.boxer p { margin-bottom: 6px; font-size: 18px;}
+	.boxer p { margin-bottom: 6px; margin-top: 0; font-size: 18px;}
 	.boxer h5 { font-size: 21px; letter-spacing: 0px; font-weight: 400;}
 }
 

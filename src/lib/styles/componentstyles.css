@@ -1,9 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,700;8..60,800;8..60,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&display=swap');
-
 body, html { margin: 0; box-sizing: border-box;}
 
 *, :root {
@@ -223,13 +217,11 @@ body, html { margin: 0; box-sizing: border-box;}
 }
 
 .dhiti-post { display: flex; flex-direction: column; width: 100%; height: 100%; border-top: 1px solid #e1e1e1;}
-.dhitisheet { display: flex; flex-direction: column; height: 100%;font-family: 'STIX Two Text', serif; }
+
 .dhiti-bar { flex-direction: column; height: 100%; border-right: 1px solid #e7e7e7; transition: all 0.2s var(--cube1);}
-.dhiti-post p, .dhiti-post li, .dhiti-post li a { font-family: 'STIX Two Text', serif;}
+
 .dhiti-post li a { color: var(--red);}
-.stix { font-family: 'STIX Two Text', serif;}
-.source, .source a, .dhiti-post h4 { font-family: 'Source Serif 4', serif;}
-.label, .label2 { width: max-content; margin-bottom: 8px; font-family:'Source Serif 4', serif; }
+
 .dhiti-post blockquote { border-left: 4px solid var(--red); padding-left: 1rem; font-style: italic; background-color: #f7f7f7;}
 
 @media screen and (min-width: 900px) {
@@ -324,7 +316,6 @@ body, html { margin: 0; box-sizing: border-box;}
 
 /*corp-docs typography*****************************************************************************************************************************************************************************************************************************************************************************************************/
 
-.hindi { font-family: 'Noto Serif Devanagari', serif; }
 p { color: #878787;}
 .isgrey { color: #878787;}
 .corp-docs blockquote cite { text-transform: uppercase; font-style: normal; font-size: 14px; margin-top: 0;}

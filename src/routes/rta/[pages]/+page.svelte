@@ -11,8 +11,8 @@ let x = 1
 
 	</div>
 	<div class="c-c-c-c main-table">
-		<div class="c-c-c-c image-box">
-		<img src={data.image} alt={data.content} style="transform: translateX({-x/5}px)" />
+		<div class="c-c-c-c image-box" style="transform: translateY({x/8}px)">
+		<img src={data.image} alt={data.content}/>
 		</div>
 		<div class="c-c-c-c only-text">
 		<svelte:component this={data.content} />
@@ -26,7 +26,7 @@ let x = 1
 	.contents-table { width: 6vw; border-right: 1px solid #d7d7d7; padding-left: 2vw;}
 	
 	.main-table { width: calc(100% - 6vw); padding: 0; position: relative;}
-	.only-text {padding: 0 64px 0 64px;}
+	.only-text {padding: 0 128px 0 80px;}
 	.image-box { width: calc(100% + 6vw); height: 640px; overflow: hidden; margin-bottom: 64px; margin-left: -6vw;}
 	.image-box img { object-fit: cover; height: 640px; width: 120%;}
 }
