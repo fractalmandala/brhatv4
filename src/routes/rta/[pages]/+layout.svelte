@@ -1,11 +1,6 @@
-<script>
-import { fly } from 'svelte/transition'
-import { circInOut } from 'svelte/easing'
-export let refresh = ''
-</script>
 
-{#key refresh}
-<div class="r-r-r-r top" in:fly="{{delay: 300, duration: 400, y: 0, x: -700, easing: circInOut}}" out:fly="{{delay: 0, duration: 300, y: 0, x: -700, easing: circInOut}}">
+
+
 	<div class="c-c-c-c main">
 		<slot></slot>
 	</div>
@@ -22,8 +17,10 @@ export let refresh = ''
 		<p><a href="/rta">Glossary</a></p>
 		<p><a href="/rta">Design @ Bṛhat</a></p>
 	</div>
-</div>
-{/key}
+
+
+
+
 
 <style>
 
@@ -39,19 +36,19 @@ export let refresh = ''
 @media screen and (min-width: 900px) {
 	.sidebb { width: 20%; padding-left: 24px; height: 100%; position: sticky; top: 200px;}	
 	.main { width: 76%; padding: 0;}
-	.top { width: 100vw; min-height: 100vh; padding-top: 120px;}
+	
 }
 
 @media screen and (max-width: 899px) and (min-width: 576px) {
 	.sidebb { width: 27%; padding-left: 16px;}
 	.main { width: 70%;}
-	.top { width: 100vw; min-height: 100vh; padding-top: 80px;}
+
 }
 
 @media screen and (max-width: 575px) {
 	.sidebb { width: 100%; height: 64px; order: 1; background: white; z-index: 400;}
 	.main { width: 100%; height: 100%; order: 2;}
-	.top { width: 100vw; min-height: 100vh; padding-top: 80px;}
+
 
 }
 
