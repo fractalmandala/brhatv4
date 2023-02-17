@@ -1,15 +1,21 @@
 <script>
+import { onMount } from 'svelte'
+import Lenis from '@studio-freight/lenis'
 
- import { fly } from 'svelte/transition'
- import { expoOut } from 'svelte/easing'
+onMount(() => {
+const lenis = new Lenis({
+		smooth: true,
+	})
 
+/**
+	 * @param {any} time
+	 */
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+requestAnimationFrame(raf)
+})
 </script>
 
-
-
-<div
-in:fly="{{ duration: 250, delay: 300, opacity: 0.2, y: 800, x:0, easing: expoOut }}"
-out:fly="{{ duration: 200, delay: 0, opacity: 0, y: 800, easing: expoOut  }}"
->
 <slot></slot>
-</div>

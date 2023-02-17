@@ -1,6 +1,10 @@
-<div class="c-c-c-c big lay" data-scroll-section style="background: var(--boxback)">
-	<div class="c-c-c-c head">
-		<h4 data-scroll data-scroll-direction="horizontal" data-scroll-speed="3">
+<script>
+import { reveal } from 'svelte-reveal'
+</script>
+
+<div class="c-c-c-c big lay" style="background: var(--boxback)">
+	<div class="c-c-c-c head" use:reveal={{ transition: "blur" }}>
+		<h4>
 		<slot name="header"></slot>
 		</h4>
 	</div>

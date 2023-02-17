@@ -103,10 +103,11 @@ a
 		justify-content: space-between
 		gap: 8px
 		padding: 0 8px
+		overflow: hidden
 
 	.gencol
 		width: calc(33.33% - 8px)
-		height: 100%
+		height: 100vh
 
 	.genrow
 		&:hover

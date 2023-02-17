@@ -1,180 +1,179 @@
 <script lang="ts">
-import { goto } from '$app/navigation'
-import supabase from '$lib/db'
-import { fly } from 'svelte/transition';
-import { reveal } from 'svelte-reveal'
-import { expoInOut } from 'svelte/easing';
-import AllBrands from '$lib/components/globals/BrandsWhite.svelte'
-import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte'
-import StaticH1 from '$lib/components/headers/StaticH1.svelte'
-import Dhiti from '$lib/components/headers/StaticH1.svelte'
-import Actions from '$lib/components/headers/StaticH1.svelte'
-import Open from '$lib/components/headers/StaticH1.svelte'
-import BrhadMrdanga from '$lib/components/vidplaylists/BrhadMrdanga.svelte'
-import HindiKavita from '$lib/components/vidplaylists/HindiKavita.svelte'
-import IKSVids from '$lib/components/vidplaylists/IKSVids.svelte'
-import OtherVids from '$lib/components/vidplaylists/OtherVids.svelte'
-let y = 1
-let isAnv = false
-let isMrd = false
-let isFm = false
-let isDra = false
-let isRid = false
-let isSoa = false
-let wid = 0
-let op = 0
-
-function goAnv(){
-	goto('/anveshi')
-}
-
-function goMrd(){
-	goto('/mrdanga')
-}
-
-function goDra(){
-	goto('/drashta')
-}
-
-function goRid(){
-	goto('/rta')
-}
-
-function goFm(){
-	goto('/mandala')
-}
-
-function goSoa(){
-	goto('/aryavarta')
-}
-
-function toggleAnv(){ 
-	isAnv = !isAnv 
-	if (wid === 0) {
-		wid = 100
-	} else {
-	wid = 0
+	import { goto } from '$app/navigation'
+	import supabase from '$lib/db'
+	import { reveal } from 'svelte-reveal'
+	import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte'
+	import StaticH1 from '$lib/components/headers/StaticH1.svelte'
+	import Dhiti from '$lib/components/headers/StaticH1.svelte'
+	import Actions from '$lib/components/headers/StaticH1.svelte'
+	import Open from '$lib/components/headers/StaticH1.svelte'
+	import BrhadMrdanga from '$lib/components/vidplaylists/BrhadMrdanga.svelte'
+	import HindiKavita from '$lib/components/vidplaylists/HindiKavita.svelte'
+	import IKSVids from '$lib/components/vidplaylists/IKSVids.svelte'
+	import OtherVids from '$lib/components/vidplaylists/OtherVids.svelte'
+	let y = 1
+	let isAnv = false
+	let isMrd = false
+	let isFm = false
+	let isDra = false
+	let isRid = false
+	let isSoa = false
+	let wid = 0
+	let op = 0
+	
+	function goAnv(){
+		goto('/anveshi')
 	}
-	if (op === 0) {
-		op = 1
-	} else {
-		op = 0
+	
+	function goMrd(){
+		goto('/mrdanga')
 	}
-}
-
-function toggleDra(){ 
-	isDra = !isDra 
-	if (wid === 0) {
-		wid = 100
-	} else {
-	wid = 0
+	
+	function goDra(){
+		goto('/drashta')
 	}
-	if (op === 0) {
-		op = 1
-	} else {
-		op = 0
+	
+	function goRid(){
+		goto('/rta')
 	}
-}
-
-function toggleMrd(){
-	isMrd = !isMrd
-	if (wid === 0) {
-		wid = 100
-	} else {
-	wid = 0
+	
+	function goFm(){
+		goto('/mandala')
 	}
-	if (op === 0) {
-		op = 1
-	} else {
-		op = 0
+	
+	function goSoa(){
+		goto('/aryavarta')
 	}
-}
-
-function toggleFm(){
-	isFm = !isFm
-	if (wid === 0) {
-		wid = 100
-	} else {
-	wid = 0
+	
+	function toggleAnv(){ 
+		isAnv = !isAnv 
+		if (wid === 0) {
+			wid = 100
+		} else {
+		wid = 0
+		}
+		if (op === 0) {
+			op = 1
+		} else {
+			op = 0
+		}
 	}
-	if (op === 0) {
-		op = 1
-	} else {
-		op = 0
+	
+	function toggleDra(){ 
+		isDra = !isDra 
+		if (wid === 0) {
+			wid = 100
+		} else {
+		wid = 0
+		}
+		if (op === 0) {
+			op = 1
+		} else {
+			op = 0
+		}
 	}
-}
-
-function toggleRid(){
-	isRid = !isRid
-	if (wid === 0) {
-		wid = 100
-	} else {
-	wid = 0
+	
+	function toggleMrd(){
+		isMrd = !isMrd
+		if (wid === 0) {
+			wid = 100
+		} else {
+		wid = 0
+		}
+		if (op === 0) {
+			op = 1
+		} else {
+			op = 0
+		}
 	}
-	if (op === 0) {
-		op = 1
-	} else {
-		op = 0
+	
+	function toggleFm(){
+		isFm = !isFm
+		if (wid === 0) {
+			wid = 100
+		} else {
+		wid = 0
+		}
+		if (op === 0) {
+			op = 1
+		} else {
+			op = 0
+		}
 	}
-}
-
-function toggleSoa(){
-	isSoa = !isSoa
-	if (wid === 0) {
-		wid = 100
-	} else {
-	wid = 0
+	
+	function toggleRid(){
+		isRid = !isRid
+		if (wid === 0) {
+			wid = 100
+		} else {
+		wid = 0
+		}
+		if (op === 0) {
+			op = 1
+		} else {
+			op = 0
+		}
 	}
-	if (op === 0) {
-		op = 1
-	} else {
-		op = 0
+	
+	function toggleSoa(){
+		isSoa = !isSoa
+		if (wid === 0) {
+			wid = 100
+		} else {
+		wid = 0
+		}
+		if (op === 0) {
+			op = 1
+		} else {
+			op = 0
+		}
 	}
-}
-
-let currentList = "list-1"
-
-function switchList(newList: string){
-	currentList = newList
-}
-
-async function dhiti() {
-  const { data, error } = await supabase
-  .from('brhat-dhiti')
-  .select()
-  .order('id',{ascending: false})
-  .limit(6)
-  if (error) throw new Error(error.message)
-  return data
-}
-
-async function getBooks(){
-	const { data, error } = await supabase
-	.from('brhat-openlibrary')
-	.select()
-	.order('Sno',{ascending: false})
-	.limit(8)
-	if (error) throw new Error(error.message)
-	return data
-}
+	
+	let currentList = "list-1"
+	
+	function switchList(newList: string){
+		currentList = newList
+	}
+	
+	async function dhiti() {
+	  const { data, error } = await supabase
+	  .from('brhat-dhiti')
+	  .select()
+	  .order('id',{ascending: false})
+	  .limit(6)
+	  if (error) throw new Error(error.message)
+	  return data
+	}
+	
+	async function getBooks(){
+		const { data, error } = await supabase
+		.from('brhat-openlibrary')
+		.select()
+		.order('Sno',{ascending: false})
+		.limit(8)
+		if (error) throw new Error(error.message)
+		return data
+	}
 </script>
 
 <svelte:window bind:scrollY={y} />
+
+
 <Accordion></Accordion>
 <div class="c-c-c-c pad4 lay lzz">
-	<h1 class="bigger1" data-textify>Bṛhat is a</h1>
-	<h1 class="smaller1 isred" data-textify-title>
-	Culture Engine</h1>
-	<h3 data-textify>
+	<h1 class="bigger1 txtyp1" >Bṛhat is a</h1>
+	<h1 class="smaller1 isred txtyp2">
+	&#60;culture_engine&#62</h1>
+	<h3>
 		To power creatives, research and design rooted
 		in the Indian civilizational consciousness. We convert individual, institutional 
 		and collective intent into action, across 3 dimensions.
 	</h3>
-	<h3><a href="/about" class="h5link" data-textify>Know More</a></h3>
+	<h3><a href="/about" class="h5link">Know More</a></h3>
 	<div class="l2 row-of-3">
 		<div class="l2row1 small5 threebox">
-			<h5 data-textify-title>Create</h5>
-			<p data-textify>
+			<h5>Create</h5>
+			<p>
 			- visual and literary stories;
 			- design thinking and methods;
 			- research output on education and ecology;
@@ -182,8 +181,8 @@ async function getBooks(){
 			</p>
 		</div>
 		<div class="l2row2 small5 threebox">
-			<h5 data-textify-title>Curate</h5>
-			<p data-textify>
+			<h5>Curate</h5>
+			<p>
 			- heritage experience journeys;
 			- culture-fit in mass media;
 			- NEP-relevant IKS curriculum;
@@ -191,8 +190,8 @@ async function getBooks(){
 			</p>
 		</div>
 		<div class="l2row3 small5 threebox">
-			<h5 data-textify-title>Consult</h5>
-				<p data-textify>
+			<h5>Consult</h5>
+				<p>
 					- NEP-IKS implementation;
 					- policy thinking on education and ecology;
 					- organizational structure and leadership frameworks
@@ -201,11 +200,11 @@ async function getBooks(){
 	</div>
 </div>
 <StaticH1 --boxback="white">
-	<div slot="header"><span class="red lay">Explore</span> Visual Content</div>
+	<div slot="header"><span class="red lay">Explore </span>Visual Content</div>
 		<div class="lay" slot="body">
 			<div class="c-c-c-c lvid">
 				<div class="c-c-c-c pad4 lvid-text">
-					<h3 data-textify>Our visual content ranges from explorations of rasa and bhāva, to articulations of an IKS-implementation strategy for modern India. Select playlists below, or visit our <a href="https://youtube.com/@brhat" target="_blank" rel="noreferrer">YouTube channel</a></h3>
+					<h3>Our visual content ranges from explorations of rasa and bhāva, to articulations of an IKS-implementation strategy for modern India. Select playlists below, or visit our <a href="https://youtube.com/@brhat" target="_blank" rel="noreferrer">YouTube channel</a></h3>
 					<div class="r-r-r-r playlists small5">
 						<h5 on:click={() => switchList("list-1")} on:keydown={() => switchList("list-1")}>Bṛhadmṛdaṅga</h5>
 						<h5 on:click={() => switchList("list-2")} on:keydown={() => switchList("list-2")}>Hindi Kavitā</h5>
@@ -255,17 +254,17 @@ async function getBooks(){
 	<div slot="header">Bṛhat Open <span class="red">Library</span></div>
 	<div slot="body">
 		<div class="c-c-c-c pad4 bol">
-			<h3 data-textify>
+			<h3>
 				An online repository of books, papers, texts and scriptures, made available under CC0 1.0 License. Gathering point for digitized scripture, Aryan Invasion/Migration, civilizational literature and more.				
 			</h3>
-			<h3><a href="/openlibrary" class="h5link" data-textify>Visit Library</a></h3>
+			<h3><a href="/openlibrary" class="h5link">Visit Library</a></h3>
 			{#await getBooks()}
 			<small>...</small>
 			{:then data}
 			<div class="row-of-4 lib small5">
 				{#each data as item, i}
 				<div class="fourbox book" use:reveal={{ transition: "slide", delay: 100*i, duration: 100, reset: true, easing: "easeOutCirc"}}>
-					<h5 data-textify><a href="/openlibrary/books/{item.slug}">{item.Text}</a></h5>
+					<h5><a href="/openlibrary/books/{item.slug}">{item.Text}</a></h5>
 					<p>{item.author}</p>
 					<small>{item.Type}</small>
 				</div>
@@ -280,7 +279,7 @@ async function getBooks(){
 <Actions --boxback="white">
 	<div slot="header">Bṛhat <span class="red">Actions</span></div>
 	<div class="forlocation" slot="body">
-			<h3 class="pad4 special-h" data-textify>Visual forays into the 64 kalās and metaphors of arts, travel discovery programs, online learning courses, design thinking based on Dharma, AI-based creative content or bold explorations of Indian civilizational consciousness, find your engagement here.</h3>
+			<h3 class="pad4 special-h">Visual forays into the 64 kalās and metaphors of arts, travel discovery programs, online learning courses, design thinking based on Dharma, AI-based creative content or bold explorations of Indian civilizational consciousness, find your engagement here.</h3>
 			<div class="row-of-3 pad4 actionsrow small5">
 				<div id="box-1" class="cc threebox actionbox" on:mouseenter={toggleAnv} on:mouseleave={toggleAnv} on:click={goAnv} on:keydown={event => event.key === 'Enter' && goAnv()}><h5>Description</h5></div>
 				<div id="box-2" class="cc threebox actionbox" on:mouseenter={toggleDra} on:mouseleave={toggleDra} on:click={goDra} on:keydown={event => event.key === 'Enter' && goDra()}></div>
@@ -311,6 +310,7 @@ async function getBooks(){
 			</div>
 	</div>
 </Actions>
+
 
 
 
@@ -398,11 +398,17 @@ async function getBooks(){
 	100% { width: 0;}
 }
 
+.l2 .threebox { background: #f1f1f1;}
+
 @media screen and (min-width: 900px) {
 	.c-c-c-c h3 { font-weight: 300;}
-	.lzz { height: 100vh; justify-content: center; padding-top: 80px;}
+	.lzz { height: 100vh; padding-top: 80px; gap: 0;}
+	.l2 { padding-top: 24px;}
+	.l2 .threebox { height: max-content; padding-bottom: 16px; padding-right: 16px;}
 	.l2 h5 { padding-top: 12px; padding-left: 24px;}
-	.c-c-c-c h3 { width: 75%;}
+	.c-c-c-c h3 { width: 75%; margin-top: 0; }
+	.lzz h3 {margin-top: 0;}
+	.smaller1 { height: 144px; overflow: visible;}
 	.l2 p { font-size: 14px; padding-left: 24px;}
 	.playlists { gap: 40px; padding: 16px 0 24px 0;}
 	.row-of-3 { flex-wrap: wrap;}
