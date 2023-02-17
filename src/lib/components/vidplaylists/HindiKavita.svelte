@@ -19,16 +19,17 @@ async function getKavita() {
 		{:then data}
 			<div class="r-r-r-r pad4 row-of-4">
 				{#each data as item}
-					<div class="c-c-c-c fourbox">
-						<iframe
-  						class="m-1"
-  						width=100%
-  						height=100%
-  						src="https://www.youtube.com/embed/{item.videoid}"
-  						title={item.name}
-  					>
-						</iframe>
-					</div>
+				<div class="fourbox small5 paramin">
+					<iframe
+  					class="m-1"
+  					width=100%
+  					height=88%
+  					src="https://www.youtube.com/embed/{item.id}"
+  					title={item.name}
+  				>
+					</iframe>
+					<p><a href="https://www.youtube.com/watch?v={item.id}" target="_blank" rel="noreferrer">{@html item.name}</a></p>
+				</div>
 				{/each}
 			</div>
 		{:catch error}
@@ -37,6 +38,12 @@ async function getKavita() {
 </div>
 
 <style>
+.fourbox p {
+	margin-top: 8px;
+	color: #474747;
+	font-weight: 600;
+}
+.fourbox a { color: inherit;}
 
 @media screen and (min-width: 900px) {
 	.fourbox { height: 184px;}

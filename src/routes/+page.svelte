@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation'
+	import { onMount } from 'svelte';
 	import supabase from '$lib/db'
 	import { reveal } from 'svelte-reveal'
 	import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte'
@@ -11,6 +12,7 @@
 	import HindiKavita from '$lib/components/vidplaylists/HindiKavita.svelte'
 	import IKSVids from '$lib/components/vidplaylists/IKSVids.svelte'
 	import OtherVids from '$lib/components/vidplaylists/OtherVids.svelte'
+	import LatestVids from '$lib/components/vidplaylists/LatestVids.svelte'
 	let y = 1
 	let isAnv = false
 	let isMrd = false
@@ -206,13 +208,14 @@
 				<div class="c-c-c-c pad4 lvid-text">
 					<h3>Our visual content ranges from explorations of rasa and bhāva, to articulations of an IKS-implementation strategy for modern India. Select playlists below, or visit our <a href="https://youtube.com/@brhat" target="_blank" rel="noreferrer">YouTube channel</a></h3>
 					<div class="r-r-r-r playlists small5">
-						<h5 on:click={() => switchList("list-1")} on:keydown={() => switchList("list-1")}>Bṛhadmṛdaṅga</h5>
+						<h5 on:click={() => switchList("list-1")} on:keydown={() => switchList("list-1")}>Bṛhadmṛdaṅga</h5>						
 						<h5 on:click={() => switchList("list-2")} on:keydown={() => switchList("list-2")}>Hindi Kavitā</h5>
 						<h5 on:click={() => switchList("list-3")} on:keydown={() => switchList("list-3")}>IKS</h5>
 						<h5 on:click={() => switchList("list-4")} on:keydown={() => switchList("list-4")}>On Other Channels</h5>
 					</div>
 				</div>
 				<div class="c-c-c-c lvid-vid">
+					
 					{#if currentList === "list-1"}
 					<BrhadMrdanga></BrhadMrdanga>
 					{:else if currentList === "list-2"}
@@ -310,6 +313,8 @@
 			</div>
 	</div>
 </Actions>
+<LatestVids></LatestVids>
+
 
 
 

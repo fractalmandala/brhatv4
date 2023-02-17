@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
 import { reveal } from 'svelte-reveal'
 </script>
 
 <div class="c-c-c-c big lay" style="background: var(--boxback)">
-	<div class="c-c-c-c head" use:reveal={{ transition: "blur" }}>
+	<div class="c-c-c-c head" use:reveal={{ transition: "blur", duration: 400 }}>
 		<h4>
-		<slot name="header"></slot>
+			<span class="splitchar">
+			<slot name="header"></slot>
 		</h4>
 	</div>
 	<div class="c-c-c-c small">
