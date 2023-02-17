@@ -1,5 +1,5 @@
 <script>
-const API_KEY = 'AIzaSyBt9WEKOrAik-cdG01wEhIQJhrwM2uu1cU';
+const API_KEY = import.meta.env.YOUTUBE_API_KEY;
 const CHANNEL_ID = 'UCpmTZwM36xdAuHbBaaE2asg';
 export async function fetchVideos() {
   const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=4`;
