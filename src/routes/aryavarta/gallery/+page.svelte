@@ -30,6 +30,7 @@ return data
 
 
 <style>
+:root { --sidebar: var(--beau);}
 .the-image{ width: calc(25% - 2em); object-fit: contain; opacity: 1; transition: opacity 0.4s ease;}
 .black-beauty { background: var(--beau); }
 .r-r-r-r { width: 100%; flex-wrap: wrap; gap: 2em;}

@@ -1,142 +1,87 @@
 <script>
-import supabase from '$lib/db'
-async function getImages(){
-	const { data, error } = await supabase
-	.from('MidjourneyImages')
-	.select()
-	.order('id',{ascending: false})
-	.limit(96)
-	if (error) throw new Error(error.message)
-	return data
-}
+let y = 1
 </script>
-
-<div class="containerboy">
-{#await getImages()}
-<small>...</small>
-{:then data}
-<div id="gallery">
-{#each data as item}
-  <div class="tile">
-    <img src={item.link} alt={item.id} />
+<svelte:window bind:scrollY={y}/>
+<div class="gallery">
+  <div class="col" style="transform: translateY({y/5}px)">
+    <div class="image">
+      <img src="https://images.pexels.com/photos/10324713/pexels-photo-10324713.jpeg?cs=srgb&dl=pexels-taha-samet-arslan-10324713.jpg&fm=jpg?auto=compress&cs=tinysrgb&h=650&w=940%20940w" alt="">
+    </div>
+    <div class="image">
+      <img src="https://images.pexels.com/photos/10533885/pexels-photo-10533885.jpeg?auto=compress&cs=tinysrgb&h=650&w=940%20940w" alt="">
+    </div>
+    <div class="image">
+      <img src="https://images.pexels.com/photos/10253213/pexels-photo-10253213.jpeg?cs=srgb&dl=pexels-beepin-10253213.jpg&fm=jpg?auto=compress&cs=tinysrgb&h=650&w=940%20940w" alt="">
+    </div>
   </div>
-{/each}
-</div>
-{:catch error}
-<pre>{error}</pre>
-{/await}
+  <div class="col" style="transform: translateY({-y/2}px)">
+    <div class="image">
+      <img src="https://images.pexels.com/photos/10050979/pexels-photo-10050979.jpeg?cs=srgb&dl=pexels-%D0%B8%D0%BB%D1%8C%D1%8F-%D0%BF%D0%B0%D1%85%D0%BE%D0%BC%D0%BE%D0%B2-10050979.jpg&fm=jpg?auto=compress&cs=tinysrgb&h=650&w=940%20940w" alt="">
+    </div>
+    <div class="image">
+      <img src="https://images.pexels.com/photos/1128660/pexels-photo-1128660.jpeg?cs=srgb&dl=pexels-nur-andi-ravsanjani-gusma-1128660.jpg&fm=jpg?auto=compress&cs=tinysrgb&h=650&w=940%20940w" alt="">
+    </div>
+    <div class="image">
+      <img src="https://images.pexels.com/photos/9699293/pexels-photo-9699293.jpeg?cs=srgb&dl=pexels-lada-rezantseva-9699293.jpg&fm=jpg?auto=compress&cs=tinysrgb&h=650&w=940%20940w" alt="">
+    </div>
+  </div>
+  <div class="col" style="transform: translateY({y/2}px)">
+    <div class="image">
+
+      <img src="https://images.pexels.com/photos/6405575/pexels-photo-6405575.jpeg?cs=srgb&dl=pexels-daria-sannikova-6405575.jpg&fm=jpg?auto=compress&cs=tinysrgb&h=650&w=940%20940w" alt="">
+    </div>
+    <div class="image">
+      <img src="https://images.pexels.com/photos/10162526/pexels-photo-10162526.jpeg?cs=srgb&dl=pexels-svetlana%F0%9F%8E%9E-10162526.jpg&fm=jpg?auto=compress&cs=tinysrgb&h=650&w=940%20940w" alt="">
+    </div>
+    <div class="image">
+      <img src="https://images.pexels.com/photos/4394807/pexels-photo-4394807.jpeg?cs=srgb&dl=pexels-woodysmedia-4394807.jpg&fm=jpg?auto=compress&cs=tinysrgb&h=650&w=940%20940w" alt="">
+    </div>
+  </div>
 </div>
 
 <style>
-.containerboy {
-  background-color: rgb(10, 10, 10);
-  height: 100vh;  
-  margin: 0px;
-  overflow: hidden;
-}
 
-#gallery {
-  height: 140vmax;
-  width: 140vmax;  
-  position: absolute;
-}
 
-.tile {
-  border-radius: 1vmax;
-  position: absolute;
-  transition: transform 800ms ease;
-}
-
-.tile:hover {
-  transform: scale(1.1);
-}
-
-.tile:hover > img {
-  opacity: 1;
-  transform: scale(1.01);
-}
-
-.tile > img {
-  height: 100%;
+.gallery {
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   width: 100%;
-  object-fit: cover;
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 800ms ease,
-    transform 800ms ease;
+	height: max-content;
+	background: white;
+  top: 0;
+  left: 0;
+  overflow: scroll;
 }
 
-.tile:nth-child(1) {
-  background-color: rgb(255, 238, 88);
-  height: 14%;
-  width: 20%;
-  left: 5%;
-  top: 5%;
-}
-
-.tile:nth-child(2) {
-  background-color: rgb(66, 165, 245);
-  height: 24%;
-  width: 14%;
-  left: 42%;
-  top: 12%;
-}
-
-.tile:nth-child(3) {
-  background-color: rgb(239, 83, 80);
-  height: 18%;
-  width: 16%;
-  left: 12%;
-  top: 34%;
-}
-
-.tile:nth-child(4) {
-  background-color: rgb(102, 187, 106);
-  height: 14%;
-  width: 12%;
-  left: 45%;
-  top: 48%;
-}
-
-.tile:nth-child(5) {
-  background-color: rgb(171, 71, 188);
-  height: 16%;
-  width: 32%;
-  left: 8%;
-  top: 70%;
-}
-
-.tile:nth-child(6) {
-  background-color: rgb(255, 167, 38);
-  height: 24%;
-  width: 24%;
-  left: 68%;
-  top: 8%;
-}
-
-.tile:nth-child(7) {
-  background-color: rgb(63, 81, 181);
-  height: 16%;
-  width: 20%;
-  left: 50%;
-  top: 74%;
-}
-
-.tile:nth-child(8) {
-  background-color: rgb(141, 110, 99);
-  height: 24%;
-  width: 18%;
-  left: 72%;
-  top: 42%;
-}
-
-.tile:nth-child(9) {
-  background-color: rgb(250, 250, 250);
-  height: 10%;
-  width: 8%;
-  left: 84%;
-  top: 84%;
+.col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+	height: 100%;
+  align-self: flex-start;
+  justify-self: flex-start;
 }
 
 
+.image {
+  width: 100%;
+  filter: saturate(0);
+  padding: 1rem;
+}
+
+.image:hover {
+  z-index: 99999999999 !important;
+  filter: saturate(1);
+}
+
+
+.image img {
+  transition: 0.3s ease-out;
+  overflow: hidden;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+  width: 100%;
+	height: 320px;
+}
 </style>

@@ -9,11 +9,6 @@ import { Keyboard, Mousewheel } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/keyboard'
 import 'swiper/css/mousewheel'
-import StandardTwo from '$lib/components/reuse/StandardTwo.svelte'
-import ImagesGrid from '$lib/components/pagecomps/ImagesGrid.svelte'
-import Two from '$lib/components/reuse/StandardTwo.svelte'
-import Three from '$lib/components/reuse/StandardTwo.svelte'
-import Four from '$lib/components/reuse/StandardTwo.svelte'
 
 
 let isLine1 = false
@@ -142,7 +137,7 @@ async function getImages(){
 </SwiperSlide>
 <SwiperSlide>
 	<div class="c-c-c-c box5"> 
-	<h5 class="orange">
+	<h5 class="green">
 		We can access this place,
 	</h5>
 	<h5>
@@ -159,27 +154,27 @@ async function getImages(){
 <SwiperSlide>
 	<div class="c-c-c-c l10">
 	<div class="mind c-c-c-c" on:mouseenter={toggleLine1} on:mouseleave={toggleLine1}>
-		<p class="orange">Prologue</p>
+		<p class="green">Prologue</p>
 		<h3>The Bhārata that Once Was, or Those That Could Have Been</h3>
 	</div>
 	<div class="mind c-c-c-c" on:mouseenter={toggleLine2} on:mouseleave={toggleLine2}>
-		<p class="orange">Chapter 1</p>
+		<p class="green">Chapter 1</p>
 		<h3>Kaśyapa's Lament</h3>
 	</div>
 	<div class="mind c-c-c-c" on:mouseenter={toggleLine3} on:mouseleave={toggleLine3}>
-		<p class="orange">Chapter 2</p>
+		<p class="green">Chapter 2</p>
 		<h3>Sūta and Sudā</h3>
 	</div>
 	<div class="mind c-c-c-c" on:mouseenter={toggleLine4} on:mouseleave={toggleLine4}>
-		<p class="orange">Upcoming</p>
+		<p class="green">Upcoming</p>
 		<h3>Nasadīya Across Time and Space</h3>
 	</div>
 	<div class="mind c-c-c-c" on:mouseenter={toggleLine5} on:mouseleave={toggleLine5}>
-		<p class="orange">Demos</p>
-		<h3>Gallery</h3>
+		<p class="green">Demos</p>
+		<h3><a href="/aryavarta/gallery">Gallery</a></h3>
 	</div>
 	<div class="mind c-c-c-c" on:mouseenter={toggleLine6} on:mouseleave={toggleLine6}>
-		<p class="orange">About</p>
+		<p class="green">About</p>
 		<h3>Tech, AI, Collaboration</h3>
 	</div>
 	{#if isLine1}
@@ -208,6 +203,13 @@ async function getImages(){
 
 <style lang="sass">
 
+.l10 a
+	color: inherit
+
+.l10
+	a
+		&:hover
+			color: #10c56d
 
 .l100
 	.c-c-c-c
