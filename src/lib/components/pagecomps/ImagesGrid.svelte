@@ -16,7 +16,7 @@ async function getImages(){
 {#await getImages()}
 <small>...</small>
 {:then data}
-<div class="r-r-r-r l0">
+<div class="r-r-r-r l100">
 	{#each data as item}
 	<div class="c-c-c-c" id="item-{item.id}">
 	<Lightbox>
@@ -31,16 +31,16 @@ async function getImages(){
 
 <style>
 
-.l0 .c-c-c-c img { object-fit: cover; height: 100%;}
+.l100 .c-c-c-c img { object-fit: cover; height: 100%;}
 
-.l0 .c-c-c-c {
+.l100 .c-c-c-c {
 	transform-origin: center center;
 	transition: transform 0.23s var(--cube2);
 	border: 1px solid white;
 	justify-content: center;
 	overflow: hidden;
 }
-.l0 .c-c-c-c:hover {
+.l100 .c-c-c-c:hover {
 	transform: scale(1.2) translateY(-20px);
 	animation: comedown 0.3s var(--cube5) 0.23s forwards;
 }
@@ -51,19 +51,19 @@ async function getImages(){
 }
 
 @media screen and (min-width: 768px) {
-	.l0 { height: calc(100vh - 72px); width: 100vw; flex-wrap: wrap; margin-top: 72px; }
-	.l0 .c-c-c-c { width: calc(100%/12); height: calc(100%/8);}
+	.l100 { height: calc(100vh - 72px); width: 100vw; flex-wrap: wrap; margin-top: 72px; }
+	.l100 .c-c-c-c { width: calc(100%/12); height: calc(100%/8);}
 
 }
 
 @media screen and (max-width: 768px) {
-	.l0 {
+	.l100 {
 		height: 100vh;
 		width: 100vw;
 		flex-wrap: wrap;
 		
 	}
-	.l0 .c-c-c-c { width: 16.6%; height: 6.25%; }
+	.l100 .c-c-c-c { width: 16.6%; height: 6.25%; }
 }
 
 </style>

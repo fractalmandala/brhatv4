@@ -1,4 +1,6 @@
 <script lang="ts">
+import supabase from '$lib/db'
+import { Lightbox } from 'svelte-lightbox'
 import { Swiper, SwiperSlide } from 'swiper/svelte'
 import { scale } from 'svelte/transition'
 import { quadIn, circOut } from 'svelte/easing'
@@ -40,6 +42,16 @@ function toggleLine6(){
 	isLine6 = !isLine6
 }
 
+async function getImages(){
+	const { data, error } = await supabase
+	.from('MidjourneyImages')
+	.select()
+	.order('id',{ascending: false})
+	.limit(96)
+	if (error) throw new Error(error.message)
+	return data
+}
+
 </script>
 
 <Swiper
@@ -50,7 +62,23 @@ function toggleLine6(){
 	slidesPerView={1}
 >
 <SwiperSlide>
-	<ImagesGrid></ImagesGrid>
+<div class="r-r-r-r l100">
+	{#await getImages()}
+<small>...</small>
+{:then data}
+
+	{#each data as item}
+	<div class="c-c-c-c" id="item-{item.id}">
+	<Lightbox>
+		<img src={item.link} alt={item.id} />
+	</Lightbox>
+	</div>
+	{/each}
+
+{:catch error}
+<pre>{error}</pre>
+{/await}
+</div>
 </SwiperSlide>
 <SwiperSlide>
 	<div class="row-of-2 l00">
@@ -181,6 +209,32 @@ function toggleLine6(){
 <style lang="sass">
 
 
+.l100
+	.c-c-c-c
+		img
+			object-fit: cover
+			height: 100%
+
+.l100
+	.c-c-c-c
+		transform-origin: center center
+		transition: transform 0.23s var(--cube2)
+		border: 1px solid white
+		justify-content: center
+		overflow: hidden
+
+.l100
+	.c-c-c-c
+		&:hover
+			transform: scale(1.2) translateY(-20px)
+			animation: comedown 0.3s var(--cube5) 0.23s forwards
+
+@keyframes comedown
+	0%
+		transform: translateY(-20px) scale(1.2)
+	100%
+		transform: translateY(0) scale(1.2)
+
 .black-b
 	font-weight: 400
 	color: #272727
@@ -287,6 +341,14 @@ h4
 		height: 80%
 		width: 400px
 
+	.l100
+		height: 100vh
+		width: 100vw
+		flex-wrap: wrap
+		.c-c-c-c
+			width: calc(100%/12)
+			height: calc(100%/8)
+
 @media screen and (max-width: 767px) 
 
 	.l00, .l03
@@ -376,5 +438,13 @@ h4
 		object-fit: cover
 		height: 80%
 		width: 400px
+
+	.l100
+		height: 100vh
+		width: 100vw
+		flex-wrap: wrap
+		.c-c-c-c
+			width: 16.6%
+			height: 6.25%
 
 </style>
