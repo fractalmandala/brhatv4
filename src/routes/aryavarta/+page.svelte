@@ -2,7 +2,7 @@
 import supabase from '$lib/db'
 import { Lightbox } from 'svelte-lightbox'
 import { Swiper, SwiperSlide } from 'swiper/svelte'
-import { scale } from 'svelte/transition'
+import { scale, slide } from 'svelte/transition'
 import { quadIn, circOut } from 'svelte/easing'
 import { reveal } from 'svelte-reveal';
 import { Keyboard, Mousewheel } from 'swiper'
@@ -62,10 +62,10 @@ async function getImages(){
 <small>...</small>
 {:then data}
 
-	{#each data as item}
+	{#each data as item, i}
 	<div class="c-c-c-c" id="item-{item.id}">
 	<Lightbox>
-		<img src={item.link} alt={item.id} />
+		<img src={item.link} alt={item.id} in:slide="{{ duration: 300, delay: i*10, easing: circOut}}" />
 	</Lightbox>
 	</div>
 	{/each}

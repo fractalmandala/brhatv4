@@ -91,7 +91,7 @@ onMount(() => {
 		<div class="twobox imgcol1">
 			<img src="/images/mandala/hindugraphic.png" alt="imone" style="transform: translate(0, {-(divider-y)/8}px)" />
 		</div>
-		<div class="twobox jet col2" style="transform: translate(0, {-y/(divider/10)}px)">
+		<div class="twobox col2" style="transform: translate(0, {-y/(divider/10)}px)">
 			<h5 class="txtyp1">
 				To be a history in the true sense of the word, a work must be a story of the people inhabiting a country.
 			</h5>
@@ -720,6 +720,7 @@ onMount(() => {
 	.munshi .twobox h4 {
 		font-size: 36px;
 		font-weight: 700;
+		line-height: 1.1;
 	}
 
 	.munshi .twobox img {

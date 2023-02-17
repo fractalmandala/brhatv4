@@ -1076,6 +1076,7 @@
 <LatestVids></LatestVids>
 
 <style>
+
 	.svgbox svg {
 		width: 20%;
 	}
@@ -1094,6 +1095,20 @@
 
 	.svgbox svg:hover #core path {
 		animation: disintegration 8s var(--cube3) forwards;
+	}
+
+	.svgbox svg:hover #mid path {
+		animation: disintegration 3s var(--cube2) infinite alternate;
+	}
+
+	.svgbox svg:hover #outermost path {
+		animation: inandout 30s var(--cube3) infinite
+	}
+
+	@keyframes inandout {
+		0% { transform: scale(1);}
+		50% { transform: scale(1.5);}
+		100% { transform: scale(1);}
 	}
 
 	@keyframes disintegration {

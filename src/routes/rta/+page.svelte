@@ -90,9 +90,9 @@ let y = 1
 			</h2>
 	</div>
 	<div class="c-c-c-c mar4 all">
-		<h3 class="bigger5 b5-1" data-textify>Prelude to Ṛta in Design</h3>
-		<h3 class="bigger5" data-textify>Introduction to Ṛta in Design</h3>
-		<h3 class="bigger5" data-textify>Dharma is Design</h3>
+		<h3 class="bigger5 b5-1" data-textify><a href="/rta/prologue">Prelude to Ṛta in Design</a></h3>
+		<h3 class="bigger5" data-textify><a href="/rta/intro">Introduction to Ṛta in Design</a></h3>
+		<h3 class="bigger5" data-textify><a href="/rta/dharmaisdesign">Dharma is Design</a></h3>
 		<h3 class="bigger5" data-textify>Framework</h3>
 		<h3 class="bigger5" data-textify>Principles</h3>
 		<h3 class="bigger5" data-textify>Phases</h3>
@@ -128,7 +128,11 @@ justify-content: center;
 	align-items: center
 }
 */
-
+.all a {color: inherit;}
+.all a:hover { color: #10C56d;}
+.all h3:hover {
+	text-shadow: 6px 4px 12px #010101;
+}
 
 @keyframes motifcomes {
 	0% { opacity: 0; transform: translateX(400px);}

@@ -1,0 +1,252 @@
+@font-face {
+    font-family: 'Assistant';
+    src: url('subset-Assistant-ExtraLight.woff2') format('woff2'),
+        url('subset-Assistant-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('subset-Assistant-SemiBold.woff2') format('woff2'),
+        url('subset-Assistant-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('subset-Assistant-Bold.woff2') format('woff2'),
+        url('subset-Assistant-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('subset-Assistant-ExtraBold.woff2') format('woff2'),
+        url('subset-Assistant-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('subset-Assistant-Medium.woff2') format('woff2'),
+        url('subset-Assistant-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('subset-Assistant-Regular.woff2') format('woff2'),
+        url('subset-Assistant-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('subset-Assistant-Light.woff2') format('woff2'),
+        url('subset-Assistant-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Anek Devanagari';
+    src: url('subset-AnekDevanagari-Bold.woff2') format('woff2'),
+        url('subset-AnekDevanagari-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Anek Devanagari';
+    src: url('subset-AnekDevanagari-Medium.woff2') format('woff2'),
+        url('subset-AnekDevanagari-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Anek Devanagari';
+    src: url('subset-AnekDevanagari-SemiBold.woff2') format('woff2'),
+        url('subset-AnekDevanagari-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Anek Devanagari';
+    src: url('subset-AnekDevanagari-ExtraBold.woff2') format('woff2'),
+        url('subset-AnekDevanagari-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Anek Devanagari';
+    src: url('subset-AnekDevanagari-Thin.woff2') format('woff2'),
+        url('subset-AnekDevanagari-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Anek Devanagari';
+    src: url('subset-AnekDevanagari-ExtraLight.woff2') format('woff2'),
+        url('subset-AnekDevanagari-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Anek Devanagari';
+    src: url('subset-AnekDevanagari-Light.woff2') format('woff2'),
+        url('subset-AnekDevanagari-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Anek Devanagari';
+    src: url('subset-AnekDevanagari-Regular.woff2') format('woff2'),
+        url('subset-AnekDevanagari-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Lt BT';
+    src: url('subset-FuturaBT-LightItalic.woff2') format('woff2'),
+        url('subset-FuturaBT-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Hv BT';
+    src: url('subset-FuturaBT-HeavyItalic.woff2') format('woff2'),
+        url('subset-FuturaBT-HeavyItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Lt BT';
+    src: url('subset-FuturaBT-Light.woff2') format('woff2'),
+        url('subset-FuturaBT-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura XBlk BT';
+    src: url('subset-FuturaBT-ExtraBlack.woff2') format('woff2'),
+        url('subset-FuturaBT-ExtraBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Hv BT';
+    src: url('subset-FuturaBT-Heavy.woff2') format('woff2'),
+        url('subset-FuturaBT-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Bk BT';
+    src: url('subset-FuturaBT-Book.woff2') format('woff2'),
+        url('subset-FuturaBT-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Md BT';
+    src: url('subset-FuturaBT-MediumItalic.woff2') format('woff2'),
+        url('subset-FuturaBT-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Md BT';
+    src: url('subset-FuturaBT-Medium.woff2') format('woff2'),
+        url('subset-FuturaBT-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Bk BT';
+    src: url('subset-FuturaBT-BookItalic.woff2') format('woff2'),
+        url('subset-FuturaBT-BookItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura BdCn BT';
+    src: url('subset-FuturaBT-BoldCondensed.woff2') format('woff2'),
+        url('subset-FuturaBT-BoldCondensed.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura MdCn BT';
+    src: url('subset-FuturaBT-MediumCondensed.woff2') format('woff2'),
+        url('subset-FuturaBT-MediumCondensed.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura LtCn BT';
+    src: url('subset-FuturaBT-LightCondensed.woff2') format('woff2'),
+        url('subset-FuturaBT-LightCondensed.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Futura Md BT';
+    src: url('subset-FuturaBT-BoldItalic.woff2') format('woff2'),
+        url('subset-FuturaBT-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+

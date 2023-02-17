@@ -3,90 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
-@font-face 
-	font-family: 'Singel', serif
-	font-weight: 300
-	as: "style"
-	rel: "stylesheet preload prefetch"
-	src: url('/static/fonts/Singel/Singel-Trial-Regular.woff') format('woff'), url('/static/Singel/Singel/Trial-Regular.woff2') format('woff2')
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100;200;300;400;500;600;700;800&family=Assistant:wght@200;300;400;500;600;700;800&display=swap')
 
-@font-face 
-	font-family: 'Singel', serif
+@font-face
+	font-family: 'Assistant', sans-serif
+	src: url('/static/fonts/newset/Assistant-Regular.woff2') format('woff2'), url('/static/fonts/newset/Assistant-Regular.woff') format('woff')
+	font-weight: 400
+	font-style: normal
+
+@font-face
+	font-family: 'Assistant', sans-serif
+	src: url('/static/fonts/newset/Assistant-Bold.woff2') format('woff2'), url('/static/fonts/newset/Assistant-Bold.woff') format('woff')
 	font-weight: 700
-	as: "style"
-	rel: "stylesheet preload prefetch"
-	src: url('/static/fonts/Singel/Singel-Trial-Bold.woff') format('woff'), url('/static/Singel/Singel/Singel-Trial-Bold.woff2') format('woff2')
-
-@font-face 
-	font-family: 'Singel', serif
-	font-weight: 400
-	as: "style"
-	rel: "stylesheet preload prefetch"
-	src: url('/static/fonts/Singel/Singel-Trial-Light.woff') format('woff'), url('/static/Singel/Singel/Singel-Trial-Light.woff2') format('woff2')
-
-@font-face
-	font-family: 'Encode Sans', sans-serif
-	font-weight: 400
-	as: "style"
-	rel: "stylesheet preload prefetch"
-	src: url('/static/fonts/EncodeSans-VariableFont_wdth,wght.ttf') format('ttf')
-
-@font-face
-	font-family: 'Encode Sans', sans-serif
-	font-weight: 800
-	as: "style"
-	rel: "stylesheet preload prefetch"
-	src: url('/static/fonts/EncodeSans-VariableFont_wdth,wght.ttf') format('ttf')
-
-@font-face
-	font-family: 'Code Next', sans-serif
-	font-weight: 400
-	as: "style"
-	rel: "stylesheet preload prefetch"
-	src: url('/static/fonts/codenext/CodeNext-Trial-Book.woff') format('woff'), url('/static/fonts/codenext/CodeNext-Trial-Book.woff2') format('woff2')
-
-@font-face
-	font-family: 'Code Next', sans-serif
-	font-weight: 600
-	as: "style"
-	rel: "stylesheet preload prefetch"
-	src: url('/static/fonts/codenext/CodeNext-Trial-SemiBold.woff') format('woff'), url('/static/fonts/codenext/CodeNext-Trial-SemiBold.woff2') format('woff2')
-
-@font-face
-	font-family: 'Code Next', sans-serif
-	font-weight: 700
-	as: "style"
-	rel: "stylesheet preload prefetch"
-	src: url('/static/fonts/codenext/CodeNext-Trial-Bold.woff') format('woff'), url('/static/fonts/codenext/CodeNext-Trial-Bold.woff2') format('woff2')
-
-@font-face
-	font-family: 'Code Next', sans-serif
-	font-weight: 800
-	as: "style"
-	rel: "stylesheet preload prefetch"
-	src: url('/static/fonts/codenext/CodeNext-Trial-ExtraBold.woff') format('woff'), url('/static/fonts/codenext/CodeNext-Trial-ExtraBold.woff2') format('woff2')
-
-@font-face
-	font-family: 'Code Next', sans-serif
-	font-weight: 900
-	as: "style"
-	rel: "stylesheet preload prefetch"
-	src: url('/static/fonts/codenext/CodeNext-Trial-Heavy.woff') format('woff'), url('/static/fonts/codenext/CodeNext-Trial-Heavy.woff2') format('woff2')
-
-@font-face
-	font-family: 'Code Next', sans-serif
-	font-weight: 300
-	as: "style"
-	rel: "stylesheet preload prefetch"
-	src: url('/static/fonts/codenext/CodeNext-Trial-Light.woff') format('woff'), url('/static/fonts/codenext/CodeNext-Trial-Light.woff2') format('woff2')
-
-@font-face
-	font-family: 'Code Next', sans-serif
-	font-weight: 200
-	as: "style"
-	rel: "stylesheet preload prefetch"
-	src: url('/static/fonts/codenext/CodeNext-Trial-Thin.woff') format('woff'), url('/static/fonts/codenext/CodeNext-Trial-Thin.woff2') format('woff2')
-	
+	font-style: normal
 
 /*containers********************************************************* *****************************************/
 
@@ -133,11 +62,11 @@ pre
 	--colfive: #10C56E
 	--colsix: #11FC8B
 
-h2, h4, h3, h5, p, pre, small, cite, h6
-	font-family: 'Mulish', sans-serif
+h2, h4, h3, h5, p, pre, small, cite, h6, li
+	font-family: 'Anek Devanagari', sans-serif
 
 h1
-	font-family: 'Mulish', sans-serif
+	font-family: 'Anek Devanagari', sans-serif
 
 .mainpage, .bar
 	p, h5, pre, code, caption, cite, small, h6, h4, h3, h2, h1, li, ul, ol
@@ -145,7 +74,6 @@ h1
 
 .mainpage
 	h5, h1, h2
-		font-weight: bold
 
 .content p
 	a
@@ -233,7 +161,7 @@ small
 h5
 	margin-bottom: 8px
 	margin-top: 12px
-	letter-spacing: 0px
+
 
 a
 	text-decoration: none
@@ -384,6 +312,10 @@ small
 .logo-svg-box
 	z-index: 2
 
+.main h3
+	text-transform: uppercase
+	line-height: 1.1
+
 @media screen and (min-width: 900px)
 
 	.primecontainer-col, .primecontainer-row
@@ -488,7 +420,6 @@ small
 
 	h5
 		font-size: 27px
-		font-weight: 600
 		line-height: 1.25 
 		letter-spacing: -0.7px
 
@@ -498,11 +429,12 @@ small
 	h4
 		font-size: 64px
 		font-weight: 700
+		line-height: 1.1 !important
+		letter-spacing: -1px
 
 	h3
 		font-size: 32px
 		letter-spacing: -1px
-		font-weight: 600
 		cite
 			font-size: 16px
 			font-weight: 300
@@ -547,6 +479,7 @@ small
 		font-size: 80px
 		line-height: 1.2
 		font-weight: 800
+		letter-spacing: -2px
 
 	h1
 		font-size: 104px
@@ -554,13 +487,13 @@ small
 	.smaller1
 		font-size: 104px
 		line-height: 1.1
-		font-weight: 600
+		font-weight: 800
 		letter-spacing: -4px
 	
 	.bigger1
 		font-size: 104px
 		margin-bottom: 0
-		font-weight: 600
+		font-weight: 800
 		letter-spacing: -2px
 
 	p
@@ -659,6 +592,42 @@ small
 	.sheet code, .sheet pre
 		font-size: 14px !important
 
+	.main h3
+		font-size: 40px
+		padding: 12px 80px 8px 80px
+		width: 88%
+		background: #10C56D
+		color: white
+
+	.documenter
+		padding: 48px 0 48px 0	
+		p
+			font-size: 20px
+			line-height: 1.4
+		li
+			font-size: 20px
+			line-height: 1.2
+
+		blockquote
+			border-left: 4px solid #10C56D
+			padding-left: 32px
+			padding-right: 32px
+			background: #f1f1f1
+			padding-top: 16px
+			margin-bottom: 32px
+		
+	.main h4
+		font-size: 32px
+		font-weight: 600
+
+	.main h5
+		font-size: 24px
+		font-weight: 600
+		color: #10C56d
+
+	.sidebb h5
+		margin-bottom: 24px
+
 @media screen and (max-width: 899px) and (min-width: 768px)
 
 	.primecontainer-col, .primecontainer-row
@@ -737,16 +706,15 @@ small
 
 	h3
 		font-size: 28px
-		letter-spacing: -1px
 
 	h4
 		font-size: 64px
+		line-height: 1.1
 
 
 	h2
 		font-size: 64px
 		line-height: 1.2
-		font-weight: 700
 
 	.jet
 		h1
@@ -812,6 +780,16 @@ small
 			font-style: italic
 		code, pre
 			font-size: 14px !important
+
+	.main h3
+		font-size: 40px
+		padding: 6px 80px
+		width: 88%
+		background: #10C56D
+		color: white
+
+	.documenter
+		padding-left: 6vw
 		
 
 @media screen and (max-width: 767px) and (min-width: 576px)
@@ -863,6 +841,7 @@ small
 
 	h4
 		font-size: 40px
+		line-height: 1.1
 
 	.smaller1
 		font-size: 64px
@@ -948,6 +927,16 @@ small
 		code, pre
 			font-size: 14px !important
 
+	.main h3
+		font-size: 32px
+		padding: 6px 20px
+		width: 88%
+		background: #10C56D
+		color: white
+
+	.documenter
+		padding-left: 4vw
+
 @media screen and (max-width: 575px) 
 
 	.smaller1
@@ -1030,11 +1019,10 @@ small
 
 	h4
 		font-size: 36px
+		line-height: 1.1
 
 	h1
 		font-size: 48px
-		letter-spacing: -1px
-		font-weight: 800
 
 	h5
 		font-size: 24px
@@ -1089,8 +1077,6 @@ small
 		align-items: center
 		justify-content: center
 
-
-
 	.cat
 		padding-bottom: 8px
 
@@ -1104,7 +1090,7 @@ small
 	.mainpage
 		h4
 			font-weight: bold
-			line-height: 1.2
+			line-height: 1.12
 			letter-spacing: -2px
 			text-transform: capitalize
 			font-size: 32px

@@ -12,7 +12,7 @@
 .lab { height: 100vh; justify-content: space-between;}
 .sido { width: 100%; height: 16px; justify-content: center; align-items: center; z-index: 10; position: sticky; bottom: 0;}
 .sido:hover { height: 64px;}
-.mino { width: 100%; height: calc(100% - 64px);}
+.mino { width: 100%; height: 100vh; margin-bottom: -64px;}
 .sido h5 {
 	color: white;
 }
