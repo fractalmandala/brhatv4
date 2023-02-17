@@ -7,7 +7,7 @@ import { page } from '$app/stores';
 <LocomotiveScrollProvider
 	options={{
 		smooth: true,
-		smoothMobile: false,
+		smoothMobile: true,
 		getDirection: true,
 		getSpeed: true,
 		inertia: 0.5
