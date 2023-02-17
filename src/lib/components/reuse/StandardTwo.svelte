@@ -18,8 +18,9 @@
 
 
 @media screen and (min-width: 900px) {
-	.col { width: calc(50% - 24px); height: 100%;}
-	.standardtwo { gap: 48px; padding: 4em 6vw; height: 60vh;}
+	.col { width: 50%; height: 100%;}
+	.standardtwo { padding: 0; height: 100%;}
+	.standardtwo .col { align-items: center; justify-content: center;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
