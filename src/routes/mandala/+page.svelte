@@ -1,9 +1,60 @@
 <script lang="ts">
 import { reveal } from 'svelte-reveal'
 import { onMount } from 'svelte';
+import { blur, fly } from 'svelte/transition'
+import { cubicOut } from 'svelte/easing'
 import Animations from 'textify.js';
 import '$lib/styles/textify.css'
 let y: number
+let resp = 1
+let divider = 1
+
+$: if (resp > 576 ) {
+	divider = 80
+} else
+	{
+		divider = 600
+	}
+
+let isMe1 = false
+let isMe2 = false
+let isMe3 = false
+let isMe4 = false
+let isMe5 = false
+let isMe6 = false
+let isMe7 = false
+let isMe8 = false
+let isMe9 = false
+
+function changeW1(){
+	isMe1 = !isMe1
+}
+function changeW2(){
+	isMe2 = !isMe2
+}
+function changeW3(){
+	isMe3 = !isMe3
+}
+function changeW4(){
+	isMe4 = !isMe4
+}
+function changeW5(){
+	isMe5 = !isMe5
+}
+function changeW6(){
+	isMe6 = !isMe6
+}
+function changeW7(){
+	isMe7 = !isMe7
+}
+function changeW8(){
+	isMe8 = !isMe8
+}
+function changeW9(){
+	isMe9 = !isMe9
+}
+
+
 
 const { Textify } = Animations;
 const { TextifyTitle } = Animations;
@@ -27,28 +78,30 @@ onMount(() => {
 
 </script>
 
-<svelte:window bind:scrollY={y}/>
+<svelte:window bind:scrollY={y} bind:innerWidth={resp}/>
 <div style="background: var(--yell)">
 	<div class="c-c-c-c mar4 cover">
+		<div class="stickit">{y}</div>
+		<div class="stickit2">{resp}<br>{-y/(divider/10)}<br>{y/10}</div>
+		
 		<h1>Fractal <span class="green"> Maṇḍala</span></h1>
 		<h4 style="color: var(--grey)">Studies and speculations in the Indian civilizational consciousness</h4>
 	</div>
-	<div class="stuck">{y}</div>
 	<div class="row-of-2 mar4 munshi">
 		<div class="twobox imgcol1">
-			<img src="/images/mandala/hindugraphic.png" alt="imone" style="transform: translate(0, {-y/2}px)" />
+			<img src="/images/mandala/hindugraphic.png" alt="imone" style="transform: translate(0, {-(divider-y)/8}px)" />
 		</div>
-		<div class="twobox jet col2" style="transform: translate(0, {-y/10}px)">
-			<h5 data-textify>
+		<div class="twobox jet col2" style="transform: translate(0, {-y/(divider/10)}px)">
+			<h5 class="txtyp1">
 				To be a history in the true sense of the word, a work must be a story of the people inhabiting a country.
 			</h5>
-			<h5 data-textify>
+			<h5 class="txtyp1">
 				It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
 			</h5>
-			<h4 use:reveal={{ transition: "slide", x:-100, delay: 600, easing: "easeInOutQuart" }}>
-				<b>Such a history of India is still to be written.</b>
+			<h4 class="txtyp2">
+				Such a history of India is still to be written.
 			</h4>
-			<p data-textify style="color: var(--purp">
+			<p data-textify style="color: #10C56D">
 				Shri KM Munshi
 			</p>
 		</div>
@@ -173,10 +226,10 @@ onMount(() => {
    			<defs>
         <linearGradient id="paint0_linear_2205_94" x1="254.751" y1="44.0005" x2="97.0302" y2="434.84"
             gradientUnits="userSpaceOnUse">
-            <stop stop-color="#5CFC11" />
-            <stop offset="0.270558" stop-color="#53DD6C" />
-            <stop offset="0.709662" stop-color="#11FC8B" />
-            <stop offset="0.9647" stop-color="#10C56E" />
+            <stop stop-color="#ffffff" />
+            <stop offset="0.270558" stop-color="white" />
+            <stop offset="0.709662" stop-color="white" />
+            <stop offset="0.9647" stop-color="white" />
         </linearGradient>
         <linearGradient id="paint1_linear_2205_94" x1="254.751" y1="44.0005" x2="97.0302" y2="434.84"
             gradientUnits="userSpaceOnUse">
@@ -364,31 +417,115 @@ onMount(() => {
 		</div>
 	</div>
 	<div class="c-c-c-c pad4 intro">
-		<h1>
-			The Fractal Maṇḍala is a project to study the emergence and nature of <span class="green">Indian civilizational consciousness.</span>
-		</h1>
+		<h2 class="tttyp3 green">
+			Fractal Maṇḍala
+		</h2>
+		<h2 class="tttyp3">
+			is a project to study the emergence and nature of Indian civilizational consciousness.
+		</h2>
 	</div>
-	<div class="c-c-c-c reality">
-		<img src="/images/mandala/realitywall.webp" alt="reality" style="transform: translateY({-(y-3600)/15}px)" />
-	</div>
-	<div class="container">
-  	<div class="item civcon" id="b-one">1</div>
-  	<div class="item catura" id="b-two">2</div>
-  	<div class="item meaning" id="b-three">3</div>
-  	<div class="item macro" id="b-four">4</div>
-  	<div class="item ratha" id="b-five">5</div>
-  	<div class="item ancestors" id="b-six">6</div>
-  	<div class="item ontic" id="b-seven">7</div>
-  	<div class="item synaptic" id="b-eight">8</div>
-  	<div class="item rama" id="b-nine">9</div>
+	<div class="r-r-r-r theaccorow">
+  	<div class="itemr c-c-c-c cc civcon" id="b-1" on:mouseenter={changeW1} on:mouseleave={changeW1}>
+			<h3>1</h3>
+			{#if isMe1}
+			<div class="come c-c-c-c" in:fly="{{ duration: 500, delay: 500, easing: cubicOut}}" out:fly="{{ duration: 100, easing: cubicOut}}">
+			<h4><a href="/mandala/fractals/civcon">On Indian Civilizational Consciousness</a></h4>
+			<p>beginning with a definition of terms</p>
+			</div>
+			{/if}
+		</div>
+  	<div class="itemr c-c-c-c cc catura" id="b-2" on:mouseenter={changeW2} on:mouseleave={changeW2}>
+			<h3>2</h3>
+			{#if isMe2}
+			<div class="come c-c-c-c" in:fly="{{ duration: 500, delay: 500, easing: cubicOut}}" out:fly="{{ duration: 100, easing: cubicOut}}">
+			<h4><a href="/mandala/fractals/aphorisms">Caturasūtra - 4 Aphorisms</a></h4>
+			<p>mental recalibration for a true Indian history</p>
+			</div>
+			{/if}
+		</div>
+  	<div class="itemr c-c-c-c cc meaning" id="b-3" on:mouseenter={changeW3} on:mouseleave={changeW3}>
+			<h3>3</h3>
+			{#if isMe3}
+			<div class="come c-c-c-c" in:fly="{{ duration: 500, delay: 500, easing: cubicOut}}" out:fly="{{ duration: 100, easing: cubicOut}}">
+			<h4><a href="/mandala/fractals/">Meaning, Instances</a></h4>
+			<p>examples of Indian multi-level coherence</p>
+			</div>
+			{/if}
+		</div>
+  	<div class="itemr c-c-c-c cc macro" id="b-4" on:mouseenter={changeW4} on:mouseleave={changeW4}>
+			<h3>4</h3>
+			{#if isMe4}
+			<div class="come c-c-c-c" in:fly="{{ duration: 500, delay: 500, easing: cubicOut}}" out:fly="{{ duration: 100, easing: cubicOut}}">
+			<h4><a href="/mandala/fractals/essay1">The Macrohistoric Case</a></h4>
+			<p>for India's civilizational primacy</p>
+			</div>
+			{/if}
+		</div>
+  	<div class="itemr c-c-c-c cc ratha" id="b-5" on:mouseenter={changeW5} on:mouseleave={changeW5}>
+			<h3>5</h3>
+			{#if isMe5}
+			<div class="come c-c-c-c" in:fly="{{ duration: 500, delay: 500, easing: cubicOut}}" out:fly="{{ duration: 100, easing: cubicOut}}">
+			<h4><a href="/mandala/fractals/essay2">Ratha as a Bīja</a></h4>
+			<p>the chariot as a fractal in the maṇḍala</p>
+			</div>
+			{/if}
+		</div>
+  	<div class="itemr c-c-c-c cc ancestors" id="b-6" on:mouseenter={changeW6} on:mouseleave={changeW6}>
+			<h3>6</h3>
+			{#if isMe6}
+			<div class="come c-c-c-c" in:fly="{{ duration: 500, delay: 500, easing: cubicOut}}" out:fly="{{ duration: 100, easing: cubicOut}}">
+			<h4><a href="/mandala/fractals/ancestors">Ancestors Outside of Time</a></h4>
+			<p>call it what you want, but we have a past</p>
+			</div>
+			{/if}
+		</div>
+  	<div class="itemr c-c-c-c cc ontic" id="b-7" on:mouseenter={changeW7} on:mouseleave={changeW7}>
+			<h3>7</h3>
+			{#if isMe7}
+			<div class="come c-c-c-c" in:fly="{{ duration: 500, delay: 500, easing: cubicOut}}" out:fly="{{ duration: 100, easing: cubicOut}}">
+			<h4><a href="/mandala/fractals/">History is Ontic, Itihāsa is Ontologic</a></h4>
+			<p>bhāratīya itihāsa unpacked and explained</p>
+			</div>
+			{/if}
+		</div>
+  	<div class="itemr c-c-c-c cc synaptic" id="b-8" on:mouseenter={changeW8} on:mouseleave={changeW8}>
+			<h3>8</h3>
+			{#if isMe8}
+			<div class="come c-c-c-c" in:fly="{{ duration: 500, delay: 500, easing: cubicOut}}" out:fly="{{ duration: 100, easing: cubicOut}}">
+			<h4><a href="/mandala/fractals/">Synaptic Reconnection</a></h4>
+			<p>schema for engagement with civilizational consciousness</p>
+			</div>
+			{/if}
+		</div>
+  	<div class="itemr c-c-c-c cc rama" id="b-9" on:mouseenter={changeW9} on:mouseleave={changeW9}>
+			<h3>9</h3>
+			{#if isMe9}
+			<div class="come c-c-c-c" in:fly="{{ duration: 500, delay: 500, easing: cubicOut}}" out:fly="{{ duration: 100, easing: cubicOut}}">
+			<h4><a href="/mandala/fractals/">Rāma's Journey</a></h4>
+			<p>on the avatāra in you</p>
+			</div>
+			{/if}
+		</div>
 	</div>
 </div>
 
 <style>
-.item {
+
+
+.theaccorow { height: 100vh;gap: 2px;}
+
+.itemr h3 { color: white; background: rgba(0,0,0,0.9); padding: 8px; margin-top: 0;}
+
+.itemr h4, .itemr p {  color: white; opacity: 1; background: rgba(0,0,0,0.9)}
+.itemr a { color: inherit}
+.itemr a:hover { color: #10c56d;}
+.itemr p { padding: 6px 12px;}
+.itemr {
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center center;
 }
+
 
 .civcon {
 	background-image: url('/images/mandala/web4.webp');
@@ -397,6 +534,7 @@ onMount(() => {
 
 .catura {
 	background-image: url('/images/mandala/web1.webp');
+	background-position: center right;
 }
 
 .macro {
@@ -435,11 +573,38 @@ onMount(() => {
 }
 
 
-.stuck {
+
+@keyframes selfwiden {
+	from { width: calc(100%/9);}
+	to { width: 60%;}
+}
+
+@keyframes textshowing {
+	
+0% { opacity: 0; display: block;}
+100% { opacity: 1; display: block;}
+
+}
+
+.stickit {
+	display: none;
 	position: fixed;
 	z-index: 500;
 	left: 100px;
-	top:100px
+	top:80px;
+	color: yellow;
+	font-size: 21px;
+	background: black;
+}
+.stickit2 {
+	display: none;
+	position: fixed;
+	z-index: 500;
+	left: 100px;
+	top:120px;
+	color: yellow;
+	font-size: 21px;
+	background: black;
 }
 
 #only-lines, #dottercircl, #edges, #dots {
@@ -485,11 +650,8 @@ onMount(() => {
   }
 }
 
-.fractal, .mandala, .reality { background: white;}
+.fractal, .mandala { background: white;}
 
-.col5 {
-	background: var(--beau);
-}
 
 .munshi {
 	position: relative;
@@ -508,54 +670,23 @@ onMount(() => {
 }
 
 .col4 h2, .col6 h2 {
-	font-weight: 700;
+	font-weight: 800 !important;
 	text-transform: uppercase;
 }
 
-.col5 svg path {
-	filter: drop-shadow(6px 8px 8px #030303);
-}
-
-.imgcol3, .reality {
+.imgcol3 {
 	overflow: hidden;
 }
 
-.reality {
-	position: relative;
-}
-
-.reality img {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-  .item {
-    background-color: #f5f5f5;
-    box-sizing: border-box;
-    text-align: center;
-  }
-
-@media screen and (min-width: 900px) {
-
-.container {
-	height: 100vh;
-	display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-	position: relative;
-}
-
-.item {
-	width: 33.33%;
-	height: 33.33%;
-	border: 2px solid white;
-	transition: all 0.63s var(--cube5);
-}	
 
 
-.cover {
+
+@media screen and (min-width: 768px) {
+
+	:root {
+		--mope: 10;
+	}
+	.cover {
 	height: 100vh;
 	justify-content: center;
 	width: 88vw;
@@ -563,34 +694,38 @@ onMount(() => {
 	padding-left: 40px;
 	padding-right: 40px;
 	border-bottom: 1px solid white;
-}
+	}
 	
-.cover h1 {
+	.cover h1 {
 	font-size: 144px;
-}
+	font-weight: 900;
+	line-height: 1.1 !important;
+	}
 
-.munshi {
+	.munshi {
 	height: 100vh;
-}
+	padding-left: 32px;
+	padding-right: 24px;
+	}
 
-.munshi .twobox {
+	.munshi .twobox {
 	width: 50%;
-}
+	}
 
 	.munshi .twobox h5 {
-		font-size: 24px;
-		font-weight: 400;
+	font-size: 24px;
+	font-weight: 300;
 	}
 
 	.munshi .twobox h4 {
 		font-size: 36px;
-		font-weight: 500;
+		font-weight: 700;
 	}
 
 	.munshi .twobox img {
 		object-fit: cover;
 		width: 50%;
-		height: 200%;
+		height: 100%;
 	}
 
 	.munshi .col2 {
@@ -642,41 +777,89 @@ onMount(() => {
 		font-size: 18px;
 	}
 
+	.col5 {
+		background: var(--beau);
+	}
+
+	.col5 svg path {
+		filter: drop-shadow(6px 8px 8px #030303);
+	}
+
+
 	.intro {
 		height: 100vh;
 		justify-content: center;
 	}
-	.intro h1{
+	.intro h2{
 		letter-spacing: -2px;
 		text-transform: uppercase;
-	}
-	
-	.reality {
-		height: 100vh;
-		width: 100vw;
+		font-weight: 900;
+		line-height: 1.1;
 	}
 
-	.reality img {
-		object-fit: cover;
-		object-position: center center;
-		width: 100%;
-		height: 110vh;
-		border: 2px solid white;
+	.come h4 {
+		font-size: 32px;
 	}
+	.r-r-r-r .itemr {
+	height: 100%;
+	width: calc(100%/9);
+	transition: width 0.4s var(--cube4), background 0.5s var(--cube1), background-image 0.23s var(--cube2);
+	}
+	.theaccorow:hover .itemr:hover {
+	animation: selfwiden 0.24s cubic-bezier(0.775, 0.180, 0.365, 0.890) forwards;
+	}
+	.theaccorow {
+		overflow: hidden;	
+ 	justify-content: space-between; 
+	}
+
+
 
 }
 
-
-@media screen and (min-width: 768px) {
-
-
-
-}
 
 @media screen and (max-width: 767px) {
 
-	.cover { padding: 8em 4vw 0 4vw;}
+	.munshi .twobox h5 {
+	font-size: 21px;
+	font-weight: 300;
+	}
 
+	:root {
+		--mope: 1;
+	}	
+
+	.cover { padding: 80px 4vw 0 4vw; height: 56vh;}
+	.cover h1 { font-size: 64px; line-height: 1;	font-weight: 900;}
+
+	.theaccorow { flex-wrap: wrap; height: 100vh; width: 100vw;}
+	.itemr { width: calc(99%/3); height: calc(100%/3);}
+	.itemr h4 {
+		font-size: 18px;
+	}
+	.itemr p { font-size: 14px;}
+	.munshi { min-height: 100vh;flex-wrap: wrap; padding: 0 4vw;}
+	.imgcol1 { order: 1; width: 100%; height: 50vh;}
+	.imgcol1 img { object-fit: cover; width: 88%; height: 56%; }
+	.col2 { order: 2; width: 100%; height: 100%; padding-right: 16px; padding-left: 16px; padding-top: 32px; background: white;}
+	.fractal { width: 100vw; gap: 0; flex-wrap: wrap; height: 100%; padding: 32px 6vw 0 32px; }
+	.fractal .twobox { width: calc(100% - 12vw);}
+	.mandala { width: 100vw; gap: 0; flex-wrap: wrap; height: 100%; }
+	.fractal .twobox svg { object-fit: contain; width: 60%; margin-left: auto; margin-right: auto;}
+	.col4 { height: 40%;}
+	.imgcol2 {margin: 48px 3vw; }
+	.col5 { height: 36%; padding: 0 6vw; }
+	.col6 { height: 40%; padding: 6vw; width: 100%;}
+	.imgcol3 { height: 40vh; width: 100%; justify-content: center;}
+	.imgcol3 img { object-fit: cover; width: 120vw; margin-left: -40%;}
+	.intro { height: 50vh; justify-content: center;	}
+	.intro h2{
+		letter-spacing: -2px;
+		text-transform: uppercase;
+		font-weight: 900;
+		line-height: 1;
+		margin-bottom: 8px;
+	}
 
 }
 

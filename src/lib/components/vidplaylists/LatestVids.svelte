@@ -1,7 +1,9 @@
 <script>
+// @ts-nocheck
+
 const API_KEY = import.meta.env.YOUTUBE_API_KEY;
 const CHANNEL_ID = 'UCpmTZwM36xdAuHbBaaE2asg';
-export async function fetchVideos() {
+async function fetchVideos() {
   const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=4`;
   const response = await fetch(url);
   const data = await response.json();
@@ -11,7 +13,9 @@ export async function fetchVideos() {
     description: item.snippet.description,
     thumbnail: item.snippet.thumbnails.high.url,
   }));
-  return videos;
+  return {
+		videos
+	}
 }
 
 </script>

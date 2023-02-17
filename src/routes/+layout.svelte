@@ -23,8 +23,8 @@ onMount(() => {
 
 	new TextifyTitle({
 	  selector: ".tttyp3",
-	  duration: 500,
-	  stagger: 100,
+	  duration: 300,
+	  stagger: 50,
 	  once: false,
 	  reveal: false,
 	  scale: 0,

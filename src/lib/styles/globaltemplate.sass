@@ -120,7 +120,7 @@ pre
 	--rid: #10C56D
 	--blue: #255F85
 	--lightblue: #41EAD4
-	--yell: #FFB900
+	--yell: linear-gradient(178.23deg, #272727 1.05%, #0A140D 100.74%)
 	--rred: #FF6363
 	--purp: #6A4C93
 	--ridor: #FC7753
@@ -130,12 +130,14 @@ pre
 	--ridfour: #8F2D56
 	--test: rgba(16, 197, 109, 1)
 	--black: rgba(29, 29, 29, 1)
+	--colfive: #10C56E
+	--colsix: #11FC8B
 
 h2, h4, h3, h5, p, pre, small, cite, h6
-	font-family: 'Code Next', sans-serif
+	font-family: 'Mulish', sans-serif
 
 h1
-	font-family: 'Code Next', sans-serif
+	font-family: 'Mulish', sans-serif
 
 .mainpage, .bar
 	p, h5, pre, code, caption, cite, small, h6, h4, h3, h2, h1, li, ul, ol
@@ -269,6 +271,15 @@ small
 .cc
 	justify-content: center !important
 	align-items: center !important
+	text-align: center
+
+.box-flex
+	display: flex
+
+.fillscreen
+	display: flex
+	height: 100%
+	width: 100%
 
 .col-full
 	width: 100vw
@@ -358,7 +369,7 @@ small
 	min-height: 100vh
 
 .swiper
-	height: 100%
+	height: 100vh
 	width: 100%
 	position: relative
 	overflow: hidden
@@ -483,7 +494,7 @@ small
 
 	h4
 		font-size: 64px
-		font-weight: 600
+		font-weight: 700
 
 	h3
 		font-size: 32px
@@ -532,11 +543,10 @@ small
 	h2
 		font-size: 80px
 		line-height: 1.2
-		font-weight: 700
+		font-weight: 800
 
 	h1
 		font-size: 104px
-		font-weight: 700
 
 	.smaller1
 		font-size: 104px
@@ -729,10 +739,11 @@ small
 	h4
 		font-size: 64px
 
+
 	h2
 		font-size: 64px
 		line-height: 1.2
-		font-weight: 500
+		font-weight: 700
 
 	.jet
 		h1
@@ -997,10 +1008,6 @@ small
 		padding-right: 4vw
 		padding-left: 4vw
 
-	.mar4
-		margin-right: 4vw
-		margin-left: 4vw
-
 	.col-type50
 		width: 100%
 
@@ -1024,6 +1031,7 @@ small
 	h1
 		font-size: 48px
 		letter-spacing: -1px
+		font-weight: 800
 
 	h5
 		font-size: 24px
@@ -1055,8 +1063,11 @@ small
 				font-weight: 300
 				font-style: normal
 		h4
-			line-height: 1.1
-			font-size: 48px
+			line-height: 1
+			font-size: 32px
+			margin-top: 8px
+		h5
+			font-size: 21px
 		p
 			font-size: 18px
 			margin-top: 4px
