@@ -1,18 +1,44 @@
 <script lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/svelte'
-import { onMount } from 'svelte'
+import { scale } from 'svelte/transition'
+import { quadIn, circOut } from 'svelte/easing'
 import { reveal } from 'svelte-reveal';
-import { Keyboard, Navigation, Mousewheel } from 'swiper'
+import { Keyboard, Mousewheel } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/keyboard'
 import 'swiper/css/mousewheel'
-
-
 import StandardTwo from '$lib/components/reuse/StandardTwo.svelte'
 import ImagesGrid from '$lib/components/pagecomps/ImagesGrid.svelte'
 import Two from '$lib/components/reuse/StandardTwo.svelte'
 import Three from '$lib/components/reuse/StandardTwo.svelte'
 import Four from '$lib/components/reuse/StandardTwo.svelte'
+
+
+let isLine1 = false
+let isLine2 = false
+let isLine3 = false
+let isLine4 = false
+let isLine5 = false
+let isLine6 = false
+
+function toggleLine1(){
+	isLine1 = !isLine1
+}
+function toggleLine2(){
+	isLine2 = !isLine2
+}
+function toggleLine3(){
+	isLine3 = !isLine3
+}
+function toggleLine4(){
+	isLine4 = !isLine4
+}
+function toggleLine5(){
+	isLine5 = !isLine5
+}
+function toggleLine6(){
+	isLine6 = !isLine6
+}
 
 </script>
 
@@ -27,98 +53,126 @@ import Four from '$lib/components/reuse/StandardTwo.svelte'
 	<ImagesGrid></ImagesGrid>
 </SwiperSlide>
 <SwiperSlide>
-		<StandardTwo
-	--thistime="white"
-	>
-		<img slot="col-left" src="/images/scrolls/anc1.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
-		<h3 class="animated-element blackb padit" slot="col-right"> 
+	<div class="row-of-2 l00">
+		<div class="twobox img-col col-left">
+			<img src="/images/scrolls/anc1.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
+		</div>
+		<div class="twobox col-right">
+			<h3 class="animated-element blackb padit"> 
 				There is a place.
 				It lies outside of space and time as we know it,
 				but many of us have been there.
 				It lies in that cultural mid-space so distant yet ever palpable.
 		</h3>
-	</StandardTwo>
+		</div>
+	</div>
 </SwiperSlide>
 <SwiperSlide>
-	<Two
-		>
-		<h3 class="white padit" slot="col-left">
-		Hive mind. Race memory. Blood bond.
+	<div class="row-of-2 l01">
+		<div class="twobox col-left">
+			<h3 class="animated-element blackb padit"> 
+	Hive mind. Race memory. Blood bond.
 				We may call it many things, but we know it best when we see it,
 				and it feels warm and familiar…as if a memory we once lived.<br><br>
 						<span class="bigger5 orange">	Perhaps we did, is it not?</span>
 		</h3>
-		<img slot="col-right" src="/images/scrolls/anc2.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
-	</Two>
+		</div>
+		<div class="twobox col-right">
+			<img id="imgtwo" class="imgcol" src="/images/scrolls/anc2.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
+		</div>
+	</div>
 </SwiperSlide>
 <SwiperSlide>
-	<Three
-	>
-	<img slot="col-left" src="/images/scrolls/anc3.webp" alt="part3" use:reveal={{ transition: "slide" }}/>
-	<h3 slot="col-right" class="padit">
+	<div class="row-of-2 l03">
+	<div class="twobox col-left">
+		<img class="imgcol" src="/images/scrolls/anc3.webp" alt="part3" use:reveal={{ transition: "slide" }}/>
+		</div>
+	<div class="twobox col-right">
+			<h3 class="padit">
 	For countless times before have you been here,
 			and a countless times I.
 	You there, in one incarnation you were a master of mantra.
-			You wrapped meaning into syllable and metre.
-	</h3>
-	</Three>
+			You wrapped meaning around syllables and metre.
+	</div>
+	</div>
 </SwiperSlide>
 <SwiperSlide>
-		<Four
-		>
-		<h3 slot="col-left" class="padit">
+	<div class="row-of-2 l05">
+		<div class="col-left twobox">
+						<h3 class="padit">
 			And you? A pioneer of tilled grain you were.
 			Your hard, seasoned hands fed a civilization.
 			Another among us was quite a daredevil,
 			boldly he grabbed a wild bull by the horns,
 			First to do so...
-		</h3>
-		<img slot="col-right" src="/images/scrolls/anc4.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
-	</Four>
+		</div>
+	<div class="col-right twobox">
+		<img class="imgcol" src="/images/scrolls/anc4.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
+	</div>
+	</div>
+
 </SwiperSlide>
 <SwiperSlide>
 	<div class="c-c-c-c box5"> 
-	<h3 class="bigger3 orange">
+	<h5 class="orange">
 		We can access this place,
-	</h3>
-	<h3 class="bigger3">
+	</h5>
+	<h5>
 		outside of space and time though it lies.
 		In images and words, in sounds and vistas,
 		In streams of imagi/memory that can flow through us…
-	</h3>
-	<h5 class="cutter thin">
+	</h5>
+	<h3 class="bigger5">
 		The Scrolls of Āryavarta is a project to celebrate, express and engage in this shared lore- the dhārmika lore.
 		A calling to all who dream of the Bhārata that once was, or Bhāratas that could have been.
-	</h5>
+	</h3>
 	</div>
 </SwiperSlide>
 <SwiperSlide>
-<div class="c-c-c-c l10">
-	<div class="mind c-c-c-c">
+	<div class="c-c-c-c l10">
+	<div class="mind c-c-c-c" on:mouseenter={toggleLine1} on:mouseleave={toggleLine1}>
 		<p class="orange">Prologue</p>
 		<h3>The Bhārata that Once Was, or Those That Could Have Been</h3>
 	</div>
-	<div class="mind c-c-c-c">
+	<div class="mind c-c-c-c" on:mouseenter={toggleLine2} on:mouseleave={toggleLine2}>
 		<p class="orange">Chapter 1</p>
 		<h3>Kaśyapa's Lament</h3>
 	</div>
-	<div class="mind c-c-c-c">
+	<div class="mind c-c-c-c" on:mouseenter={toggleLine3} on:mouseleave={toggleLine3}>
 		<p class="orange">Chapter 2</p>
 		<h3>Sūta and Sudā</h3>
 	</div>
-	<div class="mind c-c-c-c">
+	<div class="mind c-c-c-c" on:mouseenter={toggleLine4} on:mouseleave={toggleLine4}>
 		<p class="orange">Upcoming</p>
 		<h3>Nasadīya Across Time and Space</h3>
 	</div>
-	<div class="mind c-c-c-c">
+	<div class="mind c-c-c-c" on:mouseenter={toggleLine5} on:mouseleave={toggleLine5}>
 		<p class="orange">Demos</p>
 		<h3>Gallery</h3>
 	</div>
-	<div class="mind c-c-c-c">
+	<div class="mind c-c-c-c" on:mouseenter={toggleLine6} on:mouseleave={toggleLine6}>
 		<p class="orange">About</p>
 		<h3>Tech, AI, Collaboration</h3>
 	</div>
-</div>
+	{#if isLine1}
+	<img class="images" src="/images/scrolls/scrollsmap.webp" alt="im1" in:scale="{{ delay: 200, opacity: 0, duration: 700, start: 0, easing: circOut}}" out:scale="{{ duration: 100, delay: 0, start: 0, opacity: 0, easing: quadIn}}" />
+	{/if}
+	{#if isLine2}
+	<img class="images" src="/images/scrolls/chap1.webp" alt="im1" in:scale="{{ delay: 200, opacity: 0.5, duration: 300, start: 0.5, easing: circOut}}" out:scale="{{ duration: 100, delay: 0, start: 0, opacity: 0, easing: quadIn}}"/>
+	{/if}
+	{#if isLine3}
+	<img class="images" src="/images/scrolls/chap2.webp" alt="im1" in:scale="{{ delay: 200, opacity: 0.5, duration: 400, start: 0.5, easing: circOut}}" out:scale="{{ duration: 100, delay: 0, start: 0, opacity: 0, easing: quadIn}}"/>
+	{/if}
+	{#if isLine4}
+	<img class="images" src="/images/scrolls/nas.webp" alt="im1" in:scale="{{ delay: 200, opacity: 0.5, duration: 800, start: 0.5, easing: circOut}}" out:scale="{{ duration: 100, delay: 0, start: 0, opacity: 0, easing: quadIn}}"/>
+	{/if}
+	{#if isLine5}
+	<img class="images" src="/images/scrolls/chap5.webp" alt="im1" in:scale="{{ delay: 200, opacity: 0.5, duration: 300, start: 0.5, easing: circOut}}" out:scale="{{ duration: 100, delay: 0, start: 0, opacity: 0, easing: quadIn}}"/>
+	{/if}
+	{#if isLine6}
+	<img class="images" src="/images/scrolls/chap6.webp" alt="im1" in:scale="{{ delay: 200, opacity: 0.5, duration: 300, start: 0.5, easing: circOut}}" out:scale="{{ duration: 100, delay: 0, start: 0, opacity: 0, easing: quadIn}}"/>
+	{/if}
+	</div>
 </SwiperSlide>
 </Swiper>
 
@@ -126,72 +180,25 @@ import Four from '$lib/components/reuse/StandardTwo.svelte'
 
 <style lang="sass">
 
-.record
-	position: fixed
-	z-index: 900
-	top: 200px
-	left: 100px
 
 .black-b
 	font-weight: 400
 	color: #272727
 
-.box6
+.box5
 	background: linear-gradient(40deg,#272727,#1B2023)
 
-.box2, .box3, .box5
-	background: linear-gradient(40deg,#272727,#1B2023)
-
-.buttonsbox button
-	background-color: #ff3d00
-	border: none
+.box5 h3
 	color: white
-	padding: 0.6em 2em
-	transform-origin: center center
-	transition: all 0.14s var(--cube2)
-
-button:hover
-	transform: scale(0.9)
-
-button a
-	color: white
-	font-size: 15px
-	font-weight: 400
-
-.box2, .box3, .box5, .box6
-	height: 100vh
-
-.cola img, .cold img
-	object-fit: cover
-	height: 88%
-	width: 100%
+	margin-top: 24px
 
 h4
 	font-weight: 300
 	line-height: 1.4em
 
-.accox img
-	object-fit: cover
-
 .padit
 	position: relative
 	color: #272727
-
-.padit::after
-	position: absolute
-	content: ''
-	width: 100%
-	height: 100%
-	top: 0
-	left: 0
-	background: white
-	animation: slowrevealer 2s var(--cube1) forwards
-
-@keyframes slowrevealer
-	from
-		width: 100%
-	to
-		width: 0%
 	
 .box5
 	.bigger3, .cutter
@@ -200,72 +207,45 @@ h4
 		color: #ff3d00
 	
 
-@media screen and (min-width: 900px)
+@media screen and (min-width: 768px)
 
-	.accox img
-		width: 33.3%
-		border: 2px solid white
+	.l00, .l03
+		.col-right
+			width: 50%
+			height: 100%
+			justify-content: center
+		.col-left
+			width: 50%
+			height: 100%
+			justify-content: center
+			img
+				object-fit: cover
+				height: 100%
 
-	.accox
-		height: 100vh
-		justify-content: center
-
-	.box2, .box3
-		align-items: flex-start
-		padding-left: 4vw
-		padding-right: 4vw
-		gap: 2em
-		width: 100%
-
-	.box6, .box5
-		padding-left: 6vw
-		padding-right: 6vw
+	.l01, .l05
+		.col-left
+			width: 50%
+			height: 100%
+			justify-content: center
+		.col-right
+			width: 50%
+			height: 100%
+			justify-content: center
+			img
+				object-fit: cover
+				height: 100%
 
 	.box5
 		justify-content: center
-
-	.box6
-		align-items: center
-		justify-content: center
-		text-align: center
-
-	.box6
-		padding-left: 6vw
-		padding-right: 6vw
-
-	h5
-		font-weight: 500
+		padding: 0 6vw
 
 	.box5 h3
 		text-align: left
-	
-	.box6 h3
-		font-weight: 600
-		margin-bottom: 1em
-
-	.cola, .colb, .colc, .cold
-		width: 50%
-		height: 100%
-
-
-	.colb p, .colc p
-		font-size: 20px
-		line-height: 1.44em
-
-	.colb, .colc
-		justify-content: center
-
-	.cola, .cold
-		justify-content: flex-end
-
-	.buttonsbox
-		gap: 2em
-		padding-top: 1em
 
 	.padit
 		padding: 0 32px
 		background: white
-		width: 88%
+		width: 100%
 		z-index: 2
 
 	.l10
@@ -273,19 +253,128 @@ h4
 		height: 100vh
 		justify-content: center
 		padding-left: 6vw
-		padding-top: 88px
+		padding-top: 32px
+		background: white
 
 	.mind
 		width: 88vw
-		background: white
+		background: transparent
 		text-align: left
-		border-top: 1px solid #d7d7d7
 		padding-top: 16px
 		padding-left: 0
 		p
 			font-size: 14px
-			margin-bottom: 0
+			margin-bottom: 8px
 		h3
-			margin-bottom: 32px
+			margin-bottom: 0
+			border-top: 1px solid #474747
+			padding-top: 16px
+			cursor: pointer
+
+	.l10
+		position: relative
+		z-index: 0
+		h3
+			z-index: 4
+		.images
+			z-index: 1
+
+	.images
+		position: absolute
+		top: 120px
+		right: 120px
+		object-fit: cover
+		height: 80%
+		width: 400px
+
+@media screen and (max-width: 767px) 
+
+	.l00, .l03
+		.col-right
+			width: 100%
+			height: 50%
+			justify-content: center
+			order: 2
+		.col-left
+			width: 100%
+			height: 50%
+			justify-content: center
+			align-items: center
+			order: 1
+			img
+				object-fit: cover
+				height: 50vh
+				width: 88%
+
+	.l01, .l05
+		.col-left
+			width: 100%
+			height: 50%
+			justify-content: center
+			order: 2
+		.col-right
+			width: 100%
+			height: 50%
+			justify-content: center
+			align-items: center
+			order: 1
+			img
+				object-fit: cover
+				height: 50vh
+				width: 88%
+
+	.box5
+		justify-content: center
+		padding: 0 6vw
+		height: 100vh
+
+	.box5 h3
+		text-align: left
+
+	.padit
+		padding: 0 8px
+		background: white
+		width: 100%
+		z-index: 2
+
+	.l10
+		width: 100vw
+		height: 100vh
+		justify-content: center
+		padding-left: 6vw
+		padding-top: 48px
+		background: white
+
+	.mind
+		width: 100%
+		background: transparent
+		text-align: left
+		padding-top: 0
+		padding-left: 0
+		p
+			font-size: 14px
+			margin-bottom: 8px
+		h3
+			margin-bottom: 16px
+			border-top: 1px solid #474747
+			padding-top: 8px
+			cursor: pointer
+
+	.l10
+		position: relative
+		z-index: 0
+		h3
+			z-index: 4
+		.images
+			z-index: 1
+
+	.images
+		display: none
+		position: absolute
+		top: 120px
+		right: 120px
+		object-fit: cover
+		height: 80%
+		width: 400px
 
 </style>

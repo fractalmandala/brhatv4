@@ -1,36 +1,142 @@
-<div class="c-c-c-c prelude" data-scroll-section>
-	<h1>
-		Get Involved
-	</h1>
-	<h5>
-		Do you also experiment with AI-generated or digital art inspired by Dhārmika themes, or know someone who does? 
+<script>
+import supabase from '$lib/db'
+async function getImages(){
+	const { data, error } = await supabase
+	.from('MidjourneyImages')
+	.select()
+	.order('id',{ascending: false})
+	.limit(96)
+	if (error) throw new Error(error.message)
+	return data
+}
+</script>
 
-Do you write of stories from the past, or imagine those of a future? Does that intangible yearning for the once-was and the could-have-been drive you to creation and expression?
-
-Then the Scrolls of Āryavarta is the place for it. Let us build it together as the focal point for dhārmika lore. When we can retreat to time to time, and have yearnings assuaged, even if fleetingly.
-
-Please reach out using the form below, and let’s get in touch.
-	</h5>
+<div class="containerboy">
+{#await getImages()}
+<small>...</small>
+{:then data}
+<div id="gallery">
+{#each data as item}
+  <div class="tile">
+    <img src={item.link} alt={item.id} />
+  </div>
+{/each}
+</div>
+{:catch error}
+<pre>{error}</pre>
+{/await}
 </div>
 
-<style lang="sass">
+<style>
+.containerboy {
+  background-color: rgb(10, 10, 10);
+  height: 100vh;  
+  margin: 0px;
+  overflow: hidden;
+}
+
+#gallery {
+  height: 140vmax;
+  width: 140vmax;  
+  position: absolute;
+}
+
+.tile {
+  border-radius: 1vmax;
+  position: absolute;
+  transition: transform 800ms ease;
+}
+
+.tile:hover {
+  transform: scale(1.1);
+}
+
+.tile:hover > img {
+  opacity: 1;
+  transform: scale(1.01);
+}
+
+.tile > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 800ms ease,
+    transform 800ms ease;
+}
+
+.tile:nth-child(1) {
+  background-color: rgb(255, 238, 88);
+  height: 14%;
+  width: 20%;
+  left: 5%;
+  top: 5%;
+}
+
+.tile:nth-child(2) {
+  background-color: rgb(66, 165, 245);
+  height: 24%;
+  width: 14%;
+  left: 42%;
+  top: 12%;
+}
+
+.tile:nth-child(3) {
+  background-color: rgb(239, 83, 80);
+  height: 18%;
+  width: 16%;
+  left: 12%;
+  top: 34%;
+}
+
+.tile:nth-child(4) {
+  background-color: rgb(102, 187, 106);
+  height: 14%;
+  width: 12%;
+  left: 45%;
+  top: 48%;
+}
+
+.tile:nth-child(5) {
+  background-color: rgb(171, 71, 188);
+  height: 16%;
+  width: 32%;
+  left: 8%;
+  top: 70%;
+}
+
+.tile:nth-child(6) {
+  background-color: rgb(255, 167, 38);
+  height: 24%;
+  width: 24%;
+  left: 68%;
+  top: 8%;
+}
+
+.tile:nth-child(7) {
+  background-color: rgb(63, 81, 181);
+  height: 16%;
+  width: 20%;
+  left: 50%;
+  top: 74%;
+}
+
+.tile:nth-child(8) {
+  background-color: rgb(141, 110, 99);
+  height: 24%;
+  width: 18%;
+  left: 72%;
+  top: 42%;
+}
+
+.tile:nth-child(9) {
+  background-color: rgb(250, 250, 250);
+  height: 10%;
+  width: 8%;
+  left: 84%;
+  top: 84%;
+}
 
 
-	.prelude
-		justify-content: center
-
-@media screen and (min-width: 900px)
-
-	.prelude
-		height: 100vh
-		width: 100vw
-		padding: 0 8vw
-	
-	.prelude h1
-		margin-bottom: 0
-		color: #ff3d00
-
-	.prelude h5
-		color: white
-		font-weight: 300
 </style>

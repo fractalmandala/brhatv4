@@ -56,4 +56,14 @@ async function getImages(){
 
 }
 
+@media screen and (max-width: 768px) {
+	.l0 {
+		height: 100vh;
+		width: 100vw;
+		flex-wrap: wrap;
+		
+	}
+	.l0 .c-c-c-c { width: 16.6%; height: 6.25%; }
+}
+
 </style>

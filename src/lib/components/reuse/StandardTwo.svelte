@@ -24,7 +24,7 @@
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
-	.col { width: calc(50% - 16px); height: 100%}
+	.col { width: calc(50% - 16px); height: 100%; justify-content: center;}
 	.standardtwo { gap: 32px;}
 }
 
