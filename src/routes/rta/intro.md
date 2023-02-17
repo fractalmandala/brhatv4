@@ -1,5 +1,6 @@
 ---
 title: Introduction to Ṛta in Design
+image: '/images/rid/infinitywall.webp'
 ---
 
 > “We are approaching the power of gods, without the wisdom of gods.”

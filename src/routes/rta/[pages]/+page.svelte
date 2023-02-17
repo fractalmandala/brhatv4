@@ -24,10 +24,10 @@ let x = 1
 
 @media screen and (min-width: 900px) {
 	.contents-table { width: 6vw; border-right: 1px solid #d7d7d7; padding-left: 2vw;}
-	.contents-table p { font-size: 14px; text-transform: uppercase; font-weight: 500; color: #878787;}
+	
 	.main-table { width: calc(100% - 6vw); padding: 0; position: relative;}
 	.only-text {padding: 0 64px 0 64px;}
-	.image-box { width: calc(100% + 6vw); height: 520px; overflow: hidden; margin-bottom: 64px; margin-left: -6vw;}
-	.image-box img { object-fit: cover; height: 520px; width: 120%;}
+	.image-box { width: calc(100% + 6vw); height: 640px; overflow: hidden; margin-bottom: 64px; margin-left: -6vw;}
+	.image-box img { object-fit: cover; height: 640px; width: 120%;}
 }
 </style>
