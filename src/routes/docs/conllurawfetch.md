@@ -53,7 +53,7 @@ let tables = [];
 {/each}
 ```
 
-```
+```js
 	/**
 	 * @type {string}
 	 */
@@ -113,8 +113,8 @@ let tables = [];
 ```
 
 > broken query gets raw words:
-```html
-<script>
+
+```js
 	import { onMount } from 'svelte';
 
   let conlluData
@@ -139,13 +139,4 @@ let tables = [];
     }
     return formatted_data.trim();
   };
-</script>
-
-{#if formattedData}
-  <div class="c-c-c-c">{formattedData}</div>
-{/if}
-
-<style>
-.c-c-c-c { width: 100vw; padding-top: 80px;}
-</style>
 ```
