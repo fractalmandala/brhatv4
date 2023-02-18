@@ -1,11 +1,4 @@
-## text: Rāmāyaṇa
-## text_id: 143
-## chapter: Rām, Bā, 1
-## chapter_id: 1067
 # text = tapaḥsvādhyāyanirataṃ tapasvī vāgvidāṃ varam
-# sent_id = 110525
-# sent_counter = 1
-# sent_subcounter = 1
 1-3	tapaḥsvādhyāyanirataṃ	_	_	_	_	_	_	_	_
 1	tapas	tapas	NOUN	_	Case=Cpd	_	_	_	LemmaId=96401|OccId=318668|Unsandhied=tapas|UnsandhiedReconstructed=True|WordSem=5357
 2	svādhyāya	svādhyāya	NOUN	_	Case=Cpd	_	_	_	LemmaId=120239|OccId=318669|Unsandhied=svādhyāya|UnsandhiedReconstructed=True|WordSem=101957

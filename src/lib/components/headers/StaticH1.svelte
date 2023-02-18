@@ -20,9 +20,8 @@ import { reveal } from 'svelte-reveal'
 .small { background: white;}
 .big h4 {
 	background: white;
-	letter-spacing: -3px;
+	letter-spacing: -2px;
 	color: #474747;
-	font-weight: 800;
 	margin-top: 0;
 	margin-bottom: 0;
 }
@@ -42,6 +41,7 @@ import { reveal } from 'svelte-reveal'
 		color: #272727;
 		margin-left: 4vw;
 	}
+	.lay { padding-top: 96px;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {

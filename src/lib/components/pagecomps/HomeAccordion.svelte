@@ -40,8 +40,12 @@ function toggleLD(){
 	display: flex
 	transition: all 0.53s cubic-bezier(0.875, 0.145, 0.555, 0.905)
 	align-items: center
-	z-index: 0
+	z-index: 2
 	overflow-y: hidden
+	background: white
+
+.low
+	background-color: white
 
 .gencol
 	display: flex
@@ -52,6 +56,7 @@ function toggleLD(){
 	align-items: flex-start
 	transition: all 0.53s cubic-bezier(0.875, 0.145, 0.555, 0.905)
 	z-index: 0
+	background: white
 
 .gencol img
 	object-fit: cover
