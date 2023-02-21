@@ -10,15 +10,15 @@ import { circInOut, quadIn } from 'svelte/easing'
 <style>
 
 @media screen and (min-width: 900px) {
-.top { width: 100vw; min-height: 100vh; padding-top: 120px;}
+.top { width: 100vw; min-height: 100vh;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 576px) {
-	.top { width: 100vw; min-height: 100vh; padding-top: 80px;}
+	.top { width: 100vw; min-height: 100vh;}
 }
 
 @media screen and (max-width: 575px) {
-		.top { width: 100vw; min-height: 100vh; padding-top: 80px;}
+		.top { width: 100vw; min-height: 100vh; }
 }
 
 </style>

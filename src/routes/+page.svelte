@@ -1,21 +1,18 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { spring } from 'svelte/motion';
-	import { pannable } from '$lib/utils/pannable.js';
-	import { onMount } from 'svelte';
-	import ButtonOut from '$lib/components/animations/ButtonOutline.svelte'
 	import supabase from '$lib/db';
 	import { reveal } from 'svelte-reveal';
+	import Header from '$lib/components/headers/HeadMain.svelte'
 	import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte';
 	import StaticH1 from '$lib/components/headers/StaticH1.svelte';
 	import Dhiti from '$lib/components/headers/StaticH1.svelte';
+	import AllBrands from '$lib/components/globals/AllBrands.svelte'
 	import Actions from '$lib/components/headers/StaticH1.svelte';
 	import Open from '$lib/components/headers/StaticH1.svelte';
 	import BrhadMrdanga from '$lib/components/vidplaylists/BrhadMrdanga.svelte';
 	import HindiKavita from '$lib/components/vidplaylists/HindiKavita.svelte';
 	import IKSVids from '$lib/components/vidplaylists/IKSVids.svelte';
 	import OtherVids from '$lib/components/vidplaylists/OtherVids.svelte';
-	import LatestVids from '$lib/components/vidplaylists/LatestVids.svelte';
 	let y = 1;
 	let isAnv = false;
 	let isMrd = false;
@@ -171,67 +168,68 @@
 
 <svelte:window bind:scrollY={y} />
 
-
+<Header></Header>
 <Accordion />
-<div class="c-c-c-c pad4 lay lzz">
-	<h1 class="bigger1">Bṛhat is a</h1>
-	<h1 class="smaller1 uppercase isred">&#60;culture_engine&#62</h1>
-	<h3>
+<div class="flexbox-c pad-x-40 cc-y-col mob-y-pad full">
+	<h2 class="w700 m-bot-zero">Bṛhat is a <span class="red m-top-zero">Culture Engine</span></h2>
+	<h5 class="w300 wide75">
 		To power creatives, research and design rooted in the Indian civilizational consciousness. We
 		convert individual, institutional and collective intent into action, across 3 dimensions.
-	</h3>
-	<h3><a href="/about" class="h5link">Know More</a></h3>
-	<div class="l2 row-of-3">
-		<div class="l2row1 small5 threebox">
-			<h5>Create</h5>
-			<p>
-				- visual and literary stories; - design thinking and methods; - research output on education
-				and ecology; - culture-rooted thought models
-			</p>
+	</h5>
+	<button class="redbutton"><a href="/about">Know More</a></button>
+	<div class="l2 flexbox-r of-three gap-top">
+		<div class="l2row1 in-col wide33">
+			<h6 class="wbold m-bot-zero">Create</h6>
+			<small class="w300">
+				- visual and literary stories;<br>
+				- design thinking and methods;<br>
+				- research output on education and ecology;<br>
+				- culture-rooted thought models
+			</small>
 		</div>
-		<div class="l2row2 small5 threebox">
-			<h5>Curate</h5>
-			<p>
-				- heritage experience journeys; - culture-fit in mass media; - NEP-relevant IKS curriculum;
+		<div class="l2row2 in-col wide33">
+			<h6 class="wbold m-bot-zero">Curate</h6>
+			<small class="w300">
+				- heritage experience journeys;<br>
+				- culture-fit in mass media;<br>
+				- NEP-relevant IKS curriculum;<br>
 				- culture rooting in product design and thinking
-			</p>
+			</small>
 		</div>
-		<div class="l2row3 small5 threebox">
-			<h5>Consult</h5>
-			<p>
-				- NEP-IKS implementation; - policy thinking on education and ecology; - organizational
-				structure and leadership frameworks
-			</p>
+		<div class="l2row3 in-col wide33">
+			<h6 class="wbold m-bot-zero">Consult</h6>
+			<small class="w300">
+				- NEP-IKS implementation;<br>
+				- policy thinking on education and ecology;<br>
+				- organizational structure and leadership frameworks
+			</small>
 		</div>
 	</div>
 </div>
 <StaticH1 --boxback="white">
-	<div slot="header"><span class="red lay">Explore </span>Visual Content</div>
-	<div class="lay" slot="body">
-		<div class="c-c-c-c lvid">
-			<div class="c-c-c-c pad4 lvid-text">
-				<h3>
+	<div slot="header"><span class="red">Explore </span>Visual Content</div>
+	<div class="flexbox-c" slot="body">
+				<h5 class="w300 wide75 top-gap">
 					Our visual content ranges from explorations of rasa and bhāva, to articulations of an
 					IKS-implementation strategy for modern India. Select playlists below, or visit our <a
 						href="https://youtube.com/@brhat"
 						target="_blank"
 						rel="noreferrer">YouTube channel</a
 					>
-				</h3>
-				<div class="r-r-r-r playlists small5">
-					<h5 on:click={() => switchList('list-1')} on:keydown={() => switchList('list-1')}>
-						Bṛhadmṛdaṅga
-					</h5>
-					<h5 on:click={() => switchList('list-2')} on:keydown={() => switchList('list-2')}>
-						Hindi Kavitā
-					</h5>
-					<h5 on:click={() => switchList('list-3')} on:keydown={() => switchList('list-3')}>IKS</h5>
-					<h5 on:click={() => switchList('list-4')} on:keydown={() => switchList('list-4')}>
-						On Other Channels
-					</h5>
+				</h5>
+				<div class="flexbox-r wrapper playlists m-bot-24">
+					<div class="xwide50" on:click={() => switchList('list-1')} on:keydown={() => switchList('list-1')}>
+						<button class="redbutton">Bṛhadmṛdaṅga</button>
+					</div>
+					<div class="xwide50" on:click={() => switchList('list-2')} on:keydown={() => switchList('list-2')}>
+						<button class="redbutton">Hindi Kavitā</button>
+					</div>
+					<div class="xwide50" on:click={() => switchList('list-3')} on:keydown={() => switchList('list-3')}><button class="redbutton">IKS</button></div>
+					<div class="xwide50" on:click={() => switchList('list-4')} on:keydown={() => switchList('list-4')}>
+						<button class="redbutton">On Other Channels</button>
+					</div>
 				</div>
-			</div>
-			<div class="c-c-c-c lvid-vid">
+			<div class="flexbox-c">
 				{#if currentList === 'list-1'}
 					<BrhadMrdanga />
 				{:else if currentList === 'list-2'}
@@ -242,7 +240,6 @@
 					<OtherVids />
 				{/if}
 			</div>
-		</div>
 	</div>
 </StaticH1>
 <Dhiti --boxback="white">
@@ -251,9 +248,9 @@
 		{#await dhiti()}
 			<small>...</small>
 		{:then data}
-			<div class="r-r-r-r pad4 l5 row-of-3">
+			<div class="flexbox-r l5 top-gap of-three">
 				{#each data as item, i}
-					<div class="c-c-c-c threebox blogbox small5">
+					<div class="in-col wide33 blogbox">
 						<img
 							src={item.image}
 							alt={item.title}
@@ -265,7 +262,7 @@
 								easing: 'easeOutCirc'
 							}}
 						/>
-						<h5
+						<h6
 							use:reveal={{
 								transition: 'slide',
 								delay: 50 * i,
@@ -275,12 +272,9 @@
 							}}
 						>
 							<a href={item.link}>{item.title}</a>
-						</h5>
-						<p>{item.excerpt.slice(0, 200)}...<a href={item.link} class="readmore">Read More</a></p>
-						<div class="r-r-c-c blog-meta">
-							<small>{item.author}</small>
-							<small>{item.category}</small>
-						</div>
+						</h6>
+						<small>{item.excerpt.slice(0, 200)}...<a href={item.link} class="readmore">Read More</a></small>
+						<cite class="red m-bot-zero">{item.author}</cite>
 					</div>
 				{/each}
 			</div>
@@ -292,20 +286,20 @@
 <Open --boxback="white">
 	<div slot="header">Bṛhat Open <span class="red">Library</span></div>
 	<div slot="body">
-		<div class="c-c-c-c pad4 bol">
-			<h3>
+		<div class="flexbox-c pad4 bol">
+			<h5 class="w300 wide75 top-gap">
 				An online repository of books, papers, texts and scriptures, made available under CC0 1.0
 				License. Gathering point for digitized scripture, Aryan Invasion/Migration, civilizational
 				literature and more.
-			</h3>
-			<h3><a href="/openlibrary" class="h5link">Visit Library</a></h3>
+			</h5>
+			<button class="redbutton"><a href="/openlibrary">Visit Library</a></button>
 			{#await getBooks()}
 				<small>...</small>
 			{:then data}
-				<div class="row-of-4 lib small5">
+				<div class="flexbox-r wrapper of-four m-top-24 m-bot-24 lib">
 					{#each data as item, i}
 						<div
-							class="fourbox book"
+							class="in-col wide25 book"
 							use:reveal={{
 								transition: 'slide',
 								delay: 100 * i,
@@ -314,9 +308,8 @@
 								easing: 'easeOutCirc'
 							}}
 						>
-							<h5><a href="/openlibrary/books/{item.slug}">{item.Text}</a></h5>
-							<p>{item.author}</p>
-							<small>{item.Type}</small>
+							<h6><a href="/openlibrary/books/{item.slug}">{item.Text}</a></h6>
+							<small class="m-top-zero grey">{item.author}</small>
 						</div>
 					{/each}
 				</div>
@@ -326,513 +319,73 @@
 		</div>
 	</div>
 </Open>
-<Actions --boxback="white">
-	<div slot="header">Bṛhat <span class="red">Actions</span></div>
-	<div class="forlocation" slot="body">
-		<h3 class="pad4 special-h">
-			Visual forays into the 64 kalās and metaphors of arts, travel discovery programs, online
-			learning courses, design thinking based on Dharma, AI-based creative content or bold
-			explorations of Indian civilizational consciousness, find your engagement here.
-		</h3>
-		<div class="row-of-3 pad4 actionsrow small5">
-			<div
-				id="box-1"
-				class="cc threebox actionbox"
-				on:mouseenter={toggleAnv}
-				on:mouseleave={toggleAnv}
-				on:click={goAnv}
-				on:keydown={(event) => event.key === 'Enter' && goAnv()}
-			>
-				<h5>Description</h5>
-			</div>
-			<div
-				id="box-2"
-				class="cc threebox actionbox"
-				on:mouseenter={toggleDra}
-				on:mouseleave={toggleDra}
-				on:click={goDra}
-				on:keydown={(event) => event.key === 'Enter' && goDra()}
-			/>
-			<div
-				id="box-3"
-				class="cc threebox actionbox"
-				on:mouseenter={toggleMrd}
-				on:mouseleave={toggleMrd}
-				on:click={goMrd}
-				on:keydown={(event) => event.key === 'Enter' && goMrd()}
-			/>
-			<div
-				id="box-4"
-				class="cc threebox actionbox"
-				on:mouseenter={toggleFm}
-				on:mouseleave={toggleFm}
-				on:click={goFm}
-				on:keydown={(event) => event.key === 'Enter' && goFm()}
-			/>
-			<div
-				id="box-5"
-				class="cc threebox actionbox"
-				on:mouseenter={toggleRid}
-				on:mouseleave={toggleRid}
-				on:click={goRid}
-				on:keydown={(event) => event.key === 'Enter' && goRid()}
-			/>
-			<div
-				id="box-6"
-				class="cc threebox actionbox"
-				on:mouseenter={toggleSoa}
-				on:mouseleave={toggleSoa}
-				on:click={goSoa}
-				on:keydown={(event) => event.key === 'Enter' && goSoa()}
-			/>
-		</div>
-		<div class="c-c-c-c poster" style="width: {wid}%; opacity: {op}">
-			{#if isAnv}
-				<img src="/images/brhatlogos/blackwhite/anveshi-black.png" alt="anv" />
-			{/if}
-			{#if isDra}
-				<img src="/images/herocovers/brhatdrashta.webp" alt="dra" />
-			{/if}
-			{#if isMrd}
-				<img src="/images/herocovers/mrdanga-hero.webp" alt="mrd" />
-			{/if}
-			{#if isFm}
-				<img src="/images/herocovers/fmhomehero.webp" alt="dra" />
-			{/if}
-			{#if isRid}
-				<img src="/images/herocovers/ridhero1.webp" alt="dra" />
-			{/if}
-			{#if isSoa}
-				<img src="/images/scrolls/maphero.webp" alt="dra" />
-			{/if}
-		</div>
-	</div>
-</Actions>
+<AllBrands></AllBrands>
 
 
 <style>
+.l5 { flex-wrap: wrap;}
+.blogbox small { color: #878787; }
+.in-col img {
+	object-fit: cover;
+	width: 100%;
+}
+
+.blogbox a:hover {
+	color: #fe4a49;
+}
 
 
-	.actionbox {
-		position: relative;
-		transition: all 0.2s var(--cube5);
-		transform-origin: center center;
-		text-align: center;
-		justify-content: center !important;
-	}
-
-	.actionbox:hover {
-		transform: scale(0.88);
-	}
-
-	.actionbox::after {
-		content: '';
-		height: 100%;
-		width: 0%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		transition: all 0.2s var(--cube5);
-		background: rgba(0, 0, 0, 0.8);
-		z-index: 0;
-	}
-
-	.actionbox:hover::after {
-		width: 100%;
-		z-index: 0;
-	}
-
-	#box-1, #box-2 {
-		background-size: cover;
-		background-position: center center;
-		background-repeat: no-repeat;
-	}
-
-	#box-1 {
-		background-image: url('/images/brhatlogos/blackwhite/anveshi-black.png');
-	}
-
-	#box-2 {
-		background-image: url('/images/brhatlogos/blackwhite/drashta-black.png');
-	}
-
-	#box-3 {
-		background-image: url('/images/herocovers/mrdanga-hero.webp');
-	}
-
-	#box-4 {
-		background-image: url('/images/herocovers/fmhomehero.webp');
-	}
-
-	#box-5 {
-		background-image: url('/images/herocovers/ridhero1.webp');
-	}
-
-	#box-6 {
-		background-image: url('/images/scrolls/maphero.webp');
-	}
-
-	.forlocation {
-		position: relative;
-	}
-	.poster {
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-
-	.poster img {
-		object-fit: cover;
+@keyframes swiped {
+	0% {
 		width: 100%;
 	}
-	.lzz {
-		z-index: 2;
-		background: white;
+	100% {
+		width: 0;
 	}
-	.lzz,
-	.l2,
-	.row-of-3,
-	.lvid,
-	.lvid-text,
-	.playlists {
-		background: white;
+}
+
+
+.l2 h6 { 
+	border-top: 1px solid #d7d7d7;
+	padding-top: 12px;
+}
+
+.book {
+	border-bottom: 1px solid #e7e7e7;
+	padding-bottom: 12px;
+}
+
+@media screen and (min-width: 768px) {
+ .l2 .in-col {
+		padding: 0 24px 16px 24px;
+		background: #f7f7f7;
 	}
-	.threebox img {
-		object-fit: cover;
-		width: 100%;
+	.blogbox { height: auto; margin-bottom: 48px;}
+	.blogbox h6 { margin-top: 16px;}
+	.blogbox h6, .blogbox small, .blogbox cite { padding-left: 16px; padding-right: 16px;}
+	.book {
+		margin-bottom: 24px;
 	}
-	.l2 .threebox {
-		border-top: 1px solid #474747;
+}
+
+@media screen and (max-width: 767px) {
+	 .l2 .in-col {
+		padding: 0 24px 2px 24px;
+		background: #f7f7f7;
 	}
-	.l2 p,
-	.l2row1 p,
-	.l2row2 p,
-	.l2row3 p {
-		color: #878787;
+	.blogbox { height: auto; margin-bottom: 48px;}
+	.blogbox h6 { margin-top: 16px;}
+	.blogbox h6, .blogbox small, .blogbox cite { padding-left: 16px; padding-right: 16px;}
+	.book {
+		margin-bottom: 24px;
 	}
-	.playlists h5 {
-		cursor: pointer;
-		color: var(--blue);
-		text-transform: uppercase;
-	}
-	.book small {
-		color: var(--blue);
-	}
-	.book p {
-		color: #878787;
-	}
-	.rowcol2 .c-c-c-c h5 {
-		z-index: 2;
-		color: white;
-	}
-	.book a {
-		color: #171717;
-	}
-	.threebox h5 a,
-	.threebox h5 {
-		color: #272727;
-	}
-	.threebox a:hover {
-		color: #fe4a49;
-	}
-	.threebox p {
-		color: #878787;
+}
+
+@media screen and (max-width: 576px) {
+
+	.book {
+		margin-bottom: 8px;
 	}
 
-	.actionsrow div {
-		cursor: pointer;
-	}
-
-	.poster {
-		background: white;
-		transition: all 0.32s var(--cube2);
-	}
-	.poster img {
-		z-index: 5;
-	}
-
-	@keyframes swiped {
-		0% {
-			width: 100%;
-		}
-		100% {
-			width: 0;
-		}
-	}
-
-	.l2 .threebox {
-		background: #f1f1f1;
-	}
-
-	@media screen and (min-width: 900px) {
-
-		.lzz {
-			min-height: 100vh;
-			gap: 0;
-		}
-
-		.l2 .threebox {
-			height: auto;
-			padding-bottom: 16px;
-			padding-right: 24px;
-		}
-		.l2 h5 {
-			padding-top: 12px;
-			padding-left: 24px;
-		}
-		.c-c-c-c h3 {
-			width: 75%;
-			margin-top: 0;
-		}
-		.lzz h3 {
-			margin-top: 0;
-			font-weight: 400;
-		}
-		.pad4 h3, .forlocation h3 {
-			font-weight: 400;
-		}
-		.smaller1 {
-			overflow: visible;
-			font-variant: small-caps;
-			margin-bottom: 32px;
-		}
-		.l2 p {
-			padding-left: 24px;
-		}
-		.playlists {
-			gap: 40px;
-			padding: 16px 0 24px 0;
-		}
-		.row-of-3 {
-			flex-wrap: wrap;
-		}
-		.blogbox h5 {
-			margin-top: 12px;
-			margin-bottom: 0;
-			padding: 0 24px;
-		}
-		.book h5:hover,
-		.book a:hover {
-			color: #fe4a49;
-		}
-		.blogbox p {
-			padding: 0 24px;
-		}
-		.threebox img {
-			height: 200px;
-			padding: 0 12px;
-		}
-		.blog-meta {
-			justify-content: space-between;
-			align-items: center;
-			padding: 0 24px;
-		}
-		.rowcol2 .c-c-c-c h5 {
-			margin-top: 0;
-		}
-		.actionbox {
-			height: 20vh;
-			width: calc(33.33% - 6px);
-		}
-		.actionsrow {
-			justify-content: center;
-			flex-wrap: wrap;
-			gap: 8px;
-			padding-top: 32px;
-		}
-		.lib {
-			gap: 32px;
-			align-items: flex-start;
-			padding-top: 24px;
-			flex-wrap: wrap;
-		}
-		.book {
-			width: calc(25% - 24px);
-		}
-		.book p {
-			margin-bottom: 8px;
-			margin-top: 0;
-		}
-		.book h5 {
-			padding-top: 8px;
-			border-top: 1px solid #d7d7d7;
-		}
-		.h5link {
-			font-size: 45px;
-			font-weight: 700;
-			color: #255f85;
-			transform-origin: center left;
-		}
-		.h5link:hover {
-			color: #fe4a49;
-		}
-		.special-h {
-			width: 75%;
-		}
-		.poster {
-			height: 24vh;
-			border-top: 2px solid #272727;
-			border-bottom: 2px solid #272727;
-		}
-		.poster img {
-			height: 100%;
-			object-fit: cover;
-		}
-
-		.forlocation h3 { margin-top: 8px;}
-	}
-
-	@media screen and (max-width: 899px) and (min-width: 768px) {
-
-		.c-c-c-c h3,
-		.special-h {
-			width: 88%;
-		}
-		.row-of-3 {
-			flex-wrap: wrap;
-		}
-		.playlists {
-			gap: 40px;
-			padding: 2px 0 24px 0;
-		}
-		.l2 h5 {
-			padding-top: 12px;
-		}
-		.h5link {
-			font-size: 26px;
-			font-weight: 500;
-			letter-spacing: 0px;
-			color: #255f85;
-			transform-origin: center left;
-		}
-		.h5link:hover {
-			color: #fe4a49;
-			font-size: 24px;
-		}
-		.lib {
-			flex-wrap: wrap;
-		}
-		.actionsrow {
-			justify-content: center;
-			gap: 12px;
-		}
-		.poster {
-			min-height: 56vh;
-			margin-top: 24px;
-			border-top: 2px solid #fe4a49;
-			border-bottom: 2px solid #fe4a49;
-		}
-		.poster img {
-			height: 56vh;
-		}
-	}
-
-	@media screen and (max-width: 767px) and (min-width: 576px) {
-		.c-c-c-c h3,
-		.special-h {
-			width: 100%;
-		}
-		.l2 {
-			gap: 2em;
-			padding-bottom: 16px;
-			margin-top: 1em;
-		}
-		.l2 p {
-			margin-bottom: 0;
-		}
-		.l2 h5 {
-			padding-top: 8px;
-		}
-		h5 {
-			padding-left: 4vw;
-			padding-right: 4vw;
-		}
-		.row-of-3 {
-			flex-wrap: wrap;
-		}
-		.h5link {
-			font-size: 24px;
-			font-weight: 500;
-			letter-spacing: 0px;
-			color: #255f85;
-			transform-origin: center left;
-		}
-		.h5link:hover {
-			color: #fe4a49;
-			font-size: 24px;
-		}
-		.actionsrow {
-			justify-content: space-between;
-			flex-wrap: wrap;
-			padding-bottom: 64px;
-		}
-		.poster {
-			min-height: 40vh;
-			margin-top: 24px;
-			border-top: 2px solid #fe4a49;
-			border-bottom: 2px solid #fe4a49;
-		}
-		.poster img {
-			height: 40vh;
-		}
-	}
-
-	@media screen and (max-width: 575px) {
-		.c-c-c-c h3,
-		.special-h {
-			width: 100%;
-		}
-		.lzz h3 {
-			margin-top: 0;
-		}
-		.l2 {
-			gap: 16px;
-		}
-		.l2 .threebox {
-			padding: 0;
-		}
-		.l2 p {
-			margin-bottom: 16px;
-			margin-top: 0;
-		}
-		.l2 h5 {
-			padding-top: 16px;
-			margin: 0;
-		}
-		.playlists {
-			gap: 8px;
-			padding: 8px 0;
-		}
-		.lib {
-			flex-wrap: wrap;
-		}
-		.h5link {
-			font-size: 22px;
-			font-weight: 500;
-			letter-spacing: 0px;
-			color: #255f85;
-			transform-origin: center left;
-		}
-		.h5link:hover {
-			color: #fe4a49;
-			font-size: 24px;
-		}
-		.blog-meta {
-			width: 100%;
-		}
-		.actionsrow {
-			justify-content: space-between;
-			flex-wrap: wrap;
-		}
-
-		.poster {
-			min-height: 40vh;
-			margin-top: 24px;
-			border-top: 2px solid #fe4a49;
-			border-bottom: 2px solid #fe4a49;
-		}
-		.poster img {
-			height: 40vh;
-		}
-	}
+}
 </style>

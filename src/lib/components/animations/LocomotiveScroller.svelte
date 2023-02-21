@@ -1,5 +1,6 @@
 <script>
 import LocomotiveScrollProvider from 'svelte-locomotive-scroll'
+import Footer from '$lib/components/globals/FooterGlobal.svelte'
 import '$lib/styles/locomotive-scroll.css'
 import { page } from '$app/stores';
 </script>
@@ -17,7 +18,12 @@ import { page } from '$app/stores';
   onLocationChange={(scroll) => scroll.scrollTo(0, { duration: 2, disableLerp: false })}
 	imageTarget={'.grid-item-media'}
 >
-<div data-locomotive-container>
+<div class="baser" data-locomotive-container>
 <slot></slot>
 </div>
+<Footer></Footer>
 </LocomotiveScrollProvider>
+
+<style>
+.baser { z-index: 400;}
+</style>

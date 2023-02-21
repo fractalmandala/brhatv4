@@ -1,10 +1,10 @@
 <script>
-import MainFly from '$lib/components/animations/MainFly.svelte'
-import '$lib/styles/globaltemplate.sass'
+import Header from '$lib/components/headers/HeadAnveshi.svelte'
+
 </script>
 
-<MainFly>
+<Header></Header>
 <slot></slot>
-</MainFly>
+
 
 

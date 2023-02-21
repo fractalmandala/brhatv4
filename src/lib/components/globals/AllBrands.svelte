@@ -131,8 +131,8 @@ function toggleBrands(){
 
 </script>
 
-<div class="biggie r-r-r-r">
-	<div class=".espcol col1">
+<div class="biggie flexbox-r">
+	<div class=".espcol flexbox-c col1">
 		<div class=".espcol boxer box-of-mrd" id="logo" on:mouseenter={hover} on:mouseleave={unhover} on:click={linkMrdanga} on:keydown={linkMrdanga}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
@@ -155,7 +155,7 @@ function toggleBrands(){
 			<LogBol></LogBol>
 		</div>
 	</div>
-	<div class=".espcol col2">
+	<div class=".espcol flexbox-c col2">
 		<div class=".espcol bigbox">
 			<div class="logo-svg-box box-of-motif">
 				<svg width="458" height="458" viewBox="0 0 458 458" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -336,7 +336,7 @@ function toggleBrands(){
 			<LogMan></LogMan>
 		</div>
 	</div>
-	<div class=".espcol col3">
+	<div class=".espcol flexbox-c col3">
 		<div class=".espcol boxer box-of-dra" on:mouseenter={hover5} on:mouseleave={unhover5} on:click={linkDrashta} on:keydown={linkDrashta}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
@@ -364,19 +364,19 @@ function toggleBrands(){
 
 <style>
 .biggie { background: var(--beau);}
-.boxer { position: relative; overflow: hidden; transition: all 0.8s var(--cube1) 0.2s; border: 1px solid #373737; box-shadow: 4px 6px 6px #171717, -2px -4px 6px #212121; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; }
+.boxer { position: relative; overflow: hidden; transition: all 0.8s var(--cubea) 0.2s; border: 1px solid #373737; box-shadow: 4px 6px 6px #171717, -2px -4px 6px #212121; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; }
 .boxer span { position: absolute; top: 0; left: 0;}
 .typ1 { border-top: 1px solid #fe4a49;}
 .typ2 { border-right: 1px solid #fe4a49; width: 100%; }
 .typ3 { border-bottom: 1px solid #fe4a49; height: 100%;}
 .typ4 { border-left: 1px solid #fe4a49;}
 .biggie .col1, .biggie .col2, .biggie .col3 { display: flex; flex-direction: column;}
-.boxer:hover .typ1 { animation: typ1 0.4s var(--cube1) forwards;}
-.boxer:hover .typ2 { animation: typ2 0.54s var(--cube2) forwards;}
-.boxer:hover .typ3 { animation: typ3 0.7s var(--cube3) forwards;}
-.boxer:hover .typ4 { animation: typ4 0.5s var(--cube4) forwards;}
+.boxer:hover .typ1 { animation: typ1 0.4s var(--cubea) forwards;}
+.boxer:hover .typ2 { animation: typ2 0.54s var(--cubeb) forwards;}
+.boxer:hover .typ3 { animation: typ3 0.7s var(--cubec) forwards;}
+.boxer:hover .typ4 { animation: typ4 0.5s var(--cubed) forwards;}
 
-.boxer:hover { box-shadow: 7px 10px 15px #171717, -8px -8px 16px #212121; animation: redlines 1.5s var(--cube2) 0.5s forwards; }
+.boxer:hover { box-shadow: 7px 10px 15px #171717, -8px -8px 16px #212121; animation: redlines 1.5s var(--cubeb) 0.5s forwards; }
 
 .col1 .boxer, .col3 .boxer { width: 88%;}
 .bigbox, .col2 { overflow: visible;}
@@ -412,14 +412,14 @@ function toggleBrands(){
 }
 
 #edge8, #edge7, #edge6, #edge4, #edge3, #edge2, #edge1, #edge5 {
-	transition: all 1.2s var(--cube3);
+	transition: all 1.2s var(--cubec);
 }
 
 #dottedcircles {
 	transform-origin: center center;
 }
 
-.bigbox:hover #dottedcircles { animation: isrotating 4s var(--cube2) infinite;}
+.bigbox:hover #dottedcircles { animation: isrotating 4s var(--cubeb) infinite;}
 
 @keyframes isrotating {
 	0% { transform: rotate(0deg);}
@@ -443,24 +443,20 @@ function toggleBrands(){
 #edges { 
 	transform-origin: center center;
 	overflow: visible;
-	transition: all 1.7s var(--cube1);
+	transition: all 1.7s var(--cubea);
 	z-index: 20;
 }
 
-.logo-svg-box:hover #edges {
-	transform: scale(1.2);
-}
-
 .logo-svg-box:hover #inn path {
-	animation: recolor 0.46s var(--cube2) forwards;
+	animation: recolor 0.46s var(--cubeb) forwards;
 }
 
 .logo-svg-box:hover #mid path {
-	animation: recolor 0.7s var(--cube3) 0.46s forwards;
+	animation: recolor 0.7s var(--cubec) 0.46s forwards;
 }
 
 .logo-svg-box:hover #outermost path {
-	animation: recolor 0.6s var(--cube4) 1.2s forwards;
+	animation: recolor 0.6s var(--cubed) 1.2s forwards;
 }
 
 @keyframes recolor {
@@ -475,13 +471,13 @@ function toggleBrands(){
 
 
 @media screen and ( min-width: 900px ) {
-	.biggie { width: 100vw; height: calc(100vh - 96px); justify-content: space-between; padding: 0 4vw;}
-	.col1 { width: 28vw; padding: 0; justify-content: center; align-items: center; gap: 3em; padding-bottom: 4em; }
+	.biggie { width: 100vw; height: 100vh; justify-content: space-between; padding: 0 4vw;}
+	.col1 { width: 24vw; padding: 0; justify-content: center; align-items: center; gap: 3em; padding-bottom: 4em; }
 	.col2 { width: 28vw; padding: 0; justify-content: center; align-items: center; padding-top: 2.4em; gap: 0;}
-	.col3 { width: 28vw; padding: 0; justify-content: center; align-items: center;gap: 3em; padding-bottom: 4em;}
+	.col3 { width: 24vw; padding: 0; justify-content: center; align-items: center;gap: 3em; padding-bottom: 4em;}
 	.boxer { border-radius: 4px; height: 16vh; padding: 0 10%; justify-content: center; align-items: center;}
 	.boxer span { border-radius: 4px;}
-	.box-of-soa { width: 26vw;}
+	.box-of-soa { width: 20vw;}
 	.box-of-motif svg { width: 85%;}
 
 }

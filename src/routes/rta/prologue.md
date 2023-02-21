@@ -1,6 +1,8 @@
 ---
 title: Prologue
 image: '/images/rid/newrid.png'
+next: '/rta/intro'
+prev: '/rta'
 ---
 
 #### All human beings are creative.

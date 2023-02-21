@@ -2,25 +2,23 @@
 import { reveal } from 'svelte-reveal'
 </script>
 
-<div class="c-c-c-c big lay" style="background: var(--boxback)">
-	<div class="c-c-c-c head" use:reveal={{ transition: "blur", duration: 400 }}>
-		<h4>
-			<span class="splitchar">
+<div class="flexbox-c big lay" style="background: var(--boxback); min-height: var(--contheight)">
+	<div class="flexbox-c head" use:reveal={{ transition: "fly", duration: 200, y: 48 }}>
+		<h2 class="wbold">
 			<slot name="header"></slot>
-		</h4>
+		</h2>
 	</div>
-	<div class="c-c-c-c small">
+	<div class="flexbox-c pad-x-40">
 		<slot name="body"></slot>
 	</div>
 </div>
 
 <style>
-.c-c-c-c { width: 100vw; z-index: 600;}
+
 .big { z-index: 2;}
-.small { background: white;}
-.big h4 {
+
+.big h2 {
 	background: white;
-	letter-spacing: -2px;
 	color: #474747;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -30,12 +28,11 @@ import { reveal } from 'svelte-reveal'
 	.big {
 		width: 100vw;
 		height: 100%;
-		padding-bottom: 80px;
 	}
 	.head { height: max-content; width: 100%;background: var(--beau)}
-	.small { height: 85%; width: 100%; padding-top: 2em; padding-bottom: 2em;}
-	.big h4 {
-		padding: 8px 8px 8px 2vw;
+
+	.big h2 {
+		padding: 8px 8px 8px 4vw;
 		margin-bottom: 0;
 		margin-top: 0;
 		color: #272727;
@@ -48,7 +45,7 @@ import { reveal } from 'svelte-reveal'
 
 	.big { padding-top: 64px;}
 
-	.big h4 {
+	.big h2 {
 		letter-spacing: -1px;
 		padding: 8px 8px 8px 24px;
 		margin-bottom: 0;
@@ -58,16 +55,11 @@ import { reveal } from 'svelte-reveal'
 }
 
 @media screen and (max-width: 767px) {
-	.big h4 {
-		letter-spacing: -1px;
-		padding: 8px 8px 8px 2vw;
-		margin-bottom: 0;
-		color: #272727;
-		margin-bottom: 12px;
-		margin-top: 32px;
-		margin-left: 4vw;
-	}
 
 	.big { padding-top: 32px;}
+	.big h2 {
+		padding: 8px 8px 2px 12px;
+		margin-left: 12px;
+	}
 }
 </style>

@@ -5,36 +5,36 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 <div class="big-box">
 <ToTop></ToTop>
 <div class="margin-box">
-	<div class="r-r-r-r" id="row-one">
-		<div class="c-c-c-c" id="logo-col"><a href="/">
+	<div class="flexbox-r" id="row-one">
+		<div class="flexbox-c" id="logo-col"><a href="/">
 			<img id="logoimage" src="/images/brhatlogos/horizontalwhite.png" alt="brhatlogo" /></a>
-			<div class="r-r-r-r" id="icons-row">
-				<div class="c-c-c-c icon-box" id="icon-twitter">
+			<div class="flexbox-r" id="icons-row">
+				<div class="flexbox-c icon-box" id="icon-twitter">
 					<a href="https://twitter.com/brhat_in" target="_blank" rel="noreferrer"><img src="/images/icons/twitter-red.png" alt="twitter icon" /></a>
 				</div>
-				<div class="c-c-c-c icon-box" id="icon-facebook">
+				<div class="flexbox-c icon-box" id="icon-facebook">
 					<a href="https://www.facebook.com/brhat.in" target="_blank" rel="noreferrer"><img src="/images/icons/facebook-red.png" alt="facebook icon" /></a>
 				</div>
-				<div class="c-c-c-c icon-box" id="icon-youtube">
+				<div class="flexbox-c icon-box" id="icon-youtube">
 					<a href="https://www.youtube.com/@brhat" target="_blank" rel="noreferrer"><img src="/images/icons/youtube-red.png" alt="youtube icon" /></a>
 				</div>
-				<div class="c-c-c-c icon-box" id="icon-linkedin">
+				<div class="flexbox-c icon-box" id="icon-linkedin">
 					<a href="https://www.linkedin.com/company/brhat" target="_blank" rel="noreferrer"><img src="/images/icons/linkedin-red.png" alt="linkedin icon" /></a>
 				</div>
-				<div class="c-c-c-c icon-box" id="icon-instagram">
+				<div class="flexbox-c icon-box" id="icon-instagram">
 					<a href="https://www.instagram.com/brhat_in/" target="_blank" rel="noreferrer"><img src="/images/icons/instagram-red.png" alt="instagram icon" /></a>
 				</div>
 			</div>
 		</div>
-		<div class="r-r-r-r" id="links-row">
-			<div class="c-c-c-c link-box">
+		<div class="flexbox-r" id="links-row">
+			<div class="flexbox-c link-box">
 					<h6><a href="/anveshi">Bṛhatanveṣī</a></h6>
 					<p><a href="/anveshi/chapter/odisha">Odisha Chapter</a></p>
 					<p><a href="/anveshi/chapter/chamba">Chamba Chapter</a></p>
 					<p><a href="/anveshi/chapter/karnataka">Karnataka Chapter</a></p>
 					<p><a href="/anveshi/diaries">Travel Diaries</a></p>
 			</div>
-			<div class="c-c-c-c link-box">
+			<div class="flexbox-c link-box">
 					<h6><a href="/drashta">Bṛhat Draṣṭā</a></h6>
 					<p><a href="/drashta/course/hinduiconography">Hindu Iconography</a></p>
 					<p><a href="/drashta/course/shriramswarup">Shri Ram Swarup</a></p>
@@ -43,7 +43,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 					<p><a href="/drashta/schools">Schools</a></p>
 					<p><a href="/drashta/firekeepers">Firekeepers</a></p>
 			</div>
-			<div class="c-c-c-c link-box">
+			<div class="flexbox-c link-box">
 					<h6><a href="/about">About</a></h6>
 					<p><a href="/about/docs/namelogo">Nāmarūpa</a></p>
 					<p><a href="/about/docs/values">Pratijñā</a></p>
@@ -51,7 +51,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 					<p><a href="/about/#advisory">Advisory Board</a></p>
 					<p><a href="/about/#team">Team</a></p>
 			</div>
-			<div class="c-c-c-c link-box">
+			<div class="flexbox-c link-box">
 					<h6>Actions</h6>
 					<p><a href="/dhiti">Dhīti</a></p>
 					<p><a href="/openlibrary">Bṛhat Open Library</a></p>
@@ -63,7 +63,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		</div>
 	</div>
 </div>
-<div class="r-r-r-r" id="last-row"><small>2023 All Rights Reserved | <span><a href="/docs">Documentation</a> | </span><span><a href="/about/privacy">Privacy</a></span><br>
+<div class="flexbox-r" id="last-row"><small>2023 All Rights Reserved | <span><a href="/docs">Documentation</a> | </span><span><a href="/about/privacy">Privacy</a></span><br>
 	<span class="white">Write to us: contact@brhat.in</span>
 	</small>
 </div>
@@ -72,10 +72,11 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 <style lang="sass">
 
 .big-box
-	background: linear-gradient(40deg,#272727,#1B2023)
+	background: var(--beau)
 	z-index:1900
 	small
 		color: #676767
+		font-weight: 300
 		a
 			font-size: inherit
 			color: inherit
@@ -129,6 +130,8 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 
 #last-row
 	flex-direction: row
+	small
+		font-weight: 300
 
 #links-row
 	display: flex
@@ -153,14 +156,13 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		padding-top: 4em
 
 	#last-row
-		height: 8em
+		height: 6em
 		margin: 0
 		width: 100%
-		padding: 1em 6vw
+		padding: 1.5em 4vw
 	
 	#last-row small
 		line-height: 1.5
-		font-size: 14px
 
 	#logoimage
 		width: 200px
@@ -188,9 +190,8 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		width: 25%
 		padding-left: 2em
 		h6
-			font-size: 18px
 		p
-			font-size: 16px
+			font-weight: 300
 
 @media screen and (max-width: 899px) and (min-width: 768px) 
 
@@ -232,10 +233,8 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		flex-direction: row
 		.link-box
 			width: 25%
-			h6
-				font-size: 18px
 			p
-				font-size: 16px
+				font-weight: 300
 
 @media screen and (max-width: 767px) and (min-width: 576px) 
 
@@ -253,7 +252,6 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		margin: 0 4vw
 		padding-top: 1em
 		small
-			font-size: 14px
 			line-height: 1.5
 
 	#logoimage
@@ -281,10 +279,8 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		gap: 1.2em
 		.link-box
 			width: 25%
-			h6
-				font-size: 18px
 			p
-				font-size: 16px
+				font-weight: 300
 	
 @media screen and (max-width: 575px)
 
@@ -304,9 +300,8 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	#last-row
 		width: 100vw
 		margin: 0
-		padding: 24px
+		padding: 8px 24px
 		small
-			font-size: 12px !important
 			line-height: 1.5
 			width: 100%
 
@@ -346,13 +341,12 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		.link-box
 			width: 45%
 			p
-				font-size: 14px
-				margin-top: 6px
-				margin-bottom: 8px
+				margin-top: 12px
+				margin-bottom: 0
+				font-weight: 300
 			h6
-				font-size: 18px
-				margin-bottom: 8px
-				margin-top: 32px
+				margin-bottom: 0
+				margin-top: 40px
 
 	
 </style>

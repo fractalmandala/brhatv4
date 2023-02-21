@@ -13,13 +13,13 @@ async function getIKS() {
 }
 </script>
 
-<div class="r-r-r-r vid-row">
+<div class="flexbox-r vid-row">
 	{#await getIKS()}
 		<small>...</small>
 		{:then data}
-			<div class="r-r-r-r pad4 row-of-4">
+			<div class="flexbox-r of-four">
 				{#each data as item}
-				<div class="fourbox small5 paramin">
+				<div class="in-col">
 					<iframe
   					class="m-1"
   					width=100%
@@ -28,7 +28,7 @@ async function getIKS() {
   					title={item.name}
   				>
 					</iframe>
-					<p><a href="https://www.youtube.com/watch?v={item.id}" target="_blank" rel="noreferrer">{@html item.name}</a></p>
+					<small><a href="https://www.youtube.com/watch?v={item.id}" target="_blank" rel="noreferrer">{@html item.name}</a></small>
 				</div>
 				{/each}
 			</div>
@@ -37,28 +37,3 @@ async function getIKS() {
 	{/await}
 </div>
 
-<style>
-.fourbox p {
-	margin-top: 8px;
-	color: #474747;
-	font-weight: 600;
-}
-.fourbox a { color: inherit;}
-
-@media screen and (min-width: 900px) {
-	.fourbox { height: 184px;}
-}
-
-@media screen and (max-width: 899px) and (min-width: 768px) {
-	.fourbox { height: 144px;}
-}
-
-@media screen and (max-width: 767px) and (min-width: 576px) {
-	.fourbox { height: 184px;}
-}
-
-@media screen and (max-width: 575px) {
-	.fourbox { height: 184px; margin: -8px;}
-}
-
-</style>

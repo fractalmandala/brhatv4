@@ -1,0 +1,383 @@
+
+:root, *
+  box-sizing: border-box
+  --weight-thin: 200
+  --weight-light: 300
+  --weight-reg: 400
+  --weight-five: 500
+  --weight-six: 600
+  --weight-bold: bold
+  --cubea: cubic-bezier(0.995, 0.225, 0.750, 0.750)
+  --cubeb: cubic-bezier(0.995, 0.225, 0.000, 0.965)
+  --cubec: cubic-bezier(0.320, 0.760, 0.875, 0.490)
+  --cubed: cubic-bezier(0.000, 1.240, 0.875, 0.490)
+  --cubee: cubic-bezier(1.000, 0.005, 1.000, 0.005)
+  --snap: all 0.11s cubic-bezier(0.790, 0.035, 0.260, 0.850)
+  --gradienter: linear-gradient(201.98deg, #5CFC11 15.55%, #53DD6C 34.72%, #11FC8B 65.82%, #10C56E 83.88%)
+  --beau: linear-gradient(40deg,#272727,#1B2023)
+
+.bdr
+  border: 1px solid red
+
+.upper
+  text-transform: uppercase
+
+.swiper
+  height: 100vh
+  width: 100%
+  position: relative
+  overflow: hidden
+
+.imgbox
+  background-size: cover
+  background-position: center center
+  background-repeat: no-repeat
+
+.swiper-slide
+  display: flex
+  overflow: hidden
+
+.swiper-wrapper
+  transition-timing-function: cubic-bezier(0.835, 0.060, 1.000, -0.010)
+
+.green
+  color: #10C56D
+
+.red
+  color: #fe4a49
+
+.grey
+  color: #878787
+
+.blue
+  color: #255F85
+
+.header
+  z-index: 999
+
+body, html
+  box-sizing: border-box
+  margin: 0
+  color: #474747
+
+html
+  scroll-behavior: smooth
+
+pre
+  overflow-x: auto
+  white-space: pre-wrap
+  white-space: -moz-pre-wrap
+  white-space: -pre-wrap
+  white-space: -o-pre-wrap
+  word-wrap: break-word
+
+a
+  text-decoration: none
+  color: inherit
+  &:hover
+    color: #fe4a49
+
+caption
+  text-align: inherit
+
+blockquote
+  padding-left: 24px
+
+.block-red
+  border-left: 2px solid #fe4a49
+
+.block-green
+  border-left: 2px solid #10C56D
+
+cite
+  text-transform: uppercase
+  font-style: normal
+
+.w200
+  font-weight: 200 !important
+
+.w300
+  font-weight: var(--weight-light)
+
+.w400
+  font-weight: var(--weight-reg)
+
+.w500
+  font-weight: 500 !important
+
+.w600
+  font-weight: var(--weight-six)
+
+.wbold
+  font-weight: var(--weight-bold) !important
+
+.greenbutton
+  background-color: #3d9a50
+  border: none
+  color: white
+  font-size: 14px
+  font-weight: 400
+  letter-spacing: 1px
+  border-radius: 4px
+  min-width: 80px
+  margin: 20px 0
+  a
+    color: white
+  &:hover
+    background-color: #10C56D
+  @media screen and (min-width: 768px)
+    padding: 6px 12px
+  @media screen and (max-width: 767px)
+    padding: 6px 12px
+
+.redbutton
+  background-color: #fe4a49
+  border: none
+  color: white
+  font-size: 14px
+  font-weight: 400
+  letter-spacing: 1px
+  border-radius: 4px
+  min-width: 160px
+  a
+    color: white
+  &:hover
+    background-color: #BB3D52
+  @media screen and (min-width: 768px)
+    padding: 6px 12px
+    margin-bottom: 24px
+  @media screen and (max-width: 767px)
+    padding: 6px 12px
+    margin-bottom: 24px
+
+
+//**********************************************************************************************************
+//PADS AND MARGINS
+
+.pad-x-40
+  @media screen and (min-width: 768px)
+    padding-left: 8vw
+    padding-right: 8vw
+  @media screen and (max-width: 767px)
+    padding-left: 20px
+    padding-right: 20px
+
+.pad-y-80
+  @media screen and (min-width: 768px)
+    padding-top: 80px
+    padding-bottom: 80px
+  @media screen and (max-width: 767px)
+    padding-top: 64px
+    padding-bottom: 64px
+
+.pad-x-l
+  @media screen and (min-width: 768px)
+    padding-left: 80px
+  @media screen and (max-width: 767px)
+    padding-left: 24px
+
+.pad-y-t
+  padding-top: 40px
+  @media screen and (max-width: 575px)
+    padding-top: 20px
+
+.pad-y-b
+  padding-bottom: 40px
+  @media screen and (max-width: 575px)
+    padding-bottom: 20px
+
+.mob-y-pad
+  @media screen and (max-width: 576px)
+    padding-top: 32px
+    padding-bottom: 32px
+
+.just-row
+  justify-content: space-between
+
+.m-top-zero
+  margin-top: 0
+
+.m-top-24
+  margin-top: 24px
+
+.m-bot-zero
+  margin-bottom: 0
+
+.m-bot-24
+  margin-bottom: 24px
+
+.m-all-zero
+  margin: 0 !important
+
+//**********************************************************************************************************
+//SIZING and ALIGNMENT
+
+.fullxy
+  width: 100vw
+  min-height: 100vh !important
+
+.all-cc
+  justify-content: center
+  align-items: center
+
+.cc-y-col
+  justify-content: center
+
+.cc-x-col
+  align-items: center
+
+.cc-x-col-mob
+  @media screen and (max-width: 575px)
+    align-items: center
+
+.top-y-col
+  justify-content: flex-start
+
+.bot-y-col
+  justify-content: flex-end
+
+.cc-y-row
+  align-items: center
+
+.cc-x-col
+  align-items: center
+
+.l-x-col
+  align-items: flex-start
+
+.l-x-col-desk
+  @media screen and (min-width: 576px)
+    align-items: flex-start
+
+.cc-x-row
+  justify-content: center
+
+.wide100
+  width: 100%
+
+.wide50
+  @media screen and (min-width: 768px)
+    width: 50%
+  @media screen and (max-width: 767px)
+    width: 100%
+
+.xwide50
+  @media screen and (min-width: 768px)
+    width: 20%
+  @media screen and (max-width: 767px)
+    width: 50%
+
+.wide40
+  @media screen and (min-width: 768px)
+    width: 40%
+  @media screen and (max-width: 767px)
+    width: 100%
+
+.wide33
+  @media screen and (min-width: 768px)
+    width: calc(33% - 24px)
+  @media screen and (max-width: 767px)
+    width: 100%  
+
+.wide60
+  @media screen and (min-width: 768px)
+    width: 60%
+  @media screen and (max-width: 767px)
+    width: 100%
+
+.wide75
+  @media screen and (min-width: 768px)
+    width: 75%
+  @media screen and (max-width: 767px)
+    width: 100%
+
+.wide25
+  @media screen and (min-width: 768px)
+    width: calc(24% - 20px)
+  @media screen and (max-width: 767px)
+    width: 100%
+
+.wide16
+  @media screen and (min-width: 768px)
+    width: 12%
+  @media screen and (max-width: 767px)
+    width: 100%  
+
+.top-gap
+  @media screen and (min-width: 768px)
+    margin-top: 40px
+  @media screen and (max-width: 767px)
+    margin-top: 24px 
+
+.h-full-per
+  height: 100%
+
+.h-full-view
+  height: 100vh
+
+//**********************************************************************************************************
+//CONTAINERS
+
+.flexbox
+  display: flex
+
+.flexbox-c
+  display: flex
+  flex-direction: column
+
+.flexbox-c.full
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  width: 100vw
+
+.flexbox-c.full-d
+  @media screen and (min-width: 576px)
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+    width: 100vw
+
+.flexbox-r
+  display: flex
+  flex-direction: row
+  @media screen and (max-width: 767px)
+    flex-wrap: wrap
+
+.flexbox-r.full-d
+  @media screen and (min-width: 576px)
+    display: flex
+    flex-direction: row
+    min-height: 100vh
+    width: 100vw
+
+.wrapper
+  flex-wrap: wrap
+
+.of-three, .of-four
+  gap: 40px
+  @media screen and (max-width: 575px)
+    gap: 16px
+
+.of-six
+  gap: 2%
+
+.flexbox-r.full
+  display: flex
+  flex-direction: row
+  min-height: 100vh
+  width: 100vw
+  @media screen and (max-width: 767px)
+    flex-wrap: wrap
+
+.in-col
+  display: flex
+  flex-direction: column
+
+.in-row
+  display: flex
+  flex-direction: row
+
+.gap24
+  gap: 24px
+

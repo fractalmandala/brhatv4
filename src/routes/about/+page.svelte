@@ -10,8 +10,10 @@ import LogAnv from '$lib/components/logos/LogAnv.svelte'
 import LogRid from '$lib/components/logos/LogRid.svelte'
 import LogMan from '$lib/components/logos/LogMan.svelte'
 import MainH1 from '$lib/components/headers/MainH1.svelte'
-import Partners from '$lib/components/headers/MainH1.svelte'
-import Team from '$lib/components/headers/MainH1.svelte'
+import StaticH1 from '$lib/components/headers/StaticH1.svelte'
+import Partners from '$lib/components/headers/StaticH1.svelte'
+import Team from '$lib/components/headers/StaticH1.svelte'
+
 let showModal = false;
 let isBrands = false;
 
@@ -48,203 +50,183 @@ const { data, error } = await supabase
 </script>
 
 <div class="loco">
-<div class="col-full img-fix"></div>
-<div class="col-full pad4 l1">
-	<h1 class="bigger1" data-textify>Bṛhat is a</h1>
-	<h1 class="smaller1 isred" data-textify-title>
-	Culture Engine</h1>
-	<h3 data-textify>
+<div class="flexbox-c full img-fix l0"></div>
+<div class="flexbox-c full pad-x-40 l1">
+	<h2 class="w700 m-bot-zero">Bṛhat is a
+	<span class="red">
+	Culture Engine</span></h2>
+	<h5 class="w300 wide75">
 		To power creatives, research and design rooted
 		in the Indian civilizational consciousness. We convert individual, institutional 
 		and collective intent into action, across 3 dimensions:
-	</h3>
-	<div class="r-r-c-c l2">
-		<div class="c-c-c-c l2row1">
-			<h5 data-textify-title>Create</h5>
-			<p data-textify>
-				- visual and literary stories;
-				- design thinking and methods;
-				- research output on education and ecology;
+	</h5>
+	<div class="l2 flexbox-r of-three">
+		<div class="l2row1 in-col wide33">
+			<h6 class="wbold">Create</h6>
+			<small class="w300">
+				- visual and literary stories;<br>
+				- design thinking and methods;<br>
+				- research output on education and ecology;<br>
 				- culture-rooted thought models
-			</p>
+			</small>
 		</div>
-		<div class="c-c-c-c l2row2">
-			<h5 data-textify-title>Curate</h5>
-			<p data-textify>
-				- heritage experience journeys;
-				- culture-fit in mass media;
-				- NEP-relevant IKS curriculum;
+		<div class="l2row2 in-col wide33">
+			<h6 class="wbold">Curate</h6>
+			<small class="w300">
+				- heritage experience journeys;<br>
+				- culture-fit in mass media;<br>
+				- NEP-relevant IKS curriculum;<br>
 				- culture rooting in product design and thinking
-			</p>
+			</small>
 		</div>
-		<div class="c-c-c-c l2row3">
-			<h5 data-textify-title>Consult</h5>
-			<p data-textify>
-			- NEP-IKS implementation;
-			- policy thinking on education and ecology;
-			- organizational structure and leadership frameworks
-			</p>			
+		<div class="l2row3 in-col wide33">
+			<h6 class="wbold">Consult</h6>
+			<small class="w300">
+				- NEP-IKS implementation;<br>
+				- policy thinking on education and ecology;<br>
+				- organizational structure and leadership frameworks
+			</small>
 		</div>
 	</div>
-	<h3 class="reducer">
+</div>
+<div class="flexbox-c full cc-y-col pad-x-40 lx">
+	<h5 class="w300 wide75 m-bot-zero">
 		An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment.
-	</h3>
-	<h3 class="reducer">
+	</h5>
+	<h5 class="w300 wide75">
 		How does one go about doing that? At Bṛhat, we're acutely aware of three constraints:
-	</h3>
-	<div class="r-r-c-c l3">
-		<div class="c-c-c-c l3col1">
-			<h5>
+	</h5>
+	<div class="flexbox-r of-three l3">
+		<div class="in-col wide33 l3col1">
+			<h6 class="wbold red">
 				Civilization is Culture in Action
-			</h5>
-			<p>
+			</h6>
+			<small class="w300">
 				The civilizational moment needs rooting in Dharma - of this there is no doubt. Thus a core part of our work is culture creatives that draw from the deep pool of Dhārmika heritage.
-			</p>
+			</small>
 		</div>
-		<div class="c-c-c-c l3col2">
-			<h5>
+		<div class="in-col wide33 l3col2">
+			<h6 class="wbold red">
 				It Needs Culture-Compatible Policy
-			</h5>
-			<p>
+			</h6>
+			<small class="w300">
 				Radical reorientations are needed in education and ecology. To this end, our focus will be on generating policy currency for culture through frameworks, curriculum and more.
-			</p>
+			</small>
 		</div>
-		<div class="c-c-c-c l3col3">
-			<h5>
+		<div class="in-col wide33 l3col3">
+			<h6 class="wbold red">
 				The Work is Inter-Generational
-			</h5>
-			<p>
+			</h6>
+			<small class="w300">
 				It needs leadership with cultural-cognition to carry the Agni. This cognition needs to permeate even brand and organisation - essential quarters for the overton window shift.
-			</p>
+			</small>
 		</div>
 	</div>
-	<h4 class="reducer">
+</div>
+<div class="flexbox-c full cc-y-col pad-x-40 lz">
+	<h4 class="w500 wide75">
 		But the severest constraint of them all is Time, and more specifically – Moment.
 	</h4>
-	<p class="cushion red smallp">
+	<h6 class="w300 wide75">
 		The time for a Culture Engine is now, because we are in the midst of a civilizational moment. What is a civilizational moment? How rare or regular are such moments? How must we respond to them?
 		Read more on the need we see, why we think this is the time to address it, and about our self-identity:
-	</p>
-</div>
-<div class="row-full l4 pad4">
-	<h3>
+	</h6>
+	<div class="flexbox-c l4">
+	<h5 class="w400 m-bot-zero">
 		<a href="/about/docs/svatahsiddha">
 		Svataḥsiddha
 		</a>
-	</h3>
-	<h3>
+	</h5>
+	<h5 class="w400 m-bot-zero">
 		<a href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a>
-	</h3>
-	<h3>
+	</h5>
+	<h5 class="w400 m-bot-zero">
 		<a href="/about/docs/whatkrishnameanstous">What Śrī Kṛṣṇa Means to Us</a>
-	</h3>
-	<h3>
+	</h5>
+	<h5 class="w400 m-bot-zero">
 		<a href="/about/docs/namelogo">Nāmarūpa - our Name and Logo</a>
-	</h3>
-	<h3>
+	</h5>
+	<h5 class="w400 m-bot-zero">
 		<a href="/about/docs/values">Pratijñā - Values We Hold Dear</a>
-	</h3>
+	</h5>
+	</div>
 </div>
-<MainH1>Advisors</MainH1>
-<div class="c-c-c-c l5 pad4">
+<StaticH1>
+	<div slot="header">Advisors</div>
+	<div slot="body" class="flexbox-r of-four top-gap">
 	{#await advisors()}
 	<small>...</small>
 	{:then data}
-	<div class="r-r-r-r l6">
 		{#each data as item}
-		<div class="c-c-c-c col-type50">
+		<div class="in-col advisorbox m-bot-24 wide25">
 			<img src={item.image} alt={item.name} />
-			<h5>{item.name}</h5>
-			<p>{item.title}</p>
+			<h6 class="m-top-24 m-bot-zero">{item.name}</h6>
+			<small>{item.title}</small>
 		</div>
 		{/each}
-	</div>
 	{:catch error}
 	<pre>{error}</pre>
 	{/await}
-</div>
-<Partners>Partners</Partners>
-<div class="c-c-c-c l7 pad4">
-	{#await partners()}
-	<small>...</small>
-	{:then data}
-	<div class="r-r-r-r l8">
+	</div>
+</StaticH1>
+<Partners>
+	<div slot="header">Partners</div>
+	<div slot="body" class="flexbox-r of-six wrapper just-row top-gap">
+		{#await partners()}
+		<small>...</small>
+		{:then data}
 		{#each data as item}
-		<div class="c-c-c-c col-typevary">
+		<div class="in-col partnerbox wide16">
 			<a href={item.link} target="_blank" rel="noreferrer"><img src={item.image} alt={item.name} /></a>
 		</div>
 		{/each}
+		{:catch error}
+		<pre>{error}</pre>
+		{/await}
 	</div>
-	{:catch error}
-	<pre>{error}</pre>
-	{/await}
-</div>
-<Team>Team</Team>
-<div class="c-c-c-c l9 pad4">
+</Partners>
+<Team>
+	<div slot="header">Team</div>
+	<div slot="body" class="flexbox-r wrapper of-three pad-y-b top-gap">
 	{#await team()}
 	<small>...</small>
 	{:then data}
-	<div class="r-r-r-r l10">
-			{#each data as item}
-		<div class="c-c-c-c simplex-card team-box">
-			<img src={item.image} alt={item.name} />
-			<h5>{item.name}</h5>
-			<small>{item.title}</small>
-			<p>{item.bio}</p>
-		</div>
-		{/each}
+	{#each data as item}
+	<div class="in-col teambox wide33">
+		<img src={item.image} alt={item.name} />
+		<h6 class="m-bot-zero">{item.name}</h6>
+		<p class="red m-top-zero">{item.title}</p>
+		<small>{item.bio}</small>
 	</div>
+	{/each}
 	{:catch error}
 	<pre>{error}</pre>
 	{/await}
-</div>
+	</div>
+</Team>
 
 </div>
 
 <style>
+.l2 h6 { 
+	border-top: 1px solid #d7d7d7;
+	padding-top: 12px;
+}
 
-.img-fix { z-index: 0;}
-h3 { color: #474747;}
-p { color: #878787;}
+.teambox img { object-fit:contain; width: 50%; margin-bottom: 24px;}
+.partnerbox img { object-fit: contain; width: 100%;}
+
 .red { color: #fe4a49;}
 .loco { position: relative;}
-.col-full {
+.l0 {
 	background-image: url('/images/herocovers/about-parambika.png');
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .l1 { background: white; justify-content: center; height: 100%; padding-top: 4em; padding-bottom: 2em; margin-bottom: -2em;}
 
 
-.l2 .c-c-c-c, .l3 .c-c-c-c { border-top: 1px solid #474747;}
-
-.l4 { 
-	background: white;
-	margin-top: 0;
-	padding-top: 2em;
-}
-.l4 h3 {
-	border-bottom: 1px solid #474747;
-	padding-bottom: 0.4em;
-}
-
-.l4 h3 a { color: #272727;}
-.l4 h3:hover a {
-	color: #fe4a49;
-}
-
-.l5, .l7, .l9 {
-	background: white;
-	padding-top: 2em;
-	padding-bottom: 4em;
-}
-
-.l6, .l8 {
-	gap: 1em;
-}
-.l10 { 
-	flex-wrap: wrap;
-	gap: 2em;
-	justify-content: center;
-}
 
 
 .l1 { position: relative;}
@@ -252,95 +234,18 @@ p { color: #878787;}
 
 
 @media screen and (min-width: 768px) {
-	.l2 { gap: 48px; padding-bottom: 2em; margin-top: 3em; margin-bottom: 64px; }
-	.l2 .c-c-c-c { width: calc(33% - 32px);}
-	.l2 h5, .l3 h5 { padding-top: 12px;}
-	.l3 { padding-bottom: 10em; gap: 48px; margin-top: 3em; background: white; z-index: 3;}
-	.l3 .c-c-c-c { width: calc(33% - 32px);}
-	.l4 h3 {
-		font-size: 3.2em;
+	.l2 .in-col {
+		padding: 0 24px 2px 24px;
+		background: #f7f7f7;
 	}
-	.l4 {
-		height: 100vh;
-	}
-	.cushion {
-		background: white;
-		z-index: 2;
-	}
-
-	.cushion.smallp {
-		width: 70%;
-	}
-
-	.col-typevary img {
-		object-fit: contain;
-		width: 100%;
-	}
-
-	.simplex-card {
-		width: calc(33.33% - 2em);
-		padding: 8px 1em;
-	}
-
-	.simplex-card img {
-		object-fit: contain;
-		width: 70%;
-	}
+	.l3 .in-col { border-top: 1px solid #e1e1e1; padding-top: 16px;}
 	
-	.simplex-card small {
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-	.simplex-card p {
-		margin-top: 8px;
-	}
-
-	
-
-	.reducer {
-		width: 84%;
-	}
-
-	.smaller1 { font-size: 120px; line-height: 1.2em; font-weight: 500;}	
-	.bigger1 { font-size: 120px; margin-bottom: 0; font-weight: 500;}
 }
 
-@media screen and (max-width: 767px) {
-	.l2, .l3 { gap: 2em; padding-bottom: 16px; margin-top: 1em;}
-	.l2 p, .l3 p { margin-bottom: 0;}
-	.l2 h5, .l3 h5 { padding-top: 8px;}
-
-	.l4 h3 {
-		font-size: 1.6em;
-	}
-	.col-typevary {
-		width: calc(50% - 2em);
-	}
-
-	.col-typevary img {
-		object-fit: contain;
-		width: 100%;
-	}
-
-	.col-type50 h5 {
-		margin-top: 12px;
-	}
-
-	.col-type50 img {
-		width: 70%;
-	}
-
-	.simplex-card {
-		width: calc(100%);
-	}
-
-	.simplex-card img {
-		width: 50%;
-	}
-
-	.simplex-card small {
-		font-weight: bold;
-	}
+@media screen and (max-width: 575px) {
+	.advisorbox img { width: 30%;}
+	.partnerbox { width: 48%; margin-bottom: 16px;}
+	.partnerbox img { width: 80%;}
 }
 
 </style>
