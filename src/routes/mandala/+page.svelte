@@ -2,7 +2,6 @@
 import { reveal } from 'svelte-reveal'
 import { onMount } from 'svelte';
 import { blur, fly } from 'svelte/transition'
-import BasicTwo from '$lib/components/reuse/BasicTwo.svelte'
 import { cubicOut } from 'svelte/easing'
 import Animations from 'textify.js';
 import '$lib/styles/textify.css'
@@ -101,7 +100,7 @@ onMount(() => {
 			Fractal Maṇḍala is a project to research and articulate the emergence of Indian civilizational consciousness. It is the story of ancient Indians willing themselves into organic unity.
 		</h4>
 	</div>
-	<BasicTwo></BasicTwo>
+
 </div>
 
 <style>
@@ -123,26 +122,6 @@ onMount(() => {
 
 }
 
-.stickit {
-	display: none;
-	position: fixed;
-	z-index: 500;
-	left: 100px;
-	top:80px;
-	color: yellow;
-	font-size: 21px;
-	background: black;
-}
-.stickit2 {
-	display: none;
-	position: fixed;
-	z-index: 500;
-	left: 100px;
-	top:120px;
-	color: yellow;
-	font-size: 21px;
-	background: black;
-}
 
 
 @keyframes bouncing{
