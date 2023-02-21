@@ -130,6 +130,7 @@ import 'swiper/css/mousewheel'
 
 <style lang="sass">
 
+
 .imgbox
 	background-image: url('/images/scrolls/thegrid.webp')
 

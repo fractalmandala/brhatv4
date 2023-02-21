@@ -1,14 +1,11 @@
 <script>
-import PageTransitions from '$lib/components/animations/PageTransitions.svelte'
-import '$lib/styles/globaltemplate.sass'
-/**
-	 * @type {any}
-	 */
- export let refresh
+import Sidebar from '$lib/components/pagecomps/SideAbout.svelte'
 </script>
 
-{#key refresh}
-<PageTransitions>
+<div class="flexbox-r">
+<Sidebar></Sidebar>
+<div class="in-col maindoc">
 <slot></slot>
-</PageTransitions>
-{/key}
+</div>
+</div>
+

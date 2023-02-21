@@ -1,4 +1,0 @@
-
-<div>
-<slot></slot>
-</div>

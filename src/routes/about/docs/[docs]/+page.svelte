@@ -6,39 +6,12 @@
 </script>
 
 
-<div class="corp-docs">
-<div class="r-r-r-r breadcrumb" data-textify>
-	<a href="/about">Return to About</a>
-	<a href="/about/docs/svatahsiddha">Svataḥsiddha</a>
-	<a href="/about/docs/whatkrishnameanstous">What Śrī Kṛṣṇa Means to Us</a>
-  <a href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a>
-	<a href="/about/docs/namelogo">Nāmarūpa</a>
-	<a href="/about/docs/values">Pratijñā</a>
-</div>
-<h1 data-textify>{data.title}</h1>
-<div class="for-text">
+<h2>{data.title}</h2>
+
+<div class="flexbox-c document-sheet">
 <svelte:component this={data.content} />
-</div>
 </div>
 
 <style>
-:root {
-	color: #171717;
-	}
-
-:root p, p {
-	color: #171717 !important;
-}
-.corp-docs {
-	padding-top: 8em;
-}
-.corp-docs h1 {
-	font-size: 5em;
-	text-transform: capitalize;
-	font-weight: 600;
-	letter-spacing: -1px;
-	margin-top: 16px;
-}
-.breadcrumb { gap: 1em;}
-p { color: #878787 !important;}
+h2 { margin-top: 0; border-bottom: 1px solid #fe4a49; padding-bottom: 16px;}
 </style>

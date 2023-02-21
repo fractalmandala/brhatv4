@@ -78,25 +78,6 @@ function toggleLD(){
 .img3
 	background-image: url('/images/corpimages/areas-ld.webp')
 
-h3
-	color: white
-	opacity: 0
-	transition: opacity 2s ease
-
-a
-	color: white
-	&:hover
-		color: #fe4a49
-
-.image-box
-	position: absolute
-	top: 10vh
-	left: 10vw
-	object-fit: cover
-	width: 80vw
-	height: 80vh
-	z-index: 10
-
 @media screen and (min-width: 900px)
 
 	.genrow
@@ -104,18 +85,18 @@ a
 		width: 100vw
 		height: 100vh
 		justify-content: space-between
-		gap: 8px
-		padding: 0 8px
+		gap: 2px
+		padding: 0 2px
 		overflow: hidden
 
 	.gencol
-		width: calc(33.33% - 8px)
+		width: calc(33.33% - 1.4px)
 		height: 100vh
 
 	.genrow
 		&:hover
 			.gencol
-				width: calc(25% - 16px)
+				width: calc(25% - 2px)
 				&:hover
 					width: 50%
 

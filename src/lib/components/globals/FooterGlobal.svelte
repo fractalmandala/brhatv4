@@ -189,7 +189,6 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	.link-box
 		width: 25%
 		padding-left: 2em
-		h6
 		p
 			font-weight: 300
 

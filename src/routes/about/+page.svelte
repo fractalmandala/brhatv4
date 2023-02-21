@@ -152,7 +152,7 @@ const { data, error } = await supabase
 	</div>
 </div>
 <StaticH1>
-	<div slot="header">Advisors</div>
+	<div id="advisors" slot="header">Advisors</div>
 	<div slot="body" class="flexbox-r of-four top-gap">
 	{#await advisors()}
 	<small>...</small>
@@ -170,7 +170,7 @@ const { data, error } = await supabase
 	</div>
 </StaticH1>
 <Partners>
-	<div slot="header">Partners</div>
+	<div id="partners" slot="header">Partners</div>
 	<div slot="body" class="flexbox-r of-six wrapper just-row top-gap">
 		{#await partners()}
 		<small>...</small>
@@ -186,7 +186,7 @@ const { data, error } = await supabase
 	</div>
 </Partners>
 <Team>
-	<div slot="header">Team</div>
+	<div id="team" slot="header">Team</div>
 	<div slot="body" class="flexbox-r wrapper of-three pad-y-b top-gap">
 	{#await team()}
 	<small>...</small>

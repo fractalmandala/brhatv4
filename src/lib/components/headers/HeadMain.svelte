@@ -28,7 +28,7 @@ function closeMen(){
 			<a href="/"><img src="/images/corpimages/motif.png" id="rotate-img" class="rotate motif" alt="motif" style="transform: rotate({y}deg)"/></a>
 			<a href="/"><img src="/images/corpimages/logotype.png" class="logotype" alt="logotype"/></a>
 		</div>
-		<div class="flexbox-c mobilemenu" on:click={toggleMenu} on:keydown={toggleMenu}>
+		<div class="flexbox-c cc-y-col mobilemenu" on:click={toggleMenu} on:keydown={toggleMenu}>
 			<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g id="menu">
 					<path id="low" d="M24.4189 36.355H6.41895V32.355H24.4189V36.355Z" fill="white"/>
@@ -40,167 +40,48 @@ function closeMen(){
 	</div>
 </div>
 {#if isMenu}
-<div class="flexbox-c fullscreen" in:fly="{{ duration: 600, x: 1500, y: 0, opacity: 1, easing: expoIn}}" out:fly="{{ duration: 400, x: 1500, y: 0, opacity: 1, easing: expoIn}}">
+<div class="flexbox-c fullscreen" in:fly="{{ duration: 700, x: 500, y: 0, opacity: 1, easing: expoIn}}" out:fly="{{ duration: 400, x: 500, y: 0, opacity: 1, easing: expoIn}}">
 	<div class="flexbox-r topstrip">
-		<div class="flexbox-c sec7"><a href="/">
-			<img src="/images/brhatlogos/horizontalwhite.png" alt="finallogo" on:click={closeMen} on:keydown={closeMen} /></a>
-		</div>
 		<div class="closebuttonstrip" on:click={closeMen} on:keydown={closeMen}>
 			<img src="/images/icons/hamburger-close.png" alt="closemenu"/>
 		</div>
 	</div>
-	<div class="desk-nav flexbox-r of-three">
-		<div class="flexbox-c navcol1 in-col">
-			<div class="flexbox-c linkbox boxer">
-			<span class="typ1"></span>
-			<span class="typ2"></span>
-			<span class="typ3"></span>
-			<span class="typ4"></span>
-			<h5 use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi">Bṛhat Anveṣī</a></h5>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi/chapter">Chapters</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi/diaries">Travel Diaries</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi/faq">FAQ</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi/gallery">Gallery</a></p>
-			</div>
-			<div class="flexbox-c linkbox boxer">
-			<span class="typ1"></span>
-			<span class="typ2"></span>
-			<span class="typ3"></span>
-			<span class="typ4"></span>
-			<h5 use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta">Bṛhat Draṣṭā</a></h5>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta/course">Courses</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta/firekeepers">Firekeepers</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta/drashta">Draṣṭās</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta/schools">Schools</a></p>
-			</div>
-			<div class="flexbox-c linkbox boxer">
-			<span class="typ1"></span>
-			<span class="typ2"></span>
-			<span class="typ3"></span>
-			<span class="typ4"></span>
-			<h5 use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/mrdanga">Bṛhadmṛdaṅga</a></h5>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/mrdanga/kala">Kalā</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/mrdanga/rasa">Rasa</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mrdanga/kavita">Kavitā</a></p>
-			</div>
-		</div>
-		<div class="flexbox-c navcol1 in-col">
-			<div class="flexbox-c linkbox boxer">
-			<span class="typ1"></span>
-			<span class="typ2"></span>
-			<span class="typ3"></span>
-			<span class="typ4"></span>
-			<h5 use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala">Fractal Maṇḍala</a></h5>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/essays">Essays</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/aphorisms">Caturasūtra</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/synaptic">Synaptic Reconnection</a></p>
-			</div>
-			<div class="flexbox-c linkbox boxer">
-			<span class="typ1"></span>
-			<span class="typ2"></span>
-			<span class="typ3"></span>
-			<span class="typ4"></span>
-			<h5 use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/rta">Ṛta in Design</a></h5>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/rta/phases">Phases</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/rta/principles">Principles</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/rta/schema">Framework</a></p>
-			</div>
-			<div class="flexbox-c linkbox boxer">
-			<span class="typ1"></span>
-			<span class="typ2"></span>
-			<span class="typ3"></span>
-			<span class="typ4"></span>
-			<h5 use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/aryavarta">Scrolls of Āryavarta</a></h5>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/aryavarta/chapter/01">Kaśyapa's Lament</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/aryavarta/chapter/02">Sūta and Sudā</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/aryavarta/gallery">Gallery</a></p>
-			</div>
-		</div>
-		<div class="flexbox-c navcol1 in-col">
-			<div class="flexbox-c linkbox boxer">
-			<span class="typ1"></span>
-			<span class="typ2"></span>
-			<span class="typ3"></span>
-			<span class="typ4"></span>
-			<h5 use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/about">About</a></h5>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/about/#actions">Actions</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/about/docs/namelogo">Nāmarūpa</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/about/docs/values">Pratijñā</a></p>
-			<p use:reveal={{ transition: "slide", duration: 200, delay: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/about/docs">Vision</a></p>			
-			</div>
-			<div class="flexbox-c linkbox boxer">
-			<span class="typ1"></span>
-			<span class="typ2"></span>
-			<span class="typ3"></span>
-			<span class="typ4"></span>
-			<h5 use:reveal={{ transition: "slide", duration: 300 }} on:click={closeMen} on:keydown={closeMen}><a href="/openlibrary">Open Library</a></h5>
-			</div>
-			<div class="flexbox-c linkbox boxer">
-			<span class="typ1"></span>
-			<span class="typ2"></span>
-			<span class="typ3"></span>
-			<span class="typ4"></span>
-			<h5 use:reveal={{ transition: "slide", duration: 300, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/dhiti">Dhīti</a></h5>
-			</div>
-		</div>
-	</div>
-	<div class="flexbox-c mob-nav">
-		<div class="flexbox-c section sec0">
-			<h5 use:reveal={{ transition: "scale", duration: 300 }} on:click={closeMen} on:keydown={closeMen}><a href="/openlibrary">Open Library</a></h5>
-			<h5 use:reveal={{ transition: "scale", duration: 300, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/dhiti">Dhīti</a></h5>
-		</div>
-		<div class="flexbox-c section sec1">
-			<h5 use:reveal={{ transition: "scale", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/mrdanga">Bṛhadmṛdaṅga</a></h5>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/mrdanga/kala">Kalā</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/mrdanga/rasa">Rasa</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mrdanga/kavita">Kavitā</a></p>
-		</div>
-		<div class="flexbox-c section sec2">
-			<h5 use:reveal={{ transition: "scale", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta">Bṛhat Draṣṭā</a></h5>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta/course">Courses</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta/firekeepers">Firekeepers</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta/drashta">Draṣṭās</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta/schools">Schools</a></p>
-		</div>
-		<div class="flexbox-c section sec3">
-			<h5 use:reveal={{ transition: "scale", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi">Bṛhat Anveṣī</a></h5>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi/chapter">Chapters</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi/diaries">Travel Diaries</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi/faq">FAQ</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi/gallery">Gallery</a></p>
-		</div>
-		<div class="flexbox-c section sec4">
-			<h5 use:reveal={{ transition: "scale", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala">Fractal Maṇḍala</a></h5>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/essays">Essays</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/aphorisms">Caturasūtra</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/synaptic">Synaptic Reconnection</a></p>
-		</div>
-		<div class="flexbox-c section sec5">
-			<h5 use:reveal={{ transition: "scale", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/rta">Ṛta in Design</a></h5>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/rta/phases">Phases</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/rta/principles">Principles</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/rta/schema">Framework</a></p>
-		</div>
-		<div class="flexbox-c section sec6">
-			<h5 use:reveal={{ transition: "scale", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/aryavarta">Scrolls of Āryavarta</a></h5>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/aryavarta/chapter/01">Kaśyapa's Lament</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/aryavarta/chapter/02">Sūta and Sudā</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/aryavarta/gallery">Gallery</a></p>
-		</div>
-		<div class="flexbox-c section sec6">
-			<h5 use:reveal={{ transition: "scale", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/about">About</a></h5>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/about/#actions">Actions</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/about/docs/namelogo">Nāmarūpa</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/about/docs/values">Pratijñā</a></p>
-			<p use:reveal={{ transition: "scale", duration: 200, delay: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/about/docs">Vision</a></p>
-		</div>
-		<div class="flexbox-r socialicons">
-      <a href="https://twitter.com/brhat_in" target="_blank" rel="noreferrer"><img src="/images/icons/twitter-red.png" alt="twitter icon" /></a>
-      <a href="https://www.facebook.com/brhat.in" target="_blank" rel="noreferrer"><img src="/images/icons/facebook-red.png" alt="facebook icon" /></a>
-      <a href="https://www.youtube.com/@brhat" target="_blank" rel="noreferrer"><img src="/images/icons/youtube-red.png" alt="youtube icon" /></a>
-      <a href="https://www.linkedin.com/company/brhat" target="_blank" rel="noreferrer"><img src="/images/icons/linkedin-red.png" alt="linkedin icon" /></a>
-      <a href="https://www.instagram.com/brhat_in/" target="_blank" rel="noreferrer"><img src="/images/icons/instagram-red.png" alt="instagram icon" /></a>
-		</div>
+	<div class="desk-nav flexbox-c">
+			<h5 class="w500" use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/aryavarta">Scrolls of Āryavarta</a></h5>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/aryavarta/chapter/01">Kaśyapa's Lament</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/aryavarta/chapter/02">Sūta and Sudā</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/aryavarta/gallery">Gallery</a></h6>
+		<h5 class="w500" use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi">Bṛhat Anveṣī</a></h5>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi/chapter">Chapters</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi/diaries">Travel Diaries</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi/faq">FAQ</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi/gallery">Gallery</a></h6>
+		<h5 class="w500" use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/about">About</a></h5>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/about/docs/svatahsiddha">Svataḥsiddha</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/about/docs/whatkrishnameanstous">What Śrī Kṛṣṇa Means to Us</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/about/docs/namelogo">Nāmarūpa</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/about/docs/values">Pratijñā</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/about/#team">Team</a></h6>
+			<h5 class="w500" use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta">Bṛhat Draṣṭā</a></h5>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta/course">Courses</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta/firekeepers">Firekeepers</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta/drashta">Draṣṭās</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/drashta/schools">Schools</a></h6>
+			<h5 class="w500" use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/mrdanga">Bṛhadmṛdaṅga</a></h5>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/mrdanga/kala">Kalā</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/mrdanga/rasa">Rasa</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mrdanga/kavita">Kavitā</a></h6>
+			<h5 class="w500" use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala">Fractal Maṇḍala</a></h5>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/essays">Essays</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/aphorisms">Caturasūtra</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/synaptic">Synaptic Reconnection</a></h6>
+			<h5 class="w500" use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/rta">Ṛta in Design</a></h5>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/rta/phases">Phases</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/rta/principles">Principles</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/rta/schema">Framework</a></h6>
+			<h5 class="w500" use:reveal={{ transition: "slide", duration: 300 }} on:click={closeMen} on:keydown={closeMen}><a href="/openlibrary">Open Library</a></h5>
+			<h5 class="w500" use:reveal={{ transition: "slide", duration: 300, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/dhiti">Dhīti</a></h5>
 	</div>
 </div>
 {/if}
@@ -211,65 +92,20 @@ function closeMen(){
 .mobilemenu:hover #top { transform: translateX(-18px);}
 .mobilemenu:hover #low { transform: translateX(18px); transition-delay: 0.09s;}
 .mobilemenu { cursor: pointer;}
-.boxer { position: relative; overflow: hidden; transition: box-shadow 0.36s var(--cubea); border: 1px solid #373737; box-shadow: 1px 1px 2px #171717, -1px -1px 2px #212121; align-items: flex-start; justify-content: flex-start; border-radius: 4px; }
-.boxer span { position: absolute; top: 0; left: 0;}
-.typ1 { border-top: 1px solid #fe4a49;}
-.typ2 { border-right: 1px solid #fe4a49; width: 100%; }
-.typ3 { border-bottom: 1px solid #fe4a49; height: 100%;}
-.typ4 { border-left: 1px solid #fe4a49;}
-.boxer:hover .typ1 { animation: typ1 0.4s var(--cubea) forwards;}
-.boxer:hover .typ2 { animation: typ2 0.54s var(--cubeb) forwards;}
-.boxer:hover .typ3 { animation: typ3 0.27s var(--cubec) forwards;}
-.boxer:hover .typ4 { animation: typ4 0.5s var(--cubed) forwards;}
-.boxer:hover { box-shadow: 7px 10px 15px #171717, -8px -8px 16px #212121;}
+
 .fullscreen {
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	transition: background-image 0.16s var(--cubed);
-}
-.desk-nav { position: relative;}
-.desk-nav::after {
-	content: '';
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: linear-gradient(95.34deg, rgba(9,9,9,0.9) 2.37%, rgba(27,32,35,0.96) 95.73%);
-	z-index: 0;
+	z-index: 899; 
 }
 
-.boxer a { color: inherit;}
-.boxer h5 { color: white;}
-.boxer p { color: #676767;}
-.boxer a:hover { color: #fe4a49;}
-
-@keyframes typ1 {
-	0% { width: 0%; margin-left: 0; }
-	50% { width: 100%; margin-left: 0;}
-	100% { width: 100%; margin-left: 100%;}
+.desk-nav { 
+	z-index: 999; 
 }
-
-@keyframes typ2 {
-	0% { height: 0; margin-top: 0;}
-	50% { height: 100%; margin-top: 0;}
-	100% { height: 100%; margin-top: 100%;}
-}
-
-@keyframes typ3 {
-	0% { width: 100%; margin-left: 100%;}
-	50% { width: 100%; margin-left: 0;}
-	100% { width: 0; margin-left:0;}
-}
-
-@keyframes typ4 {
-	0% { height: 100%; margin-top: 100%;}
-	50% { height: 100%; margin-top: 0;}
-	100% { height: 0; margin-top: 0;}
-}
-
-
+.desk-nav h5 { color: white;}
+.desk-nav h6 { color: #676767;}
 .logo img {
 	cursor: pointer;
 	object-fit: contain;
@@ -277,7 +113,6 @@ function closeMen(){
  	width: 100%;
  	transform-origin: center center;
 }
-
 .motif {
 	object-position: center center;
 }
@@ -288,11 +123,6 @@ function closeMen(){
 
 .motif:hover, .logotype:hover {
 	transform: scale(0.9);
-}
-
-.mobilemenu {
-	align-items: flex-end;
-	justify-content: center;
 }
 
 .header { 
@@ -315,27 +145,31 @@ function closeMen(){
 .fullscreen {
 	position: fixed;
 	top: 0;
-	left: 0;
-	width: 100vw;
+	right: 0;
 	height: 100vh;
 	z-index: 999;
 	background: var(--beau);
 }
 
-.socialicons img {
-	transition: all 0.04s ease-in;
-	transform-origin: center center;
-	filter: saturate(0.01);
-	opacity: 0.4;
-	object-fit: contain;
-	height: 24px;
-	width: 24px;
+.fullscreen::after {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: 100%;
+	height: 0%;
+	content: '';
+	border-left: 1px solid #fe4a49;
 }
 
-.socialicons img:hover {
-	opacity: 1;
-	filter: saturate(1);
+.fullscreen:hover::after {
+	animation: linecoming 0.5s var(--cubec) forwards;
 }
+
+@keyframes linecoming {
+	0% { top: 50%; height: 0%;}
+	100% { top: 0; height: 100%;}
+}
+
 
 .closebuttonstrip img {
 	object-fit: contain;
@@ -359,43 +193,20 @@ function closeMen(){
 	padding-right: 8px;
 	text-align: right;
 }
+.topstrip {z-index: 10;}
 
-
-.mob-nav { overflow-y: scroll;}
-
-.mob-nav a { color: inherit;}
-.mob-nav h5 { color: white;}
-.mob-nav p { color: #878787;}
-
-.linkbox {
-	transform-origin: center center;
-}
-
-.sec7 img {
-	transform-origin: center center;
-	transition: all 0.23s var(--cubec);
-}
-
-.sec7 img:hover {
-	transform: scale(0.9);
-}
-
-.mob-nav a { transition: all 0.12s var(--cubeb);}
-.mob-nav a:hover { color: #fe4a49;}
-.mob-nav p { transition: all 0.12s var(--cubea); transform-origin: center left;}
-.mob-nav p:hover { transform: scale(0.9);}
 
 @media screen and (min-width: 900px) {
-	.topstrip, .boxer { background: var(--beau); z-index: 2;}
+	.topstrip { background: transparent;}
 	.headerbox, .header { height: 72px;}
 	.headerbox { padding: 0 40px;}
 	.logo { width: calc(100% - 48px); height: 100%; align-items: center; }
 	.motif { width: 50px; height: 50px;}
 	.logotype { width: 96px; height: 38px; margin-top: 10px; margin-left: 12px;}
-	.mobilemenu { width: 48px; height: 100%;}
-	.fullscreen { padding: 0;}
-	.topstrip { justify-content: space-between; border-bottom: 1px solid #373737; align-items: center; padding: 16px 5vw 16px 5vw;}
-	.socialicons { gap: 32px;}
+	.mobilemenu svg { width: 40px;}
+	.fullscreen { padding: 0;	width: 32vw;}
+	.topstrip { justify-content: space-between; align-items: center; padding: 32px 40px 0 5vw; height: 72px;}
+
 	.closebuttonstrip {
 		width: 100%;
 	}
@@ -403,67 +214,57 @@ function closeMen(){
 		width: 32px;
 		height: 32px;
 	}
-	.socialicons img {
-		height: 24px;
-		width: 24px;
-	}
-	.desk-nav { display: flex; padding: 0 6vw 16px 6vw; height: calc(100% - 48px); justify-content: center;}
-	.navcol1 { width: 30%;}
-	.mob-nav { display: none;}
-	.sec7 img { object-fit: contain; width: 25%;}
-	.boxer { height: 28%; margin: 12px 0; justify-content: flex-start; padding-top: 16px;}
-	.linkbox { padding-left: 16px; padding-bottom: 8px;}
-	.boxer p { margin-top: 0; margin-bottom: 8px;}
-	.boxer h5 { letter-spacing: 0px; font-weight: 400; margin-top: 0; margin-bottom: 8px; }
+	.desk-nav { display: flex; padding: 16px 48px 32px 48px; height: calc(100% - 72px); overflow-y: scroll;}
+	.desk-nav h5 { margin-top: 24px; margin-bottom: 0; padding-top: 24px; border-top: 1px solid #373737;}
+	.desk-nav h6 { margin-top: 16px; margin-bottom: 0;}
+
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
-	.topstrip, .boxer { background: var(--beau); z-index: 2;}
+	.topstrip { background: transparent; }
 	.headerbox, .header { height: 72px;}
 	.headerbox { padding: 0 32px;}
 	.logo { width: calc(100% - 48px); height: 100%; align-items: center; }
 	.motif { width: 56px; height: 56px;}
 	.logotype { width: 100px; height: 42px; margin-top: 12px; margin-left: 12px;}
-	.mobilemenu { width: 48px; height: 100%;}
-	.socialicons img {
-		height: 24px;
-		width: 24px;
+	.mobilemenu svg { width: 40px;}
+	.fullscreen { padding: 0;	width: 40vw;}
+	.topstrip { justify-content: space-between; align-items: center; padding: 32px 40px 0 5vw; height: 72px;}
+
+	.closebuttonstrip {
+		width: 100%;
 	}
-	.fullscreen { height: 100vh; width: 100%;}
-	.topstrip { height: 80px;}
-	.mob-nav { display: none;}
-	.desk-nav { display: flex; height: calc(100vh - 72px); padding: 20px 32px;}
-	.desk-nav .navcol1 { justify-content: center; gap: 20px;}
-	.boxer { height: 30%; padding-left: 12px;}
-	.sec7 img { object-fit: contain; width: 20%;}
-	.boxer p { margin-bottom: 4px;}
-	.boxer h5 { font-size: 20px;}
-	.topstrip { height: 72px; align-items: center; padding: 0 16px;}
-	.closebuttonstrip img { height: 36px;}
+	.closebuttonstrip img {
+		width: 32px;
+		height: 32px;
+	}
+	.desk-nav { display: flex; padding: 16px 24px 32px 24px; height: calc(100% - 72px); overflow-y: scroll;}
+	.desk-nav h5 { margin-top: 24px; margin-bottom: 0; padding-top: 24px; border-top: 1px solid #373737;}
+	.desk-nav h6 { margin-top: 16px; margin-bottom: 0;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
-	.topstrip, .boxer { background: var(--beau); z-index: 2;}
+	.topstrip { background: transparent;}
 	.headerbox, .header { height: 72px;}
 	.headerbox { padding: 0 40px;}
 	.logo { width: calc(100% - 48px); height: 100%; align-items: center; }
 	.motif { width: 56px; height: 56px;}
 	.logotype { width: 100px; height: 42px; margin-top: 12px; margin-left: 12px;}
-	.mobilemenu { width: 48px; height: 100%;}
-	.socialicons img {
-		height: 24px;
-		width: 24px;
+	.mobilemenu svg { width: 40px;}
+	.fullscreen { padding: 0;	width: 44vw;}
+	.topstrip { justify-content: space-between; align-items: center; padding: 32px 40px 0 5vw; height: 72px;}
+
+	.closebuttonstrip {
+		width: 100%;
 	}
-	.fullscreen { height: 100vh;}
-	.topstrip { height: 72px; align-items: center; padding: 0 16px;}
-	.closebuttonstrip img { height: 40px;}
-	.mob-nav { display: none;}
-	.desk-nav { display: flex; height: calc(100vh - 72px); padding: 16px;}
-	.desk-nav .navcol1 { justify-content: center; gap: 32px;}
-	.boxer { height: 28%; padding-left: 12px;}
-	.boxer p { margin-bottom: 4px;}
-	.boxer h5 { font-size: 18px;}
-	.sec7 img { object-fit: contain; width: 24%;}
+	.closebuttonstrip img {
+		width: 32px;
+		height: 32px;
+	}
+	.desk-nav { display: flex; padding: 16px 24px 32px 24px; height: calc(100% - 72px); overflow-y: scroll;}
+	.desk-nav h5 { margin-top: 24px; margin-bottom: 0; padding-top: 24px; border-top: 1px solid #373737;}
+	.desk-nav h6 { margin-top: 16px; margin-bottom: 0;}
+
 }
 
 @media screen and (max-width: 575px) {
@@ -473,27 +274,21 @@ function closeMen(){
 	.logo { width: calc(100% - 80px); height: 100%; gap: 0;align-items: center; justify-content: flex-start;}
 	.motif { width: 48px; height: 48px;}
 	.logotype { width: 88px; height: 40px; margin-top: 12px; margin-left: 8px; }
-	.mobilemenu { height: 100%;}
+
 	.mobilemenu svg { width: 40px;}
-	.fullscreen { padding: 16px 4vw; height: 100vh; width: 100vw; overflow-y: scroll;}
-	.topstrip { justify-content: space-between; border-bottom: 1px solid #373737; align-items: center; margin-bottom: 20px;}
-	.socialicons { gap: 32px; width: 100%; padding-top: 32px; justify-content: flex-start;}
-	.closebuttonstrip { width: 20%; height: 48px;}
+	.fullscreen { padding: 0; width: 100vw;}
+	.topstrip { justify-content: space-between; align-items: center; padding: 16px 24px 0 24px; height: 48px;}
+
+	.closebuttonstrip {
+		width: 100%;
+	}
 	.closebuttonstrip img {
 		width: 32px;
 		height: 32px;
 	}
-	.socialicons img {
-		height: 28px;
-		width: 28px;
-	}
-	.mob-nav { display: flex; padding: 0 16px;}
-	.mob-nav p { margin: 2px 0 5px 0; font-size: 20px;}
-	.section { border-bottom: 1px solid #373737; padding-bottom: 20px; padding-top: 16px;}
-	.mob-nav h5 { font-size: 24px; text-transform: capitalize; font-weight: 500;}
-	.sec7 img { object-fit: contain; width: 60%;}
-	.sec7 { padding: 8px 0 16px 0; width: 70%;}
-	.desk-nav { display: none;}
+	.desk-nav { display: flex; padding: 16px 32px 32px 32px; height: calc(100% - 72px); overflow-y: scroll;}
+	.desk-nav h5 { margin-top: 16px; margin-bottom: 0; padding-top: 24px; border-top: 1px solid #373737;}
+	.desk-nav h6 { margin-top: 16px; margin-bottom: 0;}
 }
 
 </style>

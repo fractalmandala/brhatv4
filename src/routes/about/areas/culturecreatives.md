@@ -3,9 +3,7 @@ title: Culture Creatives
 image: "/images/areas-cc.webp"
 ---
 
-<div class="marginbox">
-<img src="/images/corpimages/ganapati.webp" alt="ganapati" />
-</div>
+<img class="image" src="/images/corpimages/ganapati.webp" alt="ganapati" />
 
 
 Culture, as Loren Eiseley said, is stand-in Nature; a human substitute to the laws of Nature which broke down when man discovered technology, came out of the food chain and broke the natural order. Culture through its laws and conventions tries to mimic and safeguard natural laws, and at the same time, in a society like Bhāratavarṣa, tries to spiritually elevate man while respecting natural physical constraints.
@@ -34,12 +32,5 @@ The infusion of this cultural wisdom in personal life will lead to psychological
 
 
 <style>
-      .marginbox img {
-      object-fit: contain;
-      width: 48%;
-      text-align: center;
-    }
-
-    .marginbox { align-items: center;}
-  p, h5 { text-align: left;}
-  </style>
+.image { object-fit: contain; width: 30%; margin-bottom: 32px;}
+</style>

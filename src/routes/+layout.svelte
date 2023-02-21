@@ -2,7 +2,6 @@
 // @ts-nocheck
 
 import { dev } from '$app/environment';
-import '@fontsource/ibm-plex-sans-condensed'
 import { inject } from '@vercel/analytics';
 import '$lib/styles/componentstyles.sass'
 import '$lib/styles/typographyglobal.sass'
@@ -14,8 +13,5 @@ inject({ mode: dev ? 'development' : 'production' });
 
 <slot></slot>
 <Footer></Footer>
-
-
-
 
 

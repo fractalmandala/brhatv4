@@ -2,11 +2,22 @@
 title: Svataḥsiddha
 ---
 
-> “How are we collectively creating a world that none of us wants, individually”
-> <cite>– Daniel Christian Wahl</cite>
+<script>
+import BlockQuote1 from '$lib/components/reuse/BlockQuote.svelte'
+import BlockQuote2 from '$lib/components/reuse/BlockQuote.svelte'
+</script>
 
-> ‘We are approaching the power of Gods, without the wisdom of Gods”
-> <cite>– Daniel Schmartenberger</cite>
+
+<BlockQuote1>
+<div slot="quote" class="the-quote">“How are we collectively creating a world that none of us wants, individually”</div>
+<div slot="cite" class="the-cite">Daniel Christian Wahl</div>
+</BlockQuote1>
+
+
+<BlockQuote2>
+<div slot="quote" class="the-quote">“We are approaching the power of Gods, without the wisdom of Gods”</div>
+<div slot="cite" class="the-cite">Daniel Schmartenberger</div>
+</BlockQuote2>
 
 #### Culture Compatible Public Policy
 
@@ -71,10 +82,11 @@ Our work at the intersection of Culture, Public Policy and Leadership Developmen
 This is an attempt to articulate the redemptive force of our culture in empathetic, personal ways via story-telling. The luminosity and grandeur of the Indian civilizational knowledge can also be intimidating for the English educated youth of India. We need means for them to experience Culture as their ally, as something that cushions them in deeply personal ways.
     
 It is only when people experience culture in such intimate way that they would resonate with the broader civilizational struggle and the lend support to efforts that seek to institutionalize cultural protection via policy. In other words, this is demand curation for cultural policy. This is a creative activity that needs artistic, story-telling and dialogic competencies.
-    
-- **Public Policy Research**: If cultural immersion is the way for demand generation, the culmination of that consciousness into an institutional form requires specific policy recommendations. This is a highly focused, specialized activity that needs a long gestation but the outcomes have inter-generational impact.
-- **Leadership Development**: Beyond a point, all institutions and efforts at culture building boil down to embodied cognition. Individuals who embody and live that culture and inspire others. Our third vector is the cultivation of such leadership. People who understand the civilizational frameworks and can creatively synthesize them for contemporary contexts to solve problems that matter.
 
-<style>
-p { font-size: 21px;}
-</style>
+#### Public Policy Research
+If cultural immersion is the way for demand generation, the culmination of that consciousness into an institutional form requires specific policy recommendations. This is a highly focused, specialized activity that needs a long gestation but the outcomes have inter-generational impact.
+
+#### Leadership Development
+Beyond a point, all institutions and efforts at culture building boil down to embodied cognition. Individuals who embody and live that culture and inspire others. Our third vector is the cultivation of such leadership. People who understand the civilizational frameworks and can creatively synthesize them for contemporary contexts to solve problems that matter.
+    
+

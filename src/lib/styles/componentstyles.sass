@@ -1,3 +1,4 @@
+@import '@fontsource/ibm-plex-sans-condensed'
 
 :root, *
   box-sizing: border-box
@@ -23,7 +24,7 @@
   text-transform: uppercase
 
 .swiper
-  height: 100%
+  height: 100vh
   width: 100%
   position: relative
   overflow: hidden
@@ -418,6 +419,42 @@ cite
 .in-row
   display: flex
   flex-direction: row
+
+.sidebar
+  background: #fcfcfc
+  @media screen and (min-width: 768px)
+    width: 360px
+    border-right: 1px solid #f1f1f1
+    position: sticky
+    height: 100vh
+    top: 0
+    padding-top: 120px
+    overflow-y: scroll
+    padding-left: 40px
+    p
+      margin-top: 32px
+      margin-bottom: 0
+      letter-spacing: 0.45px
+      text-transform: uppercase
+      color: #fe4a49
+      border-top: 1px solid #f1f1f1
+      padding-top: 16px
+      width: 88%
+    small
+      margin-top: 8px
+      margin-bottom: 0
+      letter-spacing: 0.25px
+
+.document-sheet
+  padding-right: 16vw
+  @media screen and (min-width: 768px)
+    padding-bottom: 80px
+
+.maindoc
+  @media screen and (min-width: 768px)
+    width: calc(100% - 360px)
+    padding-top: 120px
+    padding-left: 80px
 
 .gap24
   gap: 24px
