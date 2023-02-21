@@ -1,7 +1,7 @@
 <script>
 // @ts-nocheck
 // @ts-ignore
-import AuthorBox from '$lib/components/pagecomps/AuthorBox.svelte'
+
 /**
 	 * @type {{ category: any; title: any; author: any; date: any; tags: any; content: any; image: any; }}
 	 */
