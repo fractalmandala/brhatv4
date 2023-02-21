@@ -1,6 +1,8 @@
 <script lang="ts">
 import { onMount } from 'svelte'
 import Documentation from '$lib/components/docs/Documentation.svelte'
+import SearchInput from '$lib/components/reuse/SearchInput.svelte'
+import SearchResults from '$lib/components/reuse/SearchResults.svelte'
 import Animation from '$lib/components/docs/Animation.svelte'
 import General from '$lib/components/docs/General.svelte'
 import PostGre from '$lib/components/docs/PostGre.svelte'
@@ -213,6 +215,8 @@ function toggleCat8(){
 }
 </script>
 
+<SearchInput></SearchInput>
+<SearchResults></SearchResults>
 <div id="cat-0" class="cat">
 	<p class="green w400 wide75"><a href="/docs">Docs Home</a></p>
 </div>

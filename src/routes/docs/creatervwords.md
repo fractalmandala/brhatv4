@@ -1,7 +1,7 @@
 ---
 title: create words of rv table
 tag: postgresql
-category: documentation
+category: codes
 date: "2023-01-01"
 ---
 

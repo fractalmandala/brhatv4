@@ -1,7 +1,7 @@
 ---
 title: locomotive setups
-tag: locomotive scroll
-category: codes
+tag: animation
+category: libraries
 date: "2023-01-01"
 ---
 

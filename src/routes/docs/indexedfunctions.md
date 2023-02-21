@@ -1,7 +1,7 @@
 ---
 title: Index the Hover Functions
 date: "2023-01-01"
-tag: hover, functions
+tag: javascript
 category: codes
 ---
 

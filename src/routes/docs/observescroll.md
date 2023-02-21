@@ -1,6 +1,6 @@
 ---
 title: Observe an Element's Scroll
-category: utilities
+category: codes
 tag: sveltecode
 date: "2022-03-02"
 ---

@@ -1,8 +1,8 @@
 ---
 title: Svelte Reveal
 date: "2023-01-01"
-tag: svelte
-category: documentation
+tag: sveltecode
+category: codes
 ---
 
 ```js

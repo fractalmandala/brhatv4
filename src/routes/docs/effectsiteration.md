@@ -1,6 +1,6 @@
 ---
 title: When A Function is needed to iterate for each instance separately
-tag: utilities
+tag: javascript
 category: codes
 date: "2023-01-01"
 ---

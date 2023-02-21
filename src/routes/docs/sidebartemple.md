@@ -1,7 +1,7 @@
 ---
 title: CSS Template for pages with sidebar
 tag: css
-category: documentation
+category: codes
 date: "2023-01-01"
 ---
 

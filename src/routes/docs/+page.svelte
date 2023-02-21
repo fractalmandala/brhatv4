@@ -1,4 +1,48 @@
+<script>
+import SearchInput from '$lib/components/reuse/SearchInput.svelte'
+import SearchResults from '$lib/components/reuse/SearchResults.svelte'
+import { onMount } from 'svelte';
+
+
+  let searchQuery = '';
+  /**
+	 * @type {never[]}
+	 */
+  let searchResults = [];
+
+  async function performSearch() {
+    const response = await fetch(`/api/search?query=${encodeURIComponent(searchQuery)}`);
+    searchResults = await response.json();
+  }
+
+  /**
+	 * @param {{ preventDefault: () => void; }} event
+	 */
+  async function handleSubmit(event) {
+    event.preventDefault();
+    await performSearch();
+  }
+
+  /**
+	 * @param {{ target: { value: string; }; }} event
+	 */
+  async function handleInput(event) {
+    searchQuery = event.target.value;
+    await performSearch();
+  }
+
+  onMount(() => {
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('query');
+    if (query) {
+      searchQuery = query;
+      performSearch();
+    }
+  });
+</script>
+
 <div class="flexbox-c outliner">
+<div class="in-col">
 <p>
 Our website is built completely in Sveltekit, which is a framework for building web applications. Sveltekit allows us to easily create reusable components and manage the state of our application. Once the website is built, it is deployed on Vercel, which is a platform for hosting web applications.
 </p>
@@ -14,5 +58,6 @@ Most of the data for our website is stored in Supabase, which is a real-time dat
 <p>
 Thank you for reading our documentation. We hope it helps you understand our website better.
 </p>
+</div>
 </div>
 

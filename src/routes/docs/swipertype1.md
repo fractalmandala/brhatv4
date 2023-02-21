@@ -1,7 +1,7 @@
 ---
 title: Swiper Type 1
 tag: swiper
-category: documentation
+category: libraries
 date: "2023-01-01"
 ---
 

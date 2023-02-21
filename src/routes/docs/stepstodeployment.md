@@ -1,6 +1,7 @@
 ---
 title: Steps to Deployment
 category: documentation
+tag: general
 ---
 
 1. Framework: Sveltekit

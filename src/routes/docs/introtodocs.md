@@ -1,6 +1,6 @@
 ---
 title: Introduction to Documentation
-tag: docs
+tag: general
 category: documentation
 date: "2023-10-10"
 ---

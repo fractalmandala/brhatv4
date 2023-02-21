@@ -1,8 +1,8 @@
 ---
 title: Superscroll
 date: "2023-01-01"
-tag: scrolling
-category: codes
+tag: animation
+category: libraries
 ---
 
 ```js

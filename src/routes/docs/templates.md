@@ -1,7 +1,7 @@
 ---
 title: standard templates for usage
 tag: css
-category: documentation
+category: codes
 date: "2023-01-01"
 ---
 

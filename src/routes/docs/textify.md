@@ -1,7 +1,7 @@
 ---
 title: Textify Stuff
-category: codes
-tag: textify
+category: libraries
+tag: animation
 date: "2023-01-01"
 ---
 

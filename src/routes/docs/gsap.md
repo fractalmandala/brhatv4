@@ -1,7 +1,7 @@
 ---
 title: gsap
 tag: gsap
-category: codes
+category: libraries
 date: "2023-01-01"
 ---
 
