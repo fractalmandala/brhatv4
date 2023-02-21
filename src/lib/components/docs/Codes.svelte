@@ -36,5 +36,5 @@ export const postgrePosts = async () => {
 
 <style>
 small { text-transform: capitalize; margin: 0 0 4px 0; padding: 0; color: #878787;}
-.flexbox-c { margin-bottom: 24px;}
+.flexbox-c { margin-bottom: 12px;}
 </style>
