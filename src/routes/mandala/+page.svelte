@@ -5,7 +5,7 @@ import { blur, fly } from 'svelte/transition'
 import { cubicOut } from 'svelte/easing'
 import Animations from 'textify.js';
 import '$lib/styles/textify.css'
-let y: number
+let y: 1
 let resp = 1
 let divider = 1
 
@@ -79,37 +79,94 @@ onMount(() => {
 </script>
 
 <svelte:window bind:scrollY={y} bind:innerWidth={resp}/>
-<div style="background: white">
-	<div class="imagecontainer-hero"></div>
-	<div class="c-c-c-c pad4 l2">
-		<p>
+
+	<div class="flexbox-c full imgbox l00">
+	  <!--
+		<img src="/images/mandala/ogmandala.webp" alt="hero" style="transform: scale({y/3000}) translateY({y}px) rotate({y}deg)"/>
+    -->
+	</div>
+	<div class="flexbox-c pad-x-40 l2">
+		<h5 class="w300">
 			To be a history in the true sense of the word, a work must be a story of the people inhabiting a country.
-		</p>
-		<p>
-			It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
-		</p>
-		<h5>
-			Such a history of India is still to be written.
 		</h5>
+		<h5 class="w300">
+			It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
+		</h5>
+		<h3>
+			Such a history of India is still to be written.
+		</h3>
 		<small style="color: #10C56D">
 				Shri KM Munshi
 		</small>
 	</div>
-	<div class="c-c-c-c pad4 l3">
-		<h4 class="weight200">
-			Fractal Maṇḍala is a project to research and articulate the emergence of Indian civilizational consciousness. It is the story of ancient Indians willing themselves into organic unity.
-		</h4>
+	<div class="flexbox-r full pad-x-40 l5">
+		<div class="in-col im-col wide40">
+				<img src="/images/mandala/itihaas.webp" alt="itihas"/>
+		</div>
+		<div class="in-col wide60 pad-x-l">
+			<h6 class="w300 m-bot-zero">
+			with a continuity of untold millennia, the passage of time visible to us in
+			</h6>
+			<h2 class="green-grd wbold m-top-zero">Itihāsa</h2>
+		</div>
 	</div>
 
-</div>
+	<div class="flexbox-r full pad-x-40 l6">
+		<div class="in-col im-col wide40">
+				<img src="/images/mandala/bharata.webp" alt="bharat"/>
+		</div>
+		<div class="in-col wide60 pad-x-l">
+			<h6 class="w300 m-bot-zero">
+			information was processed in increasingly complex ways within the physical environment best described as
+			</h6>
+			<h2 class="green-grd wbold m-top-zero">Bhārata</h2>
+		</div>
+	</div>
+
+	<div class="flexbox-r full pad-x-40 l7">
+		<div class="in-col im-col wide40">
+				<img src="/images/mandala/dharma.webp" alt="dharma"/>
+		</div>
+		<div class="in-col wide60 pad-x-l">
+			<h6 class="w300 m-bot-zero">
+			emerged a civilizational consciousness, with multi-level coherence. It is known to us as
+			</h6>
+			<h2 class="green-grd wbold m-top-zero">Dharma</h2>
+		</div>
+	</div>
+
+	<div class="flexbox-c pad-x-40 full l3">
+		<h2 class="weight200">
+			Fractal Maṇḍala is a project to research and articulate the emergence of Indian civilizational consciousness.
+		</h2>
+		<div class="in-col pad-y-b wide60">
+			<h5 class="w300"><a href="/mandala/meaning">Fractal Maṇḍala - Definition, Instances</a></h5>
+			<h5 class="w300"><a href="/mandala/fractals/civcon">On Indian Civilizational Consciousness</a></h5>
+			<h5 class="w300"><a href="/mandala/fractals/aphorisms">Caturasūtra - 4 Aphorisms</a></h5>
+			<h5 class="w300"><a href="/mandala/fractals/essay1">The Macrohistoric Case</a></h5>
+			<h5 class="w300"><a href="/mandala/fractals/essay2">Ratha as a Bīja</a></h5>
+			<h5 class="w300"><a href="/mandala/fractals/ancestors">Ancestors Outside of Time</a></h5>
+			<h5 class="w300"><a href="/mandala/fractals/">History is Ontic, Itihāsa is Ontologic</a></h5>
+			<h5 class="w300"><a href="/mandala/fractals/">Synaptic Reconnection</a></h5>
+			<h5 class="w300"><a href="/mandala/fractals/">Rāma's Journey</a></h5>
+		</div>
+	</div>
+
+
 
 <style>
 
 
-.imagecontainer-hero {
-	background-image: url('/images/mandala/1132-m1-1.webp');
+.l00 {
+	background-image: url('/images/mandala/1131-m2-1.webp');
 }
 
+
+
+.l00 {
+	justify-content: flex-start;
+	align-items: center;
+}
 @keyframes selfwiden {
 	from { width: calc(100%/9);}
 	to { width: 60%;}
@@ -142,8 +199,11 @@ onMount(() => {
 }
 
 
-
-
+.l5 img {
+	object-fit: cover;
+	width: 512px;
+	height: 512px;
+}
 
 @media screen and (min-width: 768px) {
 
@@ -152,11 +212,13 @@ onMount(() => {
 	}
 
 
-	.l2, .l3 {
+	.l2 {
 	height: 100vh;
 	justify-content: center;
 	}
-	.l2 p, .l2 h5, .l3 h4 { margin-top: 0; width: 75%;}
+	.l3 { justify-content: flex-start;}
+  .l3 .in-col h5 { margin-top: 12px; margin-bottom: 0; padding-bottom: 12px; border-bottom: 1px solid #f1f1f1;}
+	.l3 a:hover { color: #10c56d;}
 
 
 }
