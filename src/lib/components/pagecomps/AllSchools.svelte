@@ -3,14 +3,30 @@
 import supabase from '$lib/db'
 import { fly } from 'svelte/transition';
 import { quintOut } from 'svelte/easing';
-let isMore = {}
 
-function toggleMore(id){
-	isMore = {
-		...Object.fromEntries(Object.entries(isMore).map(([key, value]) => [key, false])),
-		[id]: !isMore[id]
-	}
+let data = []
+let toggledIndex = null;
+let isShow = data.map(() => false);
+let selected = null;
+
+function handleSelectChange(event) {
+  selected = event.target.value;
 }
+
+function closeDropdown() {
+  selected = null;
+}
+
+function toggleFunction(i) {
+  if (toggledIndex === i) {
+    isShow[i] = false;
+    toggledIndex = null;
+  } else {
+    isShow = isShow.map((show, index) => index === i);
+    toggledIndex = i;
+  }
+}
+
 
 export async function fetchDrashtas(){
 	const { data, error } = await supabase
@@ -24,161 +40,53 @@ export async function fetchDrashtas(){
 
 </script>
 
-<div class="r-r-r-r l0">
-	<div class="c-c-c-c side">
-		<h5 class="sidesmall"><a href="/drashta">Draṣṭā Home</a></h5>
-		<h5 class="sidesmall"><a href="/drashta/drashtas">Draṣṭās</a></h5>
-		<h5 class="sidesmall"><a href="/drashta/schools">Schools of Thought</a></h5>
-		<h5 class="sidesmall"><a href="/drashta/firekeepers">Firekeepers</a></h5>
-	</div>
-	<div class="c-c-c-c main">
+<div class="flexbox-c">
 		{#await fetchDrashtas()}		
 		<small>...</small>
 		{:then data}
-		{#each data as item}
-		<div class="c-c-c-c formal3 element" class:selected={isMore[item.id]}>
-			<h5 on:click={() => toggleMore(item.id)} on:keydown={() => toggleMore(item.id)}>{item.name}</h5>
-			{#if isMore[item.id]}
-			<pre
-				in:fly="{{delay: 100, duration: 100, y: 0, x: 500, opacity: 0, easing: quintOut}}"
-				out:fly="{{delay: 0, duration: 100, x: -500, y: 0, opacity: 0, easing: quintOut}}"
-			>{item.content}</pre>
-			{/if}
-		</div>
-		{/each}
+			<div class="formal3">
+  	<select on:change={handleSelectChange}>
+    {#each data as item, i}
+      <option value={i}><p>{item.name}</p></option>
+    {/each}
+  	</select>
+  	{#if selected !== null}
+    <div class="in-col content popper">
+      <cite class="red" on:click={closeDropdown} on:keydown={closeDropdown}>CLOSE</cite>
+      <pre
+        in:fly="{{delay: 100, duration: 100, y: 500, x: 0, opacity: 0, easing: quintOut}}"
+        out:fly="{{delay: 0, duration: 100, x: 0, y: 500, opacity: 0, easing: quintOut}}"
+      >{data[selected].content}</pre>
+    </div>
+  	{/if}
+	</div>
 		{:catch error}
 		<pre>{error}</pre>
 		{/await}
-	</div>
 </div>
 
 
 <style>
 
 
-.side h5, .main h5 { cursor: pointer;}
-.main h5 {
-	text-transform: capitalize;
-}
-.selected h5{
-	color: #fe4a49;
-}
-.element {
-	width: 100%;
-	transition: width 0.42s ease;
-	display: flex;
-	flex-direction: column;
-	border-bottom: 1px solid #d7d7d7;
+select {
+	text-transform: capitalize !important;
+	font-size: 20px;
+	height: 32px;
+	background: #fe4a49;
+	border: 1px solid #fe4a49;
+	color: white;
+	border-radius: 4px;
 }
 
-.main pre { color: #474747;}
-.l0 { z-index: 0;}
 
 
 @media screen and (min-width: 900px) {
-	.l0 { padding-top: 120px; min-height: 100vh;}
-	.side h5 {
-		font-weight: 600;
-		font-size: 18px;
-		text-transform: uppercase;
-		margin: 0;
-		padding: 16px 0 16px 8px;
-		border-bottom: 1px solid #d7d7d7;
-		background: white;
-		transition: all 0.07s var(--cube1);
-		color: #878787;
-	}
-	.side a { color: #c1c1c1;}
-	.side a:hover { color: #fe4a49;}
-	.side h5:hover a { color: #272727;}
 
-	.side h5:hover {
-		background: #d7d7d7;
-		color: #272727;
-	}
-	.side { width: 20%; position: sticky; top: 120px; height: 100%;}
-	.main { width: 80%; padding-left: 4vw; padding-right: 12vw; padding-bottom: 4em;}
-	.main h5 {
-		font-size: 20px;
-		letter-spacing: -0.5px;
-	}
-	.element pre { font-size: 18px; margin-top: 8px;}
-	.element {
-		border-bottom: 1px solid #d7d7d7;
-	}
-	.element h5 {
-		transition: all 0.25s var(--cube1);
-	}
-	.element:hover {
-		background: #e7e7e7;
-	}
-	.element:hover h5 {
-		padding-left: 16px;
-	}
-	.selected:hover {
-		background: white;
-	}
-	.selected:hover h5 {
-		padding-left: 0;
-	}
-	.selected h5 {
-		margin-bottom: 0;
-	}
-	.selected pre { color: #878787;}
+	.formal3 .content { position: fixed; top: 72px; z-index: 600; left: 0; width: 50%; font-size: 18px; color: #878787; background: rgba(0,0,0,0.9); backdrop-filter: blur(5px); border: 1px solid #878787; border-radius: 4px; padding: 80px; height: calc(100vh - 72px); overflow-y: scroll; }
+	.content pre { font-size: 20px; color: white; line-height: 1.5;}
+	.content cite { text-align: left; cursor: pointer;}
 }
 
-@media screen and (max-width: 899px) and (min-width: 576px) {
-	.l0 { padding-top: 120px; min-height: 100vh;}
-	.side h5 {
-		font-weight: 600;
-		font-size: 16px;
-		text-transform: uppercase;
-		margin: 0;
-		padding: 16px 0 16px 8px;
-		border-bottom: 1px solid #d7d7d7;
-		background: white;
-		transition: all 0.07s var(--cube1);
-		color: #878787;
-	}
-	.side a { color: #c1c1c1;}
-	.side a:hover { color: #fe4a49;}
-	.side h5:hover a { color: #272727;}
 
-	.side h5:hover {
-		background: #d7d7d7;
-		color: #272727;
-	}
-	.side { width: 25%; position: sticky; top: 120px; height: 100%;}
-	.main { width: 75%; padding-left: 4vw; padding-right: 8vw; padding-bottom: 4em;}
-	.main h5 {
-		font-size: 20px;
-		letter-spacing: -0.5px;
-	}
-	.element pre { font-size: 18px; margin-top: 8px;}
-	.element h5 {
-		transition: all 0.25s var(--cube1);
-	}
-	.element:hover {
-		background: #e7e7e7;
-	}
-	.element:hover h5 {
-		padding-left: 16px;
-	}
-	.selected:hover {
-		background: white;
-	}
-	.selected:hover h5 {
-		padding-left: 0;
-	}
-	.selected h5 {
-		margin-bottom: 0;
-	}
-	.selected pre { color: #878787;}
-}
-
-@media screen and (max-width: 575px) {
-	.l0 { flex-wrap: wrap; min-height: 100vh;}
-	.side { display: none;}
-	.main { width: 100%; height: 100%; padding-top: 120px; padding-bottom: 80px;}
-}
 </style>

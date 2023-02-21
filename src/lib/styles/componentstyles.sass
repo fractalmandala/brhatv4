@@ -23,7 +23,7 @@
   text-transform: uppercase
 
 .swiper
-  height: 100vh
+  height: 100%
   width: 100%
   position: relative
   overflow: hidden
@@ -48,6 +48,7 @@
 .swiper-slide
   display: flex
   overflow: hidden
+  width: 100%
 
 .swiper-wrapper
   transition-timing-function: cubic-bezier(0.760, 0.035, 0.560, 0.985)
@@ -169,7 +170,9 @@ cite
     padding: 6px 12px
     margin-bottom: 24px
 
-
+.border-bot
+  border-bottom: 4px solid #fe4a49
+  padding-bottom: 32px
 //**********************************************************************************************************
 //PADS AND MARGINS
 
@@ -228,6 +231,9 @@ cite
 
 .m-top-24
   margin-top: 24px
+
+.m-bot-16
+  margin-bottom: 16px
 
 .m-bot-zero
   margin-bottom: 0
@@ -330,7 +336,13 @@ cite
   @media screen and (min-width: 768px)
     width: 12%
   @media screen and (max-width: 767px)
-    width: 100%  
+    width: 100%
+
+.left-cc
+  padding-right: 64px
+
+.right-cc
+  padding-left: 64px  
 
 .top-gap
   @media screen and (min-width: 768px)

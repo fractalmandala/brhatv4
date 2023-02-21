@@ -2,8 +2,8 @@
 	import { goto } from '$app/navigation';
 	import supabase from '$lib/db';
 	import { reveal } from 'svelte-reveal';
-	import Header from '$lib/components/headers/HeadMain.svelte'
 	import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte';
+  import Header from '$lib/components/headers/HeadMain.svelte'
 	import StaticH1 from '$lib/components/headers/StaticH1.svelte';
 	import Dhiti from '$lib/components/headers/StaticH1.svelte';
 	import AllBrands from '$lib/components/globals/AllBrands.svelte'
@@ -374,7 +374,7 @@
 		background: #f7f7f7;
 	}
 	.blogbox { height: auto; margin-bottom: 48px;}
-	.blogbox h6 { margin-top: 16px;}
+
 	.blogbox h6, .blogbox small, .blogbox cite { padding-left: 16px; padding-right: 16px;}
 	.book {
 		margin-bottom: 24px;
@@ -386,6 +386,8 @@
 	.book {
 		margin-bottom: 8px;
 	}
-
+	.blogbox h6 {
+		margin-top: 24px;
+	}
 }
 </style>
