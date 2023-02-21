@@ -32,13 +32,17 @@
   background-size: cover
   background-position: center center
   background-repeat: no-repeat
+  .screen
+    height: 100%
+    width: 100%
+    background: rgba(0,0,0,0.8)
 
 .swiper-slide
   display: flex
   overflow: hidden
 
 .swiper-wrapper
-  transition-timing-function: cubic-bezier(0.835, 0.060, 1.000, -0.010)
+  transition-timing-function: cubic-bezier(0.760, 0.035, 0.560, 0.985)
 
 .green
   color: #10C56D
@@ -46,11 +50,17 @@
 .red
   color: #fe4a49
 
+.orange
+  color: #ff3d00
+
 .grey
   color: #878787
 
 .blue
   color: #255F85
+
+.white
+  color: white
 
 .header
   z-index: 999
@@ -138,7 +148,6 @@ cite
   font-weight: 400
   letter-spacing: 1px
   border-radius: 4px
-  min-width: 160px
   a
     color: white
   &:hover
@@ -146,6 +155,8 @@ cite
   @media screen and (min-width: 768px)
     padding: 6px 12px
     margin-bottom: 24px
+    max-width: 15vw
+    min-width: 12vw
   @media screen and (max-width: 767px)
     padding: 6px 12px
     margin-bottom: 24px
@@ -162,6 +173,15 @@ cite
     padding-left: 20px
     padding-right: 20px
 
+.pad24
+  @media screen and (max-width: 767px)
+    padding-left: 20px
+    padding-right: 20px
+
+.pad24top
+  @media screen and (max-width: 767px)
+    padding-top: 24px
+
 .pad-y-80
   @media screen and (min-width: 768px)
     padding-top: 80px
@@ -175,6 +195,7 @@ cite
     padding-left: 80px
   @media screen and (max-width: 767px)
     padding-left: 24px
+    padding-right: 24px
 
 .pad-y-t
   padding-top: 40px

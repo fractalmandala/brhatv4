@@ -11,42 +11,6 @@ import 'swiper/css/keyboard'
 import 'swiper/css/mousewheel'
 
 
-let isLine1 = false
-let isLine2 = false
-let isLine3 = false
-let isLine4 = false
-let isLine5 = false
-let isLine6 = false
-
-function toggleLine1(){
-	isLine1 = !isLine1
-}
-function toggleLine2(){
-	isLine2 = !isLine2
-}
-function toggleLine3(){
-	isLine3 = !isLine3
-}
-function toggleLine4(){
-	isLine4 = !isLine4
-}
-function toggleLine5(){
-	isLine5 = !isLine5
-}
-function toggleLine6(){
-	isLine6 = !isLine6
-}
-
-async function getImages(){
-	const { data, error } = await supabase
-	.from('MidjourneyImages')
-	.select()
-	.order('id',{ascending: false})
-	.limit(96)
-	if (error) throw new Error(error.message)
-	return data
-}
-
 </script>
 
 <Swiper
@@ -55,146 +19,109 @@ async function getImages(){
 	mousewheel={true}
 	loop={true}
 	slidesPerView={1}
+  direction={"vertical"}
 >
 <SwiperSlide>
-<div class="r-r-r-r l100">
-	{#await getImages()}
-<small>...</small>
-{:then data}
-
-	{#each data as item, i}
-	<div class="c-c-c-c" id="item-{item.id}">
-	<Lightbox>
-		<img src={item.link} alt={item.id} in:slide="{{ duration: 300, delay: i*10, easing: circOut}}" />
-	</Lightbox>
+<div class="flexbox-r full imgbox l100">
+	<div class="flexbox-c cc-y-col pad-x-40 screen">
+		<h3 class="w300 white">
+				<span class="orange w500">There is a place.</span><br>
+				It lies outside of space and time as we know it,<br>
+				but many of us have been there.<br>
+				It lies in that cultural mid-space so distant yet ever palpable.
+		</h3>
 	</div>
-	{/each}
-
-{:catch error}
-<pre>{error}</pre>
-{/await}
 </div>
 </SwiperSlide>
 <SwiperSlide>
-	<div class="row-of-2 l00">
-		<div class="twobox img-col col-left">
-			<img src="/images/scrolls/anc1.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
+	<div class="flexbox-r full s4">
+		<div class="in-col im-col cc-y-col cc-x-col wide40">
+			<img class="m-top-24 imagesmall" src="/images/scrolls/anc1.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
 		</div>
-		<div class="twobox col-right">
-			<h3 class="animated-element blackb padit"> 
-				There is a place.
-				It lies outside of space and time as we know it,
-				but many of us have been there.
-				It lies in that cultural mid-space so distant yet ever palpable.
-		</h3>
-		</div>
-	</div>
-</SwiperSlide>
-<SwiperSlide>
-	<div class="row-of-2 l01">
-		<div class="twobox col-left">
-			<h3 class="animated-element blackb padit"> 
-	Hive mind. Race memory. Blood bond.
-				We may call it many things, but we know it best when we see it,
-				and it feels warm and familiar…as if a memory we once lived.<br><br>
-						<span class="bigger5 orange">	Perhaps we did, is it not?</span>
-		</h3>
-		</div>
-		<div class="twobox col-right">
-			<img id="imgtwo" class="imgcol" src="/images/scrolls/anc2.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
+		<div class="in-col cc-y-col pad24 pad24top wide60">
+			<h4 class="w400"> 
+				Hive mind. Race memory. Blood bond.<br>
+				We may call it many things, but we know it best when we see it,<br>
+				and it feels warm and familiar…as if a memory we once lived.<br>
+				<span class="orange">	Perhaps we did, is it not?</span>
+		</h4>
 		</div>
 	</div>
 </SwiperSlide>
-<SwiperSlide>
-	<div class="row-of-2 l03">
-	<div class="twobox col-left">
-		<img class="imgcol" src="/images/scrolls/anc3.webp" alt="part3" use:reveal={{ transition: "slide" }}/>
-		</div>
-	<div class="twobox col-right">
-			<h3 class="padit">
-	For countless times before have you been here,
-			and a countless times I.
-	You there, in one incarnation you were a master of mantra.
-			You wrapped meaning around syllables and metre.
-	</div>
-	</div>
-</SwiperSlide>
-<SwiperSlide>
-	<div class="row-of-2 l05">
-		<div class="col-left twobox">
-						<h3 class="padit">
-			And you? A pioneer of tilled grain you were.
-			Your hard, seasoned hands fed a civilization.
-			Another among us was quite a daredevil,
-			boldly he grabbed a wild bull by the horns,
-			First to do so...
-		</div>
-	<div class="col-right twobox">
-		<img class="imgcol" src="/images/scrolls/anc4.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
-	</div>
-	</div>
 
+<SwiperSlide>
+	<div class="flexbox-r full s3">
+		<div class="in-col cc-y-col wide60 pad24top pad-x-l">
+			<h4 class="w400">
+				For countless times before have you been here,<br>
+				and a countless times I.<br><br>
+				You there, in one incarnation you were a master of mantra.<br>
+				You wrapped meaning around syllables and metre.
+			</h4>
+		</div>
+		<div class="in-col im-col cc-y-col cc-x-col wide40">
+			<img class="imagesmall" src="/images/scrolls/anc3.webp" alt="part3" use:reveal={{ transition: "slide" }}/>
+		</div>
+	</div>
 </SwiperSlide>
 <SwiperSlide>
-	<div class="c-c-c-c box5"> 
-	<h5 class="green">
+	<div class="flexbox-r full s4">
+		<div class="in-col im-col cc-y-col cc-x-col wide40">
+			<img class="m-top-24 imagesmall" src="/images/scrolls/anc4.webp" alt="part4" use:reveal={{ transition: "slide" }}/>
+		</div>
+		<div class="in-col cc-y-col pad24 pad24top wide60">
+			<h4 class="w400"> 
+			And you? A pioneer of tilled grain you were.<br>
+			Your hard, seasoned hands fed a civilization.<br>
+			Another among us was quite a daredevil,<br>
+			boldly he grabbed a wild bull by the horns,<br><br>
+			<span class="orange">First to do so...</span>
+		</h4>
+		</div>
+	</div>
+</SwiperSlide>
+<SwiperSlide>
+	<div class="flexbox-c pad-x-40 box5 full"> 
+	<h2 class="orange w400 m-bot-zero">
 		We can access this place,
-	</h5>
-	<h5>
+	</h2>
+	<h5 class="w300 white wide75">
 		outside of space and time though it lies.
 		In images and words, in sounds and vistas,
 		In streams of imagi/memory that can flow through us…
-	</h5>
-	<h3 class="bigger5">
+		<br><br>
 		The Scrolls of Āryavarta is a project to celebrate, express and engage in this shared lore- the dhārmika lore.
 		A calling to all who dream of the Bhārata that once was, or Bhāratas that could have been.
-	</h3>
+	</h5>
 	</div>
 </SwiperSlide>
 <SwiperSlide>
-	<div class="c-c-c-c l10">
-	<div class="mind c-c-c-c" on:mouseenter={toggleLine1} on:mouseleave={toggleLine1}>
-		<p class="green">Prologue</p>
-		<h3>The Bhārata that Once Was, or Those That Could Have Been</h3>
+	<div class="flexbox-c cc-y-col pad-x-40 full">
+	<div class="mind flexbox-c">
+		<p class="orange m-bot-zero">Prologue</p>
+		<h5 class="w400 m-all-zero">The Bhārata that Once Was, or Those That Could Have Been</h5>
 	</div>
-	<div class="mind c-c-c-c" on:mouseenter={toggleLine2} on:mouseleave={toggleLine2}>
-		<p class="green">Chapter 1</p>
-		<h3>Kaśyapa's Lament</h3>
+	<div class="mind flexbox-c">
+		<p class="orange m-bot-zero">Chapter 1</p>
+		<h5 class="w400 m-all-zero">Kaśyapa's Lament</h5>
 	</div>
-	<div class="mind c-c-c-c" on:mouseenter={toggleLine3} on:mouseleave={toggleLine3}>
-		<p class="green">Chapter 2</p>
-		<h3>Sūta and Sudā</h3>
+	<div class="mind flexbox-c">
+		<p class="orange m-bot-zero">Chapter 2</p>
+		<h5 class="w400 m-all-zero">Sūta and Sudā</h5>
 	</div>
-	<div class="mind c-c-c-c" on:mouseenter={toggleLine4} on:mouseleave={toggleLine4}>
-		<p class="green">Upcoming</p>
-		<h3>Nasadīya Across Time and Space</h3>
+	<div class="mind flexbox-c">
+		<p class="orange m-bot-zero">Upcoming</p>
+		<h5 class="w400 m-all-zero">Nasadīya Across Time and Space</h5>
 	</div>
-	<div class="mind c-c-c-c" on:mouseenter={toggleLine5} on:mouseleave={toggleLine5}>
-		<p class="green">Demos</p>
-		<h3><a href="/aryavarta/gallery">Gallery</a></h3>
+	<div class="mind flexbox-c">
+		<p class="orange m-bot-zero">Demos</p>
+		<h5 class="w400 m-all-zero"><a href="/aryavarta/gallery">Gallery</a></h5>
 	</div>
-	<div class="mind c-c-c-c" on:mouseenter={toggleLine6} on:mouseleave={toggleLine6}>
-		<p class="green">About</p>
-		<h3>Tech, AI, Collaboration</h3>
+	<div class="mind flexbox-c">
+		<p class="orange m-bot-zero">About</p>
+		<h5 class="w400 m-all-zero">Tech, AI, Collaboration</h5>
 	</div>
-	{#if isLine1}
-	<img class="images" src="/images/scrolls/scrollsmap.webp" alt="im1" in:scale="{{ delay: 200, opacity: 0, duration: 700, start: 0, easing: circOut}}" out:scale="{{ duration: 100, delay: 0, start: 0, opacity: 0, easing: quadIn}}" />
-	{/if}
-	{#if isLine2}
-	<img class="images" src="/images/scrolls/chap1.webp" alt="im1" in:scale="{{ delay: 200, opacity: 0.5, duration: 300, start: 0.5, easing: circOut}}" out:scale="{{ duration: 100, delay: 0, start: 0, opacity: 0, easing: quadIn}}"/>
-	{/if}
-	{#if isLine3}
-	<img class="images" src="/images/scrolls/chap2.webp" alt="im1" in:scale="{{ delay: 200, opacity: 0.5, duration: 400, start: 0.5, easing: circOut}}" out:scale="{{ duration: 100, delay: 0, start: 0, opacity: 0, easing: quadIn}}"/>
-	{/if}
-	{#if isLine4}
-	<img class="images" src="/images/scrolls/nas.webp" alt="im1" in:scale="{{ delay: 200, opacity: 0.5, duration: 800, start: 0.5, easing: circOut}}" out:scale="{{ duration: 100, delay: 0, start: 0, opacity: 0, easing: quadIn}}"/>
-	{/if}
-	{#if isLine5}
-	<img class="images" src="/images/scrolls/chap5.webp" alt="im1" in:scale="{{ delay: 200, opacity: 0.5, duration: 300, start: 0.5, easing: circOut}}" out:scale="{{ duration: 100, delay: 0, start: 0, opacity: 0, easing: quadIn}}"/>
-	{/if}
-	{#if isLine6}
-	<img class="images" src="/images/scrolls/chap6.webp" alt="im1" in:scale="{{ delay: 200, opacity: 0.5, duration: 300, start: 0.5, easing: circOut}}" out:scale="{{ duration: 100, delay: 0, start: 0, opacity: 0, easing: quadIn}}"/>
-	{/if}
+
 	</div>
 </SwiperSlide>
 </Swiper>
@@ -202,6 +129,9 @@ async function getImages(){
 
 
 <style lang="sass">
+
+.imgbox
+	background-image: url('/images/scrolls/thegrid.webp')
 
 .l10 a
 	color: inherit
@@ -211,25 +141,6 @@ async function getImages(){
 		&:hover
 			color: #10c56d
 
-.l100
-	.c-c-c-c
-		img
-			object-fit: cover
-			height: 100%
-
-.l100
-	.c-c-c-c
-		transform-origin: center center
-		transition: transform 0.23s var(--cube2)
-		border: 1px solid white
-		justify-content: center
-		overflow: hidden
-
-.l100
-	.c-c-c-c
-		&:hover
-			transform: scale(1.2) translateY(-20px)
-			animation: comedown 0.3s var(--cube5) 0.23s forwards
 
 @keyframes comedown
 	0%
@@ -237,216 +148,53 @@ async function getImages(){
 	100%
 		transform: translateY(0) scale(1.2)
 
-.black-b
-	font-weight: 400
-	color: #272727
 
 .box5
 	background: linear-gradient(40deg,#272727,#1B2023)
 
-.box5 h3
-	color: white
-	margin-top: 24px
-
-h4
-	font-weight: 300
-	line-height: 1.4em
-
-.padit
-	position: relative
-	color: #272727
 	
-.box5
-	.bigger3, .cutter
-		color: white
-	.orange
-		color: #ff3d00
-	
-
 @media screen and (min-width: 768px)
 
-	.l00, .l03
-		.col-right
-			width: 50%
-			height: 100%
-			justify-content: center
-		.col-left
-			width: 50%
-			height: 100%
-			justify-content: center
-			img
-				object-fit: cover
-				height: 100%
-
-	.l01, .l05
-		.col-left
-			width: 50%
-			height: 100%
-			justify-content: center
-		.col-right
-			width: 50%
-			height: 100%
-			justify-content: center
-			img
-				object-fit: cover
-				height: 100%
+	.imagesmall
+		object-fit: contain
+		width: 80%
+		height: 80%
 
 	.box5
 		justify-content: center
-		padding: 0 6vw
 
-	.box5 h3
-		text-align: left
-
-	.padit
-		padding: 0 32px
-		background: white
-		width: 100%
-		z-index: 2
-
-	.l10
-		width: 100vw
-		height: 100vh
-		justify-content: center
-		padding-left: 6vw
-		padding-top: 32px
-		background: white
 
 	.mind
-		width: 88vw
-		background: transparent
-		text-align: left
-		padding-top: 16px
-		padding-left: 0
-		p
-			font-size: 14px
-			margin-bottom: 8px
-		h3
-			margin-bottom: 0
-			border-top: 1px solid #474747
-			padding-top: 16px
-			cursor: pointer
-
-	.l10
-		position: relative
-		z-index: 0
-		h3
-			z-index: 4
-		.images
-			z-index: 1
-
-	.images
-		position: absolute
-		top: 120px
-		right: 120px
-		object-fit: cover
-		height: 80%
-		width: 400px
-
-	.l100
-		height: 100vh
-		width: 100vw
-		flex-wrap: wrap
-		.c-c-c-c
-			width: calc(100%/12)
-			height: calc(100%/8)
+		padding: 12px 0
+		border-top: 1px solid #e1e1e1
 
 @media screen and (max-width: 767px) 
 
-	.l00, .l03
-		.col-right
-			width: 100%
-			height: 50%
-			justify-content: center
-			order: 2
-		.col-left
-			width: 100%
-			height: 50%
-			justify-content: center
-			align-items: center
-			order: 1
-			img
-				object-fit: cover
-				height: 50vh
-				width: 88%
-
-	.l01, .l05
-		.col-left
-			width: 100%
-			height: 50%
-			justify-content: center
-			order: 2
-		.col-right
-			width: 100%
-			height: 50%
-			justify-content: center
-			align-items: center
-			order: 1
-			img
-				object-fit: cover
-				height: 50vh
-				width: 88%
-
 	.box5
 		justify-content: center
-		padding: 0 6vw
-		height: 100vh
 
-	.box5 h3
-		text-align: left
-
-	.padit
-		padding: 0 8px
-		background: white
+	.imagesmall
+		object-fit: cover
 		width: 100%
-		z-index: 2
+		height: 100%
 
-	.l10
-		width: 100vw
-		height: 100vh
-		justify-content: center
-		padding-left: 6vw
-		padding-top: 48px
-		background: white
+	.im-col
+		height: 50%
+		padding-top: 56px
+
+	.wide60
+		height: max-content
+		h4
+			margin-top: 0
+
+	.s3
+		.wide60
+			order: 2
+		.wide40
+			order: 1
 
 	.mind
-		width: 100%
-		background: transparent
-		text-align: left
-		padding-top: 0
-		padding-left: 0
-		p
-			font-size: 14px
-			margin-bottom: 8px
-		h3
-			margin-bottom: 16px
-			border-top: 1px solid #474747
-			padding-top: 8px
-			cursor: pointer
-
-	.l10
-		position: relative
-		z-index: 0
-		h3
-			z-index: 4
-		.images
-			z-index: 1
-
-	.images
-		display: none
-		position: absolute
-		top: 120px
-		right: 120px
-		object-fit: cover
-		height: 80%
-		width: 400px
-
-	.l100
-		height: 100vh
-		width: 100vw
-		flex-wrap: wrap
-		.c-c-c-c
-			width: 16.6%
-			height: 6.25%
+		padding: 12px 0
+		border-top: 1px solid #e1e1e1
 
 </style>
