@@ -1,27 +1,17 @@
-<script>
-
-import FlyingBox from '$lib/components/animations/FlyingPage.svelte'
-  /**
-	 * @type {any}
-	 */
-   export let refresh
-</script>
 
 
 <div class="primecontainer-row">
 <div class="side-bar">
 <h5 class="side-bar-header"><a href="/openlibrary">Bṛhat Open Library</a></h5>
 </div>
-{#key refresh}
-<FlyingBox>
+
 <div class="main-box">
 	<div class="word-window fl-c">
 	<h4>Dictionary</h4>
 		<slot></slot>
 	</div>
 </div>
-</FlyingBox>
-{/key}
+
 </div>
 
 
