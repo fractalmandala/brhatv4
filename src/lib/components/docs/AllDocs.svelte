@@ -6,7 +6,6 @@ import General from '$lib/components/docs/General.svelte'
 import PostGre from '$lib/components/docs/PostGre.svelte'
 import Supabase from '$lib/components/docs/Supabase.svelte'
 import Sveltecode from '$lib/components/docs/Sveltecode.svelte'
-import Typescript from '$lib/components/docs/Typescript.svelte'
 import Codes from '$lib/components/docs/Codes.svelte'
 
 let isCat1 = false
@@ -215,52 +214,46 @@ function toggleCat8(){
 </script>
 
 <div id="cat-0" class="cat">
-	<p class="side-m"><a href="/docs">Docs Home</a></p>
+	<p class="green w400 wide75"><a href="/docs">Docs Home</a></p>
 </div>
 <div id="cat-1" class="cat" on:click={toggleCat1} on:keydown={toggleCat1}>
-	<p class="side-m">Documentation</p>
+	<p class="green w400 wide75">Documentation</p>
 	{#if isCat1}
 	<Documentation></Documentation>
 	{/if}
 </div>
 <div id="cat-2" class="cat" on:click={toggleCat2} on:keydown={toggleCat2}>
-	<p class="side-m">Animation</p>
+	<p class="green w400 wide75">Animation</p>
 	{#if isCat2}
 	<Animation></Animation>
 	{/if}
 </div>
 <div id="cat-3" class="cat" on:click={toggleCat3} on:keydown={toggleCat3}>
-	<p class="side-m">General</p>
+	<p class="green w400 wide75">General</p>
 	{#if isCat3}
 	<General></General>
 	{/if}
 </div>
 <div id="cat-4" class="cat" on:click={toggleCat4} on:keydown={toggleCat4}>
-	<p class="side-m">SQL</p>
+	<p class="green w400 wide75">SQL</p>
 	{#if isCat4}
 		<PostGre></PostGre>
 	{/if}
 </div>
 <div id="cat-5" class="cat" on:click={toggleCat5} on:keydown={toggleCat5}>
-	<p class="side-m">Supabase</p>
+	<p class="green w400 wide75">Supabase</p>
 	{#if isCat5}
 		<Supabase></Supabase>
 	{/if}
 </div>
 <div id="cat-6" class="cat" on:click={toggleCat6} on:keydown={toggleCat6}>
-	<p class="side-m">Sveltecode</p>
+	<p class="green w400 wide75">Sveltecode</p>
 	{#if isCat6}
 		<Sveltecode></Sveltecode>
 	{/if}
 </div>
-<div id="cat-7" class="cat" on:click={toggleCat7} on:keydown={toggleCat7}>
-	<p class="side-m">Typescript</p>
-	{#if isCat7}
-		<Typescript></Typescript>
-	{/if}
-</div>
 <div id="cat-8" class="cat" on:click={toggleCat8} on:keydown={toggleCat8}>
-	<p class="side-m">All</p>
+	<p class="green w400 wide75">All</p>
 	{#if isCat8}
 		<Codes></Codes>
 	{/if}
@@ -270,27 +263,26 @@ function toggleCat8(){
 <style>
 
 .cat {
-	width: 100%;
 	transition: width 0.42s ease;
 	display: flex;
 	flex-direction: column;
-
 }
 
+.cat p { cursor: pointer;}
 
-.side-m a:hover { color: #10c56d;}
+
+.cat a:hover { color: #10c56d;}
 
 @media screen and (min-width: 576px) {
-	.cat { 
-		background: white;
-	}
-	.side-m a { color: #c7c7c7;}
+
+	.cat p { border-top: 1px solid var(--fordocs); padding-top: 16px;}
+	.green.w400 { letter-spacing: 1px;}
 }
 
 @media screen and (max-width: 576px) {
 	.cat {
 		background: transparent;
 	}
-	.side-m { color: white;}
+
 }
 </style>

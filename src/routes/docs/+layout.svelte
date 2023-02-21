@@ -1,36 +1,50 @@
 <script>
 import '$lib/styles/prism.css'
+import Header from '$lib/components/headers/HeadDocs.svelte'
 import AllDocs from '$lib/components/docs/AllDocs.svelte'
 import SearchDocs from '$lib/components/docs/SearchDocs.svelte'
 
 </script>
 
-<div class="r-r-r-r l0 pad4">
-	<div class="c-c-c-c bar">
+<Header></Header>
+<div class="flexbox-r full">
+	<div class="flexbox-c sidebb">
 		<AllDocs></AllDocs>
 	</div>
-	<div class="c-c-c-c mainpage">
+	<div class="flexbox-c main">
 		<slot></slot>
 	</div>
 </div>
 
 <style>
 
-@media screen and (min-width: 767px) {
-	.l0 { min-height: 100vh; padding-top: 120px; padding-bottom: 80px; gap: 64px;}
-	.bar { width: 25%; height: 100vh; position: sticky; top: 120px; overflow: scroll; }
-	.mainpage { width: 70%; padding-right: 8%;}
+
+.sidebb {
+	background: #fefefe;
+	border-right: 1px solid #f1f1f1;
+}
+
+
+@media screen and (min-width: 768px) {
+	.sidebb { width: 320px; height: 100%; position: sticky; top:0; padding-left: 40px; padding-top: 120px; padding-bottom: 200px; }	
+	.main { width: calc(100% - 320px); padding: 120px 15% 0 40px;}
+	.flexbox-r { padding-bottom: 80px;}
+
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
-	.l0 { min-height: 100vh; padding-top: 120px; padding-bottom: 80px; gap: 32px;}
-	.bar { width: 25%; height: 100vh; position: sticky; top: 120px; overflow: scroll; }
-	.mainpage { width: 70%; padding-right: 2%;}
+	.sidebb { width: 240px; height: 100%; position: sticky; top:0; padding-left: 40px; padding-top: 120px; padding-bottom: 200px; }	
+  
+	.main { width: calc(100% - 240px); padding: 0;}
+	.flexbox-r { padding-bottom: 80px;}
+
 }
 
 @media screen and (max-width: 575px) {
-	.l0 { flex-wrap: wrap;}
-	.mainpage { width: 100%; padding-top: 120px; padding-bottom: 80px;}
-	.bar { display: none;}
+	.sidebb { display: none;}
+	.main { width: 100%; height: 100%; order: 2; padding: 120px 24px 32px 24px;}
+
+
 }
+
 </style>

@@ -24,23 +24,19 @@ export const postgrePosts = async () => {
 }
 </script>
 
-<div class="c-c-c-c">
+<div class="flexbox-c">
 		{#await postgrePosts()}
 		<small>...</small>
 		{:then data}
 		{#each data as doc}
-			<div class="content">
-			<p
+			<small
 				transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"
-			><a href={doc.path}>{doc.meta.title}</a></p>
-			</div>
+			><a href={doc.path}>{doc.meta.title}</a></small>
 		{/each}
 		{/await}
 </div>
 
-
-
 <style>
-	.content { width: 100%; }
-	.c-c-c-c { width: 100%; }
+small { text-transform: capitalize; margin: 0 0 4px 0; padding: 0; color: #878787;}
+.flexbox-c { margin-bottom: 24px;}
 </style>

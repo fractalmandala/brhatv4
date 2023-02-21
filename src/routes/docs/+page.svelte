@@ -1,9 +1,4 @@
-<p>
-Welcome to our website documentation! Here, you will find all the information you need to understand how our website is built and how it works.
-</p>
-<h5>
-General Programs:
-</h5>
+<div class="flexbox-c outliner">
 <p>
 Our website is built completely in Sveltekit, which is a framework for building web applications. Sveltekit allows us to easily create reusable components and manage the state of our application. Once the website is built, it is deployed on Vercel, which is a platform for hosting web applications.
 </p>
@@ -19,3 +14,5 @@ Most of the data for our website is stored in Supabase, which is a real-time dat
 <p>
 Thank you for reading our documentation. We hope it helps you understand our website better.
 </p>
+</div>
+
