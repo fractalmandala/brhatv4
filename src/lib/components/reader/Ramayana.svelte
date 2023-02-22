@@ -79,7 +79,7 @@ function goToPage() {
 </script>
 
 
-<div class="selection-menu flexbox-r">
+<div class="selection-menu gap16 flexbox-r">
 	<div class="inner-menu menu-1">
 		<label>Kāṇḍa</label>
 		<select bind:value={selectionA} on:change={getSuktas}>
@@ -90,7 +90,7 @@ function goToPage() {
 	</div>
 	<div class="inner-menu menu-2">
 		<label for="item-B">Sarga</label>
-		<select id="item-B" bind:value={selectionB} on:change={getRcas}>
+		<select id="item-B" bind:value={selectionB} on:change={() => {getRcas(); selectionC = null; selectionD = null}}>
 		{#each itemsB as item}
 			<option value={item.sarga}>{item.sarga}</option>
 		{/each}			
@@ -98,7 +98,7 @@ function goToPage() {
 	</div>
 	<div class="inner-menu menu-3">
 		<label for="item-C">Verse</label>
-		<select id="item-C" bind:value={selectionC} on:change={getPadas}>
+		<select id="item-C" bind:value={selectionC} on:change={() => {getPadas(); selectionD = null}}>
 		{#each itemsC as item}
 			<option value={item.verse}>{item.verse}</option>
 		{/each}
@@ -130,6 +130,11 @@ function goToPage() {
 		padding: 4px			
 		margin: 0   
 		width: 200px
+		appearance: none
+		background-image: url('/images/icons/downarrow.svg')
+		background-position: right 10px center
+		background-repeat: no-repeat
+		background-size: 24px 24px
 		.classic
 			background: var(--beau)
 			background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0
@@ -145,10 +150,6 @@ function goToPage() {
 
 
 @media screen and (min-width: 900px) 
-
-
-	.selection-menu
-		gap: 2em
 		.inner-menu
 			width: 20%
 

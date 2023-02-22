@@ -1,17 +1,18 @@
 <script>
+// @ts-nocheck
+
 import supabase from '$lib/db'
+import { onMount } from 'svelte'
 import Dictionary from '$lib/components/reader/Dictionary.svelte'
 import { slide } from 'svelte/transition'
 import { bounceIn } from 'svelte/easing'
-/**
-	 * @type {any}
-	 */
- export let x
+// @ts-ignore
+export let x
+
+
 let isMean = false
-/**
-	 * @type {{ lemma: any; }}
-	 */
 let selectedItem
+
 function toggleMean(){
 	isMean = !isMean
 }
@@ -24,6 +25,10 @@ export async function getLem(){
 	if (error) throw new Error(error.message)
 	return data
 }
+onMount(async () => {
+  const data = await getLem();
+    if (data.length > 0) selectedItem = data[0];
+});
 </script>
 
 <div class="flexbox-c slate pad-y-b m-bot-24">

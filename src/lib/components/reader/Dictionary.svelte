@@ -1,5 +1,6 @@
 <script>
 import supabase from '$lib/db'
+import { reveal } from 'svelte-reveal'
 /**
 	 * @type {any}
 	 */
@@ -20,8 +21,8 @@ export async function Dictionary(){
 {:then data}
 {#each data as item}
 <div class="in-col">
-	<h6 class="w500 m-bot-zero m-top-zero">{item.word}</h6>
-	<p class="m-bot-zero">{item.meanings}</p>
+	<h6 class="w500 m-bot-zero m-top-zero" use:reveal>{item.word}</h6>
+	<p class="m-bot-zero" use:reveal>{item.meanings}</p>
 </div>
 {/each}
 {:catch error}
