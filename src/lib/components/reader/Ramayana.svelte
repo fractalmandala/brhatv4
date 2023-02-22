@@ -1,7 +1,10 @@
 <script>
 import supabase from '$lib/db'
-
-let selectionA = 1
+import RamayanaLem from '$lib/components/reader/RamayanaLem.svelte'
+/**
+	 * @type {null}
+	 */
+let selectionA = null
 /**
 	 * @type {null}
 	 */
@@ -109,9 +112,11 @@ function goToPage() {
 		<select id="item-D" bind:value={selectionD} on:change={goToPage}>
 		{#each itemsD as item}
 			<option value={item.index}>{item.index}</option>
+		<RamayanaLem x={item.index}></RamayanaLem>
 		{/each}
 		</select>
 	</div>
+	
 </div>
 
 <style lang="sass">

@@ -1,9 +1,7 @@
 <script>
 import Ramayana from '$lib/components/reader/Ramayana.svelte'
 </script>
-
-
-<Ramayana></Ramayana>
 <div class="in-col maindocs">
+<Ramayana></Ramayana>
 <slot></slot>
 </div>

@@ -9,7 +9,6 @@ import { bounceIn } from 'svelte/easing'
 // @ts-ignore
 export let x
 
-
 let isMean = false
 let selectedItem
 
