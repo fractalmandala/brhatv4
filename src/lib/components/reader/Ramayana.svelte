@@ -39,6 +39,7 @@ let itemsC = []
 	 */
 let itemsD = []
 
+
 export async function getSuktas() {
 		const { data, error } = await supabase
 			.from('db-ramayana')
@@ -112,7 +113,6 @@ function goToPage() {
 		</select>
 	</div>
 </div>
-
 
 <style lang="sass">
 

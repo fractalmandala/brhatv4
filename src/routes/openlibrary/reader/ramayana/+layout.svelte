@@ -4,6 +4,6 @@ import Ramayana from '$lib/components/reader/Ramayana.svelte'
 
 
 <Ramayana></Ramayana>
-<div class="in-col maindoc">
+<div class="in-col maindocs">
 <slot></slot>
 </div>
