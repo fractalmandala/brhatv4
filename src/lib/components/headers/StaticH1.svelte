@@ -4,11 +4,11 @@ import { reveal } from 'svelte-reveal'
 
 <div class="flexbox-c big lay" style="background: var(--boxback); min-height: var(--contheight)">
 	<div class="flexbox-c head" use:reveal={{ transition: "fly", duration: 200, y: 48 }}>
-		<h2 class="wbold">
+		<h2 class="w600 m-bot-zero">
 			<slot name="header"></slot>
 		</h2>
 	</div>
-	<div class="flexbox-c pad-x-40">
+	<div class="flexbox-c pad-x-40 m-top-zero">
 		<slot name="body"></slot>
 	</div>
 </div>
@@ -19,7 +19,6 @@ import { reveal } from 'svelte-reveal'
 
 .big h2 {
 	background: white;
-	color: #474747;
 	margin-top: 0;
 	margin-bottom: 0;
 }
@@ -32,11 +31,11 @@ import { reveal } from 'svelte-reveal'
 	.head { height: max-content; width: 100%;background: var(--beau)}
 
 	.big h2 {
-		padding: 8px 8px 8px 4vw;
+		padding: 8px 80px 8px 40px;
 		margin-bottom: 0;
 		margin-top: 0;
 		color: #272727;
-		margin-left: 4vw;
+		margin-left: 40px;
 	}
 	.lay { padding-top: 96px;}
 }
@@ -47,8 +46,9 @@ import { reveal } from 'svelte-reveal'
 
 	.big h2 {
 		letter-spacing: -1px;
-		padding: 8px 8px 8px 24px;
+		padding: 8px 40px 0 40px;
 		margin-bottom: 0;
+		margin-top: 0;
 		color: #272727;
 	}
 

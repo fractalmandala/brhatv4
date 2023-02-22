@@ -171,45 +171,45 @@
 <Header></Header>
 <Accordion />
 <div class="flexbox-c pad-x-40 cc-y-col mob-y-pad full">
-	<h2 class="w700 m-bot-zero">Bṛhat is a <span class="red m-top-zero">Culture Engine</span></h2>
-	<h5 class="w300 wide75">
+	<h1 class="w500 m-bot-zero">Bṛhat is a <br><span class="red m-top-zero">Culture Engine</span></h1>
+	<h5 class="w300 wide75 m-top-16-mob">
 		To power creatives, research and design rooted in the Indian civilizational consciousness. We
 		convert individual, institutional and collective intent into action, across 3 dimensions.
 	</h5>
 	<button class="redbutton"><a href="/about">Know More</a></button>
-	<div class="l2 flexbox-r of-three gap-top">
+	<div class="l2 flexbox-r of-three top-gap">
 		<div class="l2row1 in-col wide33">
 			<h6 class="wbold m-bot-zero">Create</h6>
-			<small class="w300">
+			<p class="w300">
 				- visual and literary stories;<br>
 				- design thinking and methods;<br>
 				- research output on education and ecology;<br>
 				- culture-rooted thought models
-			</small>
+			</p>
 		</div>
 		<div class="l2row2 in-col wide33">
 			<h6 class="wbold m-bot-zero">Curate</h6>
-			<small class="w300">
+			<p class="w300">
 				- heritage experience journeys;<br>
 				- culture-fit in mass media;<br>
 				- NEP-relevant IKS curriculum;<br>
 				- culture rooting in product design and thinking
-			</small>
+			</p>
 		</div>
 		<div class="l2row3 in-col wide33">
 			<h6 class="wbold m-bot-zero">Consult</h6>
-			<small class="w300">
+			<p class="w300">
 				- NEP-IKS implementation;<br>
 				- policy thinking on education and ecology;<br>
 				- organizational structure and leadership frameworks
-			</small>
+			</p>
 		</div>
 	</div>
 </div>
 <StaticH1 --boxback="white">
 	<div slot="header"><span class="red">Explore </span>Visual Content</div>
 	<div class="flexbox-c" slot="body">
-				<h5 class="w300 wide75 top-gap">
+				<h5 class="w300 wide75 m-top-24">
 					Our visual content ranges from explorations of rasa and bhāva, to articulations of an
 					IKS-implementation strategy for modern India. Select playlists below, or visit our <a
 						href="https://youtube.com/@brhat"
@@ -217,19 +217,13 @@
 						rel="noreferrer">YouTube channel</a
 					>
 				</h5>
-				<div class="flexbox-r wrapper playlists m-bot-24">
-					<div class="xwide50" on:click={() => switchList('list-1')} on:keydown={() => switchList('list-1')}>
-						<button class="redbutton">Bṛhadmṛdaṅga</button>
-					</div>
-					<div class="xwide50" on:click={() => switchList('list-2')} on:keydown={() => switchList('list-2')}>
-						<button class="redbutton">Hindi Kavitā</button>
-					</div>
-					<div class="xwide50" on:click={() => switchList('list-3')} on:keydown={() => switchList('list-3')}><button class="redbutton">IKS</button></div>
-					<div class="xwide50" on:click={() => switchList('list-4')} on:keydown={() => switchList('list-4')}>
-						<button class="redbutton">On Other Channels</button>
-					</div>
-				</div>
-			<div class="flexbox-c">
+				<select>
+					<option value="Bṛhadmṛdaṅga" on:click={() => switchList('list-1')} on:keydown={() => switchList('list-1')}>>Bṛhadmṛdaṅga</option>
+					<option value="Hindi Kavitā" on:click={() => switchList('list-2')} on:keydown={() => switchList('list-2')}>Hindi Kavitā</option>
+					<option value="IKS" on:click={() => switchList('list-3')} on:keydown={() => switchList('list-3')}><button class="redbutton">IKS</option>
+					<option value="Other" on:click={() => switchList('list-4')} on:keydown={() => switchList('list-4')}>Others</option>
+				</select>
+
 				{#if currentList === 'list-1'}
 					<BrhadMrdanga />
 				{:else if currentList === 'list-2'}
@@ -239,7 +233,7 @@
 				{:else if currentList === 'list-4'}
 					<OtherVids />
 				{/if}
-			</div>
+
 	</div>
 </StaticH1>
 <Dhiti --boxback="white">
@@ -356,10 +350,7 @@
 }
 
 @media screen and (min-width: 768px) {
- .l2 .in-col {
-		padding: 0 24px 16px 24px;
-		background: #f7f7f7;
-	}
+
 	.blogbox { height: auto; margin-bottom: 48px;}
 	.blogbox h6 { margin-top: 16px;}
 	.blogbox h6, .blogbox small, .blogbox cite { padding-left: 16px; padding-right: 16px;}
@@ -368,20 +359,18 @@
 	}
 }
 
-@media screen and (max-width: 767px) {
-	 .l2 .in-col {
-		padding: 0 24px 2px 24px;
-		background: #f7f7f7;
-	}
+@media screen and (max-width: 767px) and (min-width: 576px) {
+	.l2 { gap: 16px;}
 	.blogbox { height: auto; margin-bottom: 48px;}
 
 	.blogbox h6, .blogbox small, .blogbox cite { padding-left: 16px; padding-right: 16px;}
 	.book {
 		margin-bottom: 24px;
 	}
+
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 575px) {
 
 	.book {
 		margin-bottom: 8px;

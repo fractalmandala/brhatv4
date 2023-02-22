@@ -19,7 +19,7 @@ async function getIKS() {
 		{:then data}
 			<div class="flexbox-r of-four">
 				{#each data as item}
-				<div class="in-col">
+				<div class="in-col wide25">
 					<iframe
   					class="m-1"
   					width=100%
@@ -28,7 +28,7 @@ async function getIKS() {
   					title={item.name}
   				>
 					</iframe>
-					<small><a href="https://www.youtube.com/watch?v={item.id}" target="_blank" rel="noreferrer">{@html item.name}</a></small>
+					<h6 class="w500"><a href="https://www.youtube.com/watch?v={item.id}" target="_blank" rel="noreferrer">{@html item.name}</a></h6>
 				</div>
 				{/each}
 			</div>

@@ -50,6 +50,7 @@
   display: flex
   overflow: hidden
   width: 100%
+  height: 100%
 
 .swiper-wrapper
   transition-timing-function: cubic-bezier(0.760, 0.035, 0.560, 0.985)
@@ -165,10 +166,12 @@ cite
   background-color: #fe4a49
   border: none
   color: white
-  font-size: 14px
+  font-size: 16px
   font-weight: 400
   letter-spacing: 1px
   border-radius: 4px
+  max-width: 160px
+  min-width: 160px
   a
     color: white
   &:hover
@@ -176,8 +179,6 @@ cite
   @media screen and (min-width: 768px)
     padding: 6px 12px
     margin-bottom: 24px
-    max-width: 15vw
-    min-width: 12vw
   @media screen and (max-width: 767px)
     padding: 6px 12px
     margin-bottom: 24px
@@ -189,12 +190,13 @@ cite
 //PADS AND MARGINS
 
 .pad-x-40
-  @media screen and (min-width: 768px)
-    padding-left: 8vw
-    padding-right: 8vw
+  @media screen and (min-width: 900px)
+    padding-left: 80px
+    padding-right: 80px
+  @media screen and (max-width: 899px) and (min-width: 768px)
+    padding: 40px
   @media screen and (max-width: 767px)
-    padding-left: 20px
-    padding-right: 20px
+    padding: 32px 24px
 
 .pad24
   @media screen and (max-width: 767px)
@@ -241,11 +243,29 @@ cite
 .m-top-zero
   margin-top: 0
 
+.m-top-zero-mob
+  @media screen and (max-width: 575px)
+    margin-top: 0
+
 .m-top-24
-  margin-top: 24px
+  @media screen and (min-width: 900px) 
+    margin-top: 24px
+  @media screen and (max-width: 899px) 
+   margin-top: -12px
+
+.m-top-24-mob
+  @media screen and (max-width: 575px)
+    margin-top: 24px
 
 .m-bot-16
   margin-bottom: 16px
+
+.m-top-16
+  margin-top: 16px
+
+.m-top-16-mob
+  @media screen and (max-width: 575px)
+    margin-top: 16px
 
 .m-bot-zero
   margin-bottom: 0
@@ -304,7 +324,7 @@ cite
 
 .wide50
   @media screen and (min-width: 768px)
-    width: 50%
+    width: calc(50% - 16px)
   @media screen and (max-width: 767px)
     width: 100%
 
@@ -312,7 +332,7 @@ cite
   @media screen and (min-width: 768px)
     width: 20%
   @media screen and (max-width: 767px)
-    width: 50%
+    width: 20%
 
 .wide40
   @media screen and (min-width: 768px)
@@ -470,3 +490,15 @@ cite
 .gap24
   gap: 24px
 
+.gap32
+  gap: 32px
+
+.gap16
+  gap: 16px !important
+
+.liner
+  border-left: 6px solid #474747
+  padding-left: 64px
+
+.video-player
+  width: 100%

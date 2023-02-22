@@ -1,5 +1,5 @@
-<div>
- <img src="/images/socialicons/prevarrow.png" alt="previous" />
+<div class="custom-prev">
+ <img src="/images/icons/prevarrow.png" alt="previous" />
 </div>
 
 <style>

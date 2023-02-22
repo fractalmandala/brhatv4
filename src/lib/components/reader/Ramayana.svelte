@@ -19,11 +19,11 @@ let selectionD = null
 let itemsA = [
 	{ value: 1, label: '1' },
 	{ value: 2, label: '2' },
-	{ value: 3, label: 'Aranya Kāṇḍa' },
-	{ value: 4, label: 'Kiśkindha Kāṇḍa' },
-	{ value: 5, label: 'Sundara Kāṇḍa' },
-	{ value: 6, label: 'Yuddha Kāṇḍa' },
-	{ value: 7, label: 'Uttara Kāṇḍa' }
+	{ value: 3, label: '3' },
+	{ value: 4, label: '4' },
+	{ value: 5, label: '5' },
+	{ value: 6, label: '6' },
+	{ value: 7, label: '7' }
 ]
 
 /**
@@ -77,7 +77,8 @@ function goToPage() {
 }
 </script>
 
-<div class="selection-menu r-r-r-c">
+
+<div class="selection-menu flexbox-r">
 	<div class="inner-menu menu-1">
 		<label>Kāṇḍa</label>
 		<select bind:value={selectionA} on:change={getSuktas}>
@@ -106,7 +107,7 @@ function goToPage() {
 		<label for="item-D">Pāda</label>
 		<select id="item-D" bind:value={selectionD} on:change={goToPage}>
 		{#each itemsD as item}
-			<option value={item.pada}>{item.pada}</option>
+			<option value={item.index}>{item.index}</option>
 		{/each}
 		</select>
 	</div>
@@ -115,25 +116,36 @@ function goToPage() {
 
 <style lang="sass">
 
-.selection-menu
-	display: flex
-	margin-bottom: 1.44em
+.flexbox-r
+	position: relative
 	label
-		font-size: 10px
+		font-size: 12px
 		text-transform: uppercase
 		font-weight: bold
 		letter-spacing: 1px
 		color: #878787
 	select
-		width: 100%
-		border: 1px solid #d7d7d7
-		height: 20px
-		background-color: transparent
-		margin-top: 4px
+		background-color: white
+		border-radius: 4px
+		padding: 4px			
+		margin: 0   
+		width: 200px
+		.classic
+			background: var(--beau)
+			background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0
+			background-size: 15px 15px, 15px 15px, 2.5em 2.5em
+			background-repeat: no-repeat
+			&:focus
+				background-image: linear-gradient(45deg, white 50%, transparent 50%), linear-gradient(135deg, transparent 50%, white 50%), linear-gradient(to right, gray, gray)
+				background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, 100% 0
+				background-size: 15px 15px, 15px 15px, 2.5em 2.5em
+				background-repeat: no-repeat
+				border-color: grey
+				outline: 0
+
 
 @media screen and (min-width: 900px) 
-	.r-r-r-c
-		flex-direction: row
+
 
 	.selection-menu
 		gap: 2em

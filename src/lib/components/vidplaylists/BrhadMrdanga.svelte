@@ -1,6 +1,7 @@
 <script>
 import supabase from '$lib/db'
 
+
 async function getMrdanga() {
   const { data, error } = await supabase
   .from('brhat-youtube')
@@ -24,11 +25,11 @@ async function getMrdanga() {
   					class="m-1"
   					width=100%
   					height=88%
-  					src="https://www.youtube.com/embed/{item.id}"
+  					src="https://www.youtube.com/embed/{item.videoid}"
   					title={item.name}
   				>
 					</iframe>
-					<small><a href="https://www.youtube.com/watch?v={item.id}" target="_blank" rel="noreferrer">{@html item.name}</a></small>
+					<h6 class="w500"><a href="https://www.youtube.com/watch?v={item.videoid}" target="_blank" rel="noreferrer">{@html item.name}</a></h6>
 				</div>
 				{/each}
 			</div>
@@ -36,11 +37,3 @@ async function getMrdanga() {
 		<pre>{error}</pre>
 	{/await}
 </div>
-
-<style>
-
-@media screen and (max-width: 575px) {
- .of-four .in-col { height: 200px;}
-}
-</style>
-

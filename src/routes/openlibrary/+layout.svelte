@@ -1,4 +1,13 @@
+<script>
+import SideBol from '$lib/components/pagecomps/SideBol.svelte'
+</script>
+
+<div class="flexbox-r">
+<SideBol></SideBol>
+<div class="in-col maindoc">
 <slot></slot>
+</div>
+</div>
 
 
 

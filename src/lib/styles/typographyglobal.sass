@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap')
+
 :root, *
     font-family: 'IBM Plex Sans Condensed', sans-serif
 
 h1, h2, h3, h4, h5, h6, p, cite, small, caption, blockquote, ol li, ul li
     font-family: 'IBM Plex Sans Condensed', sans-serif
 
-h1, h3, h4, p, small, caption, cite, blockquote
+h1, h3, h4, h5, p, small, caption, cite, blockquote
     @media screen and (min-width: 768px)
         margin-bottom: 16px
         margin-top: 0px
@@ -12,7 +14,7 @@ h1, h3, h4, p, small, caption, cite, blockquote
         margin-bottom: 16px
         margin-top: 0
     @media screen and (max-width: 575px)
-        margin-bottom: 16px
+        margin-bottom: 12px
         margin-top: 0
 
 h6
@@ -28,25 +30,35 @@ h6
 
 h1
     @media screen and (min-width: 900px)
-        font-size: 104px
+        font-size: 112px
         line-height: 1.1
+        letter-spacing: -3px
     @media screen and (max-width: 899px) and (min-width: 768px)
-        font-size: 104px
+        font-size: 88px
         line-height: 1.1
+        letter-spacing: -2px
     @media screen and (max-width: 767px) and (min-width: 576px)
-        font-size: 80px
-        line-height: 1.1
-    @media screen and (max-width: 575px)
-        font-size: 64px
-        line-height: 1.1
-
-h2
-    @media screen and (min-width: 768px)
         font-size: 72px
         line-height: 1.1
+        letter-spacing: -1px
+    @media screen and (max-width: 575px)
+        font-size: 48px
+        line-height: 1.1
+        letter-spacing: -1px
+
+h2
+    @media screen and (min-width: 900px)
+        font-size: 72px
+        line-height: 1.1
+        letter-spacing: -2px
+    @media screen and (max-width: 899px) and (min-width: 768px)
+        font-size: 64px
+        line-height: 1.1
+        letter-spacing: -2px
     @media screen and (max-width: 767px) and (min-width: 576px)
         font-size: 48px
         line-height: 1.1
+        letter-spacing: -1px
     @media screen and (max-width: 575px)
         font-size: 40px
         line-height: 1.1
@@ -75,7 +87,7 @@ h5
         font-size: 24px
         line-height: 1.28
     @media screen and (max-width: 767px) and (min-width: 576px)
-        font-size: 24px
+        font-size: 21px
         line-height: 1.28
     @media screen and (max-width: 575px)
         font-size: 20px
@@ -83,10 +95,10 @@ h5
 
 h6
     @media screen and (min-width: 768px)
-        font-size: 18px
+        font-size: 20px
         line-height: 1.5
     @media screen and (max-width: 767px) and (min-width: 576px)
-        font-size: 18px
+        font-size: 21px
         line-height: 1.5
     @media screen and (max-width: 575px)
         font-size: 18px
@@ -168,3 +180,8 @@ cite
     margin-left: 40px
     margin-bottom: 24px
 
+.hindi
+    h1, h2, h3, h4, h5, h6, p, cite, small, caption, blockquote, ol li, ul li, a
+        font-family: 'Tiro Devanagari Sanskrit', serif
+    h4, h5
+        letter-spacing: 0

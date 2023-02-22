@@ -1,5 +1,5 @@
-<div>
- <img src="/images/socialicons/nextarrow.png" alt="next" />
+<div class="custom-next">
+ <img src="/images/icons/nextarrow.png" alt="next" />
 </div>
 
 <style>
