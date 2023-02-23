@@ -42,19 +42,14 @@
     counter = currentIteration;
   });
 
+  /**
+	 * @param {{ target: { value: number; }; }} event
+	 */
   function handleCountChange(event) {
     selectedCount = event.target.value;
   }
 </script>
 
-<div>
-  <label for="count-select">Select iteration:</label>
-  <select id="count-select" on:change={handleCountChange}>
-    <option value="0">All</option>
-    {#each Array(counter) as _, i}
-      <option value={i+1}>{i+1}</option>
-    {/each}
-  </select>
-</div>
+
 
 {@html tableHTML}

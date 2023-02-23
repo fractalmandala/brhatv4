@@ -170,7 +170,7 @@
 
 <Header></Header>
 <Accordion />
-<div class="flexbox-c pad-x-40 cc-y-col mob-y-pad full">
+<div class="flexbox-c desk-margins cc-y-col mob-y-pad full">
 	<h1 class="w500 m-bot-zero">Bṛhat is a <br><span class="red m-top-zero">Culture Engine</span></h1>
 	<h5 class="w300 wide75 m-top-16-mob">
 		To power creatives, research and design rooted in the Indian civilizational consciousness. We

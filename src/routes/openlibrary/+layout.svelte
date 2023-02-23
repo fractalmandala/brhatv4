@@ -1,7 +1,9 @@
 <script>
+import Header from '$lib/components/headers/HeaderBol.svelte'
 import SideBol from '$lib/components/pagecomps/SideBol.svelte'
 </script>
 
+<Header></Header>
 <div class="flexbox-r">
 <SideBol></SideBol>
 <div class="in-col maindoc">
@@ -12,19 +14,3 @@ import SideBol from '$lib/components/pagecomps/SideBol.svelte'
 
 
 
-
-<style>
-
-
-:global(body) {
-	background: white;
-	color: #474747;
-	transition: background 0.25s;
-}
-
-:global(body.dark-mode) {
-	background: var(--beau);
-	color: white;
-}
-
-</style>

@@ -28,64 +28,94 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		</div>
 		<div class="flexbox-r" id="links-row">
 			<div class="flexbox-c link-box">
-					<h6><a href="/anveshi">Bṛhatanveṣī</a></h6>
-					<p><a href="/anveshi/chapter/odisha">Odisha Chapter</a></p>
-					<p><a href="/anveshi/chapter/chamba">Chamba Chapter</a></p>
-					<p><a href="/anveshi/chapter/karnataka">Karnataka Chapter</a></p>
-					<p><a href="/anveshi/diaries">Travel Diaries</a></p>
+					<p><a href="/anveshi">Bṛhatanveṣī</a></p>
+					<small><a href="/anveshi/chapter/odisha">Odisha Chapter</a></small>
+					<small><a href="/anveshi/chapter/chamba">Chamba Chapter</a></small>
+					<small><a href="/anveshi/chapter/karnataka">Karnataka Chapter</a></small>
+					<small><a href="/anveshi/diaries">Travel Diaries</a></small>
 			</div>
 			<div class="flexbox-c link-box">
-					<h6><a href="/drashta">Bṛhat Draṣṭā</a></h6>
-					<p><a href="/drashta/course/hinduiconography">Hindu Iconography</a></p>
-					<p><a href="/drashta/course/shriramswarup">Shri Ram Swarup</a></p>
-					<p><a href="/drashta/course/sitaramgoel">Sita Ram Goel</a></p>
-					<p><a href="/drashta/drashtas">Draṣṭās</a></p>
-					<p><a href="/drashta/schools">Schools</a></p>
-					<p><a href="/drashta/firekeepers">Firekeepers</a></p>
+					<p><a href="/drashta">Bṛhat Draṣṭā</a></p>
+					<small><a href="/drashta/course/hinduiconography">Hindu Iconography</a></small>
+					<small><a href="/drashta/course/shriramswarup">Shri Ram Swarup</a></small>
+					<small><a href="/drashta/course/sitaramgoel">Sita Ram Goel</a></small>
+					<small><a href="/drashta/drashtas">Draṣṭās</a></small>
+					<small><a href="/drashta/schools">Schools</a></small>
+					<small><a href="/drashta/firekeepers">Firekeepers</a></small>
 			</div>
 			<div class="flexbox-c link-box">
-					<h6><a href="/about">About</a></h6>
-					<p><a href="/about/docs/namelogo">Nāmarūpa</a></p>
-					<p><a href="/about/docs/values">Pratijñā</a></p>
-					<p><a href="/about/docs/svatahsiddha">Svataḥsiddha</a></p>
-					<p><a href="/about/#advisory">Advisory Board</a></p>
-					<p><a href="/about/#team">Team</a></p>
+					<p><a href="/about">About</a></p>
+					<small><a href="/about/docs/namelogo">Nāmarūpa</a></small>
+					<small><a href="/about/docs/values">Pratijñā</a></small>
+					<small><a href="/about/docs/svatahsiddha">Svataḥsiddha</a></small>
+					<small><a href="/about/#advisory">Advisory Board</a></small>
+					<small><a href="/about/#team">Team</a></small>
 			</div>
 			<div class="flexbox-c link-box">
-					<h6>Actions</h6>
-					<p><a href="/dhiti">Dhīti</a></p>
-					<p><a href="/openlibrary">Bṛhat Open Library</a></p>
-					<p><a href="/mrdanga">Bṛhadmṛdaṅga</a></p>
-					<p><a href="/mandala">Fractal Maṇḍala</a></p>
-					<p><a href="/aryavarta">Scrolls of Āryavarta</a></p>
-					<p><a href="/rta">Ṛta in Design</a></p>
+					<p>Actions</p>
+					<small><a href="/dhiti">Dhīti</a></small>
+					<small><a href="/openlibrary">Bṛhat Open Library</a></small>
+					<small><a href="/mrdanga">Bṛhadmṛdaṅga</a></small>
+					<small><a href="/mandala">Fractal Maṇḍala</a></small>
+					<small><a href="/aryavarta">Scrolls of Āryavarta</a></small>
+					<small><a href="/rta">Ṛta in Design</a></small>
 			</div>
 		</div>
 	</div>
 </div>
-<div class="flexbox-r" id="last-row"><small>2023 All Rights Reserved | <span><a href="/docs">Documentation</a> | </span><span><a href="/about/privacy">Privacy</a></span><br>
-	<span class="white">Write to us: contact@brhat.in</span>
-	</small>
-</div>
+	<div class="flexbox-c" id="last-row"><small>2023 All Rights Reserved | <span><a href="/docs">Documentation</a> | </span><span><a href="/about/privacy">Privacy</a></span><br>
+		<span class="white">Write to us: contact@brhat.in</span>
+		</small>
+	</div>
 </div>
 
 <style lang="sass">
 
 .big-box
-	background: var(--beau)
+	background: linear-gradient(132.9deg, #171717 10.69%, #181C1E 84.91%)
 	z-index:1900
 	small
 		color: #676767
-		font-weight: 300
+		font-weight: 400
 		a
 			font-size: inherit
 			color: inherit
 			&:hover
 				color: #fe4a49
+	@media screen and (min-width: 900px)
+		height: 100vh
+		padding-top: 0
+		padding-bottom: 0
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		padding-top: 2em
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		padding-top: 2em
+	@media screen and (max-width: 575px)
+		padding-top: 2em
+		width: 100vw
+		padding-left: 0
+		padding-right: 0
+		min-height: 100vh
 
 .margin-box
 	border-top: 1px solid #474747
 	border-bottom: 1px solid #474747
+	@media screen and (min-width: 900px)
+		height: calc(100vh - 232px)
+		width: calc(100% - 288px)
+		margin-left: 144px
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		height: calc(100vh - 8em)
+		width: calc(100% - 12vw)
+		margin: 2em 6vw 0 6vw
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		height: calc(100vh - 12em)
+		width: calc(100vw - 8vw)
+		margin: 2em 4vw 0em 4vw
+	@media screen and (max-width: 575px)
+		min-height: calc(100vh - 12em)
+		width: calc(100vw - 88px)
+		margin: 2em 48px 0em 40px
 
 #logoimage
 	transform-origin: center left
@@ -99,22 +129,21 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 
 .link-box
 	display: flex
-	font-family: 'Readex Pro', sans-serif
-	h6
+	p
 		color: white
 		font-weight: 400
-		letter-spacing: 0px
-		margin-bottom: 1.28em
+		letter-spacing: 1px
+		margin-bottom: 20px
 		margin-top: 0
 		&:hover a
 			color: #fe4a49
 	a 
 		color: inherit
-	p
+	small
 		color: #878787
 		font-weight: 400
-		letter-spacing: 0
-		margin-bottom: 8px
+		letter-spacing: 0.5px
+		margin-bottom: 16px
 		margin-top: 0
 		&:hover a
 			color: #fe4a49
@@ -128,41 +157,33 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		opacity: 1
 		filter: saturate(1)
 
-#last-row
-	flex-direction: row
-	small
-		font-weight: 300
+
 
 #links-row
 	display: flex
 
-	
 @media screen and (min-width: 900px) 
 
 	.icon-box
 		height: 32px
 		width: 32px
 	
-	.big-box
-		padding-top: 20px
-		
-	.margin-box
-		height: calc(100vh - 12em)
-		width: 100%
-		padding: 0 4vw
-		margin-top: 20px
 
 	#row-one
 		padding-top: 4em
 
 	#last-row
-		height: 6em
+		height: 160px
 		margin: 0
 		width: 100%
-		padding: 1.5em 4vw
+		padding: 0 144px
+		justify-content: center
 	
 	#last-row small
-		line-height: 1.5
+		line-height: 1.8
+		letter-spacing: 1px
+		font-size: 12px
+		margin: 0
 
 	#logoimage
 		width: 200px
@@ -189,18 +210,9 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	.link-box
 		width: 25%
 		padding-left: 2em
-		p
-			font-weight: 300
+
 
 @media screen and (max-width: 899px) and (min-width: 768px) 
-
-	.big-box
-		padding-top: 2em
-
-	.margin-box
-		height: calc(100vh - 8em)
-		width: calc(100% - 12vw)
-		margin: 2em 6vw 0 6vw
 	
 	#last-row
 		height: 6em
@@ -232,18 +244,9 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		flex-direction: row
 		.link-box
 			width: 25%
-			p
-				font-weight: 300
+
 
 @media screen and (max-width: 767px) and (min-width: 576px) 
-
-	.big-box
-		padding-top: 2em
-
-	.margin-box
-		height: calc(100vh - 12em)
-		width: calc(100vw - 8vw)
-		margin: 2em 4vw 0em 4vw
 
 	#last-row
 		height: 4em
@@ -278,31 +281,18 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		gap: 1.2em
 		.link-box
 			width: 25%
-			p
-				font-weight: 300
+
 	
 @media screen and (max-width: 575px)
-
-	.big-box
-		padding-top: 2em
-		width: 100vw
-		padding-left: 0 !important
-		padding-right: 0 !important
-		height: 100%
-
-	.margin-box
-		width: 100%
-		height: calc(100% - 14em)
-		margin-top: 2em
-		padding: 0 24px
 
 	#last-row
 		width: 100vw
 		margin: 0
-		padding: 8px 24px
+		padding: 12px 40px
 		small
 			line-height: 1.5
 			width: 100%
+			font-size: 10px
 
 	#logoimage
 		width: 160px
@@ -335,17 +325,21 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		width: 100%
 		height: 100%
 		padding-bottom: 32px
+		padding-top: 24px
+		gap: 0
 		flex-direction: row
 		justify-content: space-between
+		align-items: flex-start
 		.link-box
 			width: 45%
 			p
 				margin-top: 12px
-				margin-bottom: 0
-				font-weight: 300
+				margin-bottom: 16px
+				font-size: 15px
 			h6
 				margin-bottom: 0
 				margin-top: 40px
+				font-size: 14px
 
 	
 </style>

@@ -1,4 +1,3 @@
-@import '@fontsource/ibm-plex-sans-condensed'
 
 :root, *
   box-sizing: border-box
@@ -15,7 +14,8 @@
   --cubee: cubic-bezier(1.000, 0.005, 1.000, 0.005)
   --snap: all 0.11s cubic-bezier(0.790, 0.035, 0.260, 0.850)
   --gradienter: linear-gradient(201.98deg, #5CFC11 15.55%, #53DD6C 34.72%, #11FC8B 65.82%, #10C56E 83.88%)
-  --beau: linear-gradient(40deg,#272727,#1B2023)
+  --beau: linear-gradient(132.9deg, rgba(23,23,23,1) 10.69%, rgba(24, 28, 30, 1) 84.91%)
+  --beautrans: linear-gradient(132.9deg, rgba(23,23,23,0.98) 10.69%, rgba(24, 28, 30, 0.99) 84.91%)
 
 .bdr
   border: 1px solid red
@@ -188,6 +188,12 @@ cite
   padding-bottom: 32px
 //**********************************************************************************************************
 //PADS AND MARGINS
+
+.desk-margins
+  @media screen and (min-width: 900px)
+    padding-left: 144px
+    padding-right: 144px
+
 
 .pad-x-40
   @media screen and (min-width: 900px)
@@ -453,6 +459,13 @@ cite
 
 .sidebar
   background: #fcfcfc
+  p
+    font-size: 14px
+    letter-spacing: 1px
+  .heading
+    padding-top: 24px
+    border-top: 1px solid #f1f1f1
+    margin-top: 0
   @media screen and (min-width: 768px)
     width: 360px
     border-right: 1px solid #f1f1f1
@@ -462,19 +475,10 @@ cite
     padding-top: 120px
     overflow-y: scroll
     padding-left: 40px
-    p
-      margin-top: 32px
-      margin-bottom: 0
-      letter-spacing: 0.45px
-      text-transform: uppercase
-      color: #fe4a49
-      border-top: 1px solid #f1f1f1
-      padding-top: 16px
-      width: 88%
-    small
-      margin-top: 8px
-      margin-bottom: 0
-      letter-spacing: 0.25px
+    .upper
+      margin-bottom: 24px !important
+  
+
 
 .document-sheet
   padding-right: 16vw
@@ -486,6 +490,7 @@ cite
     width: calc(100% - 360px)
     padding-top: 120px
     padding-left: 80px
+    padding-right: 80px
 
 .maindocs
   @media screen and (min-width: 768px)
@@ -500,9 +505,20 @@ cite
 .gap16
   gap: 16px !important
 
+.gap8
+  gap: 8px
+
 .liner
   border-left: 6px solid #474747
   padding-left: 64px
 
 .video-player
   width: 100%
+
+.accordions
+  padding-top: 16px
+  border-top: 1px solid #f1f1f1
+  margin-top: 32px
+  .upper
+    margin-bottom: 12px
+    margin-top: 12px

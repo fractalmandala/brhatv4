@@ -2,7 +2,8 @@
 import supabase from '$lib/db'
 import { fly } from 'svelte/transition'
 import { quartIn } from 'svelte/easing'
-export async function bolOne(){
+
+export async function bolBodha(){
 	const { data, error } = await supabase
 	.from('brhat-openlibrary')
 	.select()
@@ -11,7 +12,7 @@ export async function bolOne(){
 	if (error) throw new Error(error.message)
 	return data
 }
-export async function bolTwo(){
+export async function bolEss(){
 	const { data, error } = await supabase
 	.from('brhat-openlibrary')
 	.select()
@@ -20,7 +21,7 @@ export async function bolTwo(){
 	if (error) throw new Error(error.message)
 	return data
 }
-export async function bolThree(){
+export async function bolIKS(){
 	const { data, error } = await supabase
 	.from('brhat-openlibrary')
 	.select()
@@ -29,7 +30,7 @@ export async function bolThree(){
 	if (error) throw new Error(error.message)
 	return data
 }
-export async function bolFour(){
+export async function bolOth(){
 	const { data, error } = await supabase
 	.from('brhat-openlibrary')
 	.select()
@@ -84,62 +85,30 @@ function shareOnWhatsApp(url, text) {
 			<img src="/images/icons/red-whatsapp.png" alt="whatsapp icon" />
 		</div>
 	</div>
-	
-	<div class="accordions">
-		<p class="w400"><a href="/openlibrary/reader/ramayana">Rāmāyaṇa</a></p>
-		<p class="w400"><a href="/openlibrary/reader/rigveda">Ṛgveda</a></p>
+	<div class="rending in-col">
+  <p class="upper grey heading"><a href="/openlibrary/discover/ramayana">Rāmāyaṇa</a></p>
+		<div class="in-col sublinks">
+		<small transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"><a href="/openlibrary/discover/ramayana/kanda1">1- Bāla Kāṇḍa</a></small>
+		<small transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"><a href="/openlibrary/discover/ramayana/kanda2">2- Ayodhya Kāṇḍa</a></small>
+		<small transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"><a href="/openlibrary/discover/ramayana/kanda3">3- Āraṇya Kāṇḍa</a></small>
+		<small transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"><a href="/openlibrary/discover/ramayana/kanda4">4- Kiṣkindha Kāṇḍa</a></small>
+		<small transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"><a href="/openlibrary/discover/ramayana/kanda5">5- Sundara Kāṇḍa</a></small>
+		<small transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"><a href="/openlibrary/discover/ramayana/kanda6">6- Yuddha Kāṇḍa</a></small>
+		<small transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"><a href="/openlibrary/discover/ramayana/kanda7">7- Uttara Kāṇḍa</a></small>
+		</div>
 	</div>
-	<div class="accordions">
-	<p class="w400">Essentials</p>
-	<div class="content in-col">
-	{#await bolTwo()}
-	<small>...</small>
-	{:then data}
-	{#each data as item}
-	<small><a href="/openlibrary/books/{item.slug}">{item.Text}</a></small>
-	{/each}
-	{:catch error}
-	<pre>{error}</pre>
-	{/await}
-	</div>
-	</div>
-	<div class="accordions">
-	<p class="w400">IKS</p>
-	<div class="content in-col">
-			{#await bolThree()}
-	<small>...</small>
-	{:then data}
-	{#each data as item}
-	<small><a href="/openlibrary/books/{item.slug}">{item.Text}</a></small>
-	{/each}
-	{:catch error}
-	<pre>{error}</pre>
-	{/await}
-	</div>
-	</div>
-	<div class="accordions">
-	<p class="w400">Bodhas</p>
-	<div class="content in-col">
-			{#await bolOne()}
-	<small>...</small>
-	{:then data}
-	{#each data as item}
-	<small><a href="/openlibrary/books/{item.slug}">{item.Text}</a></small>
-	{/each}
-	{:catch error}
-	<pre>{error}</pre>
-	{/await}
-	</div>
-	</div>
+  <p class="upper grey heading"><a href="/openlibrary/discover/rigveda">Ṛgveda</a></p>
 </div>
+
+
 
 <style>
 .sidebar { padding-right: 12px; padding-bottom: 32px;}
-.sidebar .in-row { justify-content: space-between; width: 56%;}
+.sidebar .in-row { justify-content: space-between; width: 60%; margin-bottom: 48px;}
 .sidebar .in-row img { object-fit: contain; width: 24px; height: 24px; filter: saturate(0);}
 .sidebar .in-row img:hover { filter: saturate(1);}
-.content { display: none;}
-	.accordions:hover .content {
-		display: flex;
-	}
+.sublinks small { letter-spacing: 0.5px; color: #878787;}
+.sublinks { display: none; transition: all 0.33s var(--cubeb);}
+.rending:hover .sublinks { display: flex;}
+
 </style>

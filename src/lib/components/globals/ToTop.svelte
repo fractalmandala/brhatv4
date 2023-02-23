@@ -6,13 +6,13 @@
 </div>
 
 <style>
-.to-top { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; font-size: 12px; text-transform: uppercase; font-weight: bold; color: #878787;}
+.to-top { display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 12px; text-transform: uppercase; font-weight: bold; color: #878787;}
 button { transition: all 0.14s var(--cube2); transform-origin: center center; background-image: url('/images/icons/go-up-grey.png'); background-position: center center; background-size: contain; background-repeat: no-repeat; border: none; background-color: transparent;}
 button:hover { background-image: url('/images/icons/go-up-red.png'); transform: scale(0.9);}
 
 @media screen and (min-width: 768px) {
 	button { width: 24px; height: 24px; }
-	.to-top { margin: 0; }
+	.to-top { margin: 0; height: 72px; }
 }
 
 @media screen and (max-width: 767px) {
