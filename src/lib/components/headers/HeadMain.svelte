@@ -192,7 +192,7 @@ function closeMen(){
 	display: flex
 	flex-direction: column
 	top: 0
-	left: 0
+	right: 0
 	height: 100vh
 	background: var(--beautrans)
 	@media screen and (max-width: 575px)
