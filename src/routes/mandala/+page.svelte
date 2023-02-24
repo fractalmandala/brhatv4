@@ -42,7 +42,7 @@ onMount(() => {
 		<img src="/images/mandala/ogmandala.webp" alt="hero" style="transform: scale({y/3000}) translateY({y}px) rotate({y}deg)"/>
     -->
 	</div>
-	<div class="flexbox-c pad-x-40 l2">
+	<div class="flexbox-c desk-margins l2">
 		<h5 class="w300">
 			To be a history in the true sense of the word, a work must be a story of the people inhabiting a country.
 		</h5>
@@ -56,7 +56,7 @@ onMount(() => {
 				Shri KM Munshi
 		</small>
 	</div>
-	<div class="flexbox-r full pad-x-40 col-image l5">
+	<div class="flexbox-r full desk-margins col-image l5">
 		<div class="in-col im-col wide40">
 				<img src="/images/mandala/itihaas.webp" alt="itihas"/>
 		</div>
@@ -68,7 +68,7 @@ onMount(() => {
 		</div>
 	</div>
 
-	<div class="flexbox-r full pad-x-40 col-image l6">
+	<div class="flexbox-r full desk-margins col-image l6">
 		<div class="in-col im-col wide40">
 				<img src="/images/mandala/bharata.webp" alt="bharat"/>
 		</div>
@@ -80,7 +80,7 @@ onMount(() => {
 		</div>
 	</div>
 
-	<div class="flexbox-r full pad-x-40 col-image l7">
+	<div class="flexbox-r full desk-margins col-image l7">
 		<div class="in-col im-col wide40">
 				<img src="/images/mandala/dharma.webp" alt="dharma"/>
 		</div>
@@ -92,20 +92,20 @@ onMount(() => {
 		</div>
 	</div>
 
-	<div class="flexbox-c pad-x-40 full l3">
+	<div class="flexbox-c desk-margins full l3">
 		<h2 class="weight200">
 			Fractal Maṇḍala is a project to research and articulate the emergence of Indian civilizational consciousness.
 		</h2>
 		<div class="in-col pad-y-b wide60 link-heads">
-			<h5 class="w400"><a href="/mandala/meaning">Fractal Maṇḍala - Definition, Instances</a></h5>
-			<h5 class="w400"><a href="/mandala/fractals/civcon">On Indian Civilizational Consciousness</a></h5>
-			<h5 class="w400"><a href="/mandala/fractals/aphorisms">Caturasūtra - 4 Aphorisms</a></h5>
-			<h5 class="w400"><a href="/mandala/fractals/essay1">The Macrohistoric Case</a></h5>
-			<h5 class="w400"><a href="/mandala/fractals/essay2">Ratha as a Bīja</a></h5>
-			<h5 class="w400"><a href="/mandala/fractals/ancestors">Ancestors Outside of Time</a></h5>
-			<h5 class="w400"><a href="/mandala/fractals/">History is Ontic, Itihāsa is Ontologic</a></h5>
-			<h5 class="w400"><a href="/mandala/fractals/">Synaptic Reconnection</a></h5>
-			<h5 class="w400"><a href="/mandala/fractals/">Rāma's Journey</a></h5>
+			<h5 class="w400 mind"><a href="/mandala/meaning">Fractal Maṇḍala - Definition, Instances</a></h5>
+			<h5 class="w400 mind"><a href="/mandala/fractals/civcon">On Indian Civilizational Consciousness</a></h5>
+			<h5 class="w400 mind"><a href="/mandala/fractals/aphorisms">Caturasūtra - 4 Aphorisms</a></h5>
+			<h5 class="w400 mind"><a href="/mandala/fractals/essay1">The Macrohistoric Case</a></h5>
+			<h5 class="w400 mind"><a href="/mandala/fractals/essay2">Ratha as a Bīja</a></h5>
+			<h5 class="w400 mind"><a href="/mandala/fractals/ancestors">Ancestors Outside of Time</a></h5>
+			<h5 class="w400 mind"><a href="/mandala/fractals/">History is Ontic, Itihāsa is Ontologic</a></h5>
+			<h5 class="w400 mind"><a href="/mandala/fractals/">Synaptic Reconnection</a></h5>
+			<h5 class="w400 mind"><a href="/mandala/fractals/">Rāma's Journey</a></h5>
 		</div>
 	</div>
 
@@ -170,13 +170,7 @@ onMount(() => {
 	justify-content: center;
 	}
 	.l3 { justify-content: flex-start;}
-  .l3 .in-col h5 { margin-top: 12px; margin-bottom: 0; padding-bottom: 12px; border-bottom: 1px solid #f1f1f1;}
 	.l3 a:hover { color: #10c56d;}
-.l5 img {
-	object-fit: cover;
-	width: 512px;
-	height: 512px;
-}
 
 
 }

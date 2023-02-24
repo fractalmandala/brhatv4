@@ -15,11 +15,11 @@ export async function allCourses() {
 }
 </script>
 
-<div class="flexbox-r full l0">
+<div class="flexbox-r full desk-margins l0">
 	<div class="in-col cc-y-col wide60 pad-x-l" id="c1">
-		<h3 class="w400">
+		<h4 class="w400">
 			Bṛhat Draṣṭā is an offering in deep learning that offers courses on some of the greatest ancient and contemporary philosophers (draṣṭās) and schools of thoughts (darśana).
-		</h3>
+		</h4>
 	</div>
 	<div class="in-col cc-y-col wide40 im-col" id="c2">
 		<img src="/images/drashta/bigdrashta.png" alt="drashtatop" />
@@ -35,7 +35,7 @@ export async function allCourses() {
 {#each data as item}
 	<div class="in-col wide25 gen-card formal3">
 		<img src={item.image} alt={item.name}>
-		<h5 class="w600"><a href={item.link}>{item.name}</a></h5>
+		<h5><a href={item.link}>{item.name}</a></h5>
 		<p>{item.content.slice(0,250)}<a class="readmore" href={item.link}>...Read More</a></p>
 		<div class="in-col">
 				<cite class="blue">{item.status}</cite>
@@ -69,7 +69,7 @@ export async function allCourses() {
 			<AllDrashtas></AllDrashtas>
 			</div>
 		</div>
-		<div class="in-col top-gap wide50" id="rightcol">
+		<div class="in-col wide50" id="rightcol">
 			<h3 class="w700 m-top-24-mob">
 			Darśana | दर्शन  
 			</h3>

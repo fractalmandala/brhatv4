@@ -217,6 +217,17 @@ cite
     padding-left: 32px
     padding-right: 32px
 
+.desk-margins-cut
+  @media screen and (min-width: 576px)
+    margin-left: 144px
+    margin-right: 144px
+    min-width: calc(100vh - 288px)
+  @media screen and (max-width: 575px)
+    margin-left: 32px
+    margin-right: 32px
+    width: calc(100vh - 64px)
+
+
 
 .pad-x-40
   @media screen and (min-width: 900px)
@@ -270,6 +281,12 @@ cite
   @media screen and (max-width: 575px)
     padding-bottom: 32px
 
+.p-top-32
+  padding-top: 32px
+
+.p-top-80
+  padding-top: 80px
+
 .just-row
   justify-content: space-between
 
@@ -295,6 +312,8 @@ cite
 .m-top-24-mob
   @media screen and (max-width: 575px)
     margin-top: 24px
+  @media screen and (min-width: 576px)
+    margin-top: 0
 
 .m-bot-16
   margin-bottom: 16px
@@ -342,6 +361,10 @@ cite
 .fullxy
   width: 100vw
   min-height: 100vh !important
+
+.fully
+  @media screen and (min-width: 576px)
+    min-height: 100vh
 
 .all-cc
   justify-content: center
@@ -568,6 +591,15 @@ cite
       padding: 0 12px
       margin-bottom: 4px
       text-transform: uppercase
+  @media screen and (min-width: 576px)
+    h5, h6
+      text-transform: capitalize
+    img
+      margin-bottom: 16px
+    cite
+      font-weight: bold
+      margin-bottom: 4px
+       
 
 
 .document-sheet
@@ -733,6 +765,25 @@ cite
       border-color: #7a7a7a
 
 .col-image
+  padding-top: 0
+  padding-bottom: 0
+  @media screen and (min-width: 575px)
+    gap: 32px
+  .im-col
+    padding: 0
+    justify-content: center
+    img
+      height: 88%
+      object-fit: cover
+    @media screen and (max-width: 575px)
+      order: 1
   .non-im-col
+    @media screen and (min-width: 576px)
+      justify-content: center
     @media screen and (max-width: 575px)
       padding-top: 16px
+      order: 2
+
+.mind
+  padding: 12px 0
+  border-top: 1px solid #e1e1e1

@@ -87,7 +87,7 @@ const { data, error } = await supabase
 		</div>
 	</div>
 </div>
-<div class="flexbox-c full cc-y-col desk-margins lx">
+<div class="flexbox-c cc-y-col desk-margins lx">
 	<h5 class="w300 wide75 m-bot-zero">
 		An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment.
 	</h5>
@@ -121,7 +121,7 @@ const { data, error } = await supabase
 		</div>
 	</div>
 </div>
-<div class="flexbox-c full cc-y-col top-gap desk-margins lz">
+<div class="flexbox-c cc-y-col top-gap desk-margins lz">
 	<h4 class="w500 wide75 top-gap">
 		But the severest constraint of them all is Time, and more specifically – Moment.
 	</h4>
@@ -130,21 +130,21 @@ const { data, error } = await supabase
 		Read more on the need we see, why we think this is the time to address it, and about our self-identity:
 	</h6>
 	<div class="flexbox-c link-heads l4">
-	<h5 class="w400">
+	<h5 class="w400 mind">
 		<a href="/about/docs/svatahsiddha">
 		Svataḥsiddha
 		</a>
 	</h5>
-	<h5 class="w400">
+	<h5 class="w400 mind">
 		<a href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a>
 	</h5>
-	<h5 class="w400">
+	<h5 class="w400 mind">
 		<a href="/about/docs/whatkrishnameanstous">What Śrī Kṛṣṇa Means to Us</a>
 	</h5>
-	<h5 class="w400">
+	<h5 class="w400 mind">
 		<a href="/about/docs/namelogo">Nāmarūpa - our Name and Logo</a>
 	</h5>
-	<h5 class="w400">
+	<h5 class="w400 mind">
 		<a href="/about/docs/values">Pratijñā - Values We Hold Dear</a>
 	</h5>
 	</div>

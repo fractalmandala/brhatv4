@@ -130,7 +130,7 @@
 </VideoSlate>
 <Shadba>
 	<div slot="header">Śabdāvalī - the 64 Kalās</div>
-	<div class="flexbox-c top-gap pad-y-b" slot="body">
+	<div class="flexbox-c desk-margins pad-y-b" slot="body">
 				{#await Shabdavali()}
 				<small>...</small>
 				{:then data}

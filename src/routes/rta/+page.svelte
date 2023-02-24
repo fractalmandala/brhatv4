@@ -10,19 +10,19 @@ let y = 1
 <svelte:window bind:scrollY={y}/>
 	<div class="flexbox-r full cc-y-col l0 imgbox">
 		<div class="flexbox-c screen">
-			<div class="in-col cc-x-col-mob wide50 l-x-col-desk">
+			<div class="in-col cc-x-col-mob l-x-col-desk">
 				<LogoRiDCurr></LogoRiDCurr>	
 			</div>
-			<div class="in-row row-cc-y row-left-x wide50 pad-x-l" id="symbolsrow">
+			<div class="in-row row-cc-y" id="symbolsrow">
 				<img id="thecircle" src="/images/rid/trin-circ.png" alt="ridhero"/>
 				<img id="theinf" src="/images/rid/trin-inf.png" alt="ridhero"/>
 			</div>
 		</div>
 	</div>	
-	<div class="flexbox-c cc-y-col l1 desk-margins">
-		<p class="wide75">
+	<div class="flexbox-c cc-y-col p-top-80 l1 desk-margins">
+		<h5 class="wide75">
 				Human creation is bringing the ruin of life, species and planet. Introspection and a radical recalibration are our only chance of reversing the situtation. What's needed is a 'wisdom of the gods.'
-		</p>
+		</h5>
 		<h5 class="green">
 			This is the most fundamental wicked problem of our times...
 		</h5>
@@ -34,13 +34,12 @@ let y = 1
 			</div>
 			<div slot="cite">-Robert Peteres, Circle Design</div>
 		</Quote>
-	</div>
-	<div class="flexbox-c m-bot-zero l2 desk-margins">
-		<h2 class="w600">
+		<h4 class="w600 p-top-32">
 			Ṛta in Design is a system for modern design thinking and creatorship, informed by the <span class="green"> design principles of Dharma.</span>
-		</h2>
+		</h4>
 	</div>
-	<div class="flexbox-c full pad-y-b desk-margins link-heads" id="links">
+
+	<div class="flexbox-c full pad-y-b pad-y-t desk-margins link-heads" id="links">
 		<h5 class="w400 wide75"><a href="/rta/prologue">Prelude to Ṛta in Design</a></h5>
 		<h5 class="w400 wide75"><a href="/rta/intro">Introduction to Ṛta in Design</a></h5>
 		<h5 class="w400 wide75"><a href="/rta/dharmaisdesign">Dharma is Design</a></h5>
@@ -70,16 +69,17 @@ let y = 1
 }
 
 @keyframes movingtocircle {
- 0% { margin-left: 80%; opacity: 0;}
-100% { margin-left: 0; opacity: 1;}
+ 0% { margin-left: 80% !important; opacity: 0;}
+100% { margin-left: 0 !important; opacity: 1;}
 }
 
 @media screen and (min-width: 768px) {
-	#thecircle { height: 32px; z-index: 1; animation: movingleft 1s ease forwards;}
-	#theinf { transform: translateX(-16px); z-index: 0; height: 32px; animation: following 1s ease forwards;}
-	#symbolsrow { justify-content: space-between; padding-top: 100px;}
+	#thecircle { height: 32px; z-index: 1;}
+	#theinf { z-index: 0; height: 32px;}
+	#symbolsrow { justify-content: space-between;}
 	#links h5 { padding-bottom: 16px;}
 	.l0 { flex-direction: row;}
+	.screen { height: 100vh; justify-content: center; align-items: center;}
 }
 
 @media screen and (max-width: 767px) {
