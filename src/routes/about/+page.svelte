@@ -50,46 +50,44 @@ const { data, error } = await supabase
 </script>
 
 <div class="loco">
-<div class="flexbox-c full img-fix l0"></div>
-<div class="flexbox-c full pad-x-40 l1">
-	<h2 class="w700 m-bot-zero">Bṛhat is a
-	<span class="red">
-	Culture Engine</span></h2>
-	<h5 class="w300 wide75">
-		To power creatives, research and design rooted
-		in the Indian civilizational consciousness. We convert individual, institutional 
-		and collective intent into action, across 3 dimensions:
+<div class="flexbox-c full imgbox l0"></div>
+<div class="flexbox-c desk-margins cc-y-col mob-y-pad full">
+	<h1 class="w500">Bṛhat is a <br><span class="red m-top-zero">Culture Engine</span></h1>
+	<h5 class="w300 wide75 blk">
+		To power creatives, research and design rooted in the Indian civilizational consciousness. We
+		convert individual, institutional and collective intent into action, across 3 dimensions.
 	</h5>
-	<div class="l2 flexbox-r of-three">
+	<button class="redbutton m-top-8-mob"><a href="/about">Know More</a></button>
+	<div class="l2 flexbox-r of-three top-gap">
 		<div class="l2row1 in-col wide33">
-			<h6 class="wbold">Create</h6>
-			<small class="w300">
+			<h6 class="wbold m-bot-8">Create</h6>
+			<p class="w300 grey">
 				- visual and literary stories;<br>
 				- design thinking and methods;<br>
 				- research output on education and ecology;<br>
 				- culture-rooted thought models
-			</small>
+			</p>
 		</div>
 		<div class="l2row2 in-col wide33">
-			<h6 class="wbold">Curate</h6>
-			<small class="w300">
+			<h6 class="wbold m-bot-8">Curate</h6>
+			<p class="w300 grey">
 				- heritage experience journeys;<br>
 				- culture-fit in mass media;<br>
 				- NEP-relevant IKS curriculum;<br>
 				- culture rooting in product design and thinking
-			</small>
+			</p>
 		</div>
 		<div class="l2row3 in-col wide33">
-			<h6 class="wbold">Consult</h6>
-			<small class="w300">
+			<h6 class="wbold m-bot-8">Consult</h6>
+			<p class="w300 grey">
 				- NEP-IKS implementation;<br>
 				- policy thinking on education and ecology;<br>
 				- organizational structure and leadership frameworks
-			</small>
+			</p>
 		</div>
 	</div>
 </div>
-<div class="flexbox-c full cc-y-col pad-x-40 lx">
+<div class="flexbox-c full cc-y-col desk-margins lx">
 	<h5 class="w300 wide75 m-bot-zero">
 		An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment.
 	</h5>
@@ -98,70 +96,72 @@ const { data, error } = await supabase
 	</h5>
 	<div class="flexbox-r of-three l3">
 		<div class="in-col wide33 l3col1">
-			<h6 class="wbold red">
+			<h6 class="wbold m-bot-8">
 				Civilization is Culture in Action
 			</h6>
-			<small class="w300">
+			<p class="w300 grey">
 				The civilizational moment needs rooting in Dharma - of this there is no doubt. Thus a core part of our work is culture creatives that draw from the deep pool of Dhārmika heritage.
-			</small>
+			</p>
 		</div>
 		<div class="in-col wide33 l3col2">
-			<h6 class="wbold red">
+			<h6 class="wbold m-bot-8">
 				It Needs Culture-Compatible Policy
 			</h6>
-			<small class="w300">
+			<p class="w300 grey">
 				Radical reorientations are needed in education and ecology. To this end, our focus will be on generating policy currency for culture through frameworks, curriculum and more.
-			</small>
+			</p>
 		</div>
 		<div class="in-col wide33 l3col3">
-			<h6 class="wbold red">
+			<h6 class="wbold m-bot-8">
 				The Work is Inter-Generational
 			</h6>
-			<small class="w300">
+			<p class="w300 grey">
 				It needs leadership with cultural-cognition to carry the Agni. This cognition needs to permeate even brand and organisation - essential quarters for the overton window shift.
-			</small>
+			</p>
 		</div>
 	</div>
 </div>
-<div class="flexbox-c full cc-y-col pad-x-40 lz">
-	<h4 class="w500 wide75">
+<div class="flexbox-c full cc-y-col top-gap desk-margins lz">
+	<h4 class="w500 wide75 top-gap">
 		But the severest constraint of them all is Time, and more specifically – Moment.
 	</h4>
 	<h6 class="w300 wide75">
 		The time for a Culture Engine is now, because we are in the midst of a civilizational moment. What is a civilizational moment? How rare or regular are such moments? How must we respond to them?
 		Read more on the need we see, why we think this is the time to address it, and about our self-identity:
 	</h6>
-	<div class="flexbox-c l4">
-	<h5 class="w400 m-bot-zero">
+	<div class="flexbox-c link-heads l4">
+	<h5 class="w400">
 		<a href="/about/docs/svatahsiddha">
 		Svataḥsiddha
 		</a>
 	</h5>
-	<h5 class="w400 m-bot-zero">
+	<h5 class="w400">
 		<a href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a>
 	</h5>
-	<h5 class="w400 m-bot-zero">
+	<h5 class="w400">
 		<a href="/about/docs/whatkrishnameanstous">What Śrī Kṛṣṇa Means to Us</a>
 	</h5>
-	<h5 class="w400 m-bot-zero">
+	<h5 class="w400">
 		<a href="/about/docs/namelogo">Nāmarūpa - our Name and Logo</a>
 	</h5>
-	<h5 class="w400 m-bot-zero">
+	<h5 class="w400">
 		<a href="/about/docs/values">Pratijñā - Values We Hold Dear</a>
 	</h5>
 	</div>
 </div>
 <StaticH1>
 	<div id="advisors" slot="header">Advisors</div>
-	<div slot="body" class="flexbox-r of-four top-gap">
+	<div slot="body" class="flexbox-r of-four desk-margins">
 	{#await advisors()}
 	<small>...</small>
 	{:then data}
 		{#each data as item}
-		<div class="in-col advisorbox m-bot-24 wide25">
+		<div class="advisorbox m-bot-24 wide25">
 			<img src={item.image} alt={item.name} />
-			<h6 class="m-top-24 m-bot-zero">{item.name}</h6>
-			<small>{item.title}</small>
+			<div class="in-col">
+				<h6 class="m-top-24 m-bot-zero">{item.name}</h6>
+				<small>{item.title}</small>
+			</div>
 		</div>
 		{/each}
 	{:catch error}
@@ -171,7 +171,7 @@ const { data, error } = await supabase
 </StaticH1>
 <Partners>
 	<div id="partners" slot="header">Partners</div>
-	<div slot="body" class="flexbox-r of-six wrapper just-row top-gap">
+	<div slot="body" class="flexbox-r of-six wrapper just-row desk-margins">
 		{#await partners()}
 		<small>...</small>
 		{:then data}
@@ -187,7 +187,7 @@ const { data, error } = await supabase
 </Partners>
 <Team>
 	<div id="team" slot="header">Team</div>
-	<div slot="body" class="flexbox-r wrapper of-three pad-y-b top-gap">
+	<div slot="body" class="flexbox-r wrapper of-three pad-y-b desk-margins">
 	{#await team()}
 	<small>...</small>
 	{:then data}
@@ -196,7 +196,7 @@ const { data, error } = await supabase
 		<img src={item.image} alt={item.name} />
 		<h6 class="m-bot-zero">{item.name}</h6>
 		<p class="red m-top-zero">{item.title}</p>
-		<small>{item.bio}</small>
+		<small class="grey">{item.bio}</small>
 	</div>
 	{/each}
 	{:catch error}
@@ -208,7 +208,7 @@ const { data, error } = await supabase
 </div>
 
 <style>
-.l2 h6 { 
+.l2 h6, .l3 h6 { 
 	border-top: 1px solid #d7d7d7;
 	padding-top: 12px;
 }
@@ -224,13 +224,8 @@ const { data, error } = await supabase
 	background-size: cover;
 	background-repeat: no-repeat;
 }
-.l1 { background: white; justify-content: center; height: 100%; padding-top: 4em; padding-bottom: 2em; margin-bottom: -2em;}
 
-
-
-
-.l1 { position: relative;}
-
+.advisorbox { display: flex;}
 
 
 @media screen and (min-width: 768px) {
@@ -238,14 +233,23 @@ const { data, error } = await supabase
 		padding: 0 24px 2px 24px;
 		background: #f7f7f7;
 	}
+	.advisorbox { flex-direction: column;}
 	.l3 .in-col { border-top: 1px solid #e1e1e1; padding-top: 16px;}
 	
 }
 
+@media screen and (max-width: 767px) and (min-width: 576px) {
+	.advisorbox { flex-direction: column;}
+}
+
 @media screen and (max-width: 575px) {
+	.l0 { height: 40vh;}
+	.advisorbox { flex-direction: row; align-items: flex-start;}
 	.advisorbox img { width: 30%;}
-	.partnerbox { width: 48%; margin-bottom: 16px;}
-	.partnerbox img { width: 80%;}
+	.advisorbox .in-col { padding-top: 16px; padding-left: 16px;}
+  .advisorbox small { color: #878787;}
+	.partnerbox { width: 30%; margin-bottom: 16px;}
+	.partnerbox img { width: 88%;}
 }
 
 </style>

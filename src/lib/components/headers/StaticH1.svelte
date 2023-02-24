@@ -8,7 +8,7 @@ import { reveal } from 'svelte-reveal'
 			<slot name="header"></slot>
 		</h2>
 	</div>
-	<div class="flexbox-c pad-x-40 m-top-zero">
+	<div class="flexbox-c m-top-zero-desk">
 		<slot name="body"></slot>
 	</div>
 </div>
@@ -31,13 +31,14 @@ import { reveal } from 'svelte-reveal'
 	.head { height: max-content; width: 100%;background: var(--beau)}
 
 	.big h2 {
-		padding: 8px 80px 8px 40px;
+		padding: 8px 80px 8px 96px;
 		margin-bottom: 0;
 		margin-top: 0;
 		color: #272727;
-		margin-left: 40px;
+		margin-left: 48px;
+		padding-bottom: 32px;
 	}
-	.lay { padding-top: 96px;}
+	.lay { padding-top: 64px; padding-bottom: 48px;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
@@ -58,8 +59,8 @@ import { reveal } from 'svelte-reveal'
 
 	.big { padding-top: 32px;}
 	.big h2 {
-		padding: 8px 8px 2px 12px;
-		margin-left: 12px;
+		padding: 8px 8px 2px 32px;
+		margin-left: 0;
 	}
 }
 </style>

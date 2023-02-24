@@ -1,7 +1,6 @@
 <script>
 import supabase from '$lib/db'
 
-
 async function getMrdanga() {
   const { data, error } = await supabase
   .from('brhat-youtube')
@@ -20,11 +19,11 @@ async function getMrdanga() {
 		{:then data}
 			<div class="flexbox-r of-four">
 				{#each data as item}
-				<div class="in-col wide25">
+				<div class="in-col wide25 box-video">
 					<iframe
   					class="m-1"
   					width=100%
-  					height=88%
+  					height=64%
   					src="https://www.youtube.com/embed/{item.videoid}"
   					title={item.name}
   				>

@@ -1,6 +1,7 @@
 <script>
 import supabase from '$lib/db'
 import Drashtas from '$lib/components/headers/StaticH1.svelte'
+import Chapters from '$lib/components/headers/StaticH1.svelte'
 import Firekeepers from '$lib/components/headers/StaticH1.svelte'
 import AllDrashtas from '$lib/components/pagecomps/AllDrashtas.svelte'
 import AllSchools from '$lib/components/pagecomps/AllSchools.svelte'
@@ -14,29 +15,31 @@ export async function allCourses() {
 }
 </script>
 
-<div class="flexbox-r full">
-	<div class="in-col cc-y-col wide60 pad-x-l">
-		<h3 class="w300">
+<div class="flexbox-r full l0">
+	<div class="in-col cc-y-col wide60 pad-x-l" id="c1">
+		<h3 class="w400">
 			Bṛhat Draṣṭā is an offering in deep learning that offers courses on some of the greatest ancient and contemporary philosophers (draṣṭās) and schools of thoughts (darśana).
 		</h3>
 	</div>
-	<div class="in-col cc-y-col wide40 im-col">
+	<div class="in-col cc-y-col wide40 im-col" id="c2">
 		<img src="/images/drashta/bigdrashta.png" alt="drashtatop" />
 	</div>
 </div>
 
-<div class="flexbox-r of-four cc-y-row pad-x-40 l2">
-{#await allCourses()}
+<Chapters --contheight="100vh">
+<div slot="header">Courses</div>
+<div class="flexbox-r of-three desk-margins" slot="body">
+	{#await allCourses()}
 <small>loading chapters...</small>
 {:then data}
 {#each data as item}
-	<div class="in-col wide25 formal3">
+	<div class="in-col wide25 gen-card formal3">
 		<img src={item.image} alt={item.name}>
-		<h6 class="w600"><a href={item.link}>{item.name}</a></h6>
-		<small>{item.content.slice(0,250)}<a class="isred" href={item.link}>...Read More</a></small>
+		<h5 class="w600"><a href={item.link}>{item.name}</a></h5>
+		<p>{item.content.slice(0,250)}<a class="readmore" href={item.link}>...Read More</a></p>
 		<div class="in-col">
-				<p>{item.status}</p>
-				<p>{item.datefrom}</p>
+				<cite class="blue">{item.status}</cite>
+				<cite class="blue">{item.datefrom}</cite>
 			</div>
 	</div>
 {/each}
@@ -44,11 +47,13 @@ export async function allCourses() {
 <pre>{error}</pre>
 {/await}
 </div>
+</Chapters>
+
 
 <Drashtas>
 	<div slot="header">Draṣṭās and Darśanas</div>
-	<div class="flexbox-r pad-y-b" slot="body">
-		<div class="in-col top-gap wide50" id="leftcol">
+	<div class="flexbox-r wrapper desk-margins pad-y-b" slot="body">
+		<div class="in-col wide50" id="leftcol">
 			<h3 class="w700">
 			Draṣṭā | द्रष्टा 
 			</h3>
@@ -65,7 +70,7 @@ export async function allCourses() {
 			</div>
 		</div>
 		<div class="in-col top-gap wide50" id="rightcol">
-			<h3 class="w700">
+			<h3 class="w700 m-top-24-mob">
 			Darśana | दर्शन  
 			</h3>
 			<p>
@@ -86,16 +91,16 @@ export async function allCourses() {
 --contheight="100vh"
 >
 	<div slot="header">Firekeepers of Civilization</div>
-	<div class="flexbox-c top-gap" slot="body">
-		<div class="in-row pad-y-b">
+	<div class="flexbox-c desk-margins top-gap" slot="body">
+		<div class="in-row wrapper pad-y-b">
 			<div class="in-col wide40 im-col">
 				<img src="/images/drashta/firekeepers.webp" alt="fire"/>
-				<div class="in-row buttonsrow">
+				<div class="in-row wrapper buttonsrow">
 				<button class="redbutton"><a href="/course/sitaramgoel">Sita Ram Goel</a></button>
 				<button class="redbutton"><a href="/course/shriramswarup">Shri Ram Swarup</a></button>
 				</div>
 			</div>
-			<div class="in-col pad-x-l cc-y-col wide60">
+			<div class="in-col non-im-col pad-x-l cc-y-col wide60">
 				<h4 class="w600">
 					Hindu civilization today navigates a precarious turn. Great thought churning is going on for necessary changes in our society, culture and civilization. It is imperative at this crucial juncture to learn from the ancient as well as contemporary fire keepers of civilization – the great men of knowledge and wisdom, jñāna and sādhanā, who kept the flame of our civilization burning.
 				</h4>
@@ -114,10 +119,8 @@ export async function allCourses() {
 <style>
 
 @media screen and (min-width: 900px) {
-	.l2 { height: 100vh; }
 	.in-col.wide25 img { height: 160px; object-fit: cover; width: 100%;}
-	.in-col.wide25 h6 { text-transform: capitalize; padding-top: 16px; line-height: 1.1;}
-	.in-col.wide25 small { color: #878787;}
+	.in-col.wide25 p { color: #878787;}
 	.formal3 .in-col p { margin-bottom: 0; text-transform: uppercase;}
 	#leftcol {
 		padding-right: 40px;
@@ -127,6 +130,15 @@ export async function allCourses() {
 	}
 	.im-col img { margin-bottom: 16px;}
 	.buttonsrow { gap: 24px;}
+}
+
+@media screen and (max-width: 575px) {
+	#rightcol, #leftcol { width: 100%;}
+	#c1 { order: 2; padding: 0 32px;} 
+	#c2 { order: 1}
+	#c2 img { width: 70%; margin: auto;}
+	.l0 { margin-top: 64px;}
+	.buttonsrow { flex-direction: column; margin-top: 16px;}
 }
 </style>
 

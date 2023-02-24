@@ -43,9 +43,9 @@ h1
         line-height: 1.1
         letter-spacing: -1px
     @media screen and (max-width: 575px)
-        font-size: 48px
+        font-size: 42px
         line-height: 1.1
-        letter-spacing: -1px
+        letter-spacing: 0px
 
 h2
     @media screen and (min-width: 900px)
@@ -61,68 +61,88 @@ h2
         line-height: 1.1
         letter-spacing: -1px
     @media screen and (max-width: 575px)
-        font-size: 40px
+        font-size: 28px
         line-height: 1.1
 
 h3
     @media screen and (min-width: 768px)
         font-size: 48px
-        line-height: 1.28
+        line-height: 1.38
     @media screen and (max-width: 767px) and (min-width: 576px)
         font-size: 36px
-        line-height: 1.28
+        line-height: 1.38
     @media screen and (max-width: 575px)
-        font-size: 28px
-        line-height: 1.28
+        font-size: 24px
+        line-height: 1.38
 
 h4
     @media screen and (min-width: 768px)
         font-size: 32px
+        line-height: 1.38
     @media screen and (max-width: 767px) and (min-width: 576px)
         font-size: 25px
+        line-height: 1.38
     @media screen and (max-width: 575px)
         font-size: 21px
+        line-height: 1.38
 
 h5
     @media screen and (min-width: 768px)
         font-size: 24px
-        line-height: 1.28
+        line-height: 1.38
+        letter-spacing: -0.5px
     @media screen and (max-width: 767px) and (min-width: 576px)
         font-size: 21px
-        line-height: 1.28
+        line-height: 1.38
     @media screen and (max-width: 575px)
-        font-size: 20px
-        line-height: 1.28
+        font-size: 19px
+        line-height: 1.38
+        letter-spacing: 0px
+
+.link-heads
+  h5
+    @media screen and (max-width: 575px)
+      font-size: 21px
+    @media screen and (min-width: 576px)
+      font-size: 24px
 
 h6
     @media screen and (min-width: 768px)
         font-size: 18px
-        line-height: 1.5
-        letter-spacing: 0.5px
+        line-height: 1.38
+        letter-spacing: 0.05px
     @media screen and (max-width: 767px) and (min-width: 576px)
         font-size: 18px
-        line-height: 1.5
+        line-height: 1.38
     @media screen and (max-width: 575px)
-        font-size: 18px
-        line-height: 1.5
+        font-size: 16px
+        line-height: 1.38
 
 p, pre, ul li, ol li
     @media screen and (min-width: 768px)
         font-size: 16px
-        letter-spacing: 1px
+        letter-spacing: 0.05px
+        line-height: 1.5
     @media screen and (max-width: 767px) and (min-width: 576px)
         font-size: 16px
+        line-height: 1.5
+        letter-spacing: 0.05px
     @media screen and (max-width: 575px)
         font-size: 16px
+        line-height: 1.5
+        letter-spacing: 0.05px
 
 
 small
     @media screen and (min-width: 768px)
         font-size: 14px
+        letter-spacing: 0.35px
     @media screen and (max-width: 767px) and (min-width: 576px)
         font-size: 14px
+        letter-spacing: 0.35px
     @media screen and (max-width: 575px)
         font-size: 14px
+        letter-spacing: 0.35px
 
 caption
     @media screen and (min-width: 768px)
@@ -169,7 +189,7 @@ cite
         font-weight: 500
 
 .the-quote
-    font-size: 21px
+    font-size: 24px
     font-style: italic
     margin-bottom: 8px
     color: #878787
@@ -178,13 +198,27 @@ cite
     color: #c7c7c7
 
 .block-quote
-    border-left: 3px solid #fe4a49
-    padding-left: 24px
-    margin-left: 40px
-    margin-bottom: 24px
+    border-left: 3px solid var(--qline)
+    @media screen and (min-width: 576px)
+      padding-left: 24px
+      margin-left: 40px
+      margin-bottom: 24px
+    @media screen and (max-width: 575px)
+      padding-left: 20px
+      margin-left: 20px
+      margin-bottom: 24px
+      margin-top: 12px
+      padding-top: 12px
+      padding-bottom: 12px
+      .quote
+        margin-bottom: 8px
 
 .hindi
     h1, h2, h3, h4, h5, h6, p, cite, small, caption, blockquote, ol li, ul li, a
         font-family: 'Tiro Devanagari Sanskrit', serif
     h4, h5
         letter-spacing: 0
+
+.readmore
+  color: #fe4a49
+  font-weight: bold

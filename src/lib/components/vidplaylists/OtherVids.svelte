@@ -19,16 +19,16 @@ async function getOther() {
 		{:then data}
 			<div class="flexbox-r of-four">
 				{#each data as item}
-				<div class="in-col wide25">
+				<div class="in-col wide25 box-video">
 					<iframe
   					class="m-1"
   					width=100%
-  					height=88%
+  					height=64%
   					src="https://www.youtube.com/embed/{item.id}"
   					title={item.name}
   				>
 					</iframe>
-					<small><a href="https://www.youtube.com/watch?v={item.id}" target="_blank" rel="noreferrer">{@html item.name.slice(0,70)}...</a></small>
+					<h6 class="w500"><a href="https://www.youtube.com/watch?v={item.id}" target="_blank" rel="noreferrer">{@html item.name.slice(0,70)}...</a></h6>
 				</div>
 				{/each}
 			</div>
@@ -36,11 +36,4 @@ async function getOther() {
 		<pre>{error}</pre>
 	{/await}
 </div>
-
-<style>
-
-
- .of-four .in-col { height: 200px;}
-
-</style>
 

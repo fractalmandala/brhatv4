@@ -1,6 +1,5 @@
-
-<div class="flexbox-c outliner">
-<div class="in-col">
+<div class="flexbox-c desk-margins outliner">
+<div class="in-col m-top-90 pad-y-b">
 <p>
 Our website is built completely in Sveltekit, which is a framework for building web applications. Sveltekit allows us to easily create reusable components and manage the state of our application. Once the website is built, it is deployed on Vercel, which is a platform for hosting web applications.
 </p>

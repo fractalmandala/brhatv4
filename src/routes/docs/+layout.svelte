@@ -42,8 +42,7 @@ import SearchDocs from '$lib/components/docs/SearchDocs.svelte'
 
 @media screen and (max-width: 575px) {
 	.sidebb { display: none;}
-	.main { width: 100%; height: 100%; order: 2; padding: 120px 24px 32px 24px;}
-
+	.main { width: 100%; height: 100%; order: 2; padding: none;}
 
 }
 

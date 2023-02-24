@@ -45,7 +45,7 @@
 
 
 <div class="flexbox-c full hero imgbox"></div>
-<div class="flexbox-r full pad-y-t pad-x-40">
+<div class="flexbox-r full pad-y-t desk-margins">
 	<div class="in-col wide60 top-gap left-cc">
 		<p>
 		Sanātana Dharma is a view of immanence. It sees the divine everywhere. The transcendent is the Ultimate Truth, the Supreme Consciousness. The view of immanence says that although nothing that we perceive is the Ultimate Truth, it is at the same time a form of the Ultimate. In this view of immanence a gradient of divinity is created in which individual consciousness is always encouraged to elevate itself and ultimately realize its true form as the Supreme Consciousness.
@@ -74,7 +74,7 @@
 </div>
 <VideoSlate>
 	<div slot="header">Bṛhadmṛdaṅga <span class="red">Visuals</span></div>
-	<div slot="body" class="flexbox-c l0">
+	<div slot="body" class="flexbox-c l0 desk-margins">
 		<div class="in-row">
 			<h5 class="w500" on:click={() => switchList('list-1')} on:keydown={() => switchList('list-1')}>Rasa <span class="widen"> | </span></h5>
 			<h5 class="w500" on:click={() => switchList('list-2')} on:keydown={() => switchList('list-2')}>Kavitā <span class="widen"> | </span></h5>
@@ -173,6 +173,8 @@
 }
 
 @media screen and (max-width: 575px) {
+ .hero { height: 40vh; margin-top: 64px;}
+	.wide60 { padding-right: 0; padding-left: 0;}
 	
 }
 </style>

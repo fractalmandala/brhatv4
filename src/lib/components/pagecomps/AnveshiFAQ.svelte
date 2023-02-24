@@ -33,7 +33,7 @@ export async function allFaq() {
 	{#each data as item, index}
 		<div class="in-col element {activeDivId === 'element-{index}' ? 'active' : ''}" id="element-{index}" on:click={toggleWid} on:keydown={toggleWid}>
 			<h6 class="w500">{item.name}</h6>
-			<p>{item.content}</p>
+			<p id="element-{index}">{item.content}</p>
 		</div>
 	{/each}
 	{:catch error}

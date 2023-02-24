@@ -43,7 +43,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 					<small><a href="/drashta/schools">Schools</a></small>
 					<small><a href="/drashta/firekeepers">Firekeepers</a></small>
 			</div>
-			<div class="flexbox-c link-box">
+			<div class="flexbox-c link-box" id="box-about">
 					<p><a href="/about">About</a></p>
 					<small><a href="/about/docs/namelogo">Nāmarūpa</a></small>
 					<small><a href="/about/docs/values">Pratijñā</a></small>
@@ -51,7 +51,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 					<small><a href="/about/#advisory">Advisory Board</a></small>
 					<small><a href="/about/#team">Team</a></small>
 			</div>
-			<div class="flexbox-c link-box">
+			<div class="flexbox-c link-box" id="box-actions">
 					<p>Actions</p>
 					<small><a href="/dhiti">Dhīti</a></small>
 					<small><a href="/openlibrary">Bṛhat Open Library</a></small>
@@ -340,6 +340,9 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 				margin-bottom: 0
 				margin-top: 40px
 				font-size: 14px
+
+	#box-actions, #box-about
+		margin-top: 32px
 
 	
 </style>

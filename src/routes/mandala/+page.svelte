@@ -1,8 +1,5 @@
 <script lang="ts">
-import { reveal } from 'svelte-reveal'
 import { onMount } from 'svelte';
-import { blur, fly } from 'svelte/transition'
-import { cubicOut } from 'svelte/easing'
 import Animations from 'textify.js';
 import '$lib/styles/textify.css'
 let y: 1
@@ -15,46 +12,6 @@ $: if (resp > 576 ) {
 	{
 		divider = 600
 	}
-
-let isMe1 = false
-let isMe2 = false
-let isMe3 = false
-let isMe4 = false
-let isMe5 = false
-let isMe6 = false
-let isMe7 = false
-let isMe8 = false
-let isMe9 = false
-
-function changeW1(){
-	isMe1 = !isMe1
-}
-function changeW2(){
-	isMe2 = !isMe2
-}
-function changeW3(){
-	isMe3 = !isMe3
-}
-function changeW4(){
-	isMe4 = !isMe4
-}
-function changeW5(){
-	isMe5 = !isMe5
-}
-function changeW6(){
-	isMe6 = !isMe6
-}
-function changeW7(){
-	isMe7 = !isMe7
-}
-function changeW8(){
-	isMe8 = !isMe8
-}
-function changeW9(){
-	isMe9 = !isMe9
-}
-
-
 
 const { Textify } = Animations;
 const { TextifyTitle } = Animations;
@@ -80,7 +37,7 @@ onMount(() => {
 
 <svelte:window bind:scrollY={y} bind:innerWidth={resp}/>
 
-	<div class="flexbox-c full imgbox l00">
+	<div class="flexbox-c imgbox l00">
 	  <!--
 		<img src="/images/mandala/ogmandala.webp" alt="hero" style="transform: scale({y/3000}) translateY({y}px) rotate({y}deg)"/>
     -->
@@ -99,11 +56,11 @@ onMount(() => {
 				Shri KM Munshi
 		</small>
 	</div>
-	<div class="flexbox-r full pad-x-40 l5">
+	<div class="flexbox-r full pad-x-40 col-image l5">
 		<div class="in-col im-col wide40">
 				<img src="/images/mandala/itihaas.webp" alt="itihas"/>
 		</div>
-		<div class="in-col wide60 pad-x-l">
+		<div class="in-col non-im-col wide60 pad-x-l">
 			<h6 class="w300 m-bot-zero">
 			with a continuity of untold millennia, the passage of time visible to us in
 			</h6>
@@ -111,11 +68,11 @@ onMount(() => {
 		</div>
 	</div>
 
-	<div class="flexbox-r full pad-x-40 l6">
+	<div class="flexbox-r full pad-x-40 col-image l6">
 		<div class="in-col im-col wide40">
 				<img src="/images/mandala/bharata.webp" alt="bharat"/>
 		</div>
-		<div class="in-col wide60 pad-x-l">
+		<div class="in-col non-im-col wide60 pad-x-l">
 			<h6 class="w300 m-bot-zero">
 			information was processed in increasingly complex ways within the physical environment best described as
 			</h6>
@@ -123,11 +80,11 @@ onMount(() => {
 		</div>
 	</div>
 
-	<div class="flexbox-r full pad-x-40 l7">
+	<div class="flexbox-r full pad-x-40 col-image l7">
 		<div class="in-col im-col wide40">
 				<img src="/images/mandala/dharma.webp" alt="dharma"/>
 		</div>
-		<div class="in-col wide60 pad-x-l">
+		<div class="in-col non-im-col wide60 pad-x-l">
 			<h6 class="w300 m-bot-zero">
 			emerged a civilizational consciousness, with multi-level coherence. It is known to us as
 			</h6>
@@ -139,16 +96,16 @@ onMount(() => {
 		<h2 class="weight200">
 			Fractal Maṇḍala is a project to research and articulate the emergence of Indian civilizational consciousness.
 		</h2>
-		<div class="in-col pad-y-b wide60">
-			<h5 class="w300"><a href="/mandala/meaning">Fractal Maṇḍala - Definition, Instances</a></h5>
-			<h5 class="w300"><a href="/mandala/fractals/civcon">On Indian Civilizational Consciousness</a></h5>
-			<h5 class="w300"><a href="/mandala/fractals/aphorisms">Caturasūtra - 4 Aphorisms</a></h5>
-			<h5 class="w300"><a href="/mandala/fractals/essay1">The Macrohistoric Case</a></h5>
-			<h5 class="w300"><a href="/mandala/fractals/essay2">Ratha as a Bīja</a></h5>
-			<h5 class="w300"><a href="/mandala/fractals/ancestors">Ancestors Outside of Time</a></h5>
-			<h5 class="w300"><a href="/mandala/fractals/">History is Ontic, Itihāsa is Ontologic</a></h5>
-			<h5 class="w300"><a href="/mandala/fractals/">Synaptic Reconnection</a></h5>
-			<h5 class="w300"><a href="/mandala/fractals/">Rāma's Journey</a></h5>
+		<div class="in-col pad-y-b wide60 link-heads">
+			<h5 class="w400"><a href="/mandala/meaning">Fractal Maṇḍala - Definition, Instances</a></h5>
+			<h5 class="w400"><a href="/mandala/fractals/civcon">On Indian Civilizational Consciousness</a></h5>
+			<h5 class="w400"><a href="/mandala/fractals/aphorisms">Caturasūtra - 4 Aphorisms</a></h5>
+			<h5 class="w400"><a href="/mandala/fractals/essay1">The Macrohistoric Case</a></h5>
+			<h5 class="w400"><a href="/mandala/fractals/essay2">Ratha as a Bīja</a></h5>
+			<h5 class="w400"><a href="/mandala/fractals/ancestors">Ancestors Outside of Time</a></h5>
+			<h5 class="w400"><a href="/mandala/fractals/">History is Ontic, Itihāsa is Ontologic</a></h5>
+			<h5 class="w400"><a href="/mandala/fractals/">Synaptic Reconnection</a></h5>
+			<h5 class="w400"><a href="/mandala/fractals/">Rāma's Journey</a></h5>
 		</div>
 	</div>
 
@@ -160,7 +117,6 @@ onMount(() => {
 .l00 {
 	background-image: url('/images/mandala/1131-m2-1.webp');
 }
-
 
 
 .l00 {
@@ -199,13 +155,10 @@ onMount(() => {
 }
 
 
-.l5 img {
-	object-fit: cover;
-	width: 512px;
-	height: 512px;
-}
 
 @media screen and (min-width: 768px) {
+
+	.l00 { height: 100vh;}
 
 	:root {
 		--mope: 10;
@@ -219,14 +172,18 @@ onMount(() => {
 	.l3 { justify-content: flex-start;}
   .l3 .in-col h5 { margin-top: 12px; margin-bottom: 0; padding-bottom: 12px; border-bottom: 1px solid #f1f1f1;}
 	.l3 a:hover { color: #10c56d;}
+.l5 img {
+	object-fit: cover;
+	width: 512px;
+	height: 512px;
+}
 
 
 }
 
 
 @media screen and (max-width: 767px) {
-
-
+ .l00 { height: 30vh; margin-top: 64px;}
 
 	:root {
 		--mope: 1;
@@ -234,5 +191,6 @@ onMount(() => {
 
 
 }
+
 
 </style>

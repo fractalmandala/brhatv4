@@ -1,44 +1,26 @@
 <script lang="ts">
-import supabase from '$lib/db'
-import { Lightbox } from 'svelte-lightbox'
-import { Swiper, SwiperSlide } from 'swiper/svelte'
-import { scale, slide } from 'svelte/transition'
-import { quadIn, circOut } from 'svelte/easing'
 import { reveal } from 'svelte-reveal';
-import { Keyboard, Mousewheel } from 'swiper'
-import 'swiper/css'
-import 'swiper/css/keyboard'
-import 'swiper/css/mousewheel'
-
-
 </script>
 
-<Swiper
-	modules={[ Keyboard, Mousewheel]}
-	keyboard={true}
-	mousewheel={true}
-	loop={true}
-	slidesPerView={1}
-  direction={"vertical"}
->
-<SwiperSlide>
 <div class="flexbox-r full imgbox l100">
 	<div class="flexbox-c cc-y-col pad-x-40 screen">
-		<h3 class="w300 white">
-				<span class="orange w500">There is a place.</span><br>
-				It lies outside of space and time as we know it,<br>
-				but many of us have been there.<br>
+		<h1 class="w600 orange">There is a place...</h1>
+		<h4 class="w300 white">
+				It lies outside of space and time as we know it,</h4>
+		<h4 class="w300 white">
+				but many of us have been there.</h4>
+		<h4 class="w300 white">
 				It lies in that cultural mid-space so distant yet ever palpable.
-		</h3>
+		</h4>
 	</div>
 </div>
-</SwiperSlide>
-<SwiperSlide>
-	<div class="flexbox-r full s4">
-		<div class="in-col im-col cc-y-col cc-x-col wide40">
+
+
+	<div class="flexbox-r col-image pad-x-40 full s4">
+		<div class="in-col im-col wide40">
 			<img class="m-top-24 imagesmall" src="/images/scrolls/anc1.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
 		</div>
-		<div class="in-col cc-y-col pad24 pad24top wide60">
+		<div class="in-col non-im-col pad-x-l wide60">
 			<h4 class="w400"> 
 				Hive mind. Race memory. Blood bond.<br>
 				We may call it many things, but we know it best when we see it,<br>
@@ -47,11 +29,9 @@ import 'swiper/css/mousewheel'
 		</h4>
 		</div>
 	</div>
-</SwiperSlide>
 
-<SwiperSlide>
-	<div class="flexbox-r full s3">
-		<div class="in-col cc-y-col wide60 pad24top pad-x-l">
+	<div class="flexbox-r col-image pad-x-40 full s3">
+		<div class="in-col wide60 non-im-col pad-x-l">
 			<h4 class="w400">
 				For countless times before have you been here,<br>
 				and a countless times I.<br><br>
@@ -59,17 +39,16 @@ import 'swiper/css/mousewheel'
 				You wrapped meaning around syllables and metre.
 			</h4>
 		</div>
-		<div class="in-col im-col cc-y-col cc-x-col wide40">
+		<div class="in-col im-col wide40">
 			<img class="imagesmall" src="/images/scrolls/anc3.webp" alt="part3" use:reveal={{ transition: "slide" }}/>
 		</div>
 	</div>
-</SwiperSlide>
-<SwiperSlide>
-	<div class="flexbox-r full s4">
-		<div class="in-col im-col cc-y-col cc-x-col wide40">
+
+	<div class="flexbox-r col-image pad-x-40 full s4">
+		<div class="in-col im-col wide40">
 			<img class="m-top-24 imagesmall" src="/images/scrolls/anc4.webp" alt="part4" use:reveal={{ transition: "slide" }}/>
 		</div>
-		<div class="in-col cc-y-col pad24 pad24top wide60">
+		<div class="in-col non-im-col pad-x-l wide60">
 			<h4 class="w400"> 
 			And you? A pioneer of tilled grain you were.<br>
 			Your hard, seasoned hands fed a civilization.<br>
@@ -79,13 +58,12 @@ import 'swiper/css/mousewheel'
 		</h4>
 		</div>
 	</div>
-</SwiperSlide>
-<SwiperSlide>
+
 	<div class="flexbox-c pad-x-40 box5 full"> 
-	<h2 class="orange w400 m-bot-zero">
+	<h2 class="orange w400">
 		We can access this place,
 	</h2>
-	<h5 class="w300 white wide75">
+	<h5 class="w400 white wide75">
 		outside of space and time though it lies.
 		In images and words, in sounds and vistas,
 		In streams of imagi/memory that can flow through us…
@@ -94,42 +72,40 @@ import 'swiper/css/mousewheel'
 		A calling to all who dream of the Bhārata that once was, or Bhāratas that could have been.
 	</h5>
 	</div>
-</SwiperSlide>
-<SwiperSlide>
-	<div class="flexbox-c cc-y-col pad-x-40 full">
-	<div class="mind flexbox-c">
+	<div class="flexbox-c cc-y-col pad-x-40 link-sheet">
+	<div class="mind flexbox-c link-heads">
 		<p class="orange m-bot-zero">Prologue</p>
 		<h5 class="w400 m-all-zero">The Bhārata that Once Was, or Those That Could Have Been</h5>
 	</div>
-	<div class="mind flexbox-c">
+	<div class="mind flexbox-c link-heads">
 		<p class="orange m-bot-zero">Chapter 1</p>
 		<h5 class="w400 m-all-zero">Kaśyapa's Lament</h5>
 	</div>
-	<div class="mind flexbox-c">
+	<div class="mind flexbox-c link-heads">
 		<p class="orange m-bot-zero">Chapter 2</p>
 		<h5 class="w400 m-all-zero">Sūta and Sudā</h5>
 	</div>
-	<div class="mind flexbox-c">
+	<div class="mind flexbox-c link-heads">
 		<p class="orange m-bot-zero">Upcoming</p>
 		<h5 class="w400 m-all-zero">Nasadīya Across Time and Space</h5>
 	</div>
-	<div class="mind flexbox-c">
+	<div class="mind flexbox-c link-heads">
 		<p class="orange m-bot-zero">Demos</p>
 		<h5 class="w400 m-all-zero"><a href="/aryavarta/gallery">Gallery</a></h5>
 	</div>
-	<div class="mind flexbox-c">
+	<div class="mind flexbox-c link-heads">
 		<p class="orange m-bot-zero">About</p>
 		<h5 class="w400 m-all-zero">Tech, AI, Collaboration</h5>
 	</div>
 
 	</div>
-</SwiperSlide>
-</Swiper>
 
 
 
 <style lang="sass">
 
+.link-sheet
+	height: 100vh
 
 .imgbox
 	background-image: url('/images/scrolls/thegrid.webp')
@@ -170,6 +146,9 @@ import 'swiper/css/mousewheel'
 		border-top: 1px solid #e1e1e1
 
 @media screen and (max-width: 767px) 
+
+	.l100
+		height: 100vh
 
 	.box5
 		justify-content: center

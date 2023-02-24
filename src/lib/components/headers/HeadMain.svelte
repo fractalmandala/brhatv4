@@ -1,9 +1,18 @@
 <script lang="ts">
+import { onMount } from 'svelte'
 import { reveal } from 'svelte-reveal'
 import { fly } from 'svelte/transition'
 import { circOut } from 'svelte/easing'
 let isMenu = false;
 let y = 1
+let ph:number
+let oh:number
+
+function pageHeight(){
+	ph = document.body.scrollHeight
+}
+
+onMount(pageHeight)
 
 function toggleMenu() {
 	if (isMenu === true) {
@@ -19,8 +28,9 @@ function closeMen(){
 }
 
 </script>
-<svelte:window bind:scrollY={y}/>
+<svelte:window bind:scrollY={y} bind:outerHeight={oh}/>
 
+<div class="prefix-n">{oh/ph}<span> </span>{y/oh}</div>
 <div class="header flexbox-c">
 	<div class="headerbox flexbox-r" style="background: linear-gradient(40deg, rgba(29, 19, 9, 0.9), rgba(7, 12, 25, 0.8))">
 		<div class="flexbox-r logo">
@@ -123,12 +133,24 @@ function closeMen(){
 				width: 40px
 			#top, #mid, #low
 				transition: all 0.09s var(--cubea)
+			#mid
+				position: relative
+				&::after
+					position: absolute
+					top: 0
+					left: 0
+					width: 0%
+					height: 100%
+					content: ''
+					background: #fe4a49
 			&:hover
 				#top
 					fill: #fe4a49
 					transform: translateX(-18px)
 				#mid
 					fill: #fe4a49
+					&::after
+						animation: growingmid 0.18s ease forwards
 				#low
 					fill: #fe4a49
 					transform: translateX(18px)
@@ -144,13 +166,17 @@ function closeMen(){
 				align-items: center
 				justiy-content: flex-start
 				.motif
-					width: 48px
-					height: 48px
+					width: 44px
+					height: 44px
 				.logotype
-					width: 88px
-					height: 40px
-					margin-top: 12px
-					margin-left: 8px
+					width: 82px
+					height: 38px
+					margin-top: 8px
+					margin-left: 12px
+			.mobilemenu
+				svg
+					width: 32px
+					margin-bottom: 4px
 	@media screen and (min-width: 576px) and (max-width: 767px)
 		height: 64px
 		margin-bottom: -64px
@@ -178,13 +204,19 @@ function closeMen(){
 				height: 100%
 				align-items: center
 				.motif
-					width: 56px
-					height: 56px
+					width: 48px
+					height: 48px
 				.logotype
-					width: 100px
+					width: 88px
 					height: 42px
 					margin-top: 12px
 					margin-left: 12px
+
+@keyframes growingmid
+	0%
+		width: 0%
+	100%
+		width: 100%
 
 .fullscreen
 	z-index: 900
@@ -204,7 +236,6 @@ function closeMen(){
 	.topstrip
 		display: flex
 		flex-direction: row
-		background-color: transparent
 		.closebuttonstrip
 			display: flex
 			flex-direction: column
@@ -241,6 +272,7 @@ function closeMen(){
 		flex-direction: column
 		h5
 			color: #FFFFFF
+			letter-spacing: 0.3px
 		h6
 			color: #676767
 		@media screen and (max-width: 575px)

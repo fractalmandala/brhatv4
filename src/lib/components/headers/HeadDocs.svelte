@@ -90,209 +90,212 @@ function closeMen(){
 </div>
 {/if}
 
-<style>
-#top, #mid, #low { transition: all 0.09s var(--cubea);}
-.mobilemenu:hover #top, .mobilemenu:hover #mid, .mobilemenu:hover #low { fill: #fe4a49;}
-.mobilemenu:hover #top { transform: translateX(-18px);}
-.mobilemenu:hover #low { transform: translateX(18px); transition-delay: 0.09s;}
-.mobilemenu { cursor: pointer;}
+<style lang="sass">
 
-.fullscreen {
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	transition: background-image 0.16s var(--cubed);
-	z-index: 899; 
-}
+.header
+	position: fixed
+	z-index: 900
+	width: 100vw
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	transition: all 0.5s linear
+	margin: 0
+	left: 0
+	top: 0
+	.headerbox
+		display: flex
+		flex-direction: row
+		width: 100%
+		height: 100%
+		backdrop-filter: blur(10px)
+		background: linear-gradient(132.9deg, rgba(23,23,23,0.94) 10.69%, rgba(24, 28, 30, 0.94) 84.91%)
+		.logo
+			img
+				cursor: pointer
+				object-fit: contain
+				transition: all 0.33s ease-in-out
+				width: 100%
+				transform-origin: center center
+			.motif, .logotype
+				object-position: center center
+				&:hover
+					transform: scale(0.9)
+		.mobilemenu
+			cursor: pointer
+			svg
+				width: 40px
+			#top, #mid, #low
+				transition: all 0.09s var(--cubea)
+			#mid
+				position: relative
+				&::after
+					position: absolute
+					top: 0
+					left: 0
+					width: 0%
+					height: 100%
+					content: ''
+					background: #fe4a49
+			&:hover
+				#top
+					fill: #fe4a49
+					transform: translateX(-18px)
+				#mid
+					fill: #fe4a49
+					&::after
+						animation: growingmid 0.18s ease forwards
+				#low
+					fill: #fe4a49
+					transform: translateX(18px)
+					transition-delay: 0.09s
+	@media screen and (max-width: 575px)
+		height: 64px
+		margin-bottom: -64px
+		.headerbox
+			padding: 0 16px
+			.logo
+				width: calc(100% - 40px)
+				height: 100%
+				align-items: center
+				justiy-content: flex-start
+				.motif
+					width: 44px
+					height: 44px
+				.logotype
+					width: 82px
+					height: 38px
+					margin-top: 8px
+					margin-left: 12px
+			.mobilemenu
+				svg
+					width: 32px
+					margin-bottom: 4px
+	@media screen and (min-width: 576px) and (max-width: 767px)
+		height: 64px
+		margin-bottom: -64px
+		.headerbox
+			padding: 0 32px
+			.logo
+				width: calc(100% - 48px)
+				height: 100%
+				align-items: center
+				.motif
+					width: 56px
+					height: 56px
+				.logotype
+					width: 100px
+					height: 42px
+					margin-top: 12px
+					margin-left: 12px
+	@media screen and (min-width: 768px)
+		height: 72px
+		margin-bottom: -72px
+		.headerbox
+			padding: 0 32px
+			.logo
+				width: calc(100% - 48px)
+				height: 100%
+				align-items: center
+				.motif
+					width: 48px
+					height: 48px
+				.logotype
+					width: 88px
+					height: 42px
+					margin-top: 12px
+					margin-left: 12px
 
-.desk-nav { 
-	z-index: 999; 
-}
-.desk-nav h5 { color: white;}
-.desk-nav h6 { color: #676767;}
-.logo img {
-	cursor: pointer;
-	object-fit: contain;
-	transition: all 0.33s ease-in-out;
- 	width: 100%;
- 	transform-origin: center center;
-}
-.motif {
-	object-position: center center;
-}
+@keyframes growingmid
+	0%
+		width: 0%
+	100%
+		width: 100%
 
-.logotype {
-	object-position: center center;
-}
+.fullscreen
+	z-index: 900
+	position: fixed
+	display: flex
+	flex-direction: column
+	top: 0
+	right: 0
+	height: 100vh
+	background: var(--beautrans)
+	@media screen and (max-width: 575px)
+		width: 100vw
+	@media screen and (min-width: 576px) and (max-width: 899px)
+		width: 44vw
+	@media screen and (min-width: 900px) 
+		width: 32vw
+	.topstrip
+		display: flex
+		flex-direction: row
+		.closebuttonstrip
+			display: flex
+			flex-direction: column
+			align-items: flex-end
+			padding-right: 8px
+			text-align: right
+			width: 100%
+			img
+				object-fit: contain
+				transition: all 0.14s ease-in
+				transform-origin: center center
+				filter: saturate(0.01)
+				opacity: 0.8
+				cursor: pointer
+				width: 32px
+				height: 32px
+			&:hover
+				img
+					transform: rotate(-90deg)
+					opacity: 1
+					filter: saturate(1)
+		@media screen and (max-width: 575px)
+			justify-content: space-between
+			align-items: center
+			padding: 16px
+			height: 48px
+		@media screen and (min-width: 576px)
+			justify-content: space-between
+			align-items: center
+			padding: 0 32px
+			height: 72px
+	.desk-nav
+		display: flex
+		flex-direction: column
+		h5
+			color: #FFFFFF
+			letter-spacing: 0.3px
+		h6
+			color: #676767
+		@media screen and (max-width: 575px)
+			padding: 32px
+			height: calc(100% - 48px)
+			overflow-y: scroll
+			h5
+				margin-top: 16px
+				margin-bottom: 0
+				padding-top: 24px
+				border-top: 1px solid #373737
+			h6
+				margin-top: 12px
+				margin-bottom: 0
+		@media screen and (min-width: 576px)
+			padding: 32px
+			height: calc(100% - 72px)
+			overflow-y: scroll
+			h5
+				margin-top: 24px
+				margin-bottom: 0
+				padding-top: 24px
+				border-top: 1px solid #373737
+			h6
+				margin-top: 16px
+				margin-bottom: 0
+	
 
-.motif:hover, .logotype:hover {
-	transform: scale(0.9);
-}
-
-.header { 
-	position: fixed; 
-	z-index: 899; 
-	width: 100vw; 
-	justify-content: center;
-	transition: all 0.5s linear;
-	margin: 0;
-	left: 0;
-	align-items: center;
-	top: 0;
-}
-
-.headerbox { 
-	width: 100%;
-	backdrop-filter: blur(10px);
-}
-
-.fullscreen {
-	position: fixed;
-	top: 0;
-	right: 0;
-	height: 100vh;
-	z-index: 999;
-	background: var(--beau);
-}
-
-.fullscreen::after {
-	position: absolute;
-	top: 50%;
-	right: 0;
-	width: 100%;
-	height: 0%;
-	content: '';
-	border-left: 1px solid #fe4a49;
-}
-
-.fullscreen:hover::after {
-	animation: linecoming 0.5s var(--cubec) forwards;
-}
-
-@keyframes linecoming {
-	0% { top: 50%; height: 0%;}
-	100% { top: 0; height: 100%;}
-}
-
-
-.closebuttonstrip img {
-	object-fit: contain;
-	transition: all 0.14s ease-in;
-	transform-origin: center center;
-	filter: saturate(0.01);
-	opacity: 0.8;
-	cursor: pointer;
-}
-
-.closebuttonstrip:hover img {
-	transform: rotate(-90deg);
-	opacity: 1;
-	filter: saturate(1);
-}
-
-.closebuttonstrip {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	padding-right: 8px;
-	text-align: right;
-}
-.topstrip {z-index: 10;}
-
-
-@media screen and (min-width: 900px) {
-	.topstrip { background: transparent;}
-	.headerbox, .header { height: 72px;}
-	.headerbox { padding: 0 40px;}
-	.logo { width: calc(100% - 48px); height: 100%; align-items: center; }
-	.motif { width: 50px; height: 50px;}
-	.logotype { width: 96px; height: 38px; margin-top: 10px; margin-left: 12px;}
-	.mobilemenu svg { width: 40px;}
-	.fullscreen { padding: 0;	width: 32vw;}
-	.topstrip { justify-content: space-between; align-items: center; padding: 32px 40px 0 5vw; height: 72px;}
-
-	.closebuttonstrip {
-		width: 100%;
-	}
-	.closebuttonstrip img {
-		width: 32px;
-		height: 32px;
-	}
-	.desk-nav { display: flex; padding: 16px 48px 32px 48px; height: calc(100% - 72px); overflow-y: scroll;}
-	.desk-nav h5 { margin-top: 24px; margin-bottom: 0; padding-top: 24px; border-top: 1px solid #373737;}
-	.desk-nav h6 { margin-top: 16px; margin-bottom: 0;}
-
-}
-
-@media screen and (max-width: 899px) and (min-width: 768px) {
-	.topstrip { background: transparent; }
-	.headerbox, .header { height: 72px;}
-	.headerbox { padding: 0 32px;}
-	.logo { width: calc(100% - 48px); height: 100%; align-items: center; }
-	.motif { width: 56px; height: 56px;}
-	.logotype { width: 100px; height: 42px; margin-top: 12px; margin-left: 12px;}
-	.mobilemenu svg { width: 40px;}
-	.fullscreen { padding: 0;	width: 40vw;}
-	.topstrip { justify-content: space-between; align-items: center; padding: 32px 40px 0 5vw; height: 72px;}
-
-	.closebuttonstrip {
-		width: 100%;
-	}
-	.closebuttonstrip img {
-		width: 32px;
-		height: 32px;
-	}
-	.desk-nav { display: flex; padding: 16px 24px 32px 24px; height: calc(100% - 72px); overflow-y: scroll;}
-	.desk-nav h5 { margin-top: 24px; margin-bottom: 0; padding-top: 24px; border-top: 1px solid #373737;}
-	.desk-nav h6 { margin-top: 16px; margin-bottom: 0;}
-}
-
-@media screen and (max-width: 767px) and (min-width: 576px) {
-	.topstrip { background: transparent;}
-	.headerbox, .header { height: 72px;}
-	.headerbox { padding: 0 40px;}
-	.logo { width: calc(100% - 48px); height: 100%; align-items: center; }
-	.motif { width: 56px; height: 56px;}
-	.logotype { width: 100px; height: 42px; margin-top: 12px; margin-left: 12px;}
-	.mobilemenu svg { width: 40px;}
-	.fullscreen { padding: 0;	width: 44vw;}
-	.topstrip { justify-content: space-between; align-items: center; padding: 32px 40px 0 5vw; height: 72px;}
-
-	.closebuttonstrip {
-		width: 100%;
-	}
-	.closebuttonstrip img {
-		width: 32px;
-		height: 32px;
-	}
-	.desk-nav { display: flex; padding: 16px 24px 32px 24px; height: calc(100% - 72px); overflow-y: scroll;}
-	.desk-nav h5 { margin-top: 24px; margin-bottom: 0; padding-top: 24px; border-top: 1px solid #373737;}
-	.desk-nav h6 { margin-top: 16px; margin-bottom: 0;}
-
-}
-
-@media screen and (max-width: 575px) {
-	.headerbox, .header { height: 72px;}
-	.header { margin-bottom: -72px;}
-	.headerbox { padding: 0 16px; justify-content: space-between;}
-	.logo { width: calc(100% - 80px); height: 100%; gap: 0;align-items: center; justify-content: flex-start;}
-	.motif { width: 48px; height: 48px;}
-	.logotype { width: 88px; height: 40px; margin-top: 12px; margin-left: 8px; }
-
-	.mobilemenu svg { width: 40px;}
-	.fullscreen { padding: 0; width: 100vw;}
-	.topstrip { justify-content: space-between; align-items: center; padding: 16px 24px 0 24px; height: 48px;}
-
-	.closebuttonstrip {
-		width: 100%;
-	}
-	.closebuttonstrip img {
-		width: 32px;
-		height: 32px;
-	}
-	.desk-nav { display: flex; padding: 16px 32px 32px 32px; height: calc(100% - 72px); overflow-y: scroll;}
-	.desk-nav h5 { margin-top: 16px; margin-bottom: 0; padding-top: 24px; border-top: 1px solid #373737;}
-	.desk-nav h6 { margin-top: 16px; margin-bottom: 0;}
-}
+			
 
 </style>

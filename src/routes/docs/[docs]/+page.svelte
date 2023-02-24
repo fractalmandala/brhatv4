@@ -4,10 +4,10 @@ export let data;
 
 </script>
 
-<div class="flexbox-c outliner">
-<h4>{data.title}</h4>
+<div class="flexbox-c desk-margins m-top-90 outliner">
+<h3>{data.title}</h3>
 <div class="line"></div>
-<div class="sheet">
+<div class="sheet p-bot-32">
 	<svelte:component this={data.content} />
 </div>
 </div>
@@ -15,7 +15,7 @@ export let data;
 
 <style>
 
-h4 { text-transform: capitalize;}
+h3 { text-transform: capitalize;}
 .line { height: 1px; background-color: #d7d7d7; margin-top: 1rem; margin-bottom: 16px;}
 
 

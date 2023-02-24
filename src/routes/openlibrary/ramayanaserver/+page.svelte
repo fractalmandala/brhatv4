@@ -1,11 +1,10 @@
-<script>
-export let data
+<script lang='ts'>
+export let data: any
 </script>
  <div class="c-c-c-c istop">
-{#each tables as tableHTML}
 <table>
-{@html tableHTML}
+{data}
 </table>
-{/each}
+
 </div>
 

@@ -45,9 +45,9 @@ export async function allChapters() {
 
 
 <div class="flexbox-c full imgbox l0"></div>
-<div class="flexbox-r full-d l1">
+<div class="flexbox-r full-d desk-margins l1">
 	<div class="in-col cc-x-col cc-y-col wide50">
-		<h4 class="w300 pad-x-l">
+		<h4 class="w400 pad-x-l">
 			B<span class="isred">ṛ</span>hat Anveṣī is a travel program to contemporize ancient Indian tradition by guiding travel groups through hitherto rarely explored sacred kṣetras of India.
 		</h4>
 	</div>
@@ -184,18 +184,18 @@ export async function allChapters() {
 --contheight="100vh"
 >
 	<div slot="header">Chapters</div>
-	<div class="flexbox-r of-three top-gap" slot="body">
+	<div class="flexbox-r of-three desk-margins" slot="body">
 		{#await allChapters()}
 		<small>loading chapters...</small>
 		{:then data}
 		{#each data as item}
-		<div class="in-col wide33">
+		<div class="in-col wide33 gen-card">
 			<img src={item.image} alt={item.name}>
 			<h5 class="m-top-24 m-bot-zero"><a href={item.link}>{item.name}</a></h5>
-			<p class="m-top-24">{item.content.slice(0,250)}<a class="isred" href={item.link}>...Read More</a></p>
+			<p class="m-top-24">{item.content.slice(0,250)}<a class="readmore" href={item.link}>...Read More</a></p>
 			<div class="in-row gap24">
-				<cite class="red">{item.duration}</cite>
-				<cite class="red">{item.dates}</cite>
+				<cite class="blue">{item.duration}</cite>
+				<cite class="blue">{item.dates}</cite>
 			</div>
 		</div>
 		{/each}
@@ -208,13 +208,13 @@ export async function allChapters() {
 --contheight="100vh"
 >
 	<div slot="header">Anveṣī Diaries</div>
-	<div class="flexbox-c" slot="body">
-		<h5 class="w300">
+	<div class="flexbox-c desk-margins" slot="body">
+		<h5 class="w400">
 			Anveṣī Diaries is a collection of traveller images, trip videos, testimonials and writings from our trips. To submit your own experience, please write to anveshi@brhat.in
 		</h5>
-		<h4 class="wbold">
+		<h5 class="wbold">
 			Artwork by Ashish Kundalia
-		</h4>
+		</h5>
 		<div class="flexbox-r of-four m-bot-24 diaries wrapper">
 			{#await allImages()}
 			<small>...</small>
@@ -228,9 +228,9 @@ export async function allChapters() {
 			<pre>{error}</pre>
 			{/await}
 		</div>
-		<h4 class="wbold top-gap m-bot-zero">
+		<h5 class="wbold top-gap m-bot-zero">
 			Video Testimonials <span class="w400 red"><p><a href="https://youtube.com/@brhat">View on YouTube</a></p></span>
-		</h4>
+		</h5>
 		<div class="flexbox-r of-four pad-y-b videos">
 			{#await getVids()}
 			<small>loading chapters...</small>
@@ -256,8 +256,8 @@ export async function allChapters() {
 
 <Who>
 	<div slot="header">Who is <span class="red">Bṛhat Anveṣī</span></div>
-	<div slot="body" class="flexbox-c top-gap pad-y-b">
-		<h6 class="w300 wide75">
+	<div slot="body" class="flexbox-c desk-margins">
+		<h6 class="w400 wide75 m-top-zero">
 				A human being is born to search: for truth; for beauty; for meaning in life. Kaśmīra Śaiva darśana tells us that, vimarṣa – Śiva reflecting upon himself – is one of the highest goals of existence itself. According to another school of thought, Nature nudged evolution to a point where a species would emerge capable of reflecting upon itself and the mysteries of the cosmos, life and existence.
 		<br><br>	
 			Without getting deep into darśana, the point is that, humans are born to search, born for anveṣaṇa. The word anveṣaṇa means discovering, seeking, or searching, and the one who searches is called – anveṣī – the discoverer. This element of discovery has mainly two dimensions – inner and outer. And the two are connected. The favorite theme of literature is wanderlust/ fernweh – the innate urge of humans to go out and discover the world.
@@ -276,7 +276,7 @@ export async function allChapters() {
 
 <FAQBox>
 	<div slot="header">FAQs</div>
-	<div slot="body" class="flexbox-c top-gap">
+	<div slot="body" class="flexbox-c desk-margins">
 		<FAQ></FAQ>	
 	</div>
 </FAQBox>
@@ -296,7 +296,6 @@ export async function allChapters() {
 		height: 200px;
 	}
 
-
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
@@ -306,6 +305,7 @@ export async function allChapters() {
 }
 
 @media screen and (max-width: 767px) {
+	.l0 { height: 40vh; margin-top: 64px;}
 	.l1 .in-col { padding-top: 32px;}
 	.temple { display: none;}
 }
