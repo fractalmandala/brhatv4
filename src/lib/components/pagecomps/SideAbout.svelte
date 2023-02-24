@@ -30,8 +30,8 @@ function shareOnWhatsApp(url, text) {
 }
 
 </script>
-<div class="in-col sidebar">
-	<div class="in-row">
+<div class="in-col sidebb">
+	<div class="in-row m-bot-24">
 		<div class="flexbox-c icon-box" id="icon-twitter" on:click={() => window.open(shareOnTwitter("https://example.com", "Check out this page!"))} on:keydown={() => window.open(shareOnTwitter("https://example.com", "Check out this page!"))}>
 			<img src="/images/icons/twitter-red.png" alt="twitter icon" />
 		</div>
@@ -45,17 +45,17 @@ function shareOnWhatsApp(url, text) {
 			<img src="/images/icons/red-whatsapp.png" alt="whatsapp icon" />
 		</div>
 	</div>
-	<p class="w400">Areas</p>
+	<h6 class="p-bot-zero">Areas</h6>
 	<small><a href="/about/areas/culturecreatives">Culture Creatives</a></small>
   <small><a href="/about/areas/policyresearch">Policy Research</a></small>
   <small><a href="/about/areas/leadershipdevelopment">Leadership Development</a></small>
-	<p class="w400">Corporate Essays</p>
+	<h6 class="p-bot-zero">Corporate Essays</h6>
   <small><a href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a></small>
   <small><a href="/about/docs/svatahsiddha">Svataḥsiddha</a></small>
   <small><a href="/about/docs/whatkrishnameanstous">What Ṡrī Kṛṣṇa Means to Us</a></small>
   <small><a href="/about/docs/values">Pratijñā - our Values</a></small>
   <small><a href="/about/docs/namelogo">Nāmarūpa</a></small>
-	<p class="w400">About</p>
+	<h6 class="p-bot-zero">About</h6>
   <small><a href="/about/#advisors">Advisors</a></small>
   <small><a href="/about/#partners">Partners</a></small>
   <small><a href="/about/#team">Team</a></small>
@@ -64,7 +64,11 @@ function shareOnWhatsApp(url, text) {
 </div>
 
 <style>
-.sidebar .in-row { justify-content: space-between; width: 56%;}
-.sidebar .in-row img { object-fit: contain; width: 24px; height: 24px; filter: saturate(0);}
+.sidebb .in-row { justify-content: space-between; width: 56%;}
+.sidebb .in-row img { object-fit: contain; width: 24px; height: 24px; filter: saturate(0);}
 .sidebar .in-row img:hover { filter: saturate(1);}
+@media screen and (min-width: 576px) {
+.p-bot-zero { padding-bottom: 8px; padding-top: 16px;}
+}
+
 </style>

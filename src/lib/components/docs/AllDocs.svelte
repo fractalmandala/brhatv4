@@ -216,46 +216,46 @@ function toggleCat8(){
 
 <NewSearch></NewSearch>
 <div id="cat-0" class="cat">
-	<p class="green w400 wide75"><a href="/docs">Docs Home</a></p>
+	<h6 class="green w400 wide75"><a href="/docs">Docs Home</a></h6>
 </div>
 <div id="cat-1" class="cat" on:click={toggleCat1} on:keydown={toggleCat1}>
-	<p class="green w400 wide75">Documentation</p>
+	<h6 class="green w400 wide75">Documentation</h6>
 	{#if isCat1}
 	<Documentation></Documentation>
 	{/if}
 </div>
 <div id="cat-2" class="cat" on:click={toggleCat2} on:keydown={toggleCat2}>
-	<p class="green w400 wide75">Animation</p>
+	<h6 class="green w400 wide75">Animation</h6>
 	{#if isCat2}
 	<Animation></Animation>
 	{/if}
 </div>
 <div id="cat-3" class="cat" on:click={toggleCat3} on:keydown={toggleCat3}>
-	<p class="green w400 wide75">General</p>
+	<h6 class="green w400 wide75">General</h6>
 	{#if isCat3}
 	<General></General>
 	{/if}
 </div>
 <div id="cat-4" class="cat" on:click={toggleCat4} on:keydown={toggleCat4}>
-	<p class="green w400 wide75">SQL</p>
+	<h6 class="green w400 wide75">SQL</h6>
 	{#if isCat4}
 		<PostGre></PostGre>
 	{/if}
 </div>
 <div id="cat-5" class="cat" on:click={toggleCat5} on:keydown={toggleCat5}>
-	<p class="green w400 wide75">Supabase</p>
+	<h6 class="green w400 wide75">Supabase</h6>
 	{#if isCat5}
 		<Supabase></Supabase>
 	{/if}
 </div>
 <div id="cat-6" class="cat" on:click={toggleCat6} on:keydown={toggleCat6}>
-	<p class="green w400 wide75">Sveltecode</p>
+	<h6 class="green w400 wide75">Sveltecode</h6>
 	{#if isCat6}
 		<Sveltecode></Sveltecode>
 	{/if}
 </div>
 <div id="cat-8" class="cat" on:click={toggleCat8} on:keydown={toggleCat8}>
-	<p class="green w400 wide75">All</p>
+	<h6 class="green w400 wide75">All</h6>
 	{#if isCat8}
 		<Codes></Codes>
 	{/if}
@@ -270,16 +270,6 @@ function toggleCat8(){
 	flex-direction: column;
 }
 
-.cat p { cursor: pointer;}
-
-
-.cat a:hover { color: #10c56d;}
-
-@media screen and (min-width: 576px) {
-
-	.cat p { border-top: 1px solid var(--fordocs); padding-top: 16px; margin-top: 0;}
-	.green.w400 { letter-spacing: 1px;}
-}
 
 @media screen and (max-width: 576px) {
 	.cat {

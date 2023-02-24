@@ -287,6 +287,9 @@ cite
 .p-top-80
   padding-top: 80px
 
+.p-bot-zero
+  padding-bottom: 0
+
 .just-row
   justify-content: space-between
 
@@ -609,7 +612,7 @@ cite
 
 .maindoc
   @media screen and (min-width: 768px)
-    width: calc(100% - 360px)
+    width: calc(100% - 320px)
     padding-top: 120px
     padding-left: 80px
     padding-right: 80px
@@ -787,3 +790,58 @@ cite
 .mind
   padding: 12px 0
   border-top: 1px solid #e1e1e1
+
+.sidebb
+  overflow-y: scroll
+  &::-webkit-scrollbar
+    display: none
+  a
+    color: inherit
+  h6, small
+    transform-origin: center left
+    cursor: pointer
+  h6
+    font-weight: 400
+  @media screen and (min-width: 768px)
+    width: 320px
+    height:100vh
+    position: sticky
+    top: 0
+    left: 0
+    padding: 120px 16px 64px 32px
+    h6
+      letter-spacing: 0.2px
+      margin-top: 16px
+      margin-bottom: 0
+      border-bottom: 1px solid #f1f1f1
+      padding-bottom: 16px
+      &:hover
+        transform: scale(0.95)
+    small
+      margin-top: 8px
+      margin-bottom: 2px
+      font-weight: 400
+      color: #878787
+      &:hover
+        transform: scale(1.1)
+  @media screen and (max-width: 767px) and (min-width: 576px)
+    width: 240px
+    height:100%
+    position: sticky
+    top: 0
+    left: 0
+    padding: 120px 16px 64px 32px
+    h6
+      letter-spacing: 0.2px
+      margin-bottom: 0
+      &:hover
+        transform: scale(0.95)
+    small
+      margin-top: 8px
+      margin-bottom: 2px
+      font-weight: 400
+      color: #878787
+      &:hover
+        transform: scale(1.1)
+  @media screen and (max-width: 575px)
+    display: none
