@@ -1,6 +1,4 @@
-<script lang="ts">
-export let data: any
-</script>
+
 <div class="flexbox-c desk-margins outliner">
 	<div class="in-col m-top-90 pad-y-b">
 		<p>
@@ -19,10 +17,6 @@ export let data: any
 		Thank you for reading our documentation. We hope it helps you understand our website better.
 		</p>
 	</div>
-<div class="in-col">
-{#each data.docs as doc}
-<p><a href={doc.path}>{doc.meta.title}</a></p> 
-{/each}
-</div>
+
 </div>
 

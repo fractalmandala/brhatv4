@@ -23,7 +23,7 @@ export async function getBooks(){
 	{/await}
 
 <style>
-p { color: #272727; font-size: 18px;}
+
 a { color: #272727;}
 a:hover {color: #fe4a49;}
 </style>
