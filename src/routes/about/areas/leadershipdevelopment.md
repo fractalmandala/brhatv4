@@ -3,12 +3,12 @@ title: Leadership Development
 image: "/images/areas-ld.webp"
 ---
 
-<h5 class="hindi">लौकिकानां हि साधूनाम् अर्थं वागनुवर्तते।<br>
-ऋषीणां पुनराद्यानां वाचमर्थोनुधावति ॥</h5>
+<div class="hindi"><h5>लौकिकानां हि साधूनाम् अर्थं वागनुवर्तते।<br>
+ऋषीणां पुनराद्यानां वाचमर्थोनुधावति ॥</h5></div>
 
 <h5>In the case of ordinary beings, the words follow the meaning.<br> 
 For ṛṣis, the meaning follows their words.<br>
-<cite class="t-left"><span class="hindi ft14">उत्तररामचरितम्; भवभूति |</span> Uttararāmacaritam; Bhavabhūti</cite></h5>
+<cite class=" w400 t-left grey"><span class="hindi ft14">उत्तररामचरितम्; भवभूति |</span> Uttararāmacaritam; Bhavabhūti</cite></h5>
 
 
 An 8th century Indian poet made a ‘Truth claim’. He would have us believe that what the ṛṣis speak, becomes the Truth. He sees it as clearly as daylight from his reading of Rāmāyaṇa.
@@ -25,13 +25,13 @@ An impossible ideal that is held up as perfection, an exemplar to try and emulat
 
 That is of the ṛṣis, but what of the Kings. Surely, they are more ‘pragmatic’.
 
-<h5 class="hindi">
+<div class="hindi"><h5>
 कृतं त्रेतायुगं चैव द्वापरं कलिरेव च । <br>
 राज्ञो वृत्तानि सर्वाणि राजा हि युगमुच्यते ॥
-</h5>
+</h5></div>
 
 <h5>The actions of the king constitute the Kṛta, the Tretā, the Dvāpara and the Kali cycles; as it is the king that is called the ‘cycle.’<br>
-<cite><span class="hindi ft14">मनुस्मृति |</span> Manusmṛti 301 – 302</cite></h5>
+<cite class="grey w400"><span class="hindi">मनुस्मृति |</span> Manusmṛti 301 – 302</cite></h5>
 
 The king is called ‘the cycle’, a force who shapes time through action. Does the modern mind have a theory of time to grasp the import, can it take an intuitive leap to ‘perceive’ the multi-dimensional nature of time and its complexity.
 
@@ -73,18 +73,9 @@ In conclusion, when we do not consider the other as the ‘other’, when we sta
 
 We are all leaders, says Kṛṣṇa in the Bhagavad Gītā 3.21, we must always behave in such a way that we do not showcase wrong behaviour or become a wrong example to those who are looking up to us, watching us. Great expectations indeed! But that is the Indic vision, the vision of Bṛhat.
 
-<h5 class="hindi">यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जन: ।<br>
-स यत्प्रमाणं कुरुते लोकस्तदनुवर्तते ॥</h5>
+<div class="hindi"><h5>यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जन: ।<br>
+स यत्प्रमाणं कुरुते लोकस्तदनुवर्तते ॥</h5></div>
 
 <h5>Whatever actions great persons perform, common people follow.<br>
 Whatever standards they set, all the world pursues.</h5>
 
-<style>
-  p, h5 { text-align: left;}
-  h5 cite { font-weight: 300;}
-
-  @media screen and (min-width: 769px) {
-    .hindi h5, .hindi { font-size: 1.32rem; margin-bottom: 1em; margin-top: 0;  }
-
-  }
-</style>

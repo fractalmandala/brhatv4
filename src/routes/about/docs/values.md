@@ -33,8 +33,12 @@ this is the eternal law.
 
 Whatever we do, there will be emphasis on beauty and harmony- these are complementary. There will be beauty in our living, in our research, in our writing. Whatever processes that bṛhat wants to design into the civilizational moment need aim for these.
 
-> Though one be endowed with beauty and youth and born in noble families,
-> yet without education they are like the Palasa flower which is void of sweet fragrance.
+<BlockQuote2 --qline="#fe4a49">
+<div slot="quote">
+Though one be endowed with beauty and youth and born in noble families,<br>
+yet without education they are like the Palasa flower which is void of sweet fragrance.
+</div>
+</BlockQuote2>
 
 <div class="hindi"><h5>
 रूपयौवनसंपन्ना विशाल कुलसम्भवाः ।<br>
@@ -45,8 +49,12 @@ Whatever we do, there will be emphasis on beauty and harmony- these are compleme
 
 We understand linkages between things and how they group up. bṛhat will grow by an ability to integrate. None of us is better than all of us, and our collective output will be larger than the sum of us. A civilizational mahāvākya leads us here.
 
-> As in the microcosm, so in the macrocosm;
-> as in the macrocosm, so in the microcosm.
+<BlockQuote3 --qline="#fe4a49">
+<div slot="quote">
+As in the microcosm, so in the macrocosm;<br>
+as in the macrocosm, so in the microcosm.
+</div>
+</BlockQuote3>
 
 <div class="hindi"><h5>
 यथा पिंडे तथा ब्रह्मण्डे ।<br>
@@ -57,7 +65,11 @@ We understand linkages between things and how they group up. bṛhat will grow b
 
 To deliberate upon and cultivate excellence actively is a given at bṛhat, but what informs our discernment? How and when do we say yes or no to a project, a person, a plan? When and where do we say this? An ability to emphasise on discernment is the key to our fourth cornerstone. A differentiated, contextual and sustainable framework based on dharma will be our solution.
 
-> May that Sarasvati, who is intelligence personified, who is fragrant, who is all pervading, who has a golden complexion, who is the earth, who is accessible to all; who is full of vigor, who is overflowing with the nectar of knowledge, and who is beautiful; come to me and bless me with intelligence.
+<BlockQuote4 --qline="#fe4a49">
+<div slot="quote">
+May that Sarasvati, who is intelligence personified, who is fragrant, who is all pervading, who has a golden complexion, who is the earth, who is accessible to all; who is full of vigor, who is overflowing with the nectar of knowledge, and who is beautiful; come to me and bless me with intelligence.
+</div>
+</BlockQuote4>
 
 <div class="hindi"><h5>
 आ मां मे॒धा सु॒रभि॑-र्वि॒श्वरू॑पा॒ हिर॑ण्यवर्णा॒ जग॑ती जग॒म्या ।<br> 
