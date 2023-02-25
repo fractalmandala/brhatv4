@@ -1,4 +1,10 @@
 
+html,
+body
+  min-height: 100%
+  height: auto
+
+
 :root, *
   box-sizing: border-box
   --weight-thin: 200
@@ -106,9 +112,6 @@ body, html
   box-sizing: border-box
   margin: 0
   color: #474747
-
-html
-  scroll-behavior: smooth
 
 pre
   overflow-x: auto
@@ -847,3 +850,7 @@ cite
         transform: scale(1.1)
   @media screen and (max-width: 575px)
     display: none
+
+
+.fullscreen
+  overflow-y: scroll

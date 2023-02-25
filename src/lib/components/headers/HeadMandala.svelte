@@ -22,7 +22,7 @@ function closeMen(){
 </script>
 <svelte:window bind:scrollY={y}/>
 
-<div class="header flexbox-c">
+<div class="header flexbox-c" data-lenis-prevent>
 	<div class="headerbox flexbox-r" style="background: linear-gradient(40deg, rgba(29, 19, 9, 0.9), rgba(7, 12, 25, 0.8))">
 		<div class="flexbox-r logo">
 			<a href="/"><img src="/images/corpimages/motif.png" id="rotate-img" class="rotate motif" alt="motif" style="transform: rotate({y}deg)"/></a>
@@ -40,7 +40,7 @@ function closeMen(){
 	</div>
 </div>
 {#if isMenu}
-<div class="flexbox-c fullscreen" in:fly="{{ duration: 700, x: 500, y: 0, opacity: 1, easing: expoIn}}" out:fly="{{ duration: 400, x: 500, y: 0, opacity: 1, easing: expoIn}}">
+<div class="flexbox-c fullscreen" in:fly="{{ duration: 700, x: 500, y: 0, opacity: 1, easing: expoIn}}" out:fly="{{ duration: 400, x: 500, y: 0, opacity: 1, easing: expoIn}}" data-lenis-prevent>
 	<div class="flexbox-r topstrip">
 		<div class="closebuttonstrip" on:click={closeMen} on:keydown={closeMen}>
 			<img src="/images/icons/hamburger-close.png" alt="closemenu"/>
@@ -220,6 +220,7 @@ function closeMen(){
 	position: fixed
 	display: flex
 	flex-direction: column
+	overflow-y: scroll
 	top: 0
 	right: 0
 	height: 100vh

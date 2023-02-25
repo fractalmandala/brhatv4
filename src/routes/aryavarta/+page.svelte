@@ -75,7 +75,7 @@ import { reveal } from 'svelte-reveal';
 	</div>
 	<div class="mind flexbox-c link-heads">
 		<p class="orange m-bot-zero">Chapter 1</p>
-		<h5 class="w400 m-all-zero">Kaśyapa's Lament</h5>
+		<h5 class="w400 m-all-zero"><a href="/aryavarta/chapter/01">Kaśyapa's Lament</a></h5>
 	</div>
 	<div class="mind flexbox-c link-heads">
 		<p class="orange m-bot-zero">Chapter 2</p>
@@ -108,6 +108,8 @@ import { reveal } from 'svelte-reveal';
 
 .s5
 	background-image: url('/images/background/orangemesh.png')
+	h2
+		color: white
 
 .l10 a
 	color: inherit
@@ -116,6 +118,11 @@ import { reveal } from 'svelte-reveal';
 	a
 		&:hover
 			color: #10c56d
+
+.link-heads
+	a
+		&:hover
+			color: #ff3d00
 
 
 @keyframes comedown
@@ -137,6 +144,9 @@ import { reveal } from 'svelte-reveal';
 
 	.l100
 		height: 100vh
+
+	.s5
+		padding-bottom: 24px
 
 
 </style>

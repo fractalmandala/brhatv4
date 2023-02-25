@@ -1,4 +1,6 @@
-<script>
+<script lang="ts">
+import {onMount} from 'svelte'
+import Lenis from '@studio-freight/lenis'
 import '$lib/styles/prism.css'
 import Header from '$lib/components/headers/HeadDocs.svelte'
 import Documentation from '$lib/components/docs/Documentation.svelte'
@@ -214,11 +216,31 @@ function toggleCat8(){
 	}
 }
 
+onMount(async() => {
+const lenis = new Lenis({
+		duration: 1.2,
+		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+		direction: 'vertical',
+		gestureDirection: 'vertical',
+		smooth: true,
+		mouseMultiplier: 0.7,
+		smoothTouch: false,
+		touchMultiplier: 1,
+		infinite: false,
+	})
+
+function raf(time: any){
+	lenis.raf(time)
+	requestAnimationFrame(raf)
+}
+requestAnimationFrame(raf)	
+})
+
 </script>
 
 <Header></Header>
 <div class="flexbox-r full">
-	<div class="flexbox-c sidebb">
+	<div class="flexbox-c sidebb" data-lenis-prevent>
 		<h6 class="green"><a href="/docs">Docs Home</a></h6>
 		<h6 class="green" on:click={toggleCat1} on:keydown={toggleCat1}>Documentation</h6>
 			{#if isCat1}
