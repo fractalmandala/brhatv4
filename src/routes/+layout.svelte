@@ -10,8 +10,9 @@ inject({ mode: dev ? 'development' : 'production' });
 
 </script>
 	
-
+<div class="flexbox-c">
 <slot></slot>
 <Footer></Footer>
+</div>
 
 

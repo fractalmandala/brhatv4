@@ -113,11 +113,8 @@ import { reveal } from 'svelte-reveal';
 
 .l10 a
 	color: inherit
-
-.l10
-	a
-		&:hover
-			color: #10c56d
+	&:hover
+		color: #10c56d
 
 .link-heads
 	a

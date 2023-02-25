@@ -217,7 +217,7 @@ function toggleCat8(){
 
 <Header></Header>
 <div class="flexbox-r full">
-	<div class="flexbox-c sidebb" data-lenis-prevent>
+	<div class="flexbox-c sidebb">
 		<h6 class="green"><a href="/docs">Docs Home</a></h6>
 		<h6 class="green" on:click={toggleCat1} on:keydown={toggleCat1}>Documentation</h6>
 			{#if isCat1}

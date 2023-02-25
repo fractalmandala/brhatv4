@@ -12,9 +12,6 @@ const config = {
       extensions: ['.md','.svx']
     })
   ],
-	css: [
-		'/src/lib/styles/locomotive-scroll.css'
-	],
 	extensions: ['.svelte', '.md', '.svx'],
 	kit: {
 		adapter: adapter(),

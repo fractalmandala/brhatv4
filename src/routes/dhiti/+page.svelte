@@ -76,36 +76,3 @@
 </div>
 </div>
 
-<style>
-.source { font-weight: 900;}
-.colpost img { border-radius: 6px;}
-.colpost h3, .colpost h3 a { transition: all 0.18s var(--cube4);}
-.colpost h3:hover, .colpost h3:hover a { color: var(--blue);}
-.mainpost .isred { color: var(--red);}
-.mainpost .isgrey { color: #878787;}
-.mainpost { border-top: 1px solid #d7d7d7;}
-
-@media screen and (min-width: 900px) {
-	.primecontainer-inrow { margin-top: 88px;}
-	.colA { width: 24vw; padding: 0 2rem;}
-	.colB { width: 46vw; padding: 0 2rem;}
-	.colC { width: 30vw; padding: 0 2rem 0 2rem;}
-	.colpost h3 { margin-top: 1rem; line-height: 1.12em; font-size: 2.4rem; margin-bottom: 0; }
-	.colpost p { color: #676767; font-weight: 400; font-size: 1.2rem;}
-	.colpost img { object-fit: cover; height: 240px;}
-	.colpost small { color: white; text-transform: uppercase; font-style: normal; font-size: 16px; margin-bottom: -2rem; z-index: 2; margin-left: -8px;}
-	.mainpost small { font-size: 12px; text-transform: uppercase; font-weight: bold;}
-	.mainpost { justify-content: space-between; padding: 1rem 2rem 0 0;}
-	.nextpost { margin-bottom: 2.4rem; justify-content: flex-start; border-bottom: 1px solid #d7d7d7;}
-	.nextpost img { object-fit: cover; height: 88px;}
-	.nextpost h5 { margin-top: 8px; letter-spacing: -0.5px; font-size: 1.2rem; line-height: 1.2em; font-weight: 600; margin-bottom: 8px;}
-	.nextpost .small { color: #878787; text-transform: uppercase; font-size: 10px; font-weight: bold;}
-	.isblue { text-transform: uppercase; font-size: 10px; font-weight: bold;}
-	.list-item { margin-bottom: 1.4rem; border-bottom: 1px solid #e1e1e1; padding-bottom: 6px;}
-	.list-item p { font-size: 1rem; letter-spacing: -0.5px; font-weight: 500; margin-top: 0; margin-bottom: 4px;}
-	.list-row { justify-content: space-between;}
-	.list-item p:hover a:hover { color: var(--blue);}
-	.list-r { text-align: right; width: max-content; font-size: 10px; text-transform: uppercase; font-weight: bold; line-height: 1em;}
-	.list-l { color: #878787; width: 64%;font-size: 10px; text-transform: uppercase; font-weight: bold; line-height: 1em;}
-}
-</style>
