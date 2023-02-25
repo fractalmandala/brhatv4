@@ -109,7 +109,7 @@ export async function getEss(){
 	<div class="in-row sectionsrow gap32">
 		<div class="in-col wide33 all-cc m-top-24 section">
 			<img src="/images/bol/aryanissue2.png" alt="sectioner" />
-			<h6>The Āryan Issue</h6>
+			<h6><a href="/openlibrary/specials/aryanissue">The Āryan Issue</a></h6>
 		</div>
 		<div class="in-col wide33 all-cc m-top-24 section">
 			<img src="/images/bol/ros.webp" alt="sectioner" />

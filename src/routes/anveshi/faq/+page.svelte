@@ -36,7 +36,7 @@ export async function Faq(){
 {#await Faq()}
 <small>...</small>
 {:then data}
-<h1>Frequently Asked Questions</h1>
+<h2>Frequently Asked Questions</h2>
 {#each data as item, i}
 <div class="upper"  on:click={() => toggleFunction(i)} on:keydown={() => toggleFunction(i)}>
 	<img src="/images/icons/accordion.png" alt="icon"/>
@@ -62,6 +62,7 @@ export async function Faq(){
 	margin-top: 0;
 	margin-bottom: 8px;
 	padding-top: 0;
+  cursor: pointer;
 }
 
 .upper img {

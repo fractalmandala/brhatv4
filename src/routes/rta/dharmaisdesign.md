@@ -11,8 +11,7 @@ To design is to create with intent, deliberation, plan and purpose; Design is th
 
 To establish, to practice a method or custom, to organize life and society in consonance with the natural flow is to establish dharma. That which is created with intent, deliberation, plan, purpose and reflection-in-action is dharma. Dharma is the dynamic cultural process of bearing and supporting a tradition of deliberate and planned consonance with the harmonics of reality.
 
-> "Design creates culture. Culture shapes values. Values determine the future.
-> <cite>Robert Peters, Co-founder - Circle Design </cite>
+> "Design creates culture. Culture shapes values. Values determine the future."<br><cite>Robert Peters, Co-founder - Circle Design </cite>
 
 In the distant past…
 The sound instruments of mental scientists converted information to knowledge,

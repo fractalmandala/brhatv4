@@ -1,6 +1,7 @@
 <script lang="ts">
 	import supabase from '$lib/db';
 	import { reveal } from 'svelte-reveal';
+	import Brands from '$lib/components/globals/AllBrands.svelte'
 	import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte';
   import Header from '$lib/components/headers/HeadMain.svelte'
 	import StaticH1 from '$lib/components/headers/StaticH1.svelte';
@@ -44,7 +45,7 @@
 
 <Header></Header>
 <Accordion />
-<div class="prefix-n">{ih}<br>{oh}</div>
+
 <div class="flexbox-c desk-margins cc-y-col mob-y-pad full">
 	<h1 class="w500">Bṛhat is a <br><span class="red m-top-zero">Culture Engine</span></h1>
 	<h5 class="w300 wide75 blk">
@@ -181,6 +182,7 @@
 		</div>
 	</div>
 </Open>
+<Brands></Brands>
 
 
 <style>

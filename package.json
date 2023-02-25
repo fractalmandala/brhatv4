@@ -44,7 +44,6 @@
 		"@mux/mux-player": "^1.8.0",
 		"@neodrag/svelte": "^2.0.3",
 		"@slidy/svelte": "^3.4.2",
-		"@studio-freight/lenis": "^0.2.28",
 		"@supabase/auth-helpers-sveltekit": "^0.8.7",
 		"@supabase/supabase-js": "^2.4.1",
 		"@supabase/ui": "^0.36.5",

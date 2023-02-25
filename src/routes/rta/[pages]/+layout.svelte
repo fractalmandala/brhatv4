@@ -25,7 +25,7 @@ function toggleMenu(){
 		<small><a href="/rta">Glossary</a></small>
 		<small><a href="/rta">Design @ Bṛhat</a></small>
 	</div>
-	<div class="flexbox-c main">
+	<div class="flexbox-c maindoc rta">
 		<slot></slot>
 	</div>
 </div>
@@ -38,21 +38,12 @@ function toggleMenu(){
 
 .sidebb a:hover { color: #10c56e;}
 
-
-
 @media screen and (min-width: 768px) {
-	.main { width: calc(100% - 320px); padding: 0;}
 	.flexbox-r { padding-bottom: 80px;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
-	.main { width: calc(100% - 240px); padding: 0;}
 	.flexbox-r { padding-bottom: 80px;}
-}
-
-@media screen and (max-width: 575px) {
-	.main { width: 100%; height: 100%; order: 2;}
-
 }
 
 </style>

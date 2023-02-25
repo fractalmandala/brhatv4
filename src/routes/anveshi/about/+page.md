@@ -2,7 +2,7 @@
 title: Who is Bṛhat Anveṣī
 ---
 
-# Who is Bṛhat Anveṣī?
+## Who is Bṛhat Anveṣī?
 
 A human being is born to search: for truth; for beauty; for meaning in life. Kaśmīra Śaiva darśana tells us that, vimarṣa – Śiva reflecting upon himself – is one of the highest goals of existence itself. According to another school of thought, Nature nudged evolution to a point where a species would emerge capable of reflecting upon itself and the mysteries of the cosmos, life and existence.
 
