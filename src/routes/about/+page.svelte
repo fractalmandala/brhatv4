@@ -1,15 +1,5 @@
 <script>
 import supabase from '$lib/db'
-import { fly } from 'svelte/transition'
-import Modal from '$lib/components/reuse/Modal.svelte'
-import LogMrd from '$lib/components/logos/LogMrd.svelte'
-import LogFm from '$lib/components/logos/LogFm.svelte'
-import LogBol from '$lib/components/logos/LogoBol.svelte'
-import LogDr from '$lib/components/logos/LogDr.svelte'	
-import LogAnv from '$lib/components/logos/LogAnv.svelte'
-import LogRid from '$lib/components/logos/LogRid.svelte'
-import LogMan from '$lib/components/logos/LogMan.svelte'
-import MainH1 from '$lib/components/headers/MainH1.svelte'
 import StaticH1 from '$lib/components/headers/StaticH1.svelte'
 import Partners from '$lib/components/headers/StaticH1.svelte'
 import Team from '$lib/components/headers/StaticH1.svelte'
@@ -53,7 +43,7 @@ const { data, error } = await supabase
 <div class="flexbox-c full imgbox l0"></div>
 <div class="flexbox-c desk-margins cc-y-col mob-y-pad full">
 	<h1 class="w500">Bṛhat is a <br><span class="red m-top-zero">Culture Engine</span></h1>
-	<h5 class="w300 wide75 blk">
+	<h5 class="w400 wide75 blk">
 		To power creatives, research and design rooted in the Indian civilizational consciousness. We
 		convert individual, institutional and collective intent into action, across 3 dimensions.
 	</h5>
@@ -88,13 +78,10 @@ const { data, error } = await supabase
 	</div>
 </div>
 <div class="flexbox-c cc-y-col desk-margins lx">
-	<h5 class="w300 wide75 m-bot-zero">
-		An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment.
+	<h5 class="w400 wide75">
+		An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment. How does one go about doing that? At Bṛhat, we're acutely aware of three constraints:
 	</h5>
-	<h5 class="w300 wide75">
-		How does one go about doing that? At Bṛhat, we're acutely aware of three constraints:
-	</h5>
-	<div class="flexbox-r of-three l3">
+	<div class="flexbox-r top-gap pad-y-b of-three l3">
 		<div class="in-col wide33 l3col1">
 			<h6 class="wbold m-bot-8">
 				Civilization is Culture in Action
@@ -120,15 +107,15 @@ const { data, error } = await supabase
 			</p>
 		</div>
 	</div>
-</div>
-<div class="flexbox-c cc-y-col top-gap desk-margins lz">
-	<h4 class="w500 wide75 top-gap">
+	<h4 class="w600 red top-gap">
 		But the severest constraint of them all is Time, and more specifically – Moment.
 	</h4>
-	<h6 class="w300 wide75">
+	<h5 class="w400 wide75">
 		The time for a Culture Engine is now, because we are in the midst of a civilizational moment. What is a civilizational moment? How rare or regular are such moments? How must we respond to them?
 		Read more on the need we see, why we think this is the time to address it, and about our self-identity:
-	</h6>
+	</h5>
+</div>
+<div class="flexbox-c cc-y-col desk-margins lz">
 	<div class="flexbox-c link-heads l4">
 	<h5 class="w400 mind">
 		<a href="/about/docs/svatahsiddha">
@@ -208,7 +195,7 @@ const { data, error } = await supabase
 </div>
 
 <style>
-.l2 h6, .l3 h6 { 
+.l2 h6 { 
 	border-top: 1px solid #d7d7d7;
 	padding-top: 12px;
 }
@@ -229,10 +216,7 @@ const { data, error } = await supabase
 
 
 @media screen and (min-width: 768px) {
-	.l2 .in-col {
-		padding: 0 24px 2px 24px;
-		background: #f7f7f7;
-	}
+	.lx { height: 100vh;}
 	.advisorbox { flex-direction: column;}
 	.l3 .in-col { border-top: 1px solid #e1e1e1; padding-top: 16px;}
 	

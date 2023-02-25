@@ -2,21 +2,32 @@
 title: Pratijñā
 ---
 
+<script>
+import BlockQuote1 from '$lib/components/reuse/BlockQuote.svelte'
+import BlockQuote2 from '$lib/components/reuse/BlockQuote.svelte'
+import BlockQuote3 from '$lib/components/reuse/BlockQuote.svelte'
+import BlockQuote4 from '$lib/components/reuse/BlockQuote.svelte'
+</script>
+
 At Bṛhat, while we take on the ambition of designing the self-perpetuating civilizational moment, we are humbly mindful that our ācāra-vyavahāra must be refined. The values an organisation imbibes define its character, and on matters of value and ethic our tradition has much to offer- a single chapter of the Bhagavad Gītā lists 26 virtues for example. Our values are thus a minimum benchmark- a threshold we profess to keep sacred as individuals and organisation even as we strive for more.
 
 #### 1 - Satya and Maitri (Truth and Kindness)
 
 Articulation of truth should be kind. Our fundamental identity is a sincere pursuit of truth, and the ability to live that with kindness. There are facts, and there is truth. Facts are true when transposed via kindness, and one must cultivate the ability to discern this.
 
-> Speak what is true; and speak what is agreeable;
-> speak not what is true, but disagreeable;
-> nor speak what is agreeable, but untrue;
-> this is the eternal law.
+<BlockQuote1 --qline="#fe4a49">
+<div slot="quote">
+Speak what is true; and speak what is agreeable;<br>
+speak not what is true, but disagreeable;<br>
+nor speak what is agreeable, but untrue;<br>
+this is the eternal law.
+</div>
+</BlockQuote1>
 
-<h5 class="hindi">
+<div class="hindi"><h5>
 सत्यं ब्रूयात् प्रियं ब्रूयान्न ब्रूयात् सत्यमप्रियम्प्रि ।<br>
 यं च नानृतं ब्रूयादेष धर्मः सनातनः ॥
-</h5>
+</h5></div>
 
 #### 2 - Saundarya and Samiti (Beauty and Harmony)
 
@@ -25,10 +36,10 @@ Whatever we do, there will be emphasis on beauty and harmony- these are compleme
 > Though one be endowed with beauty and youth and born in noble families,
 > yet without education they are like the Palasa flower which is void of sweet fragrance.
 
-<h5 class="hindi">
+<div class="hindi"><h5>
 रूपयौवनसंपन्ना विशाल कुलसम्भवाः ।<br>
 विद्याहीना न शोभन्ते निर्गन्धा इव किंशुकाः ॥
-</h5>
+</h5></div>
 
 #### 3 - Vyaṣṭi and Samaṣṭi (Fractal and Networked)
 
@@ -37,10 +48,10 @@ We understand linkages between things and how they group up. bṛhat will grow b
 > As in the microcosm, so in the macrocosm;
 > as in the macrocosm, so in the microcosm.
 
-<h5 class="hindi">
+<div class="hindi"><h5>
 यथा पिंडे तथा ब्रह्मण्डे ।<br>
 यथा ब्रह्मण्डे तथा पिंडे ॥
-</h5>
+</h5></div>
 
 #### 4 - Medha and Viveka (Wisdom and Discernment)
 
@@ -48,8 +59,8 @@ To deliberate upon and cultivate excellence actively is a given at bṛhat, but 
 
 > May that Sarasvati, who is intelligence personified, who is fragrant, who is all pervading, who has a golden complexion, who is the earth, who is accessible to all; who is full of vigor, who is overflowing with the nectar of knowledge, and who is beautiful; come to me and bless me with intelligence.
 
-<h5 class="hindi">
+<div class="hindi"><h5>
 आ मां मे॒धा सु॒रभि॑-र्वि॒श्वरू॑पा॒ हिर॑ण्यवर्णा॒ जग॑ती जग॒म्या ।<br> 
 ऊर्ज॑स्वती॒ पय॑सा॒ पिन्व॑माना॒ सा मे॒धा सु॒प्रती॑का जुषन्ताम् ॥
-</h5>
+</h5></div>
 

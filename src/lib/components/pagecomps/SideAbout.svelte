@@ -64,6 +64,7 @@ function shareOnWhatsApp(url, text) {
 </div>
 
 <style>
+.in-col a:hover { color: #fe4a49;}
 .sidebb .in-row { justify-content: space-between; width: 56%;}
 .sidebb .in-row img { object-fit: contain; width: 24px; height: 24px; filter: saturate(0);}
 .sidebar .in-row img:hover { filter: saturate(1);}

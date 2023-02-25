@@ -5,7 +5,5 @@ export async function load(){
 	.from('soaChapter1')
 	.select()
 	.order('id')
-	return {
-		soaChapter1: data ?? [],
-	};
+	return { data }
 }

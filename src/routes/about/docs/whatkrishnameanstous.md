@@ -2,17 +2,23 @@
 title: What Śrī Kṛṣṇa Means to Us
 ---
 
-<h5 class="hindi">
-यतो धर्मस्ततो कृष्णः यतो कृष्णः ततो जयः।
-</h5>
+<script>
+import BlockQuote1 from '$lib/components/reuse/BlockQuote.svelte'
+import BlockQuote2 from '$lib/components/reuse/BlockQuote.svelte'
+</script>
 
-##### Where there is Dharma, there is Kṛṣṇa,  
-##### Where there is Kṛṣṇa, there is victory.
+<div class="hindi"><h5>
+यतो धर्मस्ततो कृष्णः यतो कृष्णः ततो जयः।</h5>
+</div>
 
-> “Put down the truest word you know, you will be the greatest writer.”<br>
-> <cite>– ERNEST HEMINGWAY</cite> 
+##### Where there is Dharma, there is Kṛṣṇa. Where there is Kṛṣṇa, there is victory.
 
-##### How Do We Respond When What We Had Built And What Built Us, Breaks Down? How Do We Equip Ourselves To Build?
+<BlockQuote1 --qline="#fe4a49">
+<div slot="quote">“Put down the truest word you know, you will be the greatest writer.”</div>
+<div slot="cite">Ernest Hemingway</div>
+</BlockQuote1>
+
+**How Do We Respond When What We Had Built And What Built Us, Breaks Down? How Do We Equip Ourselves To Build?**
 
 In December 2021, I was at the great Chennakeshava Temple at Belur, reflecting on the nature of change. The situation was personal but the yearning was for a universal principle.
 

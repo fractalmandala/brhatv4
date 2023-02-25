@@ -1,92 +1,33 @@
-<script>
-/**
-	 * @type {any}
-	 */
- export let data
-let { soaChapter2 } = data;
-$: ({ soaChapter2 } = data)
+<script lang="ts">
+export let data = {}
+$: dataArray = data.data || []
 </script>
 
-<div class="c-c-c-c prelude" data-scroll-section>
-	<h1>
-		Chapter 2<br><span class="colorange">Sūta and Sudā</span>
-	</h1>
-	<h5>
-		Bhārata, 34 years after the War...
-	</h5>
-</div>
-{#each soaChapter2 as chapter}
-<div class="r-r-r-r full-box" data-scroll-section>
-	<div class="c-c-c-c image-box" data-scroll>
-		<img src={chapter.image} alt={chapter.id} data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal"/>
+
+<div class="flexbox-c desk-margins">
+{#each dataArray as item}
+<div class="in-row fully">
+		<div class="wide40 in-col all-cc">
+			<small class="wbold orange">{item.id}</small>
+			<h5 class="w400">{item.text}</h5>
+		</div>
+		<div class="wide60 in-col all-cc">
+			<img src={item.image} alt={item.id} />
+		</div>
 	</div>
-	<div class="c-c-c-c text-box" data-scroll data-scroll-speed="7">
-		<small>{chapter.id}</small>
-		<p>{chapter.text}</p>
-	</div>
-</div>
 {/each}
+</div>
 
 
-<style lang="sass">
+<style>
 
 
-.image-box img
-	object-fit: cover
-
-.text-box p
-	color: white
-	font-family: 'Readex Pro',sans-serif
-	font-weight: 300
-	
-.prelude
-	justify-content: center
-
-.prelude a
-	color: #ff3d00
-
-.text-box
-	justify-content: flex-start
-	
-
-@media screen and (min-width: 900px)
-
-	.prelude
-		height: 100vh
-		width: 100vw
-		padding: 0 8vw
-	
-	.prelude h1
-		margin-bottom: 0
-
-	.prelude h5
-		color: white
-		font-weight: 300
-
-	.full-box
-		width: 100vw
-		height: 100vh
-
-	.image-box
-		width: 60%
-
-	.image-box img
-		height: 88%
-		width: 100%
-
-	.text-box
-		width: 40%
-		padding: 4em 2em 0 2em
-		background-color: transparent
-
-	.text-box p
-		font-size: 20px
-		line-height: 1.44em
-
-	.text-box small
-		font-size: 12px
-		color: #fe4a49
-		font-weight: bold
-
-
+.wide60 img {
+	object-fit: cover;
+	width: 88%;
+	height: 80%;
+}
+.fully h5 { color: #272727;}
+.in-row .wide40 { align-items: flex-start;}
 </style>
+

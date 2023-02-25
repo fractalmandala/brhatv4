@@ -8,15 +8,15 @@ import BlockQuote2 from '$lib/components/reuse/BlockQuote.svelte'
 </script>
 
 
-<BlockQuote1>
-<div slot="quote" class="the-quote">“How are we collectively creating a world that none of us wants, individually”</div>
-<div slot="cite" class="the-cite">Daniel Christian Wahl</div>
+<BlockQuote1 --qline="#fe4a49">
+<div slot="quote">“How are we collectively creating a world that none of us wants, individually”</div>
+<div slot="cite">Daniel Christian Wahl</div>
 </BlockQuote1>
 
 
-<BlockQuote2>
-<div slot="quote" class="the-quote">“We are approaching the power of Gods, without the wisdom of Gods”</div>
-<div slot="cite" class="the-cite">Daniel Schmartenberger</div>
+<BlockQuote2 --qline="#FE4a49">
+<div slot="quote">“We are approaching the power of Gods, without the wisdom of Gods”</div>
+<div slot="cite">Daniel Schmartenberger</div>
 </BlockQuote2>
 
 #### Culture Compatible Public Policy
