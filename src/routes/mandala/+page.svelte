@@ -104,7 +104,7 @@ onMount(() => {
 			<h5 class="w400 mind"><a href="/mandala/fractals/essay2">Ratha as a Bīja</a></h5>
 			<h5 class="w400 mind"><a href="/mandala/fractals/ancestors">Ancestors Outside of Time</a></h5>
 			<h5 class="w400 mind"><a href="/mandala/fractals/">History is Ontic, Itihāsa is Ontologic</a></h5>
-			<h5 class="w400 mind"><a href="/mandala/fractals/">Synaptic Reconnection</a></h5>
+			<h5 class="w400 mind"><a href="/mandala/fractals/synaptic">Synaptic Reconnection</a></h5>
 			<h5 class="w400 mind"><a href="/mandala/fractals/">Rāma's Journey</a></h5>
 		</div>
 	</div>

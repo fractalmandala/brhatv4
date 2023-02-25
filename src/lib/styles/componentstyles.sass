@@ -1097,3 +1097,23 @@ cite
         font-size: 17px
         letter-spacing: 0.35px
         font-weight: 400
+
+.crumb
+  background: var(--beau)
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 800
+  width: 100vw
+  @media screen and (min-width: 900px)
+    height: 120px
+    align-items: flex-end
+    padding: 0 32px
+    gap: 32px
+    border-bottom: 1px solid #10D56E
+    p
+      margin-top: 0
+      margin-bottom: 12px
+      text-transform: uppercase
+      &:hover
+        color: #10C56D

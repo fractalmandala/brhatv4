@@ -3,8 +3,8 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 </script>
 
 <div class="big-box">
-<ToTop></ToTop>
-<div class="margin-box">
+	<ToTop></ToTop>
+	<div class="margin-box">
 	<div class="flexbox-r" id="row-one">
 		<div class="flexbox-c" id="logo-col"><a href="/">
 			<img id="logoimage" src="/images/brhatlogos/horizontalwhite.png" alt="brhatlogo" /></a>
@@ -62,7 +62,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 			</div>
 		</div>
 	</div>
-</div>
+	</div>
 	<div class="flexbox-c" id="last-row"><small>2023 All Rights Reserved | <span><a href="/docs">Documentation</a> | </span><span><a href="/about/privacy">Privacy</a></span><br>
 		<span class="white">Write to us: contact@brhat.in</span>
 		</small>
@@ -90,6 +90,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		padding-top: 2em
 	@media screen and (max-width: 767px) and (min-width: 576px)
 		padding-top: 2em
+		height: 100%
 	@media screen and (max-width: 575px)
 		padding-top: 2em
 		width: 100vw
@@ -109,9 +110,9 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		width: calc(100% - 12vw)
 		margin: 2em 6vw 0 6vw
 	@media screen and (max-width: 767px) and (min-width: 576px)
-		height: calc(100vh - 12em)
-		width: calc(100vw - 8vw)
-		margin: 2em 4vw 0em 4vw
+		height: calc(100vh - 200px)
+		width: calc(100vw - 160px)
+		margin: 2em 80px 0em 80px
 	@media screen and (max-width: 575px)
 		min-height: calc(100vh - 12em)
 		width: calc(100vw - 88px)
@@ -249,15 +250,16 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 @media screen and (max-width: 767px) and (min-width: 576px) 
 
 	#last-row
-		height: 4em
-		width: calc(100vw - 8vw)
-		margin: 0 4vw
+		height: 128px
+		justify-content: center
+		width: calc(100vw - 160px)
+		margin: 0 80px
 		padding-top: 1em
 		small
 			line-height: 1.5
 
 	#logoimage
-		width: 160px
+		width: 188px
 		margin-bottom: 1em
 
 	#row-one
@@ -268,7 +270,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		width: 100%
 
 	#icons-row
-		width: 32%
+		width: 42%
 		justify-content: space-between
 		img
 			width: 24px
@@ -277,10 +279,11 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	#links-row
 		width: 100%
 		padding-top: 2em
+		margin-top: 32px
 		flex-direction: row
 		gap: 1.2em
 		.link-box
-			width: 25%
+			width: 45%
 
 	
 @media screen and (max-width: 575px)

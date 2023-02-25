@@ -50,12 +50,12 @@ function closeMen(){
 			<h5 class="w500" use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala">Fractal Maṇḍala</a></h5>
 			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/essays">Definition, Instances</a></h6>
 			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 100 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/aphorisms">On Indian Civilizational Consciousness</a></h6>
-			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/synaptic">Caturasūtra - 4 Aphorisms</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/fractals/aphorisms">Caturasūtra - 4 Aphorisms</a></h6>
 			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/synaptic">The Macrohistoric Case</a></h6>
 			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/synaptic">Ratha as a Bīja</a></h6>
 			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/synaptic">Ancestors Outside of Time</a></h6>
 			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/synaptic">History is Ontic, Itihāsa is Ontologic</a></h6>
-			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/synaptic">Synaptic Reconnection</a></h6>
+			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/fractals/synaptic">Synaptic Reconnection</a></h6>
 			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 150 }} on:click={closeMen} on:keydown={closeMen}><a href="/mandala/synaptic">Rāma's Journey</a></h6>
 		<h5 class="w500" use:reveal={{ transition: "slide", duration: 200 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi">Bṛhat Anveṣī</a></h5>
 			<h6 class="w300" use:reveal={{ transition: "slide", duration: 200, delay: 50 }} on:click={closeMen} on:keydown={closeMen}><a href="/anveshi/chapter">Chapters</a></h6>
