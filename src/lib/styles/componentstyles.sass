@@ -23,8 +23,6 @@ body
   --beau: linear-gradient(132.9deg, rgba(23,23,23,1) 10.69%, rgba(24, 28, 30, 1) 84.91%)
   --beautrans: linear-gradient(132.9deg, rgba(23,23,23,0.98) 10.69%, rgba(24, 28, 30, 0.99) 84.91%)
 
-.bdr
-  border: 1px solid red
 
 .upper
   text-transform: uppercase
@@ -1241,3 +1239,13 @@ cite
       margin-bottom: -16px
       margin-left: -8px
       z-index: 2
+
+.header-main
+  background: var(--beautrans)
+  z-index: 900
+  position: fixed
+  top: 0
+  left: 0
+  @media screen and (min-width: 768px)
+    width: 100vw
+    height: 80px

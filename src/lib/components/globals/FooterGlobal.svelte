@@ -133,8 +133,9 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	p
 		color: white
 		font-weight: 400
-		letter-spacing: 1px
 		margin-bottom: 20px
+		font-size: 18px
+		letter-spacing: 0.25px
 		margin-top: 0
 		&:hover a
 			color: #fe4a49
@@ -143,8 +144,8 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	small
 		color: #878787
 		font-weight: 400
-		letter-spacing: 0.5px
 		margin-bottom: 16px
+		font-size: 16px
 		margin-top: 0
 		&:hover a
 			color: #fe4a49

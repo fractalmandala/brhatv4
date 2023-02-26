@@ -119,7 +119,7 @@ function toggleLD(){
 
 	.gencol
 		width: calc(33.33% - 16px)
-		height: 100%
+		height: 100vh
 
 	.genrow
 		&:hover

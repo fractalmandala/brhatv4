@@ -2,8 +2,8 @@
 	import supabase from '$lib/db';
 	import { reveal } from 'svelte-reveal';
 	import Brands from '$lib/components/globals/AllBrands.svelte'
+	import HeaderGen from '$lib/components/headers/HeaderGen.svelte'
 	import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte';
-  import Header from '$lib/components/headers/HeadMain.svelte'
 	import StaticH1 from '$lib/components/headers/StaticH1.svelte';
 	import Dhiti from '$lib/components/headers/StaticH1.svelte';
 	import Open from '$lib/components/headers/StaticH1.svelte';
@@ -43,12 +43,12 @@
 
 <svelte:window bind:scrollY={y} bind:innerHeight={ih} bind:outerHeight={oh}/>
 
-<Header></Header>
+<HeaderGen></HeaderGen>
 <Accordion />
 
 <div class="flexbox-c desk-margins cc-y-col mob-y-pad full">
-	<h1 class="w500">Bṛhat is a <br><span class="red m-top-zero">Culture Engine</span></h1>
-	<h5 class="w300 wide75 blk">
+	<h1 class="w600">Bṛhat is a <br><span class="red m-top-zero">Culture Engine</span></h1>
+	<h5 class="w400 wide75 blk">
 		To power creatives, research and design rooted in the Indian civilizational consciousness. We
 		convert individual, institutional and collective intent into action, across 3 dimensions.
 	</h5>
@@ -85,7 +85,7 @@
 <StaticH1 --boxback="white">
 	<div slot="header"><span class="red">Explore </span>Visual Content</div>
 	<div class="flexbox-c desk-margins v-slate" slot="body">
-				<h5 class="w300 wide75 m-top-24 blk">
+				<h5 class="w400 wide75 m-top-24 blk">
 					Our visual content ranges from explorations of rasa and bhāva, to articulations of an
 					IKS-implementation strategy for modern India. Select playlists below, or visit our <a
 						href="https://youtube.com/@brhat"
@@ -158,7 +158,7 @@
 	<div slot="header">Bṛhat Open <span class="red">Library</span></div>
 	<div slot="body">
 		<div class="flexbox-c desk-margins bol">
-			<h5 class="w300 wide75 blk">
+			<h5 class="w400 wide75 blk">
 				An online repository of books, papers, texts and scriptures, made available under CC0 1.0
 				License. Gathering point for digitized scripture, Aryan Invasion/Migration, civilizational
 				literature and more.
@@ -222,7 +222,7 @@
 @media screen and (min-width: 768px) {
 	.v-slate select { margin-bottom: 32px; width: 200px;}
 	.blogbox { height: auto; margin-bottom: 0;}
-	.blogbox h6 { margin-top: 16px; letter-spacing: 0.35px;}
+	.blogbox h6 { margin-top: 16px;}
 	.blogbox h6, .blogbox small, .blogbox cite { padding-left: 8px; padding-right: 8px;}
 
 }
