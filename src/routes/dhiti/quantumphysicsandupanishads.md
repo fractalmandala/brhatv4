@@ -1,7 +1,7 @@
 ---
 title: When Quantum Physicists Read the Upaniṣads
 author: Jash Dholani
-category: Other
+category: Dharma Today
 tags: physics, vedanta
 date: "2022-09-24"
 image: /images/dhitiheroes/03.webp

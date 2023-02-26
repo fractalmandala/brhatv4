@@ -1,7 +1,7 @@
 ---
 title: Towards Dharma-centric Polity - Lokmanya Tilak and the Universalization of Gaṇeśa Utsava
 author: Pankaj Saxena
-category: Culture and Policy
+category: Dharma Today
 tags: festival, ganesha
 date: "2022-09-08"
 image: /images/dhitiheroes/34.webp

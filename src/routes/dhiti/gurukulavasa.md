@@ -1,7 +1,7 @@
 ---
 title: Gurukulavāsa – Making a Śiṣya Out of a Vidyārthī
 author: Kavita Krishna Meegama
-category: Indian Education
+category: Indian Knowledge Systems
 tags: education, vedic, gurukula
 date: "2022-07-06"
 image: /images/dhitiheroes/20.webp

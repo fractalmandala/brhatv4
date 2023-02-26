@@ -1,7 +1,7 @@
 ---
 title: Kula, Jāti, Varṇa, Āśrama - Perspective from Principles of Games Design
 author: Raghava Krishna
-category: Culture and Policy
+category: Svayambodha
 tags: dharma, gaming, purushartha
 date: "2022-10-15"
 image: /images/dhitiheroes/43.webp

@@ -1,7 +1,7 @@
 ---
 title: A Glimpse into Śākta Worldview and Practice
 author: Shri Ramachandra Roddam
-category: Cornerstone
+category: Featured
 tags: dharma, shakta
 date: "2022-09-26"
 image: /images/dhitiheroes/40.webp

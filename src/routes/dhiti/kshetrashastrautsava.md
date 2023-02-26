@@ -1,7 +1,7 @@
 ---
 title: Kṣetra, Śāstra, Utsava
 author: Pankaj Saxena
-category: Cornerstone
+category: Dharma Today
 tags: festival, krishna, tradition
 date: "2022-08-19"
 image: /images/dhitiheroes/02.webp

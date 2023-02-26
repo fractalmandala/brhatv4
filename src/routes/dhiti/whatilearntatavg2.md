@@ -1,7 +1,7 @@
 ---
 title: How Gurukulam Learning Differs from Regular Education - What I Learnt at AVG Part 2
 author: Kavita Krishna Meegama
-category: Indian Education
+category: Indian Knowledge Systems
 tags: education, tradition
 date: "2023-01-02"
 image: /images/dhitiheroes/57.webp

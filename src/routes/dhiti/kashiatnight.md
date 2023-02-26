@@ -1,7 +1,7 @@
 ---
 title: Kāśī at Night
 author: Nivedita Tiwari
-category: Other
+category: Dharma Today
 tags: poetry, places of india
 date: "2022-07-16"
 image: /images/dhitiheroes/18.webp

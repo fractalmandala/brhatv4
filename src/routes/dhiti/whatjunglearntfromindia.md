@@ -1,7 +1,7 @@
 ---
 title: What Carl Jung Learnt from India
 author: Jash Dholani
-category: Other
+category: Dharma Today
 tags: india to outsiders, jung
 date: "2022-07-26"
 image: /images/dhitiheroes/12.webp

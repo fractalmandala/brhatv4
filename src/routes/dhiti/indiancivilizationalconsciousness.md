@@ -1,7 +1,7 @@
 ---
 title: Indian Civilizational Consciousness
 author: Amritanshu Pandey
-category: Civilization State
+category: Svayambodha
 tags: civilization, consciousness
 date: "2022-08-15"
 image: /images/dhitiheroes/01.webp

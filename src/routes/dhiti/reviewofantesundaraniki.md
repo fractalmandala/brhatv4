@@ -1,7 +1,7 @@
 ---
 title: A Review of Ante Sundaraniki
 author: Anshuman Panda, Kavita Krishna Meegama
-category: Culture and Policy
+category: Dharma Today
 tags: cinema
 date: "2022-08-03"
 image: /images/dhitiheroes/14.webp

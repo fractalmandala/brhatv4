@@ -1,7 +1,7 @@
 ---
 title: Rāma’s Journey – the Avatāra in You, a Fractal Maṇḍala Essay
 author: Amritanshu Pandey
-category: Other
+category: Svayambodha
 tags: civilizational consciousness, festivals
 date: "2022-10-24"
 image: /images/dhitiheroes/49.webp

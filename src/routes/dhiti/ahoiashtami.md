@@ -1,7 +1,7 @@
 ---
 title: Ahoi Aṣtamī – How Hindu Dharma Teaches Deep Ecology Through Festivals
 author: Pankaj Saxena
-category: Culture and Policy
+category: Svayambodha
 tags: ecology, festivals
 date: "2022-10-17"
 image: /images/dhitiheroes/47.webp

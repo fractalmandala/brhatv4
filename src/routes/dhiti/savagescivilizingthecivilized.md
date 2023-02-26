@@ -1,7 +1,7 @@
 ---
 title: ‘Savages’ Civilizing the ‘Civilized’ - Knowledge Appropriation, Colonial Consciousness and the Production of ‘Hybridized Indians’
 author: Anurag Shukla
-category: Civilization State
+category: Svayambodha
 tags: decolonization, colonization, svayambodha
 date: "2022-12-10"
 image: /images/dhitiheroes/55.webp

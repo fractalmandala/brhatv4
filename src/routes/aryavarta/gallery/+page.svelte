@@ -53,7 +53,7 @@ return data
 >
 <div class="black-beauty" data-scroll-container>
 	<div class="row-of-3 myrow" data-scroll-section>
-		<div class="threebox col31" data-scroll data-scroll-speed="2">
+		<div class="threebox col31 wide33" data-scroll data-scroll-speed="1">
 			{#await getImages()}
 			<small>...</small>
 			{:then data}
@@ -66,7 +66,7 @@ return data
 			<pre>{error}</pre>
 			{/await}
 		</div>
-		<div class="threebox col32" data-scroll data-scroll-speed="-4">
+		<div class="threebox col32 wide33" data-scroll data-scroll-speed="-4">
 			{#await getSecond()}
 			<small>...</small>
 			{:then data}
@@ -79,7 +79,7 @@ return data
 			<pre>{error}</pre>
 			{/await}
 		</div>
-		<div class="threebox col33" data-scroll data-scroll-speed="-2">
+		<div class="threebox col33 wide33" data-scroll data-scroll-speed="-2">
 			{#await getThird()}
 			<small>...</small>
 			{:then data}
@@ -98,9 +98,9 @@ return data
 
 <style>
 :root { --sidebar: rgba(0,0,0,0);}
-.threebox img { object-fit: cover; width: 100%; height: 320px;}
+.threebox img { object-fit: cover; width: 100%; height: 400px;}
 .the-image{ width: 100%; object-fit: contain; opacity: 1; transition: opacity 0.4s ease;}
 .black-beauty { background: var(--beau);height: 100%; }
-.row-of-3 { gap: 8px; height: 100%; justify-content: center;}
+.row-of-3 { gap: 8px; height: 100%; justify-content: center; display: flex; flex-direction: row; margin-top: 72px;}
 .threebox { max-width: 30vw; height: 100%;}
 </style>

@@ -1,7 +1,7 @@
 ---
 title: Kāntāra and Universe of the Bhūtas
 author: Sai Priya Chodavarapu
-category: Culture and Policy
+category: Dharma Today
 tags: cinema, cultural review, storytelling
 date: "2022-11-05"
 image: /images/dhitiheroes/09.webp

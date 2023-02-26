@@ -1,7 +1,7 @@
 ---
 title: Colonial Alienation and the Making of Docile Bodies
 author: Anurag Shukla
-category: Reclaiming the Past
+category: Svayambodha
 tags: civilizational, decolonization
 date: "2022-09-13"
 image: /images/dhitiheroes/36.webp

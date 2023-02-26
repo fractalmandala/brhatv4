@@ -1,7 +1,7 @@
 ---
 title: Decolonization - A Personal Footprint and Some Ramp Ways
 author: Amritanshu Pandey
-category: Civilization State
+category: Svayambodha
 tags: decolonization, history
 date: "2022-09-02"
 image: /images/dhitiheroes/04.webp

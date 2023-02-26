@@ -1,7 +1,7 @@
 ---
 title: History is Ontic but Itihāsa is Ontologic – a Fractal Maṇḍala Essay
 author: Amritanshu Pandey
-category: Civilization State
+category: Svayambodha
 tags: civilizational consciousness, history, storytelling
 date: "2022-09-18"
 image: /images/dhitiheroes/60.webp

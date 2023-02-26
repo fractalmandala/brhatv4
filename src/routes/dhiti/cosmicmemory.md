@@ -1,7 +1,7 @@
 ---
 title: Cosmic Memory
 author: Nivedita Tiwari
-category: Other
+category: Dharma Today
 tags: poetry
 date: "2022-09-05"
 image: /images/dhitiheroes/33.webp

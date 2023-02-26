@@ -1,7 +1,7 @@
 ---
 title: The Ideals of Learning, Learners, and Methods in Ancient Indian Education
 author: Anurag Shukla
-category: Indian Education
+category: Indian Knowledge Systems
 tags: education
 date: "2022-06-07"
 image: /images/dhitiheroes/23.webp

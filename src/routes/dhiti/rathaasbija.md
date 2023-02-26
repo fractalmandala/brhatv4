@@ -1,7 +1,7 @@
 ---
 title: Ratha as a Bīja of Civilizational DNA, a Fractal Maṇḍala Essay
 author: Amritanshu Pandey
-category: Civilization State
+category: Svayambodha
 tags: aryan, chariot
 date: "2022-09-30"
 image: /images/dhitiheroes/46.webp

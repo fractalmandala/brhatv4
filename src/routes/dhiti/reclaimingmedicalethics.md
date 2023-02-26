@@ -1,7 +1,7 @@
 ---
 title: Reclaiming Medical Ethics
 author: Sai Priya Chodavarapu
-category: Reclaiming the Past
+category: Svayambodha
 tags: charaka, ethics
 date: "2022-05-28"
 image: /images/dhitiheroes/24.webp

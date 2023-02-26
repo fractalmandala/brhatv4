@@ -1,7 +1,7 @@
 export const load = async ({ fetch }) => {
 	const response = await fetch (`api/dhiti`)
-	const docs = await response.json()
+	const posts = await response.json()
 	return {
-		docs
+		posts
 	}
 }

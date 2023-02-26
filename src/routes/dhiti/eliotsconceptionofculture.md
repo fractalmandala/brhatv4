@@ -1,7 +1,7 @@
 ---
 title: T. S. Eliot’s Conception of Culture
 author: Sai Priya Chodavarapu
-category: Culture and Policy
+category: Dharma Today
 tags: culture, eliot
 date: "2022-09-06"
 image: /images/dhitiheroes/38.webp

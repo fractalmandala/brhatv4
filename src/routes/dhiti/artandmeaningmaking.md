@@ -1,7 +1,7 @@
 ---
 title: Art and Meaning Making
 author: Pankaj Saxena
-category: Reclaiming the Past
+category: Svayambodha
 tags: art, culture, meaning-making
 date: "2022-09-25"
 image: /images/dhitiheroes/39.webp

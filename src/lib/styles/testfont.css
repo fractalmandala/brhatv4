@@ -1,6 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
 
 @font-face {
+	font-family: 'Playfair Display', serif;
+	src: url('fonts/PlayfairDisplay-VariableFont_wght.ttf') format('ttf');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Playfair Display', serif;
+	src: url('fonts/PlayfairDisplay-VariableFont_wght.ttf') format('ttf');
+	font-display: swap;
+  font-weight: 900;
+}
+
+@font-face {
+	font-family: 'Playfair Display', serif;
+	src: url('PlayfairDisplay-Italic-VariableFont_wght.tff') format('ttf');
+	font-display: swap;
+	font-style: italic;
+}
+
+
+@font-face {
   font-family: 'Spline Sans Mono', monospace;
   src: url('fonts/SplineSansMono-VariableFont_wght.ttf') format('ttf');
   font-display: swap;
@@ -25,6 +46,10 @@
 	font-family: 'Spline Sans Mono', monospace;
 }
 
-.sansa h1, .sansa h2, .sansa h3, .sansa h4, .sansa h5, .sansa h6, .sansa p {
+.sansa h1, .sansa h2, .sansa h3, .sansa h4, .sansa h5, .sansa h6, .sansa p, .sansa {
 	font-family: 'Spline Sans', sans-serif;
+}
+
+.play, .play a {
+	font-family: 'Playfair Display', serif;
 }

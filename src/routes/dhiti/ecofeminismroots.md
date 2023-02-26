@@ -1,7 +1,7 @@
 ---
 title: Eco-feminism - Roots in Ancient Hindu Philosophy
 author: Anurag Shukla, Kavita Krishna Meegama
-category: Reclaiming the Past
+category: Svayambodha
 tags: ecology, feminism, mother
 date: "2022-05-31"
 image: /images/dhitiheroes/11.webp

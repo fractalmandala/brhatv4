@@ -1,7 +1,7 @@
 ---
 title: The Dhārmika Gene
 author: Amritanshu Pandey
-category: "cornerstone"
+category: Featured
 tags: science, culture, civilizational consciousness
 date: "2023-01-07"
 image: /images/dhitiheroes/56.webp

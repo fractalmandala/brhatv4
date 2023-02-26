@@ -1,7 +1,7 @@
 ---
 title: How To Best Live? Answers From Ancient India
 author: Jash Dholani
-category: Reclaiming the Past
+category: Svayambodha
 tags: mahabharata, purushartha
 date: "2022-08-11"
 image: /images/dhitiheroes/17.webp

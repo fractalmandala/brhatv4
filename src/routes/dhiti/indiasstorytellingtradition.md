@@ -1,7 +1,7 @@
 ---
 title: India’s Storytelling Tradition and its Influence on World Literature
 author: Sai Priya Chodavarapu
-category: Reclaiming the Past
+category: Svayambodha
 tags: storytelling, tradition
 date: "2022-07-03"
 image: /images/dhitiheroes/26.webp

@@ -1,7 +1,7 @@
 ---
 title: As Seen on TV – Cultural Review of Cinema
 author: Sai Priya Chodavarapu
-category: Culture and Policy
+category: Dharma Today
 tags: cinema
 date: "2022-08-02"
 image: /images/dhitiheroes/13.webp

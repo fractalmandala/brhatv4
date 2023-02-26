@@ -1,7 +1,7 @@
 ---
 title: The Saga of the Padmanabhadasas - A Glimpse of the History of Travancore Kingdom, 1
 author: Akshay Shankar, Kavita Krishna Meegama
-category: Reclaiming the Past
+category: Svayambodha
 tags: history, rajya, tradition
 date: "2022-11-12"
 image: /images/dhitiheroes/45.webp

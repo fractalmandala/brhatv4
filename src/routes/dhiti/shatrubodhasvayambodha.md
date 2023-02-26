@@ -1,7 +1,7 @@
 ---
 title: Svayambodha and Śatrubodha - Two Wheels of Civilization
 author: Pankaj Saxena
-category: Cornerstone
+category: Featured
 tags: civilizational consciousness, dharma
 date: "2022-11-13"
 image: /images/dhitiheroes/62.webp

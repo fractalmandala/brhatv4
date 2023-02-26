@@ -1,7 +1,7 @@
 ---
 title: Colonial Education, Cultural Amnesia and Pathologies of the Raj
 author: Anurag Shukla
-category: Indian Education
+category: Indian Knowledge Systems
 tags: british raj, colonization, education
 date: "2022-10-21"
 image: /images/dhitiheroes/48.webp

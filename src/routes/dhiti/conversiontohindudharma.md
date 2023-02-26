@@ -1,7 +1,7 @@
 ---
 title: Conversion to Hindu Dharma - Past Precedents, Present Challenges and Future Possibilities
 author: Ghora Angirasa, Kavita Krishna Meegama
-category: Cornerstone
+category: Featured
 tags: conversion
 date: "2022-08-23"
 image: /images/dhitiheroes/27.webp

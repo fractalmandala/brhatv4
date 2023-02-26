@@ -1,7 +1,7 @@
 ---
 title: Glossing Mind through Yoga 1 – Towards Happiness and Quality-of-Life Enhancement
 author: Dr. Richa Chopra, PhD.
-category: Culture and Policy
+category: Indian Knowledge Systems
 tags: mental health, patañjali, yoga
 date: "2022-10-27"
 image: /images/dhitiheroes/08.webp

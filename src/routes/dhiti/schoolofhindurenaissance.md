@@ -1,7 +1,7 @@
 ---
 title: Swami Vivekananda’s School of Hindu Renaissance
 author: Pankaj Saxena
-category: Other
+category: Svayambodha
 tags: civilization, dharma, vivekananda
 date: "2022-06-09"
 image: /images/dhitiheroes/31.webp

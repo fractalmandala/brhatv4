@@ -1,7 +1,7 @@
 ---
 title: Sri Aurobindo on What the West and India Have to Teach Each Other
 author: Jash Dholani
-category: Culture and Policy
+category: Śatrubodha
 tags: aurobindo
 date: "2022-06-26"
 image: /images/dhitiheroes/30.webp

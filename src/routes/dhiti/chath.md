@@ -1,7 +1,7 @@
 ---
 title: Chaṭh - A Living Tradition and Cultural Homecoming
 author: Akshay Jha
-category: Culture and Policy
+category: Svayambodha
 tags: festivals, tradition
 date: "2022-11-14"
 image: /images/dhitiheroes/53.webp

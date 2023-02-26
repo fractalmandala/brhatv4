@@ -1,7 +1,7 @@
 ---
 title: Fractal Maṇḍala 1- the Macrohistoric Case for India's Civilizational Primacy
 author: Amritanshu Pandey
-category: Civilization State
+category: Svayambodha
 tags: decolonization, history
 date: "2022-08-04"
 image: /images/dhitiheroes/16.webp

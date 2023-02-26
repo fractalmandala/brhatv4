@@ -1,7 +1,7 @@
 ---
 title: Sri Aurobindo’s School of Bhavānī Bhāratī
 author: Shri Ramachandra Roddam
-category: Other
+category: Svayambodha
 tags: aurobindo, civilizational consciousness
 date: "2022-06-26"
 image: /images/dhitiheroes/30.webp

@@ -1,7 +1,7 @@
 ---
 title: Towards Understanding the Aghorī Paramparā – Part 1
 author: Prabhav Paturi, Kavita Krishna Meegama
-category: Culture and Policy
+category: Svayambodha
 tags: aghora, tradition
 date: "2022-09-13"
 image: /images/dhitiheroes/35.webp

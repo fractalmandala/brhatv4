@@ -1,7 +1,7 @@
 ---
 title: Conversion to Hindu Dharma 2 - An Example from Eugene, USA
 author: Kate Herse, Kavita Krishna Meegama
-category: Cornerstone
+category: Featured
 tags: conversion, dharma, religion
 date: "2022-09-27"
 image: /images/dhitiheroes/41.webp

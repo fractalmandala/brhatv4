@@ -1,7 +1,7 @@
 ---
 title: Kalaripayattu
 author: Sai Priya Chodavarapu
-category: Reclaiming the Past
+category: Svayambodha
 tags: ancient arts, tradition
 date: "2022-11-08"
 image: /images/dhitiheroes/06.webp

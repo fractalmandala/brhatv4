@@ -1,7 +1,7 @@
 ---
 title: The Problem of Culture Transmission
 author: Pankaj Saxena
-category: Cornerstone
+category: Featured
 tags: culture, family, tradition
 date: "2022-09-12"
 image: /images/dhitiheroes/05.webp

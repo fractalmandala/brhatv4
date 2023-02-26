@@ -1,7 +1,7 @@
 ---
 title: Nerves of Steel, Muscles of Iron and Minds like Thunderbolt - A Hindu Monk’s Quest for Education
 author: Anurag Shukla
-category: Indian Education
+category: Indian Knowledge Systems
 tags: education, tradition, vivekananda
 date: "2023-01-12"
 image: /images/dhitiheroes/61.webp

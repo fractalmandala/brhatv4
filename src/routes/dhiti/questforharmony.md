@@ -1,7 +1,7 @@
 ---
 title: Quest for Harmony
 author: Pankaj Saxena
-category: Cornerstone
+category: Featured
 tags: culture, harmony
 date: "2022-05-26"
 image: /images/dhitiheroes/25.webp

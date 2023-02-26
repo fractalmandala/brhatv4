@@ -1,7 +1,7 @@
 ---
 title: S. Radhakrishnan on What Makes Art, Science and Religion Work
 author: Jash Dholani
-category: Indian Education
+category: Indian Knowledge Systems
 tags: radhakrishnan, teacher
 date: "2022-09-05"
 image: /images/dhitiheroes/37.webp

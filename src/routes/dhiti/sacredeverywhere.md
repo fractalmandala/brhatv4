@@ -1,7 +1,7 @@
 ---
 title: The Sacred Everywhere
 author: Nivedita Tiwari
-category: Other
+category: Dharma Today
 tags: poetry
 date: "2022-05-27"
 image: /images/dhitiheroes/32.webp

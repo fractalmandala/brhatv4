@@ -1,7 +1,7 @@
 ---
 title: Oral Storytelling Traditions
 author: Sai Priya Chodavarapu
-category: Reclaiming the Past
+category: Culture and Policy
 tags: storytelling, tradition
 date: "2022-08-17"
 image: /images/dhitiheroes/29.webp
