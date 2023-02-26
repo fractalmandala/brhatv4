@@ -90,6 +90,9 @@ body
 .grey
   color: #878787
 
+.grey2
+  color: #b7b7b7
+
 .blue
   color: #255F85
 
@@ -1123,3 +1126,118 @@ cite
       text-transform: uppercase
       &:hover
         color: #10C56D
+
+.dhiti-post
+  p, i, b, small, ul li, ol li, h6, h5, h4, h3
+    font-family: 'Newsreader', serif
+  @media screen and (min-width: 900px)
+    width: 60%
+    padding-bottom: 80px
+    padding-left: 48px
+  p
+    color: #212121
+    @media screen and (min-width: 900px)
+      font-size: 21px
+      line-height: 1.48
+      font-weight: 400
+      margin-top: 12px
+      margin-bottom: 20px
+  h6
+    @media screen and (min-width: 900px)
+      font-size: 21px
+  h5
+    color: #212121
+    @media screen and (min-width: 900px)
+      font-size: 27px
+      margin-top: 32px
+      margin-bottom: 48px
+  h3
+    color: #212121
+    @media screen and (min-width: 900px)
+      font-size: 48px
+      line-height: 1.1
+      margin-top: 88px
+      margin-bottom: 48px
+  h4
+    color: #212121
+    @media screen and (min-width: 900px)
+      font-size: 36px
+      font-weight: 700
+      position: relative
+      padding-top: 24px
+      margin-top: 56px
+      margin-bottom: 12px
+      &::after
+        position: absolute
+        top: 0
+        left: 0
+        width: 4%
+        height: 100%
+        border-top: 4px solid #fe4a49
+        content: ''
+  cite
+    color: #878787
+    letter-spacing: 1px
+    margin: 0 0 24px 0
+    padding: 0
+      
+.thinbar
+  @media screen and (min-width: 900px)
+    width: 104px
+    align-items: flex-start
+    padding-top: 48px
+    padding-left: 40px
+    gap: 24px
+    height: 100vh
+    position: sticky
+    left: 0
+    top: 0px
+    .icon-box
+      img
+        filter: saturate(0)
+        opacity: 0.35
+        &:hover
+          filter: saturate(1)
+          opacity: 1
+
+.dhitisidebar
+  @media screen and (min-width: 900px)
+    width: calc(40% - 104px)
+    padding: 0 40px 0 88px
+    justify-content: flex-end
+    height: 100%
+    img
+      object-fit: contain
+      width: 100%
+      z-index: 1
+  @media screen and (max-width: 899px) and (min-width: 768px)
+    img
+      object-fit: contain
+      width: 100%
+      z-index: 1
+  @media screen and (max-width: 767px)
+    img
+      object-fit: contain
+      width: 100%
+      z-index: 1
+  
+.side-dhiti
+  @media screen and (min-width: 900px)
+    padding: 32px
+    height: 100%
+    h6
+      font-size: 20px
+      line-height: 1.12
+      color: #212121
+      font-weight: 700
+      margin-top: 16px
+      margin-bottom: 0
+    small
+      font-weight: bold
+      color: white
+      background: #474747
+      padding: 5px
+      width: max-content
+      margin-bottom: -16px
+      margin-left: -8px
+      z-index: 2

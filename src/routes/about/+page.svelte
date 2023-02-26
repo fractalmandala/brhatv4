@@ -1,15 +1,53 @@
 <script>
 import supabase from '$lib/db'
+import { onMount } from 'svelte';
 import StaticH1 from '$lib/components/headers/StaticH1.svelte'
 import Partners from '$lib/components/headers/StaticH1.svelte'
 import Team from '$lib/components/headers/StaticH1.svelte'
-
+let y = 1
 let showModal = false;
 let isBrands = false;
+/**
+	 * @type {IntersectionObserver}
+	 */
+let observer
+let img
+/**
+	 * @type {Element}
+	 */
+let parallaxdiv
+
+const observerOptions = {
+	rootMargin: '0px',
+	threshold: 0.5,
+}
+
+const handleIntersection = (entries) => {
+  const [entry] = entries;
+  if (entry.isIntersecting) {
+    window.addEventListener('scroll', handleScroll);
+  } else {
+    window.removeEventListener('scroll', handleScroll);
+  }
+};
+
+const handleScroll = () => {
+	y = window.scrollY
+}
+
+onMount(() => {
+  observer = new IntersectionObserver(handleIntersection, observerOptions);
+  observer.observe(parallaxdiv);
+  return () => {
+    observer.disconnect();
+    window.removeEventListener('scroll', handleScroll);
+  };
+});
 
 function toggleBrands(){
 	isBrands = !isBrands;
 }
+
 
 async function advisors() {
 const { data, error } = await supabase
@@ -39,6 +77,8 @@ const { data, error } = await supabase
 }
 </script>
 
+<svelte:window bind:scrollY={y} />
+
 <div class="loco">
 <div class="flexbox-c full imgbox l0"></div>
 <div class="flexbox-c desk-margins cc-y-col mob-y-pad full">
@@ -50,7 +90,7 @@ const { data, error } = await supabase
 	<button class="redbutton m-top-8-mob"><a href="/about">Know More</a></button>
 	<div class="l2 flexbox-r of-three top-gap">
 		<div class="l2row1 in-col wide33">
-			<h6 class="wbold m-bot-8">Create</h6>
+			<h6 class="w600 m-bot-8">Create</h6>
 			<p class="w300 grey">
 				- visual and literary stories;<br>
 				- design thinking and methods;<br>
@@ -59,7 +99,7 @@ const { data, error } = await supabase
 			</p>
 		</div>
 		<div class="l2row2 in-col wide33">
-			<h6 class="wbold m-bot-8">Curate</h6>
+			<h6 class="w600 m-bot-8">Curate</h6>
 			<p class="w300 grey">
 				- heritage experience journeys;<br>
 				- culture-fit in mass media;<br>
@@ -68,7 +108,7 @@ const { data, error } = await supabase
 			</p>
 		</div>
 		<div class="l2row3 in-col wide33">
-			<h6 class="wbold m-bot-8">Consult</h6>
+			<h6 class="w600 m-bot-8">Consult</h6>
 			<p class="w300 grey">
 				- NEP-IKS implementation;<br>
 				- policy thinking on education and ecology;<br>
@@ -107,6 +147,11 @@ const { data, error } = await supabase
 			</p>
 		</div>
 	</div>
+</div>
+<div class="flexbox-c desk-margins" bind:this={parallaxdiv} id="parallax">
+	<img src="/images/corpimages/parallaximg.png" alt="parallax" style="transform: translateY({-y/4}px)" bind:this={img}/>
+</div>
+<div class="flexbox-c cc-y-col desk-margins">
 	<h4 class="w600 red top-gap">
 		But the severest constraint of them all is Time, and more specifically – Moment.
 	</h4>
@@ -116,7 +161,7 @@ const { data, error } = await supabase
 	</h5>
 </div>
 <div class="flexbox-c cc-y-col desk-margins lz">
-	<div class="flexbox-c link-heads l4">
+	<div class="flexbox-c top-gap link-heads l4">
 	<h5 class="w400 mind">
 		<a href="/about/docs/svatahsiddha">
 		Svataḥsiddha
@@ -147,7 +192,7 @@ const { data, error } = await supabase
 			<img src={item.image} alt={item.name} />
 			<div class="in-col">
 				<h6 class="m-top-24 m-bot-zero">{item.name}</h6>
-				<small>{item.title}</small>
+				<small class="grey m-top-8">{item.title}</small>
 			</div>
 		</div>
 		{/each}
@@ -213,13 +258,22 @@ const { data, error } = await supabase
 }
 
 .advisorbox { display: flex;}
+.l4 .mind {
+	transition: all 0.06s var(--cubed);
+	transform-origin: center left;
+}
 
+.l4 .mind:hover { box-shadow: 4px 6px 10px #e1e1e1; border-left: 2px solid #fe4a49;}
 
 @media screen and (min-width: 768px) {
-	.lx { height: 100vh;}
+	.lx { height: 70vh;}
 	.advisorbox { flex-direction: column;}
 	.l3 .in-col { border-top: 1px solid #e1e1e1; padding-top: 16px;}
-	
+	#parallax { overflow: hidden; height: 60vh;}
+	#parallax img { object-fit: cover; width: 100%;}	
+	.link-heads .w400 { padding-top: 16px; padding-bottom: 16px; padding-left: 16px; transition: all 0.06s var(--cubee);}
+	.link-heads .w400:hover { background: #f1f1f1;}
+	.link-heads h5 { margin: 0; text-transform: uppercase;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {

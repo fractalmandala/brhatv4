@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,200;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700;1,6..72,800&display=swap');
+
 
 @font-face {
 	font-family: 'Playfair Display', serif;
@@ -26,7 +28,13 @@
   src: url('fonts/SplineSansMono-VariableFont_wght.ttf') format('ttf');
   font-display: swap;
   unicode-range: U+0100-024F, U+1E00-1EFF, U+0061-007A, U+0020, U+1E9E, U+0122, U+012A, U+016A, U+1E62, U+1E45, U+015A, U+1E5B, U+1E43, U+1E47, U+00F1, U+1E0E, U+1E6D;
+}
 
+@font-face {
+	font-family: 'Spline Sans', sans-serif;
+	src: url('fonts/SplineSans-VariableFont_wght.tff') format('ttf');
+	font-display: swap;
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+0061-007A, U+0020, U+1E9E, U+0122, U+012A, U+016A, U+1E62, U+1E45, U+015A, U+1E5B, U+1E43, U+1E47, U+00F1, U+1E0E, U+1E6D;
 }
 
 @font-face {
@@ -50,6 +58,6 @@
 	font-family: 'Spline Sans', sans-serif;
 }
 
-.play, .play a {
-	font-family: 'Playfair Display', serif;
+.play, .play a, .play p, .play h6, .play h5, .play h4, .play h3, .play h2, .play h1, .play small, .play i, .play b, .play u, .play em, .play strong {
+	font-family: 'Newsreader', serif;
 }

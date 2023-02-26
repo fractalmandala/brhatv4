@@ -7,5 +7,3 @@ import Header from '$lib/components/headers/HeadArya.svelte'
 
 
 
-
-

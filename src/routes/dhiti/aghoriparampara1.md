@@ -42,8 +42,7 @@ As per ‘The Practical English Sanskrit Dictionary’ by Vaman Shivaram Apte (P
 > iha no likhitaṃ vyāsabhayāccānupayogataḥ /
 > tā eva nirmalāḥ śuddhā aghorāḥ parikīrtitāḥ // 257
 > ghoraghoratarāṇāṃ tu sotṛtvācca tadātmikāḥ /
-> sṛṣṭau sthitau ca saṃhāre tadupādhitrayātyaye // 258
-> 
+> sṛṣṭau sthitau ca saṃhāre tadupādhitrayātyaye // 258 
 > <cite>Tantrāloka Chapter 3, (tṛtīyamāhnikam)</cite>
 
 The relevant part roughly translates to: those forces that are flawless and have the quality of the aghora (fearless) delve deep into more horrifying depths of the human mind to emerge as courageous on that auspicious occasion.
