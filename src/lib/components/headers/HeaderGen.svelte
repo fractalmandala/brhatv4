@@ -9,7 +9,7 @@ function toggleMenu(){
 </script>
 
 <svelte:window bind:scrollY={hx}/>
-<div class="flexbox-r header-main">
+<div class="flexbox-r header-main" data-lenis-prevent>
 	<div class="in-row logoarea"><a href="/">
 			<svg id="motif" width="100%" height="100%" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g id="motif">
@@ -159,7 +159,7 @@ function toggleMenu(){
 	</div>
 </div>
 {#if isMenu}
-<div class="flexbox-c menu-side" in:fly="{{duration: 300, delay: 0, x: 400, y: 0, easing: circOut}}" out:fly="{{duration: 200, delay: 100, x: 400, y: 0, easing: circOut}}">
+<div class="flexbox-c menu-side" in:fly="{{duration: 300, delay: 0, x: 400, y: 0, easing: circOut}}" out:fly="{{duration: 200, delay: 100, x: 400, y: 0, easing: circOut}}" data-lenis-prevent>
 	<div class="in-col topstrip">
 		<svg width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" on:click={toggleMenu} on:keydown={toggleMenu}>
 			<g id="close">
@@ -216,7 +216,7 @@ function toggleMenu(){
 {/if}
 
 <style>
-.header-main { z-index: 900;}
+.header-main { z-index: 999;}
 .logoarea a svg { object-fit: cover; width: 100%;transition: all 0.08s var(--cubed);}
 #outer, #inner {
 	transform-origin: center center;

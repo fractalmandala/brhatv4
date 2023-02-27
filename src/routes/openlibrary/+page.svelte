@@ -120,7 +120,7 @@ export async function getHis(){
 		<small>...</small>
 		{:then data}
 		{#each data as item, i}
-			<div class="in-col" id="ess" use:reveal={{transition: "slide", delay: 10*i}}>
+			<div class="in-col txt22" id="ess" use:reveal={{transition: "slide", delay: 10*i}}>
 				<p class="w500">{item.Text}</p>
 			</div>
 		{/each}

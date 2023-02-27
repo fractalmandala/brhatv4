@@ -2,12 +2,14 @@
 // @ts-nocheck
 import { onMount } from 'svelte'
 import HeaderGen from '$lib/components/headers/HeaderGen.svelte'
-import { dev } from '$app/environment';
-import { inject } from '@vercel/analytics';
+import { dev } from '$app/environment'
+import { inject } from '@vercel/analytics'
 import Lenis from '@studio-freight/lenis'
+import Footer from '$lib/components/globals/FooterGlobal.svelte'
+import Animations from "textify.js"
+import '$lib/styles/textify.css'
 import '$lib/styles/componentstyles.sass'
 import '$lib/styles/typographyglobal.sass'
-import Footer from '$lib/components/globals/FooterGlobal.svelte'
 inject({ mode: dev ? 'development' : 'production' });
 
 onMount(async() => {
@@ -28,6 +30,56 @@ onMount(async() => {
 		requestAnimationFrame(raf)	
 	}
 	requestAnimationFrame(raf)
+	const { Textify } = Animations
+	new Textify ({
+		selector: ".link-heads h5",
+		duration: 400,
+		stagger: 200,
+		once: false,
+		reveal: true,
+		right: true
+	})
+	new Textify ({
+		selector: ".txt22 .w500",
+	  duration: 200,
+	  stagger: 100,
+	  once: false,
+	  reveal: true,
+	  scale: 0,
+		left: true,
+	})
+	new Textify ({
+		selector: ".txt3",
+		duration: 700,
+		stagger: 100,
+		delay: 60,
+		once: false,
+		reveal: true
+	})
+	new Textify ({
+		selector: ".txt4",
+		duration: 700,
+		stagger: 100,
+		delay: 90,
+		once: false,
+		reveal: true
+	})
+	new Textify ({
+		selector: ".txt5",
+		duration: 700,
+		stagger: 100,
+		delay: 120,
+		once: false,
+		reveal: true
+	})
+	new Textify ({
+		selector: ".txt6",
+		duration: 700,
+		stagger: 100,
+		delay: 150,
+		once: false,
+		reveal: true
+	})
 })
 </script>
 	
