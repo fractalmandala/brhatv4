@@ -6,6 +6,7 @@ import type { RevealOptions } from 'svelte-reveal';
 
 import supabase from '$lib/db'
 
+
 let isEss = false
 let isIKS = false
 let isBodha = false
@@ -118,8 +119,8 @@ export async function getHis(){
 		{#await getEss()}
 		<small>...</small>
 		{:then data}
-		{#each data as item}
-			<div class="in-col" id="ess" use:reveal={{transition: "fly"}}>
+		{#each data as item, i}
+			<div class="in-col" id="ess" use:reveal={{transition: "slide", delay: 10*i}}>
 				<p class="w500">{item.Text}</p>
 			</div>
 		{/each}
