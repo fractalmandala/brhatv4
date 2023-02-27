@@ -15,3 +15,24 @@
 .textify-title .word {
   overflow: hidden;
 }
+
+/* ----------------------------------------- */
+.play .textify-title .word,
+.textify-title .char {
+  display: inline-block;
+	font-family: 'Newsreader', serif;
+}
+
+/* ----------------------------------------- */
+
+.play .textify-title .char {
+  position: relative;
+	font-family: 'Newsreader', serif;
+}
+
+/* ------------------------------------------- */
+
+.play .textify-title .word {
+  overflow: hidden;
+	font-family: 'Newsreader', serif;
+}

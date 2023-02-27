@@ -216,12 +216,12 @@ function toggleMenu(){
 {/if}
 
 <style>
-.header-main { z-index: 999;}
+.header-main { z-index: 900;}
 .logoarea a svg { object-fit: cover; width: 100%;transition: all 0.08s var(--cubed);}
 #outer, #inner {
 	transform-origin: center center;
 }
-.menu-side { position: relative;}
+.menu-side { position: relative;z-index: 950; }
 .topstrip { position: absolute; top: 40px; right: 40px; position: sticky; }
 .closebutton { cursor: pointer; z-index: 999;}
 .closebutton svg:hover #top { animation: topmover 0.08s var(--cubee) forwards;}
@@ -257,7 +257,7 @@ function toggleMenu(){
 		width: 240px;
 		align-items: center;
 	}
-	.menu-side { background: var(--beau); z-index: 950; height: 100vh; overflow-y: scroll; width: 36vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 40px; overflow-x: hidden;}
+	.menu-side { background: var(--beau); height: 100vh; overflow-y: scroll; width: 36vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 40px; overflow-x: hidden;}
 	.topstrip { height: 72px; justify-content: center; align-items: flex-end;}
 	.topstrip svg { width: 28px; height: 28px; transform-origin: center center;}
 	.topstrip svg path { fill: #474747; transform-origin: center center;}
@@ -272,6 +272,108 @@ function toggleMenu(){
 		margin-bottom: 0;
 		margin-top: 0;
 		padding-top: 32px;
+		padding-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 899px) and (min-width: 768px) {
+	#motif { height: 40px; width: 40px; padding-bottom: 2px;}
+	#type { margin-left: 8px; width: 72px; padding-top: 4px;}
+	.menu-side nav { margin-top: 16px; }
+	.closebutton svg { width: 24px; height: 24px;}
+	.header-main { 
+		padding: 0 16px;
+		align-items: center;
+		justify-content: space-between;
+		width: 100vw;
+		height: 64px;
+		margin-bottom: 64px;
+	}
+	.logoarea {
+		align-items: center;
+	}
+	.menu-side { background: var(--beau); height: 100vh; overflow-y: scroll; width: 100vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 0 32px; overflow-x: hidden;}
+	.topstrip { height: 64px; justify-content: center; align-items: flex-end;}
+	.topstrip svg { width: 24px; height: 24px; transform-origin: center center;}
+	.topstrip svg path { fill: #474747; transform-origin: center center;}
+	.topstrip svg:hover path { fill: #fe4a49;}
+	.topstrip svg:hover { transform: rotate(180deg);}
+	.closebutton svg:hover path { fill: #fe4a49;}
+	.topstrip svg:hover path { transform: rotate(90deg);}
+	.menu-linker { border-bottom: 1px solid #373737; padding-top: 16px;}
+	.menu-linker {
+		font-weight: 500;
+		margin-bottom: 0;
+		margin-top: 0;
+		padding-top: 16px;
+		padding-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 767px) and (min-width: 576px) {
+	#motif { height: 40px; width: 40px; padding-bottom: 2px;}
+	#type { margin-left: 8px; width: 72px; padding-top: 4px;}
+	.menu-side nav { margin-top: 16px; }
+	.closebutton svg { width: 24px; height: 24px;}
+	.header-main { 
+		padding: 0 16px;
+		align-items: center;
+		justify-content: space-between;
+		width: 100vw;
+		height: 64px;
+		margin-bottom: 64px;
+	}
+	.logoarea {
+		align-items: center;
+	}
+	.menu-side { background: var(--beau); height: 100vh; overflow-y: scroll; width: 100vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 0 32px; overflow-x: hidden;}
+	.topstrip { height: 64px; justify-content: center; align-items: flex-end;}
+	.topstrip svg { width: 24px; height: 24px; transform-origin: center center;}
+	.topstrip svg path { fill: #474747; transform-origin: center center;}
+	.topstrip svg:hover path { fill: #fe4a49;}
+	.topstrip svg:hover { transform: rotate(180deg);}
+	.closebutton svg:hover path { fill: #fe4a49;}
+	.topstrip svg:hover path { transform: rotate(90deg);}
+	.menu-linker { border-bottom: 1px solid #373737; padding-top: 16px;}
+	.menu-linker {
+		font-weight: 500;
+		margin-bottom: 0;
+		margin-top: 0;
+		padding-top: 16px;
+		padding-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	#motif { height: 40px; width: 40px; padding-bottom: 2px;}
+	#type { margin-left: 8px; width: 72px; padding-top: 4px;}
+	.menu-side nav { margin-top: 16px; }
+	.closebutton svg { width: 24px; height: 24px;}
+	.header-main { 
+		padding: 0 16px;
+		align-items: center;
+		justify-content: space-between;
+		width: 100vw;
+		height: 64px;
+		margin-bottom: 64px;
+	}
+	.logoarea {
+		align-items: center;
+	}
+	.menu-side { background: var(--beau); height: 100vh; overflow-y: scroll; width: 100vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 0 32px; overflow-x: hidden;}
+	.topstrip { height: 64px; justify-content: center; align-items: flex-end;}
+	.topstrip svg { width: 24px; height: 24px; transform-origin: center center;}
+	.topstrip svg path { fill: #474747; transform-origin: center center;}
+	.topstrip svg:hover path { fill: #fe4a49;}
+	.topstrip svg:hover { transform: rotate(180deg);}
+	.closebutton svg:hover path { fill: #fe4a49;}
+	.topstrip svg:hover path { transform: rotate(90deg);}
+	.menu-linker { border-bottom: 1px solid #373737; padding-top: 16px;}
+	.menu-linker {
+		font-weight: 500;
+		margin-bottom: 0;
+		margin-top: 0;
+		padding-top: 16px;
 		padding-bottom: 20px;
 	}
 }

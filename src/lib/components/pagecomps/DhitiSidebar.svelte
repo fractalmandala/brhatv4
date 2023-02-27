@@ -19,7 +19,7 @@ const allPosts = await Promise.all(
 
 allPosts.sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date))
 
-const latestPosts = allPosts.slice(0, 8)
+const latestPosts = allPosts.slice(0, 15)
 return latestPosts
 }
 </script>
@@ -31,9 +31,8 @@ return latestPosts
 	{#each data as item}
 	<div class="in-col side-dhiti">
 		<small class="upper">{item.meta.category}</small>
-		<img src="{item.meta.image}" alt="meta" />
-		<h6 class="w600">{item.meta.title}</h6>
-		<cite class="w500 m-top-8 grey">{item.meta.author}</cite>
+		<h6><a href={item.path}>{item.meta.title}</a></h6>
+		<cite class="w500 m-top-8 grey2">{item.meta.author}</cite>
 	</div>
 	{/each}
 	{/await}

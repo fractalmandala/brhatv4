@@ -59,10 +59,21 @@ const showImage = async (imagelinker:any) => {
   }
 }
 
+export async function getEss(){
+	const { data, error } = await supabase
+	.from('brhat-openlibrary')
+	.select()
+	.eq('Type','Essentials')
+	.order('Sno',{ascending: false})
+	if (error) throw new Error(error.message)
+	return data
+}
+
 onMount(() => {
   showImage(data[selectedItem].imagelinker);
 	showImage(data[selectedItem].Description);
 	showImage(data[selectedLink].slug)
+	getEss()
 });
 
 function toggleEss(){
@@ -83,16 +94,6 @@ function toggleHis(){
 
 function toggleRos(){
 	isRos = !isRos
-}
-
-export async function getEss(){
-	const { data, error } = await supabase
-	.from('brhat-openlibrary')
-	.select()
-	.eq('Type','Essentials')
-	.order('Sno',{ascending: false})
-	if (error) throw new Error(error.message)
-	return data
 }
 
 export async function getIKS(){

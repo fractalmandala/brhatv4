@@ -1,10 +1,6 @@
-<div class="flexbox-c lx">
+<script>
+import Selection from '$lib/components/books/Selection.svelte'
+</script>
 <slot></slot>
-</div>
-
-<style>
-.lx {
-	overflow: hidden;
-}
-</style>
+<Selection></Selection>
 

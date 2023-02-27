@@ -1252,10 +1252,10 @@ cite
   p, i, b, small, ul li, ol li, h6, h5, h4, h3
     font-family: 'Newsreader', serif
   @media screen and (min-width: 900px)
-    width: 56%
-    padding-bottom: 80px
-    padding-left: 48px
+    width: calc(70% - 160px)
+    padding: 0 64px 64px 32px
     height: 100%
+    overflow-y: scroll
   p
     color: #212121
     @media screen and (min-width: 900px)
@@ -1302,34 +1302,11 @@ cite
     letter-spacing: 1px
     margin: 0 0 24px 0
     padding: 0
-      
-.thinbar
-  flex-direction: column
-  display: flex
-  position: sticky
-  @media screen and (min-width: 900px)
-    width: 104px
-    align-items: flex-start
-    padding-top: 48px
-    padding-left: 40px
-    gap: 24px
-    height: 800px
-    position: sticky
-    left: 0
-    top: 0
-    .icon-box
-      img
-        filter: saturate(0)
-        opacity: 0.35
-        &:hover
-          filter: saturate(1)
-          opacity: 1
 
 .dhitisidebar
   @media screen and (min-width: 900px)
-    width: calc(40% - 88px)
-    padding: 0 24px 0 88px
-    justify-content: flex-end
+    width: 24%
+    padding: 0 32px 0 56px
     height: 100%
     img
       object-fit: contain
@@ -1348,19 +1325,26 @@ cite
   
 .side-dhiti
   @media screen and (min-width: 900px)
-    padding: 32px
+    padding: 2px 32px 8px 32px
     height: 100%
+    display: none
     h6
-      font-size: 20px
+      font-size: 17px
       line-height: 1.12
-      color: #212121
+      color: #878787
       font-weight: 700
       margin-top: 16px
       margin-bottom: 0
+      border-bottom: 1px solid #d7d7d7
+      padding-bottom: 8px
+      font-weight: 600
+      a
+        &:hover
+          color: var(--soft)
     small
       font-weight: bold
-      color: white
-      background: #474747
+      font-size: 12px
+      color: #d7d7d7
       padding: 5px
       width: max-content
       margin-bottom: -16px
@@ -1376,3 +1360,11 @@ cite
   @media screen and (min-width: 768px)
     width: 100vw
     height: 80px
+
+.menu-linker
+  @media screen and (max-width: 767px)
+    h5
+      font-size: 24px
+      margin-top: 16px
+    h6
+      font-size: 20px

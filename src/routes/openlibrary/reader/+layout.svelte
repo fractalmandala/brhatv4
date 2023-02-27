@@ -1,10 +1,12 @@
-<script>
+<script lang="ts">
 import ThinBar from '$lib/components/pagecomps/ThinBar.svelte'
 import supabase from '$lib/db'
 import { reveal } from 'svelte-reveal'
 import { fly } from 'svelte/transition'
 import { quadOut } from 'svelte/easing'
 let level2Ramayana = false
+let level2Rigveda = false
+let selectedMandala: null = null
 let kandaSelected = null
 let shownSargas
 let isK1 = false
@@ -15,8 +17,28 @@ let isK5 = false
 let isK6 = false
 let isK7 = false
 
+let mandalas = [
+	{ value: 1, label: 'Maṇḍala 1' },
+	{ value: 2, label: 'Maṇḍala 2' },
+	{ value: 3, label: 'Maṇḍala 3' },
+	{ value: 4, label: 'Maṇḍala 4' },
+	{ value: 5, label: 'Maṇḍala 5' },
+	{ value: 6, label: 'Maṇḍala 6' },
+	{ value: 7, label: 'Maṇḍala 7' },
+	{ value: 8, label: 'Maṇḍala 8' },
+	{ value: 9, label: 'Maṇḍala 9' },
+	{ value: 10, label: 'Maṇḍala 10' }
+]
+
 function l2Ramayana(){
 	level2Ramayana = !level2Ramayana
+}
+
+function l2RV(){
+	level2Rigveda = !level2Rigveda
+	if ( level2Ramayana == level2Ramayana) {
+		level2Ramayana = false
+	}
 }
 
 function toggleK1(){
@@ -49,7 +71,7 @@ function toggleK7(){
 
 export async function kanda1(){
 	const { data, error } = await supabase
-	.from('db-ramayana')
+	.from('index-ramayana')
 	.select()
 	.eq('kanda',1)
 	.order('id')
@@ -59,7 +81,7 @@ export async function kanda1(){
 
 export async function kanda7(){
 	const { data, error } = await supabase
-	.from('db-ramayana')
+	.from('index-ramayana')
 	.select()
 	.eq('kanda',7)
 	if (error) throw new Error(error.message)
@@ -68,7 +90,7 @@ export async function kanda7(){
 
 export async function kanda6(){
 	const { data, error } = await supabase
-	.from('db-ramayana')
+	.from('index-ramayana')
 	.select()
 	.eq('kanda',6)
 	if (error) throw new Error(error.message)
@@ -77,7 +99,7 @@ export async function kanda6(){
 
 export async function kanda5(){
 	const { data, error } = await supabase
-	.from('db-ramayana')
+	.from('index-ramayana')
 	.select()
 	.eq('kanda',5)
 	.order('id')
@@ -87,8 +109,8 @@ export async function kanda5(){
 
 export async function kanda4(){
 	const { data, error } = await supabase
-	.from('db-ramayana')
-	.select()
+	.from('index-ramayana')
+	.select('sarga')
 	.eq('kanda',4)
 	.order('id')
 	if (error) throw new Error(error.message)
@@ -97,7 +119,7 @@ export async function kanda4(){
 
 export async function kanda3(){
 	const { data, error } = await supabase
-	.from('db-ramayana')
+	.from('index-ramayana')
 	.select()
 	.eq('kanda',3)
 	.order('id')
@@ -107,7 +129,7 @@ export async function kanda3(){
 
 export async function kanda2(){
 	const { data, error } = await supabase
-	.from('db-ramayana')
+	.from('vw-ramayanaindex')
 	.select()
 	.eq('kanda',2)
 	.order('id')
@@ -123,7 +145,7 @@ export async function kanda2(){
 	</div>
 	<div class="in-col mid-col link-heads">
 		<h5 id='class-1' class="w600 upper" on:click={l2Ramayana} on:keydown={l2Ramayana}>Vālmīki Rāmāyaṇa</h5>
-		<h5 id='class-1' class="w600 upper">Ṛgveda Saṃhitā</h5>
+		<h5 id='class-1' class="w600 upper" on:click={l2RV} on:keydown={l2RV}>Ṛgveda Saṃhitā</h5>
 	</div>
 	<div class="in-col right-col">
 		{#if level2Ramayana}
@@ -135,6 +157,13 @@ export async function kanda2(){
 			<div class="grey w600 in-row" use:reveal={{ transition: "scale", duration: 200, delay: 125 }} on:click={toggleK6} on:keydown={toggleK6}><h6>Kāṇda 6</h6></div>
 			<div class="grey w600 in-row" use:reveal={{ transition: "scale", duration: 200, delay: 150 }} on:click={toggleK7} on:keydown={toggleK7}><h6>Kāṇda 7</h6></div>
 		{/if}
+		{#if level2Rigveda}
+		<select bind:value={selectedMandala}>
+			{#each mandalas as item}
+			<option>{item.label}</option>
+			{/each}
+		</select>
+		{/if}
 	</div>
 	<div class="in-col final-col" data-lenis-prevent>
 		{#if isK1}
@@ -143,7 +172,7 @@ export async function kanda2(){
 				<small>...</small>
 				{:then data}
 				{#each data as item}
-					<p class="upper">{item.index}</p>
+					<p class="upper">{item.sarga}</p>
 				{/each}
 				{:catch error}
 				<pre>{error}</pre>
@@ -157,7 +186,7 @@ export async function kanda2(){
 				<small>...</small>
 				{:then data}
 				{#each data as item}
-					<p class="upper">{item.index}</p>
+					<p class="upper">{item.sarga}</p>
 				{/each}
 				{:catch error}
 				<pre>{error}</pre>
@@ -171,7 +200,7 @@ export async function kanda2(){
 				<small>...</small>
 				{:then data}
 				{#each data as item}
-					<p class="upper">{item.index}</p>
+					<p class="upper">{item.sarga}</p>
 				{/each}
 				{:catch error}
 				<pre>{error}</pre>
@@ -185,7 +214,7 @@ export async function kanda2(){
 				<small>...</small>
 				{:then data}
 				{#each data as item}
-					<p class="upper">{item.index}</p>
+					<p class="upper">{item.sarga}</p>
 				{/each}
 				{:catch error}
 				<pre>{error}</pre>
@@ -199,7 +228,7 @@ export async function kanda2(){
 				<small>...</small>
 				{:then data}
 				{#each data as item}
-					<p class="upper">{item.index}</p>
+					<p class="upper">{item.sarga}</p>
 				{/each}
 				{:catch error}
 				<pre>{error}</pre>
@@ -213,7 +242,7 @@ export async function kanda2(){
 				<small>...</small>
 				{:then data}
 				{#each data as item}
-					<p class="upper">{item.index}</p>
+					<p class="upper">{item.sarga}</p>
 				{/each}
 				{:catch error}
 				<pre>{error}</pre>
@@ -227,7 +256,7 @@ export async function kanda2(){
 				<small>...</small>
 				{:then data}
 				{#each data as item}
-					<p class="upper">{item.index}</p>
+					<p class="upper">{item.sarga}</p>
 				{/each}
 				{:catch error}
 				<pre>{error}</pre>
@@ -274,7 +303,7 @@ export async function kanda2(){
 		cursor: pointer;
 		width: 100%;
 	}
-	.final-col { width: 10%; overflow-y: scroll;}
+	.final-col { width: 12%; overflow-y: scroll;}
 	.final-col .sargas { width: 100%; padding-left: 16px;}
 	.sargas p { 
 		margin: 0;

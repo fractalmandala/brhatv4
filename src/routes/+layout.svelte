@@ -30,15 +30,15 @@ onMount(async() => {
 		requestAnimationFrame(raf)	
 	}
 	requestAnimationFrame(raf)
-	const { Textify } = Animations
+	const { Textify, TextifyTitle } = Animations
 	new Textify ({
-		duration: 800,
-		stagger: 100,
+		duration: 400,
+		stagger: 30,
 		once: false,
 		reveal: true,
 		fade: false,
 		top: false,
-		left: true,
+		right: true,
 		transformOrigin: "center left"
 	})
 	new Textify ({
@@ -76,22 +76,16 @@ onMount(async() => {
 		once: false,
 		reveal: true
 	})
-	new Textify ({
-		selector: ".lining",
-		duration: 700,
-		stagger: 100,
-		delay: 120,
-		once: false,
-		reveal: true
-	})
-	new Textify ({
-		selector: ".txt6",
-		duration: 700,
-		stagger: 100,
-		delay: 150,
-		once: false,
-		reveal: true
-	})
+	new TextifyTitle({
+	  selector: ".tttyp5",
+	  duration: 1000,
+	  stagger: 50,
+	  once: false,
+	  scale: 0,
+	  fade: true,
+	  fadeDuration: 500,
+	  ease: "elasticInOut"
+	});
 })
 </script>
 	
