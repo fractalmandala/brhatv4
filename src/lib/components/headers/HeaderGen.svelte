@@ -10,10 +10,10 @@ function toggleMenu(){
 
 <svelte:window bind:scrollY={hx}/>
 <div class="flexbox-r header-main">
-	<div class="in-row logoarea">
+	<div class="in-row logoarea"><a href="/">
 			<svg id="motif" width="100%" height="100%" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g id="motif">
-				<g id="outer" style="transform: rotate({hx/4}deg)">
+				<g id="outer" style="transform: rotate({hx/8}deg)">
 				<path id="Vector" d="M94.1235 10.1657L91.9902 8.03238L100.023 0L108.011 8.03527L105.872 10.1628L100.018 4.27287L94.1235 10.1657Z" fill="#FE4A49"/>
 				<path id="Vector_2" d="M99.9751 200L91.9873 191.965L94.1263 189.838L99.9814 195.727L105.874 189.834L108.008 191.968L99.9751 200Z" fill="#FE4A49"/>
 				<path id="Vector_3" d="M170.693 40.6365L167.676 40.6278L167.701 32.3235H159.367V29.3062H170.727L170.693 40.6365Z" fill="#FE4A49"/>
@@ -47,7 +47,7 @@ function toggleMenu(){
 				<path id="Vector_31" d="M170.273 72.5702C171.055 72.5702 171.688 71.9365 171.688 71.1548C171.688 70.3732 171.055 69.7395 170.273 69.7395C169.491 69.7395 168.858 70.3732 168.858 71.1548C168.858 71.9365 169.491 72.5702 170.273 72.5702Z" fill="white"/>
 				<path id="Vector_32" d="M30.2854 129.849C31.0671 129.849 31.7008 129.215 31.7008 128.433C31.7008 127.652 31.0671 127.018 30.2854 127.018C29.5038 127.018 28.8701 127.652 28.8701 128.433C28.8701 129.215 29.5038 129.849 30.2854 129.849Z" fill="white"/>
 				</g>
-				<g id="inner" style="transform: rotate({-hx/4}deg)">
+				<g id="inner" style="transform: rotate({-hx/8}deg)">
 				<path id="Vector_33" d="M63.4248 61.9499C63.4248 61.9592 63.4248 61.9686 63.4248 61.978C73.3456 62.3561 82.2934 66.5324 88.8554 73.0945C88.8554 63.8143 92.2293 54.5342 98.977 47.2518C98.9704 47.2451 98.9638 47.2385 98.9572 47.2319C91.9713 40.2461 82.8626 36.6769 73.7076 36.5244C67.3418 43.1058 63.4248 52.0704 63.4248 61.9499Z" fill="#FE4A49"/>
 				<path id="Vector_34" d="M88.9195 75.2925C82.5489 68.3426 73.527 63.8628 63.4561 63.4551C63.8638 73.526 68.3436 82.5479 75.2935 88.9185C83.6039 89.3964 91.7874 92.5872 98.4037 98.4908C98.4344 98.4921 98.465 98.4934 98.4957 98.4947C98.4954 98.4871 98.4951 98.4796 98.4948 98.472C98.4938 98.4489 98.4928 98.4258 98.4919 98.4027C92.5882 91.7864 89.3974 83.6029 88.9195 75.2925Z" fill="#FE4A49"/>
 				<path id="Vector_35" d="M61.95 61.95C61.95 52.1871 65.6269 43.283 71.6714 36.5469C62.7909 36.8906 54.0117 40.4523 47.232 47.232C40.4523 54.0117 36.8906 62.7909 36.5469 71.6713C43.283 65.6269 52.1871 61.95 61.95 61.95Z" fill="#FE4A49"/>
@@ -146,7 +146,7 @@ function toggleMenu(){
 			<rect width="367" height="200" fill="white"/>
 			</clipPath>
 			</defs>
-		</svg>
+		</svg></a>
 	</div>
 	<div class="in-col closebutton" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<svg width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -167,6 +167,7 @@ function toggleMenu(){
 			</g>
 		</svg>
 	</div>
+	<nav>
 	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5 class="w600 white upper"><a href="/dhiti">Dhīti</a></h5>
 	</div>
@@ -180,6 +181,14 @@ function toggleMenu(){
 	</div>
 	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5 class="w600 white upper"><a href="/about">About</a></h5>
+			<h6 class="w400 grey"><a href="/about/docs/svatahsiddha">Svataḥsiddha</a></h6>
+			<h6 class="w400 grey"><a href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a></h6>
+			<h6 class="w400 grey"><a href="/about/docs/whatkrishnameanstous">What Śrī Kṛṣṇa Means to Us</a></h6>
+			<h6 class="w400 grey"><a href="/about/docs/namelogo">Nāmarūpa</a></h6>
+			<h6 class="w400 grey"><a href="/about/docs/values">Pratijñā</a></h6>
+			<h6 class="w400 grey"><a href="/about/#advisors">Advisors</a></h6>
+			<h6 class="w400 grey"><a href="/about/#partners">Partners</a></h6>
+			<h6 class="w400 grey"><a href="/about/#team">Team</a></h6>
 	</div>
 	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5 class="w600 white upper"><a href="/drashta">Bṛhat Draṣṭā</a></h5>
@@ -202,18 +211,22 @@ function toggleMenu(){
 	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5 class="w600 white upper"><a href="/bodha">Bodha</a></h5>
 	</div>
+	</nav>
 </div>
 {/if}
 
 <style>
-.logoarea svg { object-fit: cover; width: 100%;transition: all 0.08s var(--cubed);}
+.header-main { z-index: 900;}
+.logoarea a svg { object-fit: cover; width: 100%;transition: all 0.08s var(--cubed);}
 #outer, #inner {
 	transform-origin: center center;
 }
+.menu-side { position: relative;}
+.topstrip { position: absolute; top: 40px; right: 40px; position: sticky; }
 .closebutton { cursor: pointer; z-index: 999;}
-.closebutton svg:hover #top { animation: topmover 0.18s var(--cubee) forwards;}
-.closebutton svg:hover #low { animation: lowmover 0.18s var(--cubee) forwards;}
-.closebutton svg:hover #mid { animation: midmover 0.18s var(--cubee) forwards;}
+.closebutton svg:hover #top { animation: topmover 0.08s var(--cubee) forwards;}
+.closebutton svg:hover #low { animation: lowmover 0.08s var(--cubee) forwards;}
+.closebutton svg:hover #mid { animation: midmover 0.08s var(--cubee) forwards;}
 @keyframes topmover {
 	0% { transform: translateX(0px); fill: "#FFFFFF";}
 	100% { transform: translateX(-32px); fill: "#FE4a49";}
@@ -228,25 +241,29 @@ function toggleMenu(){
 	0% { transform: translateX(0) scaleX(1); fill: "#FFFFFF";}
 	100% { transform: translateX(-24px) scaleX(1.4);fill: "#FE4a49";}
 }
-.logoarea:hover svg:hover { transform: scale(0.95);}
+.logoarea:hover a svg:hover { transform: scale(0.95);}
+
 @media screen and (min-width: 900px) {
-	#motif { height: 72px; width: 80px;}
-	#type { margin-left: 12px;}
-	.closebutton svg { width: 32px; height: 32px;}
+	#motif { height: 50px; width: 50px;}
+	#type { margin-left: 12px; width: 92px;}
+	.menu-side nav { margin-top: 32px; width: 88%;}
+	.closebutton svg { width: 28px; height: 28px;}
 	.header-main {
 		padding: 0 32px;
 		align-items: center;
 		justify-content: space-between;
 	}
 	.logoarea {
-		width: 160px;
+		width: 240px;
 		align-items: center;
 	}
-	.menu-side { background: var(--beau); z-index: 950; height: 100vh; overflow-y: scroll; width: 36vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 4px 40px; overflow-x: hidden;}
+	.menu-side { background: var(--beau); z-index: 950; height: 100vh; overflow-y: scroll; width: 36vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 40px; overflow-x: hidden;}
 	.topstrip { height: 72px; justify-content: center; align-items: flex-end;}
 	.topstrip svg { width: 28px; height: 28px; transform-origin: center center;}
 	.topstrip svg path { fill: #474747; transform-origin: center center;}
-	svg:hover path { fill: #fe4a49;}
+	.topstrip svg:hover path { fill: #fe4a49;}
+	.topstrip svg:hover { transform: rotate(180deg);}
+	.closebutton svg:hover path { fill: #fe4a49;}
 	.topstrip svg:hover path { transform: rotate(90deg);}
 	.menu-linker { border-bottom: 1px solid #373737; padding-top: 14px;}
 

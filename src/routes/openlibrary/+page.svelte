@@ -1,5 +1,6 @@
 <script lang="ts">
 import { onMount } from 'svelte';
+import ThinBar from '$lib/components/pagecomps/ThinBar.svelte'
 import { reveal } from 'svelte-reveal'
 import type { RevealOptions } from 'svelte-reveal';
 
@@ -85,23 +86,32 @@ export async function getHis(){
 </script>
 
 <svelte:window bind:scrollY={ax}/>
-
-<div class="flexbox-c ln1">
-	<div class="in-col imageholder" style="transform: translateY({ax/3}px)">
-		<img src="/images/herocovers/bolherobrhat.webp" alt="reading" style="transform: translateY({-ax/4}px)"/>
+<ThinBar></ThinBar>
+<div class="flexbox-r minmargins x1">
+	<div class="in-col">
+		<h4 class="wide75 m-bot-24">
+		Bṛhat Open Library is an Online Repository for Texts, Papers, Learning Material and More.
+		</h4>
+		<p class="wide75 grey2">
+			It is a tribute to the hard labor of people known and unknown that have created for us an unbelievable repository of Indian knowledge. All material here is sourced from public domains, permitted for resharing, and uploaded under the CC0 1.0 Open License. If you find any material that violates this, please write to us at contact@brhat.in and we will remove it from the collection. New books added every week.
+		</p>
+	</div>
+	<div class="imageholder">
+		<img src="/images/herocovers/bolherobrhat.webp" alt="reading"/>
 	</div>
 </div>
 
-<div class="flexbox-c lm1 minmargins">
-	<p class="wbold yoll">Browse the Library:</p>
+<div class="flexbox-c x2 minmargins">
+	<p class="wbold lining grey2">Browse the Library:</p>
 </div>
-<div class="flexbox-r minmargins l0">
+
+<div class="flexbox-r minmargins x3">
 	<div class="in-col left-col link-heads">
-		<h4 id='class-1' class="w600 upper" on:click={toggleEss} on:keydown={toggleEss}>Essentials</h4>
-		<h4 id='class-2' class="w600 upper" on:click={toggleBodha} on:keydown={toggleBodha}>Two Bodhas</h4>
-		<h4 id='class-3' class="w600 upper" on:click={toggleIKS} on:keydown={toggleIKS}>Indian Knowledge Systems</h4>
-		<h4 id='class-4' class="w600 upper" on:click={toggleRos} on:keydown={toggleRos}>Scriptural</h4>
-		<h4 id='class-5' class="w600 upper" on:click={toggleHis} on:keydown={toggleHis}>History</h4>
+		<h5 id='class-1' class="w600 upper" on:click={toggleEss} on:keydown={toggleEss}>Essentials</h5>
+		<h5 id='class-2' class="w600 upper" on:click={toggleBodha} on:keydown={toggleBodha}>Two Bodhas</h5>
+		<h5 id='class-3' class="w600 upper" on:click={toggleIKS} on:keydown={toggleIKS}>Indian Knowledge Systems</h5>
+		<h5 id='class-4' class="w600 upper" on:click={toggleRos} on:keydown={toggleRos}>Scriptural</h5>
+		<h5 id='class-5' class="w600 upper" on:click={toggleHis} on:keydown={toggleHis}>History</h5>
 	</div>
 	<div class="in-col mid-col">
 		{#if isEss}
@@ -175,20 +185,12 @@ export async function getHis(){
 	</div>
 </div>
 
-<div class="flexbox-c minmargins l1">
-	<h4 class="wide75 m-bot-24">
-		Bṛhat Open Library is an Online Repository for Texts, Papers, Learning Material and More.
-	</h4>
-	<p class="wide75">
-	It is a tribute to the hard labor of people known and unknown that have created for us an unbelievable repository of Indian knowledge. All material here is sourced from public domains, permitted for resharing, and uploaded under the CC0 1.0 Open License. If you find any material that violates this, please write to us at contact@brhat.in and we will remove it from the collection. New books added every week.
-	</p>
-</div>
-<div class="flexbox-r minmargins l2">
+<div class="flexbox-r minmargins x4">
 	<div class="w500 in-col col3">
-		<img src="/images/rid/panel1.webp" alt="one" />
+		<img id="img1" src="/images/rid/panel1.webp" alt="one" use:reveal={{transition: "fly"}}/>
 	</div>
 	<div class="w500 in-col col3">
-		<img src="/images/rid/panel2.webp" alt="one" />
+		<img src="/images/rid/panel2.webp" alt="one"/>
 	</div>
 	<div class="w500 in-col col3">
 		<img src="/images/rid/panel3.webp" alt="one" />
@@ -199,41 +201,60 @@ export async function getHis(){
 
 
 <style>
-.l1, .l2 { background: white; z-index: 2;}
+.x1, .x3, .x2, .x4 { overflow-x: hidden; width: 100%}
+.x4, .x3, .x2 { background: white; z-index: 2;}
 .left-col { width: 25%;}
 .mid-col { 
 	width: 35%;
 	padding: 0 16px;
+	background: white;
 
 }
-.link-heads h4 { cursor: pointer;}
-.link-heads h4:hover { background: var(--beau); color: white;}
-.l2 .col3 { transform-origin: center center; transition: all 0.6s ease;}
-.l2 .col3:hover { transform: scale(0.9);
+.x3 { background: white;}
+.link-heads h5 { cursor: pointer; position: relative;}
+.link-heads h5:hover { background: var(--beau); color: white;}
+.x4 .col3 { transform-origin: center center; transition: all 0.6s ease; overflow: hidden;}
+.x4 .col3:hover { transform: scale(0.9);
+}
+.lining {
+	border-left: 4px solid #FF9F1C;
+}
+.link-heads h5::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '';
+	height: 100%;
+	border-bottom: 4px solid #FF9F1C;
+	z-index: 0;
+}
+.link-heads h5:hover::before {
+	animation: yellowline 0.4s var(--cubeb) forwards;
+}
+@keyframes yellowline {
+	0% { width: 0%;}
+	100% {width: 100%;}
 }
 @media screen and (min-width: 900px) {
-	.link-heads h4 { padding: 8px; margin: 0; border-bottom: 1px solid #d7d7d7;}
-	.ln1 { height: 100vh; position: relative; width: 100%; position: sticky; top: 0; justify-content: flex-end; align-items: flex-end;}
-	.ln1 .imageholder { width: 44%; height: 100vh; position: relative; margin-right: 64px; }
-	.ln1 .imageholder img { object-fit: cover; height: 100%; width: 100%; position: absolute; top: 0; left:0; object-position: center right;}
-	.lm1 { margin-top: 120px; padding-bottom: 4px; width: 50%; background: white; z-index: 3;}
-	.l0 {
+	.link-heads h5 { padding: 8px; margin: 0; border-bottom: 1px solid #d7d7d7; padding-left: 16px;}
+	.x1 { min-height: 100vh; position: relative; width: 100%; position: sticky; top: 0; justify-content: flex-end; align-items: flex-end;}
+	.x1 .in-col { width: 50%;}	
+	.x1 .in-col .grey2 { margin-bottom: 128px;}
+	.x1 .imageholder { max-width: 44vw; height: 88vh; display: flex; flex-direction: column; overflow: hidden; }
+	.x1 .imageholder img { object-fit: cover; height: 88vh; width: 44vw; object-position: 99% center;}
+	.x2 { padding-bottom: 4px; width: 100%; background: white; background: white;}
+	.x2 .lining { padding-top: 4px; padding-bottom: 2px; padding-left: 16px; background: white;}
+	.x3 {
 		align-items: flex-start;
-		min-height: 50vh;
+		height: 100vh;
 	}
-	.l1 {
-		height: 100%;
-		width: 100vw;
-		justify-content: flex-start;
-		align-items: flex-start;
 
-	}
 	.mid-col, .left-col { height: max-content; background: white; z-index: 2;}
 
-	.mid-col { width: 100%; min-height: 100%;}
-	.left-col { width: 85%;}
-	.col3 { width: calc(88%/3);}
-	.l2 { padding-top: 16px; padding-bottom: 32px; gap: 32px;}
-	
+	.mid-col { height: 100%;}
+	.left-col { width: 32%;}
+	.col3 { width: calc(94%/3); height: 400px;}
+	.x4 { padding-top: 16px; padding-bottom: 32px; gap: 24px;}
+	#img1 { height: 1024px;}
 }
 </style>

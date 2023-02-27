@@ -148,9 +148,11 @@ export const Tags = async() => {
     })
   )
 	const allTags = allPosts.flatMap(post => post.meta.tags)
+	const path = allPosts.flatMap(post => post.path)
 	const distinctTags = [...new Set(allTags)].sort()
 	return distinctTags	
 }
+
 
 onMount(() => {
 const { Textify, TextifyTitle } = Animations;
@@ -369,7 +371,7 @@ const { Textify, TextifyTitle } = Animations;
 	.holder p { font-size: 14px; text-align: right;}
 	.holder .in-col .in-row { justify-content: flex-end;}
   .wide60 { padding-right: 32px;}
-	.l1 { height: 50px; justify-content: space-between; padding-top: 12px; padding-bottom: 4px; border-bottom: 1px solid #474747; border-top: 1px solid #474747; margin-top: 64px; margin-bottom: 40px;}
+	.l1 { position: sticky; background: white; z-index: 930; top: 80px; height: 50px; justify-content: space-between; padding-top: 12px; padding-bottom: 4px; border-bottom: 1px solid #474747; border-top: 1px solid #474747; margin-top: 80px; margin-bottom: 40px;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {

@@ -243,10 +243,13 @@ cite
   font-weight: 400
   letter-spacing: 1px
   border-radius: 4px
+  transform-origin: center center
+  transition: transform 0.08s var(--cubeb)
   a
     color: white
   &:hover
     background-color: var(--yell)
+    transform: scale(0.9)
   @media screen and (min-width: 768px)
     padding: 8px 12px
     margin-bottom: 24px
@@ -270,8 +273,8 @@ cite
 
 .minmargins
   @media screen and (min-width: 900px)
-    padding-left: 32px
-    padding-right: 32px
+    padding-left: 64px
+    padding-right: 64px
 
 .desk-margins
   @media screen and (min-width: 900px)

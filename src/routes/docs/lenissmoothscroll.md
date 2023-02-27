@@ -5,6 +5,11 @@ category: codes
 date: "2023-01-01"
 ---
 
+easing
+```js
+easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+```
+
 ```js
 import { onMount } from 'svelte';
 import Lenis from '@studio-freight/lenis'

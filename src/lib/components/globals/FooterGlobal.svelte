@@ -73,7 +73,9 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 
 .big-box
 	background: linear-gradient(132.9deg, #171717 10.69%, #181C1E 84.91%)
-	z-index:800
+	z-index:900
+	position: sticky
+
 	small
 		color: #676767
 		font-weight: 400
