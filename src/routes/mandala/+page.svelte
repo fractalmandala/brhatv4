@@ -184,7 +184,6 @@ const handleScroll = () => {
 	content: '';
 	transition: all 0.3s var(--cubea);
 	z-index: 0;
-	backdrop-filter: blur(2px);
 	background: linear-gradient(0deg, rgba(0,0,0,0.8) 10%, rgba(0,0,0,0.4) 100%);
 }
 

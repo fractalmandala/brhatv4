@@ -32,7 +32,7 @@ return latestPosts
 	<div class="in-col side-dhiti">
 		<small class="upper">{item.meta.category}</small>
 		<img src="{item.meta.image}" alt="meta" />
-		<h6 class="play w700">{item.meta.title}</h6>
+		<h6 class="w600">{item.meta.title}</h6>
 		<cite class="w500 m-top-8 grey">{item.meta.author}</cite>
 	</div>
 	{/each}

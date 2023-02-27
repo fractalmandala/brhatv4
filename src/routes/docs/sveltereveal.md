@@ -33,3 +33,26 @@ properties
 9. blur
 10. scale in %
 
+```js
+setDefaultOptions({
+	blur: 20,
+	x: -50,
+	duration: 3000
+});
+```
+
+```html
+<Heading useReveal={{ transition: "fade" }}>Hello world</Heading>
+```
+
+```js
+import { reveal } from 'svelte-reveal';
+import type { RevealOptions } from 'svelte-reveal';
+export let useReveal: RevealOptions;
+```
+
+```html
+<h1 use:reveal={ useReveal }>
+  <slot />
+</h1>
+```

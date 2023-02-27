@@ -1,8 +1,6 @@
 <script lang="ts">
 import '$lib/styles/prism.css'
-import Header from '$lib/components/headers/HeadDocs.svelte'
 import Documentation from '$lib/components/docs/Documentation.svelte'
-import NewSearch from '$lib/components/reuse/NewSearch.svelte'
 import Animation from '$lib/components/docs/Animation.svelte'
 import General from '$lib/components/docs/General.svelte'
 import PostGre from '$lib/components/docs/PostGre.svelte'
@@ -215,7 +213,7 @@ function toggleCat8(){
 }
 </script>
 
-<Header></Header>
+
 <div class="flexbox-r full">
 	<div class="flexbox-c sidebb">
 		<h6 class="green"><a href="/docs">Docs Home</a></h6>

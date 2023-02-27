@@ -91,7 +91,7 @@ const { data, error } = await supabase
 	<div class="l2 flexbox-r of-three top-gap">
 		<div class="l2row1 in-col wide33">
 			<h6 class="w600 m-bot-8">Create</h6>
-			<p class="w300 grey">
+			<p class="w400 grey">
 				- visual and literary stories;<br>
 				- design thinking and methods;<br>
 				- research output on education and ecology;<br>
@@ -100,7 +100,7 @@ const { data, error } = await supabase
 		</div>
 		<div class="l2row2 in-col wide33">
 			<h6 class="w600 m-bot-8">Curate</h6>
-			<p class="w300 grey">
+			<p class="w400 grey">
 				- heritage experience journeys;<br>
 				- culture-fit in mass media;<br>
 				- NEP-relevant IKS curriculum;<br>
@@ -109,7 +109,7 @@ const { data, error } = await supabase
 		</div>
 		<div class="l2row3 in-col wide33">
 			<h6 class="w600 m-bot-8">Consult</h6>
-			<p class="w300 grey">
+			<p class="w400 grey">
 				- NEP-IKS implementation;<br>
 				- policy thinking on education and ecology;<br>
 				- organizational structure and leadership frameworks
@@ -126,7 +126,7 @@ const { data, error } = await supabase
 			<h6 class="wbold m-bot-8">
 				Civilization is Culture in Action
 			</h6>
-			<p class="w300 grey">
+			<p class="w400 grey">
 				The civilizational moment needs rooting in Dharma - of this there is no doubt. Thus a core part of our work is culture creatives that draw from the deep pool of Dhārmika heritage.
 			</p>
 		</div>
@@ -134,7 +134,7 @@ const { data, error } = await supabase
 			<h6 class="wbold m-bot-8">
 				It Needs Culture-Compatible Policy
 			</h6>
-			<p class="w300 grey">
+			<p class="w400 grey">
 				Radical reorientations are needed in education and ecology. To this end, our focus will be on generating policy currency for culture through frameworks, curriculum and more.
 			</p>
 		</div>
@@ -142,7 +142,7 @@ const { data, error } = await supabase
 			<h6 class="wbold m-bot-8">
 				The Work is Inter-Generational
 			</h6>
-			<p class="w300 grey">
+			<p class="w400 grey">
 				It needs leadership with cultural-cognition to carry the Agni. This cognition needs to permeate even brand and organisation - essential quarters for the overton window shift.
 			</p>
 		</div>

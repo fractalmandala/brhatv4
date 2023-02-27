@@ -1,6 +1,6 @@
 <script lang="ts">
 // @ts-nocheck
-
+import HeaderGen from '$lib/components/headers/HeaderGen.svelte'
 import { dev } from '$app/environment';
 import { inject } from '@vercel/analytics';
 import '$lib/styles/componentstyles.sass'
@@ -10,6 +10,7 @@ inject({ mode: dev ? 'development' : 'production' });
 
 </script>
 	
+<HeaderGen></HeaderGen>
 <div class="flexbox-c">
 <slot></slot>
 <Footer></Footer>

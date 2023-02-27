@@ -53,7 +53,7 @@ function shareOnWhatsApp(url, text) {
 	<p class="w600 grey upper m-top-24">{data.author}</p>
 </div>
 <div class="flexbox-r tray">
-	<div class="thinbar in-col">
+	<div class="thinbar bdr">
 		<div class="flexbox-c icon-box" id="icon-twitter" on:click={() => window.open(shareOnTwitter("https://example.com", "Check out this page!"))} on:keydown={() => window.open(shareOnTwitter("https://example.com", "Check out this page!"))}>
 			<img src="/images/icons/twitter-red.png" alt="twitter icon" />
 		</div>
@@ -101,6 +101,7 @@ function shareOnWhatsApp(url, text) {
 	.l0 small { font-weight: 500; padding-left: 20px; padding-top: 8px; padding-bottom: 8px;}
 	.l0 .in-row small { text-transform: capitalize;}
 	.icon-box img { width: 27px; height: 27px;}
+	.icon-box { margin-bottom: 24px;}
 }
 </style>
 

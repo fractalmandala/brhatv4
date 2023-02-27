@@ -2,7 +2,6 @@
 	import supabase from '$lib/db';
 	import { reveal } from 'svelte-reveal';
 	import Brands from '$lib/components/globals/AllBrands.svelte'
-	import HeaderGen from '$lib/components/headers/HeaderGen.svelte'
 	import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte';
 	import StaticH1 from '$lib/components/headers/StaticH1.svelte';
 	import Dhiti from '$lib/components/headers/StaticH1.svelte';
@@ -43,7 +42,7 @@
 
 <svelte:window bind:scrollY={y} bind:innerHeight={ih} bind:outerHeight={oh}/>
 
-<HeaderGen></HeaderGen>
+
 <Accordion />
 
 <div class="flexbox-c desk-margins cc-y-col mob-y-pad full">
@@ -52,11 +51,11 @@
 		To power creatives, research and design rooted in the Indian civilizational consciousness. We
 		convert individual, institutional and collective intent into action, across 3 dimensions.
 	</h5>
-	<button class="redbutton m-top-8-mob"><a href="/about">Know More</a></button>
+	<button class="twobutton m-top-8"><a href="/about">Know More</a></button>
 	<div class="l2 flexbox-r of-three top-gap">
 		<div class="l2row1 in-col wide33">
 			<h6 class="wbold m-bot-8">Create</h6>
-			<p class="w300 grey">
+			<p class="w400 grey">
 				- visual and literary stories;<br>
 				- design thinking and methods;<br>
 				- research output on education and ecology;<br>
@@ -65,7 +64,7 @@
 		</div>
 		<div class="l2row2 in-col wide33">
 			<h6 class="wbold m-bot-8">Curate</h6>
-			<p class="w300 grey">
+			<p class="w400 grey">
 				- heritage experience journeys;<br>
 				- culture-fit in mass media;<br>
 				- NEP-relevant IKS curriculum;<br>
@@ -74,7 +73,7 @@
 		</div>
 		<div class="l2row3 in-col wide33">
 			<h6 class="wbold m-bot-8">Consult</h6>
-			<p class="w300 grey">
+			<p class="w400 grey">
 				- NEP-IKS implementation;<br>
 				- policy thinking on education and ecology;<br>
 				- organizational structure and leadership frameworks
@@ -224,7 +223,7 @@
 	.blogbox { height: auto; margin-bottom: 0;}
 	.blogbox h6 { margin-top: 16px;}
 	.blogbox h6, .blogbox small, .blogbox cite { padding-left: 8px; padding-right: 8px;}
-
+	.blogbox small { line-height: 1.4;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
