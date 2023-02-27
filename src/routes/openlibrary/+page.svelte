@@ -2,6 +2,8 @@
 import { onMount } from 'svelte';
 import ThinBar from '$lib/components/pagecomps/ThinBar.svelte'
 import { reveal } from 'svelte-reveal'
+import { fly } from 'svelte/transition'
+import { quadOut } from 'svelte/easing'
 import type { RevealOptions } from 'svelte-reveal';
 
 import supabase from '$lib/db'
@@ -13,6 +15,39 @@ let isBodha = false
 let isHis = false
 let isRos = false
 let ax = 1
+let selectedImage:any = null
+let selectedDesc:any = null
+let selectedLink:any = null
+let selectedAuth:any = null
+let data:any = []
+
+const showImage = async (imagelinker:any) => {
+	if (imagelinker) {
+		const { data,error} = await supabase
+		.from('brhat-openlibrary')
+		.select()
+		.eq('imagelinker',imagelinker)
+		if (error) {
+        console.log(error);
+      } else {
+        selectedImage = data[0].imagelinker;
+				selectedDesc = data[0].Description
+				selectedLink = data[0].slug
+        selectedAuth = data[0].author
+      }
+    } else {
+      selectedImage = null;
+			selectedDesc = null
+			selectedLink = null
+      selectedAuth = null
+  }
+}
+
+onMount(() => {
+  showImage(data[selectedItem].imagelinker);
+	showImage(data[selectedItem].Description);
+	showImage(data[selectedLink].slug)
+});
 
 function toggleEss(){
 	isEss = !isEss
@@ -114,14 +149,14 @@ export async function getHis(){
 		<h5 id='class-4' class="w600 upper" on:click={toggleRos} on:keydown={toggleRos}>Scriptural</h5>
 		<h5 id='class-5' class="w600 upper" on:click={toggleHis} on:keydown={toggleHis}>History</h5>
 	</div>
-	<div class="in-col mid-col">
+	<div class="in-col mid-col" data-lenis-prevent>
 		{#if isEss}
 		{#await getEss()}
 		<small>...</small>
 		{:then data}
 		{#each data as item, i}
 			<div class="in-col txt22" id="ess" use:reveal={{transition: "slide", delay: 10*i}}>
-				<p class="w500">{item.Text}</p>
+				<p class="w500 grey2" on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
 			</div>
 		{/each}
 		{:catch error}
@@ -133,8 +168,8 @@ export async function getHis(){
 		<small>...</small>
 		{:then data}
 		{#each data as item}
-			<div class="in-col" id="ess" use:reveal={{transition: "fly"}}>
-				<p class="w500">{item.Text}</p>
+			<div class="in-col txt22" id="ess" use:reveal={{transition: "fly"}}>
+				<p class="w500 grey2" on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
 			</div>
 		{/each}
 		{:catch error}
@@ -147,8 +182,8 @@ export async function getHis(){
 		<small>...</small>
 		{:then data}
 		{#each data as item}
-		<div class="in-col" id="bodha" use:reveal={{transition: "fly"}}>
-			<p class="w500">{item.Text}</p>
+		<div class="in-col txt22" id="bodha" use:reveal={{transition: "fly"}}>
+			<p class="w500 grey2" on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
 		</div>	
 		{/each}
 		{:catch error}
@@ -161,8 +196,8 @@ export async function getHis(){
 		<small>...</small>
 		{:then data}
 		{#each data as item}
-		<div class="in-col" id="bodha" use:reveal={{transition: "fly"}}>
-			<p class="w500">{item.Text}</p>
+		<div class="in-col txt22" id="bodha" use:reveal={{transition: "fly"}}>
+			<p class="w500 grey2" on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
 		</div>	
 		{/each}
 		{:catch error}
@@ -175,8 +210,8 @@ export async function getHis(){
 		<small>...</small>
 		{:then data}
 		{#each data as item}
-		<div class="in-col" id="bodha" use:reveal={{transition: "fly"}}>
-			<p class="w500">{item.Text}</p>
+		<div class="in-col txt22" id="bodha" use:reveal={{transition: "fly"}}>
+			<p class="w500 grey2" on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
 		</div>	
 		{/each}
 		{:catch error}
@@ -184,11 +219,24 @@ export async function getHis(){
 		{/await}
 		{/if}
 	</div>
+	<div class="in-col right-col">
+		{#if selectedImage}
+			<div class="in-col details-col" in:fly={{ delay: 200, duration: 200, x: 400, y: 0, easing: quadOut}} out:fly={{ delay: 0, duration: 200, x: -400, y: 0, easing: quadOut}}>
+				<p class="grey2">{selectedDesc}</p>
+					<div class="in-col deets-l">
+						<button class="threebutton-un"><a href="/openlibrary/books/{selectedLink}">Read Now</a></button>
+					</div>
+				<small>{selectedAuth}</small>
+			</div>
+    	{:else}
+      	<small class="white">.</small>
+    {/if}
+	</div>
 </div>
 
 <div class="flexbox-r minmargins x4">
 	<div class="w500 in-col col3">
-		<img id="img1" src="/images/rid/panel1.webp" alt="one" use:reveal={{transition: "fly"}}/>
+		<img id="img1" src="/images/rid/panel1.webp" alt="one" use:reveal={{transition: "scale"}}/>
 	</div>
 	<div class="w500 in-col col3">
 		<img src="/images/rid/panel2.webp" alt="one"/>
@@ -206,10 +254,26 @@ export async function getHis(){
 .x4, .x3, .x2 { background: white; z-index: 2;}
 .left-col { width: 25%;}
 .mid-col { 
-	width: 35%;
-	padding: 0 16px;
 	background: white;
-
+}
+.txt22 p {
+	cursor: pointer;
+	transform-origin: center left;
+	transition: all 0.05s ease;
+	margin: 0;
+	padding: 4px;
+	border-bottom: 1px solid #f1f1f1;
+}
+.txt22 p:hover { color: var(--yell); cursor: pointer; transform: scale(0.9);}
+.details-col small {
+	background: var(--yell);
+	color: white;
+	padding: 4px;
+	width: max-content;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0px;
+	font-weight: 600;
 }
 .x3 { background: white;}
 .link-heads h5 { cursor: pointer; position: relative;}
@@ -237,25 +301,37 @@ export async function getHis(){
 	100% {width: 100%;}
 }
 @media screen and (min-width: 900px) {
+	.deets-l { width: 40%;}
 	.link-heads h5 { padding: 8px; margin: 0; border-bottom: 1px solid #d7d7d7; padding-left: 16px;}
 	.x1 { min-height: 100vh; position: relative; width: 100%; position: sticky; top: 0; justify-content: flex-end; align-items: flex-end;}
 	.x1 .in-col { width: 50%;}	
-	.x1 .in-col .grey2 { margin-bottom: 128px;}
+	.x1 .in-col .grey2 { margin-bottom: 128px; color: #b7b7b7;}
 	.x1 .imageholder { max-width: 44vw; height: 88vh; display: flex; flex-direction: column; overflow: hidden; }
 	.x1 .imageholder img { object-fit: cover; height: 88vh; width: 44vw; object-position: 99% center;}
 	.x2 { padding-bottom: 4px; width: 100%; background: white; background: white;}
 	.x2 .lining { padding-top: 4px; padding-bottom: 2px; padding-left: 16px; background: white;}
 	.x3 {
 		align-items: flex-start;
-		height: 100vh;
+		height: 100%;
+		border-bottom: 1px solid #d7d7d7;
+		padding-bottom: 64px;
 	}
 
-	.mid-col, .left-col { height: max-content; background: white; z-index: 2;}
+	.mid-col, .left-col, .right-col { height: max-content; background: white; z-index: 2;}
 
-	.mid-col { height: 100%;}
+	.mid-col { 
+		max-height: 500px; 
+		width: 40%; 
+		padding: 0 16px;
+		overflow-y: scroll;
+	}
 	.left-col { width: 32%;}
-	.col3 { width: calc(94%/3); height: 400px;}
+	.right-col { width: 28%; }
+	.threebutton-un { margin-bottom: 24px;}
+	.details-col { padding: 32px;border: 1px solid #d7d7d7; border-radius: 4px;}
+	.col3 { width: calc(94%/3); height: 400px; overflow-y: hidden;}
+	.col3 img { height: 1024px !important; }
 	.x4 { padding-top: 16px; padding-bottom: 32px; gap: 24px;}
-	#img1 { height: 1024px;}
+	#img1 { height: 1024px; }
 }
 </style>

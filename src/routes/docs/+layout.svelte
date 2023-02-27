@@ -253,6 +253,8 @@ function toggleCat8(){
 
 <style>
 
+.sidebb { overflow-y: scroll;}
+
 @media screen and (min-width: 768px) {
 
 	.main { width: calc(100% - 320px); padding: 120px 15% 0 40px;}
