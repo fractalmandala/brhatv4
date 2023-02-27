@@ -32,6 +32,16 @@ onMount(async() => {
 	requestAnimationFrame(raf)
 	const { Textify } = Animations
 	new Textify ({
+		duration: 800,
+		stagger: 100,
+		once: false,
+		reveal: true,
+		fade: false,
+		top: false,
+		left: true,
+		transformOrigin: "center left"
+	})
+	new Textify ({
 		selector: ".link-heads h5",
 		duration: 400,
 		stagger: 200,
@@ -49,15 +59,17 @@ onMount(async() => {
 		left: true,
 	})
 	new Textify ({
-		selector: ".txt3",
-		duration: 700,
-		stagger: 100,
-		delay: 60,
-		once: false,
-		reveal: true
+		selector: ".txth1 h4",
+	  duration: 1000,
+	  stagger: 50,
+	  once: false,
+	  scale: 0,
+	  fade: true,
+	  fadeDuration: 500,
+	  ease: "elasticInOut"
 	})
 	new Textify ({
-		selector: ".txt4",
+		selector: ".lining",
 		duration: 700,
 		stagger: 100,
 		delay: 90,
@@ -65,7 +77,7 @@ onMount(async() => {
 		reveal: true
 	})
 	new Textify ({
-		selector: ".txt5",
+		selector: ".lining",
 		duration: 700,
 		stagger: 100,
 		delay: 120,
