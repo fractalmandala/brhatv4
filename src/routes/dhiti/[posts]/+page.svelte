@@ -4,6 +4,7 @@
 import { reveal } from 'svelte-reveal'
 import DhitiSidebar from '$lib/components/pagecomps/DhitiSidebar.svelte'
 let y = 1
+let vw = 1
 /**
 	 * @param {string | number | boolean} url
 	 */
@@ -40,17 +41,17 @@ function shareOnWhatsApp(url, text) {
  export let data;
 </script>
 
-<svelte:window bind:scrollY={y}/>
+<svelte:window bind:scrollY={y} bind:outerWidth={vw}/>
 
 <div class="flexbox-c l0"> 
 	<div class="in-col">
 		<small class="block">{data.date} <span class="grey2"> {data.tags}</span></small>
 	</div>
-	<h1 class="play" use:reveal={{ transition: "fly", x: 400 }} data-textify>{data.title}</h1>
+	<h1 class="play" use:reveal={{ transition: "fly", x: 400 }}>{data.title}</h1>
 	<div class="pixel-line"></div>
 	<div class="stayingstrip">
 		<div class="postinfo in-row">
-			<p class="w600 soft" data-textify>{data.author}</p>
+			<p class="soft" data-textify>{data.author}</p>
 		</div>
 		<div class="thinbar in-row">
 			<div class="flexbox-c icon-box" id="icon-twitter" on:click={() => window.open(shareOnTwitter("https://example.com", "Check out this page!"))} on:keydown={() => window.open(shareOnTwitter("https://example.com", "Check out this page!"))}>
@@ -192,6 +193,41 @@ function shareOnWhatsApp(url, text) {
 	.tray {
 		height: 100%;
 	}
+}
+
+@media screen and (max-width: 767px) {
+	.l0 { 
+		height: 100%;
+		padding: 160px 32px 48px 32px;
+	}
+	.l0 h1 {
+		color: #212121;
+		letter-spacing: -1.2px;
+		font-weight: 700;
+		line-height: 1.1;
+		font-size: 36px;
+		margin-top: 16px;
+		margin-bottom: 24px;
+	}
+	.block { font-weight: 600;}
+	.l0 small .grey2 { font-weight: 400;}
+	.thinbar { gap: 16px;}
+	.icon-box img { width: 27px; height: 27px;}
+	.l00 {
+		height: 50vh;
+	}
+	.holdingimage { 
+		height: 50vh;
+		overflow-y: hidden;
+	}
+	.holdingimage img {
+		object-fit: cover;
+		width: 100%;
+		height: 60vh;
+	}
+	.categorypop { display: none;}
+	.x2 { margin-top: -64px; height: 100%;}
+	.tray { height: 100%;}
 }
 </style>
 

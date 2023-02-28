@@ -21,8 +21,8 @@ onMount(async() => {
 		lerp: 1,
 		smooth: true,
 		mouseMultiplier: 1,
-		smoothTouch: false,
-		touchMultiplier: 0.6,
+		smoothTouch: true,
+		touchMultiplier: 1,
 		infinite: false
 	})
 	function raf(time:any){

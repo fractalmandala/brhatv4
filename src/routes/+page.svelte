@@ -94,10 +94,10 @@
 					>
 				</h5>
 				<select on:change={(event) => switchList(event?.target?.value ?? 'list-1')}>
-					<option value="list-1" on:click={() => switchList('list-1')} on:keydown={() => switchList('list-1')}>Bṛhadmṛdaṅga</option>
-					<option value="list-2" on:click={() => switchList('list-2')} on:keydown={() => switchList('list-2')}>Hindi Kavitā</option>
-					<option value="list-3" on:click={() => switchList('list-3')} on:keydown={() => switchList('list-3')}>IKS</option>
-					<option value="list-4" on:click={() => switchList('list-4')} on:keydown={() => switchList('list-4')}>Others</option>
+					<option class="w500" value="list-1" on:click={() => switchList('list-1')} on:keydown={() => switchList('list-1')}>Bṛhadmṛdaṅga</option>
+					<option class="w500" value="list-2" on:click={() => switchList('list-2')} on:keydown={() => switchList('list-2')}>Hindi Kavitā</option>
+					<option class="w500" value="list-3" on:click={() => switchList('list-3')} on:keydown={() => switchList('list-3')}>IKS</option>
+					<option class="w500" value="list-4" on:click={() => switchList('list-4')} on:keydown={() => switchList('list-4')}>Others</option>
 				</select>
 
 				{#if currentList === 'list-1'}
@@ -132,7 +132,8 @@
 								easing: 'easeOutCirc'
 							}}
 						/>
-						<h6 class="w600"
+							<small><span class="small-cat blue">{item.category}<br></span><span class="small-tag grey2">{item.tags}</span></small>
+							<h6 class="w600"
 							use:reveal={{
 								transition: 'slide',
 								delay: 50 * i,
@@ -143,7 +144,7 @@
 						>
 							<a href={item.link}>{item.title}</a>
 						</h6>
-						<small>{item.excerpt.slice(0, 200)}...<a href={item.link} class="readmore">Read More</a></small>
+						<small class="grey">{item.excerpt.slice(0, 200)}...<a href={item.link} class="readmore">Read More</a></small>
 						<cite class="blue wbold m-bot-zero">{item.author}</cite>
 					</div>
 				{/each}
@@ -187,14 +188,14 @@
 <style>
 
 .l5 { flex-wrap: wrap;}
-.blogbox small { color: #878787; }
+
 .in-col img {
 	object-fit: cover;
 	width: 100%;
 }
 
 .blogbox a:hover {
-	color: #fe4a49;
+	color: var(--soft);
 }
 
 
@@ -219,11 +220,17 @@
 }
 
 @media screen and (min-width: 768px) {
-	.v-slate select { margin-bottom: 32px; width: 200px;}
+	.v-slate select { margin-bottom: 32px; width: 200px; border: 2px solid var(--soft); border-radius: 4px;}
+	.v-slate select { font-weight: 600;}
+	.blogbox img { margin-bottom: 20px;}
 	.blogbox { height: auto; margin-bottom: 0;}
-	.blogbox h6 { margin-top: 16px;}
+	.blogbox h6 { margin-top: 12px; line-height: 1.32; margin-bottom: 20px;}
 	.blogbox h6, .blogbox small, .blogbox cite { padding-left: 8px; padding-right: 8px;}
-	.blogbox small { line-height: 1.4;}
+	.blogbox small { margin: 0;}
+	.blogbox cite { margin-top: 16px; padding-bottom: 16px; margin-bottom: 0;}
+	.small-cat, .small-tag { font-size: 12px; margin: 0;}
+	.small-tag { text-transform: lowercase;}
+	.small-cat { text-transform: uppercase; font-weight: bold;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {

@@ -806,11 +806,9 @@ cite
 
 .blogbox
   &:hover
-    background: white
     box-shadow: 6px 7px 12px #e1e1e1
   @media screen and (min-width: 900px)
-    padding: 20px
-    background: #f7f7f7
+    padding: 8px
     border-radius: 4px
     img
       border-radius: 4px
@@ -1249,30 +1247,44 @@ cite
         color: #10C56D
 
 .dhiti-post
-  p, i, b, small, ul li, ol li, h6, h5, h4, h3
+  p, i, b, small, ul li, ol li, h6, h3
     font-family: 'Newsreader', serif
   @media screen and (min-width: 900px)
     width: calc(70% - 160px)
     padding: 0 64px 64px 32px
     height: 100%
     overflow-y: scroll
+  @media screen and (max-width: 575px)
+    width: 100%
+    padding: 24px
+    height: 100%
   p
     color: #212121
     @media screen and (min-width: 900px)
-      font-size: 22px
+      font-size: 21px
       line-height: 1.48
       font-weight: 400
       margin-top: 12px
       margin-bottom: 20px
+    @media screen and (max-width: 575px)
+      font-size: 19px
+      line-height: 1.42
   h6
     @media screen and (min-width: 900px)
       font-size: 21px
   h5
-    color: #212121
     @media screen and (min-width: 900px)
       font-size: 27px
       margin-top: 32px
       margin-bottom: 48px
+      color: #272727
+    @media screen and (max-width: 575px)
+      font-size: 21px
+      font-weight: 700
+      line-height: 1.32
+      color: #171717
+      margin-top: 16px
+      margin-bottom: 24px
   h3
     color: #212121
     @media screen and (min-width: 900px)
@@ -1297,11 +1309,45 @@ cite
         height: 100%
         border-top: 4px solid #fe4a49
         content: ''
+    @media screen and (max-width: 575px)
+      font-size: 28px
+      margin-top: 40px
+      margin-bottom: 20px
+      padding-top: 12px
+      position: relative
+      &::after
+        position: absolute
+        top: 0
+        left: 0
+        width: 16%
+        height: 100%
+        border-top: 3px solid #fe4a49
+        content: ''
   cite
     color: #878787
     letter-spacing: 1px
     margin: 0 0 24px 0
     padding: 0
+    @media screen and (max-width: 575px)
+      font-size: 12px !important
+      line-height: 1.1
+  blockquote
+    font-style: italic
+    border-left: 3px solid var(--yell)
+    color: #b7b7b7
+    @media screen and (min-width: 900px)
+      font-size: 18px !important
+      margin-right: 48px
+    @media screen and (max-width: 575px)
+      margin-left: 16px
+      padding-left: 20px
+      font-size: 18px !important
+      margin-top: 16px
+      margin-bottom: 24px
+      line-height: 1.2
+      cite
+        font-size: 12px !important
+        line-height: 1.1
 
 .dhitisidebar
   @media screen and (min-width: 900px)
