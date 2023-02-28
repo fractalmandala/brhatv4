@@ -356,14 +356,6 @@ cite
     margin-right: 32px
     width: calc(100vh - 64px)
 
-.dhiti-cut
-  @media screen and (min-width: 900px)
-    width: calc(100% - 360px)
-    padding-right: 24px
-  @media screen and (max-width: 899px) and (min-width: 768px)
-    padding: 32px
-    width: 100%
-
 .pad-x-40
   @media screen and (min-width: 900px)
     padding-left: 80px
@@ -1251,17 +1243,18 @@ cite
     font-family: 'Newsreader', serif
   @media screen and (min-width: 900px)
     width: calc(70% - 160px)
-    padding: 0 64px 64px 32px
+    padding: 0 96px 64px 32px
     height: 100%
     overflow-y: scroll
   @media screen and (max-width: 575px)
-    width: 100%
+    width: 100vw
+    overflow-x: hidden
     padding: 24px
     height: 100%
-  p
+  p, ul li, ol li, i, b
     color: #212121
     @media screen and (min-width: 900px)
-      font-size: 21px
+      font-size: 20px
       line-height: 1.48
       font-weight: 400
       margin-top: 12px
@@ -1274,10 +1267,14 @@ cite
       font-size: 21px
   h5
     @media screen and (min-width: 900px)
-      font-size: 27px
+      font-size: 22px
+      font-weight: 700
       margin-top: 32px
-      margin-bottom: 48px
+      margin-bottom: 24px
       color: #272727
+      cite
+        font-size: 12px
+        font-family: 'Spline Sans', sans-serif !important
     @media screen and (max-width: 575px)
       font-size: 21px
       font-weight: 700
@@ -1295,17 +1292,18 @@ cite
   h4
     color: #212121
     @media screen and (min-width: 900px)
-      font-size: 36px
+      font-size: 48px
       font-weight: 700
       position: relative
       padding-top: 24px
-      margin-top: 56px
-      margin-bottom: 12px
+      margin-top: 64px
+      margin-bottom: 24px
+      line-height: 1.1
       &::after
         position: absolute
         top: 0
         left: 0
-        width: 4%
+        width: 10%
         height: 100%
         border-top: 4px solid #fe4a49
         content: ''
@@ -1325,6 +1323,7 @@ cite
         content: ''
   cite
     color: #878787
+    font-family: 'Spline Sans', sans-serif
     letter-spacing: 1px
     margin: 0 0 24px 0
     padding: 0
@@ -1333,7 +1332,7 @@ cite
       line-height: 1.1
   blockquote
     font-style: italic
-    border-left: 3px solid var(--yell)
+    border-left: 3px solid var(--soft)
     color: #b7b7b7
     @media screen and (min-width: 900px)
       font-size: 18px !important

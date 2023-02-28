@@ -47,7 +47,7 @@ function shareOnWhatsApp(url, text) {
 	<div class="in-col">
 		<small class="block">{data.date} <span class="grey2"> {data.tags}</span></small>
 	</div>
-	<h1 class="play" use:reveal={{ transition: "fly", x: 400 }}>{data.title}</h1>
+	<h1 use:reveal={{ transition: "fly", x: 400 }}>{data.title}</h1>
 	<div class="pixel-line"></div>
 	<div class="stayingstrip">
 		<div class="postinfo in-row">
