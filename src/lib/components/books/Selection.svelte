@@ -7,9 +7,11 @@ import { reveal } from 'svelte-reveal'
 import { inview } from 'svelte-inview';
 import { slide } from 'svelte/transition'
 import { quadIn } from 'svelte/easing'
+import Search from '$lib/components/reuse/PostSearch.svelte'
 let selectedCategory = 7
 let isSmallScreen = false;
 let isScrolled = false;
+let isSearch = false;
 
 export const Culture = async() => {
 	const allPostFiles = import.meta.glob('/src/routes/dhiti/*.md')
@@ -156,6 +158,10 @@ export const Tags = async() => {
 	return distinctTags	
 }
 
+function toggleSearch(){
+	isSearch = !isSearch
+}
+
 const handleScroll = () => {
   const scrollY = window.scrollY;
 
@@ -209,8 +215,14 @@ onDestroy(() => {
   <p class="{selectedCategory === 4 ? 'active' : ''}" on:click={() => selectedCategory = 4} on:keydown={() => selectedCategory = 4}>Two Bodhas</p>
   <p class="{selectedCategory === 5 ? 'active' : ''}" on:click={() => selectedCategory = 5} on:keydown={() => selectedCategory = 5}>Featured</p>
   <p class="{selectedCategory === 7 ? 'active' : ''}" on:click={() => selectedCategory = 7} on:keydown={() => selectedCategory = 7}>All</p>
-
+	<p class="w400" on:click={toggleSearch} on:keydown={toggleSearch}>Search</p>
 </div>
+{#if isSearch}
+<div class="flexbox-c search" transition:slide>
+<Search></Search>
+<div class="-in-col cross" on:click={toggleSearch} on:keydown={toggleSearch}>Close</div>
+</div>
+{/if}
 <div class="flexbox-r l3 minmargins">
 	<div class="flexbox-r dhiti-cut l0">	
 		{#if selectedCategory === 1}
@@ -378,6 +390,15 @@ p.active { color: #fe4a49; font-weight: 700;}
 .l1 { 
 	display: flex;
 }
+.search {
+	position: relative;
+}
+.cross{
+	position: absolute;
+	z-index: 2;
+	color: white;
+	cursor: pointer;
+}
 @media screen and (min-width: 900px) {
 	.holder { min-height: 240px; padding: 32px; width: 50%; gap: 0;}
 	.l0 h3 { font-weight: 900; letter-spacing: -1px; line-height: 1.1; text-align: left; font-size: 21px;}
@@ -392,6 +413,28 @@ p.active { color: #fe4a49; font-weight: 700;}
 	.l1 p { font-size: 15px; text-transform: uppercase;}
 	.l3, .l0 { width: 100%;}
 	.l0 { flex-wrap: wrap; padding: 0; gap: 0;}
+	.search { 
+		top: 20vh;
+		position: fixed;
+		left: 25%;
+		z-index: 600;
+		background: rgba(0,0,0,0.9);
+		backdrop-filter: blur(4px);
+		border-radius: 4px;
+		width: 50%;
+		height: 60vh;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+	}
+	.cross {
+		top: 32px;
+		right: 32px;
+		font-size: 12px;
+		color: #fe4a49;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
@@ -443,6 +486,29 @@ p.active { color: #fe4a49; font-weight: 700;}
 	.wide60 .in-row p { font-size: 12px; margin: 0;}
 	.wide60 .in-row { flex-direction: column; gap: 0; padding-bottom: 8px;}
 	.l3 { height: 100%; padding-top: 120px;}
+	.search { 
+		top: 280px;
+		position: fixed;
+		left: 5%;
+		z-index: 900;
+		background: rgba(0,0,0,0.9);
+		backdrop-filter: blur(4px);
+		border-radius: 4px;
+		width: 90%;
+		height: 480px;
+		align-items: center;
+		justify-content: center;
+		padding: 32px;
+	}
+	.cross {
+		top: 32px;
+		right: 32px;
+		font-size: 12px;
+		color: #fe4a49;
+		text-transform: uppercase;
+		font-weight: bold;
+		
+	}
 }
 
 </style>

@@ -13,7 +13,7 @@ export const Tags = async() => {
       }
     })
   )
-	const allTags = allPosts.flatMap(post => post.meta.category)
+	const allTags = allPosts.flatMap(post => post.meta.author)
 	const distinctTags = [...new Set(allTags)].sort()
 	return distinctTags	
 }
@@ -24,7 +24,8 @@ export const Tags = async() => {
 		<small>...</small>
 		{:then cutup}
 		{#each cutup as item}
-		<small>{item}</small>
+		<small>{item}<br>
+		</small>
 		{/each}
 		{/await}
 	</div>
