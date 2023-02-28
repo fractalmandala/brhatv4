@@ -8,6 +8,7 @@ import Firekeepers from '$lib/components/headers/StaticH1.svelte'
 import AllDrashtas from '$lib/components/pagecomps/AllDrashtas.svelte'
 import AllSchools from '$lib/components/pagecomps/AllSchools.svelte'
 let y = 1
+let i = 20
 export async function allCourses() {
 	const { data, error } = await supabase
 	.from('brhat-drashta2')
@@ -29,16 +30,16 @@ export async function allCourses() {
 			Bṛhat Draṣṭā is an offering in deep learning that offers courses on some of the greatest ancient and contemporary philosophers (draṣṭās) and schools of thoughts (darśana).
 		</h3>
 </div>
-<div class="flexbox-c x2 minmargins" style="transform: translateY({y/10}px)">
-	<h3 class="w600 lining grey2">Courses:</h3>
+<div class="flexbox-c x2 minmargins">
+	<h3 class="w600 lining grey2" data-textify>Courses:</h3>
 </div>
 
-<div class="flexbox-r minmargins-a x3 xc" style="transform: translateY({y/5}px)">
+<div class="flexbox-r minmargins-a x3 xc">
 	{#await allCourses()}
 	<small>loading chapters...</small>
 	{:then data}
-	{#each data as item}
-	<div class="in-col wide25 formal3" use:reveal={{transition: "fly", blur: 0, y: -80}}>
+	{#each data as item, i}
+	<div class="in-col wide25 formal3" use:reveal={{transition: "slide", blur: 0, reset: true, x: -80, duration: i*100, easing: "easeInExpo"}}>
 		<img src={item.image} alt={item.name}>
 		<h6><a href={item.link}>{item.name}</a></h6>
 		<p class="grey">{item.content.slice(0,250)}<a class="readmore" href={item.link}>...Read More</a></p>
@@ -53,11 +54,11 @@ export async function allCourses() {
 	{/await}
 </div>
 
-<div class="flexbox-c x2 minmargins" style="transform: translateY({y/10}px)" id="drashtas">
-	<h3 class="w600 lining grey2">Draṣṭās:</h3>
+<div class="flexbox-c x2 minmargins" id="drashtas">
+	<h3 class="w600 lining grey2" data-textify>Draṣṭās:</h3>
 </div>
 
-<div class="flexbox-c minmargins-a x3 xe" style="transform: translateY({y/8}px)" id="darshanas">
+<div class="flexbox-c minmargins-a x3 xe" id="darshanas">
 				<p class="wide50">
 			It is the witness of the truth that is the objective of all Hindu philosophy. Similarly, the act of going to a temple is also called darśana, the act of witnessing truth in the form of the divine. In Hindu civilization its worldview was guided by the inner compass of sādhanā. It is only when the act of looking and seeing is elevated and sanctified by deep sādhanā, does it become darśana. For understanding this deep darśana and to witness saṃsāra in truthful light, an able draṣṭā – the one who is capable of looking deeply – is needed.
 			<br><br>
@@ -69,11 +70,11 @@ export async function allCourses() {
 		<AllDrashtas></AllDrashtas>
 </div>
 
-<div class="flexbox-c x2 minmargins" style="transform: translateY({y/10}px)">
-	<h3 class="w600 lining grey2">Darśanas:</h3>
+<div class="flexbox-c x2 minmargins">
+	<h3 class="w600 lining grey2" data-textify>Darśanas:</h3>
 </div>
 
-<div class="flexbox-c minmargins-a x3 xd" style="transform: translateY({y/8}px)">
+<div class="flexbox-c minmargins-a x3 xd">
 				<p class="wide50">
 			What ultimately differentiates a culture are its ways of looking and seeing. How we see ourselves and the world is extremely important to our identity and to the way the world perceives us. But to Hindu civilization seeing was not merely a physical act of looking at saṃsāra using our external eyes. The focus of our civilization was as much on our internal journey.
 			<br><br>
@@ -85,11 +86,11 @@ export async function allCourses() {
 	<AllSchools></AllSchools>
 </div>
 
-<div class="flexbox-c x2 minmargins" style="transform: translateY({y/10}px)">
-	<h3 class="w600 lining grey2">Firekeepers of Civilization:</h3>
+<div class="flexbox-c x2 minmargins">
+	<h3 class="w600 lining grey2" data-textify>Firekeepers of Civilization:</h3>
 </div>
 
-<div class="flexbox-c minmargins-a x3 xdd" style="transform: translateY({y/8}px)">
+<div class="flexbox-c minmargins-a x3 xdd">
 					<p class="wide50">
 					Civilization is an eternal yajña. And just as every yajña needs a yajamāna, the one who performs or protects dharma, so does the yajña of civilization. Agni, fire, is a symbol of civilization. It needs to be continuous for a civilization to be living. That is why at many places in Bhāratavarṣa, yajñās keep going incessantly.
 					<br><br>
@@ -101,8 +102,8 @@ export async function allCourses() {
 				Hindu civilization today navigates a precarious turn. Great thought churning is going on for necessary changes in our society, culture and civilization. It is imperative at this crucial juncture to learn from the ancient as well as contemporary fire keepers of civilization – the great men of knowledge and wisdom, jñāna and sādhanā, who kept the flame of our civilization burning.
 			</h5>
 				<div class="in-row wrapper buttonsrow">
-				<button class="redbutton"><a href="/course/sitaramgoel">Sita Ram Goel</a></button>
-				<button class="redbutton"><a href="/course/shriramswarup">Shri Ram Swarup</a></button>
+				<button class="twobutton"><a href="/course/sitaramgoel">Sita Ram Goel</a></button>
+				<button class="twobutton"><a href="/course/shriramswarup">Shri Ram Swarup</a></button>
 				</div>
 </div>
 
@@ -117,7 +118,7 @@ export async function allCourses() {
 	.l0, .x2 h3 { letter-spacing: -2px;}
 	.x2 { padding-bottom: 4px; width: 100%; background: white; background: white; height: 80px;border-top: 1px solid #d7d7d7; padding-top: 24px;}
 	.x2 .lining { padding-top: 4px; padding-bottom: 2px; padding-left: 16px; background: white;}
-	.x3 { height: 100vh; width: 100%; gap: 24px; background: white;}
+	.x3 { height: 100%; width: 100%; gap: 24px; background: white; padding-top: 48px; padding-bottom: 80px;}
 	.in-col.wide25 img { height: 160px; object-fit: cover; width: 100%;}
 	.xdd { margin-bottom: 600px;}
 	.in-col.wide25 p { color: #878787;}
