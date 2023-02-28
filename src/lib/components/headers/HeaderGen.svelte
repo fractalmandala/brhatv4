@@ -192,6 +192,12 @@ function toggleMenu(){
 	</div>
 	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5 class="w600 white upper"><a href="/drashta">Bṛhat Draṣṭā</a></h5>
+			<h6 class="w400 grey"><a href="/drashta/course/valmikiramayana">Vālmīki Rāmāyaṇa</a></h6>
+			<h6 class="w400 grey"><a href="/drashta/course/hinduiconography">Hindu Iconography</a></h6>
+			<h6 class="w400 grey"><a href="/drashta/course/shriramswarup">Shri Ram Swarup</a></h6>
+			<h6 class="w400 grey"><a href="/drashta/course/sitaramgoel">Sita Ram Goel</a></h6>
+			<h6 class="w400 grey"><a href="/drashta/#drashtas">Drashtas</a></h6>
+			<h6 class="w400 grey"><a href="/drashta/#darshanas">Darśanas</a></h6>
 	</div>
 	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5 class="w600 white upper"><a href="/anveṣī">Bṛhatanveṣī</a></h5>

@@ -17,4 +17,8 @@
 		margin-bottom: -100vh;
 	}
 }
+
+@media screen and (max-width: 767px) {
+	.thinner { display: none;}
+}
 </style>
