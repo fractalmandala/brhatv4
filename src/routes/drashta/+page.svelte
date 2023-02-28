@@ -2,9 +2,6 @@
 import { reveal } from 'svelte-reveal'
 import supabase from '$lib/db'
 import ThinBar from '$lib/components/pagecomps/ThinBar.svelte'
-import Drashtas from '$lib/components/headers/StaticH1.svelte'
-import Chapters from '$lib/components/headers/StaticH1.svelte'
-import Firekeepers from '$lib/components/headers/StaticH1.svelte'
 import AllDrashtas from '$lib/components/pagecomps/AllDrashtas.svelte'
 import AllSchools from '$lib/components/pagecomps/AllSchools.svelte'
 let y = 1
