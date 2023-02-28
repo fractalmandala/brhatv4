@@ -1,6 +1,6 @@
 
-<div class="flexbox-c desk-margins outliner">
-	<div class="in-col m-top-90 pad-y-b">
+<div class="flexbox-c">
+	<div class="in-col pad-y-b">
 		<p>
 		Our website is built completely in Sveltekit, which is a framework for building web applications. Sveltekit allows us to easily create reusable components and manage the state of our application. Once the website is built, it is deployed on Vercel, which is a platform for hosting web applications.
 		</p>
@@ -17,6 +17,12 @@
 		Thank you for reading our documentation. We hope it helps you understand our website better.
 		</p>
 	</div>
-
+	<ul>
+		<li><a href="/openlibrary/horiz">Horiz</a></li>
+		<li><a href="/openlibrary/horiz/format">Format</a></li>
+		<li><a href="/openlibrary/horiz/searched">Searched</a></li>
+		<li><a href="/openlibrary/jsons">jsons</a></li>
+		<li><a href="/openlibrary/ramayanaserver">ramayana server</a></li>
+	</ul>
 </div>
 

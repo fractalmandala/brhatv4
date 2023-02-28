@@ -1,10 +1,11 @@
-<script>
-/**
-	 * @type {{ sarga: any; }}
-	 */
- export let data
+<script lang="ts">
+export let data:any
 </script>
 
 <div class="flexbox-c">
-<p>{data.sarga}</p>
+{#if data && data.length>0}
+	{#each data as item}
+	<p>{item.verse}</p>
+	{/each}
+{/if}
 </div>

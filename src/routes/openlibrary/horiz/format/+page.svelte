@@ -1,40 +1,23 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
 
   /**
 	 * @type {any[]}
 	 */
-  let tables = [];
-	let data = [];
-	let headers = ['kanda','sarga','pada','iast','numbering','form','lemma','upos','feat','misc']
-	data.push(headers);
+  let tables: any[] = [];
 
   onMount(async () => {
-    const response = await fetch(`https://rnfvzaelmwbbvfbsppir.supabase.co/storage/v1/object/public/openlibrary/conlluramayana/0000-Kanda-1_Sarga-1-1067.conllu`);
+    const response = await fetch(`/ramayana/0000-Kanda-1_Sarga-1-1067.conllu`);
     const data = await response.text();
     const rows = data.split('\n');
 
     const sentences = {};
 
     let tableHTML = '<table class="conllu-table">';
-    tableHTML += '<tr><th>kanda</th><th>sarga</th><th>pada</th><th>iast</th><th>numbering</th><th>form</th><th>lemma</th><th>upos</th><th>feat</th><th>misc</th></tr>';
+    tableHTML += '<tr><th>SENTENCE</th><th>FORM</th><th>LEMMA</th><th>UPOS</th><th>FEATS</th><th>MISC</th></tr>';
 
-    /**
-	   * @type {string | null}
-	   */
-    let currentSentence = null;
+    let currentSentence:any = null;
 		let freezeSentence = false
-		/**
-	   * @type {string | null}
-	   */
-		let kandaNumber = null;
-		/**
-	   * @type {string | null}
-	   */
-		let sargaNumber = null;
-		let verse = 0
-		let count = 0
-		let counter = 1	
 
     rows.forEach((row, i) => {
       if (row.trim() === '') {
@@ -63,30 +46,17 @@
       }
 
       if (wordNumber === '1') {
- 				// @ts-ignore
- 				kandaNumber = response.url.match(/Kanda-(\d+)/)[1];
-				// @ts-ignore
-				sargaNumber = response.url.match(/Sarga-(\d+)/)[1];
         const sentenceNumber = Object.keys(sentences).length + 1;
-        // @ts-ignore
         sentences[sentenceNumber] = currentSentence;
-				verse = ++verse
       }
 
       const sentenceNumber = Object.keys(sentences).length;
-      // @ts-ignore
       if (sentences[sentenceNumber] == null || sentences[sentenceNumber] == undefined || lemma == '_') {
         return;
       }
 
-
       tableHTML += '<tr>';
-			tableHTML += `<td>${kandaNumber}</td>`;
-			tableHTML += `<td>${sargaNumber}</td>`;
-			tableHTML += `<td>${verse}</td>`;
-      // @ts-ignore
       tableHTML += `<td>${sentences[sentenceNumber]}</td>`;
-      tableHTML += `<td>${wordNumber}</td>`;
       tableHTML += `<td>${form}</td>`;
       tableHTML += `<td>${lemma}</td>`;
       tableHTML += `<td>${upos}</td>`;
@@ -109,3 +79,9 @@
 {/each}
 </div>
 
+<style>
+.istop {
+	margin-top: 120px;
+	overflow-x: scroll;
+}
+</style>

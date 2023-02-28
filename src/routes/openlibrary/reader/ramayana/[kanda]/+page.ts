@@ -1,11 +1,13 @@
-import supabase from '$lib/db'
-export async function load({ params }:{ params: { kanda: number }}){
+import supabase  from '$lib/db'
+
+export async function load({params}:{params: { kanda:number }}){
 	const { data, error } = await supabase
 	.from('db-ramayana')
 	.select()
 	.eq('kanda',`${params.kanda}`)
-	.limit(1)
-	.single()
+	.order('id')
 	if (error) throw new Error(error.message)
-	return data
+	return {
+		data: data
+	}
 }

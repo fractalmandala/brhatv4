@@ -1,55 +1,91 @@
-<script>
-  import { onMount } from 'svelte';
+<script lang="ts">
+	import { onMount } from 'svelte';
 
-
-  /**
-	 * @type {string}
-	 */
-  let conlluData;
-/**
+	/**
 	 * @type {any[]}
 	 */
-let tables = [];
-  onMount(async () => {
-    const response = await fetch('/ramayana/0000-Kanda-1_Sarga-1-1067.conllu');
-    conlluData = await response.text();
-      const rows = conlluData.split('\n');
+	let tables: any[] = [];
 
-      let tableHTML = '<table class="conllu-table">';
-      tableHTML += '<tr><th>#</th><th>FORM</th><th>LEMMA</th><th>UPOS</th><th>XPOS</th><th>FEATS</th><th>HEAD</th><th>DEPREL</th><th>DEPS</th><th>MISC</th></tr>';
+	onMount(async () => {
+		const response = await fetch(`https://rnfvzaelmwbbvfbsppir.supabase.co/storage/v1/object/public/openlibrary/cn-ramayana/k1/0000-Kanda-1_Sarga-1-1067.conllu`);
+		const data = await response.text();
+		const rows = data.split('\n');
 
-      rows.forEach(row => {
-        if (row.startsWith('#')) {
-          // ignore comments
-          return;
-        }
+		const sentences = {};
 
-        const columns = row.split('\t');
-  if (columns[1] === 'tapas') {
-      tableHTML += '<tr>';
-      columns.forEach(column => {
-        tableHTML += `<td>${column}</td>`;
-      });
-      tableHTML += '</tr>';
-    }
-  });
+		let tableHTML = '<table class="conllu-table">';
+		tableHTML +=
+			'<tr><th>SENTENCE</th><th>FORM</th><th>LEMMA</th><th>UPOS</th><th>FEATS</th><th>MISC</th></tr>';
 
-  tableHTML += '</table>';
+		let currentSentence: any = null;
+		let freezeSentence = false;
 
-  // add the HTML table to the array
-  tables = [...tables, tableHTML];
-});
+		rows.forEach((row, i) => {
+			if (row.trim() === '') {
+				return;
+			}
+
+			const columns = row.split('\t');
+			const wordNumber = columns[0];
+			const form = columns[1];
+			const lemma = columns[2];
+			const upos = columns[3];
+			const feats = columns[5];
+			const misc = columns[9];
+
+			if (wordNumber.startsWith('# text')) {
+				currentSentence = row.slice(row.indexOf('\t') + 9);
+				if (!(i + 1 < rows.length && rows[i + 1].startsWith('# sent_id'))) {
+					freezeSentence = true;
+				}
+				return;
+			}
+
+			if (wordNumber.startsWith('#') || form.includes('-')) {
+				return;
+			}
+
+			if (wordNumber === '1') {
+				const sentenceNumber = Object.keys(sentences).length + 1;
+				sentences[sentenceNumber] = currentSentence;
+			}
+
+			const sentenceNumber = Object.keys(sentences).length;
+			if (
+				sentences[sentenceNumber] == null ||
+				sentences[sentenceNumber] == undefined ||
+				lemma == '_'
+			) {
+				return;
+			}
+
+			tableHTML += '<tr>';
+			tableHTML += `<td>${sentences[sentenceNumber]}</td>`;
+			tableHTML += `<td>${form}</td>`;
+			tableHTML += `<td>${lemma}</td>`;
+			tableHTML += `<td>${upos}</td>`;
+			tableHTML += `<td>${feats}</td>`;
+			tableHTML += `<td>${misc}</td>`;
+			tableHTML += '</tr>';
+		});
+
+		tableHTML += '</table>';
+
+		tables = [...tables, tableHTML];
+	});
 </script>
- <div class="c-c-c-c istop">
-{#each tables as tableHTML}
-<table>
-{@html tableHTML}
-</table>
-{/each}
+
+<div class="flexbox-c istop">
+	{#each tables as tableHTML}
+		<table>
+			{@html tableHTML}
+		</table>
+	{/each}
 </div>
 
 <style>
-table, th, td {
-	border: 1px solid #d7d7d7;
-}
+	.istop {
+		margin-top: 120px;
+		overflow-x: scroll;
+	}
 </style>

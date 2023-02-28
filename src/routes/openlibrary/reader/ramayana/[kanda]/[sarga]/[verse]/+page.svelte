@@ -3,7 +3,9 @@ export let data:any
 </script>
 
 <div class="flexbox-c">
+{#if data && data.length>0}
 	{#each data as item}
-	<p>{item.sarga}</p>
+		<p>{item.pada}</p>
 	{/each}
+{/if}
 </div>

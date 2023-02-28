@@ -4,7 +4,6 @@ import ThinBar from '$lib/components/pagecomps/ThinBar.svelte'
 import { reveal } from 'svelte-reveal'
 import { fly } from 'svelte/transition'
 import { quadOut } from 'svelte/easing'
-import type { RevealOptions } from 'svelte-reveal';
 
 import supabase from '$lib/db'
 
