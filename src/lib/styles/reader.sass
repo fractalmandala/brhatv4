@@ -93,26 +93,26 @@
 	flex-direction: row
 	@media screen and (min-width: 768px)
 		width: 75%
-		min-height: 100vh
+		height: 100%
 	@media screen and (max-width: 767px)
 		width: 100%
-		min-height: 100vh
+		height: 100%
 
 .h100p
 	@media screen and (min-width: 768px)
 		height: 100%
 	@media screen and (max-width: 767px)
-		min-height: 25vh
+		height: 100%
 
 .h100
 	@media screen and (min-width: 900px)
-		height: 100vh
+		min-height: 100vh
 	@media screen and (max-width: 899px) and (min-width: 768px)
-		height: 100vh
+		height: 100%
 	@media screen and (max-width: 767px) and (min-width: 576px)
-		min-height: 100vh
+		height: 100%
 	@media screen and (max-width: 575px)
-		min-height: 100vh
+		height: 100%
 
 .w100vw
 	width: 100vw
@@ -272,14 +272,32 @@
 	@media screen and (min-width: 900px)
 		padding-top: 80px
 		padding-bottom: 80px
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		padding-top: 64px
+		padding-bottom: 64px
+	@media screen and (max-width: 767px)
+		padding-top: 40px
+		padding-bottom: 40px
 
 .pad80-t
 	@media screen and (min-width: 900px)
 		padding-top: 80px
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		padding-top: 64px
+	@media screen and (max-width: 767px)
+		padding-top: 40px
 
 .pad80-b
 	@media screen and (min-width: 900px)
 		padding-bottom: 80px
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		padding-bottom: 64px
+	@media screen and (max-width: 767px)
+		padding-bottom: 40px
+
+.m-top-64
+	@media screen and (min-width: 768px)
+		margin-top: 64px
 
 .mainbutton
 	background-color: var(--soft)

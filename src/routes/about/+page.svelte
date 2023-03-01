@@ -3,50 +3,8 @@ import supabase from '$lib/db'
 import { onMount } from 'svelte';
 import { reveal } from 'svelte-reveal'
 let y = 1
-let showModal = false;
-let isBrands = false;
-/**
-	 * @type {IntersectionObserver}
-	 */
-let observer
+
 let img
-/**
-	 * @type {Element}
-	 */
-let parallaxdiv
-
-const observerOptions = {
-	rootMargin: '0px',
-	threshold: 0.5,
-}
-
-// @ts-ignore
-const handleIntersection = (entries) => {
-  const [entry] = entries;
-  if (entry.isIntersecting) {
-    window.addEventListener('scroll', handleScroll);
-  } else {
-    window.removeEventListener('scroll', handleScroll);
-  }
-};
-
-const handleScroll = () => {
-	y = window.scrollY
-}
-
-onMount(() => {
-  observer = new IntersectionObserver(handleIntersection, observerOptions);
-  observer.observe(parallaxdiv);
-  return () => {
-    observer.disconnect();
-    window.removeEventListener('scroll', handleScroll);
-  };
-});
-
-function toggleBrands(){
-	isBrands = !isBrands;
-}
-
 
 async function advisors() {
 const { data, error } = await supabase
@@ -77,9 +35,6 @@ const { data, error } = await supabase
 
 </script>
 
-<svelte:window bind:scrollY={y} />
-
-
 <div class="box-c h100 back-image l0"></div>
 <div class="box-c m-large pad80 h100">
 	<h1 class="w600">Bṛhat is a <br><span class="red m-top-zero">Culture Engine</span></h1>
@@ -88,7 +43,7 @@ const { data, error } = await supabase
 	convert individual, institutional and collective intent into action, across 3 dimensions.
 	</h5>
 	<div class="l2 box-r wrap h100p gap3">
-		<div class="l2row1 box-c wd3" use:reveal={{ transition: "slide", x: -150, blur: 1, duration: 300, threshold: 0.1, easing: "easeInCirc"}}>
+		<div class="l2row1 h100p box-c wd3" use:reveal={{ transition: "slide", x: -150, blur: 1, duration: 300, threshold: 0.1, easing: "easeInCirc"}}>
 			<h6 class="w600 strong">Create</h6>
 			<p class="w400 grey">
 				- visual and literary stories;<br>
@@ -97,7 +52,7 @@ const { data, error } = await supabase
 				- culture-rooted thought models
 			</p>
 		</div>
-		<div class="l2row2 box-c wd3" use:reveal={{ transition: "slide", x: -150, duration: 300, delay: 50, blur: 1, threshold: 0.1, easing: "easeInCirc"}}>
+		<div class="l2row2 h100p box-c wd3" use:reveal={{ transition: "slide", x: -150, duration: 300, delay: 50, blur: 1, threshold: 0.1, easing: "easeInCirc"}}>
 			<h6 class="w600 strong">Curate</h6>
 			<p class="w400 grey">
 				- heritage experience journeys;<br>
@@ -106,7 +61,7 @@ const { data, error } = await supabase
 				- culture rooting in product design and thinking
 			</p>
 		</div>
-		<div class="l2row3 box-c wd3" use:reveal={{ transition: "slide", x: -150, duration: 300, delay: 100, blur: 1, threshold: 0.1, easing: "easeInCirc"}}>
+		<div class="l2row3 h100p box-c wd3" use:reveal={{ transition: "slide", x: -150, duration: 300, delay: 100, blur: 1, threshold: 0.1, easing: "easeInCirc"}}>
 			<h6 class="w600 strong">Consult</h6>
 			<p class="w400 grey">
 				- NEP-IKS implementation;<br>
@@ -116,7 +71,7 @@ const { data, error } = await supabase
 		</div>
 	</div>
 </div>
-<div class="box-c m-large h100 pad80 lx">
+<div class="box-c m-large h100 pad80-t lx">
 	<h5 class="w400 wide75">
 		An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment. How does one go about doing that? At Bṛhat, we're acutely aware of three constraints:
 	</h5>
@@ -146,9 +101,6 @@ const { data, error } = await supabase
 			</p>
 		</div>
 	</div>
-</div>
-<div class="box-c m-large" bind:this={parallaxdiv} id="parallax">
-	<img src="/images/corpimages/parallaximg.png" alt="parallax" style="transform: translateY({-y/4}px)" bind:this={img}/>
 </div>
 <div class="box-c pad80-t m-large">
 	<h4 class="w600 strong">
@@ -264,8 +216,6 @@ const { data, error } = await supabase
 @media screen and (min-width: 768px) {
 	.lx { height: 100%;}
 	.l3 .box-c { border-top: 1px solid #e1e1e1; padding-top: 16px;}
-	#parallax { overflow: hidden; height: 60vh;}
-	#parallax img { object-fit: cover; width: 100%;}	
 	.link-heads { padding-top: 16px; padding-bottom: 16px; padding-left: 16px; transition: all 0.06s var(--cubee);}
 	.link-heads h5 { margin: 0; text-transform: uppercase;}
 .teambox img { object-fit:contain; width: 50%; margin-bottom: 24px;}
