@@ -268,14 +268,23 @@ body, html, *
 	@media screen and (max-width: 899px) and (min-width: 768px)
 		padding-right: 24px
 	@media screen and (max-width: 767px)
-		padding: 24px
+		padding-right: 24px
 
 .m-mid
 	@media screen and (min-width: 768px)
 		padding-left: 64px
 		padding-right: 64px
 	@media screen and (max-width: 767px)
-		padding: 24px
+		padding-left: 24px
+		padding-right: 24px
+
+.m-mid-skew
+	@media screen and (min-width: 768px)
+		padding-left: 80px
+		padding-right: 64px
+	@media screen and (max-width: 767px)
+		padding-left: 24px
+		padding-right: 24px
 
 .m-mid-l
 	@media screen and (min-width: 768px)
@@ -378,7 +387,7 @@ body, html, *
 	padding-bottom: 4px
 	padding-left: 16px
 	@media screen and (max-width: 767px)
-		margin: 0
+		margin: 40px 0 20px 0 
 
 .mainbutton
 	background-color: var(--soft)
