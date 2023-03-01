@@ -1,9 +1,9 @@
 <script lang="ts">
 import supabase from '$lib/db'
-let selectKanda:number
-let selectSarga:number
-let selectVerse:number
-let selectPada:string
+let selectKanda:any
+let selectSarga:any
+let selectVerse:any
+let selectPada:any
 
 let kandas = [
 	{ value: 1, label: '1' },

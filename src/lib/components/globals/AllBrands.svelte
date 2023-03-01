@@ -47,7 +47,7 @@ function toggleBrands(){
 
   const hover = async () => {
     const edge8 = document.getElementById('edge8') as HTMLElement;
-    edge8.style.transform = 'translate(-40%, -10%)';
+    edge8.style.transform = 'translate(-20%, -50%) rotate(-45deg)';
     await new Promise(resolve => setTimeout(resolve, 300));
   };
 
@@ -59,7 +59,7 @@ function toggleBrands(){
 
 	const hover7 = async () => {
 		const edge7 = document.getElementById('edge7') as HTMLElement
-		edge7.style.transform = 'translate(-30%, 0)'
+		edge7.style.transform = 'translate(-20%, 0)'
 		await new Promise(resolve => setTimeout(resolve, 300));
 	};
 
@@ -71,7 +71,7 @@ function toggleBrands(){
 
 	const hover6 = async () => {
 		const edge6 = document.getElementById('edge6') as HTMLElement
-		edge6.style.transform = 'translate(-40%, 10%)'
+		edge6.style.transform = 'translate(-20%, 50%) rotate(45deg)'
 		await new Promise(resolve => setTimeout(resolve, 300));
 	};
 
@@ -83,7 +83,7 @@ function toggleBrands(){
 
 	const hover5 = async () => {
 		const edge2= document.getElementById('edge2') as HTMLElement
-		edge2.style.transform = 'translate(40%, -10%)'
+		edge2.style.transform = 'translate(20%, -50%) rotate(45deg)'
 		await new Promise(resolve => setTimeout(resolve, 300));
 	};
 
@@ -95,7 +95,7 @@ function toggleBrands(){
 
 	const hover4 = async () => {
 		const edge3= document.getElementById('edge3') as HTMLElement
-		edge3.style.transform = 'translate(30%, 0%)'
+		edge3.style.transform = 'translate(20%, 0%)'
 		await new Promise(resolve => setTimeout(resolve, 300));
 	};
 
@@ -107,7 +107,7 @@ function toggleBrands(){
 
 	const hover3 = async () => {
 		const edge4= document.getElementById('edge4') as HTMLElement
-		edge4.style.transform = 'translate(40%, 10%)'
+		edge4.style.transform = 'translate(20%, 50%) rotate(-45deg)'
 		await new Promise(resolve => setTimeout(resolve, 300));
 	};
 
@@ -119,7 +119,7 @@ function toggleBrands(){
 
 	const hover2 = async () => {
 		const edge5= document.getElementById('edge5') as HTMLElement
-		edge5.style.transform = 'translate(0%, 20%)'
+		edge5.style.transform = 'translate(0%, 15%)'
 		await new Promise(resolve => setTimeout(resolve, 300));
 	};
 
@@ -364,7 +364,7 @@ function toggleBrands(){
 
 <style>
 .biggie { background: var(--beau);}
-.boxer { position: relative; overflow: hidden; transition: all 0.8s var(--cubea) 0.2s; border: 1px solid #373737; box-shadow: 4px 6px 6px #171717, -2px -4px 6px #212121; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; }
+.boxer { position: relative; overflow: hidden; transition: all 0.8s var(--cubea) 0.2s; box-shadow: 4px 6px 6px #111111, -2px -4px 6px #171717; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; }
 .boxer span { position: absolute; top: 0; left: 0;}
 .typ1 { border-top: 1px solid #fe4a49;}
 .typ2 { border-right: 1px solid #fe4a49; width: 100%; }
@@ -413,6 +413,7 @@ function toggleBrands(){
 
 #edge8, #edge7, #edge6, #edge4, #edge3, #edge2, #edge1, #edge5 {
 	transition: all 1.2s var(--cubec);
+	transform-origin: center center;
 }
 
 #dottedcircles {
@@ -472,9 +473,9 @@ function toggleBrands(){
 
 @media screen and ( min-width: 900px ) {
 	.biggie { width: 100vw; height: 100vh; justify-content: space-between;}
-	.col1 { width: 24vw; padding: 0; justify-content: center; align-items: center; gap: 3em; padding-bottom: 4em; }
+	.col1 { width: 24vw; padding: 0 0 96px 0; justify-content: center; align-items: center; gap: 3em; }
 	.col2 { width: 28vw; padding: 0; justify-content: center; align-items: center; padding-top: 2.4em; gap: 0;}
-	.col3 { width: 24vw; padding: 0; justify-content: center; align-items: center;gap: 3em; padding-bottom: 4em;}
+	.col3 { width: 24vw; padding: 0 0 96px 0; justify-content: center; align-items: center;gap: 3em;}
 	.boxer { border-radius: 4px; height: 16vh; padding: 0 10%; justify-content: center; align-items: center;}
 	.boxer span { border-radius: 4px;}
 	.box-of-soa { width: 20vw;}

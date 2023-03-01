@@ -1,25 +1,49 @@
 <script lang="ts">
-export let data1:any
-export let data2:any
+import { onMount } from 'svelte'
+import supabase from '$lib/db'
+import { page } from '$app/stores'
+export let data:any
+let x = ''
+
+export async function getLem() {
+  const { data, error } = await supabase
+    .from('db-ramayana-lemma')
+    .select()
+    .eq('slug',x)
+    .order('id')
+  if (error) throw new Error(error.message)
+  return data
+}
+
+onMount(() => {
+	x = $page.url.pathname.substr(29,9)
+})
+
 </script>
 
 
 <div class="flexbox-r bread-crumb">
-	<cite class="grey2">Kāṇḍa {data1.kanda} <span> > </span>Sarga {data1.sarga} <span> > </span>Verse {data1.verse} <span class="soft"> > <b>Pāda {data1.pada}</b></span></cite>
+	<cite class="grey2"><a href="/openlibrary/reader/ramayana/{data.kanda}">Kāṇḍa {data.kanda}</a> <span> > </span>Sarga {data.sarga} <span> > </span>Verse {data.verse} <span class="soft"> > <b>Pāda {data.pada}</b></span></cite>
 </div>
 <div class="flexbox-c results">
 	<div class="hindi">
-		<h3>{data1.devanagari}</h3>
+		<h3>{data.devanagari}</h3>
 	</div>
-	<h4 class="w400 grey">{data1.iast}</h4>
+	<h4 class="w400 grey">{data.iast}</h4>
+	<small>{x}</small>
 </div>
-{#if data2 && data2.length > 0}
-	<div class="flexbox-c words">
-		{#each data2 as row}
-			<p>{row.form}</p>
+<div class="flexbox-c lemmas">
+	{#await getLem()}
+	<small>...</small>
+	{:then data}
+		{#each data as item}
+			<p>{item.form}</p>
 		{/each}
-	</div>
-{/if}
+	{:catch error}
+	<pre>{error}</pre>
+	{/await}
+</div>
+
 
 <style>
 

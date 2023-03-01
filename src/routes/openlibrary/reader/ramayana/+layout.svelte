@@ -34,6 +34,7 @@ import Ramayana from '$lib/components/reader/Ramayana.svelte'
 	}
 	.result {
 		padding-top: 32px;
+		height: 100%;
 	}
 }
 </style>

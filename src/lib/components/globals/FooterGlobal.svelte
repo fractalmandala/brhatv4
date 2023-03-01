@@ -137,7 +137,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		font-weight: 400
 		margin-bottom: 20px
 		font-size: 18px
-		letter-spacing: 0.25px
+		letter-spacing: 0.05px
 		margin-top: 0
 		&:hover a
 			color: #fe4a49
@@ -185,7 +185,6 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	
 	#last-row small
 		line-height: 1.8
-		letter-spacing: 1px
 		font-size: 12px
 		margin: 0
 

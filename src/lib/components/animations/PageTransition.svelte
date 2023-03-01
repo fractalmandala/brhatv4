@@ -1,10 +1,18 @@
-<script>
+<script lang="ts">
 import { fly } from 'svelte/transition'
-import { quartOut } from 'svelte/easing'
-
+import { expoIn } from 'svelte/easing'
+export let key:string
 </script>
 
-
-<div class="flexbox-c" in:fly={{ delay: 800, duration: 1000, y: 800, x: 0, opacity: 1, easing: quartOut}} out:fly={{ delay: 0, duration: 800, y: -800, x: 0, opacity: 1, easing: quartOut}}>
+{#key key}
+<div class="flexbox-c"
+	in:fly={{ duration: 400, delay: 400, x: 0, y: -700, opacity: 1, easing: expoIn }}
+	out:fly={{ duration: 400, delay: 0, x: 0, y: 700, opacity: 1, easing: expoIn }}
+>
 <slot></slot>
 </div>
+{/key}
+
+<style>
+.flexbox-c { height: 100%;}
+</style>

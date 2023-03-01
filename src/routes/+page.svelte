@@ -132,7 +132,7 @@
 								easing: 'easeOutCirc'
 							}}
 						/>
-							<small><span class="small-cat blue">{item.category}<br></span><span class="small-tag grey2">{item.tags}</span></small>
+							<small><span class="small-cat red">{item.category}<br></span><span class="small-tag grey2">{item.tags}</span></small>
 							<h6 class="w600"
 							use:reveal={{
 								transition: 'slide',
@@ -144,8 +144,8 @@
 						>
 							<a href={item.link}>{item.title}</a>
 						</h6>
-						<small class="grey">{item.excerpt.slice(0, 200)}...<a href={item.link} class="readmore">Read More</a></small>
-						<cite class="blue wbold m-bot-zero">{item.author}</cite>
+						<small class="grey2">{item.excerpt.slice(0, 200)}...<a href={item.link} class="readmore">Read More</a></small>
+						<cite class="grey wbold m-bot-zero">{item.author}</cite>
 					</div>
 				{/each}
 			</div>
@@ -163,16 +163,16 @@
 				License. Gathering point for digitized scripture, Aryan Invasion/Migration, civilizational
 				literature and more.
 			</h5>
-			<button class="redbutton m-bot-16-mob"><a href="/openlibrary">Visit Library</a></button>
+			<button class="twobutton m-bot-16 m-top-8"><a href="/openlibrary">Visit Library</a></button>
 			{#await getBooks()}
 				<small>...</small>
 			{:then data}
-				<div class="flexbox-r wrapper of-four m-top-8 m-bot-24 lib">
+				<div class="flexbox-r wrapper of-four m-bot-24 lib">
 					{#each data as item, i}
 						<div
-							class="in-col wide25 book shadow">
+							class="in-col wide25 book">
 							<h6 class="w600 m-bot-8"><a href="/openlibrary/books/{item.slug}">{item.Text}</a></h6>
-							<small class="m-top-zero grey">{item.author}</small>
+							<small class="m-top-zero m-bot-zero grey2">{item.author}</small>
 						</div>
 					{/each}
 				</div>
@@ -216,7 +216,6 @@
 
 .book {
 	border-bottom: 1px solid #e7e7e7;
-	padding-bottom: 12px;
 }
 
 @media screen and (min-width: 768px) {
@@ -228,19 +227,20 @@
 	.blogbox h6, .blogbox small, .blogbox cite { padding-left: 8px; padding-right: 8px;}
 	.blogbox small { margin: 0;}
 	.blogbox cite { margin-top: 16px; padding-bottom: 16px; margin-bottom: 0;}
-	.small-cat, .small-tag { font-size: 12px; margin: 0;}
 	.small-tag { text-transform: lowercase;}
 	.small-cat { text-transform: uppercase; font-weight: bold;}
+	.book { padding-bottom: 8px;}
+	.lib { margin-top: 32px;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
 	.l2 { gap: 16px;}
 	.blogbox { height: auto; margin-bottom: 48px;}
-
+	.blogbox img { margin-bottom: 20px;}
 	.blogbox h6, .blogbox small, .blogbox cite { padding-left: 8px; padding-right: 8px;}
-	.book {
-		margin-bottom: 24px;
-	}
+	.blogbox h6 { margin-top: 12px; margin-bottom: 20px;}
+	.small-tag { text-transform: lowercase;}
+	.small-cat { text-transform: uppercase; font-weight: bold;}
 
 }
 
@@ -248,10 +248,15 @@
 
 	.book {
 		margin-bottom: 8px;
+		padding-bottom: 8px;
 	}
 	.blogbox h6 {
-		margin-top: 24px;
+		margin-top: 0;
 	}
+	.blogbox img { margin-bottom: 20px;}
 	.lib h6 { margin-bottom: 4px;}
+	.small-tag { text-transform: lowercase;}
+	.small-cat { text-transform: uppercase; font-weight: bold;}
+	.blogbox { margin-bottom: 32px;}
 }
 </style>

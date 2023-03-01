@@ -23,12 +23,12 @@ async function getIKS() {
 					<iframe
   					class="m-1"
   					width=100%
-  					height=64%
+  					height=80%
   					src="https://www.youtube.com/embed/{item.id}"
   					title={item.name}
   				>
 					</iframe>
-					<h6 class="w500"><a href="https://www.youtube.com/watch?v={item.id}" target="_blank" rel="noreferrer">{@html item.name}</a></h6>
+					<small class="w400 grey m-top-8"><a href="https://www.youtube.com/watch?v={item.id}" target="_blank" rel="noreferrer">{@html item.name}</a></small>
 				</div>
 				{/each}
 			</div>

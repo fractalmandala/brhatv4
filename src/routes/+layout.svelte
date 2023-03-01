@@ -2,14 +2,18 @@
 // @ts-nocheck
 import { onMount } from 'svelte'
 import HeaderGen from '$lib/components/headers/HeaderGen.svelte'
+import PageTransition from '$lib/components/animations/PageTransition.svelte'
 import { dev } from '$app/environment'
 import { inject } from '@vercel/analytics'
 import Lenis from '@studio-freight/lenis'
 import Footer from '$lib/components/globals/FooterGlobal.svelte'
+import type { PageData } from './$types'
 import Animations from "textify.js"
 import '$lib/styles/textify.css'
 import '$lib/styles/componentstyles.sass'
 import '$lib/styles/typographyglobal.sass'
+export let data: PageData
+
 inject({ mode: dev ? 'development' : 'production' });
 
 onMount(async() => {
@@ -90,9 +94,11 @@ onMount(async() => {
 </script>
 	
 <HeaderGen></HeaderGen>
+<PageTransition key={data.url} duration={600}>
 <div class="flexbox-c">
 	<slot></slot>
 </div>	
+</PageTransition>
 <Footer></Footer>
 
 <style>
