@@ -38,10 +38,10 @@ body, html, *
 		display: flex
 		flex-direction: column
 		width: 25%
-		height: 100vh
 		position: sticky
 		top: 0
 		left: 0
+		height: 100vh
 	@media screen and (max-width: 767px)
 		width: 100vw
 		height: 36px
@@ -59,9 +59,11 @@ body, html, *
 		border-bottom: 1px solid #d7d7d7
 
 .c-second
+	@media screen and (min-width: 768px)
+		display: none
 	@media screen and (max-width: 767px)
 		width: 100vw
-		height: 36px
+		height: 48px
 		position: fixed
 		flex-direction: row
 		display: flex
@@ -74,6 +76,14 @@ body, html, *
 		padding-left: 24px
 		padding-right: 16px
 		border-bottom: 1px solid #d7d7d7
+		z-index: 800
+		.menutwo
+			height: 27px
+			width: 27px
+
+.menuone
+	@media screen and (max-width: 767px)
+		display: none
 
 .menutwo
 	height: 24px
@@ -351,6 +361,14 @@ body, html, *
 	@media screen and (max-width: 767px)
 		padding-bottom: 40px
 
+.pad32-t
+	@media screen and (min-width: 900px)
+		padding-top: 32px
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		padding-top: 32px
+	@media screen and (max-width: 767px)
+		padding-top: 32px
+
 .pad-left-16
 	padding-left: 16px
 
@@ -445,6 +463,101 @@ body, html, *
 		font-size: 12px
 		font-weight: 500
 		text-transform: uppercase
+		margin: 12px 0 24px 0
 	@media screen and (max-width: 767px)
 		padding: 8px
 		font-size: 12px
+
+.searcher
+	@media screen and (min-width: 768px)
+		padding-left: 16px
+		padding-top: 16px
+		label
+			font-size: 12px
+			font-weight: 600
+			text-transform: uppercase
+			color: var(--tree)
+		input[type=text]
+			width: 80%
+			padding: 8px
+			display: flex
+			border: 1px solid #d7d7d7
+			border-radius: 4px
+			margin-top: 4px
+			margin-bottom: 8px
+		input[type=submit]
+			background: var(--tree)
+			color: white
+			border: none
+			text-transform: capitalize
+			font-size: 16px
+			padding: 4px 28px
+			border-radius: 2px
+			cursor: pointer
+			transition: all 0.11s var(--cubec)
+			&:hover
+				transform: scale(0.92)
+				background: var(--strong)
+
+.result-box
+	cite
+		color: var(--soft)
+		cursor: pointer
+	small
+		margin: 0
+	@media screen and (min-width: 900px)
+		padding-right: 24px
+		padding-top: 24px
+		small
+			padding-top: 6px
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		padding-top: 16px
+		small
+			padding-top: 6px
+
+.link-heads
+	h5
+		margin: 0
+		cursor: pointer
+		position: relative
+		border-bottom: 1px solid #d7d7d7
+		&:hover
+			background: var(--beau)
+			color: white
+			&::before
+				animation: greenline 0.4s var(--cubeb) forwards
+		a
+			&:hover
+				color: white
+		&::before
+			position: absolute
+			top: 0
+			left: 0
+			content: ''
+			height: 100%
+			z-index: 0
+		@media screen and (min-width: 900px)
+			font-size: 24px
+			padding: 8px 8px 8px 16px
+			&::before
+				border-bottom: 4px solid var(--tree)
+		@media screen and (max-width: 899px) and (min-width: 768px)
+			font-size: 20px
+			padding: 8px 8px 8px 16px
+			&::before
+				border-bottom: 4px solid var(--tree)
+		@media screen and (max-width: 767px) and (min-width: 576px)
+			font-size: 20px
+			&::before
+				border-bottom: 4px solid var(--tree)
+		@media screen and (max-width: 575px)
+			font-size: 18px
+			&::before
+				border-bottom: 4px solid var(--tree)
+
+@keyframes greenline
+	0%
+		width: 0%
+	100%
+		width: 100%
+

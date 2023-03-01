@@ -1,12 +1,14 @@
 <script lang="ts">
 import { onMount } from 'svelte';
 import ThinBar from '$lib/components/pagecomps/ThinBar.svelte'
+import BolSearch from '$lib/components/reuse/BolSearch.svelte'
+import BolSearch2 from '$lib/components/reuse/BolSearch.svelte'
 import { reveal } from 'svelte-reveal'
 import { fly } from 'svelte/transition'
 import { quadOut } from 'svelte/easing'
-
+let isShow = false
 import supabase from '$lib/db'
-
+let inputTerm:any
 
 let isEss = false
 let isIKS = false
@@ -40,6 +42,9 @@ const showImage = async (imagelinker:any) => {
 			selectedLink = null
       selectedAuth = null
   }
+}
+function toggleShow(){
+	isShow = !isShow
 }
 
 export async function getEss(){
@@ -158,13 +163,38 @@ export async function getHis(){
 <div class="box-c x2 m-mid">
 	<h3 class="lining" data-textify>Browse the Library</h3>
 </div>
-
-<div class="box-r m-mid h100 pad80-t gap3 x3">
+<div class="c-second">
+	<div class="box-c menutwo" on:click={toggleShow} on:keydown={toggleShow}>
+			<svg width="100%" height="100%" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M0.767578 0.37207H8.76758V8.37207H0.767578V0.37207Z" fill="#FE4A49"/>
+			<path d="M0.767578 12.3721H8.76758V20.3721H0.767578V12.3721Z" fill="#FE4A49"/>
+			<path d="M8.76758 24.3721H0.767578V32.3721H8.76758V24.3721Z" fill="#FE4A49"/>
+			<path d="M12.7676 0.37207H20.7676V8.37207H12.7676V0.37207Z" fill="#FE4A49"/>
+			<path d="M20.7676 12.3721H12.7676V20.3721H20.7676V12.3721Z" fill="#FE4A49"/>
+			<path d="M12.7676 24.3721H20.7676V32.3721H12.7676V24.3721Z" fill="#FE4A49"/>
+			<path d="M32.7676 0.37207H24.7676V8.37207H32.7676V0.37207Z" fill="#FE4A49"/>
+			<path d="M24.7676 12.3721H32.7676V20.3721H24.7676V12.3721Z" fill="#FE4A49"/>
+			<path d="M32.7676 24.3721H24.7676V32.3721H32.7676V24.3721Z" fill="#FE4A49"/>
+		</svg>
+	</div>
+	{#if isShow}
+		<div class="sidebar-draw">
+			<div class="box-r closestrip" on:click={toggleShow} on:keydown={toggleShow}>
+				<img src="/images/icons/hamburger-close.png" alt="closer" />
+			</div>
+			<BolSearch2></BolSearch2>
+		</div>
+	{/if}
+</div>
+<div class="box-r m-mid h100 pad32-t gap3 x3">
 	<div class="box-c left-col link-heads">
 		<h5 id='class-1' class="w600 upper" on:click={toggleEss} on:keydown={toggleEss}>Essentials</h5>
 		<h5 id='class-2' class="w600 upper" on:click={toggleBodha} on:keydown={toggleBodha}>Two Bodhas</h5>
 		<h5 id='class-3' class="w600 upper" on:click={toggleIKS} on:keydown={toggleIKS}>Indian Knowledge Systems</h5>
 		<h5 id='class-5' class="w600 upper" on:click={toggleHis} on:keydown={toggleHis}>History</h5>
+		<div class="box-c searcher">
+			<BolSearch></BolSearch>
+		</div>
 	</div>
 	<div class="box-c mid-col">
 		{#if isEss}
@@ -243,19 +273,19 @@ export async function getHis(){
 	<div class="box-r h100p wrap gap3 m-sm specialsrow">
 		<div class="w500 box-c wd3 col3">
 			<h6 class="tree"><a href="/openlibrary/specials/aryanissue">The Āryan Issue</a></h6>
-			<p class="grey">
+			<p class="w400 grey">
 				A collection of books, articles, and research findings on the matter of Indo-European linguistic origins and dispersals. This is intended as a yeoman's service to have one-point of reference on the whole Aryan invasion/migration/trickling-in debate.
 			</p>
 		</div>
 		<div class="w500 box-c wd3 col3">
 			<h6 class="tree">Repository of Scripture</h6>
-			<p class="grey">
+			<p class="w400 grey">
 				Bringing together all public-domain translations and Sanskrit versions of Hindu scripture- Veda, Purāṇa, Śāstra and more.
 			</p>
 		</div>
 		<div class="w500 box-c wd3 col3">
 			<h6 class="tree"><a href="/openlibrary/reader">The Reading Room</a></h6>
-			<p class="grey">
+			<p class="w400 grey">
 				A unique section that is built for individual discovery paths. Think of the Reading Room as a way to synaptically reconnect with the civilizational consciousness. Begin now!
 			</p>
 		</div>
@@ -290,33 +320,20 @@ export async function getHis(){
 	font-weight: 600;
 }
 .x3 { background: white;}
-.link-heads h5 { cursor: pointer; position: relative;}
-.link-heads h5:hover { background: var(--beau); color: white;}
+
 .x4 .col3 { transform-origin: center center; transition: all 0.6s ease; overflow: hidden;}
 .lining {
 	border-left: 4px solid var(--tree);
 	color: #a7a7a7;
 }
-.link-heads h5::before {
-	position: absolute;
-	top: 0;
-	left: 0;
-	content: '';
-	height: 100%;
-	border-bottom: 4px solid var(--tree);
-	z-index: 0;
+
+.menutwo svg path {
+	fill: var(--tree);
 }
-.link-heads h5:hover::before {
-	animation: yellowline 0.4s var(--cubeb) forwards;
-}
-@keyframes yellowline {
-	0% { width: 0%;}
-	100% {width: 100%;}
-}
+
 
 @media screen and (min-width: 900px) {
 	.deets-l { width: 40%;}
-	.link-heads h5 { padding: 8px; margin: 0; border-bottom: 1px solid #d7d7d7; padding-left: 16px;}
 	.x1 { height: 100vh; width: 100%; position: sticky; top: 0;}
 	.x1 .box-c { justify-content: flex-end; padding-left: 16px;}
 	.x1 .box-c .grey { margin-bottom: 128px; color: #b7b7b7;}
@@ -352,7 +369,13 @@ export async function getHis(){
 		.x1 .box-c { height: 100%; padding-left: 16px; padding-right: 16px; justify-content: center;}
 		.x1 { padding-bottom: 0; padding-top: 80px;}
 		.imageholder { height: 88vh !important;}
-	
+		.x2 { margin-top: 48px;}
+		.left-col { width: 35%;}
+		.mid-col { width: 35%;}
+		.right-col { width: 30%;}
+		.right-col p { font-size: 14px;}
+		.right-col small { font-size: 10px;}
+		.x4 h3 { margin-top: 32px;}
 	
 }
 @media screen and (min-width: 576px) and (max-width: 767px) {
@@ -386,6 +409,7 @@ export async function getHis(){
 	.x3, .x2 { display: none;}
 
 	.specialsrow .col3 { padding: 0;}
+	.specialsrow { padding: 0 0 32px 0;}
 
 	
 }
