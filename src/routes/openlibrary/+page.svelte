@@ -13,11 +13,7 @@ let isIKS = false
 let isBodha = false
 let isHis = false
 let isRos = false
-let isSpecial1 = false
-let isSpecial2 = false
-let isSpecial3 = false
 let ax = 1
-let selectedItem:any
 let selectedImage:any = null
 let selectedDesc:any = null
 let selectedLink:any = null
@@ -59,23 +55,56 @@ export async function getEss(){
 
 function toggleEss(){
 	isEss = !isEss
+	if ( isIKS == true) {
+		isIKS = false
+	}
+	if ( isBodha == true) {
+		isBodha = false
+	}
+	if (isHis == true) {
+		isHis = false
+	}
 }
 
 function toggleIKS(){
 	isIKS = !isIKS
+	if ( isEss == true) {
+		isEss = false
+	}
+	if ( isBodha == true) {
+		isBodha = false
+	}
+	if (isHis == true) {
+		isHis = false
+	}
 }
 
 function toggleBodha(){
 	isBodha = !isBodha
+	if ( isIKS == true) {
+		isIKS = false
+	}
+	if ( isEss == true) {
+		isEss = false
+	}
+	if (isHis == true) {
+		isHis = false
+	}
 }
 
 function toggleHis(){
 	isHis = !isHis
+	if ( isIKS == true) {
+		isIKS = false
+	}
+	if ( isBodha == true) {
+		isBodha = false
+	}
+	if (isEss == true) {
+		isEss = false
+	}
 }
 
-function toggleRos(){
-	isRos = !isRos
-}
 
 export async function getIKS(){
 	const { data, error } = await supabase
@@ -97,15 +126,6 @@ export async function getBodhas(){
 	return data
 }
 
-export async function getRos(){
-	const { data, error } = await supabase
-	.from('brhat-openlibrary')
-	.select()
-	.eq('Type','Repository of Scripture')
-	.order('Sno',{ascending: false})
-	if (error) throw new Error(error.message)
-	return data
-}
 
 export async function getHis(){
 	const { data, error } = await supabase
@@ -121,39 +141,38 @@ export async function getHis(){
 
 <svelte:window bind:scrollY={ax}/>
 <ThinBar></ThinBar>
-<div class="flexbox-r minmargins x1">
-	<div class="in-col">
-		<h4 class="wide75 m-bot-24">
+<div class="box-r wrap h100 m-mid x1">
+	<div class="box-c h100p wd2 b-l">
+		<h4 class="wide75 tree m-bot-24">
 		Bṛhat Open Library is an Online Repository for Texts, Papers, Learning Material and More.
 		</h4>
-		<p class="wide75 grey2">
+		<p class="wide75 grey">
 			It is a tribute to the hard labor of people known and unknown that have created for us an unbelievable repository of Indian knowledge. All material here is sourced from public domains, permitted for resharing, and uploaded under the CC0 1.0 Open License. If you find any material that violates this, please write to us at contact@brhat.in and we will remove it from the collection. New books added every week.
 		</p>
 	</div>
-	<div class="imageholder">
+	<div class="box-c imageholder h100p wd2 b-r">
 		<img src="/images/herocovers/bolherobrhat.webp" alt="reading"/>
 	</div>
 </div>
 
-<div class="flexbox-c x2 minmargins">
-	<p class="wbold lining grey2">Browse the Library:</p>
+<div class="box-c x2 m-mid">
+	<h4 class="lining" data-textify>Browse the Library</h4>
 </div>
 
-<div class="flexbox-r minmargins x3">
-	<div class="in-col left-col link-heads">
+<div class="box-r m-mid h100 pad80-t gap3 x3">
+	<div class="box-c left-col link-heads">
 		<h5 id='class-1' class="w600 upper" on:click={toggleEss} on:keydown={toggleEss}>Essentials</h5>
 		<h5 id='class-2' class="w600 upper" on:click={toggleBodha} on:keydown={toggleBodha}>Two Bodhas</h5>
 		<h5 id='class-3' class="w600 upper" on:click={toggleIKS} on:keydown={toggleIKS}>Indian Knowledge Systems</h5>
-		<h5 id='class-4' class="w600 upper" on:click={toggleRos} on:keydown={toggleRos}>Scriptural</h5>
 		<h5 id='class-5' class="w600 upper" on:click={toggleHis} on:keydown={toggleHis}>History</h5>
 	</div>
-	<div class="in-col mid-col" data-lenis-prevent>
+	<div class="box-c mid-col" data-lenis-prevent>
 		{#if isEss}
 		{#await getEss()}
 		<small>...</small>
 		{:then data}
 		{#each data as item, i}
-			<div class="in-col txt22" id="ess" use:reveal={{transition: "slide", delay: 10*i}}>
+			<div class="box-c txt22" id="ess" use:reveal={{transition: "slide", delay: 10*i}}>
 				<p class="w500 grey2" on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
 			</div>
 		{/each}
@@ -166,7 +185,7 @@ export async function getHis(){
 		<small>...</small>
 		{:then data}
 		{#each data as item}
-			<div class="in-col txt22" id="ess" use:reveal={{transition: "fly"}}>
+			<div class="box-c txt22" id="ess" use:reveal={{transition: "fly"}}>
 				<p class="w500 grey2" on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
 			</div>
 		{/each}
@@ -180,7 +199,7 @@ export async function getHis(){
 		<small>...</small>
 		{:then data}
 		{#each data as item}
-		<div class="in-col txt22" id="bodha" use:reveal={{transition: "fly"}}>
+		<div class="box-c txt22" id="bodha" use:reveal={{transition: "fly"}}>
 			<p class="w500 grey2" on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
 		</div>	
 		{/each}
@@ -194,7 +213,7 @@ export async function getHis(){
 		<small>...</small>
 		{:then data}
 		{#each data as item}
-		<div class="in-col txt22" id="bodha" use:reveal={{transition: "fly"}}>
+		<div class="box-c txt22" id="bodha" use:reveal={{transition: "fly"}}>
 			<p class="w500 grey2" on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
 		</div>	
 		{/each}
@@ -203,26 +222,13 @@ export async function getHis(){
 		{/await}
 		{/if}
 
-		{#if isRos}
-		{#await getRos()}
-		<small>...</small>
-		{:then data}
-		{#each data as item}
-		<div class="in-col txt22" id="bodha" use:reveal={{transition: "fly"}}>
-			<p class="w500 grey2" on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
-		</div>	
-		{/each}
-		{:catch error}
-		<pre>{error}</pre>
-		{/await}
-		{/if}
 	</div>
-	<div class="in-col right-col">
+	<div class="box-c right-col">
 		{#if selectedImage}
-			<div class="in-col details-col" in:fly={{ delay: 200, duration: 200, x: 400, y: 0, easing: quadOut}} out:fly={{ delay: 0, duration: 200, x: -400, y: 0, easing: quadOut}}>
+			<div class="box-c details-col" in:fly={{ delay: 200, duration: 200, x: 400, y: 0, easing: quadOut}} out:fly={{ delay: 0, duration: 200, x: -400, y: 0, easing: quadOut}}>
 				<p class="grey2">{selectedDesc}</p>
-					<div class="in-col deets-l">
-						<button class="threebutton-un"><a href="/openlibrary/books/{selectedLink}">Read Now</a></button>
+					<div class="box-c deets-l">
+						<button class="treebutton"><a href="/openlibrary/books/{selectedLink}">Read Now</a></button>
 					</div>
 				<small>{selectedAuth}</small>
 			</div>
@@ -232,17 +238,26 @@ export async function getHis(){
 	</div>
 </div>
 
-<div class="flexbox-c minmargins x4 txth1">
+<div class="box-c m-mid x4">
 	<h4 class="lining" data-textify>Special Sections</h4>
-	<div class="in-row specialsrow">
-		<div class="w500 in-col col3">
-			<img id="img1" src="/images/rid/panel1.webp" alt="one" style="transform: translateY({-ax/8}px)"/>
+	<div class="box-r h100p wrap gap3 m-sm specialsrow">
+		<div class="w500 box-c wd3 col3">
+			<h6 class="tree">The Āryan Issue</h6>
+			<p class="grey">
+				A collection of books, articles, and research findings on the matter of Indo-European linguistic origins and dispersals. This is intended as a yeoman's service to have one-point of reference on the whole Aryan invasion/migration/trickling-in debate.
+			</p>
 		</div>
-		<div class="w500 in-col col3">
-			<img src="/images/rid/panel2.webp" alt="one" style="transform: translateY({-ax/8}px)"/>
+		<div class="w500 box-c wd3 col3">
+			<h6 class="tree">Repository of Scripture</h6>
+			<p class="grey">
+				Bringing together all public-domain translations and Sanskrit versions of Hindu scripture- Veda, Purāṇa, Śāstra and more.
+			</p>
 		</div>
-		<div class="w500 in-col col3">
-			<img src="/images/rid/panel3.webp" alt="one" style="transform: translateY({-ax/8}px)"/>
+		<div class="w500 box-c wd3 col3">
+			<h6 class="tree">The Reading Room</h6>
+			<p class="grey">
+				A unique section that is built for individual discovery paths. Think of the Reading Room as a way to synaptically reconnect with the civilizational consciousness. Begin now!
+			</p>
 		</div>
 	</div>
 </div>
@@ -263,13 +278,13 @@ export async function getHis(){
 	padding: 4px;
 	border-bottom: 1px solid #f1f1f1;
 }
-.txt22 p:hover { color: var(--yell); cursor: pointer; transform: scale(0.9);}
+.txt22 p:hover { color: var(--tree); cursor: pointer; transform: scale(0.9);}
 .details-col small {
-	background: var(--yell);
+	background: var(--tree);
 	color: white;
 	padding: 4px;
 	width: max-content;
-	font-size: 10px;
+	font-size: 12px;
 	text-transform: uppercase;
 	letter-spacing: 0px;
 	font-weight: 600;
@@ -279,7 +294,8 @@ export async function getHis(){
 .link-heads h5:hover { background: var(--beau); color: white;}
 .x4 .col3 { transform-origin: center center; transition: all 0.6s ease; overflow: hidden;}
 .lining {
-	border-left: 4px solid #FF9F1C;
+	border-left: 4px solid var(--tree);
+	color: #a7a7a7;
 }
 .link-heads h5::before {
 	position: absolute;
@@ -287,7 +303,7 @@ export async function getHis(){
 	left: 0;
 	content: '';
 	height: 100%;
-	border-bottom: 4px solid #FF9F1C;
+	border-bottom: 4px solid var(--tree);
 	z-index: 0;
 }
 .link-heads h5:hover::before {
@@ -301,11 +317,10 @@ export async function getHis(){
 @media screen and (min-width: 900px) {
 	.deets-l { width: 40%;}
 	.link-heads h5 { padding: 8px; margin: 0; border-bottom: 1px solid #d7d7d7; padding-left: 16px;}
-	.x1 { min-height: 100vh; position: relative; width: 100%; position: sticky; top: 0; justify-content: flex-end; align-items: flex-end;}
-	.x1 .in-col { width: 50%;}	
-	.x1 .in-col .grey2 { margin-bottom: 128px; color: #b7b7b7;}
-	.x1 .imageholder { max-width: 44vw; height: 88vh; display: flex; flex-direction: column; overflow: hidden; }
-	.x1 .imageholder img { object-fit: cover; height: 88vh; width: 44vw; object-position: 99% center;}
+	.x1 { height: 100vh; width: 100%; position: sticky; top: 0;}
+	.x1 .box-c { justify-content: flex-end; padding-left: 16px;}
+	.x1 .box-c .grey { margin-bottom: 128px; color: #b7b7b7;}
+	.x1 .imageholder img { object-fit: cover; height: 100%; width: 100%; object-position: 99% center;}
 	.x2 { padding-bottom: 4px; width: 100%; background: white; background: white;}
 	.x2 .lining { padding-top: 4px; padding-bottom: 2px; padding-left: 16px; background: white;}
 	.x3 {
@@ -325,30 +340,33 @@ export async function getHis(){
 	}
 	.left-col { width: 32%;}
 	.right-col { width: 28%; }
-	.threebutton-un { margin-bottom: 24px;}
+	.treebutton { margin-bottom: 24px;}
 	.details-col { padding: 32px;border: 1px solid #d7d7d7; border-radius: 4px;}
-	.col3 { width: calc(94%/3); height: 240px; overflow-y: hidden; position: relative;transform-origin: center center; transition: all 0.1s var(--cubed);}
-
-
-	.col3 img { height: 1024px; object-fit: cover; height: 400px; object-position: center top; }
-	.col3:hover { transform: scale(0.96);}
-
+	.col3 { height: 100%; position: relative;transform-origin: center center; transition: all 0.1s var(--cubed);}
 
 	.x4 { padding-top: 80px; padding-bottom: 80px; gap: 24px; height: 100%; align-items: flex-start; border-bottom: 1px solid #d7d7d7; }
-	.x4 .lining { padding-left: 16px; color: #b7b7b7;}
-	.specialsrow { justify-content: space-between; padding-left: 16px;}
+	.x4 .lining { padding-left: 16px;}
+	.specialsrow { width: 100%;}
 }
 
+@media screen and (max-width: 899px) and (min-width: 768px) {
+		.x1 .imageholder img { object-fit: cover; height: 100%; width: 100%; object-position: 20% center;}
+		.x1 .box-c { height: 100%; padding-left: 16px; padding-right: 16px; justify-content: center;}
+		.x1 { padding-bottom: 0; padding-top: 80px;}
+		.imageholder { height: 88vh !important;}
+		.lining { padding-left: 16px;}
+	
+}
 @media screen and (min-width: 576px) and (max-width: 767px) {
-	.x1 .imageholder { order: 1; height: 40vh;}
-	.imageholder img { object-fit: cover; height: 100%; width: 100vw; object-position: center center;}
-	.x1 .in-col { order: 2; padding: 32px; height: 100%;}
+	.x1 .b-r { order: 1; }
+	.imageholder img { object-fit: cover; height: 100%; width: 100%; object-position: center center;}
+	.x1 .b-l { order: 2; padding-top: 32px;}
 	.x1 { width: 100vw; padding-top: 72px;}
 	.x2, .x3 { display: none;}
-	.lining { padding-left: 28px;}
-	.specialsrow { padding: 0 32px; gap: 24px; margin-bottom: 32px;}
-	.col3 { height: 144px; overflow-y: hidden;}
-	.col3 img { height: 300px; width: 300px; object-position: -50px 0px;}
+	.lining { padding-left: 16px;}
+	.specialsrow { margin-bottom: 32px;}
+	
+
 }
 
 @media screen and (max-width: 575px) {
@@ -361,17 +379,16 @@ export async function getHis(){
 		height: 100%;
 		object-position: center center;
 	}
-	.x1 .in-col {
+	.x1 .b-l {
 		order: 2;
-		padding: 24px;
 		height: 100%;
+		padding-top: 24px;
 	}
 	.x1 { min-height: 100vh; padding-top: 64px; width: 100vw;}
-	.x2 p { padding-left: 20px; font-size: 20px; display: none;}
-	.x3 { display: none;}
-	.lining { padding-left: 20px;}
-	.specialsrow { padding: 8px 24px 24px 24px; gap: 16px; height: 216px; overflow-y: hidden;}
-	.specialsrow .col3 { height: 100px; overflow-y: hidden !important;}
-	.col3 img { height: 500px; object-fit: cover; width: 500px; object-position: -200px -100px;}
+	.x3, .x2 { display: none;}
+	.lining { padding-left: 16px;}
+	.specialsrow .col3 { padding: 0;}
+
+	
 }
 </style>

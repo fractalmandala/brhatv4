@@ -1,3 +1,12 @@
+body, html, *
+	box-sizing: border-box
+
+:root
+	--tree: #0B6E4F
+
+.tree
+	color: var(--tree)
+
 .box-c
 	display: flex
 	flex-direction: column
@@ -33,6 +42,23 @@
 		position: sticky
 		top: 0
 		left: 0
+	@media screen and (max-width: 767px)
+		width: 100vw
+		height: 36px
+		position: fixed
+		flex-direction: row
+		display: flex
+		top: 64px
+		left: 0
+		background: rgba(255,255,255,0.9)
+		backdrop-filter: blur(4px)
+		align-items: center
+		justify-content: flex-end
+		padding-left: 24px
+		padding-right: 16px
+		border-bottom: 1px solid #d7d7d7
+
+.c-second
 	@media screen and (max-width: 767px)
 		width: 100vw
 		height: 36px
@@ -108,7 +134,7 @@
 	@media screen and (min-width: 900px)
 		min-height: 100vh
 	@media screen and (max-width: 899px) and (min-width: 768px)
-		height: 100%
+		min-height: 100vh
 	@media screen and (max-width: 767px) and (min-width: 576px)
 		height: 100%
 	@media screen and (max-width: 575px)
@@ -140,6 +166,8 @@
 		width: 33.33%
 	@media screen and (max-width: 767px)
 		width: 100%
+		height: 100%
+		
 
 .allwrap .wd3
 	@media screen and (min-width: 768px)
@@ -173,6 +201,16 @@
 	@media screen and (min-width: 768px)
 		width: 13.5%
 
+.wide75
+	@media screen and (min-width: 768px)
+		width: 75%
+	@media screen and (max-width: 767px)
+		width: 100%
+
+.wd2
+	.wide75
+		@media screen and (max-width: 899px)
+			width: 100%
 
 .gap3
 	@media screen and (min-width: 900px)
@@ -299,6 +337,21 @@
 	@media screen and (min-width: 768px)
 		margin-top: 64px
 
+.title
+	&::first-letter
+		color: #fe4a49
+	@media screen and (min-width: 768px)
+		padding-top: 32px
+		position: relative
+	&::before
+		position: absolute
+		top: 0
+		left: 0
+		height: 100%
+		width: 16%
+		content: ''
+		border-top: 1px solid #d7d7d7
+
 .mainbutton
 	background-color: var(--soft)
 	border: none
@@ -331,17 +384,30 @@
 		max-width: 144px
 		min-width: 144px
 
-.title
-	&::first-letter
-		color: #fe4a49
+.treebutton
+	background-color: transparent
+	border: 2px solid #878787
+	color: #878787
+	font-weight: 400
+	letter-spacing: 1px
+	border-radius: 4px
+	transform-origin: center center
+	transition: transform 0.08s var(--cubeb)
+	a
+		color: #878787
+		&:hover
+			color: white
+	&:hover
+		background-color: var(--tree)
+		border: 2px solid var(--tree)
+		transform: scale(0.9)
+		a
+			color: white
 	@media screen and (min-width: 768px)
-		padding-top: 32px
-		position: relative
-	&::before
-		position: absolute
-		top: 0
-		left: 0
-		height: 100%
-		width: 16%
-		content: ''
-		border-top: 1px solid #d7d7d7
+		padding: 8px
+		font-size: 12px
+		font-weight: 500
+		text-transform: uppercase
+	@media screen and (max-width: 767px)
+		padding: 8px
+		font-size: 12px
