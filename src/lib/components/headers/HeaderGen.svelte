@@ -174,6 +174,7 @@ function toggleMenu(){
 	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5 class="w600 white upper"><a href="/openlibrary">Bṛhat Open Library</a></h5>
 			<h6 class="w400 grey"><a href="/openlibrary/reader">Reading Room</a></h6>
+			<h6 class="w400 grey"><a href="/openlibrary/specials/aryanissue">The Āryan Issue</a></h6>
 			<h6 class="w400 grey"><a href="/openlibrary/specials/aryanissue">Essentials</a></h6>
 			<h6 class="w400 grey"><a href="/openlibrary/specials/aryanissue">IKS</a></h6>
 			<h6 class="w400 grey"><a href="/openlibrary/specials/aryanissue">The Two Bodhas</a></h6>

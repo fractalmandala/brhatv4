@@ -166,7 +166,7 @@ export async function getHis(){
 		<h5 id='class-3' class="w600 upper" on:click={toggleIKS} on:keydown={toggleIKS}>Indian Knowledge Systems</h5>
 		<h5 id='class-5' class="w600 upper" on:click={toggleHis} on:keydown={toggleHis}>History</h5>
 	</div>
-	<div class="box-c mid-col" data-lenis-prevent>
+	<div class="box-c mid-col">
 		{#if isEss}
 		{#await getEss()}
 		<small>...</small>
@@ -242,7 +242,7 @@ export async function getHis(){
 	<h4 class="lining" data-textify>Special Sections</h4>
 	<div class="box-r h100p wrap gap3 m-sm specialsrow">
 		<div class="w500 box-c wd3 col3">
-			<h6 class="tree">The Āryan Issue</h6>
+			<h6 class="tree"><a href="/openlibrary/specials/aryanissue">The Āryan Issue</a></h6>
 			<p class="grey">
 				A collection of books, articles, and research findings on the matter of Indo-European linguistic origins and dispersals. This is intended as a yeoman's service to have one-point of reference on the whole Aryan invasion/migration/trickling-in debate.
 			</p>
@@ -254,7 +254,7 @@ export async function getHis(){
 			</p>
 		</div>
 		<div class="w500 box-c wd3 col3">
-			<h6 class="tree">The Reading Room</h6>
+			<h6 class="tree"><a href="/openlibrary/reader">The Reading Room</a></h6>
 			<p class="grey">
 				A unique section that is built for individual discovery paths. Think of the Reading Room as a way to synaptically reconnect with the civilizational consciousness. Begin now!
 			</p>
@@ -322,7 +322,6 @@ export async function getHis(){
 	.x1 .box-c .grey { margin-bottom: 128px; color: #b7b7b7;}
 	.x1 .imageholder img { object-fit: cover; height: 100%; width: 100%; object-position: 99% center;}
 	.x2 { padding-bottom: 4px; width: 100%; background: white; background: white;}
-	.x2 .lining { padding-top: 4px; padding-bottom: 2px; padding-left: 16px; background: white;}
 	.x3 {
 		align-items: flex-start;
 		height: 100%;
@@ -333,7 +332,6 @@ export async function getHis(){
 	.mid-col, .left-col, .right-col { height: max-content; background: white; z-index: 2;}
 
 	.mid-col { 
-		max-height: 500px; 
 		width: 40%; 
 		padding: 0 16px;
 		overflow-y: scroll;
@@ -354,7 +352,7 @@ export async function getHis(){
 		.x1 .box-c { height: 100%; padding-left: 16px; padding-right: 16px; justify-content: center;}
 		.x1 { padding-bottom: 0; padding-top: 80px;}
 		.imageholder { height: 88vh !important;}
-		.lining { padding-left: 16px;}
+	
 	
 }
 @media screen and (min-width: 576px) and (max-width: 767px) {
@@ -363,7 +361,7 @@ export async function getHis(){
 	.x1 .b-l { order: 2; padding-top: 32px;}
 	.x1 { width: 100vw; padding-top: 72px;}
 	.x2, .x3 { display: none;}
-	.lining { padding-left: 16px;}
+
 	.specialsrow { margin-bottom: 32px;}
 	
 
@@ -386,7 +384,7 @@ export async function getHis(){
 	}
 	.x1 { min-height: 100vh; padding-top: 64px; width: 100vw;}
 	.x3, .x2 { display: none;}
-	.lining { padding-left: 16px;}
+
 	.specialsrow .col3 { padding: 0;}
 
 	
