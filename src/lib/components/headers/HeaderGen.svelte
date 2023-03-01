@@ -201,7 +201,12 @@ function toggleMenu(){
 			<h6 class="w400 grey"><a href="/drashta/#darshanas">Darśanas</a></h6>
 	</div>
 	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
-		<h5 class="w600 white upper"><a href="/anveṣī">Bṛhatanveṣī</a></h5>
+		<h5 class="w600 white upper"><a href="/anveshi">Bṛhatanveṣī</a></h5>
+			<h6 class="w400 grey"><a href="/anveshi/chapter/chamba">Chamba</a></h6>
+			<h6 class="w400 grey"><a href="/anveshi/chapter/odisha">Odisha</a></h6>
+			<h6 class="w400 grey"><a href="/anveshi/chapter/karnataka">Karnataka</a></h6>
+			<h6 class="w400 grey"><a href="/anveshi/diaries">Travel Diaries</a></h6>
+			<h6 class="w400 grey"><a href="/anveshi/faq">FAQs</a></h6>
 	</div>
 	<div class="in-col menu-linker on:click={toggleMenu} on:keydown={toggleMenu}">
 		<h5 class="w600 white upper"><a href="/mrdanga">Bṛhadmṛdaṅga</a></h5>

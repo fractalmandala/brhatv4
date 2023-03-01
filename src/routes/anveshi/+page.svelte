@@ -1,17 +1,10 @@
 <script>
 import supabase from '$lib/db'
 import ThinBar from '$lib/components/pagecomps/ThinBar.svelte'
-import Chapters from '$lib/components/headers/StaticH1.svelte'
-import Diaries from '$lib/components/headers/StaticH1.svelte'
+import Parallax from '$lib/components/animations/Parallax.svelte'
 import FAQ from '$lib/components/pagecomps/AnveshiFAQ.svelte'
-import FAQBox from '$lib/components/headers/StaticH1.svelte'
-import Who from '$lib/components/headers/StaticH1.svelte'
 let y = 1
 let isFull = false
-
-function toggleFull(){
-	isFull = !isFull
-}
 
 export async function allImages() {
 	const { data, error } = await supabase
@@ -45,32 +38,39 @@ export async function allChapters() {
 </script>
 
 <svelte:window bind:scrollY={y}/>
-<div class="flexbox-c imgbox x0">
+<div class="box-c back-image x0">
 	<img src="/images/herocovers/brhatanveshi.webp" alt="hero" style="transform: translateY({y/4}px)"/> 
 </div>
+
 <ThinBar></ThinBar>
-<div class="flexbox-r minmargins-a lm0">
+
+
+
+<div class="box-r m-mid ll lm0">
 		<h3 class="w700 wide75">
 			B<span class="soft">ṛ</span>hat Anveṣī is a travel program to contemporize ancient Indian tradition by guiding travel groups through hitherto rarely explored sacred kṣetras of India.
 		</h3>
 </div>
-<div class="flexbox-c x2 minmargins">
-	<h3 class="w600 lining grey2" data-textify>Chapters:</h3>
+
+
+<Parallax --parallaximage="url('/images/herocovers/anveshinewwall.webp')"></Parallax>
+
+<div class="box-c titling m-mid">
+	<h3 class="lining" data-textify>Chapters</h3>
 </div>
 
-
-<div class="flexbox-r minmargins-a x3 xc">
+<div class="box-r wrap m-large x3 gap3">
 		{#await allChapters()}
 		<small>loading chapters...</small>
 		{:then data}
 		{#each data as item}
-		<div class="in-col wide33">
+		<div class="box-c h100p wd3">
 			<img src={item.image} alt={item.name}>
 			<h5 class="m-top-24 m-bot-zero"><a href={item.link}>{item.name}</a></h5>
-			<p class="m-top-24 grey">{item.content.slice(0,250)}<a class="readmore" href={item.link}>...Read More</a></p>
-			<div class="in-row gap24">
-				<cite class="wbold upper blue">{item.duration}</cite>
-				<cite class="wbold blue">{item.dates}</cite>
+			<p class="m-top-8 grey">{item.content.slice(0,250)}<a class="readmore" href={item.link}>...Read More</a></p>
+			<div class="box-r gap24">
+				<cite class="wbold upper grey">{item.duration}</cite>
+				<cite class="wbold grey">{item.dates}</cite>
 			</div>
 		</div>
 		{/each}
@@ -79,43 +79,43 @@ export async function allChapters() {
 		{/await}
 </div>
 
-<div class="flexbox-c x2 minmargins">
+<div class="box-c titling m-mid">
 	<h3 class="w600 lining grey2" data-textify>Anveṣī Diaries:</h3>
 </div>
 
 
-<div class="flexbox-c minmargins-a x3 xc">
-		<h6 class="w400 wide75">
-			Anveṣī Diaries is a collection of traveller images, trip videos, testimonials and writings from our trips. To submit your own experience, please write to anveshi@brhat.in
-		</h6>
-		<h5 class="wbold">
-			Artwork by Ashish Kundalia
-		</h5>
-		<div class="flexbox-r of-four m-bot-24 diaries wrapper">
-			{#await allImages()}
-			<small>...</small>
-			{:then data}
-			{#each data as item}
-			<div class="in-col wide25 l1a">
+<div class="box-c m-mid h100p xc">
+	<h5 class="w400 wide75 m-top-zero m-bot-zero">
+		Anveṣī Diaries is a collection of traveller images, trip videos, testimonials and writings from our trips. To submit your own experience, please write to anveshi@brhat.in
+	</h5>
+	<h5 class="wbold">
+		Artwork by Ashish Kundalia
+	</h5>
+	<div class="box-r gap4 m-sm h100p diaries allwrap">
+		{#await allImages()}
+		<small>...</small>
+		{:then data}
+		{#each data as item}
+			<div class="box-c wd4 l1a">
 				<img src={item.image} alt={item.id} />
 			</div>
-			{/each}
-			{:catch error}
-			<pre>{error}</pre>
-			{/await}
-		</div>
-		<h5 class="wbold top-gap m-bot-zero">
-			Video Testimonials <span class="w400 red"><p><a href="https://youtube.com/@brhat">View on YouTube</a></p></span>
-		</h5>
-		<div class="flexbox-r of-four pad-y-b videos">
+		{/each}
+		{:catch error}
+		<pre>{error}</pre>
+		{/await}
+	</div>
+	<h5 class="wbold m-bot-zero" id="hhhhh">
+		Video Testimonials <span class="w400 red"><p><a href="https://youtube.com/@brhat">View on YouTube</a></p></span>
+	</h5>
+	<div class="box-r wrap pad80-b m-sm gap4 h100p">
 			{#await getVids()}
 			<small>loading chapters...</small>
 			{:then data}
 			{#each data as item}
-			<div class="in-col wide25">
+			<div class="box-c wd4">
 				<iframe
   					class="m-1"
-  					width=88%
+  					width=100%
   					height=100%
   					src="https://www.youtube.com/embed/{item.videoid}"
   					title={item.name}
@@ -129,13 +129,11 @@ export async function allChapters() {
 		</div>
 	</div>
 
-<div class="flexbox-c x2 minmargins">
-	<h3 class="w600 lining grey2" data-textify>Who is Bṛhat Anveṣī:</h3>
+<div class="box-c titling m-bot-zero m-mid">
+	<h3 class="w600 lining grey2 m-bot-zero" data-textify>Who is Bṛhat Anveṣī:</h3>
 </div>
 
-
-
-<div class="flexbox-c minmargins-a x3 xc">
+<div class="box-c m-sm">
 		<h6 class="w400 wide75 m-top-zero">
 				A human being is born to search: for truth; for beauty; for meaning in life. Kaśmīra Śaiva darśana tells us that, vimarṣa – Śiva reflecting upon himself – is one of the highest goals of existence itself. According to another school of thought, Nature nudged evolution to a point where a species would emerge capable of reflecting upon itself and the mysteries of the cosmos, life and existence.
 		<br><br>	
@@ -152,13 +150,13 @@ export async function allChapters() {
 	</h6>
 </div>
 
-<div class="flexbox-c x2 minmargins">
+<div class="box-c m-sm titling">
 	<h3 class="w600 lining grey2" data-textify>FAQ:</h3>
 </div>
 
-<div class="flexbox-c minmargins-a x3 xc">
+<div class="box-c m-sm">
 		<FAQ></FAQ>	
-	</div>
+</div>
 
 
 
@@ -170,14 +168,16 @@ export async function allChapters() {
 	border-left: 4px solid var(--soft);
 }
 
-
+.x0 { overflow-y: hidden;}
 @media screen and (min-width: 900px) {
-	.lm0 { height: 100vh; align-items: flex-end; }
-	.lm0 h3 { letter-spacing: -2px;}
-	.x2 { padding-bottom: 4px; width: 100%; background: white; background: white; height: 80px;border-top: 1px solid #d7d7d7; padding-top: 24px;}
-	.x2 .lining { padding-top: 4px; padding-bottom: 2px; padding-left: 16px; background: white;}
-.x3 { height: 100%; width: 100%; gap: 24px; background: white; padding-top: 48px; padding-bottom: 80px;}
-	.diaries .in-col img {
+	#hhhhh { margin-top: 80px;}
+	.x0 { height: 100vh;}
+	.lm0 { height: 80vh; align-items: center; }
+	.lm0 h3 { padding-left: 16px; }
+
+	.x3 { padding-top: 32px; padding-bottom: 32px; height: 80vh;}
+	.xc h5 { padding-left: 16px;}
+	.diaries .box-c img {
 		object-fit: cover;
 		width: 100%;
 		height: 200px;
@@ -186,34 +186,34 @@ export async function allChapters() {
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
-		.lm0 { height: 100vh; align-items: flex-end; }
+		.lm0 { height: 100vh; align-items: center; }
 		.x0 img { object-fit: cover; height: 100vh;}
-	.x2 { padding-bottom: 4px; width: 100%; background: white; background: white; height: 80px;border-top: 1px solid #d7d7d7; padding-top: 24px;}
-	.x3 .wide33 { height: 100%;}
-	.x3 .wide33 h5 { margin-top: 16px;}
-	.x3 .wide33 img { margin-bottom: 16px;}
-	.x2 .lining { padding-top: 4px; padding-bottom: 2px; padding-left: 16px; background: white;}
-	.x3 { height: 100vh; width: 100%; gap: 24px; background: white;}
+	.lm0 h3 { padding-left: 16px; }
+		.xc h5 { padding-left: 16px}
+		.x3 .wd3 h5 { margin-top: 16px;}
+		.x3 .wd3 img { margin-bottom: 16px;}
 
+	.l1a img { object-fit: cover; height: 128px; width: 100%;}
+	#hhhhh { margin-top: 40px; margin-bottom: 8px;}
 
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
-	.lm0 { margin-top: 64px; }
-	.x0 { height: 100vh;}
-	.x2 h3 { padding-left: 24px;}
-	.x2, .x3 { height: 100%; background: white;}
+
+	.x0 { height: 60vh;}
+.l1a img { object-fit: cover; height: 128px; width: 100%;}
+	
 
 }
 
 @media screen and (max-width: 575px) {
-	.lm0 { margin-top: 64px;}
-	.x0 { height: 100vh;}
-	.x0 img { height: 80vh; object-fit: cover;}
-	.x2 h3 { padding-left: 24px;}
-	.x2, .x3 { height: 100%; background: white;}
-	.x3 .wide33 h5 { margin-top: 16px; font-size: 24px; margin-bottom: 16px;}
-	.x3 .wide33 { margin-bottom: 32px;}
+
+	.x0 { height: 60vh;}
+	.x0 img { height: 60vh; object-fit: cover;}
+.l1a img { object-fit: cover; height: 128px; width: 100%;}
+	.l1a { width: 45%;}
+	.diaries { padding: 0;}
+	
 	
 }
 </style>

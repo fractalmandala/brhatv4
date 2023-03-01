@@ -214,6 +214,13 @@ body, html, *
 		@media screen and (max-width: 899px)
 			width: 100%
 
+.ll
+	.wide75
+		@media screen and (min-width: 900px)
+			width: 75%
+		@media screen and (max-width: 899px)
+			width: 100%
+
 .gap3
 	@media screen and (min-width: 900px)
 		gap: 32px
@@ -357,10 +364,21 @@ body, html, *
 		content: ''
 		border-top: 1px solid #d7d7d7
 
+.titling
+	border-top: 1px solid #d7d7d7
+	@media screen and (min-width: 768px)
+		padding-top: 16px
+		margin-top: 24px
+	@media screen and (max-width: 767px)
+		h3
+			margin-bottom: 0
+
 .lining
 	padding-top: 4px
 	padding-bottom: 4px
 	padding-left: 16px
+	@media screen and (max-width: 767px)
+		margin: 0
 
 .mainbutton
 	background-color: var(--soft)

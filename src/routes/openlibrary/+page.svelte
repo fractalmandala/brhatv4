@@ -156,7 +156,7 @@ export async function getHis(){
 </div>
 
 <div class="box-c x2 m-mid">
-	<h4 class="lining" data-textify>Browse the Library</h4>
+	<h3 class="lining" data-textify>Browse the Library</h3>
 </div>
 
 <div class="box-r m-mid h100 pad80-t gap3 x3">
@@ -239,7 +239,7 @@ export async function getHis(){
 </div>
 
 <div class="box-c m-mid x4">
-	<h4 class="lining" data-textify>Special Sections</h4>
+	<h3 class="lining" data-textify>Special Sections</h3>
 	<div class="box-r h100p wrap gap3 m-sm specialsrow">
 		<div class="w500 box-c wd3 col3">
 			<h6 class="tree"><a href="/openlibrary/specials/aryanissue">The Āryan Issue</a></h6>
