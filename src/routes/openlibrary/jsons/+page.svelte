@@ -1,73 +1,66 @@
 <script>
-  import { onMount } from 'svelte';
-  import { writable } from 'svelte/store';
+import '$lib/styles/reader.sass'
+let isShow = false
 
-  const formattedData = writable([]);
-
-  onMount(async () => {
-    const response = await fetch('/ramayana/1-1067.conllu');
-    const conlluData = await response.text();
-    formattedData.set(format_conllu(conlluData));
-  });
-
-  const format_conllu = (/** @type {string} */ conllu) => {
-    let sentences = conllu.trim().split(/\n\s*\n/);
-    /**
-	   * @type {{ words: never[]; }[]}
-	   */
-    let formattedData = [];
-    for (let i = 0; i < sentences.length; i++) {
-      let sentence = sentences[i].split("\n").map((line) => line.split("\t"));
-      let sentence_formatted = { words: [] };
-      for (let j = 0; j < sentence.length; j++) {
-        let word = sentence[j];
-        let word_formatted = {
-          form: word[1],
-          lemma: word[2],
-          upos: word[3],
-          xpos: word[4],
-          feats: word[5],
-          misc: word[9]
-        };
-        sentence_formatted.words.push(word_formatted);
-      }
-      formattedData.push(sentence_formatted);
-    }
-    return formattedData;
-  };
+function toggleShow(){
+	isShow = !isShow
+}
 </script>
 
-{#if $formattedData.length > 0}
-  {#each $formattedData as sentence}
-    <div class="sentence">
-      <p>{sentence.text}</p>
-      {#each sentence.words as word}
-     		<div class="word r-r-r-r">
-          <p>{word.form}<br>
-						<cite>Form</cite>
-					</p>
-          <p>{word.lemma}<br>
-						<cite>Lemma</cite>
-					</p>
-          <p>{word.upos}<br>
-						<cite>POS</cite>
-					</p>
-          <p>{word.feats}</p>
-        </div>
-				<p>{word.misc}</p>
-      {/each}
-    </div>
-  {/each}
-{:else}
-  <p>Loading...</p>
-{/if}
+<div class="box-r h100 w100vw wrap gap3">
+	<div class="box-c wd3 b1 h100p"></div>
+	<div class="box-c wd3 b2 h100p"></div>
+	<div class="box-c wd3 b3 h100p"></div>
+</div>
+<div class="box-r h100 wrap gap4 m-large">
+	<div class="box-c wd4 b1 h100p"></div>
+	<div class="box-c wd4 b2 h100p"></div>
+	<div class="box-c wd4 b3 h100p"></div>
+	<div class="box-c wd4 b4 h100p"></div>
+</div>
+<div class="box-r wrap h100">
+	<div class="h100f c-sidebar m-sm-l">
+		<div class="box-c menutwo" on:click={toggleShow} on:keydown={toggleShow}>
+			<svg width="100%" height="100%" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M0.767578 0.37207H8.76758V8.37207H0.767578V0.37207Z" fill="#FE4A49"/>
+				<path d="M0.767578 12.3721H8.76758V20.3721H0.767578V12.3721Z" fill="#FE4A49"/>
+				<path d="M8.76758 24.3721H0.767578V32.3721H8.76758V24.3721Z" fill="#FE4A49"/>
+				<path d="M12.7676 0.37207H20.7676V8.37207H12.7676V0.37207Z" fill="#FE4A49"/>
+				<path d="M20.7676 12.3721H12.7676V20.3721H20.7676V12.3721Z" fill="#FE4A49"/>
+				<path d="M12.7676 24.3721H20.7676V32.3721H12.7676V24.3721Z" fill="#FE4A49"/>
+				<path d="M32.7676 0.37207H24.7676V8.37207H32.7676V0.37207Z" fill="#FE4A49"/>
+				<path d="M24.7676 12.3721H32.7676V20.3721H24.7676V12.3721Z" fill="#FE4A49"/>
+				<path d="M32.7676 24.3721H24.7676V32.3721H32.7676V24.3721Z" fill="#FE4A49"/>
+			</svg>
+		</div>
+		{#if isShow}
+			<div class="sidebar-draw">
+				<div class="box-r closestrip" on:click={toggleShow} on:keydown={toggleShow}>
+					<img src="/images/icons/hamburger-close.png" alt="closer" />
+				</div>
+			</div>
+		{/if}
+	</div>
+	<div class="box-r gap3 wrap bdr r-mainbar m-sm-r">
+		<div class="box-c wd3 b1 h100p"></div>
+		<div class="box-c wd3 b2 h100p"></div>
+		<div class="box-c wd3 b3 h100p"></div>
+	</div>
+</div>
+<div class="box-r h100 wrap gap5 m-large">
+	<div class="box-c wd5 b1 h100p"></div>
+	<div class="box-c wd5 b2 h100p"></div>
+	<div class="box-c wd5 b3 h100p"></div>
+	<div class="box-c wd5 b4 h100p"></div>
+	<div class="box-c wd5 b5 h100p"></div>
+</div>
 
 <style>
-.word.r-r-r-r { gap: 24px;}
-.word p { font-size: 20px;}
-.word cite {
-	font-size: 14px;
-	font-style: normal;
-	color: #878787;	
-}
+.b1 { background: #0B6E4F;}
+.b2 { background: #FF9F1C;}
+.b3 { background: #FE5F55;}
+.b4 { background: #1E91D6;}
+.b5 { background: #4BF41D;}
+
+
 </style>

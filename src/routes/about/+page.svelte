@@ -1,9 +1,7 @@
 <script>
 import supabase from '$lib/db'
 import { onMount } from 'svelte';
-import StaticH1 from '$lib/components/headers/StaticH1.svelte'
-import Partners from '$lib/components/headers/StaticH1.svelte'
-import Team from '$lib/components/headers/StaticH1.svelte'
+import { reveal } from 'svelte-reveal'
 let y = 1
 let showModal = false;
 let isBrands = false;
@@ -22,6 +20,7 @@ const observerOptions = {
 	threshold: 0.5,
 }
 
+// @ts-ignore
 const handleIntersection = (entries) => {
   const [entry] = entries;
   if (entry.isIntersecting) {
@@ -75,22 +74,22 @@ const { data, error } = await supabase
   if (error) throw new Error(error.message)
   return data
 }
+
 </script>
 
 <svelte:window bind:scrollY={y} />
 
-<div class="loco">
-<div class="flexbox-c full imgbox l0"></div>
-<div class="flexbox-c desk-margins cc-y-col mob-y-pad full">
-	<h1 class="w500">Bṛhat is a <br><span class="red m-top-zero">Culture Engine</span></h1>
+
+<div class="box-c h100 back-image l0"></div>
+<div class="box-c m-large pad80 h100">
+	<h1 class="w600">Bṛhat is a <br><span class="red m-top-zero">Culture Engine</span></h1>
 	<h5 class="w400 wide75 blk">
-		To power creatives, research and design rooted in the Indian civilizational consciousness. We
-		convert individual, institutional and collective intent into action, across 3 dimensions.
+	To power creatives, research and design rooted in the Indian civilizational consciousness. We
+	convert individual, institutional and collective intent into action, across 3 dimensions.
 	</h5>
-	<button class="redbutton m-top-8-mob"><a href="/about">Know More</a></button>
-	<div class="l2 flexbox-r of-three top-gap">
-		<div class="l2row1 in-col wide33">
-			<h6 class="w600 m-bot-8">Create</h6>
+	<div class="l2 box-r wrap h100p gap3">
+		<div class="l2row1 box-c wd3" use:reveal={{ transition: "slide", x: -150, blur: 1, duration: 300, threshold: 0.1, easing: "easeInCirc"}}>
+			<h6 class="w600 strong">Create</h6>
 			<p class="w400 grey">
 				- visual and literary stories;<br>
 				- design thinking and methods;<br>
@@ -98,8 +97,8 @@ const { data, error } = await supabase
 				- culture-rooted thought models
 			</p>
 		</div>
-		<div class="l2row2 in-col wide33">
-			<h6 class="w600 m-bot-8">Curate</h6>
+		<div class="l2row2 box-c wd3" use:reveal={{ transition: "slide", x: -150, duration: 300, delay: 50, blur: 1, threshold: 0.1, easing: "easeInCirc"}}>
+			<h6 class="w600 strong">Curate</h6>
 			<p class="w400 grey">
 				- heritage experience journeys;<br>
 				- culture-fit in mass media;<br>
@@ -107,8 +106,8 @@ const { data, error } = await supabase
 				- culture rooting in product design and thinking
 			</p>
 		</div>
-		<div class="l2row3 in-col wide33">
-			<h6 class="w600 m-bot-8">Consult</h6>
+		<div class="l2row3 box-c wd3" use:reveal={{ transition: "slide", x: -150, duration: 300, delay: 100, blur: 1, threshold: 0.1, easing: "easeInCirc"}}>
+			<h6 class="w600 strong">Consult</h6>
 			<p class="w400 grey">
 				- NEP-IKS implementation;<br>
 				- policy thinking on education and ecology;<br>
@@ -117,29 +116,29 @@ const { data, error } = await supabase
 		</div>
 	</div>
 </div>
-<div class="flexbox-c cc-y-col desk-margins lx">
+<div class="box-c m-large h100 pad80 lx">
 	<h5 class="w400 wide75">
 		An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment. How does one go about doing that? At Bṛhat, we're acutely aware of three constraints:
 	</h5>
-	<div class="flexbox-r top-gap pad-y-b of-three l3">
-		<div class="in-col wide33 l3col1">
-			<h6 class="wbold m-bot-8">
+	<div class="box-r h100p wrap gap3 l3" use:reveal={{ transition: "slide", x: 150, blur: 1, easing: "easeInCirc"}}>
+		<div class="box-c wd3 l3col1">
+			<h6 class="w600 strong">
 				Civilization is Culture in Action
 			</h6>
 			<p class="w400 grey">
 				The civilizational moment needs rooting in Dharma - of this there is no doubt. Thus a core part of our work is culture creatives that draw from the deep pool of Dhārmika heritage.
 			</p>
 		</div>
-		<div class="in-col wide33 l3col2">
-			<h6 class="wbold m-bot-8">
+		<div class="box-c wd3 l3col2" use:reveal={{ transition: "slide", x: 150, delay: 50, blur: 1, easing: "easeInCirc"}}>
+			<h6 class="w600 strong">
 				It Needs Culture-Compatible Policy
 			</h6>
 			<p class="w400 grey">
 				Radical reorientations are needed in education and ecology. To this end, our focus will be on generating policy currency for culture through frameworks, curriculum and more.
 			</p>
 		</div>
-		<div class="in-col wide33 l3col3">
-			<h6 class="wbold m-bot-8">
+		<div class="box-c wd3 l3col3" use:reveal={{ transition: "slide", x: 150, delay: 100, blur: 1, easing: "easeInCirc"}}>
+			<h6 class="w600 strong">
 				The Work is Inter-Generational
 			</h6>
 			<p class="w400 grey">
@@ -148,146 +147,138 @@ const { data, error } = await supabase
 		</div>
 	</div>
 </div>
-<div class="flexbox-c desk-margins" bind:this={parallaxdiv} id="parallax">
+<div class="box-c m-large" bind:this={parallaxdiv} id="parallax">
 	<img src="/images/corpimages/parallaximg.png" alt="parallax" style="transform: translateY({-y/4}px)" bind:this={img}/>
 </div>
-<div class="flexbox-c cc-y-col desk-margins">
-	<h4 class="w600 red top-gap">
+<div class="box-c pad80-t m-large">
+	<h4 class="w600 strong">
 		But the severest constraint of them all is Time, and more specifically – Moment.
 	</h4>
 	<h5 class="w400 wide75">
 		The time for a Culture Engine is now, because we are in the midst of a civilizational moment. What is a civilizational moment? How rare or regular are such moments? How must we respond to them?
-		Read more on the need we see, why we think this is the time to address it, and about our self-identity:
+		<br><br>Read more on the need we see, why we think this is the time to address it, and about our self-identity:
 	</h5>
-</div>
-<div class="flexbox-c cc-y-col desk-margins lz">
-	<div class="flexbox-c top-gap link-heads l4">
-	<h5 class="w400 mind">
-		<a href="/about/docs/svatahsiddha">
-		Svataḥsiddha
-		</a>
-	</h5>
-	<h5 class="w400 mind">
-		<a href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a>
-	</h5>
-	<h5 class="w400 mind">
-		<a href="/about/docs/whatkrishnameanstous">What Śrī Kṛṣṇa Means to Us</a>
-	</h5>
-	<h5 class="w400 mind">
-		<a href="/about/docs/namelogo">Nāmarūpa - our Name and Logo</a>
-	</h5>
-	<h5 class="w400 mind">
-		<a href="/about/docs/values">Pratijñā - Values We Hold Dear</a>
-	</h5>
+</div>	
+<div class="box-c m-large lz">
+	<div class="box-c link-heads l4">
+		<h5 class="mind">
+			<a href="/about/docs/svatahsiddha" data-textify>
+				Svataḥsiddha
+			</a>
+		</h5>
+		<h5 class="mind">
+			<a href="/about/docs/anatomy" data-textify>Anatomy of a Civilizational Moment</a>
+		</h5>
+		<h5 class="mind">
+			<a href="/about/docs/whatkrishnameanstous" data-textify>What Śrī Kṛṣṇa Means to Us</a>
+		</h5>
+		<h5 class="mind">
+			<a href="/about/docs/namelogo" data-textify>Nāmarūpa - our Name and Logo</a>
+		</h5>
+		<h5 class="mind">
+			<a href="/about/docs/values" data-textify>Pratijñā - Values We Hold Dear</a>
+		</h5>
 	</div>
 </div>
-<StaticH1>
-	<div id="advisors" slot="header">Advisors</div>
-	<div slot="body" class="flexbox-r of-four desk-margins">
-	{#await advisors()}
-	<small>...</small>
-	{:then data}
-		{#each data as item}
-		<div class="advisorbox m-bot-24 wide25">
-			<img src={item.image} alt={item.name} />
-			<div class="in-col">
-				<h6 class="m-top-24 m-bot-zero">{item.name}</h6>
-				<small class="grey m-top-8">{item.title}</small>
-			</div>
-		</div>
-		{/each}
-	{:catch error}
-	<pre>{error}</pre>
-	{/await}
-	</div>
-</StaticH1>
-<Partners>
-	<div id="partners" slot="header">Partners</div>
-	<div slot="body" class="flexbox-r of-six wrapper just-row desk-margins">
-		{#await partners()}
+<div class="box-c m-large">
+	<h2 class="title">Advisors</h2>
+	<div class="box-r wrap h100p gap4">
+		{#await advisors()}
 		<small>...</small>
 		{:then data}
 		{#each data as item}
-		<div class="in-col partnerbox wide16">
-			<a href={item.link} target="_blank" rel="noreferrer"><img src={item.image} alt={item.name} /></a>
-		</div>
+			<div class="box-c wd4 h100p advisorbox">
+				<img src={item.image} alt={item.name} />
+				<div class="box-c">
+					<h6>{item.name}</h6>
+					<small class="grey">{item.title}</small>
+				</div>
+			</div>
 		{/each}
 		{:catch error}
 		<pre>{error}</pre>
 		{/await}
 	</div>
-</Partners>
-<Team>
-	<div id="team" slot="header">Team</div>
-	<div slot="body" class="flexbox-r wrapper of-three pad-y-b desk-margins">
-	{#await team()}
-	<small>...</small>
-	{:then data}
-	{#each data as item}
-	<div class="in-col teambox wide33">
-		<img src={item.image} alt={item.name} />
-		<h6 class="m-bot-zero">{item.name}</h6>
-		<p class="red m-top-zero">{item.title}</p>
-		<small class="grey">{item.bio}</small>
+</div>
+<div class="box-c m-large">
+	<h2 class="title">Partners</h2>
+	<div class="box-r wrap gap5">
+		{#await partners()}
+			<small>...</small>
+				{:then data}
+					{#each data as item}
+						<div class="box-c partnerbox wd7">
+							<a href={item.link} target="_blank" rel="noreferrer"><img src={item.image} alt={item.name} /></a>
+						</div>
+					{/each}
+				{:catch error}
+			<pre>{error}</pre>
+		{/await}
 	</div>
-	{/each}
-	{:catch error}
-	<pre>{error}</pre>
-	{/await}
-	</div>
-</Team>
+</div>
 
+<div class="box-c pad80-b m-large">
+	<h2 class="title">Team</h2>
+	<div class="box-r allwrap gap3">
+		{#await team()}
+			<small>...</small>
+			{:then data}
+			{#each data as item}
+			<div class="box-c teambox wd3">
+				<img src={item.image} alt={item.name} />
+				<h6>{item.name}</h6>
+				<p class="red">{item.title}</p>
+				<small class="grey">{item.bio}</small>
+			</div>
+			{/each}
+			{:catch error}
+			<pre>{error}</pre>
+		{/await}
+	</div>
 </div>
 
 <style>
 .l2 h6 { 
 	border-top: 1px solid #d7d7d7;
-	padding-top: 12px;
+	padding-top: 16px;
 }
 
-.teambox img { object-fit:contain; width: 50%; margin-bottom: 24px;}
-.partnerbox img { object-fit: contain; width: 100%;}
+
+.wd7 a img { object-fit: contain; width: 100%;}
 
 .red { color: #fe4a49;}
-.loco { position: relative;}
+
 .l0 {
 	background-image: url('/images/herocovers/about-parambika.png');
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
 }
 
-.advisorbox { display: flex;}
 .l4 .mind {
 	transition: all 0.06s var(--cubed);
 	transform-origin: center left;
+	color: #a1a1a1;
 }
 
-.l4 .mind:hover { box-shadow: 4px 6px 10px #e1e1e1; border-left: 2px solid #fe4a49;}
+.l4 .mind:hover { box-shadow: 4px 6px 10px #e1e1e1; border-left: 2px solid #fe4a49; padding-left: 24px;}
+.mind a:hover { color: inherit;}
 
 @media screen and (min-width: 768px) {
-	.lx { height: 70vh;}
-	.advisorbox { flex-direction: column;}
-	.l3 .in-col { border-top: 1px solid #e1e1e1; padding-top: 16px;}
+	.lx { height: 100%;}
+	.l3 .box-c { border-top: 1px solid #e1e1e1; padding-top: 16px;}
 	#parallax { overflow: hidden; height: 60vh;}
 	#parallax img { object-fit: cover; width: 100%;}	
-	.link-heads .w400 { padding-top: 16px; padding-bottom: 16px; padding-left: 16px; transition: all 0.06s var(--cubee);}
-	.link-heads .w400:hover { background: #f1f1f1;}
+	.link-heads { padding-top: 16px; padding-bottom: 16px; padding-left: 16px; transition: all 0.06s var(--cubee);}
 	.link-heads h5 { margin: 0; text-transform: uppercase;}
+.teambox img { object-fit:contain; width: 50%; margin-bottom: 24px;}
+	.advisorbox img { margin-bottom: 16px;}
 }
 
-@media screen and (max-width: 767px) and (min-width: 576px) {
-	.advisorbox { flex-direction: column;}
-}
-
-@media screen and (max-width: 575px) {
-	.l0 { height: 40vh;}
-	.advisorbox { flex-direction: row; align-items: flex-start;}
-	.advisorbox img { width: 30%;}
-	.advisorbox .in-col { padding-top: 16px; padding-left: 16px;}
-  .advisorbox small { color: #878787;}
-	.partnerbox { width: 30%; margin-bottom: 16px;}
-	.partnerbox img { width: 88%;}
+@media screen and (max-width: 767px) {
+	.advisorbox img { object-fit: contain; width: 50%;}
+	.advisorbox h6 { margin-top: 12px; margin-bottom: 0;}
+	.partnerbox a img { width: 100%; object-fit: contain;}
+	.partnerbox { width: 45%;}
+	.teambox img { width: 30%; margin-bottom: 24px;}
+	.teambox h6 { margin: 0;}
 }
 
 </style>

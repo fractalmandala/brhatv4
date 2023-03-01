@@ -18,7 +18,7 @@
 h1, h2, h3, h4, h5, h6, p, cite, small, caption, blockquote, ol li, ul li
     font-family: 'Spline Sans', sans-serif
 
-h1, h3, h4, h5, p, small, caption, cite, blockquote
+h1, h3, h4, p, small, caption, cite, blockquote
     @media screen and (min-width: 768px)
         margin-bottom: 16px
         margin-top: 0px
@@ -54,9 +54,9 @@ h1
         line-height: 1.1
         letter-spacing: -1px
     @media screen and (max-width: 575px)
-        font-size: 42px
+        font-size: 64px
         line-height: 1.1
-        letter-spacing: -1px
+        letter-spacing: -2px
 
 h2
     @media screen and (min-width: 900px)
@@ -106,6 +106,8 @@ h5
         font-size: 25px
         line-height: 1.38
         letter-spacing: -0.6px
+        margin-top: 16px
+        margin-bottom: 32px
     @media screen and (max-width: 767px) and (min-width: 576px)
         font-size: 21px
         line-height: 1.38
@@ -113,13 +115,16 @@ h5
         font-size: 20px
         line-height: 1.38
         letter-spacing: -0.4px
+        margin-top: 16px
 
 .link-heads
   h5
     @media screen and (max-width: 575px)
       font-size: 21px
+      margin: 0
     @media screen and (min-width: 576px)
       font-size: 24px
+      margin: 0
 
 h6
     @media screen and (min-width: 768px)
