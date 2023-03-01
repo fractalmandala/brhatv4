@@ -24,18 +24,6 @@ let selectedLink:any = null
 let selectedAuth:any = null
 let data:any = []
 
-function funcS1(){
-	isSpecial1 = !isSpecial1
-}
-
-function funcS2(){
-	isSpecial2 = !isSpecial2
-}
-
-function funcS3(){
-	isSpecial3 = !isSpecial3
-}
-
 const showImage = async (imagelinker:any) => {
 	if (imagelinker) {
 		const { data,error} = await supabase
@@ -68,12 +56,6 @@ export async function getEss(){
 	return data
 }
 
-onMount(() => {
-  showImage(data[selectedItem].imagelinker);
-	showImage(data[selectedItem].Description);
-	showImage(data[selectedLink].slug)
-	getEss()
-});
 
 function toggleEss(){
 	isEss = !isEss
@@ -253,29 +235,14 @@ export async function getHis(){
 <div class="flexbox-c minmargins x4 txth1">
 	<h4 class="lining" data-textify>Special Sections</h4>
 	<div class="in-row specialsrow">
-		<div class="w500 in-col col3" on:mouseenter={funcS1} on:mouseleave={funcS1}>
-			<img id="img1" src="/images/rid/panel1.webp" alt="one" use:reveal={{transition: "fly", y: 120, reset: true, delay: 0, duration: 300, easing: "easeOutExpo", blur: 0}}/>
-			{#if isSpecial1}
-			<div class="in-col subcol3"><a href="/openlibrary/reader">
-			<h4>Reading Room</h4></a>
-			</div>
-			{/if}
+		<div class="w500 in-col col3">
+			<img id="img1" src="/images/rid/panel1.webp" alt="one" style="transform: translateY({-ax/8}px)"/>
 		</div>
-		<div class="w500 in-col col3" on:mouseenter={funcS2} on:mouseleave={funcS2}>
-			<img src="/images/rid/panel2.webp" alt="one" use:reveal={{transition: "fly", y: 120, reset: true, delay: 50, duration: 300, easing: "easeOutExpo", blur: 0}}/>
-			{#if isSpecial2}
-			<div class="in-col subcol3"><a href="/openlibrary/specials/aryanissue">
-			<h4>The Āryan Issue</h4></a>
-			</div>
-			{/if}
+		<div class="w500 in-col col3">
+			<img src="/images/rid/panel2.webp" alt="one" style="transform: translateY({-ax/8}px)"/>
 		</div>
-		<div class="w500 in-col col3" on:mouseenter={funcS3} on:mouseleave={funcS3}>
-			<img src="/images/rid/panel3.webp" alt="one" use:reveal={{transition: "fly", y: 120, reset: true, delay: 100, duration: 300, easing: "easeOutExpo", blur: 0}}/>
-			{#if isSpecial3}
-			<div class="in-col subcol3"><a href="/openlibrary/reader">
-			<h4>Repository of Scripture</h4></a>
-			</div>
-			{/if}
+		<div class="w500 in-col col3">
+			<img src="/images/rid/panel3.webp" alt="one" style="transform: translateY({-ax/8}px)"/>
 		</div>
 	</div>
 </div>
@@ -360,15 +327,51 @@ export async function getHis(){
 	.right-col { width: 28%; }
 	.threebutton-un { margin-bottom: 24px;}
 	.details-col { padding: 32px;border: 1px solid #d7d7d7; border-radius: 4px;}
-	.col3 { width: calc(94%/3); overflow-y: hidden; position: relative;transform-origin: center center; transition: all 0.1s var(--cubed);}
-	.subcol3 h4 { color: white; opacity: 1; z-index: 200;}
-	.subcol3 { background: rgba(0,0,0,0.8); height: 100%; width: 100%; position: absolute; top: 0; left: 0; align-items: center; justify-content: center;}
-	.col3 img { height: 1024px; object-fit: cover; height: 400px; }
+	.col3 { width: calc(94%/3); height: 240px; overflow-y: hidden; position: relative;transform-origin: center center; transition: all 0.1s var(--cubed);}
+
+
+	.col3 img { height: 1024px; object-fit: cover; height: 400px; object-position: center top; }
 	.col3:hover { transform: scale(0.96);}
 
 
 	.x4 { padding-top: 80px; padding-bottom: 80px; gap: 24px; height: 100%; align-items: flex-start; border-bottom: 1px solid #d7d7d7; }
 	.x4 .lining { padding-left: 16px; color: #b7b7b7;}
 	.specialsrow { justify-content: space-between; padding-left: 16px;}
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+	.x1 .imageholder { order: 1; height: 40vh;}
+	.imageholder img { object-fit: cover; height: 100%; width: 100vw; object-position: center center;}
+	.x1 .in-col { order: 2; padding: 32px; height: 100%;}
+	.x1 { width: 100vw; padding-top: 72px;}
+	.x2, .x3 { display: none;}
+	.lining { padding-left: 28px;}
+	.specialsrow { padding: 0 32px; gap: 24px; margin-bottom: 32px;}
+	.col3 { height: 144px; overflow-y: hidden;}
+	.col3 img { height: 300px; width: 300px; object-position: -50px 0px;}
+}
+
+@media screen and (max-width: 575px) {
+	.x1 .imageholder { 
+		order: 1;
+		height: 40vh;
+	}
+	.imageholder img {
+		object-fit: cover;
+		height: 100%;
+		object-position: center center;
+	}
+	.x1 .in-col {
+		order: 2;
+		padding: 24px;
+		height: 100%;
+	}
+	.x1 { min-height: 100vh; padding-top: 64px; width: 100vw;}
+	.x2 p { padding-left: 20px; font-size: 20px; display: none;}
+	.x3 { display: none;}
+	.lining { padding-left: 20px;}
+	.specialsrow { padding: 8px 24px 24px 24px; gap: 16px; height: 216px; overflow-y: hidden;}
+	.specialsrow .col3 { height: 100px; overflow-y: hidden !important;}
+	.col3 img { height: 500px; object-fit: cover; width: 500px; object-position: -200px -100px;}
 }
 </style>

@@ -5,7 +5,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 <div class="big-box">
 	<ToTop></ToTop>
 	<div class="margin-box">
-	<div class="flexbox-r" id="row-one">
+		<div class="flexbox-r" id="row-one">
 		<div class="flexbox-c" id="logo-col"><a href="/">
 			<img id="logoimage" src="/images/brhatlogos/horizontalwhite.png" alt="brhatlogo" /></a>
 			<div class="flexbox-r" id="icons-row">
@@ -61,7 +61,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 					<small><a href="/rta">Ṛta in Design</a></small>
 			</div>
 		</div>
-	</div>
+		</div>
 	</div>
 	<div class="flexbox-c" id="last-row"><small>2023 All Rights Reserved | <span><a href="/docs">Documentation</a> | </span><span><a href="/about/privacy">Privacy</a></span><br>
 		<span class="white">Write to us: contact@brhat.in</span>
@@ -214,6 +214,9 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		width: 25%
 		padding-left: 2em
 
+	.margin-box
+		height: calc(100% - 240px)
+
 
 @media screen and (max-width: 899px) and (min-width: 768px) 
 	
@@ -221,6 +224,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		height: 6em
 		width: calc(100vw - 12vw)
 		padding-top: 1em
+		margin-left: 6vw
 
 	#logoimage
 		width: 200px
@@ -245,8 +249,12 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		padding-top: 2em
 		gap: 3em
 		flex-direction: row
+		padding-bottom: 32px
 		.link-box
 			width: 25%
+
+	.margin-box
+		height: calc(100% - 160px)
 
 
 @media screen and (max-width: 767px) and (min-width: 576px) 
@@ -286,6 +294,10 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		gap: 1.2em
 		.link-box
 			width: 45%
+
+	.margin-box
+		height: 100%
+		padding-bottom: 32px
 
 	
 @media screen and (max-width: 575px)
