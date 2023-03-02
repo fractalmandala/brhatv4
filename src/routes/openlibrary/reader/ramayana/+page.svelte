@@ -1,4 +1,4 @@
 
-<div class="flexbox-c">
+<div class="box-c">
 </div>
 

@@ -1,10 +1,10 @@
-<div class="flexbox-r x1">
-	<div class="flexbox-c thinner"></div>
-	<div class="in-col mid-col link-heads">
-		<h5 id='class-1' class="w600 upper"><a href="/openlibrary/reader/ramayana">Vālmīki Rāmāyaṇa</a></h5>
-		<h5 id='class-1' class="w600 upper">Ṛgveda Saṃhitā</h5>
+<div class="box-r x1">
+	<div class="box-c thinner"></div>
+	<div class="box-c mid-col link-heads">
+		<h5 class="w600 upper"><a href="/openlibrary/reader/ramayana">Vālmīki Rāmāyaṇa</a></h5>
+		<h5 class="w600 upper">Ṛgveda Saṃhitā</h5>
 	</div>
-	<div class="in-col right-col">
+	<div class="box-c right-col">
 		<slot></slot>
 	</div>
 </div>
