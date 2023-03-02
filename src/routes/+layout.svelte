@@ -25,7 +25,7 @@ onMount(async() => {
 		lerp: 1,
 		smooth: true,
 		mouseMultiplier: 1,
-		smoothTouch: true,
+		smoothTouch: false,
 		touchMultiplier: 1,
 		infinite: false
 	})
