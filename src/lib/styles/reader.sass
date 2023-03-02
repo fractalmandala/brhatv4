@@ -42,6 +42,22 @@ body, html, *
 		top: 0
 		left: 0
 		height: 100vh
+		padding-top: 160px
+		.box-desk
+			p
+				letter-spacing: -0.3px
+				transform-origin: center left
+				transition: all 0.08s var(--cubea)
+				&:hover
+					transform: scale(0.9)
+			small
+				font-size: 13px
+				letter-spacing: -0.3px
+				color: #a7a7a7
+				transform-origin: center left
+				transition: all 0.08s var(--cubea)
+				&:hover
+					transform: scale(1.1)
 	@media screen and (max-width: 767px)
 		width: 100vw
 		height: 36px
@@ -57,6 +73,20 @@ body, html, *
 		padding-left: 24px
 		padding-right: 16px
 		border-bottom: 1px solid #d7d7d7
+		.box-mobile
+			p
+				letter-spacing: -0.3px
+				transform-origin: center left
+				transition: all 0.08s var(--cubea)
+				font-size: 24px
+			small
+				font-size: 16px
+				letter-spacing: -0.3px
+				color: #FFFFFF
+				transform-origin: center left
+				transition: all 0.08s var(--cubea)
+				&:hover
+					transform: scale(1.1)
 
 .c-second
 	@media screen and (min-width: 768px)
@@ -135,6 +165,18 @@ body, html, *
 	@media screen and (max-width: 767px)
 		width: 100%
 		height: 100%
+
+.c-mainbar
+	display: flex
+	flex-direction: column
+	@media screen and (min-width: 768px)
+		width: 75%
+		height: 100%
+		padding-top: 160px
+	@media screen and (max-width: 767px)
+		width: 100%
+		height: 100%
+		padding: 120px 24px 32px 24px
 
 .h100p
 	@media screen and (min-width: 768px)
@@ -353,6 +395,14 @@ body, html, *
 	@media screen and (max-width: 767px)
 		padding-top: 40px
 
+.pad80-t2
+	@media screen and (min-width: 900px)
+		padding-top: 80px
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		padding-top: 32px
+	@media screen and (max-width: 767px)
+		padding-top: 24px
+
 .pad80-b
 	@media screen and (min-width: 900px)
 		padding-bottom: 80px
@@ -468,6 +518,29 @@ body, html, *
 		padding: 8px
 		font-size: 12px
 
+.greenbutton
+	background-color: #10C56D
+	border: none
+	color: white
+	font-size: 14px
+	font-weight: 400
+	letter-spacing: 0.5px
+	border-radius: 4px
+	min-width: 80px
+	margin: 20px 0
+	transition: all 0.07 ease
+	a
+		color: white
+	&:hover
+		background-color: #53dd6c
+		transform: scale(0.9)
+		a
+			color: white
+	@media screen and (min-width: 768px)
+		padding: 6px 12px
+	@media screen and (max-width: 767px)
+		padding: 6px 12px
+
 .searcher
 	@media screen and (min-width: 768px)
 		padding-left: 16px
@@ -561,3 +634,7 @@ body, html, *
 	100%
 		width: 100%
 
+.document-sheet
+	@media screen and (min-width: 768px)
+		padding-bottom: 80px
+		padding-right: 24vw

@@ -6,8 +6,7 @@ export let key:string
 
 {#key key}
 <div class="flexbox-c"
-	in:slide="{{ duration: 700, delay: 400, easing: quartOut}}"
-	out:slide="{{ duration: 400, delay: 0, easing: quartOut}}"
+	transition:slide="{{ duration: 700, delay: 400, easing: quartOut}}"
 >
 <slot></slot>
 </div>

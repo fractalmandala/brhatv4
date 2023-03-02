@@ -4,181 +4,95 @@ import '$lib/styles/anim-rid.css';
 
 </script>
 
-	<div class="flexbox-r full cc-y-col l0 imgbox">
-		<div class="flexbox-c screen">
-			<div class="in-col cc-x-col-mob l-x-col-desk">
+<div class="box-r h100 l0 back-image">
+	<div class="box-c screen">
+		<div class="box-c">
 				<LogoRiDCurr></LogoRiDCurr>	
-			</div>
-			<div class="in-row row-cc-y" id="symbolsrow">
-				<img id="thecircle" src="/images/rid/trin-circ.png" alt="ridhero"/>
-				<img id="theinf" src="/images/rid/trin-inf.png" alt="ridhero"/>
-			</div>
 		</div>
-	</div>	
+	</div>
+</div>	
 
-<div class="flexbox-r strips">
-	<div class="in-col" id="c1">
-		<div class="flexbox-c inscreen">
-			<h4>1</h4><a href="/rta/prologue">
-			<small>
-				Prelude
-			</small></a>
-		</div>
-	</div>
-	<div class="in-col" id="c2">
-		<div class="flexbox-c inscreen">
-			<h4>2</h4><a href="/rta/intro">
-			<small>
-				Introduction
-			</small></a>
-		</div>
-	</div>
-	<div class="in-col" id="c3">
-		<div class="flexbox-c inscreen">
-			<h4>3</h4><a href="/rta/dharmaisdesign">
-			<small>
-				Dharma is Design
-			</small></a>
-		</div>
-	</div>
-	<div class="in-col" id="c4">
-		<div class="flexbox-c inscreen">
-			<h4>4</h4>
-			<small>
-				Framework
-			</small>
-		</div>
-	</div>
-	<div class="in-col" id="c5">
-		<div class="flexbox-c inscreen">
-			<h4>5</h4>
-			<small>
-				Principles
-			</small>
-		</div>
-	</div>
-	<div class="in-col" id="c6">
-		<div class="flexbox-c inscreen">
-			<h4>6</h4>
-			<small>
-				Phases
-			</small>
-		</div>	
-	</div>
-	<div class="in-col" id="c7">
-		<div class="flexbox-c inscreen">
-			<h4>7</h4>
-			<small>
-				Tools and Resources
-			</small>
-		</div>
-	</div>
-	<div class="in-col" id="c8">
-		<div class="flexbox-c inscreen">
-			<h4>8</h4>
-			<small>
-				References
-			</small>
-		</div>
-	</div>
-	<div class="in-col" id="c9">
-		<div class="flexbox-c inscreen">
-			<h4>9</h4>
-			<small>
-				Glossary
-			</small>
-		</div>
-	</div>
-	<div class="in-col" id="c10">
-		<div class="flexbox-c inscreen">
-			<h4>10</h4>
-			<small>
-				Design @ Bṛhat
-			</small>
-		</div>
+<div class="box-c h100 m-mid x2">
+	<div class="wd2">
+		<h2 class="green m-bot-24">Design thinking is coming full circle.</h2>
+		<p class="grey">
+			Having traversed systems, integrated, business-centric and other approaches, it converges towards human-centric, modular and circular. IDEO, steward of design thinking, talks of emergent design paradigms being human-centric, fractal and circular. UK’s Design Council speaks of ‘designing for the planet’, but its concerns are just the same- sustainability, reusability, harmony. The Conscilience Project sees us currently in the phase of values-agnostic design, dominated by the view that technology is only what we make of it, and the values that drive such making derive from elsewhere.
+		</p>
+		<h6>
+			Of these, the last has brought us to the brink of disaster. 
+		</h6>
+		<p class="grey">
+			Our steadfast pretense that design can be values-agnostic is laid bare when we learn that artificially intelligent software tends to inherit the biases and prejudices of its programmers. Human creation is bringing the ruin of life, species and planet. Introspection and a radical recalibration are our only chance of reversing the situtation.
+		</p>
 	</div>
 </div>
 
+<div class="box-r h100 m-mid x3">
+	<div class="wd2">
+		<h5 class="m-bot-8">
+			“Science converts information into knowledge. Engineering converts knowledge into utility. Design converts utility into cultural behavior in context. Art takes that cultural behavior and questions our perception of the world.”
+		</h5>
+		<cite class="grey2 m-top-zero">Neri Oxman, MIT Media Lab</cite>
+		<h5 class="m-bot-8 pad80-t2">
+			“Design creates culture.<br>Culture shapes values. <span class="green"><br>Values determine the future.”</span>
+		</h5>
+		<cite class="grey2 m-top-zero">Robert Peters, Circle Design</cite>
+	</div>
+</div>
+
+<div class="box-r h100p m-mid x4">
+	<div class="wide75">
+		<h5 class="m-bot-8 pad80-t2">
+			"Study your predecessors' works intently, to see how they solved problems. Try to figure out why they made the design choices they did;<br><br> <span class="green">This is the most illuminating question to ask yourself."</span>
+		</h5>
+		<cite class="grey2 m-top-zero">Fred Brooks, The Design of Design</cite>
+		<h3 class="pad80-t">
+		<span class="green">Ṛta in Design </span><span class="grey2"> is a framework for modern design that derives its principles, mindsets and processes from the accumulated wisdom of Indian predecessors., ie. </span><span class="green">Dharma.</span>
+		</h3>
+	</div>
+</div>
+
+<div class="box-c h100p x6 m-mid pad80">
+<div class="box-r allwrap back-image h100p x5">
+		<div class="box-c wd4"><a href="/rta/prologue">
+			<small class="green">1</small>
+			<h6 class="grey">Predecessors, Culture, Design</h6></a>
+		</div>
+		<div class="box-c wd4"><a href="/rta/intro">
+			<small class="green">2</small>
+			<h6 class="grey">Introduction to Ṛta in Design</h6></a>
+		</div>
+		<div class="box-c wd4"><a href="/rta/dharmaisdesign">
+			<small class="green">3</small>
+			<h6 class="grey">Dharma is Design</h6></a>
+		</div>
+		<div class="box-c wd4"><a href="/rta/prologue">
+			<small class="green">4</small>
+			<h6 class="grey">Framework</h6></a>
+		</div>
+		<div class="box-c wd4"><a href="/rta/prologue">
+			<small class="green">5</small>
+			<h6 class="grey">Principles</h6></a>
+		</div>
+		<div class="box-c wd4"><a href="/rta/prologue">
+			<small class="green">6</small>
+			<h6 class="grey">Phases</h6></a>
+		</div>
+		<div class="box-c wd4"><a href="/rta/prologue">
+			<small class="green">7</small>
+			<h6 class="grey">Tools and Resources</h6></a>
+		</div>
+		<div class="box-c wd4"><a href="/rta/prologue">
+			<small class="green">8</small>
+			<h6 class="grey">Design @ Bṛhat</h6></a>
+		</div>
+</div>
+</div>
+
+
 <style>
-.strips .in-col { 
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	margin: 0;
-	border-left: 2px solid #171717;
-	border-right: 2px solid #171717;
-	overflow-y: hidden;
-}
-.inscreen { height: 50%; width: 100%; top: 50%; background: rgba(0,0,0,0.9); position: absolute;justify-content: flex-start; align-items: center; color: white;}
-.strips:hover .in-col:hover {
-	animation: wideen 1s ease-out forwards;
-}
-.strips:hover .in-col {
-	animation: widen 1s ease-out forwards;
-}
-#c1, #c2, #c3, #c4, #c5, #c6, #c7, #c8, #c9, #c10 {
-	position: relative;
-	height: 100%;
-	margin-top: 0%;
-}
-#c1::after, #c2::after, #c3::after, #c4::after, #c5::after, #c6::after, #c7::after, #c8::after, #c9::after, #c10::after { 
-	position: absolute;
-	top: 0%;
-	left: 0;
-	width: 100%;
-	content: '';
-	height: 46%;
-	background: rgba(0,0,0,0.9);
-}
-#c1:hover .inscreen, #c2:hover .inscreen, #c3:hover .inscreen, #c4:hover .inscreen, #c5:hover .inscreen, #c6:hover .inscreen, #c7:hover .inscreen, #c8:hover .inscreen, #c9:hover .inscreen, #c10:hover .inscreen { animation: swipingouta 1.5s ease forwards;}
-#c1:hover::after, #c2:hover::after, #c3:hover::after, #c4:hover::after, #c5:hover::after, #c6:hover::after, #c7:hover::after, #c8:hover::after, #c9:hover::after, #c10:hover::after { animation: swipingoutb 0.5s ease forwards;}
 
-.strips h4, .strips small { opacity: 0;}
-.strips .in-col:hover h4, .strips .in-col:hover small {
-	animation: showup 0.4s var(--cubec) 1s forwards;
-}
-
-@keyframes swipingouta {
-	0% { top: 50%; height: 50%; background: rgba(0,0,0,0.9); justify-content: flex-start;}
-	50% { top: 50; height: 50%; margin-top: 100vh; background: rgba(0,0,0,0);justify-content: flex-start;}
-	100% { top: 0; height: 100%; margin-top: 0; background: rgba(0,0,0,0);justify-content: center;}
-}
-
-@keyframes swipingoutb {
-	0% { top: 0%; height: 50%;}
-100% { top: 0%; height: 0;}
-}
-
-@keyframes widen {
-	0% { width: calc(100%/10);}
-	100% { width: calc(88%/9);}
-}
-
-@keyframes wideen {
-	0% { width: calc(100%/10);}
-	100% { width: 12%;}
-}
-
-@keyframes showup {
-	0% { opacity: 0;}
-	100% { opacity: 1;}
-}
-.strips { padding: 0; justify-content: center; background: var(--beau); overflow: hidden;}
-#c1 { background-image: url('/images/rid/strip1.png');}
-#c2 { background-image: url('/images/rid/strip2.png');}
-#c3 { background-image: url('/images/rid/strip3.png');}
-#c4 { background-image: url('/images/rid/strip4.png');}
-#c5 { background-image: url('/images/rid/strip5.png');}
-#c6 { background-image: url('/images/rid/strip6.png');}
-#c7 { background-image: url('/images/rid/strip7.png');}
-#c8 { background-image: url('/images/rid/strip8.png');}
-#c9 { background-image: url('/images/rid/strip9.png');}
-#c10 { background-image:url('/images/rid/strip10.png')}
-.imgbox { background-image: url('/images/rid/infinitywall.webp')}
-
-
-#thecircle { animation: triplingshow 2s ease forwards; }
-#theinf { animation: movingtocircle 6s var(--cubea) forwards;}
+.back-image { background-image: url('/images/rid/infinitywall.webp')}
 
 @keyframes triplingshow {
  0% {opacity: 0;}
@@ -190,26 +104,54 @@ import '$lib/styles/anim-rid.css';
 100% { margin-left: 0 !important; opacity: 1;}
 }
 
-@media screen and (min-width: 768px) {
-	.inscreen h4 { z-index: 21;}
-	.strips { height: 100vh; width: 100%;}
-	.strips .in-col { width: calc(100%/10);}
-	#thecircle { height: 32px; z-index: 1;}
-	#theinf { z-index: 0; height: 32px;}
-	#symbolsrow { justify-content: space-between;}
+.x5 {
+	background-image: url('/images/rid/panelgrid2.png')
+}
 
-	.l0 { flex-direction: row;}
-	.screen { height: 100vh; justify-content: center; align-items: center;}
+@media screen and (min-width: 768px) {
+	.l0 { justify-content: center;}
+	.l0 .screen { background: rgba(0,0,0,0.8); width: 100%; justify-content: center; padding: 0 30%;}
+	.x3 { align-items: center;}
+	.x2, .x3 .wd2 {
+		justify-content: center;
+	}
+	.x4 { align-items: center;}
+	.x5 { height: 60vh; align-items: center;}
+	.x5 .box-c {
+		background: rgba(255,255,255,1);
+		height: 50%;
+		width: 25%;
+		justify-content: center;
+		align-items: center;
+		transition: all 0.16s var(--cubec);
+		margin: 0;
+	}
+	.x5 .box-c:hover { 
+		background: rgba(255,255,255,0);
+		transform: scale(0.9);
+	}
+	.x5 .box-c small, .x5 .box-c a { text-align: center;}
+	.x5 .box-c:hover h6 { color: white; background: rgba(0,0,0,0.8); padding: 0 8px;}
+	.x5 .box-c:hover small { color: white; background: var(--green); padding: 4px;}
+	
 }
 
 @media screen and (max-width: 767px) {
-
-	#theinf { transform: translateX(-2px); z-index: 0;}
-	#thecircle { z-index: 1;}
-	#symbolsrow { padding-left: 38px; margin-top: -12px;}
-	#symbolsrow img { height: 12px;}
+	.l0 { justify-content: center;}
   .l0 { height: 40vh; margin-top: 64px;}	
-	.l0 .screen { justify-content: center;}
+	.l0 .screen { justify-content: center; width: 100%; align-items: flex-start; padding-left: 64px; background: rgba(0,0,0,0.8);}
+	.x5 { gap: 2px; justify-content: center; align-items: center; padding: 2px 0;}
+	.x5 .box-c {
+		background: rgba(0,0,0,0.9);
+		transform: scale(0.9);
+		width: calc(50% - 1px);
+		margin: 0;
+		justify-content: center;
+		align-items: center;
+		padding: 8px 0;
+	}
+	.x5 .box-c a { text-align: center;}
+	.x5 .box-c a h6 { color: white; font-weight: 600; margin-top: 4px;}
 }
 
 </style>

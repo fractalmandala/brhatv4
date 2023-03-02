@@ -213,6 +213,9 @@ function toggleMenu(){
 	</div>
 	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5 class="w600 white upper"><a href="/rta">Ṛta in Design</a></h5>
+			<h6 class="w400 grey"><a href="/rta/prologue">Prologue</a></h6>
+			<h6 class="w400 grey"><a href="/rta/intro">Introduction to Ṛta in Design</a></h6>
+			<h6 class="w400 grey"><a href="/rta/dharmaisdesign">Dharma is Design</a></h6>
 	</div>
 	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5 class="w600 white upper"><a href="/mandala">Fractal Maṇḍala</a></h5>

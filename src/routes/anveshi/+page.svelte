@@ -133,8 +133,8 @@ export async function allChapters() {
 	<h3 class="w600 lining grey2 m-bot-zero" data-textify>Who is Bṛhat Anveṣī:</h3>
 </div>
 
-<div class="box-c m-sm">
-		<h6 class="w400 wide75 m-top-zero">
+<div class="box-c m-sm x6">
+		<p class="w400 wd2-3 m-top-zero">
 				A human being is born to search: for truth; for beauty; for meaning in life. Kaśmīra Śaiva darśana tells us that, vimarṣa – Śiva reflecting upon himself – is one of the highest goals of existence itself. According to another school of thought, Nature nudged evolution to a point where a species would emerge capable of reflecting upon itself and the mysteries of the cosmos, life and existence.
 		<br><br>	
 			Without getting deep into darśana, the point is that, humans are born to search, born for anveṣaṇa. The word anveṣaṇa means discovering, seeking, or searching, and the one who searches is called – anveṣī – the discoverer. This element of discovery has mainly two dimensions – inner and outer. And the two are connected. The favorite theme of literature is wanderlust/ fernweh – the innate urge of humans to go out and discover the world.
@@ -147,14 +147,14 @@ export async function allChapters() {
 		<br><br>		
 			Bṛhat Anveṣī is a program in tribute to this fundamental quest. It seeks to contemporize this ancient Indian tradition by guiding travel groups through sacred kṣetras of India which are hitherto unexplored by most of us, but which are not just full of architectural, sculptural and cultural splendor, but are also living systems carrying beautiful ancestral traditions for thousands of years. We seek to satisfy the wanderlust in you in a way which will leave you not just intellectually satisfied but will also elevate your understanding and knowledge. When discovering together such, we are Bṛhat Anveṣī.
 			
-	</h6>
+	</p>
 </div>
 
-<div class="box-c m-sm titling">
+<div class="box-c m-mid titling">
 	<h3 class="w600 lining grey2" data-textify>FAQ:</h3>
 </div>
 
-<div class="box-c m-sm">
+<div class="box-c x7 m-sm">
 		<FAQ></FAQ>	
 </div>
 
@@ -174,7 +174,7 @@ export async function allChapters() {
 	.x0 { height: 100vh;}
 	.lm0 { height: 80vh; align-items: center; }
 	.lm0 h3 { padding-left: 16px; }
-
+	.x6, .x7 { padding-left: 96px; padding-top: 32px;}
 	.x3 { padding-top: 32px; padding-bottom: 32px; height: 80vh;}
 	.xc h5 { padding-left: 16px;}
 	.diaries .box-c img {

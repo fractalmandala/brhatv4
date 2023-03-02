@@ -1,6 +1,7 @@
 <script>
 import { fly } from 'svelte/transition'
 import { quadIn } from 'svelte/easing'
+import Sidebar from '$lib/components/globals/MainSide.svelte'
 let isMobile = false
 let x = 1
 
@@ -11,9 +12,11 @@ function toggleMenu(){
 
 
 <svelte:window bind:innerWidth={x}/>
-<div class="flexbox-r">
-	<div class="flexbox-c sidebb">
-		<h6 class="green w600"><a href="/rta">Ṛta in Design Home</a></h6>
+
+<div class="box-r containeroftwo">
+<Sidebar>
+	<div slot="desktop" class="box-c box-desk">
+		<p class="green w600"><a href="/rta">Ṛta in Design Home</a></p>
 		<small><a href="/rta/prologue">Prelude to RID</a></small>
 		<small><a href="/rta/intro">Introduction</a></small>
 		<small><a href="/rta/dharmaisdesign">Dharma is Design</a></small>
@@ -21,29 +24,27 @@ function toggleMenu(){
 		<small><a href="/rta">Principles</a></small>
 		<small><a href="/rta">Phases</a></small>
 		<small><a href="/rta">Tools and Resources</a></small>
-		<small><a href="/rta">References</a></small>
-		<small><a href="/rta">Glossary</a></small>
 		<small><a href="/rta">Design @ Bṛhat</a></small>
 	</div>
-	<div class="flexbox-c maindoc rta">
-		<slot></slot>
+	<div slot="mobile" class="box-c box-mobile">
+		<p class="green w600"><a href="/rta">Ṛta in Design Home</a></p>
+		<small><a href="/rta/prologue">Prelude to RID</a></small>
+		<small><a href="/rta/intro">Introduction</a></small>
+		<small><a href="/rta/dharmaisdesign">Dharma is Design</a></small>
+		<small><a href="/rta">Framework</a></small>
+		<small><a href="/rta">Principles</a></small>
+		<small><a href="/rta">Phases</a></small>
+		<small><a href="/rta">Tools and Resources</a></small>
+		<small><a href="/rta">Design @ Bṛhat</a></small>
 	</div>
+</Sidebar>
+<div class="c-mainbar">
+	<slot></slot>
+</div>
 </div>
 
-
-
-
-
 <style>
-
-.sidebb a:hover { color: #10c56e;}
-
-@media screen and (min-width: 768px) {
-	.flexbox-r { padding-bottom: 80px;}
+a:hover {
+	color: var(--green);
 }
-
-@media screen and (max-width: 767px) and (min-width: 576px) {
-	.flexbox-r { padding-bottom: 80px;}
-}
-
 </style>

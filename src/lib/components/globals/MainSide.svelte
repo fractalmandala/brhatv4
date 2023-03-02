@@ -33,7 +33,3 @@ function toggleShow(){
 		</div>
 	{/if}
 </div>
-
-<style>
-.c-sidebar { background: grey;}
-</style>

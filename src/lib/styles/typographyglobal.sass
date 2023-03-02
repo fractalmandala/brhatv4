@@ -208,7 +208,7 @@ cite
 .document-sheet
   @media screen and (min-width: 768px)
     p, ul li, ol li
-        font-size: 18px
+        font-size: 16px
         font-weight: 400
         line-height: 1.6
         letter-spacing: 0px
@@ -222,7 +222,22 @@ cite
             font-size: 22px
     h4
         margin: 24px 0 16px 0
-        font-size: 28px
+        font-size: 25px
+  @media screen and (max-width: 767px)
+    h4
+        font-size: 21px
+        letter-spacing: -0.3px
+        margin: 18px 0 15px 0
+    p, ul li, ol li
+        font-size: 16px
+    h5
+        font-size: 18px
+        letter-spacing: -0.2px
+        margin: 8px 0 16px 0
+    blockquote
+        border-left: 2px solid var(--green)
+        font-style: italic
+        color: var(--grey2)
 
 .the-quote
     font-size: 24px
