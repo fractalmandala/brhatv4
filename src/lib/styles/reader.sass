@@ -6,12 +6,16 @@ body, html, *
 :root
 	--tree: #0B6E4F
 	--drash: #2F7796
+	--anv: #E58054
 
 .tree
 	color: var(--tree)
 
 .drash
 	color: var(--drash)
+
+.anv
+	color: var(--anv)
 
 .green
 	color: #10D56C !important
@@ -681,6 +685,7 @@ body, html, *
 .side-bar
 	display: flex
 	flex-direction: column
+	z-index: 800
 	@media screen and (min-width: 900px)
 		width: 25%
 		height: 100vh
@@ -734,6 +739,7 @@ body, html, *
 		height: calc(100vh - 64px)
 		top: 64px
 		left: 0
+		z-index: 800
 		position: fixed
 		background: rgba(255,255,255,0.8)
 		backdrop-filter: blur(4px)
@@ -775,6 +781,7 @@ body, html, *
 		min-height: 100vh
 		padding-top: 120px
 		margin-left: 25%
+		padding-bottom: 64px
 	@media screen and (max-width: 767px)
 		width: calc(100% - 32px)
 		padding-top: 80px
@@ -966,7 +973,6 @@ body, html, *
 		flex-direction: column
 	@media screen and (min-width: 900px)
 		padding-left: 20px
-		padding-right: 64px
 		.cols1
 			width: 64%
 			margin-bottom: 20px
@@ -977,7 +983,6 @@ body, html, *
 			padding-bottom: 64px
 	@media screen and (max-width: 899px)
 		padding-left: 20px
-		padding-right: 40px
 		.cols1
 			width: 72%
 			margin-bottom: 20px
@@ -1238,8 +1243,8 @@ h4.ptt40
 			font-size: 32px
 			padding: 16px
 
-.cols4
-	h5, p, small, cite
+.cols4, .cols3, .cols2
+	h5, p, small, cite, pre
 		margin-top: 0
 		margin-bottom: 8px
 	h6
@@ -1303,6 +1308,7 @@ h4.ptt40
 		margin-left: -40px
 		width: 100%
 		margin-bottom: 16px
+		margin-top: 24px
 	h6
 		color: white
 		margin: 0

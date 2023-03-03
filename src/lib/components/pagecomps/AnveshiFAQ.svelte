@@ -1,10 +1,12 @@
 <script lang="ts">
 import supabase from '$lib/db'
-import { onMount } from 'svelte';
-let showP = false
+let showStates:any = []
 
-function toggleWid(){
-	showP = !showP
+function toggleWid(index:any){
+	showStates[index] = !showStates[index]
+	showStates.forEach((state:any, i:any) => {
+		if ( i !== index) showStates[i] = false
+	})
 }
 
 export async function allFaq() {
@@ -14,6 +16,7 @@ export async function allFaq() {
 	.eq('type','faq')
 	.order('id')
 	if (error) throw new Error(error.message)
+	showStates  = new Array(data.length).fill(false)
 	return data
 }
 </script>
@@ -23,9 +26,9 @@ export async function allFaq() {
 	<small>....</small>
 	{:then data}
 	{#each data as item, index}
-		<div class="box-c" on:click={toggleWid} on:keydown={toggleWid}>
+		<div class="boxc" on:click={() => toggleWid(index)} on:keydown={() => toggleWid(index)}>
 			<h6 class="w600">{item.name}</h6>
-			{#if showP}
+			{#if showStates[index]}
 			<p class="wide75">{item.content}</p>
 			{/if}
 		</div>
@@ -37,7 +40,9 @@ export async function allFaq() {
 
 
 <style>
-
+.boxc h6 {
+	cursor: pointer;
+}
 @media screen and (min-width: 768px) {
 
 .l0 { width: 100%; padding-left: 16px;}
