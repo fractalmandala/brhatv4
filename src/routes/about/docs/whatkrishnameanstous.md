@@ -7,9 +7,8 @@ import BlockQuote1 from '$lib/components/reuse/BlockQuote.svelte'
 import BlockQuote2 from '$lib/components/reuse/BlockQuote.svelte'
 </script>
 
-<div class="hindi"><h5>
-यतो धर्मस्ततो कृष्णः यतो कृष्णः ततो जयः।</h5>
-</div>
+
+##### <span class="hind"> यतो धर्मस्ततो कृष्णः यतो कृष्णः ततो जयः।</span>
 
 ##### Where there is Dharma, there is Kṛṣṇa. Where there is Kṛṣṇa, there is victory.
 

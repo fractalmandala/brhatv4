@@ -1,73 +1,21 @@
-<script lang="ts">
-import { onMount } from 'svelte';
-import Animations from 'textify.js';
-import '$lib/styles/textify.css'
-let y= 1
-let resp = 1
-let divider = 1
-let observer: IntersectionObserver
-let img
-let parallaxdiv: Element
-
-$: if (resp > 576 ) {
-	divider = 80
-} else
-	{
-		divider = 600
-	}
-
-const { Textify } = Animations;
-const { TextifyTitle } = Animations;
-
-onMount(() => {
-	new Textify({
-    duration: 400,
-    stagger: 40,
-    once: false,
-		fade: true,
-		reveal: true,
-    easing: "circInOut"
-  });
-  new TextifyTitle({
-    duration: 600,
-    stagger: 100,
-    once: false,
-		reveal: true
-  });
-  observer = new IntersectionObserver(handleIntersection, observerOptions);
-  observer.observe(parallaxdiv);
-  return () => {
-    observer.disconnect();
-    window.removeEventListener('scroll', handleScroll);
-  };
-});
-
-const observerOptions = {
-	rootMargin: '0px',
-	threshold: 0.5,
-}
-
-const handleIntersection = (entries: [any]) => {
-  const [entry] = entries;
-  if (entry.isIntersecting) {
-    window.addEventListener('scroll', handleScroll);
-  } else {
-    window.removeEventListener('scroll', handleScroll);
-  }
-};
-
-const handleScroll = () => {
-	y = window.scrollY
-}
-
-
+<script>
+	import Grand1 from '$lib/components/globals/HomeContainer.svelte'
 </script>
 
-<svelte:window bind:scrollY={y} bind:innerWidth={resp}/>
 
-	<div class="flexbox-c imgbox l00">
 
+	<div class="gp0">
+			<h5>
+				To be a history in the true sense of the word, a work must be a story of the people inhabiting a country.
+			</h5>
+			<p>
+				It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
+			</p>
 	</div>
+
+
+
+
 	<div class="flexbox-c desk-margins l2">
 
 		<h5 class="w400 grey">
@@ -83,9 +31,9 @@ const handleScroll = () => {
 				Shri KM Munshi
 		</small>
 	</div>
-	<div class="flexbox-r full desk-margins col-image l5" bind:this={parallaxdiv}>
-		<div class="in-col im-col wide40" style="transform: translateY({-y/10}px)" bind:this={parallaxdiv}>
-				<img src="/images/mandala/itihaas.webp" alt="itihas" style="transform: translateY({y/15}px)"/>
+	<div class="flexbox-r full desk-margins col-image l5">
+		<div class="in-col im-col wide40">
+				<img src="/images/mandala/itihaas.webp" alt="itihas"/>
 		</div>
 		<div class="in-col non-im-col wide60 pad-x-l">
 			<h6 class="w400">
@@ -202,15 +150,7 @@ const handleScroll = () => {
 #bb8 { background-image: url('/images/mandala/web7.webp');}
 #bb9 { background-image: url('/images/mandala/dharma.webp');}
 
-.l00 {
-	background-image: url('/images/mandala/1131-m2-1.webp');
-}
 
-
-.l00 {
-	justify-content: flex-start;
-	align-items: center;
-}
 @keyframes selfwiden {
 	from { width: calc(100%/9);}
 	to { width: 60%;}
@@ -246,7 +186,7 @@ const handleScroll = () => {
 
 @media screen and (min-width: 768px) {
 	.container a { font-size: 24px; font-weight: bold; background-color: rgba(0,0,0,0.7); padding: 3px 10px;}
-	.l00 { height: 100vh;}
+
 
 	:root {
 		--mope: 10;
@@ -261,7 +201,7 @@ const handleScroll = () => {
 
 
 @media screen and (max-width: 767px) {
- .l00 { height: 30vh; margin-top: 64px;}
+
 
 	:root {
 		--mope: 1;

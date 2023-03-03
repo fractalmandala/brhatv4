@@ -169,7 +169,7 @@ export async function fetchFacilitator(){
 		<h5 class="w600 upper" on:click={toggle3} on:keydown={toggle3}>Takeaways</h5>
 		<h5 class="w600 upper" on:click={toggle4} on:keydown={toggle4}>Facilitator</h5>
 	</div>
-	<div class="in-col main">
+	<div class="boxc main">
 		{#if panel1}
 		<div id="element-1" class="formal3 element"
 			in:fly="{{ delay: 400, duration: 200, x:0, y: 600, opacity: 0, easing: quintOut}}"

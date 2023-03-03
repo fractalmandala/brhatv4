@@ -24,10 +24,8 @@ this is the eternal law.
 </div>
 </BlockQuote1>
 
-<div class="hindi"><h5>
-सत्यं ब्रूयात् प्रियं ब्रूयान्न ब्रूयात् सत्यमप्रियम्प्रि ।<br>
-यं च नानृतं ब्रूयादेष धर्मः सनातनः ॥
-</h5></div>
+
+###### सत्यं ब्रूयात् प्रियं ब्रूयान्न ब्रूयात् सत्यमप्रियम्प्रि । यं च नानृतं ब्रूयादेष धर्मः सनातनः ॥
 
 #### 2 - Saundarya and Samiti (Beauty and Harmony)
 
@@ -40,10 +38,10 @@ yet without education they are like the Palasa flower which is void of sweet fra
 </div>
 </BlockQuote2>
 
-<div class="hindi"><h5>
-रूपयौवनसंपन्ना विशाल कुलसम्भवाः ।<br>
-विद्याहीना न शोभन्ते निर्गन्धा इव किंशुकाः ॥
-</h5></div>
+
+###### रूपयौवनसंपन्ना विशाल कुलसम्भवाः ।
+###### विद्याहीना न शोभन्ते निर्गन्धा इव किंशुकाः ॥
+
 
 #### 3 - Vyaṣṭi and Samaṣṭi (Fractal and Networked)
 
@@ -56,10 +54,10 @@ as in the macrocosm, so in the microcosm.
 </div>
 </BlockQuote3>
 
-<div class="hindi"><h5>
-यथा पिंडे तथा ब्रह्मण्डे ।<br>
-यथा ब्रह्मण्डे तथा पिंडे ॥
-</h5></div>
+
+###### यथा पिंडे तथा ब्रह्मण्डे ।
+###### यथा ब्रह्मण्डे तथा पिंडे ॥
+
 
 #### 4 - Medha and Viveka (Wisdom and Discernment)
 
@@ -71,8 +69,7 @@ May that Sarasvati, who is intelligence personified, who is fragrant, who is all
 </div>
 </BlockQuote4>
 
-<div class="hindi"><h5>
-आ मां मे॒धा सु॒रभि॑-र्वि॒श्वरू॑पा॒ हिर॑ण्यवर्णा॒ जग॑ती जग॒म्या ।<br> 
-ऊर्ज॑स्वती॒ पय॑सा॒ पिन्व॑माना॒ सा मे॒धा सु॒प्रती॑का जुषन्ताम् ॥
-</h5></div>
+
+###### आ मां मे॒धा सु॒रभि॑-र्वि॒श्वरू॑पा॒ हिर॑ण्यवर्णा॒ जग॑ती जग॒म्या ।
+###### ऊर्ज॑स्वती॒ पय॑सा॒ पिन्व॑माना॒ सा मे॒धा सु॒प्रती॑का जुषन्ताम् ॥
 

@@ -1,8 +1,99 @@
 <script>
+import ShareSocial from '$lib/components/globals/ShareSocial.svelte'
+import ShareSocial2 from '$lib/components/globals/ShareSocial.svelte'
 import supabase from '$lib/db'
-import DrashtaCourse from '$lib/components/pagecomps/DrashtaRam.svelte'
-let y = 1
-	export async function fetchCourse(){
+import { fly } from 'svelte/transition';
+import { quintOut } from 'svelte/easing';
+import { reveal } from 'svelte-reveal'
+import GrandContainer from '$lib/components/globals/GrandContainer.svelte'
+
+let panel1 = true
+let panel2 = false
+let panel3 = false
+let panel4 = false
+let panel5 = false
+
+function toggle1(){
+	panel1 = !panel1
+	if (panel2 === true) {
+			panel2 = !panel2
+	}
+	if (panel3 === true) {
+			panel3 = !panel3
+	}
+	if (panel4 === true) {
+			panel4 = !panel4
+	}
+	if (panel5 === true) {
+			panel5 = !panel5
+	}
+}
+
+function toggle2(){
+	panel2 = !panel2
+	if (panel1 === true) {
+			panel1 = !panel1
+	}
+	if (panel3 === true) {
+			panel3 = !panel3
+	}
+	if (panel4 === true) {
+			panel4 = !panel4
+	}
+	if (panel5 === true) {
+			panel5 = !panel5
+	}
+}
+
+function toggle3(){
+	panel3 = !panel3
+	if (panel2 === true) {
+			panel2 = !panel2
+	}
+	if (panel1 === true) {
+			panel1 = !panel1
+	}
+	if (panel4 === true) {
+			panel4 = !panel4
+	}
+	if (panel5 === true) {
+			panel5 = !panel5
+	}
+}
+
+function toggle4(){
+	panel4 = !panel4
+	if (panel2 === true) {
+			panel2 = !panel2
+	}
+	if (panel3 === true) {
+			panel3 = !panel3
+	}
+	if (panel1 === true) {
+			panel1 = !panel1
+	}
+	if (panel5 === true) {
+			panel5 = !panel5
+	}
+}
+
+function toggle5(){
+	panel5 = !panel5
+	if (panel2 === true) {
+			panel2 = !panel2
+	}
+	if (panel3 === true) {
+			panel3 = !panel3
+	}
+	if (panel1 === true) {
+			panel1 = !panel1
+	}
+	if (panel4 === true) {
+			panel4 = !panel4
+	}
+}
+
+export async function fetchCourse(){
 	const { data, error } = await supabase
 	.from('brhat-drashta')
 	.select()
@@ -10,70 +101,364 @@ let y = 1
 	.eq('type', 'overview')
 	if (error) throw new Error(error.message)
 	return data
-	}
+}
+
+export async function fetchDetails(){
+	const { data, error } = await supabase
+	.from('brhat-drashta')
+	.select()
+	.eq('course','introduction to shri ram swarup')
+	.eq('type', 'course details')
+	.order('sequence',{ascending: false})
+	.limit(3)
+	if (error) throw new Error(error.message)
+	return data
+}
+
+export async function fetchWhofor(){
+	const { data, error } = await supabase
+	.from('brhat-drashta')
+	.select()
+	.eq('course','introduction to shri ram swarup')
+	.eq('type', 'course details')
+	.order('sequence')
+	.limit(1)
+	if (error) throw new Error(error.message)
+	return data
+}
+
+export async function fetchTakeaways(){
+	const { data, error } = await supabase
+	.from('brhat-drashta')
+	.select()
+	.eq('course','introduction to shri ram swarup')
+	.eq('type', 'takeaway')
+	if (error) throw new Error(error.message)
+	return data
+}
+
+export async function fetchContent(){
+	const { data, error } = await supabase
+	.from('brhat-drashta')
+	.select()
+	.eq('course','introduction to shri ram swarup')
+	.eq('type', 'course content')
+	.order('sequence')
+	if (error) throw new Error(error.message)
+	return data
+}
+
+export async function fetchFacilitator(){
+	const { data, error } = await supabase
+	.from('brhat-drashta')
+	.select()
+	.eq('course','introduction to shri ram swarup')
+	.eq('type', 'facilitator')
+	.order('sequence')
+	if (error) throw new Error(error.message)
+	return data
+}
 
 </script>
 
+<div class="wid-side">
+	<GrandContainer>
+		<div slot="mobilenav" class="mobmob">
+				<div class="flier" in:fly={{ duration: 300, delay: 200, x: 0, y: -160}} out:fly={{ duration: 200, delay: 0, x: 0, y: -160}}>
+					<ShareSocial2></ShareSocial2>
+				</div>
+				<h6 in:fly={{ duration: 300, delay: 200, x: 0, y: -160}} out:fly={{ duration: 200, delay: 0, x: 0, y: -160}}>Shri Ram Swarup</h6>
+				<p class="islink" on:click={toggle1} on:keydown={toggle1} in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}>Overview</p>
+				<p class="islink" on:click={toggle5} on:keydown={toggle5} in:fly={{ duration: 300, delay: 220, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}>Details</p>
+				<p class="islink" on:click={toggle2} on:keydown={toggle2} in:fly={{ duration: 300, delay: 240, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}>Contents</p>
+				<p class="islink" on:click={toggle3} on:keydown={toggle3} in:fly={{ duration: 300, delay: 260, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}>Takeaways</p>
+				<p class="islink" on:click={toggle4} on:keydown={toggle4} in:fly={{ duration: 300, delay: 280, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}>Facilitator</p>
+			<div class="block"></div>
+			<h6 in:fly={{ duration: 300, delay: 200, x: 0, y: -160}} out:fly={{ duration: 200, delay: 0, x: 0, y: -160}}><a href="/drashta">Bṛhat Draṣṭā</a></h6>
+				<p in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/drashta/course/valmikiramayana">Vālmīka Rāmāyaṇa</a></p>
+				<p in:fly={{ duration: 300, delay: 220, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/drashta/course/hinduiconography">Hindu Iconography</a></p>
+				<p in:fly={{ duration: 300, delay: 240, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/drashta/course/shriramswarup">Shri Ram Swarup</a></p>
+				<p in:fly={{ duration: 300, delay: 250, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/drashta/course/sitaramgoel">Sita Ram Goel</a></p>
+				<p in:fly={{ duration: 300, delay: 280, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/drashta/#drashtas">Draṣṭās</a></p>
+				<p in:fly={{ duration: 300, delay: 300, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/drashta/#darshanas">Darśanas</a></p>
+				<p in:fly={{ duration: 300, delay: 320, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/drashta/#firekeepers">Firekeepers of Civilization</a></p>
+		</div>
+		<div slot="desknav" class="deskdesk">
+			<ShareSocial></ShareSocial>
+			<div class="tabhead">
+				<h6>Shri Ram Swarup</h6>
+			</div>
+				<p class="islink" on:click={toggle1} on:keydown={toggle1}>Overview</p>
+				<p class="islink" on:click={toggle5} on:keydown={toggle5}>Details</p>
+				<p class="islink" on:click={toggle2} on:keydown={toggle2}>Contents</p>
+				<p class="islink" on:click={toggle3} on:keydown={toggle3}>Takeaways</p>
+				<p class="islink" on:click={toggle4} on:keydown={toggle4}>Facilitator</p>
+			<h6><a href="/drashta">Bṛhat Draṣṭā</a></h6>
+				<p><a href="/drashta/course/valmikiramayana">Vālmīka Rāmāyaṇa</a></p>
+				<p><a href="/drashta/course/hinduiconography">Hindu Iconography</a></p>
+				<p><a href="/drashta/course/shriramswarup">Shri Ram Swarup</a></p>
+				<p><a href="/drashta/course/sitaramgoel">Sita Ram Goel</a></p>
+				<p><a href="/drashta/#drashtas">Draṣṭās</a></p>
+				<p><a href="/drashta/#darshanas">Darśanas</a></p>
+				<p><a href="/drashta/#firekeepers">Firekeepers of Civilization</a></p>
+		</div>
+	</GrandContainer>
+	<div class="main-page">
+		{#if panel1}
+		<div class="gp1 x1"
+				in:fly="{{ delay: 400, duration: 200, x:500, y: 0, opacity: 0, easing: quintOut}}"
+				out:fly="{{ delay: 0, duration: 300, x:-500, y: 0, opacity: 0, easing: quintOut}}"
+			>
+			<div id="element-1" class="document element">
+				{#await fetchCourse()}		
+				<small>...</small>
+				{:then data}
+				{#each data as item}
+				<img class="heroimage" src={item.image} alt={item.name}/>
+				<div class="the-title">
+					<h2>{item.name}</h2>
+				</div>
+						<div class="boxr">
+							<p>{item.status}</p>
+							<p>{item.datefrom}</p>
+						</div>
+						<pre>{item.content}</pre>
+					{/each}
+				{:catch error}
+				<pre>{error}</pre>
+				{/await}
+			</div>
+		</div>
+		{/if}
+		{#if panel5}
+		<div class="gp1" in:fly="{{ delay: 400, duration: 200, x:500, y: 0, opacity: 0, easing: quintOut}}" out:fly="{{ delay: 0, duration: 300, x:-500, y: 0, opacity: 0, easing: quintOut}}">
+			<div id="element-5" class="document element">
+				<h3>Details</h3>
+				{#await fetchDetails()}
+					<small>...loading</small>
+					{:then data}
+					<div class="gp3" id="detailsrow">
+						{#each data as item, i}
+						<div class="cols3" use:reveal={{transition: "fly", y: 80, duration: i*200, easing: "easeOutCirc", blur: 0}}>
+							<img src={item.image} alt={item.name} />
+							<small>{item.name}</small>
+							<p>{item.content}</p>
+						</div>
+						{/each}
+					</div>
+					{:catch error}
+					<pre>{error}</pre>
+				{/await}
+			</div>
+		</div>
+		{/if}
 
-<svelte:window bind:scrollY={y}/>
-<div class="flexbox-r l1">
-	{#await fetchCourse()}
-	<small>...loading</small>
-	{:then data}
-	{#each data as item}
-		<div class="in-col two1">
-			<h1>{item.name}</h1>
+
+		{#if panel2}
+		<div class="gp1" in:fly="{{ delay: 400, duration: 200, x:500, y: 0, opacity: 0, easing: quintOut}}" out:fly="{{ delay: 0, duration: 300, x:-500, y: 0, opacity: 0, easing: quintOut}}">
+			<div id="element-2" class="document element">
+				<h3>Course Contents</h3>
+				{#await fetchContent()}
+				<small>loading...</small>
+				{:then data}
+				{#each data as item}
+					<div class="boxc contentcol">
+						<h5>{item.name}</h5>
+						<pre>{item.content}</pre>
+						<pre>Books: {item.books}</pre>
+					</div>
+				{/each}
+				{:catch error}
+				<pre>{error}</pre>
+				{/await}
+			</div>
 		</div>
-		<div class="in-col two2">
-			<img src={item.image} alt={item.name} style="transform: translateY({y/4}px)"/>
+		{/if}
+
+		{#if panel3}
+		<div class="gp1" in:fly="{{ delay: 400, duration: 200, x:500, y: 0, opacity: 0, easing: quintOut}}" out:fly="{{ delay: 0, duration: 300, x:-500, y: 0, opacity: 0, easing: quintOut}}">
+			<div id="element-3" class="document element">
+				<h3>Learner Takeaways</h3>
+			{#await fetchTakeaways()}
+			<small>loading...</small>
+			{:then data}
+			{#each data as item}
+			<div class="boxc contentcol">
+				<h5>{item.name}</h5>
+				<pre>{item.content}</pre>
+			</div>
+			{/each}
+			{:catch error}
+			<pre>{error}</pre>
+			{/await}
+			</div>
 		</div>
-	{/each}
-	{:catch error}
-	<pre>{error}</pre>
-	{/await}
+		{/if}
+
+		{#if panel4}
+		<div class="gp1" in:fly="{{ delay: 400, duration: 200, x:500, y: 0, opacity: 0, easing: quintOut}}" out:fly="{{ delay: 0, duration: 300, x:-500, y: 0, opacity: 0, easing: quintOut}}">
+			<div id="element-4" class="document element">
+				<h3>Instructor</h3>
+				{#await fetchFacilitator()}
+				<small>loading...</small>
+				{:then data}
+				{#each data as item}
+				<div class="instructorbox">
+					<img src={item.image} alt={item.name} />
+					<pre>{item.content}</pre>
+				</div>
+				{/each}
+				{:catch error}
+				<pre>{error}</pre>
+				{/await}
+			</div>
+		</div>
+		{/if}
+
+	</div>
 </div>
-<div class="flexbox-c l2">
-<DrashtaCourse></DrashtaCourse>
-</div>
+
 
 
 <style>
-.l1 { height: 100vh; background-position: center center; background-size: cover; background-repeat: no-repeat; justify-content: flex-start; z-index: 2; background: white;}
+.the-title h2 { text-transform: uppercase;}
 
-.l1 h1 { text-transform: capitalize;}
+.tabhead h6 {
+	background: #474747;
+}
+
+.deskdesk a:hover, .islink:hover {
+	color: var(--drash);
+}
+.islink { cursor: pointer;}
+	.x1 p {
+		color: white;
+		font-weight: bold;
+		background: var(--yell);
+		text-transform: uppercase;
+		padding: 0px 12px;
+		font-size: 12px;
+	}
 @media screen and (min-width: 900px) {
-	.l1 { align-items: center; height: 100vh; padding-left: 64px;}
-	.l1 .in-col img { object-fit: cover; width: 100%; height: 100%;}
-	.two2 { width: 80%; height: 72%;z-index:0;}
-	.two1 { width: 70vw; margin-right: -56%; height: 100%; justify-content: flex-end;z-index: 1;}
-	.two1 h1 { background: rgba(0,0,0,0.8); padding: 16px 32px; margin-bottom: 0.5em; color: white;}
-	.l1 {overflow-y: hidden;}
+	.element h3 {
+		margin-bottom: 32px;
+	}
+	.heroimage {
+		margin-right: -25%;
+	}
+	#detailsrow .cols3 {
+		transition: all 0.3s var(--cubeb);
+	}
+	#detailsrow .cols3 small {
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 12px;
+		color: #b7b7b7;
+		text-align: center;
+	}
+	#detailsrow .cols3 img {
+		margin: auto;
+		object-fit: cover;
+		width: 88px;
+		height: 88px;
+	}
+	#detailsrow .cols3 p {
+		text-align: center;
+		font-weight: bold;
+		color: #676767;
+	}
+	#detailsrow .cols3:hover p { color: var(--drash);}
+	#detailsrow .cols3:hover {
+		transform: scale(1.1);
+	}
+	.contentcol {
+		margin-bottom: 32px;
+	}
+	.contentcol h5, .contentcol pre, .instructorbox pre { margin: 0;}
+	.contentcol h5 {
+			font-size: 20px;
+			padding-bottom: 8px;
+		}
+	.instructorbox pre {
+		padding: 0 0 0 32px;
+	}
+	.contentcol pre, .instructorbox pre {
+		font-size: 16px;
+		color: #a0a0a0;
+	}
+	.instructorbox {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 32px;
+	}
+	.instructorbox img {
+		object-fit: cover;
+		width: 40%;
+		height: 200px;
+	}
+	.tabhead { margin-top: 24px;}
 }
 
-@media screen and (max-width: 899px) and (min-width: 768px) {
-	.l1 { align-items: flex-start; height: 100vh; padding-left: 64px; flex-wrap: wrap;}
-	.two2 { width: 80%; z-index:0; height: 40vh; margin-top: 80px; }
-	.two1 { width: 90vw; height: 30%; margin-top: 40vh; justify-content: flex-start;z-index: 1;}
-	.two1 h1 { background: #272727; padding: 16px 32px; margin-bottom: 0.5em; color: white; font-size: 64px;}
-
+@media screen and (max-width: 899px){
+	.element h3 {
+		margin-bottom: 32px;
+	}
+	#detailsrow .cols3 {
+		transition: all 0.3s var(--cubeb);
+	}
+	#detailsrow .cols3 small {
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 12px;
+		color: #b7b7b7;
+		text-align: center;
+	}
+	#detailsrow .cols3 img {
+		margin: auto;
+		object-fit: cover;
+		width: 88px;
+		height: 88px;
+	}
+	#detailsrow .cols3 p {
+		text-align: center;
+		font-weight: bold;
+		color: #676767;
+	}
+	#detailsrow .cols3:hover p { color: var(--drash);}
+	#detailsrow .cols3:hover {
+		transform: scale(1.1);
+	}
+	.contentcol {
+		margin-bottom: 32px;
+	}
+	.contentcol h5, .contentcol pre, .instructorbox pre { margin: 0;}
+	.contentcol h5 {
+			font-size: 20px;
+			padding-bottom: 8px;
+		}
+	.instructorbox pre {
+		padding: 0 0 0 32px;
+	}
+	.contentcol pre, .instructorbox pre {
+		font-size: 16px;
+		color: #a0a0a0;
+	}
+	.instructorbox {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 32px;
+	}
+	.instructorbox img {
+		object-fit: cover;
+		width: 40%;
+		height: 200px;
+	}
+	.tabhead { margin-top: 24px;}
 }
 
-@media screen and (max-width: 767px) and (min-width: 576px) {
-	.l1 { height: 100vh; width: 100vw; overflow-x: hidden; flex-wrap: wrap; padding-left: 0; margin-left: 0;}
-	.two2 { height: 60vh; width: 100vw; order: 1;}
-	.l1 .in-col img { object-fit: cover; height: 100%;}
-	.two1 { height: 100%; width: 100vw; margin-left: 0; padding-left: 0; order: 2; padding-top: 64px; z-index: 2;}
-	.two1 h1 { margin-left: 0; width: 100%;}
-	.two1 h1 { background: #272727; padding: 16px 32px; margin-bottom: 0.5em; color: white; font-size: 64px;}
-} 
-
-
-@media screen and (max-width: 575px) {
-	.l1 { height: 100%; width: 100vw; overflow-x: hidden; flex-wrap: wrap; padding-left: 0; margin-left: 0;}
-	.two2 { height: 40vh; width: 100vw; order: 1;}
-	.l1 .in-col img { object-fit: cover; height: 100%;}
-	.two1 { height: 100%; width: 100vw; margin-left: 0; padding-left: 0; order: 2; padding-top: 32px; z-index: 2;}
-	.two1 h1 { margin-left: 0; width: 100%;}
-	.two1 h1 { background: #272727; padding: 16px 32px; margin-bottom: 0.5em; color: white; font-size: 40px;}
+@media screen and (max-width: 767px) {
+	.heroimage { width: 100%; margin-right: -64px;}
+	.block { height: 40px; display: flex;}
 }
 </style>
+

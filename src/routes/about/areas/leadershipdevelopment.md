@@ -3,8 +3,8 @@ title: Leadership Development
 image: "/images/areas-ld.webp"
 ---
 
-<div class="hindi"><h5>लौकिकानां हि साधूनाम् अर्थं वागनुवर्तते।<br>
-ऋषीणां पुनराद्यानां वाचमर्थोनुधावति ॥</h5></div>
+###### लौकिकानां हि साधूनाम् अर्थं वागनुवर्तते।
+###### ऋषीणां पुनराद्यानां वाचमर्थोनुधावति ॥
 
 <h5>In the case of ordinary beings, the words follow the meaning.<br> 
 For ṛṣis, the meaning follows their words.<br>
@@ -25,10 +25,10 @@ An impossible ideal that is held up as perfection, an exemplar to try and emulat
 
 That is of the ṛṣis, but what of the Kings. Surely, they are more ‘pragmatic’.
 
-<div class="hindi"><h5>
-कृतं त्रेतायुगं चैव द्वापरं कलिरेव च । <br>
-राज्ञो वृत्तानि सर्वाणि राजा हि युगमुच्यते ॥
-</h5></div>
+
+###### कृतं त्रेतायुगं चैव द्वापरं कलिरेव च ।
+###### राज्ञो वृत्तानि सर्वाणि राजा हि युगमुच्यते ॥
+
 
 <h5>The actions of the king constitute the Kṛta, the Tretā, the Dvāpara and the Kali cycles; as it is the king that is called the ‘cycle.’<br>
 <cite class="grey w400"><span class="hindi">मनुस्मृति |</span> Manusmṛti 301 – 302</cite></h5>
@@ -73,8 +73,8 @@ In conclusion, when we do not consider the other as the ‘other’, when we sta
 
 We are all leaders, says Kṛṣṇa in the Bhagavad Gītā 3.21, we must always behave in such a way that we do not showcase wrong behaviour or become a wrong example to those who are looking up to us, watching us. Great expectations indeed! But that is the Indic vision, the vision of Bṛhat.
 
-<div class="hindi"><h5>यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जन: ।<br>
-स यत्प्रमाणं कुरुते लोकस्तदनुवर्तते ॥</h5></div>
+###### यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जन: ।
+###### स यत्प्रमाणं कुरुते लोकस्तदनुवर्तते ॥
 
 <h5>Whatever actions great persons perform, common people follow.<br>
 Whatever standards they set, all the world pursues.</h5>

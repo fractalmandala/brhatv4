@@ -17,16 +17,6 @@ function closeDropdown() {
   selected = null;
 }
 
-function toggleFunction(i) {
-  if (toggledIndex === i) {
-    isShow[i] = false;
-    toggledIndex = null;
-  } else {
-    isShow = isShow.map((show, index) => index === i);
-    toggledIndex = i;
-  }
-}
-
 export async function fetchDrashtas(){
 	const { data, error } = await supabase
 	.from('brhat-drashta2')
@@ -37,10 +27,20 @@ export async function fetchDrashtas(){
 	return data
 }
 
+export async function fetchNames(){
+	const { data, error } = await supabase
+		.from('brhat-drashta2')
+		.select()
+		.eq('type', 'drashta')
+		.order('sequence')
+	if (error) throw new Error(error.message)
+	return data
+}
+
 </script>
 
 
-<div class="flexbox-c">
+<div class="boxc">
 	{#await fetchDrashtas()}		
 	<small>...</small>
 	{:then data}
@@ -51,12 +51,13 @@ export async function fetchDrashtas(){
     {/each}
   	</select>
   	{#if selected !== null}
-    <div class="in-col content popper">
-      <cite class="red" on:click={closeDropdown} on:keydown={closeDropdown}>CLOSE</cite>
+    <div class="boxc content popper">
+      <cite class="drash wbold" on:click={closeDropdown} on:keydown={closeDropdown}>CLOSE</cite>
       <pre
         in:fly="{{delay: 100, duration: 100, y: 500, x: 0, opacity: 0, easing: quintOut}}"
         out:fly="{{delay: 0, duration: 100, x: 0, y: 500, opacity: 0, easing: quintOut}}"
-      >{data[selected].content}</pre>
+      >{data[selected].content}
+			</pre>
     </div>
   	{/if}
 	</div>
@@ -71,24 +72,46 @@ export async function fetchDrashtas(){
 
 
 select {
-	text-transform: capitalize !important;
+	text-transform: capitalize;
 	height: 32px;
-	background: #fe4a49;
-	border: 1px solid #fe4a49;
+	background: var(--drash);
+	border: 1px solid var(--drash);
 	color: white;
 	border-radius: 4px;
 }
 
+.formal3 .content {
+	position: fixed;
+	z-index: 600;
+	right: 0;
+	color: #878787;
+	background: rgba(255,255,255,0.88);
+	backdrop-filter: blur(5px);
+	border: 1px solid #878787;
+	border-radius: 4px;
+	overflow-y: scroll;
+}
+
 @media screen and (min-width: 900px) {
-	select, option { font-size: 14px;}
+	select, option { font-size: 16px;}
 	.formal3 { position: relative; width: 100%;}
-	.formal3 .content { position: fixed; top: 72px; z-index: 600; right: 0; width: 50%; font-size: 18px; color: #878787; background: rgba(0,0,0,0.9); backdrop-filter: blur(5px); border: 1px solid #878787; border-radius: 4px; padding: 80px; height: calc(100vh - 72px); overflow-y: scroll; }
-	.content pre { font-size: 20px; color: white; line-height: 1.5;}
+	.formal3 .content { top: 72px; width: 50%; font-size: 18px; padding: 80px; height: calc(100vh - 72px); }
+	.content pre { font-size: 16px; color: #a0a0a0; line-height: 1.5;}
 	.content cite { text-align: left; cursor: pointer;}
 }
 
+@media screen and (max-width: 899px) {
+	.formal3 .content { top: 64px; width: 90%; font-size: 15px; padding: 40px; height: calc(100vh - 64px); }
+}
+
+@media screen and (max-width: 767px) {
+	select { width: 80%}
+	.formal3 .content { top: 64px; width: 90%; font-size: 14px; padding: 32px; height: calc(100vh - 64px); }
+}
+
 @media screen and (max-width: 575px) {
-	.content pre { font-size: 14px;}
+	select { width: 80%}
+	.formal3 .content { top: 56px; width: 90%; font-size: 14px; padding: 24px; height: calc(100vh - 56px); }
 }
 
 </style>

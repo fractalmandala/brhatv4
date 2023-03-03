@@ -1,20 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap')
+
 body, html, *
 	box-sizing: border-box
 
 :root
 	--tree: #0B6E4F
+	--drash: #2F7796
 
 .tree
 	color: var(--tree)
 
-.box-c
+.drash
+	color: var(--drash)
+
+.green
+	color: #10D56C !important
+
+
+.boxc
 	display: flex
 	flex-direction: column
 
 .col-center-y
 	justify-content: center
 
-.box-r
+.boxr
 	display: flex
 	flex-direction: row
 
@@ -32,6 +42,9 @@ body, html, *
 	background-position: center center
 	background-size: cover
 	background-repeat: no-repeat
+
+.whiteback
+	background: white
 
 .c-sidebar
 	@media screen and (min-width: 768px)
@@ -107,24 +120,10 @@ body, html, *
 		padding-right: 16px
 		border-bottom: 1px solid #d7d7d7
 		z-index: 800
-		.menutwo
-			height: 27px
-			width: 27px
 
 .menuone
 	@media screen and (max-width: 767px)
 		display: none
-
-.menutwo
-	height: 24px
-	width: 24px
-	svg
-		cursor: pointer
-	@media screen and (min-width: 768px)
-		display: none
-
-.menutwo svg path
-	fill: #b7b7b7
 
 .sidebar-draw
 	display: flex
@@ -419,6 +418,9 @@ body, html, *
 	@media screen and (max-width: 767px)
 		padding-top: 32px
 
+.pad32-b
+	padding-bottom: 32px
+
 .pad-left-16
 	padding-left: 16px
 
@@ -634,7 +636,678 @@ body, html, *
 	100%
 		width: 100%
 
-.document-sheet
+
+.cols1, .cols2, .cols3, .cols4, .cols4b, .cols23, .cols21
+	img
+		object-fit: cover
+		width: 100%
+
+
+.no-side
+	display: flex
+	flex-direction: column
+	@media screen and (min-width: 900px)
+		width: calc(100vw - 64px)
+		margin-left: 64px
+		border-left: 2px solid #b7b7b7
+		height: 100%
+		padding-top: 120px
+	@media screen and (max-width: 899px)
+		width: calc(100vw - 40px)
+		margin-left: 40px
+		border-left: 2px solid #b7b7b7
+		height: 100%
+	@media screen and (max-width: 767px)
+		width: calc(100vw - 32px)
+		margin-left: 32px
+		border-left: 2px solid #b7b7b7
+		padding-top: 120px
+		height: 100%
+	@media screen and (max-width: 575px)
+		width: calc(100vw - 24px)
+		margin-left: 24px
+		border-left: 2px solid #b7b7b7
+		height: 100%
+
+.wid-side
+	display: flex
+	flex-direction: row
+	width: 100vw
+	overflow-x: hidden
+	box-sizing: border-box
+	margin: 0
+	min-height: 100vh
+
+.side-bar
+	display: flex
+	flex-direction: column
+	@media screen and (min-width: 900px)
+		width: 25%
+		height: 100vh
+		position: fixed
+		top: 0
+		left: 0
+		.in-side
+			width: calc(100% - 64px)
+			margin-left: 64px
+			border-left: 2px solid #b7b7b7
+			height: 100%
+			padding-top: 160px
+			padding-left: 16px
+	@media screen and (max-width: 899px)
+		width: 25%
+		height: 100vh
+		position: fixed
+		top: 0
+		left: 0
+		.in-side
+			width: calc(100% - 40px)
+			margin-left: 40px
+			border-left: 2px solid #b7b7b7
+			height: 100%
+			padding-top: 160px
+			padding-left: 16px
+	@media screen and (max-width: 767px)
+		width: 100%
+		height: 40px
+		top: 64px
+		left: 0
+		position: fixed
+		transition: height 0.24s var(--cubea)
+		.in-side
+			display: none
+	@media screen and (max-width: 575px)
+		width: 100%
+		top: 56px
+		left: 0
+		position: fixed
+		min-height: 40px
+		.in-side
+			width: calc(100% - 24px)
+			height: 40px
+			border-left: 2px solid #b7b7b7
+			margin-left: 24px
+
+.side-bar.toggledClass
+	@media screen and (max-width: 767px)
+		width: 100%
+		height: calc(100vh - 64px)
+		top: 64px
+		left: 0
+		position: fixed
+		background: rgba(255,255,255,0.8)
+		backdrop-filter: blur(4px)
+		transition: height 0.24s var(--cubea)
+		overflow-y: scroll
+		padding-top: 16px
+		.in-side
+			display: none
+	@media screen and (max-width: 575px)
+		width: 100%
+		top: 56px
+		padding-top: 16px
+		left: 0
+		position: fixed
+		height: calc(100vh - 56px)
+		overflow-y: scroll
+		.in-side
+			display: none
+
+.navlinks
+	@media screen and (max-width: 767px)
+		padding: 0 32px 32px 32px
+		h6
+			font-size: 32px
+			text-transform: uppercase
+		p
+			margin: 0
+			padding: 8px
+			font-size: 20px
+			border-bottom: 1px solid #e1e1e1
+			font-weight: 400
+
+
+.main-page
+	display: flex
+	flex-direction: column
 	@media screen and (min-width: 768px)
-		padding-bottom: 80px
-		padding-right: 24vw
+		width: 75%
+		min-height: 100vh
+		padding-top: 120px
+		margin-left: 25%
+	@media screen and (max-width: 767px)
+		width: calc(100% - 32px)
+		padding-top: 80px
+		margin-left: 32px
+		border-left: 2px solid #b7b7b7
+		min-height: 100vh
+		padding-bottom: 64px
+	@media screen and (max-width: 575px)
+		width: calc(100% - 16px)
+		margin-left: 16px
+		border-left: 2px solid #b7b7b7
+		min-height: 100vh
+		padding-top: 96px
+
+.gp3
+	display: flex
+	flex-direction: row
+	width: 100%
+	.cols3
+		display: flex
+		flex-direction: column
+	@media screen and (min-width: 900px)
+		gap: 20px
+		padding-left: 20px
+		padding-right: 64px
+		.cols3
+			width: calc(33.33% - 13.33px)
+			margin-bottom: 20px
+	@media screen and (max-width: 899px)
+		gap: 20px
+		padding-left: 20px
+		padding-right: 40px
+		.cols3
+			width: calc(33.33% - 13.33px)
+			margin-bottom: 20px
+	@media screen and (max-width: 767px)
+		gap: 16px
+		padding-left: 16px
+		padding-right: 32px
+		flex-wrap: wrap
+		align-items: flex-start
+		.cols3
+			width: calc(33.33% - 10.66px)
+			margin-bottom: 16px
+			justify-content: flex-start
+	@media screen and (max-width: 575px)
+		gap: 8px
+		padding-left: 16px
+		padding-right: 24px
+		flex-wrap: wrap
+		.cols3
+			width: 100%
+			margin-bottom: 16px
+
+.gp4
+	display: flex
+	flex-direction: row
+	width: 100%
+	.cols4
+		display: flex
+		flex-direction: column
+	@media screen and (min-width: 900px)
+		gap: 32px
+		padding-left: 20px
+		padding-right: 64px
+		.cols4
+			width: calc(25% - 24px)
+			margin-bottom: 20px
+	@media screen and (max-width: 899px)
+		gap: 20px
+		padding-left: 20px
+		padding-right: 40px
+		.cols4
+			width: calc(25% - 15px)
+			margin-bottom: 20px
+	@media screen and (max-width: 767px)
+		gap: 16px
+		padding-left: 16px
+		padding-right: 32px
+		flex-wrap: wrap
+		.cols4
+			width: calc(50% - 8px)
+			margin-bottom: 16px
+	@media screen and (max-width: 575px)
+		gap: 8px
+		padding-left: 16px
+		padding-right: 24px
+		flex-wrap: wrap
+		.cols4
+			width: 100%
+			margin-bottom: 16px
+
+.gp2
+	display: flex
+	flex-direction: row
+	width: 100%
+	.cols2
+		display: flex
+		flex-direction: column
+	@media screen and (min-width: 900px)
+		gap: 20px
+		padding-left: 20px
+		padding-right: 64px
+		.cols2
+			width: calc(50% - 10px)
+			margin-bottom: 20px
+		.cols23
+			width: calc(70% - 10px)
+			margin-bottom: 20px
+		.cols21
+			width: calc(30% - 10px)
+			margin-bottom: 20px
+	@media screen and (max-width: 899px)
+		gap: 20px
+		padding-left: 20px
+		padding-right: 40px
+		.cols2
+			width: calc(50% - 10px)
+			margin-bottom: 20px
+		.cols23
+			width: calc(65% - 10px)
+			margin-bottom: 20px
+		.cols21
+			width: calc(35% - 10px)
+			margin-bottom: 20px
+	@media screen and (max-width: 767px)
+		gap: 0
+		padding-left: 16px
+		padding-right: 32px
+		flex-wrap: wrap
+		align-items: center
+		.cols2, .cols23, .cols21
+			width: 100%
+			margin-bottom: 16px
+	@media screen and (max-width: 575px)
+		gap: 0
+		padding-left: 16px
+		padding-right: 24px
+		flex-wrap: wrap
+		.cols2, .cols23, .cols21
+			width: 100%
+			margin-bottom: 16px
+
+.gp5
+	display: flex
+	flex-direction: row
+	width: 100%
+	.cols5
+		display: flex
+		flex-direction: column
+	@media screen and (min-width: 900px)
+		gap: 20px
+		padding-left: 20px
+		padding-right: 64px
+		.cols5
+			width: calc(20% - 5px)
+			margin-bottom: 20px
+	@media screen and (max-width: 899px)
+		gap: 20px
+		padding-left: 20px
+		padding-right: 40px
+		.cols5
+			width: calc(20% - 5px)
+			margin-bottom: 20px
+	@media screen and (max-width: 767px)
+		gap: 0
+		padding-left: 16px
+		padding-right: 32px
+		flex-wrap: wrap
+		align-items: center
+		.cols5
+			width: 100%
+			margin-bottom: 16px
+	@media screen and (max-width: 575px)
+		gap: 0
+		padding-left: 16px
+		padding-right: 24px
+		flex-wrap: wrap
+		.cols5
+			width: 100%
+			margin-bottom: 16px
+
+.gp1
+	display: flex
+	flex-direction: column
+	width: 100%
+	.cols1, .document
+		display: flex
+		flex-direction: column
+	@media screen and (min-width: 900px)
+		padding-left: 20px
+		padding-right: 64px
+		.cols1
+			width: 64%
+			margin-bottom: 20px
+		.document
+			width: 78%
+			padding-top: 32px
+			padding-left: 24px
+			padding-bottom: 64px
+	@media screen and (max-width: 899px)
+		padding-left: 20px
+		padding-right: 40px
+		.cols1
+			width: 72%
+			margin-bottom: 20px
+		.document
+			width: 100%
+			padding-right: 40px
+			padding-top: 32px
+			padding-bottom: 40px
+	@media screen and (max-width: 767px)
+		gap: 0
+		padding-left: 16px
+		padding-right: 32px
+		.cols1
+			width: 100%
+			margin-bottom: 16px
+		.document
+			width: 100%
+			padding-right: 32px
+	@media screen and (max-width: 575px)
+		padding-left: 16px
+		padding-right: 24px
+		.cols1
+			width: 100%
+			margin-bottom: 16px
+		.document
+			width: 100%
+			padding-right: 16px
+			padding-left: 8px
+			padding-top: 0
+
+.formatting
+	h1, h2, h3, h4, h6, p, small, cite, a, pre, code, blockquote, ul li, ol li
+		margin-top: 0
+		margin-bottom: 18px
+	h5
+		margin-top: 8px
+		margin-bottom: 18px
+	h1
+		font-weight: 600
+		@media screen and (min-width: 900px)
+			font-size: 128px
+		@media screen and (max-width: 899px)
+			font-size: 88px
+		@media screen and (max-width: 767px)
+			font-size: 56px
+			letter-spacing: -3px
+	h2
+		text-transform: uppercase
+		font-weight: 600
+		@media screen and (min-width: 900px)
+			font-size: 88px
+			font-weight: 600
+			letter-spacing: -3px
+		@media screen and (max-width: 899px)
+			font-size: 56px
+			letter-spacing: -2px
+			font-weight: 600
+		@media screen and (max-width: 767px)
+			font-size: 40px
+			letter-spacing: -1px
+			font-weight: 600
+	h3
+		color: #a7a7a7
+		margin: 0
+		@media screen and (min-width: 900px)
+			font-size: 64px
+			padding-left: 24px
+		@media screen and (max-width: 899px)
+			font-size: 36px
+		@media screen and (max-width: 767px)
+			font-size: 32px
+	h4
+		font-weight: 400
+		letter-spacing: -0.2px
+		@media screen and (min-width: 900px)
+			font-size: 23px
+		@media screen and (max-width: 899px)
+			font-size: 24px
+		@media screen and (max-width: 767px)
+			font-size: 20px
+		@media screen and (max-width: 575px)
+			font-size: 18px
+			letter-spacing: -0.3px
+	h5
+		font-weight: 600
+		@media screen and (min-width: 900px)
+			font-size: 28px
+		@media screen and (max-width: 899px)
+			font-size: 26px
+		@media screen and (max-width: 767px)
+			font-size: 21px
+			letter-spacing: -0.3px
+	h6
+		@media screen and (min-width: 900px)
+			font-size: 20px
+		@media screen and (max-width: 899px)
+			font-size: 18px
+		@media screen and (max-width: 767px)
+			font-size: 19px
+	p
+		font-size: 16px
+		color: #a0a0a0
+		@media screen and (max-width: 767px)
+			font-size: 14px
+	small
+		font-size: 12px
+	blockquote
+		font-style: italic
+		color: #a1a1a1
+		margin-left: 0
+		@media screen and (min-width: 768px)
+			font-size: 18px
+			border-left: 3px solid var(--soft)
+			padding-left: 16px
+		@media screen and (max-width: 767px)
+			font-size: 16px
+			border-left: 2px solid var(--soft)
+			padding-left: 16px
+
+.document
+	p, blockquote, ul li, ol li, b, em, strong
+		color: #a0a0a0
+	b, strong
+		color: #272727
+	h6
+		font-family: 'Newsreader', serif
+		color: #a0a0a0
+		@media screen and (max-width: 575px)
+			font-size: 21px
+			margin-top: 0
+			margin-bottom: 0
+		@media screen and (max-width: 767px)
+			font-size: 20px
+			margin-top: 0
+			margin-bottom: 0
+		@media screen and (max-width: 899px)
+			font-size: 21px
+			margin-top: 0
+			margin-bottom: 0
+		@media screen and (min-width: 900px)
+			font-size: 24px
+			margin-top: 0
+			margin-bottom: 0
+	h3
+		border-bottom: 1px solid #a0a0a0
+	h4
+		font-weight: bold
+		@media screen and (max-width: 575px)
+			font-size: 30px !important
+			margin-top: 32px
+		@media screen and (max-width: 767px)
+			font-size: 30px !important
+			margin-top: 40px
+		@media screen and (max-width: 899px)
+			font-size: 24px
+			margin-top: 40px
+		@media screen and (min-width: 900px)
+			font-size: 32px
+			margin-top: 40px
+	h5
+		@media screen and (max-width: 575px)
+			font-size: 18px
+		@media screen and (min-width: 900px)
+			font-size: 20px
+	blockquote
+		font-style: italic
+		@media screen and (max-width: 575px)
+			font-size: 18px
+		@media screen and (max-width: 899px)
+			font-size: 16px
+			color: #a0a0a0
+	p, ul li, ol li
+		@media screen and (max-width: 575px)
+			font-size: 16px
+		@media screen and (max-width: 767px)
+			font-size: 16px
+		@media screen and (max-width: 899px)
+			font-size: 16px
+		@media screen and (min-width: 900px)
+			font-size: 18px
+	small
+		font-size: 12px
+
+.cols3.pd16, .cols2.pd16
+	padding-left: 16px
+	padding-right: 16px
+
+.gp2.pt24
+	padding-top: 24px
+	padding-bottom: 24px
+
+h4.ptt40
+	padding-top: 40px
+	
+
+.gp1.pt32
+	padding-top: 32px
+	padding-bottom: 32px
+
+.gp1.pt64
+	@media screen and (min-width: 768px)
+		padding-top: 64px
+		padding-bottom: 64px
+
+.bdt
+	border-top: 1px solid #b7b7b7
+	padding-top: 24px
+
+
+.for-links
+	h2
+		font-size: 64px
+		font-weight: 600
+		margin: 0
+		padding: 16px 8px
+		border-bottom: 1px solid #e1e1e1
+		@media screen and (max-width: 899px)
+			font-size: 48px
+		@media screen and (max-width: 767px)
+			font-size: 36px
+		@media screen and (max-width: 575px)
+			font-size: 24px
+
+.the-title
+	display: flex
+	flex-direction: column
+	border-top: 1px solid #d7d7d7
+	border-bottom: 1px solid #d7d7d7
+	@media screen and (min-width: 900px)
+		width: calc(100% - 64px)
+		margin-bottom: 32px
+		margin-top: 64px
+		min-height: 96px
+		justify-content: center
+	@media screen and (max-width: 899px)
+		width: calc(100% - 40px)
+		margin-top: 80px
+		margin-bottom: 32px
+	@media screen and (max-width: 767px)
+		width: calc(100% - 32px)
+		margin: 48px 0 24px 0
+	@media screen and (max-width: 575px)
+		width: calc(100% - 24px)
+		margin: 32px 0 12px 0
+	h2
+		font-weight: 800
+		margin: 0
+		@media screen and (min-width: 900px)
+			font-size: 64px
+			padding-left: 16px
+		@media screen and (max-width: 899px)
+			font-size: 48px
+			padding: 16px 24px
+		@media screen and (max-width: 767px)
+			font-size: 36px
+			padding: 16px 24px
+		@media screen and (max-width: 575px)
+			font-size: 32px
+			padding: 16px
+
+.cols4
+	h5, p, small, cite
+		margin-top: 0
+		margin-bottom: 8px
+	h6
+		margin-top: 12px
+		margin-bottom: 8px
+		text-transform: capitalize
+	cite
+		font-size: 11px
+		font-weight: 600
+	small
+		letter-spacing: -0.1px
+		line-height: 1.48
+
+.full-page
+	padding-bottom: 40px
+	width: 100vw
+	overflow-x: hidden
+
+.deskdesk
+	h6
+		font-size: 18px
+		font-weight: 600
+		color: #474747
+		transform-origin: center left
+		transition: all 0.08s var(--cubec)
+		margin: 0
+		padding-top: 32px
+		padding-bottom: 8px
+		a
+			color: inherit
+		&:hover
+			transform: scale(0.9)
+	p
+		font-size: 15px
+		font-weight: 400
+		color: #a0a0a0
+		transform-origin: center left
+		transition: all 0.08s var(--cubec)
+		margin: 0
+		padding: 3px 0
+		a
+			color: inherit
+		&:hover
+			transform: scale(1.1)
+	small
+		font-size: 10px
+		font-weight: 400
+		color: #b7b7b7
+		text-transform: uppercase
+		transform-origin: center left
+		transition: all 0.08s var(--cubec)
+		margin: 0
+		width: 100%
+		a
+			color: inherit
+		&:hover
+			transform: scale(1.1)
+
+.tabhead
+	@media screen and (min-width: 768px)
+		margin-left: -40px
+		width: 100%
+		margin-bottom: 16px
+	h6
+		color: white
+		margin: 0
+		@media screen and (min-width: 768px)
+			text-transform: uppercase
+			font-size: 21px
+			padding: 4px
+		

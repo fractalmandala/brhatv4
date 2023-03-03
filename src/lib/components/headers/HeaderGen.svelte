@@ -369,7 +369,7 @@ function toggleMenu(){
 		align-items: center;
 		justify-content: space-between;
 		width: 100vw;
-		height: 64px;
+		height: 56px;
 		margin-bottom: 64px;
 	}
 	.logoarea {

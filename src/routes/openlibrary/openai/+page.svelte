@@ -1,66 +1,36 @@
-<script lang="ts">
-	import type { CreateCompletionResponse } from 'openai'
-	import { SSE } from 'sse.js'
-
-	let context = ''
-	let loading = false
-	let error = false
-	let answer = ''
-
-	const handleSubmit = async () => {
-		loading = true
-		error = false
-		answer = ''
-
-		const eventSource = new SSE('/api/explain', {
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			payload: JSON.stringify({ context })
-		})
-
-		context = ''
-
-		eventSource.addEventListener('error', (e) => {
-			error = true
-			loading = false
-			alert('Something went wrong!')
-		})
-
-		eventSource.addEventListener('message', (e) => {
-			try {
-				loading = false
-
-				if (e.data === '[DONE]') {
-					return
-				}
-
-				const completionResponse: CreateCompletionResponse = JSON.parse(e.data)
-
-				const [{ text }] = completionResponse.choices
-
-				answer = (answer ?? '') + text
-			} catch (err) {
-				error = true
-				loading = false
-				console.error(err)
-				alert('Something went wrong!')
-			}
-		})
-
-		eventSource.stream()
-	}
+<script>
+let toggledHeight = false
+function toggleHeight(){
+	toggledHeight = !toggledHeight
+}
 </script>
 
-<h1>Explain It Like I'm Five</h1>
-<form on:submit|preventDefault={() => handleSubmit()}>
-	<label for="context">Enter the text you want summarized/explained</label>
-	<textarea name="context" rows="5" bind:value={context} />
-	<button>Explain it</button>
-	<div class="pt-4">
-		<h2>Explanation:</h2>
-		{#if answer}
-			<p>{answer}</p>
-		{/if}
+<div class="full-page">
+	<div class="no-side">
+
 	</div>
-</form>
+	<div class="wid-side">
+		<div class="side-bar bdr" class:toggledHeight={toggledHeight}>
+			<div class="in-side"></div>
+		</div>
+		<div class="main-page">
+			<div class="gp4">
+				<div class="cols4 bdr"></div>
+				<div class="cols4 bdr"></div>
+				<div class="cols4 bdr"></div>
+				<div class="cols4 bdr"></div>
+			</div>
+			<div class="gp3">
+				<div class="cols3 bdr"></div>
+				<div class="cols3 bdr"></div>
+				<div class="cols3 bdr"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+.cols4, .cols3, .cols2, .cols1 {
+	min-height: 400px
+}
+</style>
