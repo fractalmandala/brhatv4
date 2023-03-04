@@ -93,13 +93,13 @@ onMount(async() => {
 </script>
 	
 <HeaderGen></HeaderGen>
-<div class="box-c">
+<div class="boxc">
 	<slot></slot>
 </div>	
 <Footer></Footer>
 
 <style>
-.box-c { height: 100%;}
+.boxc { height: 100%;}
 </style>
 
 

@@ -26,7 +26,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 				</div>
 			</div>
 		</div>
-		<div class="boxr" id="links-row">
+		<div class="boxr allwrap" id="links-row">
 			<div class="boxc link-box">
 					<p><a href="/anveshi">Bṛhatanveṣī</a></p>
 					<small><a href="/anveshi/chapter/odisha">Odisha Chapter</a></small>

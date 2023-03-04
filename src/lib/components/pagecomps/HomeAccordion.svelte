@@ -1,7 +1,4 @@
 <script>
-import RevealedText from '$lib/components/animations/RevealedText.svelte'
-import RevealedText2 from '$lib/components/animations/RevealedText.svelte'
-import RevealedText3 from '$lib/components/animations/RevealedText.svelte'
 
 let sat1 = 1
 let sat2 = 1
@@ -29,15 +26,15 @@ function toggleLD(){
 <div class="genrow low">
 	<div class="gencol col1 img1 col-of-accordion" id="col1" on:mouseenter={toggleCC} on:mouseleave={toggleCC}>
 		<img src="/images/corpimages/creative-culture-1024-1.webp" alt="cc" style="filter: saturate({sat1}); transition: filter 0.4s ease;"/>
-		<RevealedText><a href="/about/areas/culturecreatives">Culture Creatives</a></RevealedText>
+		<a href="/about/areas/culturecreatives">Culture Creatives</a>
 	</div>
 	<div class="gencol col2 img2 col-of-accordion" id="col2" on:mouseenter={togglePR} on:mouseleave={togglePR}>
   	<img src="/images/corpimages/research-policy-1024-1.webp" alt="pr" style="filter: saturate({sat2}); transition: filter 0.4s ease;"/>
-		<RevealedText2><a href="/about/areas/policyresearch">Policy Research</a></RevealedText2>
+		<a href="/about/areas/policyresearch">Policy Research</a>
 	</div>
 	<div class="gencol col3 img3 col-of-accordion" id="col3" on:mouseenter={toggleLD} on:mouseleave={toggleLD}>
   	<img src="/images/corpimages/develop-leader-1024-1.webp" alt="ld" style="filter: saturate({sat3}); transition: filter 0.4s ease;"/>
-		<RevealedText3><a href="/about/areas/leadershipdevelopment">Leadership Development</a></RevealedText3>
+		<a href="/about/areas/leadershipdevelopment">Leadership Development</a>
 	</div>
 </div>
 
