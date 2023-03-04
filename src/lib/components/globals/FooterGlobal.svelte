@@ -5,36 +5,36 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 <div class="big-box">
 	<ToTop></ToTop>
 	<div class="margin-box">
-		<div class="flexbox-r" id="row-one">
-		<div class="flexbox-c" id="logo-col"><a href="/">
+		<div class="boxr" id="row-one">
+		<div class="boxc" id="logo-col"><a href="/">
 			<img id="logoimage" src="/images/brhatlogos/horizontalwhite.png" alt="brhatlogo" /></a>
-			<div class="flexbox-r" id="icons-row">
-				<div class="flexbox-c icon-box" id="icon-twitter">
+			<div class="boxr" id="icons-row">
+				<div class="boxc icon-box" id="icon-twitter">
 					<a href="https://twitter.com/brhat_in" target="_blank" rel="noreferrer"><img src="/images/icons/twitter-red.png" alt="twitter icon" /></a>
 				</div>
-				<div class="flexbox-c icon-box" id="icon-facebook">
+				<div class="boxc icon-box" id="icon-facebook">
 					<a href="https://www.facebook.com/brhat.in" target="_blank" rel="noreferrer"><img src="/images/icons/facebook-red.png" alt="facebook icon" /></a>
 				</div>
-				<div class="flexbox-c icon-box" id="icon-youtube">
+				<div class="boxc icon-box" id="icon-youtube">
 					<a href="https://www.youtube.com/@brhat" target="_blank" rel="noreferrer"><img src="/images/icons/youtube-red.png" alt="youtube icon" /></a>
 				</div>
-				<div class="flexbox-c icon-box" id="icon-linkedin">
+				<div class="boxc icon-box" id="icon-linkedin">
 					<a href="https://www.linkedin.com/company/brhat" target="_blank" rel="noreferrer"><img src="/images/icons/linkedin-red.png" alt="linkedin icon" /></a>
 				</div>
-				<div class="flexbox-c icon-box" id="icon-instagram">
+				<div class="boxc icon-box" id="icon-instagram">
 					<a href="https://www.instagram.com/brhat_in/" target="_blank" rel="noreferrer"><img src="/images/icons/instagram-red.png" alt="instagram icon" /></a>
 				</div>
 			</div>
 		</div>
-		<div class="flexbox-r" id="links-row">
-			<div class="flexbox-c link-box">
+		<div class="boxr" id="links-row">
+			<div class="boxc link-box">
 					<p><a href="/anveshi">Bṛhatanveṣī</a></p>
 					<small><a href="/anveshi/chapter/odisha">Odisha Chapter</a></small>
 					<small><a href="/anveshi/chapter/chamba">Chamba Chapter</a></small>
 					<small><a href="/anveshi/chapter/karnataka">Karnataka Chapter</a></small>
 					<small><a href="/anveshi/diaries">Travel Diaries</a></small>
 			</div>
-			<div class="flexbox-c link-box">
+			<div class="boxc link-box">
 					<p><a href="/drashta">Bṛhat Draṣṭā</a></p>
 					<small><a href="/drashta/course/hinduiconography">Hindu Iconography</a></small>
 					<small><a href="/drashta/course/shriramswarup">Shri Ram Swarup</a></small>
@@ -43,7 +43,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 					<small><a href="/drashta/schools">Schools</a></small>
 					<small><a href="/drashta/firekeepers">Firekeepers</a></small>
 			</div>
-			<div class="flexbox-c link-box" id="box-about">
+			<div class="boxc link-box" id="box-about">
 					<p><a href="/about">About</a></p>
 					<small><a href="/about/docs/namelogo">Nāmarūpa</a></small>
 					<small><a href="/about/docs/values">Pratijñā</a></small>
@@ -51,7 +51,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 					<small><a href="/about/#advisory">Advisory Board</a></small>
 					<small><a href="/about/#team">Team</a></small>
 			</div>
-			<div class="flexbox-c link-box" id="box-actions">
+			<div class="boxc link-box" id="box-actions">
 					<p>Actions</p>
 					<small><a href="/dhiti">Dhīti</a></small>
 					<small><a href="/openlibrary">Bṛhat Open Library</a></small>
@@ -63,7 +63,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		</div>
 		</div>
 	</div>
-	<div class="flexbox-c" id="last-row"><small>2023 All Rights Reserved | <span><a href="/docs">Documentation</a> | </span><span><a href="/about/privacy">Privacy</a></span><br>
+	<div class="boxc" id="last-row"><small>2023 All Rights Reserved | <span><a href="/docs">Documentation</a> | </span><span><a href="/about/privacy">Privacy</a></span><br>
 		<span class="white">Write to us: contact@brhat.in</span>
 		</small>
 	</div>

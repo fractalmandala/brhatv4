@@ -1,336 +1,365 @@
 <script>
 import ToTop from '$lib/components/globals/ToTop.svelte'
-import '$lib/styles/newglobals.sass'
 </script>
 
-<div class="footer">
-<ToTop></ToTop>
-	<div class="footerbox">
-		<div class="area1">
-			<a href="/"><img class="footerlogo" src="/images/brhatlogos/verticalwhite.png" alt="brhat horizontal"/></a>
-			<div class="flexrow">			
-       		<a class="heading2" href="/rta">Ṛta in Design</a>
-       		<a class="heading2" href="/aryavarta">Scrolls of Āryavarta</a>
-       		<a class="heading2" href="/dhiti">Dhīti</a>
-					<a class="heading2" href="/openlibrary">Bṛhat Open Library</a>
-			</div>
-			<div class="flexrow">
-   			<div class="col">
-     		<ul><a class="heading" href="/drashta">Bṛhat Draṣṭā</a>
-       	<li><a href="/drashta/courses/shriramswarup">Shri Ram Swarup</a></li>
-       	<li><a href="/drashta/courses/sitaramgoel">Sita Ram Goel</a></li>
-       	<li><a href="/drashta/courses/hinduiconography">Hindu Iconography</a></li>
-       	<li><a href="/drashta/#drashtas">Draṣṭās</a></li>
-       	<li><a href="/drashta/#firekeepers">Firekeepers of Civilization</a></li>
-       	<li><a href="/drashta/#darshanas">Schools of Thought</a></li>
-     		</ul>
-   			</div>
-   			<div class="col">
-     		<ul><a class="heading" href="/anveshi">Bṛhatanveṣī</a>
-       		<li><a href="/anveshi/chapters/odisha">Odisha</a></li>
-       		<li><a href="/anveshi/chapters/chamba">Chamba</a></li>
-       		<li><a href="/anveshi/chapters/karnataka">Karnataka</a></li>
-       		<li><a href="/anveshi/diaries">Diaries</a></li>
-       		<li><a href="/anveshi/gallery">Gallery</a></li>
-     		</ul>
-   			</div>
-   			<div class="col">
-     		<ul><a class="heading" href="/mrdanga">Bṛhadmṛdaṅga</a>
-       		<li><a href="/mrdanga/rasa">Rasa</a></li>
-       		<li><a href="/mrdanga/kala">Kalā</a></li>
-       		<li><a href="/mrdanga/kavita">Kavitā</a></li>
-     		</ul>
-   			</div>
-   			<div class="col">
-     		<ul><a class="heading" href="/mandala">Fractal Maṇḍala</a>
-       		<li><a href="/mandala/essays">Essays</a></li>
-       		<li><a href="/mandala/synaptic">Synaptic Reconnection</a></li>
-       		<li><a href="/mandala/aphorisms">Caturasūtra</a></li>
-     		</ul>
-   			</div>
+<div class="big-box">
+	<ToTop></ToTop>
+	<div class="margin-box">
+		<div class="boxr" id="row-one">
+		<div class="boxc" id="logo-col"><a href="/">
+			<img id="logoimage" src="/images/brhatlogos/horizontalwhite.png" alt="brhatlogo" /></a>
+			<div class="boxr" id="icons-row">
+				<div class="boxc icon-box" id="icon-twitter">
+					<a href="https://twitter.com/brhat_in" target="_blank" rel="noreferrer"><img src="/images/icons/twitter-red.png" alt="twitter icon" /></a>
+				</div>
+				<div class="boxc icon-box" id="icon-facebook">
+					<a href="https://www.facebook.com/brhat.in" target="_blank" rel="noreferrer"><img src="/images/icons/facebook-red.png" alt="facebook icon" /></a>
+				</div>
+				<div class="boxc icon-box" id="icon-youtube">
+					<a href="https://www.youtube.com/@brhat" target="_blank" rel="noreferrer"><img src="/images/icons/youtube-red.png" alt="youtube icon" /></a>
+				</div>
+				<div class="boxc icon-box" id="icon-linkedin">
+					<a href="https://www.linkedin.com/company/brhat" target="_blank" rel="noreferrer"><img src="/images/icons/linkedin-red.png" alt="linkedin icon" /></a>
+				</div>
+				<div class="boxc icon-box" id="icon-instagram">
+					<a href="https://www.instagram.com/brhat_in/" target="_blank" rel="noreferrer"><img src="/images/icons/instagram-red.png" alt="instagram icon" /></a>
+				</div>
 			</div>
 		</div>
-		<div class="colcol big">
-			<div class="colcol small">
-      	<small>© 2023 All Rights Reserved.</small>
-      	<small>contact@brhat.in</small>
-      	<div class="innerrow">
-      		<small><a href="/docs">Site Documentation</a></small>
-      		<small><a href="/about/docs/privacy">Privacy Policy</a></small>
-    		</div>
-  		</div>
-  		<div class="socialicons">
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/122-twitter.png" alt="twitter"/></a>
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/124-fb.png" alt="facebook"/></a>
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/123-linked.png" alt="linkedin"/></a>
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/121-insta.png" alt="instagram"/></a>
-      	<a href="/" target="_blank" rel="noreferrer"><img src="/images/icons/125-ytube.png" alt="youtube"/></a>
-  		</div>
+		<div class="boxr" id="links-row">
+			<div class="boxc link-box">
+					<p><a href="/anveshi">Bṛhatanveṣī</a></p>
+					<small><a href="/anveshi/chapter/odisha">Odisha Chapter</a></small>
+					<small><a href="/anveshi/chapter/chamba">Chamba Chapter</a></small>
+					<small><a href="/anveshi/chapter/karnataka">Karnataka Chapter</a></small>
+					<small><a href="/anveshi/diaries">Travel Diaries</a></small>
+			</div>
+			<div class="boxc link-box">
+					<p><a href="/drashta">Bṛhat Draṣṭā</a></p>
+					<small><a href="/drashta/course/hinduiconography">Hindu Iconography</a></small>
+					<small><a href="/drashta/course/shriramswarup">Shri Ram Swarup</a></small>
+					<small><a href="/drashta/course/sitaramgoel">Sita Ram Goel</a></small>
+					<small><a href="/drashta/drashtas">Draṣṭās</a></small>
+					<small><a href="/drashta/schools">Schools</a></small>
+					<small><a href="/drashta/firekeepers">Firekeepers</a></small>
+			</div>
+			<div class="boxc link-box" id="box-about">
+					<p><a href="/about">About</a></p>
+					<small><a href="/about/docs/namelogo">Nāmarūpa</a></small>
+					<small><a href="/about/docs/values">Pratijñā</a></small>
+					<small><a href="/about/docs/svatahsiddha">Svataḥsiddha</a></small>
+					<small><a href="/about/#advisory">Advisory Board</a></small>
+					<small><a href="/about/#team">Team</a></small>
+			</div>
+			<div class="boxc link-box" id="box-actions">
+					<p>Actions</p>
+					<small><a href="/dhiti">Dhīti</a></small>
+					<small><a href="/openlibrary">Bṛhat Open Library</a></small>
+					<small><a href="/mrdanga">Bṛhadmṛdaṅga</a></small>
+					<small><a href="/mandala">Fractal Maṇḍala</a></small>
+					<small><a href="/aryavarta">Scrolls of Āryavarta</a></small>
+					<small><a href="/rta">Ṛta in Design</a></small>
+			</div>
 		</div>
+		</div>
+	</div>
+	<div class="boxc" id="last-row"><small>2023 All Rights Reserved | <span><a href="/docs">Documentation</a> | </span><span><a href="/about/privacy">Privacy</a></span><br>
+		<span class="white">Write to us: contact@brhat.in</span>
+		</small>
 	</div>
 </div>
 
 <style lang="sass">
-	.footer 
-		display: flex
-		justify-content: space-between
-		flex-direction: column
-		align-items: center
-		background-position: center center
-		background-size: cover
-		background-repeat: no-repeat
-		z-index: 600
-		min-height: 100vh
-		border-radius: 4px
-	
-	.footerbox
-		display: flex
-		flex-direction: column
-		justify-content: flex-end
-		align-items: center
-		width: 100%
-		background: linear-gradient(40deg,#272727,#1B2023)
-		z-index: 600
-		border-radius: 4px	
-	
-	.area1
-		display: flex
-		flex-direction: column
-		width: 100%
-		height: 100%
-		justify-content: center
-		align-items: center
-	
-	.colcol.big, .colcol.small
-		width: 100%
-		background-color: white
-		justify-self: flex-end
-		padding: 1em
-		color: #272727
-		align-items: center
-		justify-content: center
-	
-	.flexrow
-		display: flex
-		flex-direction: row
-		align-items: flex-start
-		border-radius: 4px
-		height: max-content
-		padding-top: 1em
-		padding-bottom: 1em
-	
-	.col
-		display: flex
-		flex-direction: column
-		height: 100%
-	
-		ul
-			margin: 4px 0
-			padding:0
-			list-style-type: none
-	
-			a
-				transform-origin: left center
-				transition: var(--quik)
-	
+
+.big-box
+	background: linear-gradient(132.9deg, #171717 10.69%, #181C1E 84.91%)
+	z-index:900
+	position: sticky
+
+	small
+		color: #676767
+		font-weight: 400
+		a
+			font-size: inherit
+			color: inherit
 			&:hover
-				color: var(--red)
-				transform: scale(1.1)
-	
-			li
-				list-style-type: none
-				color: white
-				padding-top: 0.5em
-				margin: 4px 0
-				padding: 0
-				transform-origin: center center
-				transition: var(--quik)
-	
-				&:hover
-					transform: scale(0.9)
-		
-				a
-					color: var(--gmid)
-	
-	.innerrow
-		display: flex
-		flex-direction: row
-		width: 100%
-		justify-content: center
-		gap: 1em
-		color: var(--mute)
-	
-	.socialicons
-		display: flex
-		flex-direction: row
-		justify-content: center
-		align-items: center
-		gap: 32px
-		background-color: white
-		border-top: 1px solid var(--light)
-		padding-top: 1em
-	
-		img
-			object-fit: contain
-			width: 32px
-			height: 32px
-			transform-origin: center center
-			transition: var(--quik)
-	
-			&:hover
-				transform: scale(1.2)
-	
-	.big small, .small small
-		line-height: 1.25rem
-		color: var(--mute)
-		font-size: 12px
-	
-	.heading, .heading2
-		color: white
-		font-size: 14px
-		font-weight: 500
-		text-transform: uppercase
-	
-	.footerlogo
-		object-fit: contain
-		margin-bottom: 2em
-		margin-top: 2em
-		transform-origin: center center
-		transition: var(--quik)
-	
-		&:hover
-			transform: scale(0.9)
-	
+				color: #fe4a49
 	@media screen and (min-width: 900px)
-	
-		.footer 
-			margin: 32px 8px 8px 8px
-			width: calc(100% - 16px)
-	
-		.footerbox
-			padding-top: 1em
-			padding-bottom: 1em
-	
-		.flexrow
-			gap: 2em
-			justify-content: space-between
-			width: 72%
-		
-			a
-				text-align: center
-				width: calc(100%/4)
-	
-		.col
-			width: calc(100%/4)
-			padding-bottom: 0.48em
-			align-items: center
-			text-align: center
-			
-			ul
-				li
-					font-size: 14px
-	
-		.footerlogo
-			width: 128px
-	
+		height: 100vh
+		padding-top: 0
+		padding-bottom: 0
 	@media screen and (max-width: 899px) and (min-width: 768px)
-	
-		.footer
-			width: calc(100% - 16px)
-			margin: 24px 0 8px 8px
-	
-		.footerbox 
-			padding-bottom: 1em
-			
-		.flexrow
-			gap: 1.28em
-			width: 88%
-			justify-content: space-between
-			text-align: center
+		padding-top: 2em
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		padding-top: 2em
+		height: 100%
+	@media screen and (max-width: 575px)
+		padding-top: 2em
+		width: 100vw
+		padding-left: 0
+		padding-right: 0
+		min-height: 100vh
 
-			a
-				text-align: center
-				width: calc(100%/4)
-	
-		.col
-			width: calc(100%/4)
-			padding-bottom: 0.48em
-	
-			ul
-				li
-					font-size: 14px
-	
-		.footerlogo
-			width: 128px
-	
-	@media screen and (max-width: 767px ) and (min-width: 576px )
-	
-		.footer
-			width: calc(100% - 8px)
-			margin: 20px 0 4px 4px
-	
-		.footerbox 
-			padding-bottom: 1em
-	
-		.flexrow
-			padding: 0 24px 32px 24px
-			width: 100%
-			justify-content: center
-			gap: 20px
-			justify-content: space-between
-			text-align: center
+.margin-box
+	border-top: 1px solid #474747
+	border-bottom: 1px solid #474747
+	@media screen and (min-width: 900px)
+		height: calc(100vh - 232px)
+		width: calc(100% - 288px)
+		margin-left: 144px
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		height: calc(100vh - 8em)
+		width: calc(100% - 12vw)
+		margin: 2em 6vw 0 6vw
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		height: calc(100vh - 200px)
+		width: calc(100vw - 160px)
+		margin: 2em 80px 0em 80px
+	@media screen and (max-width: 575px)
+		min-height: calc(100vh - 12em)
+		width: calc(100vw - 88px)
+		margin: 2em 48px 0em 40px
 
-			a
-				text-align: center
-				width: calc(100%/4)
+#logoimage
+	transform-origin: center left
+	transition: 0.12s ease-out
+	&:hover
+		transform: scale(0.96)
+
+.icon-box
+	align-items: center
+	justify-content: center
+
+.link-box
+	display: flex
+	p
+		color: white
+		font-weight: 400
+		margin-bottom: 20px
+		font-size: 18px
+		letter-spacing: 0.05px
+		margin-top: 0
+		&:hover a
+			color: #fe4a49
+	a 
+		color: inherit
+	small
+		color: #878787
+		font-weight: 400
+		margin-bottom: 16px
+		font-size: 16px
+		margin-top: 0
+		&:hover a
+			color: #fe4a49
+
+.icon-box img
+	transition: all 0.04s ease-in
+	transform-origin: center center
+	filter: saturate(0.01)
+	opacity: 0.4
+	&:hover
+		opacity: 1
+		filter: saturate(1)
+
+
+
+#links-row
+	display: flex
+
+@media screen and (min-width: 900px) 
+
+	.icon-box
+		height: 32px
+		width: 32px
 	
-		.col
+
+	#row-one
+		padding-top: 4em
+
+	#last-row
+		height: 160px
+		margin: 0
+		width: 100%
+		padding: 0 144px
+		justify-content: center
+	
+	#last-row small
+		line-height: 1.8
+		font-size: 12px
+		margin: 0
+
+	#logoimage
+		width: 200px
+		margin-bottom: 2em
+
+	#logo-col
+		width: 25%
+
+	#links-row
+		width: 75%
+		padding-left: 8%
+		padding-top: 2em
+		flex-direction: row
+
+	#icons-row
+		width: 200px
+		justify-content: space-between
+
+	.icon-box img
+		object-fit: contain
+		width: 24px
+		height: 24px
+
+	.link-box
+		width: 25%
+		padding-left: 2em
+
+	.margin-box
+		height: calc(100% - 240px)
+
+
+@media screen and (max-width: 899px) and (min-width: 768px) 
+	
+	#last-row
+		height: 6em
+		width: calc(100vw - 12vw)
+		padding-top: 1em
+		margin-left: 6vw
+
+	#logoimage
+		width: 200px
+		margin-bottom: 1em
+
+	#row-one
+		flex-wrap: wrap
+		padding-top: 3em
+
+	#logo-col
+		width: 100%
+
+	#icons-row
+		width: 24%
+		justify-content: space-between
+		img
+			width: 24px
+			height: 24px
+
+	#links-row
+		width: 100%
+		padding-top: 2em
+		gap: 3em
+		flex-direction: row
+		padding-bottom: 32px
+		.link-box
 			width: 25%
-			padding-bottom: 0.48em
+
+	.margin-box
+		height: calc(100% - 160px)
+
+
+@media screen and (max-width: 767px) and (min-width: 576px) 
+
+	#last-row
+		height: 128px
+		justify-content: center
+		width: calc(100vw - 160px)
+		margin: 0 80px
+		padding-top: 1em
+		small
+			line-height: 1.5
+
+	#logoimage
+		width: 188px
+		margin-bottom: 1em
+
+	#row-one
+		flex-wrap: wrap
+		padding-top: 2em
+
+	#logo-col
+		width: 100%
+
+	#icons-row
+		width: 42%
+		justify-content: space-between
+		img
+			width: 24px
+			height: 24px
+
+	#links-row
+		width: 100%
+		padding-top: 2em
+		margin-top: 32px
+		flex-direction: row
+		gap: 1.2em
+		.link-box
+			width: 45%
+
+	.margin-box
+		height: 100%
+		padding-bottom: 32px
+
 	
-			ul
-				li
-					font-size: 14px
-	
-		.footerlogo
-			width: 112px
-	
-	@media screen and (max-width: 575px )
-	
-		.footer
-			width: calc(100% - 8px)	
-			margin: 20px 0 4px 4px
-	
-		.footerbox 
-			padding-bottom: 1em
-		
-		.flexrow
+@media screen and (max-width: 575px)
+
+	#last-row
+		width: 100vw
+		margin: 0
+		padding: 12px 40px
+		small
+			line-height: 1.5
 			width: 100%
-			justify-content: space-between
-			text-align: center
-			flex-wrap: wrap
+			font-size: 10px
 
-			.heading2
-				width: calc(100%/2)
-				text-align: center
-				margin-top: 1em
-	
-		.col
-			padding-bottom: 0.48em
-			align-items: center
-			width: calc(100%/2)
+	#logoimage
+		width: 160px
+		margin-bottom: 1em
+		margin-top: 2em
 
-			a 
-				width: 100%
-	
-			ul
-				text-align: center
-	
-				li
-					font-size: 12px
-					text-align: center
-	
-		.footerlogo
-			width: 96px
+	#row-one
+		flex-wrap: wrap
+		height: 100%
+
+	#logo-col
+		width: 100%
+		align-items: flex-start
+
+	.icon-box
+		height: 24px
+		width: 24px
+		
+	#icons-row
+		width: 100%
+		justify-content: flex-start
+		margin-bottom: 1em
+		margin-top: 8px
+		gap: 16px
+		img
+			width: 24px
+			height: 24px
+
+	#links-row
+		width: 100%
+		height: 100%
+		padding-bottom: 32px
+		padding-top: 24px
+		gap: 0
+		flex-direction: row
+		justify-content: space-between
+		align-items: flex-start
+		.link-box
+			width: 45%
+			p
+				margin-top: 12px
+				margin-bottom: 16px
+				font-size: 15px
+			h6
+				margin-bottom: 0
+				margin-top: 40px
+				font-size: 14px
+
+	#box-actions, #box-about
+		margin-top: 32px
+
 	
 </style>

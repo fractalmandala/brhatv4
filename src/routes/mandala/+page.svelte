@@ -104,7 +104,7 @@
 }
 
 .the-title {
-	border-left: 4px solid #FE5F55;
+	border-left: 4px solid #10D56C;
 	margin-left: -1px;
 }
 

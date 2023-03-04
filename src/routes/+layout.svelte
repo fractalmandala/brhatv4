@@ -11,6 +11,7 @@ import Animations from "textify.js"
 import '$lib/styles/textify.css'
 import '$lib/styles/componentstyles.sass'
 import '$lib/styles/typographyglobal.sass'
+import '$lib/styles/reader.sass'
 
 inject({ mode: dev ? 'development' : 'production' });
 
