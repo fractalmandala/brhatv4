@@ -231,7 +231,7 @@ function toggleMenu(){
 {/if}
 
 <style>
-.header-main { z-index: 900;}
+.header-main { z-index: 950;}
 .logoarea a svg { object-fit: cover; width: 100%;transition: all 0.08s var(--cubed);}
 #outer, #inner {
 	transform-origin: center center;
@@ -259,8 +259,8 @@ function toggleMenu(){
 .logoarea:hover a svg:hover { transform: scale(0.95);}
 
 @media screen and (min-width: 900px) {
-	#motif { height: 50px; width: 50px;}
-	#type { margin-left: 12px; width: 92px;}
+	#motif { height: 48px; width: 48px;}
+	#type { margin-left: 10px; width: 90px;}
 	.menu-side nav { margin-top: 32px; width: 88%;}
 	.closebutton svg { width: 28px; height: 28px;}
 	.header-main {

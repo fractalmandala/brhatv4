@@ -1,195 +1,288 @@
-<script lang="ts">
-import { reveal } from 'svelte-reveal'
-let y:any
+<script>
+	import Grand1 from '$lib/components/globals/HomeContainer.svelte'
 </script>
 
 
-<svelte:window bind:scrollY={y}/>
-<div class="boxc x0 back-image">
-	<div class="boxr">
-		<div class="boxc gp3col1"></div>
-		<div class="boxc gp3col2"></div>
-		<div class="boxc gp3col3"></div>
+
+	<div class="gp0">
+			<h5>
+				To be a history in the true sense of the word, a work must be a story of the people inhabiting a country.
+			</h5>
+			<p>
+				It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
+			</p>
 	</div>
+
+
+
+
+	<div class="flexbox-c desk-margins l2">
+
+		<h5 class="w400 grey">
+			To be a history in the true sense of the word, a work must be a story of the people inhabiting a country.
+		</h5>
+		<h5 class="w400 grey">
+			It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
+		</h5>
+		<h3>
+			Such a history of India is <span class="green"> still</span> to be written.
+		</h3>
+		<small class="wbold" style="color: #10D56C">
+				Shri KM Munshi
+		</small>
+	</div>
+	<div class="flexbox-r full desk-margins col-image l5">
+		<div class="in-col im-col wide40">
+				<img src="/images/mandala/itihaas.webp" alt="itihas"/>
+		</div>
+		<div class="in-col non-im-col wide60 pad-x-l">
+			<h6 class="w400">
+			with a continuity of untold millennia, the passage of time visible to us in
+			</h6>
+			<h2 class="green-grd wbold m-top-zero">Itihāsa</h2>
+		</div>
+	</div>
+
+	<div class="flexbox-r full desk-margins col-image l6">
+		<div class="in-col im-col wide40">
+				<img src="/images/mandala/bharata.webp" alt="bharat"/>
+		</div>
+		<div class="in-col non-im-col wide60 pad-x-l">
+			<h6 class="w400">
+			information was processed in increasingly complex ways within the physical environment best described as
+			</h6>
+			<h2 class="green-grd wbold m-top-zero">Bhārata</h2>
+		</div>
+	</div>
+
+	<div class="flexbox-r full desk-margins col-image l7">
+		<div class="in-col im-col wide40">
+				<img src="/images/mandala/dharma.webp" alt="dharma"/>
+		</div>
+		<div class="in-col non-im-col wide60 pad-x-l">
+			<h6 class="w400">
+			emerged a civilizational consciousness, with multi-level coherence. It is known to us as
+			</h6>
+			<h2 class="green-grd wbold m-top-zero">Dharma</h2>
+		</div>
+	</div>
+
+<div class="container">
+  <div class="column1">
+    <div class="box"></div>
+    <div class="box-1" id="bb1">
+			<a href="/mandala/meaning">Fractal Maṇḍala - Definition, Instances</a>
+		</div>
+    <div class="box-2" id="bb2">
+			<a href="/mandala/fractals/aphorisms">Caturasūtra - 4 Aphorisms</a>
+		</div>
+    <div class="box-3">
+      <div class="box-9" id="bb8">
+				<a href="/mandala/fractals/essay2">Ratha as a Bīja</a>
+			</div>
+      <div class="box-10" id="bb9">
+				<a href="/mandala/fractals/">Rāma's Journey</a>
+			</div>
+    </div>
+    <div class="box-6" id="bb5">
+			<a href="/mandala/fractals/ancestors">Ancestors Outside of Time</a>
+		</div>
+    <div class="box-7" id="bb6">
+			<a href="/mandala/fractals/synaptic">Synaptic Reconnection</a>
+		</div>
+    <div class="box-8" id="bb7">
+			<a href="/mandala/fractals/">History is Ontic, Itihāsa is Ontologic</a>
+		</div>
+  </div>
+  <div class="column3">
+    <div class="box-4" id="bb3">
+			<a href="/mandala/fractals/civcon">On Indian Civilizational Consciousness</a>
+		</div>
+    <div class="box-5" id="bb4">
+			<a href="/mandala/fractals/essay1">The Macrohistoric Case</a>
+		</div>
+  </div>
 </div>
 
-<div class="full-page formatting">
-	<div class="no-side">
-			<div class="gp1 x1 bdt">
-				<div class="cols1">
-					<h4 use:reveal={{ transition: "slide", duration: 300, x: -64, blur: 0, easing: "easeOutQuad"}}>
-						To be a history in the true sense of the word, a work must be a story of the people inhabiting a country.
-					</h4>
-					<p use:reveal={{ transition: "slide", duration: 400, x: -64, blur: 0, easing: "easeOutQuad"}}>
-						It must be a record of their life from age to age presented through the life and achievements of men whose exploits become the beacon lights of tradition; through efforts of the people to will themselves into organic unity.
-					</p>
-					<h3 use:reveal={{ transition: "slide", duration: 500, x: -64, blur: 0, easing: "easeOutQuad"}}>
-						Such a history of India is <span class="green"> still</span> to be written.
-					</h3>
-					<small>-Shri KM Munshi</small>
-				</div>
-			</div>
-			<div class="gp2 x2 bdt">
-				<div class="cols21">
-					<p data-textify>
-						with a continuity of untold millennia, the passage of time visible to us in
-					</p>
-					<h2 class="green" data-textify>itihāsa</h2>
-				</div>
-				<div class="cols23">
-					<img src="/images/mandala/itihaas.webp" alt="itihas"/>
-				</div>
-			</div>
-			<div class="gp2 x3 bdt">
-				<div class="cols23">
-					<img src="/images/mandala/bharata.webp" alt="bharat"/>
-				</div>
-				<div class="cols21 mid-col pd16">
-					<p data-textify>
-						information was processed in increasingly complex ways within the physical environment best described as
-					</p>
-					<h2 class="green" data-textify>bhārata</h2>
-				</div>
-			</div>
-			<div class="gp2 x4 bdt">
-				<div class="cols21 pd16 whiteback mid-col">
-					<p class="whiteback" data-textify>
-						emerged a civilizational consciousness, with multi-level coherence. It is known to us as
-					</p>
-					<h2 class="green whiteback" data-textify>dharma</h2>
-				</div>
-				<div class="cols23 whiteback">
-					<img src="/images/mandala/dharma.webp" alt="dharma"/>
-				</div>
-			</div>
-			<div class="gp1 x5 bdt">
-					<h1>And it is a<br> <span class="green" data-textify>Fractal Maṇḍala</span></h1>
-			</div>
-			<div class="gp2 pt24 x6">
-				<div class="cols2 pd16">
-					<h5>Fractal</h5>
-					<p>
-						A curve or geometrical figure, each part of which has the same statistical character as the whole.</p>
-					<p>
-						Any of various extremely irregular curves or shapes for which any suitably chosen part is similar in shape to a given larger or smaller part.
-					</p>
-					<p class="green">
-						A fractal displays the same properties at any magnification level, ie., it is multi-level.
-					</p>
-				</div>
-				<div class="cols2 pd16">
-					<h5>Maṇḍala</h5>
-					<p>
-						A circle or anything circular- globe, circumference, orbit of a celestial object, an array of troops.</p>
-					<p>
-						From the root √maṇḍ (मण्ड्) meaning satisfaction, adornment, wholeness, complete, satisfied (√bhūṣ, √hṛṣ, tuṣṭa, alaṅkāra).
-					</p>
-					<p class="green">
-						A circle- śūnya or pūrṇam- is where all constituents form a unified whole, ie., it is coherent.
-					</p>
-				</div>
-			</div>
-			<div class="gp1 x7 bdt for-links">
-				<h2><a href="/mandala/fractals/intro">The Macrohistoric Case</a></h2>
-				<h2><a href="/mandala/fractals/aphorisms">Caturasūtra</a></h2>
-				<h2><a href="/mandala/fractals/aphorisms">Civilizational Consciousness</a></h2>
-				<h2><a href="/mandala/fractals/aphorisms">Ancestors Outside of Time</a></h2>
-				<h2><a href="/mandala/fractals/aphorisms">History vs. Itihāsa</a></h2>
-				<h2><a href="/mandala/fractals/aphorisms">Ratha as Bīja</a></h2>
-				<h2><a href="/mandala/fractals/aphorisms">Avatāra in You</a></h2>
-				<h2><a href="/mandala/fractals/aphorisms">Synaptic Reconnection</a></h2>
-			</div>
-	</div>
-</div>
+
+<style>
+.im-col, .in-col { overflow: hidden;}
+.container a { color: white; z-index: 10; opacity: 0;}
+#bb1, #bb2, #bb3, #bb4, #bb5, #bb6, #bb7, #bb8, #bb9 {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 4px solid white;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	transition: transform 0.3s var(--cubee);
+}
+#bb1:hover, #bb2:hover, #bb3:hover, #bb4:hover, #bb5:hover, #bb6:hover, #bb7:hover, #bb8:hover, #bb9:hover { transform: scale(1.1); z-index: 12;}
+
+#bb1:hover a, #bb2:hover a, #bb3:hover a, #bb4:hover a, #bb5:hover a, #bb6:hover a, #bb7:hover a, #bb8:hover a, #bb9:hover a { opacity: 1;}
+
+#bb1::after, #bb2::after, #bb3::after, #bb4::after, #bb5::after, #bb6::after, #bb7::after, #bb8::after, #bb9::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: '';
+	transition: all 0.3s var(--cubea);
+	z-index: 0;
+	background: linear-gradient(0deg, rgba(0,0,0,0.8) 10%, rgba(0,0,0,0.4) 100%);
+}
+
+#bb1:hover::after, #bb2:hover::after, #bb3:hover::after, #bb4:hover::after, #bb5:hover::after, #bb6:hover::after, #bb7:hover::after, #bb8:hover::after, #bb9:hover::after {
+	background: linear-gradient(0deg, rgba(0,0,0,0.0) 10%, rgba(0,0,0,0.0) 100%);
+	backdrop-filter: blur(0);
+}
+
+#bb1 { background-image: url('/images/mandala/defone.webp');}
+#bb2 { background-image: url('/images/mandala/hindugraphic.png');}
+#bb3 { background-image: url('/images/mandala/web1.webp');}
+#bb4 { background-image: url('/images/mandala/web9.webp');}
+#bb5 { background-image: url('/images/mandala/web8.webp');}
+#bb6 { background-image: url('/images/mandala/web5.webp');}
+#bb7 { background-image: url('/images/mandala/web6.webp');}
+#bb8 { background-image: url('/images/mandala/web7.webp');}
+#bb9 { background-image: url('/images/mandala/dharma.webp');}
 
 
-<style lang="sass">
+@keyframes selfwiden {
+	from { width: calc(100%/9);}
+	to { width: 60%;}
+}
 
-.for-links
-	a
-		&:hover
-			color: #10D56C
-	h2
-		&:hover
-			border-bottom: 1px solid #a1a1a1
+@keyframes textshowing {
+	
+0% { opacity: 0; display: block;}
+100% { opacity: 1; display: block;}
 
-.x0
-	background-image: url('/images/mandala/opener.png')
-	height: 110vh
-	width: 100%
-	z-index: -1
-	.boxr	
-		height: 100%
-		width: 100%
-		.boxc
-			height: 100%
-			width: 33.33%
-			z-index: 0
+}
 
-.xx1
-	min-height: 70vh
 
-@media screen and (min-width: 900px)
-	.x1
-		height: 100vh
-		.cols1
-			justify-content: center
-			height: 100%
-	.x2, .x3, .x4
-		height: 80vh
-		.cols21
-			height: 100%
-			justify-content: center
-		.cols23
-			img
-				height: 100%
-	.x5
-		height: 100%
-		padding-top: 80px
 
-@media screen and (max-width: 899px)
-	.x1
-		height: 100vh
-		.cols1
-			justify-content: center
-			height: 100%
-	.x2, .x3, .x4
-		height: 90vh
-		.cols21
-			height: 100%
-			justify-content: center
-		.cols23
-			img
-				height: 100%
-	.x5
-		height: 100%
-		padding-top: 80px
+@keyframes bouncing{
+0% { transform: scale(1);}
+50% { transform: scale(0.4);}
+100% { transform: scale(1);}
+}
 
-@media screen and (max-width: 767px)
-	.x1
-		height: 100vh
-		.cols1
-			justify-content: center
-			height: 100%
-	.x2, .x3, .x4
-		height: 100vh
-		.cols21
-			height: 30vh
-			justify-content: flex-end
-		.cols23
-			height: 60vh
-			width: 100%
-			img
-				height: 100%
-	.x5
-		height: 100%
-		padding-top: 80px
 
-		
 
-.full-page, .xx1, .x1, .x2, .x3, .x4 .whiteback, .x5, .x6
-	z-index: 1
-	background: white
+@keyframes revealer {
+  0% {
+    width: 100%;
+  }
+  100% {
+    margin-left: 100%;
+  }
+}
+
+
+
+@media screen and (min-width: 768px) {
+	.container a { font-size: 24px; font-weight: bold; background-color: rgba(0,0,0,0.7); padding: 3px 10px;}
+
+
+	:root {
+		--mope: 10;
+	}
+
+
+	.l2 {
+	height: 100vh;
+	justify-content: center;
+	}
+}
+
+
+@media screen and (max-width: 767px) {
+
+
+	:root {
+		--mope: 1;
+	}	
+
+
+}
+
+.container {  display: grid;
+	height: 100vh;
+	width: 100vw;
+  grid-template-columns: 1.8fr 0.6fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "column1 column3";
+}
+
+.column1 {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-area: column1;
+}
+
+.box { grid-area: 3 / 1 / 4 / 4; }
+
+.box-1 { grid-area: 1 / 1 / 3 / 3; }
+
+.box-2 { grid-area: 1 / 3 / 2 / 4; }
+
+.box-3 {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "box-9 box-9 box-9"
+    "box-10 box-10 box-10";
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+.box-9 { grid-area: box-9; }
+
+.box-10 { grid-area: box-10; }
+
+.box-6 {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.box-7 { grid-area: 3 / 2 / 4 / 3; }
+
+.box-8 { grid-area: 3 / 3 / 4 / 4; }
+
+.column3 {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "box-4 box-4 box-4"
+    "box-5 box-5 box-5"
+    "box-5 box-5 box-5";
+  grid-area: column3;
+}
+
+.box-4 { grid-area: box-4; }
+
+.box-5 { grid-area: box-5; }
+
 
 
 </style>
