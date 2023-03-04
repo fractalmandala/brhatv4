@@ -6,7 +6,7 @@
 </script>
 
 
-<div class="gp1">
+<div class="boxc">
 	<h3>{data.title}</h3>
 	<div class="document">
 		<svelte:component this={data.content} />
