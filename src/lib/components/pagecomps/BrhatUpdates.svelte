@@ -53,7 +53,7 @@ export async function updateTwo(){
 			<small>.</small>
 			{:then data}
 				{#each data as item}
-					<div class="boxc card">
+					<div class="boxc card pad">
 						<img src={item.image} alt={item.sequence} />
 						<h6>{item.heading}</h6>
 						<p>{item.text.slice(0,300)}</p>
@@ -69,7 +69,7 @@ export async function updateTwo(){
 			<small>.</small>
 			{:then data}
 				{#each data as item}
-					<div class="boxc card">
+					<div class="boxc card pad">
 						<img src={item.image} alt={item.sequence} />
 						<h6>{item.heading}</h6>
 						<p>{item.text.slice(0,300)}</p>
