@@ -2,8 +2,6 @@
 // @ts-nocheck
 	
   import supabase from '$lib/db'
-	import VideoSlate from '$lib/components/headers/StaticH1.svelte'
-	import Shadba from '$lib/components/headers/StaticH1.svelte'
 
 
 	let currentList = 'list-1';
@@ -45,9 +43,9 @@
 
 
 <div class="boxc back-image x0"></div>
-<div class="no-side formatting">
-	<div class="gp2">
-		<div class="cols2">
+<div class="pad-a">
+	<div class="traybox">
+		<div class="ww2">
 			<p>
 			Sanātana Dharma is a view of immanence. It sees the divine everywhere. The transcendent is the Ultimate Truth, the Supreme Consciousness. The view of immanence says that although nothing that we perceive is the Ultimate Truth, it is at the same time a form of the Ultimate. In this view of immanence a gradient of divinity is created in which individual consciousness is always encouraged to elevate itself and ultimately realize its true form as the Supreme Consciousness.
 			</p>
@@ -67,13 +65,13 @@
 			Like Mṛdaṅga they will tap into the eternal streams of beauty and reality in our culture and will voice them in contemporary idiom to convey the eternal truths of the eternal civilization to our contemporary times.
 			</p>	
 		</div>
-		<div class="cols2">
+		<div class="ww2">
 			<h5>
 				Mṛdaṅga is one of the sacred trinity of musical instruments. It is a ‘Deva Vādyam’, the instrument which Nandi, the prime gaṇa of Śiva plays when he does his Tāṇḍava. Mṛdaṅga is capable of sounding the divine rhythm across the multiple planes of consciousness. It is so divine because the sound that it emanates is not just a human creation. It is a tapping into the divine sound which is always playing but not accessible to our senses normally.
 			</h5>
 		</div>
 	</div>
-	<div class="the-title">
+	<div class="the-title y-full">
 		<h2>
 			Bṛhadmṛdaṅga Visuals
 		</h2>
@@ -83,12 +81,12 @@
 		<button class="mrdbutton" on:click={() => switchList('list-2')} on:keydown={() => switchList('list-2')}>Kavitā</button>
 	</div>
 		{#if currentList === 'list-1'}
-			<div class="gp4 allwrap x2">
+			<div class="traybox allwrap x2">
 				{#await HindiKavita()}
 					<small>...</small>
 						{:then data}
 							{#each data as item}
-								<div class="cols4 vidbox">
+								<div class="ww4 vidbox">
 									<iframe
   							class="m-bot-16"
   							width=100%
@@ -105,12 +103,12 @@
 				{/await}	
 			</div>
 		{:else if currentList === 'list-2'}
-			<div class="gp4 allwrap x9">
+			<div class="traybox allwrap x9">
 				{#await MrdangaVids()}
 				<small>...</small>
 				{:then data}
 					{#each data as item}
-					<div class="cols4 vidbox">
+					<div class="ww4 vidbox">
 						<iframe
   						class="m-bot-16"
   						width=100%
@@ -128,23 +126,23 @@
 			</div>
 		{/if}		
 
-	<div class="the-title">
+	<div class="the-title y-full">
 		<h2>
 			Śabdāvalī - the 64 Kalās
 		</h2>
-	</div>
-	<div class="gp5 allwrap">
-		{#await Shabdavali()}
-		<small>...</small>
-		{:then data}
-			{#each data as item}
-			<div class="cols5">
-				<video src={item.fileid} poster={item.imagelink} controls={true}><track kind="captions"></video>
-			</div>
-			{/each}
-		{:catch error}
-		<pre>{error}</pre>
-		{/await}
+		<div class="traybox allwrap">
+			{#await Shabdavali()}
+			<small>...</small>
+			{:then data}
+				{#each data as item}
+				<div class="ww5">
+					<video src={item.fileid} poster={item.imagelink} controls={true}><track kind="captions"></video>
+				</div>
+				{/each}
+			{:catch error}
+			<pre>{error}</pre>
+			{/await}
+		</div>
 	</div>
 	
 </div>

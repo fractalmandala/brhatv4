@@ -23,6 +23,15 @@ export async function updateTwo(){
   if (error) throw new Error(error.message)
 	return data
 }
+
+export async function updateThree(){
+	const { data, error } = await supabase
+	.from('brhat-updates')
+	.select()
+	.eq('sequence',3)
+  if (error) throw new Error(error.message)
+	return data
+}
 </script>
 
 <div class="traybox allwrap">
@@ -66,6 +75,22 @@ export async function updateTwo(){
 		</SwiperSlide>
 		<SwiperSlide>
 			{#await updateTwo()}
+			<small>.</small>
+			{:then data}
+				{#each data as item}
+					<div class="boxc card pad">
+						<img src={item.image} alt={item.sequence} />
+						<h6>{item.heading}</h6>
+						<p>{item.text.slice(0,300)}</p>
+						<button class="cardbutton"><a href={item.link}>{item.buttontext}</a></button>
+					</div>
+				{/each}
+			{:catch error}
+			<pre>{error}</pre>
+			{/await}
+		</SwiperSlide>
+		<SwiperSlide>
+			{#await updateThree()}
 			<small>.</small>
 			{:then data}
 				{#each data as item}
