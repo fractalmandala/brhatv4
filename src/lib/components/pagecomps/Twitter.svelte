@@ -4,10 +4,10 @@ let tweets:any = []
 
 async function getTweets() {
 	const client = new Twitter({
-		consumer_key: import.meta.env.VITE_TWITTER_CONSUMER_KEY,
-		consumer_secret: import.meta.env.VITE_TWITTER_CONSUMER_SECRET,
-		access_token_key: import.meta.env.VITE_TWITTER_ACCESS_TOKEN,
-		access_token_secret: import.meta.env.VITE_TWITTER_ACCESS_TOKEN_SECRET
+		consumer_key: 'DA7Fc68IRexZEy6HpRMAfp5lV',
+		consumer_secret: '83YtgLDPpHqOWifKFfNVtRlWmV6IyaIPBjyjWYBBHDUzUZ0Qtv',
+		access_token_key: '1521468657720725505-4eViHvHSluHwSlbSNDdcHPsnknvxVI',
+		access_token_secret: 'lsL7X3dJ0qsbYWZ438E5JdKXvLSZyw1BNBVjiBFKgtqcP'
 	});
 	try {
 	  const response = await client.get('statuses/user_timeline', {
