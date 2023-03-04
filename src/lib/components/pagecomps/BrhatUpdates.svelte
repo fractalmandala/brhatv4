@@ -33,15 +33,15 @@ export async function updateTwo(){
   	slidesPerView={1}
 		breakpoints={{
     	"576": {
-      	slidesPerView: 1,
+      	slidesPerView: 2,
       	spaceBetween: 32,
     	},
     	"768": {
-      	slidesPerView: 1,
+      	slidesPerView: 2,
       	spaceBetween: 24,
     	},
     	"1024": {
-      	slidesPerView: 1,
+      	slidesPerView: 2,
       	spaceBetween: 32,
     	},
   	}}
@@ -81,4 +81,38 @@ export async function updateTwo(){
 			{/await}
 		</SwiperSlide>
 	</Swiper>
+	<div class="boxr buttonrow">
+		<div class="swiper-button custom-prev">
+  		<svg width="100%" height="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M-2.94055e-06 20L40 -7.15256e-07L40 40L-2.94055e-06 20Z" fill="#b7b7b7"/>
+			</svg>
+		</div>
+		<div class="swiper-button custom-next">
+  		<svg width="100%" height="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M40 20L0 40V0L40 20Z" fill="#b7b7b7"/>
+			</svg>
+		</div>
+	</div>
 </div>
+
+<style lang="sass">
+
+#navbuttons
+	gap: 32px
+	@media screen and (max-width: 767px)
+		display: none
+
+.swiper-button
+	svg
+		height: 24px
+		width: 24px
+		cursor: pointer
+		transition: all 0.08s var(--cubea)
+		&:hover
+			transtion: scale(0.9)
+			path
+				fill: #fe4a49
+		path
+			transition: all 0.08s var(--cubea)
+
+</style>

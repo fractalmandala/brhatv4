@@ -18,6 +18,7 @@
 		"@types/common-tags": "^1.8.1",
 		"@types/locomotive-scroll": "^4.1.0",
 		"@types/scrollmagic": "^2.0.3",
+		"@types/twitter": "^1.7.1",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
 		"eslint": "^8.28.0",
@@ -62,9 +63,10 @@
 		"svelte-inview": "^3.0.2",
 		"svelte-locomotive-scroll": "^0.0.5",
 		"svelte-moveable": "^0.35.1",
-		"swiper": "^8.4.6",
+		"swiper": "^8.4.7",
 		"textify.js": "^2.4.3",
 		"tippy.js": "^6.3.7",
+		"twitter": "^1.7.1",
 		"webfontloader": "^1.6.28"
 	}
 }

@@ -2,6 +2,7 @@
 	import supabase from '$lib/db';
 	import { reveal } from 'svelte-reveal';
 	import Brands from '$lib/components/globals/AllBrands.svelte'
+	import BrhatUpdates from '$lib/components/pagecomps/BrhatUpdates.svelte'
 	import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte';
 	import BrhadMrdanga from '$lib/components/vidplaylists/BrhadMrdanga.svelte';
 	import HindiKavita from '$lib/components/vidplaylists/HindiKavita.svelte';
@@ -78,6 +79,10 @@
 					It needs leadership with cultural-cognition to carry the Agni. This cognition needs to permeate even brand and organisation - essential quarters for the overton window shift.
 				</p>
 			</div>
+		</div>
+
+		<div class="boxc y-full the-title x10">
+			<BrhatUpdates></BrhatUpdates>
 		</div>
 
 		<div class="boxc y-full the-title x3">

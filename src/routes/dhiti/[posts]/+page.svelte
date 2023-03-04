@@ -2,7 +2,6 @@
 // @ts-nocheck
 // @ts-ignore
 import { reveal } from 'svelte-reveal'
-import DhitiSidebar from '$lib/components/pagecomps/DhitiSidebar.svelte'
 let y = 1
 let vw = 1
 /**
