@@ -216,6 +216,10 @@ function toggleMenu(){
 			<h6><a href="/rta/prologue">Prologue</a></h6>
 			<h6><a href="/rta/intro">Introduction to Ṛta in Design</a></h6>
 			<h6><a href="/rta/dharmaisdesign">Dharma is Design</a></h6>
+			<h6><a href="/rta/dharmaisdesign">Framework</a></h6>
+			<h6><a href="/rta/dharmaisdesign">Principles and Phases</a></h6>
+			<h6><a href="/rta/dharmaisdesign">Tools and Resources</a></h6>
+			<h6><a href="/rta/dharmaisdesign">Design @ Bṛhat</a></h6>
 	</div>
 	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5><a href="/mandala">Fractal Maṇḍala</a></h5>
