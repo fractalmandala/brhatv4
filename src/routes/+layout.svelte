@@ -9,7 +9,6 @@ import Footer from '$lib/components/globals/FooterGlobal.svelte'
 import type { PageData } from './$types'
 import Animations from "textify.js"
 import '$lib/styles/textify.css'
-import '$lib/styles/componentstyles.sass'
 import '$lib/styles/typographyglobal.sass'
 import '$lib/styles/reader.sass'
 
@@ -53,7 +52,7 @@ onMount(async() => {
 		right: true
 	})
 	new Textify ({
-		selector: ".txt22 .w500",
+		selector: ".txt22",
 	  duration: 200,
 	  stagger: 100,
 	  once: false,
@@ -62,7 +61,7 @@ onMount(async() => {
 		left: true,
 	})
 	new Textify ({
-		selector: ".txth1 h4",
+		selector: ".txt h2",
 	  duration: 1000,
 	  stagger: 50,
 	  once: false,
@@ -80,7 +79,7 @@ onMount(async() => {
 		reveal: true
 	})
 	new TextifyTitle({
-	  selector: ".tttyp5",
+	  selector: ".tt5",
 	  duration: 1000,
 	  stagger: 50,
 	  once: false,
