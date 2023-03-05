@@ -4,14 +4,15 @@ $: dataArray = data.data || []
 </script>
 
 
-<div class="flexbox-c desk-margins">
+
+<div class="pad-a">
 {#each dataArray as item}
-<div class="in-row fully">
-		<div class="wide40 in-col all-cc">
+	<div class="traybox wrap y-full">
+		<div class="ww2">
 			<small class="wbold orange">{item.id}</small>
 			<h5 class="w400">{item.text}</h5>
 		</div>
-		<div class="wide60 in-col all-cc">
+		<div class="ww2">
 			<img src={item.image} alt={item.id} />
 		</div>
 	</div>
@@ -19,15 +20,16 @@ $: dataArray = data.data || []
 </div>
 
 
+
 <style>
 
-
-.wide60 img {
+.ww2 img {
 	object-fit: cover;
 	width: 88%;
 	height: 80%;
 }
-.fully h5 { color: #272727;}
-.in-row .wide40 { align-items: flex-start;}
+.ww2 h5 { color: #272727;}
+.ww2 { align-items: flex-start;}
+
 </style>
 

@@ -222,6 +222,13 @@ function toggleMenu(){
 	</div>
 	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5><a href="/aryavarta">Scrolls of Āryavarta</a></h5>
+			<h6><a href="/aryavarta/#about">About - The Bhārata that Once Was</a></h6>
+		<h6><a href="/aryavarta/chapter/01">Chapter 1: Kaśyapa's Lament</a></h6>
+		<h6><a href="/aryavarta/chapter/02">Chapter 2: Sūta and Sudā</a></h6>
+		<h6><a href="/aryavarta/chapter/03">Nasadīya Across Time and Space</a></h6>
+		<h6><a href="/aryavarta/#genealogy">The Lineages of Āryavarta</a></h6>
+		<h6><a href="/aryavarta/#maps">Cartography of a Lost World</a></h6>
+		<h6><a href="/aryavarta/gallery">Gallery</a></h6>
 	</div>
 	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5><a href="/bodha">Bodha</a></h5>

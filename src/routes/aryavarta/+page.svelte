@@ -2,106 +2,97 @@
 import { reveal } from 'svelte-reveal';
 </script>
 
-<div class="flexbox-r full imgbox l100">
-	<div class="flexbox-c cc-y-col desk-margins screen">
-		<h1 class="w600 orange">There is a place...</h1>
-		<h4 class="w300 white">
-				It lies outside of space and time as we know it,</h4>
-		<h4 class="w300 white">
-				but many of us have been there.</h4>
-		<h4 class="w300 white">
+<div class="pad-b back-image y-full l100">
+	<div class="screen">
+		<h1 class="orange">There is a place...</h1>
+		<h6 class="white">
+				It lies outside of space and time as we know it,<br>
+				but many of us have been there.<br>
 				It lies in that cultural mid-space so distant yet ever palpable.
-		</h4>
+		</h6>
+	</div>
+</div>
+
+<div class="pad-b">
+
+	<div class="traybox wrap s2">
+		<div class="ww2 im-col">
+			<img src="/images/scrolls/anc1.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
+		</div>
+		<div class="ww2 non-im-col">
+			<h6> 
+				Hive mind. Race memory. Blood bond.<br>
+				We may call it many things, but we know it best when we see it,<br>
+				and it feels warm and familiar…as if a memory we once lived.
+			</h6>
+			<h5 class="orange">
+				Perhaps we did, is it not?
+			</h5>
+		</div>
+	</div>
+
+	<div class="traybox wrap s3">
+		<div class="ww2 non-im-col">
+			<h6>
+				For countless times before have you been here, and a countless times I.<br><br>
+				You there, in one incarnation you were a master of mantra. 
+			</h6>
+			<h5 class="orange">
+			You wrapped meaning around syllables and metre.
+			</h5>
+		</div>
+		<div class="ww2 im-col">
+			<img src="/images/scrolls/anc3.webp" alt="part3" use:reveal={{ transition: "slide" }}/>
+		</div>
+	</div>
+
+	<div class="traybox wrap s4">
+		<div class="ww2 im-col">
+			<img src="/images/scrolls/anc4.webp" alt="part4" use:reveal={{ transition: "slide" }}/>
+		</div>
+		<div class="ww2 non-im-col">
+			<h6> 
+				And you? A pioneer of tilled grain you were. Your hard, seasoned hands fed a civilization.<br><br>
+				Another among us was quite a daredevil,<br>
+				boldly he grabbed a wild bull by the horns,
+			</h6>
+			<h5 class="orange">
+				First to do so...
+			</h5>
+		</div>
+	</div>
+</div>
+
+	<div class="pad-b back-image s5"> 
+		<h2>
+			We can access this place,
+		</h2>
+		<h6 class="white wide50">
+			outside of space and time though it lies.
+			In images and words, in sounds and vistas,
+			In streams of imagi/memory that can flow through us…
+		</h6>
+		<h6 class="orange wide50">
+			The Scrolls of Āryavarta is a project to celebrate, express and engage in this shared lore- the dhārmika lore.
+			A calling to all who dream of the Bhārata that once was, or Bhāratas that could have been.
+		</h6>
+	</div>
+
+<div class="pad-a">
+	<div class="for-links">
+		<h2><a href="/aryavarta/#about">About - The Bhārata that Once Was</a></h2>
+		<h2><a href="/aryavarta/chapter/01">Chapter 1: Kaśyapa's Lament</a></h2>
+		<h2><a href="/aryavarta/chapter/02">Chapter 2: Sūta and Sudā</a></h2>
+		<h2><a href="/aryavarta/chapter/03">Nasadīya Across Time and Space</a></h2>
+		<h2><a href="/aryavarta/#genealogy">The Lineages of Āryavarta</a></h2>
+		<h2><a href="/aryavarta/#maps">Cartography of a Lost World</a></h2>
+		<h2><a href="/aryavarta/gallery">Gallery</a></h2>
 	</div>
 </div>
 
 
-	<div class="flexbox-r col-image desk-margins full">
-		<div class="in-col im-col wide50">
-			<img class="imagesmall" src="/images/scrolls/anc1.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
-		</div>
-		<div class="in-col non-im-col wide50">
-			<h4 class="w400"> 
-				Hive mind. Race memory. Blood bond.<br>
-				We may call it many things, but we know it best when we see it,<br>
-				and it feels warm and familiar…as if a memory we once lived.<br>
-				<span class="orange">	Perhaps we did, is it not?</span>
-		</h4>
-		</div>
-	</div>
-
-	<div class="flexbox-r col-image desk-margins full s3">
-		<div class="in-col wide50 non-im-col">
-			<h4 class="w400">
-				For countless times before have you been here, and a countless times I.<br><br>
-				You there, in one incarnation you were a master of mantra. You wrapped meaning around syllables and metre.
-			</h4>
-		</div>
-		<div class="in-col im-col wide50">
-			<img class="imagesmall" src="/images/scrolls/anc3.webp" alt="part3" use:reveal={{ transition: "slide" }}/>
-		</div>
-	</div>
-
-	<div class="flexbox-r col-image desk-margins full s4">
-		<div class="in-col im-col wide50">
-			<img class="imagesmall" src="/images/scrolls/anc4.webp" alt="part4" use:reveal={{ transition: "slide" }}/>
-		</div>
-		<div class="in-col non-im-col wide50">
-			<h4 class="w400"> 
-			And you? A pioneer of tilled grain you were. Your hard, seasoned hands fed a civilization.<br><br>
-			Another among us was quite a daredevil,<br>
-			boldly he grabbed a wild bull by the horns, <span class="orange">First to do so...</span>
-		</h4>
-		</div>
-	</div>
-
-	<div class="flexbox-c desk-margins cc-y-col imgbox s5"> 
-	<h2 class="w400">
-		We can access this place,
-	</h2>
-	<h5 class="w400 white wide75">
-		outside of space and time though it lies.
-		In images and words, in sounds and vistas,
-		In streams of imagi/memory that can flow through us…
-		<br><br>
-		The Scrolls of Āryavarta is a project to celebrate, express and engage in this shared lore- the dhārmika lore.
-		A calling to all who dream of the Bhārata that once was, or Bhāratas that could have been.
-	</h5>
-	</div>
-	<div class="flexbox-c cc-y-col desk-margins link-sheet">
-	<div class="mind flexbox-c link-heads">
-		<p class="orange m-bot-zero">Prologue</p>
-		<h5 class="w400 m-all-zero">The Bhārata that Once Was, or Those That Could Have Been</h5>
-	</div>
-	<div class="mind flexbox-c link-heads">
-		<p class="orange m-bot-zero">Chapter 1</p>
-		<h5 class="w400 m-all-zero"><a href="/aryavarta/chapter/01">Kaśyapa's Lament</a></h5>
-	</div>
-	<div class="mind flexbox-c link-heads">
-		<p class="orange m-bot-zero">Chapter 2</p>
-		<h5 class="w400 m-all-zero">Sūta and Sudā</h5>
-	</div>
-	<div class="mind flexbox-c link-heads">
-		<p class="orange m-bot-zero">Upcoming</p>
-		<h5 class="w400 m-all-zero">Nasadīya Across Time and Space</h5>
-	</div>
-	<div class="mind flexbox-c link-heads">
-		<p class="orange m-bot-zero">Demos</p>
-		<h5 class="w400 m-all-zero"><a href="/aryavarta/gallery">Gallery</a></h5>
-	</div>
-	<div class="mind flexbox-c link-heads">
-		<p class="orange m-bot-zero">About</p>
-		<h5 class="w400 m-all-zero">Tech, AI, Collaboration</h5>
-	</div>
-
-	</div>
-
-
 
 <style lang="sass">
-
-.link-sheet
-	height: 100vh
 
 .l100
 	background-image: url('/images/scrolls/thegrid.webp')
@@ -111,39 +102,150 @@ import { reveal } from 'svelte-reveal';
 	h2
 		color: white
 
-.l10 a
-	color: inherit
-	&:hover
-		color: #10c56d
+.for-links h2
+	border-left-color: #FF3d00
+	cursor: pointer
 
-.link-heads
-	a
-		&:hover
-			color: #ff3d00
-
-
-@keyframes comedown
-	0%
-		transform: translateY(-20px) scale(1.2)
-	100%
-		transform: translateY(0) scale(1.2)
-
-@media screen and (min-width: 768px)
+.l100
+	height: 100vh
 	.screen
+		display: flex
+		flex-direction: column
 		height: 100vh
+		text-align: left
+		width: 100%
+		justify-content: center
+		@media screen and (min-width: 900px)
+			padding-left: 64px
+		@media screen and (max-width: 899px) and (min-width: 768px)
+			padding-left: 40px
+		@media screen and (max-width: 767px) and (min-width: 576px)
+			padding-left: 32px
+		@media screen and (max-width: 575px)
+			padding-left: 24px
 
-	.s5
+.s3
+	@media screen and (min-width: 900px)
+		align-items: center
+		.non-im-col
+			justify-content: center
+			padding: 16px 32px
+			height: max-content
+		.im-col
+			img
+				border-radius: 50% 0 0 50%
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		align-items: center
+		height: 90vh
+		.non-im-col
+			justify-content: center
+			padding: 16px 32px
+			height: max-content
+		.im-col
+			img
+				border-radius: 50% 0 0 50%
+	@media screen and (max-width: 767px) and (min-width: 576px)
 		height: 100vh
+		padding: 24px
+		.non-im-col
+			justify-content: center
+			height: calc(40vh - 24px)
+			order: 2
+		.im-col
+			order: 1
+			img
+				height: calc(60vh - 24px)
+				object-fit: cover
+	@media screen and (max-width: 575px)
+		height: 100vh
+		padding: 24px
+		.non-im-col
+			justify-content: center
+			height: calc(40vh - 24px)
+			order: 2
+			padding-top: 16px
+		.im-col
+			order: 1
+			img
+				height: calc(60vh - 40px)
+				object-fit: cover
+
+.s2, .s4
+	@media screen and (min-width: 900px)
+		align-items: center
+		.non-im-col
+			justify-content: center
+			padding: 16px 32px
+			height: max-content
+		.im-col
+			img
+				border-radius: 0 50% 50% 0
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		align-items: center
+		height: 90vh
+		.non-im-col
+			justify-content: center
+			padding: 16px 32px
+			height: max-content
+		.im-col
+			img
+				border-radius: 0 50% 50% 0
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		height: 100vh
+		padding: 24px
+		.non-im-col
+			justify-content: center
+			height: calc(40vh - 24px)
+			order: 2
+		.im-col
+			order: 1
+			img
+				height: calc(60vh - 24px)
+				object-fit: cover
+	@media screen and (max-width: 575px)
+		height: 100vh
+		padding: 24px
+		.non-im-col
+			justify-content: center
+			height: calc(40vh - 24px)
+			order: 2
+			padding-top: 16px
+		.im-col
+			order: 1
+			img
+				height: calc(60vh - 40px)
+				object-fit: cover
+
+.s5
+	@media screen and (min-width: 900px)
+		height: max-content
+		justify-content: center
+		padding: 64px 0
+		margin: 128px 0 0 0
 		h2
 			color: white
+			margin: 0
+			padding: 0
+		padding-left: 64px
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		height: max-content
+		justify-content: center
+		padding-bottom: 64px
+		padding-top: 64px
+		margin: 128px 0 0 0
+		h2
+			color: white
+			margin: 0
+			padding: 0
+		padding-left: 64px
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		padding: 32px
+	@media screen and (max-width: 575px)
+		padding: 24px
 
-@media screen and (max-width: 767px) 
 
-	.l100
-		height: 100vh
-
-	.s5
-		padding-bottom: 24px
-
+.for-links
+	padding-bottom: 64px
+	padding-top: 0
 
 </style>

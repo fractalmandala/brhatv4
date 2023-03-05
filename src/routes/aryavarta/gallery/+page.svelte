@@ -1,106 +1,78 @@
 <script lang="ts">
-import LocomotiveScrollProvider from 'svelte-locomotive-scroll'
-import { Lightbox } from 'svelte-lightbox'
-import '$lib/styles/locomotive-scroll.css'
-import { page } from '$app/stores';
+import { onMount } from 'svelte';
 import supabase from '$lib/db'
+import { writable } from 'svelte/store';
+let shPrev = true
+let offset = 0
+const currentOffset = writable(offset)
+let data: string|any[] = []
 
+const fetchData = async() => {
+	const { data: newData, error } = await supabase
+  .storage
+  	.from('midjourneyimages')
+  	.list('batch1', {
+    	limit: 20,
+    	offset: $currentOffset,
+			sortBy: { column: 'created_at', order: 'desc'}
+  	})
+		if (error) throw new Error(error.message)
+		else data = newData
+}
 
-export async function getImages(){
-const { data, error } = await supabase
-.from('MidjourneyImages')
-.select()
-.order('imagenumber',{ascending: false})
-.limit(100)
-if (error) throw new Error(error.message)
-return data
+const showPrev = () => {
+	if ( $currentOffset === 0 ) {
+		shPrev = false
+	} else {
+	shPrev = true
+	}
 }
-export async function getSecond(){
-const { data, error } = await supabase
-.from('MidjourneyImages')
-.select()
-.lt('imagenumber',200)
-.order('imagenumber',{ascending: false})
-.limit(100)
-if (error) throw new Error(error.message)
-return data
+
+onMount(() => {
+	fetchData()
+	showPrev()
+})
+
+const nextFifteen = () => {
+	currentOffset.update(n => n + 15)
+	fetchData()
 }
-export async function getThird(){
-const { data, error } = await supabase
-.from('MidjourneyImages')
-.select()
-.lt('imagenumber',101)
-.order('imagenumber',{ascending: false})
-.limit(100)
-if (error) throw new Error(error.message)
-return data
+
+const prevFifteen = () => {
+	currentOffset.update(n => n - 15)
+	fetchData()
 }
 
 </script>
 
-<LocomotiveScrollProvider
-	options={{
-		smooth: true,
-		smoothMobile: false,
-		getDirection: true,
-		getSpeed: true,
-		inertia: 0.5
-	}}
-  watch={$page}
-  location={$page.url}
-  onLocationChange={(scroll) => scroll.scrollTo(0, { duration: 2, disableLerp: false })}
-	imageTarget={'.the-image'}
->
-<div class="black-beauty" data-scroll-container>
-	<div class="row-of-3 myrow" data-scroll-section>
-		<div class="threebox col31 wide33" data-scroll data-scroll-speed="1">
-			{#await getImages()}
-			<small>...</small>
-			{:then data}
-			{#each data as item}
-			<Lightbox>
-			<img class="the-image" src={item.link} alt={item.imagenumber}/>
-			</Lightbox>
-			{/each}
-			{:catch error}
-			<pre>{error}</pre>
-			{/await}
-		</div>
-		<div class="threebox col32 wide33" data-scroll data-scroll-speed="-4">
-			{#await getSecond()}
-			<small>...</small>
-			{:then data}
-			{#each data as item}
-			<Lightbox>
-			<img class="the-image" src={item.link} alt={item.imagenumber}/>
-			</Lightbox>
-			{/each}
-			{:catch error}
-			<pre>{error}</pre>
-			{/await}
-		</div>
-		<div class="threebox col33 wide33" data-scroll data-scroll-speed="-2">
-			{#await getThird()}
-			<small>...</small>
-			{:then data}
-			{#each data as item}
-			<Lightbox>
-			<img class="the-image" src={item.link} alt={item.imagenumber}/>
-			</Lightbox>
-			{/each}
-			{:catch error}
-			<pre>{error}</pre>
-			{/await}
-		</div>
-	</div>	
-</div>
-</LocomotiveScrollProvider>
+<div class="traybox allwrap">
+	{#if data.length > 0}
+	{#each data as item}
+	<div class="card">
+		<img src="https://rnfvzaelmwbbvfbsppir.supabase.co/storage/v1/object/public/midjourneyimages/batch1/{item.name}" alt={item.name}/>
+	</div>
+	{/each}
+	{:else}
+	<small>no data to display</small>
+	{/if}
+	<div class="boxr buttonrow card">
+		<button class="transparentbutton" on:click={prevFifteen}>Prev 15</button>
+		<button class="transparentbutton" on:click={nextFifteen}>Next 15</button>
+		<p><span class="orange"> {$currentOffset} </span> to <span class="orange"> {$currentOffset + 15}</span></p>
+	</div>
 
-<style>
-:root { --sidebar: rgba(0,0,0,0);}
-.threebox img { object-fit: cover; width: 100%; height: 400px;}
-.the-image{ width: 100%; object-fit: contain; opacity: 1; transition: opacity 0.4s ease;}
-.black-beauty { background: var(--beau);height: 100%; }
-.row-of-3 { gap: 8px; height: 100%; justify-content: center; display: flex; flex-direction: row; margin-top: 72px;}
-.threebox { max-width: 30vw; height: 100%;}
+</div>
+
+<style lang="sass">
+
+.traybox
+	position: relative
+	.modaler
+		position: absolute
+		top: 0
+		left: 0
+	.buttonrow
+		align-items: center
+		gap: 16px
+
 </style>
