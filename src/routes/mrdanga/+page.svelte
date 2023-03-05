@@ -44,8 +44,8 @@
 
 <div class="boxc back-image x0"></div>
 <div class="pad-a">
-	<div class="traybox">
-		<div class="ww2">
+	<div class="traybox wrap">
+		<div class="ww2 card">
 			<p>
 			Sanātana Dharma is a view of immanence. It sees the divine everywhere. The transcendent is the Ultimate Truth, the Supreme Consciousness. The view of immanence says that although nothing that we perceive is the Ultimate Truth, it is at the same time a form of the Ultimate. In this view of immanence a gradient of divinity is created in which individual consciousness is always encouraged to elevate itself and ultimately realize its true form as the Supreme Consciousness.
 			</p>
@@ -66,8 +66,10 @@
 			</p>	
 		</div>
 		<div class="ww2">
-			<h5>
-				Mṛdaṅga is one of the sacred trinity of musical instruments. It is a ‘Deva Vādyam’, the instrument which Nandi, the prime gaṇa of Śiva plays when he does his Tāṇḍava. Mṛdaṅga is capable of sounding the divine rhythm across the multiple planes of consciousness. It is so divine because the sound that it emanates is not just a human creation. It is a tapping into the divine sound which is always playing but not accessible to our senses normally.
+			<h6>
+				Mṛdaṅga is one of the sacred trinity of musical instruments. It is a ‘Deva Vādyam’, the instrument which Nandi, the prime gaṇa of Śiva plays when he does his Tāṇḍava. Mṛdaṅga is capable of sounding the divine rhythm across the multiple planes of consciousness. It is so divine because the sound that it emanates is not just a human creation.</h6>
+			<h5 class="mrd">
+			It is a tapping into the divine sound which is always playing but not accessible to our senses normally.
 			</h5>
 		</div>
 	</div>
@@ -75,18 +77,17 @@
 		<h2>
 			Bṛhadmṛdaṅga Visuals
 		</h2>
-	</div>
-	<div class="boxr x5">
-		<button class="mrdbutton" on:click={() => switchList('list-1')} on:keydown={() => switchList('list-1')}>Rasa</button>
-		<button class="mrdbutton" on:click={() => switchList('list-2')} on:keydown={() => switchList('list-2')}>Kavitā</button>
-	</div>
+		<div class="boxr x5">
+			<button class="mrdbutton" on:click={() => switchList('list-1')} on:keydown={() => switchList('list-1')}>Rasa</button>
+			<button class="mrdbutton" on:click={() => switchList('list-2')} on:keydown={() => switchList('list-2')}>Kavitā</button>
+		</div>
 		{#if currentList === 'list-1'}
 			<div class="traybox allwrap x2">
 				{#await HindiKavita()}
 					<small>...</small>
 						{:then data}
 							{#each data as item}
-								<div class="ww4 vidbox">
+								<div class="ww4 card">
 									<iframe
   							class="m-bot-16"
   							width=100%
@@ -108,7 +109,7 @@
 				<small>...</small>
 				{:then data}
 					{#each data as item}
-					<div class="ww4 vidbox">
+					<div class="ww4 card">
 						<iframe
   						class="m-bot-16"
   						width=100%
@@ -125,6 +126,7 @@
 				{/await}
 			</div>
 		{/if}		
+	</div>
 
 	<div class="the-title y-full">
 		<h2>
@@ -135,7 +137,7 @@
 			<small>...</small>
 			{:then data}
 				{#each data as item}
-				<div class="ww5">
+				<div class="ww52 card">
 					<video src={item.fileid} poster={item.imagelink} controls={true}><track kind="captions"></video>
 				</div>
 				{/each}
@@ -149,10 +151,6 @@
 
 <style>
 
-.the-title {
-	border-left: 4px solid #672521;
-	margin-left: -1px;
-}
 .x0 {
 	background-image: url('/images/herocovers/mrdanga-hero.webp');
 }
@@ -178,15 +176,17 @@
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
 	.x5 {
-		padding-left: 24px;
 		gap: 32px;
+		padding-top: 0;
+		margin-top: 0;
+		margin-bottom: 24px;
 	}
 }
 
 @media screen and (max-width: 575px) {
 	.x5 {
-		padding-left: 24px;
 		gap: 32px;
+		margin-bottom: 16px;
 	}
 
 	
