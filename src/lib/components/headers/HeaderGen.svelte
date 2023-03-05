@@ -223,6 +223,14 @@ function toggleMenu(){
 	</div>
 	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5><a href="/mandala">Fractal Maṇḍala</a></h5>
+		<h6>The Macrohistoric Case</h6>
+		<h6>Caturasūtra - 4 Aphorisms</h6>
+		<h6>Indian Civilizational Consciousness</h6>
+		<h6>Ratha as a Bīja</h6>
+		<h6>History is Ontic, Itihāsa Ontologic</h6>
+		<h6>Ancestors Outside of Time</h6>
+		<h6>The Avatāra in You</h6>
+		<h6>Synaptic Reconnection</h6>
 	</div>
 	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5><a href="/aryavarta">Scrolls of Āryavarta</a></h5>
