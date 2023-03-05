@@ -5,7 +5,7 @@ import { fly } from 'svelte/transition'
 import GrandContainer from '$lib/components/globals/GrandContainer.svelte'
 </script>
 
-<div class="wid-side">
+<div class="pad-a">
 	<GrandContainer>
 		<div slot="mobilenav" class="mobmob">
 			<div class="flier" in:fly={{ duration: 300, delay: 200, x: 0, y: -160}} out:fly={{ duration: 200, delay: 0, x: 0, y: -160}}>

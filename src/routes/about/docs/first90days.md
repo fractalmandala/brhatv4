@@ -73,3 +73,7 @@ Our focus over the past 3 months was on personal transformation in the service o
 We want to show that strategic creative work on cultural priorities is possible, sustainable and replicable. That there are no shortcuts in this journey.
 
 Thank you for your trust. If you share our vision and wish to support or collaborate with us, write to us at contact@brhat.in. We promise to remain earnest.
+
+<style>
+	blockquote { border-color: #fe4a49;}
+</style>

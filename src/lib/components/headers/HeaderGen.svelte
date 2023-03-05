@@ -265,20 +265,6 @@ function toggleMenu(){
 }
 .logoarea:hover a svg:hover { transform: scale(0.95);}
 
-.menu-linker h5 {
-	color: white;
-	margin: 0;
-	font-weight: 600;
-	text-transform: uppercase;
-}
-
-.menu-linker h6 {
-	color: #575757;
-	margin: 0;
-	font-weight: 400;
-	text-transform: capitalize;
-}
-
 @media screen and (min-width: 900px) {
 	#motif { height: 48px; width: 48px;}
 	#type { margin-left: 10px; width: 90px;}
@@ -304,7 +290,6 @@ function toggleMenu(){
 	.topstrip svg:hover { transform: rotate(180deg);}
 	.closebutton svg:hover path { fill: #fe4a49;}
 	.topstrip svg:hover path { transform: rotate(90deg);}
-	.menu-linker { border-bottom: 1px solid #373737; padding-top: 14px;}
 
 	.menu-linker {
 		margin-bottom: 0;
@@ -312,8 +297,6 @@ function toggleMenu(){
 		padding-top: 32px;
 		padding-bottom: 20px;
 	}
-	.menu-linker h5 { font-size: 30px; padding-bottom: 6px;}
-	.menu-linker h6 { font-size: 24px; padding: 4px 0;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
@@ -340,15 +323,12 @@ function toggleMenu(){
 	.topstrip svg:hover { transform: rotate(180deg);}
 	.closebutton svg:hover path { fill: #fe4a49;}
 	.topstrip svg:hover path { transform: rotate(90deg);}
-	.menu-linker { border-bottom: 1px solid #373737; padding-top: 16px;}
 	.menu-linker {
 		margin-bottom: 0;
 		margin-top: 0;
 		padding-top: 16px;
 		padding-bottom: 20px;
 	}
-	.menu-linker h5 { font-size: 28px; padding-bottom: 6px;}
-	.menu-linker h6 { font-size: 21px; padding: 4px 0;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
@@ -375,15 +355,12 @@ function toggleMenu(){
 	.topstrip svg:hover { transform: rotate(180deg);}
 	.closebutton svg:hover path { fill: #fe4a49;}
 	.topstrip svg:hover path { transform: rotate(90deg);}
-	.menu-linker { border-bottom: 1px solid #373737; padding-top: 16px;}
 	.menu-linker {
 		margin-bottom: 0;
 		margin-top: 0;
 		padding-top: 16px;
 		padding-bottom: 20px;
 	}
-	.menu-linker h5 { font-size: 28px; padding-bottom: 6px;}
-	.menu-linker h6 { font-size: 21px; padding: 4px 0;}
 
 }
 
@@ -411,14 +388,11 @@ function toggleMenu(){
 	.topstrip svg:hover { transform: rotate(180deg);}
 	.closebutton svg:hover path { fill: #fe4a49;}
 	.topstrip svg:hover path { transform: rotate(90deg);}
-	.menu-linker { border-bottom: 1px solid #373737; padding-top: 16px;}
 	.menu-linker {
 		margin-bottom: 0;
 		margin-top: 0;
-		padding-top: 16px;
+		padding-top: 20px;
 		padding-bottom: 20px;
 	}
-	.menu-linker h5 { font-size: 28px; padding-bottom: 6px;}
-	.menu-linker h6 { font-size: 21px; padding: 4px 0;}
 }
 </style>

@@ -6,6 +6,9 @@ body, html
 body, html, *
 	box-sizing: border-box
 
+.bdr
+	border: 1px solid red
+
 :root, *
 	box-sizing: border-box
 	--weight-thin: 200
@@ -234,6 +237,18 @@ a
 .menuone
 	@media screen and (max-width: 767px)
 		display: none
+
+.pad-a
+	.side-bar
+		.menutwo
+			p
+				font-size: 12px
+				font-weight: 600
+				color: #878787
+				text-transform: uppercase
+				margin: 0
+				padding: 4px 16px 0 0
+				line-height: 1
 
 .sidebar-draw
 	display: flex
@@ -536,7 +551,7 @@ a
 .pad-left-16
 	padding-left: 16px
 
-.m-top-64
+.mtop64
 	@media screen and (min-width: 768px)
 		margin-top: 64px
 
@@ -876,58 +891,35 @@ a
 	display: flex
 	flex-direction: column
 	z-index: 800
-	@media screen and (min-width: 900px)
-		width: 25%
+	@media screen and (min-width: 768px)
+		width: 320px
 		height: 100vh
 		position: fixed
+		padding-left: 40px
+		padding-top: 120px
 		top: 0
 		left: 0
-		.in-side
-			width: calc(100% - 64px)
-			margin-left: 64px
-			border-left: 2px solid #b7b7b7
-			height: 100%
-			padding-top: 160px
-			padding-left: 16px
-	@media screen and (max-width: 899px)
-		width: 25%
-		height: 100vh
-		position: fixed
-		top: 0
-		left: 0
-		.in-side
-			width: calc(100% - 40px)
-			margin-left: 40px
-			border-left: 2px solid #b7b7b7
-			height: 100%
-			padding-top: 160px
-			padding-left: 16px
 	@media screen and (max-width: 767px)
 		width: 100%
 		height: 40px
 		top: 64px
 		left: 0
 		position: fixed
+		background: rgba(255,255,255,0.3)
+		backdrop-filter: blur(5px)
 		transition: height 0.24s var(--cubea)
-		.in-side
-			display: none
 	@media screen and (max-width: 575px)
 		width: 100%
 		top: 56px
 		left: 0
 		position: fixed
 		min-height: 40px
-		.in-side
-			width: calc(100% - 24px)
-			height: 40px
-			border-left: 2px solid #b7b7b7
-			margin-left: 24px
 
 .side-bar.toggledClass
 	@media screen and (max-width: 767px)
 		width: 100%
-		height: calc(100vh - 64px)
-		top: 64px
+		height: 100vh
+		top: 0
 		left: 0
 		z-index: 800
 		position: fixed
@@ -935,56 +927,53 @@ a
 		backdrop-filter: blur(4px)
 		transition: height 0.24s var(--cubea)
 		overflow-y: scroll
-		padding-top: 16px
-		.in-side
-			display: none
+		padding-top: 72px
 	@media screen and (max-width: 575px)
 		width: 100%
-		top: 56px
-		padding-top: 16px
+		top: 0
 		left: 0
+		padding-top: 64px
 		position: fixed
-		height: calc(100vh - 56px)
+		height: 100vh
 		overflow-y: scroll
-		.in-side
-			display: none
 
-.navlinks
-	@media screen and (max-width: 767px)
-		padding: 0 32px 32px 32px
-		h6
-			font-size: 32px
-			text-transform: uppercase
-		p
-			margin: 0
-			padding: 8px
-			font-size: 20px
-			border-bottom: 1px solid #e1e1e1
-			font-weight: 400
+.pad-a
+	.side-bar
+		.navlinks
+			@media screen and (max-width: 767px)
+				padding: 0 32px 32px 32px
+				height: max-content
+				overflow-y: scroll
+				h6
+					font-size: 27px
+					text-transform: uppercase
+					font-weight: bold
+					margin: 0
+					border-top: 1px solid #d7d7d7
+					padding-top: 12px
+				p
+					margin: 0
+					padding: 5px 0
+					font-size: 18px
+					border-bottom: 1px solid #e1e1e1
+					font-weight: 400
 
 
 .main-page
 	display: flex
 	flex-direction: column
 	@media screen and (min-width: 768px)
-		width: 75%
+		width: calc(100% - 160px)
 		min-height: 100vh
-		padding-top: 120px
-		margin-left: 25%
+		margin-left: 240px
 		padding-bottom: 64px
 	@media screen and (max-width: 767px)
-		width: calc(100% - 32px)
-		padding-top: 80px
-		margin-left: 32px
-		border-left: 2px solid #b7b7b7
+		width: 100%
 		min-height: 100vh
 		padding-bottom: 64px
 	@media screen and (max-width: 575px)
-		width: calc(100% - 16px)
-		margin-left: 16px
-		border-left: 2px solid #b7b7b7
+		width: 100%
 		min-height: 100vh
-		padding-top: 96px
 
 .gp3
 	display: flex
@@ -1166,21 +1155,11 @@ a
 		.cols1
 			width: 64%
 			margin-bottom: 20px
-		.document
-			width: 78%
-			padding-top: 32px
-			padding-left: 24px
-			padding-bottom: 64px
 	@media screen and (max-width: 899px)
 		padding-left: 20px
 		.cols1
 			width: 72%
 			margin-bottom: 20px
-		.document
-			width: 100%
-			padding-right: 40px
-			padding-top: 32px
-			padding-bottom: 40px
 	@media screen and (max-width: 767px)
 		gap: 0
 		padding-left: 16px
@@ -1188,20 +1167,12 @@ a
 		.cols1
 			width: 100%
 			margin-bottom: 16px
-		.document
-			width: 100%
-			padding-right: 32px
 	@media screen and (max-width: 575px)
 		padding-left: 16px
 		padding-right: 24px
 		.cols1
 			width: 100%
 			margin-bottom: 16px
-		.document
-			width: 100%
-			padding-right: 16px
-			padding-left: 8px
-			padding-top: 0
 
 .formatting
 	h1, h2, h3, h4, h6, p, small, cite, a, pre, code, blockquote, ul li, ol li
@@ -1292,70 +1263,129 @@ a
 			border-left: 2px solid var(--soft)
 			padding-left: 16px
 
-.document
-	p, blockquote, ul li, ol li, b, em, strong
-		color: #a0a0a0
-	b, strong
-		color: #272727
-	h6
-		font-family: 'Newsreader', serif
-		color: #a0a0a0
-		@media screen and (max-width: 575px)
-			font-size: 21px
-			margin-top: 0
-			margin-bottom: 0
-		@media screen and (max-width: 767px)
-			font-size: 20px
-			margin-top: 0
-			margin-bottom: 0
-		@media screen and (max-width: 899px)
-			font-size: 21px
-			margin-top: 0
-			margin-bottom: 0
+.pad-a
+	.document
 		@media screen and (min-width: 900px)
-			font-size: 24px
+			padding-left: 64px
+			padding-right: 15vw
+		@media screen and (max-width: 899px) and (min-width: 768px)
+			padding-left: 0
+			padding-right: 32px
+		p, blockquote, ul li, ol li, b, em, strong
+			color: #696969
+		b, strong
+			color: #272727
+		h2
+			text-transform: uppercase
+			font-weight: 600
 			margin-top: 0
+			margin-bottom: 32px
+			border-bottom: 1px solid #e1e1e1
+			transition: all 0.14s var(--cubed)
+			padding-bottom: 24px
+			border-left: none
+			color: #878787
+			@media screen and (min-width: 900px)
+				font-size: 48px
+			@media screen and (max-width: 899px)
+				font-size: 40px
+			@media screen and (max-width: 767px)
+				font-size: 32px
+			@media screen and (max-width: 575px)
+				font-size: 24px
+				letter-spacing: -0.5px
+		h6
+			font-family: 'Tiro Devanagari Sanskrit', serif
+			color: #474747
+			font-weight: 600
+			letter-spacing: 0
+			text-align: center
+			background: #f1f1f1
+			padding: 16px
+			@media screen and (max-width: 575px)
+				font-size: 18px
+				margin-top: 20px
+				margin-bottom: 20px
+				margin-left: 0
+				width: 96% !important
+				padding: 12px 8px
+				text-align: left
+			@media screen and (max-width: 767px) and (min-width: 576px)
+				font-size: 21px
+				margin-top: 20px
+				margin-bottom: 20px
+				margin-left: 5%
+				width: 70%
+			@media screen and (max-width: 899px) and (min-width: 768px)
+				font-size: 21px
+				margin-top: 20px
+				margin-bottom: 20px
+				margin-left: 5%
+				width: 70%
+			@media screen and (min-width: 900px)
+				font-size: 21px
+				margin-top: 20px
+				margin-bottom: 20px
+				margin-left: 5%
+				width: 70%
+		h3
+			border-bottom: 1px solid #a0a0a0
+		h4
+			font-weight: bold
+			@media screen and (max-width: 575px)
+				font-size: 27px
+				margin-top: 32px
+			@media screen and (max-width: 767px)
+				font-size: 30px
+				margin-top: 40px
+			@media screen and (max-width: 899px)
+				font-size: 24px
+				margin-top: 40px
+			@media screen and (min-width: 900px)
+				font-size: 2.1rem
+				margin-top: 40px
+		h5
+			font-weight: 600
+			letter-spacing: -0.1px
+			@media screen and (max-width: 575px)
+				font-size: 19px
+			@media screen and (max-width: 899px)
+				font-size: 19px
+			@media screen and (min-width: 900px)
+				font-size: 22px
+		blockquote
+			font-style: italic
 			margin-bottom: 0
-	h3
-		border-bottom: 1px solid #a0a0a0
-	h4
-		font-weight: bold
-		@media screen and (max-width: 575px)
-			font-size: 30px !important
-			margin-top: 32px
-		@media screen and (max-width: 767px)
-			font-size: 30px !important
-			margin-top: 40px
-		@media screen and (max-width: 899px)
-			font-size: 24px
-			margin-top: 40px
-		@media screen and (min-width: 900px)
-			font-size: 32px
-			margin-top: 40px
-	h5
-		@media screen and (max-width: 575px)
-			font-size: 18px
-		@media screen and (min-width: 900px)
-			font-size: 20px
-	blockquote
-		font-style: italic
-		@media screen and (max-width: 575px)
-			font-size: 18px
-		@media screen and (max-width: 899px)
-			font-size: 16px
-			color: #a0a0a0
-	p, ul li, ol li
-		@media screen and (max-width: 575px)
-			font-size: 16px
-		@media screen and (max-width: 767px)
-			font-size: 16px
-		@media screen and (max-width: 899px)
-			font-size: 16px
-		@media screen and (min-width: 900px)
-			font-size: 18px
-	small
-		font-size: 12px
-
+			padding-bottom: 0
+			border-left-width: 3px
+			border-left-style: solid
+			padding-left: 16px
+			@media screen and (min-width: 900px)
+				font-size: 18px
+			@media screen and (max-width: 899px)
+				font-size: 16px
+				color: #a0a0a0
+			@media screen and (max-width: 575px)
+				margin-left: 0
+				margin-right: 16px
+		p, ul li, ol li
+			@media screen and (max-width: 575px)
+				font-size: 16px
+			@media screen and (max-width: 767px)
+				font-size: 16px
+			@media screen and (max-width: 899px)
+				font-size: 16px
+			@media screen and (min-width: 900px)
+				font-size: 16px
+		small
+			font-size: 12px
+		cite
+			font-size: 12px
+			text-style: normal
+			margin-top: 0
+			padding-top: 0
+			font-weight: 400
+	
 .cols3.pd16, .cols2.pd16
 	padding-left: 16px
 	padding-right: 16px
@@ -1382,20 +1412,53 @@ h4.ptt40
 	padding-top: 24px
 
 
-.for-links
-	h2
-		font-size: 64px
-		font-weight: 600
-		margin: 0
-		padding: 16px 8px
-		border-bottom: 1px solid #e1e1e1
-		@media screen and (max-width: 899px)
+.pad-a
+	.for-links
+		display: flex
+		flex-direction: column
+		h2
 			font-size: 48px
-		@media screen and (max-width: 767px)
-			font-size: 36px
-		@media screen and (max-width: 575px)
-			font-size: 24px
-
+			font-weight: 600
+			text-transform: uppercase
+			margin: 0
+			padding: 16px 8px
+			border-bottom: 1px solid #e1e1e1
+			transition: all 0.14s var(--cubed)
+			border-left-width: 0px
+			border-left-style: solid
+			color: #878787
+			&:hover
+				border-bottom: 1px solid #474747
+				border-left-width: 16px
+				color: #474747
+			a
+				transition: all 0.14s var(--cubec)
+				&:hover
+					color: inherit
+			@media screen and (max-width: 899px)
+				font-size: 40px
+			@media screen and (max-width: 767px)
+				font-size: 32px
+			@media screen and (max-width: 575px)
+				font-size: 24px
+				letter-spacing: -0.5px
+		.in-links
+			h2
+				padding-bottom: 12px
+				margin-bottom: 16px
+			p
+				text-transform: uppercase
+				font-weight: 600
+				margin: 0 0 0 24px
+				@media screen and (min-width: 900px)
+					font-size: 25px
+				@media screen and (max-width: 899px)
+					font-size: 21px
+				@media screen and (max-width: 767px)
+					font-size: 18px
+				@media screen and (max-width: 575px)
+					font-size: 18px
+	
 .the-title
 	display: flex
 	flex-direction: column
@@ -1452,45 +1515,37 @@ h4.ptt40
 	display: flex
 	flex-direction: column
 
-.deskdesk
-	h6
-		font-size: 18px
-		font-weight: 600
-		color: #474747
-		transform-origin: center left
-		transition: all 0.08s var(--cubec)
-		margin: 0
-		padding-top: 32px
-		padding-bottom: 8px
-		a
-			color: inherit
-		&:hover
-			transform: scale(0.9)
-	p
-		font-size: 15px
-		font-weight: 400
-		color: #a0a0a0
-		transform-origin: center left
-		transition: all 0.08s var(--cubec)
-		margin: 0
-		padding: 3px 0
-		a
-			color: inherit
-		&:hover
-			transform: scale(1.1)
-	small
-		font-size: 10px
-		font-weight: 400
-		color: #b7b7b7
-		text-transform: uppercase
-		transform-origin: center left
-		transition: all 0.08s var(--cubec)
-		margin: 0
-		width: 100%
-		a
-			color: inherit
-		&:hover
-			transform: scale(1.1)
+.pad-a
+	.deskdesk
+		h6, p
+			margin: 0
+			padding: 0
+		h6
+			font-size: 18px
+			font-weight: 600
+			color: #474747
+			transform-origin: center left
+			transition: all 0.08s var(--cubec)
+			padding-top: 32px
+			padding-bottom: 6px
+			a
+				color: inherit
+		p
+			font-size: 15px
+			font-weight: 400
+			color: #a0a0a0
+			transform-origin: center left
+			transition: all 0.08s var(--cubec)
+			padding-bottom: 4px
+			a
+				color: inherit
+			&:hover
+				transform: scale(1.1)
+		small
+			font-size: 12px
+			color: #a0a0a0
+		@media screen and (max-width: 767px)
+			display: none
 
 .tabhead
 	@media screen and (min-width: 768px)
@@ -1506,10 +1561,10 @@ h4.ptt40
 	flex-direction: row
 	width: 100%
 	column-gap: 32px
-	row-gap: 20px
+	row-gap: 12px
 	@media screen and (max-width: 575px)
 		column-gap: 24px
-		row-gap: 4px
+		row-gap: 0px
 
 .ww8, .ww7, .ww6, .ww5, .ww4, .ww3, .ww2, .ww1
 	display: flex
@@ -1529,6 +1584,8 @@ h4.ptt40
 .ww7
 	@media screen and (min-width: 768px)
 		width: calc(14.28% - 27.43px)
+	@media screen and (max-width: 767px)
+		width: calc(33.33% - 16px)
 
 .ww6
 	@media screen and (min-width: 768px)
@@ -1762,6 +1819,9 @@ h4.ptt40
 		color: #878787
 	h6
 		color: inherit
+	cite
+		text-transform: uppercase
+		margin: 0
 	@media screen and (min-width: 900px)
 		img
 			height: 200px
@@ -1776,6 +1836,8 @@ h4.ptt40
 		cite
 			font-weight: bold
 			letter-spacing: 1.4px
+			padding-top: 6px
+			padding-bottom: 8px
 	@media screen and (max-width: 899px) and (min-width: 768px)
 		img
 			height: 144px
@@ -1790,6 +1852,8 @@ h4.ptt40
 		cite
 			font-weight: bold
 			letter-spacing: 1.4px
+			padding-top: 6px
+			padding-bottom: 8px
 	@media screen and (max-width: 767px) and (min-width: 576px)
 		img
 			height: 160px
@@ -1805,6 +1869,8 @@ h4.ptt40
 		cite
 			font-weight: bold
 			letter-spacing: 1.4px
+			padding-top: 6px
+			padding-bottom: 8px
 	@media screen and (max-width: 575px)
 		img
 			height: 220px
@@ -1813,15 +1879,17 @@ h4.ptt40
 		h6
 			font-size: 1.4rem
 			font-weight: 600
-			margin: 24px 0 16px 0
+			margin: 24px 0 8px 0
 		p
 			font-size: 1rem
-			margin-bottom: 12px
+			margin-bottom: 16px
 			margin-top: 0
 		cite
 			font-weight: bold
 			letter-spacing: 1.4px
 			font-size: 0.65rem
+			padding-top: 6px
+			padding-bottom: 8px
 
 .card.soft, .card-rr.soft
 	h6
@@ -1834,6 +1902,8 @@ h4.ptt40
 		color: var(--mrd)
 	.str
 		color: var(--strong)
+	.soft
+		color: var(--soft)
 
 
 .card.pad, .card-rr.pad
@@ -1852,6 +1922,16 @@ h4.ptt40
 .y-full
 	justify-content: center
 	min-height: 100vh
+
+.y-half
+	justify-content: center
+	min-height: 70vh
+	@media screen and (min-width: 768px)
+		padding-top: 40px
+		padding-bottom: 40px
+	@media screen and (max-width: 767px)
+		padding-top: 24px
+		padding-bottom: 24px
 
 .fullscreen
 	z-index: 900
@@ -1950,6 +2030,8 @@ h4.ptt40
 	right: 20px
 	z-index: 9999
 	cursor: pointer
+	@media screen and (max-width: 575px)
+		height
 
 .tooltip-box 
 	max-width: 300px
@@ -1964,3 +2046,73 @@ h4.ptt40
 .logo-svg-box
 	svg
 		transition: all 0.22s var(--cubee)
+
+.menu-linker
+	h5, h6
+		margin: 0
+	h5
+		font-weight: 600
+		text-transform: uppercase
+		color: white
+	h6
+		font-weight: 400
+		text-transform: capitalize
+		color: #515151
+		border-bottom: 1px solid #212121
+		transition: all 0.1s var(--cubed)
+		width: 88%
+		&:hover
+			border-bottom: 1px solid #fe4a49
+			color: white
+			animation: widthwiden 0.14s var(--cubea) forwards
+			a
+				&:hover
+					color: white
+	@media screen and (min-width: 900px)
+		h5
+			font-size: 27px
+			padding-bottom: 6px
+		h6
+			font-size: 20px
+			padding: 10px 0
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		h5
+			font-size: 27px
+			padding-bottom: 6px
+		h6
+			font-size: 20px
+			padding: 10px 0
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		h5
+			font-size: 27px
+			padding-bottom: 6px
+		h6
+			font-size: 20px
+			padding: 10px 0
+	@media screen and (max-width: 575px)
+		h5
+			font-size: 27px
+			padding-bottom: 6px
+		h6
+			font-size: 20px
+			padding: 10px 0
+
+@keyframes widthwiden
+	0%
+		width: 88%
+		padding-right: 0%
+	100%
+		width: 100%
+		padding-right: 12%
+
+.point
+	cursor: pointer
+
+.flier
+	padding-bottom: 24px
+	.boxr
+		padding-bottom: 8px
+	small
+		font-size: 12px
+		padding-top: 4px
+		color: #676767

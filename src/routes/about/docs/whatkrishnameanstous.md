@@ -7,15 +7,11 @@ import BlockQuote1 from '$lib/components/reuse/BlockQuote.svelte'
 import BlockQuote2 from '$lib/components/reuse/BlockQuote.svelte'
 </script>
 
+> “Put down the truest word you know, you will be the greatest writer.”<br><cite>Ernest Hemingway</cite>
 
-##### <span class="hind"> यतो धर्मस्ततो कृष्णः यतो कृष्णः ततो जयः।</span>
+###### यतो धर्मस्ततो कृष्णः यतो कृष्णः ततो जयः।
 
 ##### Where there is Dharma, there is Kṛṣṇa. Where there is Kṛṣṇa, there is victory.
-
-<BlockQuote1 --qline="#fe4a49">
-<div slot="quote">“Put down the truest word you know, you will be the greatest writer.”</div>
-<div slot="cite">Ernest Hemingway</div>
-</BlockQuote1>
 
 **How Do We Respond When What We Had Built And What Built Us, Breaks Down? How Do We Equip Ourselves To Build?**
 
@@ -63,3 +59,6 @@ So, the question of ‘how do we respond’ when things break down – We respon
 
 ##### So, Here We Are – Śri Kṛṣṇa Is Both The Source And The Destination For Us. The Impulse And The Restraint.
 
+<style>
+	blockquote { border-color: #fe4a49;}
+</style>

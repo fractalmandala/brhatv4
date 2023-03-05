@@ -22,5 +22,5 @@ With a culturally and civilizationally rooted approach to public policy, we aim 
 Such knowledge production is essential to transform cultural practices and challenge the ‘received wisdom’ around how Indian civilization and its matters have generally been approached and acted upon. From this standpoint, we delve into the nature and politics of knowledge. We believe that if our traditional configurations of learning are re-instituted and re-constituted, it will transform the way the public policies are formed, enacted, and implemented.
 
 <style>
-  p, h5 { text-align: left;}
+	blockquote { border-color: #fe4a49;}
 </style>

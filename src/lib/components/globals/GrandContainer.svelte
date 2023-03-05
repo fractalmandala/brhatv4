@@ -1,14 +1,19 @@
 <script>
 let showClose = false
 let toggledClass = false
+let showSection = true
 function toggleClose(){
 	showClose = !showClose
 	toggledClass = !toggledClass
+	showSection = !showSection
 }
 </script>
 
 <div class="side-bar" class:toggledClass={toggledClass}>
 	<div class="menutwo">
+		{#if showSection}
+			<slot name="sectionname"></slot>
+		{/if}
 		{#if showClose}
 			<svg width="100%" height="100%" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" on:click={toggleClose} on:keydown={toggleClose}>
 				<g id="close" clip-path="url(#clip0_328_2)">
@@ -42,9 +47,7 @@ function toggleClose(){
 			<slot name="mobilenav"></slot>
 		</div>
 	{/if}
-	<div class="in-side navlinks">
 		<slot name="desknav"></slot>
-	</div>
 </div>
 
 <style lang="sass">

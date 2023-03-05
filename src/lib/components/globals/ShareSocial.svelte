@@ -44,6 +44,7 @@ function shareOnWhatsApp(url:string, text:string) {
 			<img src="/images/icons/red-whatsapp.png" alt="whatsapp icon" />
 		</div>
 	</div>
+	<small>Share this Page</small>
 
 
 <style>
@@ -58,9 +59,10 @@ function shareOnWhatsApp(url:string, text:string) {
 }
 .boxc img:hover { filter: saturate(1); transform: scale(1.2);}
 .boxr { gap: 20px;}
+small { display: none;}
 }
 @media screen and (max-width: 767px) {
-	.boxr { gap: 24px; margin-top: 0;padding-top: 0; margin-bottom: 32px;}
+	.boxr { gap: 24px; margin-top: 0;padding-top: 0;}
 	.boxc img {
 		width: 24px;
 		height: 24px;

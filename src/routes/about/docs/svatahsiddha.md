@@ -8,16 +8,12 @@ import BlockQuote2 from '$lib/components/reuse/BlockQuote.svelte'
 </script>
 
 
-<BlockQuote1 --qline="#fe4a49">
-<div slot="quote">“How are we collectively creating a world that none of us wants, individually”</div>
-<div slot="cite">Daniel Christian Wahl</div>
-</BlockQuote1>
+
+> “How are we collectively creating a world that none of us wants, individually<br><cite>Daniel Christian Wahl</cite>
 
 
-<BlockQuote2 --qline="#FE4a49">
-<div slot="quote">“We are approaching the power of Gods, without the wisdom of Gods”</div>
-<div slot="cite">Daniel Schmartenberger</div>
-</BlockQuote2>
+
+> “We are approaching the power of Gods, without the wisdom of Gods”<br><cite>Daniel Schmartenberger</cite>
 
 #### Culture Compatible Public Policy
 
@@ -90,3 +86,6 @@ If cultural immersion is the way for demand generation, the culmination of that 
 Beyond a point, all institutions and efforts at culture building boil down to embodied cognition. Individuals who embody and live that culture and inspire others. Our third vector is the cultivation of such leadership. People who understand the civilizational frameworks and can creatively synthesize them for contemporary contexts to solve problems that matter.
     
 
+<style>
+blockquote { border-color: #fe4a49;}
+</style>

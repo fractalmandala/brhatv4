@@ -5,7 +5,6 @@ image: "/images/areas-cc.webp"
 
 <img class="image" src="/images/corpimages/ganapati.webp" alt="ganapati" />
 
-
 Culture, as Loren Eiseley said, is stand-in Nature; a human substitute to the laws of Nature which broke down when man discovered technology, came out of the food chain and broke the natural order. Culture through its laws and conventions tries to mimic and safeguard natural laws, and at the same time, in a society like Bhāratavarṣa, tries to spiritually elevate man while respecting natural physical constraints.
 
 Here, this Nature-conducive culture takes the form of Dharma. Dharma becomes manifest to us in the form of tradition which takes tangible forms as customs and rituals. The culture which arises out of this practice of tradition talks in the language of symbols. And these symbols are conveyed through art and literature. While art encodes this wisdom, the act of decoding its meaning leads the aesthete, the onlooker, onto a cultural journey.
@@ -33,4 +32,7 @@ The infusion of this cultural wisdom in personal life will lead to psychological
 
 <style>
 .image { object-fit: contain; width: 30%; margin-bottom: 32px;}
+
+blockquote { border-color: #fe4a49;}
+
 </style>
