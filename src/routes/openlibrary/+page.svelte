@@ -9,7 +9,7 @@ import { quadOut } from 'svelte/easing'
 let isShow = false
 import supabase from '$lib/db'
 let inputTerm:any
-
+let isMode = false
 let isEss = false
 let isIKS = false
 let isBodha = false
@@ -45,6 +45,10 @@ const showImage = async (imagelinker:any) => {
 }
 function toggleShow(){
 	isShow = !isShow
+}
+
+function toggleMode(){
+	isMode = !isMode
 }
 
 export async function getEss(){
@@ -144,272 +148,198 @@ export async function getHis(){
 
 </script>
 
-<svelte:window bind:scrollY={ax}/>
-<ThinBar></ThinBar>
-<div class="box-r wrap h100 m-mid x1">
-	<div class="box-c h100p wd2 b-l">
-		<h4 class="wide75 tree m-bot-24">
-		Bṛhat Open Library is an Online Repository for Texts, Papers, Learning Material and More.
-		</h4>
-		<p class="wide75 grey">
-			It is a tribute to the hard labor of people known and unknown that have created for us an unbelievable repository of Indian knowledge. All material here is sourced from public domains, permitted for resharing, and uploaded under the CC0 1.0 Open License. If you find any material that violates this, please write to us at contact@brhat.in and we will remove it from the collection. New books added every week.
-		</p>
-	</div>
-	<div class="box-c imageholder h100p wd2 b-r">
-		<img src="/images/herocovers/bolherobrhat.webp" alt="reading"/>
-	</div>
-</div>
 
-<div class="box-c x2 m-mid">
-	<h3 class="lining" data-textify>Browse the Library</h3>
-</div>
-<div class="c-second">
-	<div class="box-c menutwo" on:click={toggleShow} on:keydown={toggleShow}>
-			<svg width="100%" height="100%" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M0.767578 0.37207H8.76758V8.37207H0.767578V0.37207Z" fill="#FE4A49"/>
-			<path d="M0.767578 12.3721H8.76758V20.3721H0.767578V12.3721Z" fill="#FE4A49"/>
-			<path d="M8.76758 24.3721H0.767578V32.3721H8.76758V24.3721Z" fill="#FE4A49"/>
-			<path d="M12.7676 0.37207H20.7676V8.37207H12.7676V0.37207Z" fill="#FE4A49"/>
-			<path d="M20.7676 12.3721H12.7676V20.3721H20.7676V12.3721Z" fill="#FE4A49"/>
-			<path d="M12.7676 24.3721H20.7676V32.3721H12.7676V24.3721Z" fill="#FE4A49"/>
-			<path d="M32.7676 0.37207H24.7676V8.37207H32.7676V0.37207Z" fill="#FE4A49"/>
-			<path d="M24.7676 12.3721H32.7676V20.3721H24.7676V12.3721Z" fill="#FE4A49"/>
-			<path d="M32.7676 24.3721H24.7676V32.3721H32.7676V24.3721Z" fill="#FE4A49"/>
-		</svg>
-	</div>
-	{#if isShow}
-		<div class="sidebar-draw">
-			<div class="box-r closestrip" on:click={toggleShow} on:keydown={toggleShow}>
-				<img src="/images/icons/hamburger-close.png" alt="closer" />
-			</div>
-			<BolSearch2></BolSearch2>
+	<div class="traybox wrap y-full x2">
+		<div class="ww2 x2left">
+			<h4 class="wide75 tree">
+			Bṛhat Open Library is an Online Repository for Texts, Papers, Learning Material and More.
+			</h4>
+			<p class="wide75">
+				It is a tribute to the hard labor of people known and unknown that have created for us an unbelievable repository of Indian knowledge. All material here is sourced from public domains, permitted for resharing, and uploaded under the CC0 1.0 Open License. If you find any material that violates this, please write to us at contact@brhat.in and we will remove it from the collection. New books added every week.
+			</p>
 		</div>
-	{/if}
-</div>
-<div class="box-r m-mid h100 pad32-t gap3 x3">
-	<div class="box-c left-col link-heads">
-		<h5 id='class-1' class="w600 upper" on:click={toggleEss} on:keydown={toggleEss}>Essentials</h5>
-		<h5 id='class-2' class="w600 upper" on:click={toggleBodha} on:keydown={toggleBodha}>Two Bodhas</h5>
-		<h5 id='class-3' class="w600 upper" on:click={toggleIKS} on:keydown={toggleIKS}>Indian Knowledge Systems</h5>
-		<h5 id='class-5' class="w600 upper" on:click={toggleHis} on:keydown={toggleHis}>History</h5>
-		<div class="box-c searcher">
-			<BolSearch></BolSearch>
+	
+		<div class="ww2 imageholder">
+			<img src="/images/herocovers/bolherobrhat.webp" alt="reading"/>
 		</div>
 	</div>
-	<div class="box-c mid-col">
-		{#if isEss}
-		{#await getEss()}
-		<small>...</small>
-		{:then data}
-		{#each data as item, i}
-			<div class="box-c txt22" id="ess" use:reveal={{transition: "slide", delay: 10*i}}>
-				<p class="w500 grey2" on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
+
+<div class="pad-a x22">
+
+	<div class="the-title y-full x23">
+		<h2>Browse the Library</h2>
+		<div class="traybox wrap x24">
+			<div class="ww3 card" id="categories">
+				<h5 id='class-1' on:click={toggleEss} on:keydown={toggleEss}>Essentials</h5>
+				<h5 id='class-2' on:click={toggleBodha} on:keydown={toggleBodha}>Two Bodhas</h5>
+				<h5 id='class-3' on:click={toggleIKS} on:keydown={toggleIKS}>Indian Knowledge Systems</h5>
+				<h5 id='class-5' on:click={toggleHis} on:keydown={toggleHis}>History</h5>
 			</div>
-		{/each}
-		{:catch error}
-		<pre>{error}</pre>
-		{/await}
-		{/if}
-		{#if isIKS}
-		{#await getIKS()}
-		<small>...</small>
-		{:then data}
-		{#each data as item}
-			<div class="box-c txt22" id="ess" use:reveal={{transition: "fly"}}>
-				<p class="w500 grey2" on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
-			</div>
-		{/each}
-		{:catch error}
-		<pre>{error}</pre>
-		{/await}
-		{/if}
-
-		{#if isBodha}
-		{#await getBodhas()}
-		<small>...</small>
-		{:then data}
-		{#each data as item}
-		<div class="box-c txt22" id="bodha" use:reveal={{transition: "fly"}}>
-			<p class="w500 grey2" on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
-		</div>	
-		{/each}
-		{:catch error}
-		<pre>{error}</pre>
-		{/await}
-		{/if}
-
-		{#if isHis}
-		{#await getHis()}
-		<small>...</small>
-		{:then data}
-		{#each data as item}
-		<div class="box-c txt22" id="bodha" use:reveal={{transition: "fly"}}>
-			<p class="w500 grey2" on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
-		</div>	
-		{/each}
-		{:catch error}
-		<pre>{error}</pre>
-		{/await}
-		{/if}
-
-	</div>
-	<div class="box-c right-col">
-		{#if selectedImage}
-			<div class="box-c details-col" in:fly={{ delay: 200, duration: 200, x: 400, y: 0, easing: quadOut}} out:fly={{ delay: 0, duration: 200, x: -400, y: 0, easing: quadOut}}>
-				<p class="grey2">{selectedDesc}</p>
-					<div class="box-c deets-l">
-						<button class="treebutton"><a href="/openlibrary/books/{selectedLink}">Read Now</a></button>
+			<div class="ww3" id="books">
+				{#if isEss}
+				{#await getEss()}
+				<small>...</small>
+				{:then data}
+				{#each data as item, i}
+					<div class="boxc card" id="ess" use:reveal={{transition: "slide", delay: 10*i}}>
+						<p on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)} on:click={toggleMode} on:keydown={toggleMode}>{item.Text}</p>
 					</div>
-				<small>{selectedAuth}</small>
+				{/each}
+				{:catch error}
+				<pre>{error}</pre>
+				{/await}
+				{/if}
+				{#if isIKS}
+				{#await getIKS()}
+				<small>...</small>
+				{:then data}
+				{#each data as item}
+					<div class="boxc card" id="ess" use:reveal={{transition: "fly"}}>
+						<p on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
+					</div>
+				{/each}
+				{:catch error}
+				<pre>{error}</pre>
+				{/await}
+				{/if}
+		
+				{#if isBodha}
+				{#await getBodhas()}
+				<small>...</small>
+				{:then data}
+				{#each data as item}
+				<div class="boxc card" id="bodha" use:reveal={{transition: "fly"}}>
+					<p on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
+				</div>	
+				{/each}
+				{:catch error}
+				<pre>{error}</pre>
+				{/await}
+				{/if}
+		
+				{#if isHis}
+				{#await getHis()}
+				<small>...</small>
+				{:then data}
+				{#each data as item}
+				<div class="boxc card" id="bodha" use:reveal={{transition: "fly"}}>
+					<p on:click={() => showImage(item.imagelinker)} on:keydown={() => showImage(item.imagelinker)}>{item.Text}</p>
+				</div>	
+				{/each}
+				{:catch error}
+				<pre>{error}</pre>
+				{/await}
+				{/if}
+
 			</div>
-    	{:else}
+			<div class="ww3" id="layout">
+				{#if isMode}
+				{#if selectedImage}
+				<div class="boxc card details-col" in:fly={{ delay: 200, duration: 200, x: 400, y: 0, easing: quadOut}} out:fly={{ delay: 0, duration: 200, x: -400, y: 0, easing: quadOut}} on:click={showImage} on:keydown={showImage}>
+					<img src={selectedImage} alt={selectedDesc}/>
+					<p>{selectedDesc}</p>
+					<div class="boxc deets-l">
+						<button class="treebutton"><a href="/openlibrary/books/{selectedLink}">Read Now</a></button>
+						</div>
+					<cite>{selectedAuth}</cite>
+				</div>
+    		{:else}
       	<small class="white">.</small>
-    {/if}
-	</div>
-</div>
-
-<div class="box-c m-mid x4">
-	<h3 class="lining" data-textify>Special Sections</h3>
-	<div class="box-r h100p wrap gap3 m-sm specialsrow">
-		<div class="w500 box-c wd3 col3">
-			<h6 class="tree"><a href="/openlibrary/specials/aryanissue">The Āryan Issue</a></h6>
-			<p class="w400 grey">
-				A collection of books, articles, and research findings on the matter of Indo-European linguistic origins and dispersals. This is intended as a yeoman's service to have one-point of reference on the whole Aryan invasion/migration/trickling-in debate.
-			</p>
+    		{/if}
+				{/if}
+			</div>
 		</div>
-		<div class="w500 box-c wd3 col3">
-			<h6 class="tree">Repository of Scripture</h6>
-			<p class="w400 grey">
+	</div>
+
+	<div class="the-title y-quart x33">
+		<h2>Special Sections</h2>
+		<div class="traybox wrap">
+			<div class="ww3 card">
+				<h6 class="tree"><a href="/openlibrary/specials/aryanissue">The Āryan Issue</a></h6>
+				<p>
+					A collection of books, articles, and research findings on the matter of Indo-European linguistic origins and dispersals. This is intended as a yeoman's service to have one-point of reference on the whole Aryan invasion/migration/trickling-in debate.
+				</p>
+			</div>
+			<div class="ww8"></div>
+			<div class="ww3 card">
+				<h6 class="tree"><a href="/openlibrary/reader">Repository of Scripture</a></h6>
+				<p>
 				Bringing together all public-domain translations and Sanskrit versions of Hindu scripture- Veda, Purāṇa, Śāstra and more.
-			</p>
-		</div>
-		<div class="w500 box-c wd3 col3">
-			<h6 class="tree"><a href="/openlibrary/reader">The Reading Room</a></h6>
-			<p class="w400 grey">
-				A unique section that is built for individual discovery paths. Think of the Reading Room as a way to synaptically reconnect with the civilizational consciousness. Begin now!
-			</p>
+				</p>
+			</div>
 		</div>
 	</div>
+
 </div>
-
-
 
 
 <style>
-.x1, .x3, .x2, .x4 { overflow-x: hidden; width: 100%}
-.x4, .x3, .x2 { background: white; z-index: 2;}
-.left-col { width: 25%;}
 
-.txt22 p {
-	cursor: pointer;
-	transform-origin: center left;
-	transition: all 0.05s ease;
-	margin: 0;
-	padding: 4px;
-	border-bottom: 1px solid #f1f1f1;
+.card h5:hover {
+	border-left-color: var(--tree);
+	border-left-width: 8px;
 }
-.txt22 p:hover { color: var(--tree); cursor: pointer; transform: scale(0.9);}
-.details-col small {
-	background: var(--tree);
-	color: white;
-	padding: 4px;
-	width: max-content;
-	font-size: 12px;
-	text-transform: uppercase;
-	letter-spacing: 0px;
-	font-weight: 600;
-}
-.x3 { background: white;}
-
-.x4 .col3 { transform-origin: center center; transition: all 0.6s ease; overflow: hidden;}
-.lining {
-	border-left: 4px solid var(--tree);
-	color: #a7a7a7;
-}
-
-.menutwo svg path {
-	fill: var(--tree);
-}
+.x2 { overflow-x: hidden; width: 100%;}
+.x2 { background: white; z-index: 2;}
 
 
+#books .card p { margin: 0; color: #272727; cursor: pointer; font-weight: 400; border-bottom: 1px solid #d7d7d7;}
+#books .card p:hover { color: var(--tree); font-weight: 600;}
 @media screen and (min-width: 900px) {
+
 	.deets-l { width: 40%;}
-	.x1 { height: 100vh; width: 100%; position: sticky; top: 0;}
-	.x1 .box-c { justify-content: flex-end; padding-left: 16px;}
-	.x1 .box-c .grey { margin-bottom: 128px; color: #b7b7b7;}
+	#books .card p {
+		padding: 6px 0;
+		font-size: 1rem;
+	}
 	.x1 .imageholder img { object-fit: cover; height: 100%; width: 100%; object-position: 99% center;}
-	.x2 { padding-bottom: 4px; width: 100%; background: white; background: white;}
-	.x3 {
-		align-items: flex-start;
-		height: 100%;
-		border-bottom: 1px solid #d7d7d7;
-		padding-bottom: 64px;
-	}
+	.x2 { height: 100vh;}
+	.x2left { padding-left: 64px;}
+	.x2 .ww2 { height: 100%; justify-content: center;}
+	.x2 .ww2 img { height: 100%; object-fit: cover; object-position: center left;}
 
-	.mid-col, .left-col, .right-col { height: max-content; background: white; z-index: 2;}
-
-	.mid-col { 
-		width: 40%; 
-		padding: 0 16px;
-		overflow-y: scroll;
-	}
-	.left-col { width: 32%;}
-	.right-col { width: 28%; }
 	.treebutton { margin-bottom: 24px;}
 	.details-col { padding: 32px;border: 1px solid #d7d7d7; border-radius: 4px;}
-	.col3 { height: 100%; position: relative;transform-origin: center center; transition: all 0.1s var(--cubed);}
 
-	.x4 { padding-top: 80px; padding-bottom: 80px; gap: 24px; height: 100%; align-items: flex-start; border-bottom: 1px solid #d7d7d7; }
-	.x4 .lining { padding-left: 16px;}
-	.specialsrow { width: 100%;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
 		.x1 .imageholder img { object-fit: cover; height: 100%; width: 100%; object-position: 20% center;}
-		.x1 .box-c { height: 100%; padding-left: 16px; padding-right: 16px; justify-content: center;}
-		.x1 { padding-bottom: 0; padding-top: 80px;}
 		.imageholder { height: 88vh !important;}
-		.x2 { margin-top: 48px;}
-		.left-col { width: 35%;}
-		.mid-col { width: 35%;}
-		.right-col { width: 30%;}
-		.right-col p { font-size: 14px;}
-		.right-col small { font-size: 10px;}
-		.x4 h3 { margin-top: 32px;}
-	
+		.x2 { height: 100vh;}
 }
 @media screen and (min-width: 576px) and (max-width: 767px) {
-	.x1 .b-r { order: 1; }
-	.imageholder img { object-fit: cover; height: 100%; width: 100%; object-position: center center;}
-	.x1 .b-l { order: 2; padding-top: 32px;}
-	.x1 { width: 100vw; padding-top: 72px;}
-	.x2, .x3 { display: none;}
 
-	.specialsrow { margin-bottom: 32px;}
+	.imageholder img { object-fit: cover; height: 100%; width: 100%; object-position: center center;}
+	.x2 { height: 100vh;}
+
 	
 
 }
 
 @media screen and (max-width: 575px) {
-	.x1 .imageholder { 
-		order: 1;
-		height: 40vh;
-	}
 	.imageholder img {
 		object-fit: cover;
 		height: 100%;
 		object-position: center center;
 	}
-	.x1 .b-l {
-		order: 2;
-		height: 100%;
-		padding-top: 24px;
-	}
-	.x1 { min-height: 100vh; padding-top: 64px; width: 100vw;}
-	.x3, .x2 { display: none;}
 
-	.specialsrow .col3 { padding: 0;}
-	.specialsrow { padding: 0 0 32px 0;}
+	.x2 { min-height: 100vh;}
+	.imageholder { order: 1; height: 50vh; margin-top: 56px;}
+	.x2left { order: 2; padding: 24px;}
+	#books { overflow-y: scroll;}
+	#books .card p { font-size: 1rem; padding: 8px 0;}
+	.x23 { position: relative;}
+	.details-col {
+		position: fixed;
+		top: 56px;
+		height: calc(100vh - 56px);
+		left: 0;
+		background: white;
+		z-index: 100;
+		width: calc(100vw - 24px);
+		padding: 16px;
+	}
 
 	
 }
