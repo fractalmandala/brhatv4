@@ -11,63 +11,49 @@ import 'swiper/css'
 import 'swiper/css/keyboard'
 import 'swiper/css/navigation'
 let y = 1
+let showItins:any = [] 
 
 let panel1 = true
 let panel2 = false	
 let panel3 = false
-let panel4 = false
+
 
 function toggle1(){
-	panel1 = !panel1
-	if (panel2 === true) {
-			panel2 = !panel2
-	}
-	if (panel3 === true) {
-			panel3 = !panel3
-	}
-	if (panel4 === true) {
-			panel4 = !panel4
+	if (!panel1) {
+		panel1 = true
+		if (panel2) {
+			panel2 = false
+		}
+		if (panel3) {
+			panel3 = false
+		}
 	}
 }
 
 function toggle2(){
-	panel2 = !panel2
-	if (panel1 === true) {
-			panel1 = !panel1
-	}
-	if (panel3 === true) {
-			panel3 = !panel3
-	}
-	if (panel4 === true) {
-			panel4 = !panel4
+	if (!panel2) {
+		panel2 = true
+		if (panel1) {
+			panel1 = false
+		}
+		if (panel3) {
+			panel3 = false
+		}
 	}
 }
 
 function toggle3(){
-	panel3 = !panel3
-	if (panel2 === true) {
-			panel2 = !panel2
-	}
-	if (panel1 === true) {
-			panel1 = !panel1
-	}
-	if (panel4 === true) {
-			panel4 = !panel4
+	if (!panel3) {
+		panel3 = true
+		if (panel2) {
+			panel2 = false
+		}
+		if (panel1) {
+			panel1 = false
+		}
 	}
 }
 
-function toggle4(){
-	panel4 = !panel4
-	if (panel2 === true) {
-			panel2 = !panel2
-	}
-	if (panel1 === true) {
-			panel1 = !panel1
-	}
-	if (panel3 === true) {
-			panel3 = !panel3
-	}
-}
 
 export async function odisha(){
 	const { data, error } = await supabase
@@ -100,10 +86,19 @@ export async function odishaTemps(){
 	return data
 }
 
+function toggleItin(index:any){
+	showItins[index] = !showItins[index]
+	showItins.forEach((state:any, i:any) => {
+		if ( i !== index) showItins[i] = false
+	})
+}
+
 </script>
 
-<div class="wid-side">
+
+<div class="pad-a">
 	<GrandContainer>
+		<p slot="sectionname"><span class="odi">Odisha </span>Chapter</p>
 		<div slot="mobilenav" class="mobmob">
 			<div class="flier" in:fly={{ duration: 300, delay: 200, x: 0, y: -160}} out:fly={{ duration: 200, delay: 0, x: 0, y: -160}}>
 				<ShareSocial2></ShareSocial2>
@@ -111,7 +106,6 @@ export async function odishaTemps(){
 			<h6 in:fly={{ duration: 300, delay: 200, x: 0, y: -160}} out:fly={{ duration: 200, delay: 0, x: 0, y: -160}} on:click={toggle1} on:keydown={toggle1}>Odisha Chapter</h6>
 				<p class="islink" on:click={toggle2} on:keydown={toggle2} in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}>Itinerary</p>
 				<p class="islink" on:click={toggle3} on:keydown={toggle3} in:fly={{ duration: 300, delay: 220, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}>Temples</p>
-				<p class="islink" on:click={toggle4} on:keydown={toggle4} in:fly={{ duration: 300, delay: 220, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}>Chapter Brochure</p>
 			<div class="block"></div>
 			<h6 in:fly={{ duration: 300, delay: 200, x: 0, y: -160}} out:fly={{ duration: 200, delay: 0, x: 0, y: -160}}><a href="/anveshi">Bṛhat Anveṣī</a></h6>
 				<p in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/anveshi/chapter/karnataka">Karnataka</a></p>
@@ -119,84 +113,89 @@ export async function odishaTemps(){
 				<p in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/anveshi/chapter/chamba">Chamba</a></p>
 				<p in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/anveshi/#traveldiaries">Travel Diaries</a></p>
 				<p in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/anveshi/#faq">FAQs</a></p>
-				<p in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/anveshi/guide">Tour Lead</a></p>
+				<p in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/anveshi/#aboutanveshi">About</a></p>
 		</div>
 		<div slot="desknav" class="deskdesk">
 			<ShareSocial></ShareSocial>
-			<div class="tabhead">
-				<h6 on:click={toggle1} on:keydown={toggle1}>Odisha Chapter</h6>
-			</div>
+				<h6 class="pointer" on:click={toggle1} on:keydown={toggle1}>Odisha Chapter</h6>
 					<p class="islink" on:click={toggle2} on:keydown={toggle2}>Itinerary</p>
 					<p class="islink" on:click={toggle3} on:keydown={toggle3}>Temples</p>
-					<p class="islink" on:click={toggle4} on:keydown={toggle4}>Chapter Brochure</p>
 				<h6><a href="/anveshi">Bṛhat Anveṣī</a></h6>
 				<p><a href="/anveshi/chapter/karnataka">Karnataka</a></p>
 				<p><a href="/anveshi/chapter/odisha">Odisha</a></p>
 				<p><a href="/anveshi/chapter/chamba">Chamba</a></p>
 				<p><a href="/anveshi/#traveldiaries">Travel Diaries</a></p>
 				<p><a href="/anveshi/#faq">FAQs</a></p>
-				<p><a href="/anveshi/guide">Tour Lead</a></p>
+				<p><a href="/anveshi/#aboutanveshi">About</a></p>
 		</div>
 	</GrandContainer>
 	<div class="main-page">
 		{#if panel1}
-		<div class="gp1 x1"
+		<div class="traybox wrap xiv">
+			<div class="ww2-1 the-title">
+				<h1>Odisha Chapter</h1>
+			</div>
+			<div class="ww2-3 card">
+				<img src="/images/anveshi/keyodismal.webp" alt="odisha" />
+			</div>
+		</div>
+		<div class="boxc x1"
 				in:fly="{{ delay: 400, duration: 200, x:500, y: 0, opacity: 0, easing: quintOut}}"
 				out:fly="{{ delay: 0, duration: 300, x:-500, y: 0, opacity: 0, easing: quintOut}}"
 			>
-			<div id="element-1" class="document element">
+			<div id="element-1" class="boxc">
 				{#await odisha()}
 					<small>loading...</small>
 					{:then data}
-					{#each data as item}
-						<img class="heroimage" src={item.image} alt={item.title} />
-							<div class="the-title">
-								<h2>{item.name}</h2>
-							</div>		
-							<div class="gp3 icons-row">
-								<div class="cols3" id="duration">
+					{#each data as item}	
+							<div class="boxr wrap icons-row">
+								<div class="ww5 iconcard" id="duration">
 									<img src="/images/icons/icon-duration.webp" alt="duration" />
 									<p>{item.duration}</p>
 									<small>duration</small>
 								</div>
-								<div class="cols3" id="price">
+								<div class="ww5 iconcard" id="price">
 									<img src="/images/icons/icon-price.webp" alt="price" />
 									<p>{item.price}</p>
 									<small>price</small>
 								</div>
-								<div class="cols3" id="date">
+								<div class="ww5 iconcard" id="date">
 									<img src="/images/icons/icon-date.webp" alt="date" />
 									<p>{item.dates}</p>
 									<small>next trip</small>
 								</div>
 							</div>
-							<pre>{item.content}</pre>
+							
+							<pre class="wide75">{item.content}</pre>
 							{/each}
 					{:catch error}
 					<pre>{error}</pre>
 				{/await}
 			</div>
 		</div>
+		<div class="boxr gap24 mtop24">
+			<button class="mainbutton odi" on:click={toggle2} on:keydown={toggle2}>Itinerary</button>
+			<button class="mainbutton odi" on:click={toggle3} on:keydown={toggle3}>Temples</button>
+		</div>
 		{/if}
 
-	{#if panel2}
-		<div class="gp1 x2"
+		{#if panel2}
+		<div class="boxc x2"
 			in:fly="{{ delay: 400, duration: 200, x:500, y: 0, opacity: 0, easing: quintOut}}"
 			out:fly="{{ delay: 0, duration: 300, x:-500, y: 0, opacity: 0, easing: quintOut}}"
 		>
-			<div id="element-2" class="document element">
+			<div id="element-2" class="boxc">
 				<h3>Itinerary</h3>
 				{#await odishaItin()}
 				<small>loading...</small>
 				{:then data}
-				{#each data as item}
-					<div class="gp2">
-						<div class="cols2">
-							<h5>{item.name}</h5>
-						</div>
-						<div class="cols2">
-							<pre>{item.content}</pre>
-						</div>
+				<small class="cut odi">Click on Day to Expand</small>
+				{#each data as item, index}
+					<div class="boxc card" on:click={() => toggleItin(index)} on:keydown={() => toggleItin(index)}>
+						<h6>{item.name}</h6>
+						{#if showItins[index]}
+							<pre class="wide50" transition:fly={{duration: 250, x: -200, y: 0, opacity: 0.5, easing: quintOut }}>{item.content}</pre>
+						{/if}
 					</div>
 					{/each}
 					{:catch error}
@@ -204,9 +203,13 @@ export async function odishaTemps(){
 				{/await}
 			</div>
 		</div>
+		<div class="boxr gap24 mtop24">
+			<button class="mainbutton odi" on:click={toggle1} on:keydown={toggle1}>Overview</button>
+			<button class="mainbutton odi" on:click={toggle3} on:keydown={toggle3}>Temples</button>
+		</div>
 		{/if}
 
-	{#if panel3}
+		{#if panel3}
 			<div class="boxc x3"
 				in:fly="{{ delay: 400, duration: 200, x:500, y: 0, opacity: 0, easing: quintOut}}"
 				out:fly="{{ delay: 0, duration: 300, x:-500, y: 0, opacity: 0, easing: quintOut}}"
@@ -239,46 +242,46 @@ export async function odishaTemps(){
 				>
 					{#each data as item}
 				<SwiperSlide>
-					<div class="gp2">
-						<div class="cols2">
+					<div class="traybox wrap">
+						<div class="ww2 templeimage">
 						<img src={item.image} alt={item.name} />
 						</div>
-						<div class="cols2">
-							<h5>{item.name}</h5>
+						<div class="ww2 bound">
+							<h6>{item.name}</h6>
 							<p>{item.content}</p>
 						</div>
 					</div>
 				</SwiperSlide>
 				{/each}
 				</Swiper>
-				<div class="boxr" id="navbuttons">
-					<div class="swiper-button custom-prev">
-  					<svg width="100%" height="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M-2.94055e-06 20L40 -7.15256e-07L40 40L-2.94055e-06 20Z" fill="#b7b7b7"/>
-						</svg>
-					</div>
-					<div class="swiper-button custom-next">
-  					<svg width="100%" height="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M40 20L0 40V0L40 20Z" fill="#b7b7b7"/>
-						</svg>
-					</div>
-				</div>
 			{:catch error}
 			<pre>{error}</pre>
 			{/await}
-		</div>
-		{/if}
+				<div class="boxr" id="navbuttons">
+					<div>
+						<button class="mainbutton odi" on:click={toggle1} on:keydown={toggle1}>Overview</button>
+						<button class="mainbutton odi" on:click={toggle2} on:keydown={toggle2}>Itinerary</button>
+					</div>
+					<div>	
+						<div class="swiper-button custom-prev">
+  						<svg width="100%" height="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M-2.94055e-06 20L40 -7.15256e-07L40 40L-2.94055e-06 20Z" fill="#b7b7b7"/>
+							</svg>
+						</div>
+						<div class="swiper-button custom-next">
+  						<svg width="100%" height="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M40 20L0 40V0L40 20Z" fill="#b7b7b7"/>
+							</svg>
+						</div>
+					</div>
+				</div>
+		<div class="boxr gap24 mtop24 templenav">
 
-		{#if panel4}
-		<div class="boxc pdf">
-			<iframe
-				title="brochure" 
-				src="https://drive.google.com/file/d/18PIElt35omV9BPeEp0x4puWiS6Z1APj7/preview"
-				width="80%" 
-				height="600px">
-			</iframe>
 		</div>
+		</div>
+
 		{/if}
+		
 	</div>
 </div>
 
@@ -287,63 +290,42 @@ export async function odishaTemps(){
 
 
 <style>
+.xiv img {
+	height: 48vh;
+}
+
+.pointer:hover { color: var(--odi);}
 
 .block {
 	height: 32px;
 	display: flex;
 }
-.tabhead h6 {
-	background: #474747;
-	cursor: pointer;
-}
-.tabhead h6:hover {
-	background: #e4a503;
-}
+
 a:hover {
-	color: #E4A503;
+	color: var(--odi);
 }
 .islink:hover {
-	color: #E4A503;
+	color: var(--odi);
 }
 .islink { cursor: pointer;}
 
-.icons-row .cols3 {
-	transition: all 0.3s var(--cubeb);
-}
-.icons-row .cols3 small {
-	text-transform: uppercase;
-	font-weight: bold;
-	font-size: 12px;
-	color: #b7b7b7;
-	text-align: center;
-}
-.icons-row .cols3 img {
-	margin: auto;
-	object-fit: cover;
-	width: 88px;
-	height: 88px;
-}
-.icons-row .cols3 p {
-	text-align: center;
-	font-weight: bold;
-	color: #676767;
-}
-.icons-row .cols3:hover p { color: #E4A503;}
-.icons-row .cols3:hover {
-	transform: scale(1.1);
-}
-
-.cols2 h5 {
-	color: #e4a503;
-}
-
+.iconcard p {
+	color: var(--odi)
+;}
 
 
 #date img, #duration img, #price img { object-fit: contain; width: 48px;transform-origin: center center; transition: all 0.23s var(--cubea); }
 
 
 #date, #duration, #price { height: 100%; justify-content: space-between;}
-	#navbuttons { gap: 32px;}
+	#navbuttons { column-gap: 32px;}
+	.swiper-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 24px;
+		width: 24px;
+	}
 	.swiper-button svg {
 		height: 24px;
 		width: 24px;
@@ -357,43 +339,146 @@ a:hover {
 		transform: scale(0.9);
 	}
 
+	.xiv .ww2-1 h1 {
+		background: var(--odi);
+		color: white;
+		z-index: 2;
+	}
+
+.bound h6 { color: var(--odi);}
+
+#element-2 .card h6 {  cursor: pointer;}
+#element-2 pre { margin-bottom: 32px;}
+
+.x3 { position: relative;}
+#navbuttons {
+	position: absolute;
+}
+
+
 @media screen and (min-width: 900px) {
-	.heroimage { margin-right: -25%;}
+	.templeimage img {
+		object-fit: cover;
+		height: 280px;
+		width: 100%;
+	}
+	.xiv {
+		height: 48vh;
+	}
 	.x3 { padding-bottom: 40px;}
+	.xiv .ww2-1 {
+		width: 70%;
+		margin-right: -25%;
+		z-index: 2;
+	}
+	.xiv .ww2-1 h1 {
+		background: var(--odi);
+		color: white;
+		padding: 8px;
+	}
 
-
-	#navbuttons { justify-content: flex-start; margin-top: -20%; gap: 24px; }
+	#element-2 .card h6 { margin-top: 0;}
+	#navbuttons { bottom: 0; left: 0; align-items: center; width: 100%; justify-content: space-between;}
  .icons-row { gap: 48px;}
+	.x3 { height: max-content;}
+	.bound h6 {
+		font-size: 1.08rem;
+		font-weight: 600;
+		margin: 16px 0 8px 0;
+	}
+	.bound p {
+		font-size: 0.875rem;
+	}
 
 
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
-	#navbuttons { margin-top: -2.8rem; }
-
+	.templeimage img {
+		object-fit: cover;
+		height: 320px;
+		width: 100%;
+	}
+	.xiv {
+		height: 48vh;
+	}
+	#navbuttons { bottom: 0; left: 0; align-items: center; width: 100%; justify-content: space-between;}
+	.xiv .ww2-1 h1 {
+		background: var(--odi);
+		color: white;
+		padding: 8px;
+		z-index: 2;
+		width: 200%;
+	}
 	.icons-row { gap: 48px; margin-bottom: 32px; padding-left: 16px;}
-	.x3 .gp2 { flex-wrap: wrap;}
-	.x3 .gp2 .cols2 { width: 100%;}
-	.x3 .gp2 .cols2 img { margin-bottom: 0; height: 240px;}
-	.x3 .gp2 .cols2 h5 { margin: 0;}
-	#navbuttons { margin-left: 32px;}
+	#element-2 .card h6 { margin-top: 0;}
+	.bound { padding-bottom: 32px;}
+	.bound h6 {
+		font-size: 1.08rem;
+		font-weight: 600;
+		margin: 16px 0 8px 0;
+	}
+	.bound p {
+		font-size: 0.825rem;
+	}
+	.x3 .traybox { flex-wrap: wrap;}
+	.x3 .traybox .ww2 { width: 100%; }
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px){
-
+	.templeimage img {
+		object-fit: cover;
+		height: 320px;
+		width: 100%;
+	}
+	.xiv .ww2-1 { order: 2;}
 	.icons-row { width: 100%; }
-	#navbuttons { display: none;}
+		#navbuttons { bottom: 0; left: 0; width: 100%; justify-content: center;}
+	.templenav { width: 100%; justify-content: center;}
+	.xiv { height: 100%;}
 
-	.x3 h3 { padding-left: 16px; border-bottom: 1px solid #b7b7b7;}
-	.pdf { margin-left: 10%;}
+	.iconcard { width: 33%;}
+	#element-2 .card h6 { margin-top: 0;}
+.bound { padding-bottom: 32px;}
+	.bound h6 {
+		font-size: 1.06rem;
+		font-weight: 600;
+		margin: 12px 0 8px 0;
+	}
+	.bound p {
+		font-size: 0.8rem;
+		margin-top: 2px;
+	}
 }
 
 @media screen and (max-width: 575px) {
+	.templeimage img {
+		object-fit: cover;
+		height: 320px;
+		width: 100%;
+	}
+	.xiv .ww2-1 { order: 2;}
 	#date img, #duration img, #price img { width: 40px;}
-.x3 h3 { padding-left: 16px; border-bottom: 1px solid #b7b7b7;}
+	.x3 { height: max-content; padding-bottom: 32px;}
+
 	.icons-row { width: 100%; justify-content: center; gap: 48px; margin-bottom: 24px;}
-	#navbuttons { display: none;}
-	.pdf { margin-left: 10%;}
+		#navbuttons { bottom: 0; left: 0; width: 100%; justify-content: center;}
+	.templenav { width: 100%; justify-content: center;}
+	.iconcard { width: 20%;}
+	#element-2 .card h6 { margin-top: 0;}
+.bound { padding-bottom: 32px;}
+	.bound h6 {
+		font-size: 1.04rem;
+		font-weight: 600;
+		margin: 24px 0 8px 0;
+	}
+	.bound p {
+		font-size: 0.8rem;
+		margin-top: 0px;
+		margin-bottom: 16px;
+	}
+
+
 }
 
 

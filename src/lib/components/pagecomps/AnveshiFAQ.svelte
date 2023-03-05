@@ -21,12 +21,12 @@ export async function allFaq() {
 }
 </script>
 
-<div class="box-c l0 pad80-b">
+<div class="boxc l0">
 	{#await allFaq()}
 	<small>....</small>
 	{:then data}
 	{#each data as item, index}
-		<div class="boxc" on:click={() => toggleWid(index)} on:keydown={() => toggleWid(index)}>
+		<div class="boxc card" on:click={() => toggleWid(index)} on:keydown={() => toggleWid(index)}>
 			<h6 class="w600">{item.name}</h6>
 			{#if showStates[index]}
 			<p class="wide75">{item.content}</p>

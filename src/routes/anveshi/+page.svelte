@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import supabase from '$lib/db'
 import FAQ from '$lib/components/pagecomps/AnveshiFAQ.svelte'
 let y = 1
@@ -39,11 +39,11 @@ export async function allChapters() {
 	<img src="/images/herocovers/brhatanveshi.webp" alt="hero" style="transform: translateY({y/4}px)"/> 
 </div>
 
-<div class="full-page formatting">
+
 	<div class="pad-a">
 		<div class="boxc x1">
 			<h2 class="wide75">
-				Bṛhat Anveṣī is a travel program
+				<span class="anv">Bṛhat Anveṣī </span>is a travel program
 			</h2>
 			<h6 class="wide75">
 				to contemporize ancient Indian tradition by guiding travel groups through hitherto <span class="anv">rarely explored sacred kṣetras of India.</span>
@@ -91,16 +91,16 @@ export async function allChapters() {
 					<pre>{error}</pre>
 				{/await}
 			</div>
-			<div class="traybox x5">
+			<div class="traybox wrap x5">
 				{#await getVids()}
 					<small>loading chapters...</small>
 						{:then data}
 							{#each data as item}
 								<div class="ww4 card">
 									<iframe
-  									class="m-1"
+  									class="m-2"
   									width=100%
-  									height=100%
+  									height=88%
   									src="https://www.youtube.com/embed/{item.videoid}"
   									title={item.name}
   									>
@@ -130,28 +130,28 @@ export async function allChapters() {
 				<p class="wide75">
 					In Bhāratavarṣa and Hindu dharma, we discovered a perfect way to harmonize these two seemingly dichotomous urges of humans in one fulfilling quest. We created an entire tradition of traveling to sacred kṣetras, where both the inner and the outer quest of man for discovery is quenched in a way that is not just fulfilling, fun and satisfying but also spiritually and culturally elevating.
 				</p>
-				<h5>
-					Bṛhat Anveṣī is a program in tribute to this fundamental quest. It seeks to contemporize this ancient Indian tradition by guiding travel groups through sacred kṣetras of India which are hitherto unexplored by most of us, but which are not just full of architectural, sculptural and cultural splendor, but are also living systems carrying beautiful ancestral traditions for thousands of years. We seek to satisfy the wanderlust in you in a way which will leave you not just intellectually satisfied but will also elevate your understanding and knowledge. <span class="anv">When discovering together such, we are Bṛhat Anveṣī.</span>
+				<h6>
+					Bṛhat Anveṣī is a program in tribute to this fundamental quest. It seeks to contemporize this ancient Indian tradition by guiding travel groups through sacred kṣetras of India which are hitherto unexplored by most of us, but which are not just full of architectural, sculptural and cultural splendor, but are also living systems carrying beautiful ancestral traditions for thousands of years. 
+				</h6>
+				<h5 class="wide75">
+					We seek to satisfy the wanderlust in you in a way which will leave you not just intellectually satisfied but will also elevate your understanding and knowledge. <span class="anv">When discovering together such, we are Bṛhat Anveṣī.</span>
 				</h5>
 
 		</div>
 
-		<div class="the-title y-full">
+		<div class="the-title y-full" id="faqs">
 			<h2>FAQ</h2>
 			<FAQ></FAQ>
 		</div>
 
 	</div>
-</div>
+
 
 
 <style>
 
 a:hover { color: var(--anv);}
-.the-title {
-	border-left: 4px solid var(--anv);
-	margin-left: -1px;
-}
+
 .x0 { overflow-y: hidden;}
 .temple { object-fit: contain;}
 
@@ -189,7 +189,7 @@ a:hover { color: var(--anv);}
 	.x0 { height: 60vh;}
 	.x0 img { height: 60vh; object-fit: cover;}
 	.x4 img { object-fit: cover; height: 120px;}
-	.x4 .ww4 { width: 48%;}
+	.x4 .ww4 { width: calc(50% - 12px); margin-bottom: 16px;}
 	
 }
 </style>
