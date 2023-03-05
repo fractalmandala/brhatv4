@@ -55,32 +55,19 @@ function toggleLD(){
 	display: flex
 	flex-direction: column
 	position: relative
-	justify-content: center
+	justify-content: flex-end
 	transform-origin: center center
-	align-items: flex-start
+	align-items: center
 	transition: all 0.53s cubic-bezier(0.875, 0.145, 0.555, 0.905)
 	z-index: 0
 	background: white
+	
 
-.gencol img
-	object-fit: cover
-	width: 100%
-	height: 100%
-
-#col1, #col2, #col3, .img1, .img2, .img3
+.img1, .img2, .img3
 	background-position: center center
 	background-size: cover
 	background-repeat: no-repeat
 	transition: all 0.53s cubic-bezier(0.875, 0.145, 0.555, 0.905)
-
-.img1
-	background-image: url('/images/corpimages/areas-cc.webp')
-
-.img2
-	background-image: url('/images/corpimages/areas-pr.webp')
-
-.img3
-	background-image: url('/images/corpimages/areas-ld.webp')
 
 @media screen and (min-width: 900px)
 
@@ -96,6 +83,29 @@ function toggleLD(){
 	.gencol
 		width: calc(33.33% - 1.4px)
 		height: 100vh
+		img
+			object-fit: cover
+			width: 100%
+			height: 100%
+		a
+			text-align: left
+			position: absolute
+			font-weight: bold
+			font-size: 20px
+			color: transparent
+			bottom: 64px
+			left: 0
+			width: 80%
+			margin-left: 15%
+			background: rgba(0,0,0,0)
+			transition: all 0.3s var(--cubea)
+		&:hover
+			a
+				background: rgba(0,0,0,0.7)
+				color: white
+				padding: 8px
+				&:hover
+					padding: 8px 8px 8px 16px
 
 	.genrow
 		&:hover
@@ -111,12 +121,35 @@ function toggleLD(){
 		width: 100vw
 		height: 100vh
 		justify-content: space-between
-		gap: 16px
-		padding: 0 16px
+		gap: 2px
+		padding: 0 2px
 
 	.gencol
-		width: calc(33.33% - 16px)
+		width: calc(33.33% - 1.34px)
 		height: 100vh
+		img
+			object-fit: cover
+			width: 100%
+			height: 100%
+		a
+			text-align: left
+			position: absolute
+			font-weight: bold
+			font-size: 18px
+			color: transparent
+			bottom: 64px
+			left: 0
+			width: 80%
+			margin-left: 15%
+			background: rgba(0,0,0,0)
+			transition: all 0.3s var(--cubea)
+		&:hover
+			a
+				background: rgba(0,0,0,0.7)
+				color: white
+				padding: 8px
+				&:hover
+					padding: 8px 8px 8px 16px
 
 	.genrow
 		&:hover
@@ -132,12 +165,35 @@ function toggleLD(){
 		width: 100vw
 		height: 100vh
 		justify-content: space-between
-		gap: 16px
-		padding: 0 16px
+		gap: 2px
+		padding: 0 2px
 
 	.gencol
-		width: calc(33.33% - 16px)
+		width: calc(33.33% - 1.34px)
 		height: 100%
+		img
+			object-fit: cover
+			width: 100%
+			height: 100%
+		a
+			text-align: left
+			position: absolute
+			font-weight: bold
+			font-size: 16px
+			color: transparent
+			bottom: 64px
+			left: 0
+			width: 80%
+			margin-left: 10%
+			background: rgba(0,0,0,0)
+			transition: all 0.3s var(--cubea)
+		&:hover
+			a
+				background: rgba(0,0,0,0.7)
+				color: white
+				padding: 8px
+				&:hover
+					padding: 8px 8px 8px 16px
 
 	.genrow
 		&:hover
@@ -152,7 +208,7 @@ function toggleLD(){
 		flex-direction: column
 		width: 100%
 		height: 100vh
-		padding-top: 64px
+		padding-top: 56px
 		&:hover
 			.gencol
 				height: 20%
@@ -163,5 +219,30 @@ function toggleLD(){
 		flex-direction: column
 		width: 100%
 		height: 33%
+		img
+			object-fit: cover
+			height: 100%
+			width: 100%
+		a
+			text-align: left
+			position: absolute
+			font-weight: bold
+			font-size: 16px
+			color: white
+			padding: 3px 8px
+			bottom: 20px
+			left: 0
+			width: 80%
+			margin-left: 10%
+			background: rgba(0,0,0,0.4)
+			transition: all 0.3s var(--cubea)
+		&:hover
+			a
+				background: rgba(0,0,0,0.7)
+				color: white
+				padding: 8px
+				&:hover
+					padding: 8px 8px 8px 16px
+			
 
 </style>

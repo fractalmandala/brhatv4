@@ -1,13 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@01&display=swap')
+
+body, html
+	margin: 0
 
 body, html, *
 	box-sizing: border-box
 
-:root
+:root, *
+	box-sizing: border-box
+	--weight-thin: 200
+	--weight-light: 300
+	--weight-reg: 400
+	--weight-five: 500
+	--weight-six: 600
+	--weight-bold: bold
+	--cubea: cubic-bezier(0.995, 0.225, 0.750, 0.750)
+	--cubeb: cubic-bezier(0.995, 0.225, 0.000, 0.965)
+	--cubec: cubic-bezier(0.320, 0.760, 0.875, 0.490)
+	--cubed: cubic-bezier(0.000, 1.240, 0.875, 0.490)
+	--cubee: cubic-bezier(1.000, 0.005, 1.000, 0.005)
+	--snap: all 0.11s cubic-bezier(0.790, 0.035, 0.260, 0.850)
+	--gradienter: linear-gradient(201.98deg, #5CFC11 15.55%, #53DD6C 34.72%, #11FC8B 65.82%, #10C56E 83.88%)
+	--beau: linear-gradient(132.9deg, rgba(23,23,23,1) 10.69%, rgba(24, 28, 30, 1) 84.91%)
+	--beautrans: linear-gradient(132.9deg, rgba(23,23,23,0.98) 10.69%, rgba(24, 28, 30, 0.99) 84.91%)
+	--green: #10D56E
+	--lime: #4BF41D
+	--soft: #FB6F66
+	--strong: #B0413E
+	--yell: #FF9F1C
+	--blew: #1E91D6
 	--tree: #0B6E4F
 	--drash: #2F7796
 	--anv: #E58054
 	--mrd: #672521
+	--nan: #E48364
+
+pre
+	overflow-x: auto
+	box-sizing: border-box
+	white-space: pre-wrap
+	white-space: -moz-pre-wrap
+	white-space: -pre-wrap
+	white-space: -o-pre-wrap
+	word-wrap: break-word
+	word-break: break-word
+
+a
+	text-decoration: none
+	color: inherit
+	&:hover
+		color: #fe4a49
+
+.white
+	color: white
+
+.green-grd
+	background: linear-gradient(95.13deg, #5CFC11 -5.26%, #53DD6C 20.27%, #11FC8B 61.7%, #10C56E 85.77%)
+	-webkit-background-clip: text
+	-webkit-text-fill-color: transparent
+	background-clip: text
+	text-fill-color: transparent
+
+.red
+	color: #fe4a49
+
+.orange
+	color: #ff3d00
+
+.lime
+	color: var(--lime)
+
+.soft
+	color: var(--soft)
+
+.strong
+	color: var(--strong)
+
+.tree
+	color: var(--tree)
+
+.blew
+	color: var(--blew)
+
+.yoll
+	color: var(--yell)
 
 .mrd
 	color: var(--mrd)
@@ -22,12 +98,38 @@ body, html, *
 	color: var(--anv)
 
 .green
-	color: #10D56C !important
+	color: #10D56C
 
+.swiper
+	height: 100%
+	width: 100%
+	position: relative
+	overflow: hidden
+
+.swiper-slide
+	display: flex
+	overflow: hidden
+	width: 100%
+	height: 100%
+
+.swiper-wrapper
+	transition-timing-function: cubic-bezier(0.760, 0.035, 0.560, 0.985)
 
 .boxc
 	display: flex
 	flex-direction: column
+
+.boxc-r3
+	display: flex
+	@media screen and (min-width: 768px)
+		flex-direction: column
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		flex-direction: row
+		img
+			width: 32%
+			object-fit: contain
+	@media screen and (max-width: 575px)
+		flex-direction: column
 
 .col-center-y
 	justify-content: center
@@ -263,8 +365,10 @@ body, html, *
 		width: 13.5%
 
 .wide75
-	@media screen and (min-width: 768px)
+	@media screen and (min-width: 900px)
 		width: 75%
+	@media screen and (max-width: 899px)
+		width: 82%
 	@media screen and (max-width: 767px)
 		width: 100%
 
@@ -468,34 +572,40 @@ body, html, *
 		margin: 40px 0 20px 0 
 
 .mainbutton
-	background-color: var(--soft)
+	background-color: var(--strong)
 	border: none
 	color: white
-	font-weight: 400
-	letter-spacing: 1px
+	font-weight: 600
+	letter-spacing: 0px
+	text-transform: capitalize
 	border-radius: 4px
 	transform-origin: center center
 	transition: transform 0.08s var(--cubeb)
+	select
+		background: none
+		border: none
+		color: white
+		font-weight: 600
+		font-size: inherit
 	a
 		color: white
 		&:hover
 			color: white
 	&:hover
-		background-color: var(--strong)
+		background-color: var(--soft)
 		transform: scale(0.9)
 	@media screen and (min-width: 768px)
-		padding: 8px 12px
+		padding: 8px 20px
 		margin-bottom: 32px
 		margin-top: 20px
-		font-size: 14px
+		font-size: 15px
 		font-weight: 500
-		text-transform: uppercase
 		max-width: max-content
 		min-width: max-content
 	@media screen and (max-width: 767px)
 		padding: 6px 8px
 		margin-bottom: 24px
-		font-size: 14px
+		font-size: 15px
 		max-width: 144px
 		min-width: 144px
 
@@ -586,6 +696,45 @@ body, html, *
 		padding: 6px 12px
 	@media screen and (max-width: 767px)
 		padding: 6px 12px
+
+.cardbutton
+	background: var(--strong)
+	border: none
+	font-size: 15px
+	text-transform: capitalize
+	align-self: center
+	position: relative
+	text-align: center
+	padding: 5px 16px
+	font-weight: 500
+	width: max-content
+	min-width: 160px
+	transition: width 0.09s var(--cubed)
+	color: white
+	cursor: pointer
+	overflow: hidden
+	border-radius: 2px
+	margin-top: 12px
+	margin-bottom: 16px
+	&:hover
+		animation: wideless 0.09s var(--cubed) forwards
+	a
+		&:hover
+			color: inherit
+
+@keyframes wideless
+	0%
+		min-width: 160px
+	100%
+		min-width: 120px
+
+
+@keyframes topper
+	0%
+		width: 0%
+	100%
+		width: 100%
+		
 
 .searcher
 	@media screen and (min-width: 768px)
@@ -1264,18 +1413,23 @@ h4.ptt40
 		margin: 32px 0 12px 0
 	h2
 		font-weight: 600
-		margin: 0
+		margin-top: 0
+		text-transform: uppercase
 		@media screen and (min-width: 900px)
 			font-size: 64px
+			margin-bottom: 24px
 		@media screen and (max-width: 899px)
 			font-size: 48px
 			padding: 16px 0
+			margin-bottom: 24px
 		@media screen and (max-width: 767px)
 			font-size: 36px
 			padding: 16px 0
+			margin-bottom: 24px
 		@media screen and (max-width: 575px)
 			font-size: 32px
 			padding: 16px 0 0 0
+			margin-bottom: 24px
 
 .cols4, .cols3, .cols2
 	h5, p, small, cite, pre
@@ -1293,9 +1447,10 @@ h4.ptt40
 		line-height: 1.48
 
 .full-page
-	padding-bottom: 40px
 	width: 100vw
 	overflow-x: hidden
+	display: flex
+	flex-direction: column
 
 .deskdesk
 	h6
@@ -1343,22 +1498,18 @@ h4.ptt40
 		width: 100%
 		margin-bottom: 16px
 		margin-top: 24px
-	h6
-		color: white
-		margin: 0
-		@media screen and (min-width: 768px)
-			text-transform: uppercase
-			font-size: 21px
-			padding: 4px
+
 		
 
 .traybox
 	display: flex
 	flex-direction: row
 	width: 100%
-	gap: 32px
+	column-gap: 32px
+	row-gap: 20px
 	@media screen and (max-width: 575px)
-		gap: 24px
+		column-gap: 24px
+		row-gap: 4px
 
 .ww8, .ww7, .ww6, .ww5, .ww4, .ww3, .ww2, .ww1
 	display: flex
@@ -1442,17 +1593,18 @@ h4.ptt40
 
 .pad-a
 	width: 100%
-	min-height: 200vh
+	min-height: 100vh
 	padding-top: 120px
 
 .pad-a
-	p, small, cite, h6, h5, h4, h3, h2, h1
+	color: #575757
+	p, small, cite, h6, h5, h4, h3, h2
 		margin-top: 6px
 		margin-bottom: 1.2rem
 	p, small
 		line-height: 1.45
 	h6
-		color: #575757
+		color: #696969
 	h1
 		font-weight: 600
 	h3
@@ -1476,7 +1628,7 @@ h4.ptt40
 			font-size: 1rem
 			color: #878787
 		h6
-			font-size: 1.24rem
+			font-size: 1.2rem
 			letter-spacing: -0.2px
 			line-height: 1.3
 			font-weight: 400
@@ -1505,7 +1657,7 @@ h4.ptt40
 			font-weight: 500
 			color: #b7b7b7
 		h6
-			font-size: 1.4rem
+			font-size: 1.12rem
 			letter-spacing: -0.2px
 			line-height: 1.3
 			font-weight: 400
@@ -1522,7 +1674,7 @@ h4.ptt40
 		h2
 			font-size: 2.8rem
 		h1
-			font-size: 4.8rem
+			font-size: 4.2rem
 			letter-spacing: -1.75px
 	@media screen and (max-width: 899px) and (min-width: 768px)
 		padding-left: 64px
@@ -1537,9 +1689,9 @@ h4.ptt40
 			font-weight: 500
 			color: #b7b7b7
 		h6
-			font-size: 1.4rem
+			font-size: 1.45rem
 			letter-spacing: -0.2px
-			line-height: 1.3
+			line-height: 1.23
 			font-weight: 400
 		h5
 			font-size: 1.8rem
@@ -1568,7 +1720,7 @@ h4.ptt40
 			font-weight: 500
 			color: #b7b7b7
 		h6
-			font-size: 1.65rem
+			font-size: 1.5rem
 			letter-spacing: -0.2px
 			line-height: 1.3
 			font-weight: 400
@@ -1587,67 +1739,109 @@ h4.ptt40
 			letter-spacing: -0.65px
 		h2
 			font-size: 4.4rem
+		.the-title
+			h2
+				margin-bottom: 40px
 		h1
-			font-size: 8rem
+			font-size: 7rem
 			letter-spacing: -3px
+			margin: 24px 0 2rem 0
 
-.card
+.card.boxc-r3
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		gap: 24px
+		img
+			width: 40%
+			height: 200px
+
+.card, .card-rr
 	img
 		object-fit: cover
 		width: 100%
 	p
 		color: #878787
+	h6
+		color: inherit
 	@media screen and (min-width: 900px)
 		img
-			height: 280px
+			height: 200px
+		iframe
+			height: 160px
 		h6
 			font-size: 1.25rem
 			font-weight: 600
-			margin: 12px 0 8px 0
+			margin: 16px 0 8px 0
 		p
 			font-size: 0.875rem
 		cite
 			font-weight: bold
 			letter-spacing: 1.4px
 	@media screen and (max-width: 899px) and (min-width: 768px)
+		img
+			height: 144px
+		iframe
+			height: 120px
 		h6
-			font-size: 1.2rem
+			font-size: 1.08rem
 			font-weight: 600
-			margin: 12px 0 8px 0
+			margin: 16px 0 8px 0
 		p
-			font-size: 0.875rem
+			font-size: 0.825rem
 		cite
 			font-weight: bold
 			letter-spacing: 1.4px
 	@media screen and (max-width: 767px) and (min-width: 576px)
+		img
+			height: 160px
+		iframe
+			height: 144px
 		h6
-			font-size: 1.2rem
+			font-size: 1.06rem
 			font-weight: 600
 			margin: 12px 0 8px 0
 		p
-			font-size: 0.85rem
+			font-size: 0.8rem
+			margin-top: 2px
 		cite
 			font-weight: bold
 			letter-spacing: 1.4px
 	@media screen and (max-width: 575px)
+		img
+			height: 220px
+		iframe
+			height: 200px
 		h6
-			font-size: 1.2rem
+			font-size: 1.4rem
 			font-weight: 600
-			margin: 12px 0 8px 0
+			margin: 24px 0 16px 0
 		p
-			font-size: 0.85rem
+			font-size: 1rem
 			margin-bottom: 12px
+			margin-top: 0
 		cite
 			font-weight: bold
 			letter-spacing: 1.4px
 			font-size: 0.65rem
 
-.card.pad
+.card.soft, .card-rr.soft
+	h6
+		color: var(--strong)
+
+.card
+	.red
+		color: #fe4a49
+	.mrd
+		color: var(--mrd)
+	.str
+		color: var(--strong)
+
+
+.card.pad, .card-rr.pad
 	@media screen and (min-width: 900px)
-		padding-left: 16px
-		padding-right: 16px
+		padding-left: 24px
+		padding-right: 24px
 	@media screen and (max-width: 575px)
-		padding: 24px
+		padding: 24px 0
 
 .new-column
 	small
@@ -1656,5 +1850,117 @@ h4.ptt40
 		font-size: 0.9rem
 
 .y-full
-	min-height: 100vh
 	justify-content: center
+	min-height: 100vh
+
+.fullscreen
+	z-index: 900
+	position: fixed
+	display: flex
+	flex-direction: column
+	top: 0
+	right: 0
+	height: 100vh
+	background: var(--beautrans)
+	@media screen and (max-width: 575px)
+		width: 100vw
+	@media screen and (min-width: 576px) and (max-width: 899px)
+		width: 44vw
+	@media screen and (min-width: 900px) 
+		width: 32vw
+	.topstrip
+		display: flex
+		flex-direction: row
+		.closebuttonstrip
+			display: flex
+			flex-direction: column
+			align-items: flex-end
+			padding-right: 8px
+			text-align: right
+			width: 100%
+			img
+				object-fit: contain
+				transition: all 0.14s ease-in
+				transform-origin: center center
+				filter: saturate(0.01)
+				opacity: 0.8
+				cursor: pointer
+				width: 32px
+				height: 32px
+			&:hover
+				img
+					transform: rotate(-90deg)
+					opacity: 1
+					filter: saturate(1)
+		@media screen and (max-width: 575px)
+			justify-content: space-between
+			align-items: center
+			padding: 16px
+			height: 48px
+		@media screen and (min-width: 576px)
+			justify-content: space-between
+			align-items: center
+			padding: 0 32px
+			height: 72px
+	.desk-nav
+		display: flex
+		flex-direction: column
+		h5
+			color: #FFFFFF
+			letter-spacing: 0.3px
+			a
+				color: white
+		h6
+			color: #676767
+			a
+				color: #878787
+		@media screen and (max-width: 575px)
+			padding: 32px
+			height: calc(100% - 48px)
+			overflow-y: scroll
+			h5
+				margin-top: 16px
+				margin-bottom: 0
+				padding-top: 24px
+				border-top: 1px solid #373737
+			h6
+				margin-top: 12px
+				margin-bottom: 0
+		@media screen and (min-width: 576px)
+			padding: 32px 48px 32px 48px
+			height: calc(100% - 72px)
+			overflow-y: scroll
+			h5
+				margin-top: 24px
+				font-size: 20px
+				letter-spacing: 0.5px
+				margin-bottom: 0
+				padding-top: 24px
+				border-top: 1px solid #373737
+			h6
+				margin-top: 16px
+				margin-bottom: 0
+				font-size: 17px
+				letter-spacing: 0.35px
+				font-weight: 400
+
+.help-icon 
+	position: fixed
+	bottom: 20px
+	right: 20px
+	z-index: 9999
+	cursor: pointer
+
+.tooltip-box 
+	max-width: 300px
+	padding: 10px
+	background-color: #fff
+	border-radius: 4px
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.3)
+	font-size: 14px
+	line-height: 1.5
+	text-align: left
+
+.logo-svg-box
+	svg
+		transition: all 0.22s var(--cubee)

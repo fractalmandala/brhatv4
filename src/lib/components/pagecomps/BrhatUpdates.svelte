@@ -42,15 +42,15 @@ export async function updateThree(){
   	slidesPerView={1}
 		breakpoints={{
     	"576": {
-      	slidesPerView: 2,
-      	spaceBetween: 32,
-    	},
-    	"768": {
-      	slidesPerView: 2,
+      	slidesPerView: 1,
       	spaceBetween: 24,
     	},
-    	"1024": {
-      	slidesPerView: 2,
+    	"768": {
+      	slidesPerView: 3,
+      	spaceBetween: 32,
+    	},
+    	"900": {
+      	slidesPerView: 3,
       	spaceBetween: 32,
     	},
   	}}
@@ -62,11 +62,13 @@ export async function updateThree(){
 			<small>.</small>
 			{:then data}
 				{#each data as item}
-					<div class="boxc card pad">
+					<div class="boxc-r3 card soft pad">
 						<img src={item.image} alt={item.sequence} />
-						<h6>{item.heading}</h6>
-						<p>{item.text.slice(0,300)}</p>
-						<button class="cardbutton"><a href={item.link}>{item.buttontext}</a></button>
+						<div class="boxc">
+							<h6>{item.heading}</h6>
+							<p>{item.text.slice(0,200)}</p>
+							<button class="cardbutton"><a href={item.link} target="_blank" rel="noreferrer">{item.buttontext}</a></button>
+						</div>
 					</div>
 				{/each}
 			{:catch error}
@@ -78,11 +80,13 @@ export async function updateThree(){
 			<small>.</small>
 			{:then data}
 				{#each data as item}
-					<div class="boxc card pad">
+					<div class="boxc-r3 card soft pad">
 						<img src={item.image} alt={item.sequence} />
-						<h6>{item.heading}</h6>
-						<p>{item.text.slice(0,300)}</p>
-						<button class="cardbutton"><a href={item.link}>{item.buttontext}</a></button>
+						<div class="boxc">
+							<h6>{item.heading}</h6>
+							<p>{item.text.slice(0,200)}</p>
+							<button class="cardbutton"><a href={item.link}>{item.buttontext}</a></button>
+						</div>
 					</div>
 				{/each}
 			{:catch error}
@@ -94,11 +98,13 @@ export async function updateThree(){
 			<small>.</small>
 			{:then data}
 				{#each data as item}
-					<div class="boxc card pad">
+					<div class="boxc-r3 card soft pad">
 						<img src={item.image} alt={item.sequence} />
-						<h6>{item.heading}</h6>
-						<p>{item.text.slice(0,300)}</p>
-						<button class="cardbutton"><a href={item.link}>{item.buttontext}</a></button>
+						<div class="boxc">
+							<h6>{item.heading}</h6>
+							<p>{item.text.slice(0,200)}</p>
+							<button class="cardbutton"><a href={item.link}>{item.buttontext}</a></button>
+						</div>
 					</div>
 				{/each}
 			{:catch error}
@@ -112,6 +118,7 @@ export async function updateThree(){
 				<path d="M-2.94055e-06 20L40 -7.15256e-07L40 40L-2.94055e-06 20Z" fill="#b7b7b7"/>
 			</svg>
 		</div>
+		<small>explore the latest at bṛhat, from events and courses to IKS conferences and research gatherings</small>
 		<div class="swiper-button custom-next">
   		<svg width="100%" height="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M40 20L0 40V0L40 20Z" fill="#b7b7b7"/>
@@ -122,22 +129,35 @@ export async function updateThree(){
 
 <style lang="sass">
 
-#navbuttons
+
+.buttonrow
+	width: 100%
+	justify-content: center
+	align-items: center
 	gap: 32px
+	@media screen and (max-width: 575px)
+		margin-top: 20px
 	@media screen and (max-width: 767px)
-		display: none
+		margin-top: 32px
+	small
+		text-transform: capitalize
+		margin: 0
+		line-height: 12px
+		text-align: center
+		font-size: 12px
+		padding: 0
+		color: #878787
 
 .swiper-button
-	svg
-		height: 24px
-		width: 24px
-		cursor: pointer
-		transition: all 0.08s var(--cubea)
-		&:hover
-			transtion: scale(0.9)
+	height: 24px
+	width: 24px
+	cursor: pointer
+	transition: all 0.08s var(--cubea)
+	&:hover
+		transtion: scale(0.9)
+		svg
+			transform: scale(0.9)
 			path
 				fill: #fe4a49
-		path
-			transition: all 0.08s var(--cubea)
 
 </style>

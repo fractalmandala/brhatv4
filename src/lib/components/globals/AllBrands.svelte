@@ -38,9 +38,6 @@ function linkRid(){
 	window.location.href = '/rta';
 }
 
-
-
-
 function toggleBrands(){
 	isBrands = !isBrands;
 }
@@ -131,23 +128,23 @@ function toggleBrands(){
 
 </script>
 
-<div class="biggie flexbox-r desk-margins">
-	<div class=".espcol flexbox-c col1">
-		<div class=".espcol boxer box-of-mrd" id="logo" on:mouseenter={hover} on:mouseleave={unhover} on:click={linkMrdanga} on:keydown={linkMrdanga}>
+<div class="biggie boxr">
+	<div class="boxc col1">
+		<div class="boxer box-of-mrd" id="logo" on:mouseenter={hover} on:mouseleave={unhover} on:click={linkMrdanga} on:keydown={linkMrdanga}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
 			<span class="typ4"></span>
 			<LogMrd></LogMrd>
 		</div>
-		<div class=".espcol boxer box-of-fm" on:mouseenter={hover7} on:mouseleave={unhover7} on:click={linkMandala} on:keydown={linkMandala}>
+		<div class="boxer box-of-fm" on:mouseenter={hover7} on:mouseleave={unhover7} on:click={linkMandala} on:keydown={linkMandala}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
 			<span class="typ4"></span>
 			<LogFm></LogFm>
 		</div>
-		<div class=".espcol boxer box-of-bol" on:mouseenter={hover6} on:mouseleave={unhover6} on:click={linkBol} on:keydown={linkBol}>
+		<div class="boxer box-of-bol" on:mouseenter={hover6} on:mouseleave={unhover6} on:click={linkBol} on:keydown={linkBol}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
@@ -155,8 +152,8 @@ function toggleBrands(){
 			<LogBol></LogBol>
 		</div>
 	</div>
-	<div class=".espcol flexbox-c col2">
-		<div class=".espcol bigbox">
+	<div class="boxc col2">
+		<div class="bigbox">
 			<div class="logo-svg-box box-of-motif">
 				<svg width="458" height="458" viewBox="0 0 458 458" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g id="segmente">
@@ -328,7 +325,7 @@ function toggleBrands(){
 				</svg>
 			</div>
 		</div>
-		<div class=".espcol boxer box-of-soa" on:mouseenter={hover2} on:mouseleave={unhover2} on:click={linkSoa} on:keydown={linkSoa}>
+		<div class="boxer box-of-soa" on:mouseenter={hover2} on:mouseleave={unhover2} on:click={linkSoa} on:keydown={linkSoa}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
@@ -336,22 +333,22 @@ function toggleBrands(){
 			<LogMan></LogMan>
 		</div>
 	</div>
-	<div class=".espcol flexbox-c col3">
-		<div class=".espcol boxer box-of-dra" on:mouseenter={hover5} on:mouseleave={unhover5} on:click={linkDrashta} on:keydown={linkDrashta}>
+	<div class="boxc col3">
+		<div class="boxer box-of-dra" on:mouseenter={hover5} on:mouseleave={unhover5} on:click={linkDrashta} on:keydown={linkDrashta}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
 			<span class="typ4"></span>
 			<LogDr></LogDr>
 		</div>
-		<div class=".espcol boxer box-of-anv" on:mouseenter={hover4} on:mouseleave={unhover4} on:click={linkAnveshi} on:keydown={linkAnveshi}>
+		<div class="boxer box-of-anv" on:mouseenter={hover4} on:mouseleave={unhover4} on:click={linkAnveshi} on:keydown={linkAnveshi}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
 			<span class="typ4"></span>
 			<LogAnv></LogAnv>
 		</div>
-		<div class=".espcol boxer box-of-rid" on:mouseenter={hover3} on:mouseleave={unhover3} on:click={linkRid} on:keydown={linkRid}>
+		<div class="boxer box-of-rid" on:mouseenter={hover3} on:mouseleave={unhover3} on:click={linkRid} on:keydown={linkRid}>
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
@@ -363,7 +360,7 @@ function toggleBrands(){
 
 
 <style>
-.biggie { background: var(--beau);}
+.biggie { background: linear-gradient(132.9deg, rgba(23,23,23,1) 10.69%, rgba(24, 28, 30, 1) 84.91%);}
 .boxer { position: relative; overflow: hidden; transition: all 0.8s var(--cubea) 0.2s; box-shadow: 4px 6px 6px #111111, -2px -4px 6px #171717; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; }
 .boxer span { position: absolute; top: 0; left: 0;}
 .typ1 { border-top: 1px solid #fe4a49;}
@@ -420,7 +417,7 @@ function toggleBrands(){
 	transform-origin: center center;
 }
 
-.bigbox:hover #dottedcircles { animation: isrotating 4s var(--cubeb) infinite;}
+.biggie:hover #dottedcircles { animation: isrotating 4s var(--cubeb) infinite;}
 
 @keyframes isrotating {
 	0% { transform: rotate(0deg);}
@@ -448,15 +445,15 @@ function toggleBrands(){
 	z-index: 20;
 }
 
-.logo-svg-box:hover #inn path {
+.biggie:hover #inn path {
 	animation: recolor 0.46s var(--cubeb) forwards;
 }
 
-.logo-svg-box:hover #mid path {
+.biggie:hover #mid path {
 	animation: recolor 0.7s var(--cubec) 0.46s forwards;
 }
 
-.logo-svg-box:hover #outermost path {
+.biggie:hover #outermost path {
 	animation: recolor 0.6s var(--cubed) 1.2s forwards;
 }
 
@@ -472,7 +469,7 @@ function toggleBrands(){
 
 
 @media screen and ( min-width: 900px ) {
-	.biggie { width: 100vw; height: 100vh; justify-content: space-between;}
+	.biggie { width: 100vw; height: calc(100vh - 128px); justify-content: space-between; padding-left: 80px; padding-right: 80px;}
 	.col1 { width: 24vw; padding: 0 0 96px 0; justify-content: center; align-items: center; gap: 3em; }
 	.col2 { width: 28vw; padding: 0; justify-content: center; align-items: center; padding-top: 2.4em; gap: 0;}
 	.col3 { width: 24vw; padding: 0 0 96px 0; justify-content: center; align-items: center;gap: 3em;}

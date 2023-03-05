@@ -9,8 +9,8 @@ function toggleMenu(){
 </script>
 
 <svelte:window bind:scrollY={hx}/>
-<div class="flexbox-r header-main" data-lenis-prevent>
-	<div class="in-row logoarea"><a href="/">
+<div class="boxr header-main" data-lenis-prevent>
+	<div class="boxr logoarea"><a href="/">
 			<svg id="motif" width="100%" height="100%" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g id="motif">
 				<g id="outer" style="transform: rotate({hx/8}deg)">
@@ -148,7 +148,7 @@ function toggleMenu(){
 			</defs>
 		</svg></a>
 	</div>
-	<div class="in-col closebutton" on:click={toggleMenu} on:keydown={toggleMenu}>
+	<div class="boxc closebutton" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<svg width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<g id="close">
 			<path id="low" d="M48 40.8001V33.6001H0V40.8001h58Z" fill="white"/>
@@ -159,8 +159,8 @@ function toggleMenu(){
 	</div>
 </div>
 {#if isMenu}
-<div class="flexbox-c menu-side" in:fly="{{duration: 300, delay: 0, x: 400, y: 0, easing: circOut}}" out:fly="{{duration: 200, delay: 100, x: 400, y: 0, easing: circOut}}" data-lenis-prevent>
-	<div class="in-col topstrip">
+<div class="boxc menu-side" in:fly="{{duration: 300, delay: 0, x: 400, y: 0, easing: circOut}}" out:fly="{{duration: 200, delay: 100, x: 400, y: 0, easing: circOut}}" data-lenis-prevent>
+	<div class="boxc topstrip">
 		<svg width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" on:click={toggleMenu} on:keydown={toggleMenu}>
 			<g id="close">
 			<path id="Vector" d="M45.3002 9.29995L38.7002 2.69995L24.0002 17.7L9.30019 2.69995L2.7002 9.29995L17.7002 24L2.7002 38.7L9.30019 45.3L24.0002 30.3L38.7002 45.3L45.3002 38.7L30.3002 24L45.3002 9.29995Z" fill="white"/>
@@ -168,76 +168,83 @@ function toggleMenu(){
 		</svg>
 	</div>
 	<nav>
-	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
-		<h5 class="w600 white upper"><a href="/dhiti">Dhīti</a></h5>
+	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
+		<h5><a href="/dhiti">Dhīti</a></h5>
 	</div>
-	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
-		<h5 class="w600 white upper"><a href="/openlibrary">Bṛhat Open Library</a></h5>
-			<h6 class="w400 grey"><a href="/openlibrary/reader">Reading Room</a></h6>
-			<h6 class="w400 grey"><a href="/openlibrary/specials/aryanissue">The Āryan Issue</a></h6>
-			<h6 class="w400 grey"><a href="/openlibrary/specials/aryanissue">Essentials</a></h6>
-			<h6 class="w400 grey"><a href="/openlibrary/specials/aryanissue">IKS</a></h6>
-			<h6 class="w400 grey"><a href="/openlibrary/specials/aryanissue">The Two Bodhas</a></h6>
-			<h6 class="w400 grey"><a href="/openlibrary/specials/aryanissue">Contact</a></h6>
+	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
+		<h5><a href="/openlibrary">Bṛhat Open Library</a></h5>
+			<h6><a href="/openlibrary/reader">Reading Room</a></h6>
+			<h6><a href="/openlibrary/specials/aryanissue">The Āryan Issue</a></h6>
+			<h6><a href="/openlibrary/specials/aryanissue">Essentials</a></h6>
+			<h6><a href="/openlibrary/specials/aryanissue">IKS</a></h6>
+			<h6><a href="/openlibrary/specials/aryanissue">The Two Bodhas</a></h6>
+			<h6><a href="/openlibrary/specials/aryanissue">Contact</a></h6>
 	</div>
-	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
-		<h5 class="w600 white upper"><a href="/about">About</a></h5>
-			<h6 class="w400 grey"><a href="/about/docs/svatahsiddha">Svataḥsiddha</a></h6>
-			<h6 class="w400 grey"><a href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a></h6>
-			<h6 class="w400 grey"><a href="/about/docs/whatkrishnameanstous">What Śrī Kṛṣṇa Means to Us</a></h6>
-			<h6 class="w400 grey"><a href="/about/docs/namelogo">Nāmarūpa</a></h6>
-			<h6 class="w400 grey"><a href="/about/docs/values">Pratijñā</a></h6>
-			<h6 class="w400 grey"><a href="/about/#advisors">Advisors</a></h6>
-			<h6 class="w400 grey"><a href="/about/#partners">Partners</a></h6>
-			<h6 class="w400 grey"><a href="/about/#team">Team</a></h6>
+	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
+		<h5><a href="/about">About</a></h5>
+			<h6><a href="/about/docs/svatahsiddha">Svataḥsiddha</a></h6>
+			<h6><a href="/about/docs/anatomy">Anatomy of a Civilizational Moment</a></h6>
+			<h6><a href="/about/docs/whatkrishnameanstous">What Śrī Kṛṣṇa Means to Us</a></h6>
+			<h6><a href="/about/docs/namelogo">Nāmarūpa</a></h6>
+			<h6><a href="/about/docs/values">Pratijñā</a></h6>
+			<h6><a href="/about/#advisors">Advisors</a></h6>
+			<h6><a href="/about/#partners">Partners</a></h6>
+			<h6><a href="/about/#team">Team</a></h6>
 	</div>
-	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
-		<h5 class="w600 white upper"><a href="/drashta">Bṛhat Draṣṭā</a></h5>
-			<h6 class="w400 grey"><a href="/drashta/course/valmikiramayana">Vālmīki Rāmāyaṇa</a></h6>
-			<h6 class="w400 grey"><a href="/drashta/course/hinduiconography">Hindu Iconography</a></h6>
-			<h6 class="w400 grey"><a href="/drashta/course/shriramswarup">Shri Ram Swarup</a></h6>
-			<h6 class="w400 grey"><a href="/drashta/course/sitaramgoel">Sita Ram Goel</a></h6>
-			<h6 class="w400 grey"><a href="/drashta/#drashtas">Drashtas</a></h6>
-			<h6 class="w400 grey"><a href="/drashta/#darshanas">Darśanas</a></h6>
+	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
+		<h5><a href="/drashta">Bṛhat Draṣṭā</a></h5>
+			<h6><a href="/drashta/course/valmikiramayana">Vālmīki Rāmāyaṇa</a></h6>
+			<h6><a href="/drashta/course/hinduiconography">Hindu Iconography</a></h6>
+			<h6><a href="/drashta/course/shriramswarup">Shri Ram Swarup</a></h6>
+			<h6><a href="/drashta/course/sitaramgoel">Sita Ram Goel</a></h6>
+			<h6><a href="/drashta/#drashtas">Drashtas</a></h6>
+			<h6><a href="/drashta/#darshanas">Darśanas</a></h6>
 	</div>
-	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
-		<h5 class="w600 white upper"><a href="/anveshi">Bṛhatanveṣī</a></h5>
-			<h6 class="w400 grey"><a href="/anveshi/chapter/chamba">Chamba</a></h6>
-			<h6 class="w400 grey"><a href="/anveshi/chapter/odisha">Odisha</a></h6>
-			<h6 class="w400 grey"><a href="/anveshi/chapter/karnataka">Karnataka</a></h6>
-			<h6 class="w400 grey"><a href="/anveshi/diaries">Travel Diaries</a></h6>
-			<h6 class="w400 grey"><a href="/anveshi/faq">FAQs</a></h6>
+	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
+		<h5><a href="/anveshi">Bṛhatanveṣī</a></h5>
+			<h6><a href="/anveshi/chapter/chamba">Chamba</a></h6>
+			<h6><a href="/anveshi/chapter/odisha">Odisha</a></h6>
+			<h6><a href="/anveshi/chapter/karnataka">Karnataka</a></h6>
+			<h6><a href="/anveshi/diaries">Travel Diaries</a></h6>
+			<h6><a href="/anveshi/faq">FAQs</a></h6>
 	</div>
-	<div class="in-col menu-linker on:click={toggleMenu} on:keydown={toggleMenu}">
-		<h5 class="w600 white upper"><a href="/mrdanga">Bṛhadmṛdaṅga</a></h5>
+	<div class="boxc menu-linker on:click={toggleMenu} on:keydown={toggleMenu}">
+		<h5><a href="/mrdanga">Bṛhadmṛdaṅga</a></h5>
 	</div>
-	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
-		<h5 class="w600 white upper"><a href="/rta">Ṛta in Design</a></h5>
-			<h6 class="w400 grey"><a href="/rta/prologue">Prologue</a></h6>
-			<h6 class="w400 grey"><a href="/rta/intro">Introduction to Ṛta in Design</a></h6>
-			<h6 class="w400 grey"><a href="/rta/dharmaisdesign">Dharma is Design</a></h6>
+	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
+		<h5><a href="/rta">Ṛta in Design</a></h5>
+			<h6><a href="/rta/prologue">Prologue</a></h6>
+			<h6><a href="/rta/intro">Introduction to Ṛta in Design</a></h6>
+			<h6><a href="/rta/dharmaisdesign">Dharma is Design</a></h6>
 	</div>
-	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
-		<h5 class="w600 white upper"><a href="/mandala">Fractal Maṇḍala</a></h5>
+	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
+		<h5><a href="/mandala">Fractal Maṇḍala</a></h5>
 	</div>
-	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
-		<h5 class="w600 white upper"><a href="/aryavarta">Scrolls of Āryavarta</a></h5>
+	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
+		<h5><a href="/aryavarta">Scrolls of Āryavarta</a></h5>
 	</div>
-	<div class="in-col menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
-		<h5 class="w600 white upper"><a href="/bodha">Bodha</a></h5>
+	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
+		<h5><a href="/bodha">Bodha</a></h5>
 	</div>
 	</nav>
 </div>
 {/if}
 
 <style>
-.header-main { z-index: 950;}
+.header-main { 
+	z-index: 950; 
+	background: linear-gradient(132.9deg, rgba(23,23,23,0.85) 10.69%, rgba(24, 28, 30, 0.99) 84.91%);
+  position: fixed;
+  top: 0;
+  left: 0;
+	width: 100vw;
+}
 .logoarea a svg { object-fit: cover; width: 100%;transition: all 0.08s var(--cubed);}
 #outer, #inner {
 	transform-origin: center center;
 }
 .menu-side { position: relative;z-index: 950; }
-.topstrip { position: absolute; top: 40px; right: 40px; position: sticky; }
+.topstrip { position: absolute; top: 20px; right: 0px; position: sticky; }
 .closebutton { cursor: pointer; z-index: 999;}
 .closebutton svg:hover #top { animation: topmover 0.08s var(--cubee) forwards;}
 .closebutton svg:hover #low { animation: lowmover 0.08s var(--cubee) forwards;}
@@ -258,22 +265,39 @@ function toggleMenu(){
 }
 .logoarea:hover a svg:hover { transform: scale(0.95);}
 
+.menu-linker h5 {
+	color: white;
+	margin: 0;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.menu-linker h6 {
+	color: #575757;
+	margin: 0;
+	font-weight: 400;
+	text-transform: capitalize;
+}
+
 @media screen and (min-width: 900px) {
 	#motif { height: 48px; width: 48px;}
 	#type { margin-left: 10px; width: 90px;}
 	.menu-side nav { margin-top: 32px; width: 88%;}
 	.closebutton svg { width: 28px; height: 28px;}
 	.header-main {
+		height: 64px;
 		padding: 0 32px;
 		align-items: center;
 		justify-content: space-between;
+		display: flex;
+		flex-direction: row;
 	}
 	.logoarea {
 		width: 240px;
 		align-items: center;
 	}
-	.menu-side { background: var(--beau); height: 100vh; overflow-y: scroll; width: 36vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 40px; overflow-x: hidden;}
-	.topstrip { height: 72px; justify-content: center; align-items: flex-end;}
+	.menu-side { background: var(--beau); height: 100vh; overflow-y: scroll; width: 36vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 0 40px 32px 40px; overflow-x: hidden;}
+	.topstrip { height: 64px; justify-content: center; align-items: flex-end;}
 	.topstrip svg { width: 28px; height: 28px; transform-origin: center center;}
 	.topstrip svg path { fill: #474747; transform-origin: center center;}
 	.topstrip svg:hover path { fill: #fe4a49;}
@@ -283,12 +307,13 @@ function toggleMenu(){
 	.menu-linker { border-bottom: 1px solid #373737; padding-top: 14px;}
 
 	.menu-linker {
-		font-weight: 500;
 		margin-bottom: 0;
 		margin-top: 0;
 		padding-top: 32px;
 		padding-bottom: 20px;
 	}
+	.menu-linker h5 { font-size: 30px; padding-bottom: 6px;}
+	.menu-linker h6 { font-size: 24px; padding: 4px 0;}
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
@@ -307,7 +332,7 @@ function toggleMenu(){
 	.logoarea {
 		align-items: center;
 	}
-	.menu-side { background: var(--beau); height: 100vh; overflow-y: scroll; width: 100vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 0 32px; overflow-x: hidden;}
+	.menu-side { background: var(--beau); height: 100vh; overflow-y: scroll; width: 50vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 0 32px; overflow-x: hidden;}
 	.topstrip { height: 64px; justify-content: center; align-items: flex-end;}
 	.topstrip svg { width: 24px; height: 24px; transform-origin: center center;}
 	.topstrip svg path { fill: #474747; transform-origin: center center;}
@@ -317,12 +342,13 @@ function toggleMenu(){
 	.topstrip svg:hover path { transform: rotate(90deg);}
 	.menu-linker { border-bottom: 1px solid #373737; padding-top: 16px;}
 	.menu-linker {
-		font-weight: 500;
 		margin-bottom: 0;
 		margin-top: 0;
 		padding-top: 16px;
 		padding-bottom: 20px;
 	}
+	.menu-linker h5 { font-size: 28px; padding-bottom: 6px;}
+	.menu-linker h6 { font-size: 21px; padding: 4px 0;}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
@@ -351,12 +377,14 @@ function toggleMenu(){
 	.topstrip svg:hover path { transform: rotate(90deg);}
 	.menu-linker { border-bottom: 1px solid #373737; padding-top: 16px;}
 	.menu-linker {
-		font-weight: 500;
 		margin-bottom: 0;
 		margin-top: 0;
 		padding-top: 16px;
 		padding-bottom: 20px;
 	}
+	.menu-linker h5 { font-size: 28px; padding-bottom: 6px;}
+	.menu-linker h6 { font-size: 21px; padding: 4px 0;}
+
 }
 
 @media screen and (max-width: 575px) {
@@ -385,11 +413,12 @@ function toggleMenu(){
 	.topstrip svg:hover path { transform: rotate(90deg);}
 	.menu-linker { border-bottom: 1px solid #373737; padding-top: 16px;}
 	.menu-linker {
-		font-weight: 500;
 		margin-bottom: 0;
 		margin-top: 0;
 		padding-top: 16px;
 		padding-bottom: 20px;
 	}
+	.menu-linker h5 { font-size: 28px; padding-bottom: 6px;}
+	.menu-linker h6 { font-size: 21px; padding: 4px 0;}
 }
 </style>

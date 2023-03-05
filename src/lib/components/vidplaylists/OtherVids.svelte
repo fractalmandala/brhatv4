@@ -23,11 +23,11 @@ async function getOther() {
 					class="m-1"
 					width=100%
 					height=80%
-					src="https://www.youtube.com/embed/{item.id}"
+					src="https://www.youtube.com/embed/{item.videoid}"
 					title={item.name}
 				>
 				</iframe>
-				<p><a href="https://www.youtube.com/watch?v={item.id}" target="_blank" rel="noreferrer">{@html item.name.slice(0,70)}...</a></p>
+				<p><a href="https://www.youtube.com/watch?v={item.videoid}" target="_blank" rel="noreferrer">{@html item.name.slice(0,70)}...</a></p>
 			</div>
 			{/each}
 	{:catch error}

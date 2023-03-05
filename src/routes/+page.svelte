@@ -44,10 +44,10 @@
 
 <Accordion />
 
-<div class="full-page formatting">
+
 	<div class="pad-a">
 		<div class="boxc x1">
-			<h1>Bṛhat is a <br><span class="red m-top-zero">Culture Engine</span></h1>
+			<h1>Bṛhat is a <br><span class="soft">Culture Engine</span></h1>
 			<h6 class="wide75">
 				To power creatives, research and design rooted in the Indian civilizational consciousness. We
 				convert individual, institutional and collective intent into action, across 3 dimensions.
@@ -55,7 +55,7 @@
 		</div>
 
 		<div class="traybox wrap x2">
-			<div class="ww3 card" use:reveal={{ transition: "slide", x: 150, blur: 1, easing: "easeInCirc"}}>
+			<div class="ww4 card" use:reveal={{ transition: "slide", x: 150, blur: 1, easing: "easeInCirc"}}>
 				<h6 class="strong">
 					Civilization is Culture in Action
 				</h6>
@@ -63,7 +63,7 @@
 					The civilizational moment needs rooting in Dharma - of this there is no doubt. Thus a core part of our work is culture creatives that draw from the deep pool of Dhārmika heritage.
 				</p>
 			</div>
-			<div class="ww3 card" use:reveal={{ transition: "slide", x: 150, delay: 0, blur: 1, easing: "easeInCirc"}}>
+			<div class="ww4 card" use:reveal={{ transition: "slide", x: 150, delay: 0, blur: 1, easing: "easeInCirc"}}>
 				<h6 class="strong">
 					It Needs Culture-Compatible Policy
 				</h6>
@@ -71,7 +71,7 @@
 					Radical reorientations are needed in education and ecology. To this end, our focus will be on generating policy currency for culture through frameworks, curriculum and more.
 				</p>
 			</div>
-			<div class="ww3 card" use:reveal={{ transition: "slide", x: 150, delay: 0, blur: 1, easing: "easeInCirc"}}>
+			<div class="ww4 card" use:reveal={{ transition: "slide", x: 150, delay: 0, blur: 1, easing: "easeInCirc"}}>
 				<h6 class="strong">
 					The Work is Inter-Generational
 				</h6>
@@ -79,27 +79,18 @@
 					It needs leadership with cultural-cognition to carry the Agni. This cognition needs to permeate even brand and organisation - essential quarters for the overton window shift.
 				</p>
 			</div>
+			<div class="ww4 endcol" use:reveal={{ transition: "slide", x: 150, delay: 0, blur: 1, easing: "easeInCirc"}}>
+				<button class="mainbutton"><a href="/about">Know More</a></button>
+			</div>
 		</div>
 
 		<div class="boxc y-full the-title x10">
+			<h2><span class="soft">New </span>and Recent</h2>
 			<BrhatUpdates></BrhatUpdates>
 		</div>
 
-		<div class="boxc y-full the-title x3">
-			<h5 class="wide75">
-				But the severest constraint of them all is Time, and more specifically – <span class="soft">Moment.</span>
-			</h5>
-			<h6 class="wide75">
-				The time for a Culture Engine is now, because we are in the midst of a civilizational moment. What is a civilizational moment? How rare or regular are such moments? How must we respond to them?
-			</h6>
-			<h6 class="wide75">
-				Read more on the need we see, why we think this is the time to address it, and about our self-identity.
-			</h6>
-			<button class="mainbutton"><a href="/about">Know More</a></button>
-		</div>
-
 		<div class="the-title y-full x4">
-			<h2>Explore Visual Content</h2>
+			<h2>Explore <span class="soft"> Visual Content</span></h2>
 			<h6 class="wide75">
 				Our visual content ranges from explorations of rasa and bhāva, to articulations of an
 				IKS-implementation strategy for modern India. Select playlists below, or visit our <a
@@ -109,12 +100,13 @@
 					rel="noreferrer">YouTube channel</a
 				>
 			</h6>
-			<select class="mainbutton" on:change={(event) => switchList(event?.target?.value ?? 'list-1')}>
+			<button class="mainbutton">
+			<select on:change={(event) => switchList(event?.target?.value ?? 'list-1')}>
 				<option class="w500" value="list-1" on:click={() => switchList('list-1')} on:keydown={() => switchList('list-1')}>Bṛhadmṛdaṅga</option>
 				<option class="w500" value="list-2" on:click={() => switchList('list-2')} on:keydown={() => switchList('list-2')}>Hindi Kavitā</option>
 				<option class="w500" value="list-3" on:click={() => switchList('list-3')} on:keydown={() => switchList('list-3')}>IKS</option>
 				<option class="w500" value="list-4" on:click={() => switchList('list-4')} on:keydown={() => switchList('list-4')}>Others</option>
-			</select>
+			</select></button>
 			<div class="traybox wrap x5">
 				{#if currentList === 'list-1'}
 					<BrhadMrdanga />
@@ -131,7 +123,7 @@
 
 
 		<div class="the-title x6">
-			<h2>Essays at Dhīti</h2>
+			<h2>Essays at <span class="soft"> Dhīti</span></h2>
 		</div>
 
 		<div class="traybox allwrap x7">
@@ -147,24 +139,22 @@
 								transition: 'slide',
 								delay: 50 * i,
 								duration: 50,
-								reset: true,
 								easing: 'easeOutCirc'
 							}}
 						/>
-							<cite>{item.category}<br>{item.tags}</cite>
+							<cite class="str">{item.category}<br>{item.tags}</cite>
 							<h6 class="w600"
 							use:reveal={{
 								transition: 'slide',
 								delay: 50 * i,
 								duration: 50,
-								reset: true,
 								easing: 'easeOutCirc'
 							}}
 						>
 							<a href={item.link}>{item.title}</a>
 						</h6>
 						<p>{item.excerpt.slice(0, 200)}...<a href={item.link} class="readmore">Read More</a></p>
-						<cite class="grey wbold m-bot-zero">{item.author}</cite>
+						<cite>{item.author}</cite>
 					</div>
 				{/each}
 			{:catch error}
@@ -173,7 +163,7 @@
 		</div>
 
 		<div class="the-title x8">
-			<h2>Bṛhat Open Library</h2>
+			<h2>Bṛhat <span class="soft"> Open</span> Library</h2>
 			<h6 class="wide75">
 				An online repository of books, papers, texts and scriptures, made available under CC0 1.0
 				License. Gathering point for digitized scripture, Aryan Invasion/Migration, civilizational
@@ -197,12 +187,28 @@
 			{/await}			
 		</div>
 	</div>
-</div>
+
 {#if ow>767}
+<div class="the-title x100">
+	<h2><span class="red">Bṛhat </span><span class="white">Projects</span></h2>
 <Brands></Brands>
+</div>
 {/if}
 
+
 <style>
+
+.x100 {
+	background: var(--beau);
+	margin-bottom: 0;
+	padding-top: 16px;
+	padding-bottom: 32px;
+}
+
+.x100 h2 {
+	padding-left: 64px;
+	padding-top: 16px;
+}
 
 .x2 .card h6 { color: var(--strong);}
 
@@ -227,15 +233,17 @@
 }
 
 @media screen and (min-width: 768px) {
-
+	.endcol {
+		align-items: center;
+	}
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
-
+	.x9 { margin-bottom: 64px;}
 
 }
 
 @media screen and (max-width: 575px) {
-
+	.x9 { margin-bottom: 64px;}
 }
 </style>
