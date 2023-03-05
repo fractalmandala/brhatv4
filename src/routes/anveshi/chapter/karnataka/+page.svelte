@@ -96,7 +96,7 @@ function toggleItin(index:any){
 </script>
 
 
-<div class="pad-a">
+<div class="pad-a rrr">
 	<GrandContainer>
 		<p slot="sectionname"><span class="karn">Karnataka </span>Chapter</p>
 		<div slot="mobilenav" class="mobmob">
@@ -129,13 +129,13 @@ function toggleItin(index:any){
 				<p><a href="/anveshi/#aboutanveshi">About</a></p>
 		</div>
 	</GrandContainer>
-	<div class="main-page">
+	<div class="x-x-2">
 		{#if panel1}
 		<div class="traybox wrap xiv">
-			<div class="ww2-1 the-title">
+			<div class="ww2 the-title">
 				<h1>Karnataka Chapter</h1>
 			</div>
-			<div class="ww2-3 card">
+			<div class="ww2">
 				<img src="/images/anveshi/keykarsmal.webp" alt="karnataka" />
 			</div>
 		</div>
@@ -290,9 +290,6 @@ function toggleItin(index:any){
 
 
 <style>
-.xiv img {
-	height: 48vh;
-}
 
 .pointer:hover { color: var(--karn);}
 
@@ -339,7 +336,7 @@ a:hover {
 		transform: scale(0.9);
 	}
 
-	.xiv .ww2-1 h1 {
+	.xiv .ww2 h1 {
 		background: var(--karn);
 		color: white;
 		z-index: 2;
@@ -366,16 +363,6 @@ a:hover {
 		height: 48vh;
 	}
 	.x3 { padding-bottom: 40px;}
-	.xiv .ww2-1 {
-		width: 70%;
-		margin-right: -25%;
-		z-index: 2;
-	}
-	.xiv .ww2-1 h1 {
-		background: var(--karn);
-		color: white;
-		padding: 8px;
-	}
 
 	#element-2 .card h6 { margin-top: 0;}
 	#navbuttons { bottom: 0; left: 0; align-items: center; width: 100%; justify-content: space-between;}
@@ -399,17 +386,9 @@ a:hover {
 		height: 320px;
 		width: 100%;
 	}
-	.xiv {
-		height: 48vh;
-	}
+
 	#navbuttons { bottom: 0; left: 0; align-items: center; width: 100%; justify-content: space-between;}
-	.xiv .ww2-1 h1 {
-		background: var(--karn);
-		color: white;
-		padding: 8px;
-		z-index: 2;
-		width: 200%;
-	}
+
 	.icons-row { gap: 48px; margin-bottom: 32px; padding-left: 16px;}
 	#element-2 .card h6 { margin-top: 0;}
 	.bound { padding-bottom: 32px;}
@@ -431,11 +410,11 @@ a:hover {
 		height: 320px;
 		width: 100%;
 	}
-	.xiv .ww2-1 { order: 2;}
+
 	.icons-row { width: 100%; }
 		#navbuttons { bottom: 0; left: 0; width: 100%; justify-content: center;}
 	.templenav { width: 100%; justify-content: center;}
-	.xiv { height: 100%;}
+
 
 	.iconcard { width: 33%;}
 	#element-2 .card h6 { margin-top: 0;}
@@ -457,11 +436,11 @@ a:hover {
 		height: 320px;
 		width: 100%;
 	}
-	.xiv .ww2-1 { order: 2;}
+
 	#date img, #duration img, #price img { width: 40px;}
 	.x3 { height: max-content; padding-bottom: 32px;}
 
-	.icons-row { width: 100%; justify-content: center; gap: 48px; margin-bottom: 24px;}
+	.icons-row { width: 100%; justify-content: center; gap: 24px; margin-bottom: 24px; margin-top: 24px;}
 		#navbuttons { bottom: 0; left: 0; width: 100%; justify-content: center;}
 	.templenav { width: 100%; justify-content: center;}
 	.iconcard { width: 20%;}

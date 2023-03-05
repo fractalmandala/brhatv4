@@ -9,7 +9,7 @@ function toggleClose(){
 }
 </script>
 
-<div class="side-bar" class:toggledClass={toggledClass}>
+<div class="x-x-1" class:toggledClass={toggledClass}>
 	<div class="menutwo">
 		{#if showSection}
 			<slot name="sectionname"></slot>
@@ -51,6 +51,9 @@ function toggleClose(){
 </div>
 
 <style lang="sass">
+
+.side-bar, .navlinks, .boxc
+	overflow-x: visible
 
 .menutwo
 	height: 40px

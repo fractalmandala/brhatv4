@@ -63,7 +63,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		</div>
 		</div>
 	</div>
-	<div class="boxc" id="last-row"><small>2023 All Rights Reserved | <span><a href="/docs">Documentation</a> | </span><span><a href="/about/docs/privacy">Privacy</a></span><br>
+	<div class="boxc" id="last-row"><small>2023 All Rights Reserved | <span><a href="/about/docs/privacy">Privacy</a></span><br>
 		<span class="white">Write to us: contact@brhat.in</span>
 		</small>
 	</div>

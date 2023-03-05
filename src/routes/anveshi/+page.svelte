@@ -50,6 +50,7 @@ export async function allChapters() {
 			</h6>
 			<img class="temple" src="/images/anveshi/temple.png" alt="the temple" />
 		</div>
+
 		<div class="the-title y-full">
 			<h2>Chapters</h2>
 			<div class="traybox x2">

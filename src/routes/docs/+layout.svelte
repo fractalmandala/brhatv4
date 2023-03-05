@@ -1,12 +1,21 @@
 <script lang="ts">
 import '$lib/styles/prism.css'
+import { fly } from 'svelte/transition'
+import GrandContainer from '$lib/components/globals/GrandContainer.svelte'
 import Documentation from '$lib/components/docs/Documentation.svelte'
 import Animation from '$lib/components/docs/Animation.svelte'
 import General from '$lib/components/docs/General.svelte'
 import PostGre from '$lib/components/docs/PostGre.svelte'
 import Supabase from '$lib/components/docs/Supabase.svelte'
 import Sveltecode from '$lib/components/docs/Sveltecode.svelte'
+import Documentation2 from '$lib/components/docs/Documentation.svelte'
+import Animation2 from '$lib/components/docs/Animation.svelte'
+import General2 from '$lib/components/docs/General.svelte'
+import PostGre2 from '$lib/components/docs/PostGre.svelte'
+import Supabase2 from '$lib/components/docs/Supabase.svelte'
+import Sveltecode2 from '$lib/components/docs/Sveltecode.svelte'
 import Codes from '$lib/components/docs/Codes.svelte'
+import Codes2 from '$lib/components/docs/Codes.svelte'
 
 let isCat1 = false
 let isCat2 = false
@@ -214,66 +223,69 @@ function toggleCat8(){
 </script>
 
 
-<div class="flexbox-r full">
-	<div class="flexbox-c sidebb" data-lenis-prevent>
-		<h6 class="green"><a href="/docs">Docs Home</a></h6>
-		<h6 class="green" on:click={toggleCat1} on:keydown={toggleCat1}>Documentation</h6>
-			{#if isCat1}
-				<Documentation></Documentation>
-			{/if}
-		<h6 class="green" on:click={toggleCat2} on:keydown={toggleCat2}>Animation</h6>
-			{#if isCat2}
-				<Animation></Animation>
-			{/if}	
-		<h6 class="green" on:click={toggleCat3} on:keydown={toggleCat3}>General</h6>
-			{#if isCat3}
+<div class="pad-a">
+	<div class="boxr">
+	<small on:click={toggleCat1} on:keydown={toggleCat1}>Documentation</small>
+	<div class="traybox allwrap">
+		{#if isCat1}
+			<Documentation></Documentation>
+		{/if}
+	</div>
+		<small on:click={toggleCat2} on:keydown={toggleCat2}>Animation</small>
+	<div class="traybox allwrap">
+				{#if isCat2}
+					<Animation></Animation>
+				{/if}	
+	</div>
+	<small on:click={toggleCat3} on:keydown={toggleCat3}>General</small>
+	<div class="traybox allwrap">
+				{#if isCat3}
 				<General></General>
-			{/if}	
-		<h6 class="green" on:click={toggleCat4} on:keydown={toggleCat4}>PostGRE</h6>
-			{#if isCat4}
-				<PostGre></PostGre>
-			{/if}	
-		<h6 class="green" on:click={toggleCat5} on:keydown={toggleCat5}>Supabase</h6>
-			{#if isCat5}
+				{/if}	
+	</div>
+	<small on:click={toggleCat4} on:keydown={toggleCat4}>PostGRE</small>
+	<div class="traybox allwrap">
+				{#if isCat4}
+					<PostGre></PostGre>
+				{/if}	
+	</div>
+		<small on:click={toggleCat5} on:keydown={toggleCat5}>Supabase</small>
+	<div class="traybox allwrap">
+				{#if isCat5}
 				<Supabase></Supabase>
-			{/if}	
-		<h6 class="green" on:click={toggleCat6} on:keydown={toggleCat6}>Sveltecode</h6>
+				{/if}	
+	</div>
+			<small on:click={toggleCat6} on:keydown={toggleCat6}>Sveltecode</small>
+	<div class="traybox allwrap">
 			{#if isCat6}
 				<Sveltecode></Sveltecode>
 			{/if}	
-		<h6 class="green" on:click={toggleCat8} on:keydown={toggleCat8}>All</h6>
-			{#if isCat8}
+	</div>
+			<small on:click={toggleCat7} on:keydown={toggleCat7}>All</small>
+	<div class="traybox allwrap">
+			{#if isCat7}
 				<Codes></Codes>
-			{/if}	
+			{/if}
 	</div>
-	<div class="flexbox-c main">
-		<slot></slot>
 	</div>
+
+	<slot></slot>
+
 </div>
 
-<style>
+<style lang="sass">
 
-.sidebb { overflow-y: scroll;}
+.traybox
+	background: white
+	width: calc(100vw - 360px)
+	height: calc(100vh - 360px)
+	position: fixed
+	top: 180px
+	left: 180px
+	display: none
 
-@media screen and (min-width: 768px) {
-
-	.main { width: calc(100% - 320px); padding: 120px 15% 0 40px;}
-	.flexbox-r { padding-bottom: 80px;}
-
-}
-
-@media screen and (max-width: 767px) and (min-width: 576px) {
-
-  
-	.main { width: calc(100% - 240px); padding: 0;}
-	.flexbox-r { padding-bottom: 80px;}
-
-}
-
-@media screen and (max-width: 575px) {
-	
-	.main { width: 100%; height: 100%; order: 2; padding: none;}
-
-}
-
+small
+	cursor: pointer
+	&:hover
+		color: #10D56C
 </style>

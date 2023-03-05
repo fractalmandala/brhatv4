@@ -24,20 +24,20 @@ export const postgrePosts = async () => {
 }
 </script>
 
-<div class="flexbox-c">
+<div class="ww4 card">
 		{#await postgrePosts()}
 		<small>...</small>
 		{:then data}
 		{#each data as doc}
-			<small
+			<p
 				transition:fly="{{duration: 300, x: -300, y: 0, easing: quartIn }}"
-			><a href={doc.path}>{doc.meta.title}</a></small>
+			><a href={doc.path}>{doc.meta.title}</a></p>
 		{/each}
 		{/await}
 </div>
 
 <style>
-small { text-transform: capitalize; padding: 0; color: #878787;}
-small a:hover { color: #10c56d;}
 
+p a:hover { color: #10c56d;}
+.card p { margin: 0;}
 </style>
