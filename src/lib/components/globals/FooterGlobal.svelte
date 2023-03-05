@@ -32,23 +32,23 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 					<small><a href="/anveshi/chapter/odisha">Odisha Chapter</a></small>
 					<small><a href="/anveshi/chapter/chamba">Chamba Chapter</a></small>
 					<small><a href="/anveshi/chapter/karnataka">Karnataka Chapter</a></small>
-					<small><a href="/anveshi/diaries">Travel Diaries</a></small>
+					<small><a href="/anveshi/#diaries">Travel Diaries</a></small>
 			</div>
 			<div class="boxc link-box">
 					<p><a href="/drashta">Bṛhat Draṣṭā</a></p>
 					<small><a href="/drashta/course/hinduiconography">Hindu Iconography</a></small>
 					<small><a href="/drashta/course/shriramswarup">Shri Ram Swarup</a></small>
 					<small><a href="/drashta/course/sitaramgoel">Sita Ram Goel</a></small>
-					<small><a href="/drashta/drashtas">Draṣṭās</a></small>
-					<small><a href="/drashta/schools">Schools</a></small>
-					<small><a href="/drashta/firekeepers">Firekeepers</a></small>
+					<small><a href="/drashta/#drashtas">Draṣṭās</a></small>
+					<small><a href="/drashta/#darshanas">Schools</a></small>
+					<small><a href="/drashta/#firekeepers">Firekeepers</a></small>
 			</div>
 			<div class="boxc link-box" id="box-about">
 					<p><a href="/about">About</a></p>
 					<small><a href="/about/docs/namelogo">Nāmarūpa</a></small>
 					<small><a href="/about/docs/values">Pratijñā</a></small>
 					<small><a href="/about/docs/svatahsiddha">Svataḥsiddha</a></small>
-					<small><a href="/about/#advisory">Advisory Board</a></small>
+					<small><a href="/about/#advisors">Advisory Board</a></small>
 					<small><a href="/about/#team">Team</a></small>
 			</div>
 			<div class="boxc link-box" id="box-actions">
