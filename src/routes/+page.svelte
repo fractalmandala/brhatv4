@@ -43,8 +43,6 @@
 
 
 <Accordion />
-
-
 	<div class="pad-a">
 		<div class="boxc x1">
 			<h1>Bṛhat is a <br><span class="soft">Culture Engine</span></h1>

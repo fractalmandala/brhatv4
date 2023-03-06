@@ -74,6 +74,16 @@ a
 .red
 	color: #fe4a49
 
+.black
+	color: #212121
+	p, h5, h6, small, pre
+		color: #212121
+
+.card.black
+	color: #212121
+	p, h5, h6, small, pre
+		color: #212121
+
 .orange
 	color: #ff3d00
 
@@ -1428,6 +1438,10 @@ h4.ptt40
 		@media screen and (max-width: 767px)
 			display: none
 
+.pad-a.black
+	h6, h5, p, small, pre
+		color: #212121
+
 .gap24
 	column-gap: 24px
 
@@ -1502,6 +1516,14 @@ h4.ptt40
 	@media screen and (max-width: 767px)
 		width: 100%
 
+.ww2-xr
+	display: flex
+	flex-direction: row
+	@media screen and (min-width: 768px)
+		width: calc(75% - 16px)
+	@media screen and (max-width: 767px)
+		width: 100%
+
 .ww2-x
 	@media screen and (min-width: 768px)
 		width: calc(75% - 16px)
@@ -1515,6 +1537,14 @@ h4.ptt40
 		width: 100%
 
 .ww2-3
+	@media screen and (min-width: 768px)
+		width: calc(66.66% - 16px)
+	@media screen and (max-width: 767px)
+		width: 100%
+
+.ww2-3r
+	display: flex
+	flex-direction: row
 	@media screen and (min-width: 768px)
 		width: calc(66.66% - 16px)
 	@media screen and (max-width: 767px)
@@ -2255,11 +2285,14 @@ h4.ptt40
 	position: relative
 	min-height: 100vh
 
+.xx0
+	z-index: 999
 
 .x-x-1
 	display: flex
 	flex-direction: column
 	position: fixed
+	z-index: -1
 	@media screen and (min-width: 900px)
 		width: 296px
 		top: 120px
@@ -2346,3 +2379,78 @@ h4.ptt40
 .buffer
 	padding: 32px 0
 	height: max-content
+
+
+.full-page
+	.nix
+		.solo
+			.document2
+				padding-top: 64px
+				h2
+					font-size: 3.4rem
+
+
+.myblogtext
+	p
+		color: #212121 !important
+	blockquote
+		border-left: 4px solid #10D56C
+	
+
+@media screen and (min-width: 900px)
+	.myblogtext
+		padding-left: 10vw
+		padding-top: 4vw
+		padding-bottom: 4vw
+		padding-right: 20vw
+		p
+			font-size: 1.18rem
+		blockquote
+			padding-left: 24px
+		h4
+			font-size: 2.8rem
+			margin: 64px 0 24px -32px
+			border-left: 8px solid #10D56C
+			padding-left: 32px
+		h6
+			font-size: 1rem
+
+@media screen and (max-width: 899px) and (min-width: 768px)
+	.myblogtext
+		padding-left: 8vw
+		padding-top: 4vw
+		padding-bottom: 4vw
+		padding-right: 12vw
+		p
+			font-size: 1.08rem
+		blockquote
+			padding-left: 24px
+		h4
+			font-size: 2.8rem
+			margin: 64px 0 24px -32px
+			border-left: 8px solid #10D56C
+			padding-left: 32px
+		h6
+			font-size: 1rem
+			
+@media screen and (max-width: 767px)
+	.myblogtext
+		padding: 24px
+		p
+			font-size: 1.08rem
+		blockquote
+			padding-left: 24px
+		h4
+			font-size: 2.8rem
+			margin: 64px 0 24px -24px
+			border-left: 8px solid #10D56C
+			padding-left: 24px
+		h6
+			font-size: 1rem
+
+@media screen and (max-width: 575px)
+	.myblogtext
+		padding: 24px
+		h4
+			font-size: 2.3rem
+			

@@ -1,21 +1,12 @@
 <script lang="ts">
 import '$lib/styles/prism.css'
-import { fly } from 'svelte/transition'
-import GrandContainer from '$lib/components/globals/GrandContainer.svelte'
 import Documentation from '$lib/components/docs/Documentation.svelte'
 import Animation from '$lib/components/docs/Animation.svelte'
 import General from '$lib/components/docs/General.svelte'
 import PostGre from '$lib/components/docs/PostGre.svelte'
 import Supabase from '$lib/components/docs/Supabase.svelte'
 import Sveltecode from '$lib/components/docs/Sveltecode.svelte'
-import Documentation2 from '$lib/components/docs/Documentation.svelte'
-import Animation2 from '$lib/components/docs/Animation.svelte'
-import General2 from '$lib/components/docs/General.svelte'
-import PostGre2 from '$lib/components/docs/PostGre.svelte'
-import Supabase2 from '$lib/components/docs/Supabase.svelte'
-import Sveltecode2 from '$lib/components/docs/Sveltecode.svelte'
 import Codes from '$lib/components/docs/Codes.svelte'
-import Codes2 from '$lib/components/docs/Codes.svelte'
 
 let isCat1 = false
 let isCat2 = false

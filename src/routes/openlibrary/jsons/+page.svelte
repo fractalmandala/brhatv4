@@ -79,13 +79,3 @@ function toggleClose(){
 		</blockquote>
 	</div>
 </div>
-
-<style>
-.b1 { background: #d7d7d7; min-height: 100vh;}
-.b2 { background: #FFFFFF; min-height: 100vh;}
-.b3 { background: #efefef; height: 100vh;}
-
-.hei100 { min-height: 100vh;}
-
-
-</style>

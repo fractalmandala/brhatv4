@@ -30,7 +30,7 @@ function toggleHeight(){
 </div>
 
 <style>
-.cols4, .cols3, .cols2, .cols1 {
+.cols4, .cols3 {
 	min-height: 400px
 }
 </style>

@@ -6,30 +6,42 @@
 </script>
 
 
-<div class="gp1">
-	<h3>{data.title}</h3>
-	<div class="document">
-		<svelte:component this={data.content} />
+<div class="boxr wrap">
+	<div class="ww2 noimg">
+	<h2>{data.title}</h2>
+	</div>
+	<div class="ww2 img">
+		<img src={data.image} alt={data.title} />
 	</div>
 </div>
+<div class="myblogtext">
+<svelte:component this={data.content} />
+</div>
 
-<style>
-h3 { border-bottom: 1px solid #d7d7d7; padding-bottom: 16px; color: #474747;padding-top: 32px; margin-bottom: 32px;}
+<style lang='sass'>
+.ww2
+	height: 80vh
+	justify-content: center
+	img
+		object-fit: cover
+		height: 100%
 
-@media screen and (max-width:899px) {
-	h3 {
-		font-size: 48px
-	}
-}
-@media screen and (max-width:767px) {
-	h3 {
-		font-size: 48px
-	}
-}
-@media screen and (max-width:575px) {
-	h3 {
-		font-size: 40px
-	}
-}
+@media screen and (max-width: 575px)
+	.img
+		order: 1
+		height: 40vh
+		margin-top: 40px
+	.noimg
+		order: 2
+		justify-content: flex-start
+		padding: 0 24px
+		width: 100%
+		height: max-content
+		h2
+			margin-top: 24px
+			font-size: 3rem !important
+
 
 </style>
+
+

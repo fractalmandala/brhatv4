@@ -12,9 +12,7 @@ import HeaderGen from '$lib/components/headers/HeaderGen.svelte'
 import { dev } from '$app/environment'
 import { inject } from '@vercel/analytics'
 import Lenis from '@studio-freight/lenis'
-import Footer from '$lib/components/globals/FooterGlobal.svelte'
-import Animations from "textify.js"
-import '$lib/styles/textify.css'
+import FooterGen from '$lib/components/globals/FooterGen.svelte'
 import '$lib/styles/typographyglobal.sass'
 import '$lib/styles/reader.sass'
 let isHelper = false
@@ -62,62 +60,6 @@ onMount(async() => {
 		requestAnimationFrame(raf)	
 	}
 	requestAnimationFrame(raf)
-	const { Textify, TextifyTitle } = Animations
-	new Textify ({
-		duration: 400,
-		stagger: 30,
-		once: false,
-		reveal: true,
-		fade: false,
-		top: false,
-		right: true,
-		transformOrigin: "center left"
-	})
-	new Textify ({
-		selector: ".link-heads h5",
-		duration: 400,
-		stagger: 200,
-		once: false,
-		reveal: true,
-		right: true
-	})
-	new Textify ({
-		selector: ".txt22",
-	  duration: 200,
-	  stagger: 100,
-	  once: false,
-	  reveal: true,
-	  scale: 0,
-		left: true,
-	})
-	new Textify ({
-		selector: ".txt h2",
-	  duration: 1000,
-	  stagger: 50,
-	  once: false,
-	  scale: 0,
-	  fade: true,
-	  fadeDuration: 500,
-	  ease: "elasticInOut"
-	})
-	new Textify ({
-		selector: ".lining",
-		duration: 700,
-		stagger: 100,
-		delay: 90,
-		once: false,
-		reveal: true
-	})
-	new TextifyTitle({
-	  selector: ".tt5",
-	  duration: 1000,
-	  stagger: 50,
-	  once: false,
-	  scale: 0,
-	  fade: true,
-	  fadeDuration: 500,
-	  ease: "elasticInOut"
-	});
 })
 </script>
 	
@@ -140,7 +82,7 @@ onMount(async() => {
 		</div>
 		{/if}
 </div>	
-<Footer></Footer>
+<FooterGen></FooterGen>
 
 <style lang="sass">
 
@@ -161,7 +103,7 @@ onMount(async() => {
 	svg
 		cursor: pointer
 	@media screen and (min-width: 900px)
-		bottom: 32px
+		bottom: 48px
 		right: 32px
 		svg
 			height: 32px

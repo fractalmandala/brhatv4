@@ -105,7 +105,7 @@ export async function Geology(){
 	<div class="box-r bread">
 		<cite class="upper wbold grey"><a href="/openlibrary">Open Library</a></cite>
 	</div>
-	<h3 class="lining" data-textify>The Āryan Issue</h3>
+	<h3 class="lining">The Āryan Issue</h3>
 	<h5 class="w400 wide75">
 		A dynamic, continuously growing collection of articles, essays, papers and findings relevant to the AI/M/T issue from all disciplines.
 	</h5>

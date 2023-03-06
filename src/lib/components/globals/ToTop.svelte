@@ -11,12 +11,12 @@ button { transition: all 0.14s var(--cube2); transform-origin: center center; ba
 button:hover { background-image: url('/images/icons/go-up-red.png'); transform: scale(0.9);}
 
 @media screen and (min-width: 768px) {
-	button { width: 24px; height: 24px; }
-	.to-top { margin: 0; height: 72px; }
+	button { width: 24px; height: 64px; }
+	.to-top { margin: 0; height: 64px; }
 }
 
 @media screen and (max-width: 767px) {
-	button { width: 24px; height: 24px;}
-	.to-top { margin: 0 0 0 0; }
+	button { width: 24px; height: 56px;}
+	.to-top { margin: 0 0 0 0; height: 56px; display: flex; justify-content: center; align-items: center; }
 }
 </style>

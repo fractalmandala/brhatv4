@@ -1,9 +1,3 @@
-<script>
-	import AllBrands from '$lib/components/globals/AllBrands.svelte';
-	import { flip } from 'svelte/animate';
-	import { quintOut } from 'svelte/easing';
-</script>
-
 <div class="c-c-c-c">
 	<svg
 		width="458"

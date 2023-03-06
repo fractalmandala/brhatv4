@@ -50,7 +50,7 @@ function shareOnWhatsApp(url, text) {
 	<div class="pixel-line"></div>
 	<div class="stayingstrip">
 		<div class="postinfo in-row">
-			<p class="soft" data-textify>{data.author}</p>
+			<p class="soft">{data.author}</p>
 		</div>
 		<div class="thinbar in-row">
 			<div class="flexbox-c icon-box" id="icon-twitter" on:click={() => window.open(shareOnTwitter("https://example.com", "Check out this page!"))} on:keydown={() => window.open(shareOnTwitter("https://example.com", "Check out this page!"))}>
@@ -77,7 +77,7 @@ function shareOnWhatsApp(url, text) {
 	<div class="flexbox-r tray">
 		<div class="categorypop">
 			<p class="home wbold upper grey"><a href="/dhiti">Dhīti</a></p>
-			<p class="categorylabel w600 grey2 upper" data-textify>{data.category}</p>
+			<p class="categorylabel w600 grey2 upper">{data.category}</p>
 		</div>
 		<div class="dhiti-post play">
 			<svelte:component this={data.content} />
