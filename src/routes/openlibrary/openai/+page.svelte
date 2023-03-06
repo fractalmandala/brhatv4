@@ -1,36 +1,34 @@
-<script>
-let toggledHeight = false
-function toggleHeight(){
-	toggledHeight = !toggledHeight
-}
+<script lang="ts">
+import { onMount } from 'svelte';
+import Form from '$lib/components/globals/Form.svelte'
+import { fade } from 'svelte/transition';
+
+let loading = false
+let error = ''
+let endStream = false
+let makeRecommendation = false
+let searchResponse = ''
+let recommendation = []
+
+$: {
+		if (searchResponse) {
+			let lastLength = recommendation.length
+			let x = searchResponse?.split('\n')
+			recommendations = x.map((d, i) => {
+				if ((x.length - 1 > i || endStream) && d !== '') {
+					const [, title, description] = d.match(/\d\.\s*(.*?):\s*(.*)/)
+					return { title, description }
+				} else {
+					return d
+				}
+			});
+			if (recommendations.length > lastLength) {
+				animateScroll.scrollToBottom({ offset: 200, duration: 1500 });
+			}
+		}
+	}
+
+let cinemaType = 'tv'
+l
+
 </script>
-
-<div class="full-page">
-	<div class="no-side">
-
-	</div>
-	<div class="wid-side">
-		<div class="side-bar bdr" class:toggledHeight={toggledHeight}>
-			<div class="in-side"></div>
-		</div>
-		<div class="main-page">
-			<div class="gp4">
-				<div class="cols4 bdr"></div>
-				<div class="cols4 bdr"></div>
-				<div class="cols4 bdr"></div>
-				<div class="cols4 bdr"></div>
-			</div>
-			<div class="gp3">
-				<div class="cols3 bdr"></div>
-				<div class="cols3 bdr"></div>
-				<div class="cols3 bdr"></div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<style>
-.cols4, .cols3 {
-	min-height: 400px
-}
-</style>
