@@ -9,19 +9,19 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 			<img id="logoimage" src="/images/brhatlogos/horizontalwhite.png" alt="brhatlogo" /></a>
 			<div class="boxr" id="icons-row">
 				<div class="boxc icon-box" id="icon-twitter">
-					<a href="https://twitter.com/brhat_in" target="_blank" rel="noreferrer"><img src="/images/icons/twitter-red.png" alt="twitter icon" /></a>
+					<a href="https://twitter.com/brhat_in" target="_blank" rel="noreferrer"><img class="socialicon" src="/images/icons/twitter-red.png" alt="twitter icon" /></a>
 				</div>
 				<div class="boxc icon-box" id="icon-facebook">
-					<a href="https://www.facebook.com/brhat.in" target="_blank" rel="noreferrer"><img src="/images/icons/facebook-red.png" alt="facebook icon" /></a>
+					<a href="https://www.facebook.com/brhat.in" target="_blank" rel="noreferrer"><img class="socialicon" src="/images/icons/facebook-red.png" alt="facebook icon" /></a>
 				</div>
 				<div class="boxc icon-box" id="icon-youtube">
-					<a href="https://www.youtube.com/@brhat" target="_blank" rel="noreferrer"><img src="/images/icons/youtube-red.png" alt="youtube icon" /></a>
+					<a href="https://www.youtube.com/@brhat" target="_blank" rel="noreferrer"><img class="socialicon" src="/images/icons/youtube-red.png" alt="youtube icon" /></a>
 				</div>
 				<div class="boxc icon-box" id="icon-linkedin">
-					<a href="https://www.linkedin.com/company/brhat" target="_blank" rel="noreferrer"><img src="/images/icons/linkedin-red.png" alt="linkedin icon" /></a>
+					<a href="https://www.linkedin.com/company/brhat" target="_blank" rel="noreferrer"><img class="socialicon" src="/images/icons/linkedin-red.png" alt="linkedin icon" /></a>
 				</div>
 				<div class="boxc icon-box" id="icon-instagram">
-					<a href="https://www.instagram.com/brhat_in/" target="_blank" rel="noreferrer"><img src="/images/icons/instagram-red.png" alt="instagram icon" /></a>
+					<a href="https://www.instagram.com/brhat_in/" target="_blank" rel="noreferrer"><img class="socialicon" src="/images/icons/instagram-red.png" alt="instagram icon" /></a>
 				</div>
 			</div>
 		</div>
@@ -85,6 +85,12 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 </div>
 
 <style lang="sass">
+
+#icon-twitter a, #icon-facebook a, #icon-youtube a, #icon-linkedin a, #icon-instagram a
+	img
+		object-fit: contain
+		width: 24px
+		height: 24px
 
 .ww2-xr
 	.ww4
