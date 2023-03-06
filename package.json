@@ -64,6 +64,7 @@
 		"svelte-inview": "^3.0.2",
 		"svelte-locomotive-scroll": "^0.0.5",
 		"svelte-moveable": "^0.35.1",
+		"svelte-scrollto": "^0.2.0",
 		"swiper": "^8.4.7",
 		"textify.js": "^2.4.3",
 		"tippy.js": "^6.3.7",

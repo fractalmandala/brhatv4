@@ -4,6 +4,7 @@
 	import Brands from '$lib/components/globals/AllBrands.svelte'
 	import BrhatUpdates from '$lib/components/pagecomps/BrhatUpdates.svelte'
 	import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte';
+	import VideoBox from '$lib/components/pagecomps/MrdVids.svelte';
 	import BrhadMrdanga from '$lib/components/vidplaylists/BrhadMrdanga.svelte';
 	import HindiKavita from '$lib/components/vidplaylists/HindiKavita.svelte';
 	import IKSVids from '$lib/components/vidplaylists/IKSVids.svelte';
@@ -53,7 +54,7 @@
 		</div>
 
 		<div class="traybox wrap x2">
-			<div class="ww4 card" use:reveal={{ transition: "slide", x: 150, blur: 1, easing: "easeInCirc"}}>
+			<div class="ww4 card">
 				<h6 class="strong">
 					Civilization is Culture in Action
 				</h6>
@@ -61,7 +62,7 @@
 					The civilizational moment needs rooting in Dharma - of this there is no doubt. Thus a core part of our work is culture creatives that draw from the deep pool of Dhārmika heritage.
 				</p>
 			</div>
-			<div class="ww4 card" use:reveal={{ transition: "slide", x: 150, delay: 0, blur: 1, easing: "easeInCirc"}}>
+			<div class="ww4 card">
 				<h6 class="strong">
 					It Needs Culture-Compatible Policy
 				</h6>
@@ -69,7 +70,7 @@
 					Radical reorientations are needed in education and ecology. To this end, our focus will be on generating policy currency for culture through frameworks, curriculum and more.
 				</p>
 			</div>
-			<div class="ww4 card" use:reveal={{ transition: "slide", x: 150, delay: 0, blur: 1, easing: "easeInCirc"}}>
+			<div class="ww4 card">
 				<h6 class="strong">
 					The Work is Inter-Generational
 				</h6>
@@ -77,7 +78,7 @@
 					It needs leadership with cultural-cognition to carry the Agni. This cognition needs to permeate even brand and organisation - essential quarters for the overton window shift.
 				</p>
 			</div>
-			<div class="ww4 endcol" use:reveal={{ transition: "slide", x: 150, delay: 0, blur: 1, easing: "easeInCirc"}}>
+			<div class="ww4 endcol">
 				<button class="mainbutton"><a href="/about">Know More</a></button>
 			</div>
 		</div>
