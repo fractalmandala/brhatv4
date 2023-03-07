@@ -29,7 +29,7 @@ async function getBooks() {
 		.from('brhat-openlibrary')
 		.select()
 		.order('Sno', { ascending: false })
-		.limit(8);
+		.limit(15);
 	if (error) throw new Error(error.message);
 	return data;
 }
@@ -79,19 +79,18 @@ async function getOther() {
 }
 </script>
 
-<div class="container pad-a">
-
-	<!-- section containing initial intro information about brhat -->
-  <div class="intro section-pads">
-    <div class="h1">
-			<h1>Bṛhat is a <br><span class="soft">Culture Engine</span></h1>
+<div class="pad-a">
+	<div class="section-pads ishfull100 container">
+  	<div class="header">
+		<h1>Bṛhat is a <br><span class="soft">Culture Engine</span></h1>
+		</div>
+  	<div class="para">
 			<h6 class="wide75">
 				To power creatives, research and design rooted in the Indian civilizational consciousness. We
 				convert individual, institutional and collective intent into action, across 3 dimensions.
 			</h6>
 		</div>
-    <div class="col3">
-
+  	<div class="cols4">
 			<div class="ww1 card">
 				<h6 class="strong">
 					Civilization is Culture in Action
@@ -120,16 +119,38 @@ async function getOther() {
 				<button class="mainbutton"><a href="/about">Know More</a></button>
 			</div>
 		</div>
-  </div>
+	</div>
 
+<div class="section-pads ishfull100 container-2">
+  <div class="header-2 the-title">
+		<h2><span class="soft">New </span>and Recent</h2>
+	</div>
+  <div class="cols-3">	
+		{#await updateOne()}
+			<small>.</small>
+			{:then data}
+				{#each data as item}
+					<div class="boxc-r3 card soft">
+						<img src={item.image} alt={item.sequence} />
+						<div class="boxc">
+							<h6>{item.heading}</h6>
+							<p>{item.text.slice(0,200)}</p>
+							<button class="cardbutton"><a href={item.link} target="_blank" rel="noreferrer">{item.buttontext}</a></button>
+						</div>
+					</div>
+				{/each}
+			{:catch error}
+			<pre>{error}</pre>
+			{/await}
+	</div>
+</div>
 
-	<!-- brhat videos gallery -->
-  <div class="sec2 section-pads">
-    <div class="h6 the-title">
-			<h2>Explore <span class="red"> Visual Content</span></h2>
-		</div>
-		<div class="h6-2">
-				<h6 class="wide75">
+<div class="section-pads ishfull100 container-3">
+  <div class="header-3 the-title">
+		<h2>Explore <span class="red"> Visual Content</span></h2>
+	</div>
+  <div class="para-1">
+		<h6 class="wide75">
 				Our visual content ranges from explorations of rasa and bhāva, to articulations of an
 				IKS-implementation strategy for modern India. Select playlists below, or visit our <a
 					href="https://youtube.com/@brhat"
@@ -145,8 +166,8 @@ async function getOther() {
 				<option class="w500" value="list-3" on:click={() => switchList('list-3')} on:keydown={() => switchList('list-3')}>IKS</option>
 				<option class="w500" value="list-4" on:click={() => switchList('list-4')} on:keydown={() => switchList('list-4')}>Others</option>
 			</select></button>
-		</div>
-    <div class="col3-2">
+	</div>
+  <div class="cols-4-2">
 			{#if currentList === 'list-1'}
 				{#await getMrdanga()}
 				<small>...</small>
@@ -227,46 +248,20 @@ async function getOther() {
 				{:catch error}
 				<pre>{error}</pre>
 				{/await}
-			{/if}			
-		</div>
-  </div>
+			{/if}		
+	</div>
+</div>
 
-
-	<!-- updates, new, recent events area-->
-  <div class="sec3">
-    <div class="h6-3 the-title">
-			<h2><span class="soft">New </span>and Recent</h2>
-		</div>
-    <div class="col3-3">
-		{#await updateOne()}
-			<small>.</small>
-			{:then data}
-				{#each data as item}
-					<div class="boxc-r3 card soft pad">
-						<img src={item.image} alt={item.sequence} />
-						<div class="boxc">
-							<h6>{item.heading}</h6>
-							<p>{item.text.slice(0,200)}</p>
-							<button class="cardbutton"><a href={item.link} target="_blank" rel="noreferrer">{item.buttontext}</a></button>
-						</div>
-					</div>
-				{/each}
-			{:catch error}
-			<pre>{error}</pre>
-			{/await}
-		</div>
-  </div>
-
-  <div class="sec4">
-    <div class="h6-4">
+<div class="section-pads container-4">
+  <div class="header-4 the-title">
 			<h2>Essays at <span class="soft"> Dhīti</span></h2>
-		</div>
-    <div class="posts">
+	</div>
+  <div class="cols-6">
 			{#await dhiti()}
 			<small>...</small>
 			{:then data}
-				{#each data as item, i}
-					<div class="ww1 card pad">
+				{#each data as item}
+					<div class="boxc card">
 						<img
 							src={item.image}
 							alt={item.title}/>
@@ -281,18 +276,14 @@ async function getOther() {
 			{:catch error}
 			<pre>{error}</pre>
 			{/await}
-		</div>
-  </div>
-  <div class="sec5">
-    <div class="h6-5">
-				<h2>Bṛhat <span class="soft"> Open</span> Library</h2>
-					<h6 class="wide75">
-				An online repository of books, papers, texts and scriptures, made available under CC0 1.0
-				License. Gathering point for digitized scripture, Aryan Invasion/Migration, civilizational
-				literature and more.
-			</h6>
-		</div>
-    <div class="books">
+	</div>
+</div>
+
+<div class="section-pads container-5">
+  <div class="the-title header-5">
+		<h2>Bṛhat <span class="soft"> Open</span> Library</h2>
+	</div>
+  <div class="cols-15">
 			{#await getBooks()}
 			<small>...</small>
 			{:then data}
@@ -306,303 +297,28 @@ async function getOther() {
 			{:catch error}
 			<pre>{error}</pre>
 			{/await}	
-		</div>
-  </div>
+	</div>
+</div>
 </div>
 
 <style>
 
-.h1 { grid-area: h1; }
 
+.header { align-items: center; }
 
-.h6 { grid-area: h6; }
+.para { align-items: center; }
 
-.h6-2 { grid-area: h6-2; }
-
-.sec3 {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.8fr 1.3fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "h6-3"
-    "col3-3";
-  grid-area: sec3;
-}
-
-.h6-3 { grid-area: h6-3; }
-
-.col3-3 {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . .";
-  grid-area: col3-3;
-}
-
-.sec4 {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.6fr 1.2fr 1.2fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "h6-4"
-    "posts"
-    "posts";
-  grid-area: sec4;
-}
-
-.h6-4 { grid-area: h6-4; }
-
-.posts {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . ."
-    ". . .";
-  grid-area: posts;
-}
-
-.sec5 {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.7fr 1.3fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "h6-5"
-    "books"
-    "books";
-  grid-area: sec5;
-}
-
-.h6-5 { grid-area: h6-5; }
-
-.books {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . ."
-    ". . .";
-  grid-area: books;
-}
-
-@media screen and (min-width: 900px) {
-.intro, .sec2, .sec3, .sec5 {
-	min-height: 100vh;
-}
-
-.sec4 {
-	min-height: 100vh;
-}
-
-.container {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 100vh 100vh 100vh 100vh 100vh;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "intro"
-    "sec2"
-    "sec3"
-    "sec4"
-    "sec5";
-	height: max-content;
-}
-
-.intro {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1.8fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "h1"
-    "col3";
-  grid-area: intro;
-}
-
-.col3 {  
-	display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 40px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . . .";
-  grid-area: col3;
-}
-
-.sec2 {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.3fr 0.7fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "h6"
-		"h6-2"
-    "col3-2";
-  grid-area: sec2;
-}
-
-	.col3-2 {  
-		display: grid;
-  	grid-template-columns: 1fr 1fr 1fr 1fr;
-  	grid-template-rows: 1fr;
-  	gap: 0px 32px;
-  	grid-auto-flow: row;
-  	grid-template-areas:
-  	  ". . .";
-  	grid-area: col3-2;
+.container-5 { padding-bottom: 64px;}
+@media screen and (max-width: 899px) and (min-width: 576px) {
+	.cols-3 .boxc-r3 img {
+		object-fit: cover;
+		width: 216px;
+		height: 216px;
 	}
+	.cols-3 .boxc-r3 { gap: 32px; text-align: left; }
+	.cols-3 .boxc-r3 .boxc { align-items: flex-start; justify-content: flex-start;}
+	.cols-3 .boxc-r3 .boxc .cardbutton { width: 40%; margin-right: 60%;}
 
 }
-
-@media screen and (max-width: 899px) and (min-width: 768px) {
-
-.intro {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1.8fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "h1"
-    "col3";
-  grid-area: intro;
-	height: 60vh;
-}
-	.col3 {  
-	display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: max-content max-content;
-  gap: 12px 32px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . "
-		". .";
-  grid-area: col3;
-}
-
-.sec2 {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: max-content max-content max-content;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "h6"
-		"h6-2"
-    "col3-2";
-  grid-area: sec2;
-	height: 100%;
-	}
-
-	.col3-2 {  
-		display: grid;
-  	grid-template-columns: 1fr 1fr;
-  	grid-template-rows: 1fr 1fr;
-  	gap: 12px 32px;
-  	grid-auto-flow: row;
-  	grid-template-areas:
-  	  ". ."
-			". .";
-  	grid-area: col3-2;
-	}
-
-	
-}
-
-
-@media screen and (max-width: 767px) and (min-width: 576px) {
-
-.intro {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1.8fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "h1"
-    "col3";
-  grid-area: intro;
-	height: 60vh;
-}
-	.col3 {  
-	display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: max-content max-content;
-  gap: 12px 32px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . "
-		". .";
-  grid-area: col3;
-}
-.sec2 {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.3fr 0.7fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "h6"
-		"h6-2"
-    "col3-2";
-  grid-area: sec2;
-	}
-
-	.sec2 {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: max-content max-content max-content;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "h6"
-		"h6-2"
-    "col3-2";
-  grid-area: sec2;
-	height: 80vh;
-	}
-}
-
-@media screen and (max-width: 575px) {
-	.intro {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.2fr 2fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "h1"
-    "col3";
-  grid-area: intro;
-}
-	.col3 {  
-	display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: max-content max-content max-content max-content;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "."
-		"."
-		"."
-		".";
-  grid-area: col3;
-}
-
-.sec2 {  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.3fr 0.7fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "h6"
-		"h6-2"
-    "col3-2";
-  grid-area: sec2;
-}
-}
-
 
 </style>

@@ -12,7 +12,7 @@ import HeaderGen from '$lib/components/headers/HeaderGen.svelte'
 import { dev } from '$app/environment'
 import { inject } from '@vercel/analytics'
 import Lenis from '@studio-freight/lenis'
-import FooterGen from '$lib/components/globals/FooterGen.svelte'
+import FooterGen from '$lib/components/globals/FooterGlobal.svelte'
 import '$lib/styles/typographyglobal.sass'
 import '$lib/styles/reader.sass'
 let isHelper = false

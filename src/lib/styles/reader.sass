@@ -151,9 +151,9 @@ a
 
 .boxc-r3
 	display: flex
-	@media screen and (min-width: 768px)
+	@media screen and (min-width: 900px)
 		flex-direction: column
-	@media screen and (max-width: 767px) and (min-width: 576px)
+	@media screen and (max-width: 899px) and (min-width: 576px)
 		flex-direction: row
 		img
 			width: 32%
@@ -537,7 +537,6 @@ a
 	@media screen and (min-width: 768px)
 		padding: 8px 20px
 		margin-bottom: 32px
-		margin-top: 20px
 		font-size: 15px
 		font-weight: 500
 		max-width: max-content
@@ -545,6 +544,7 @@ a
 	@media screen and (max-width: 767px)
 		padding: 6px 8px
 		margin-bottom: 24px
+		margin-top: 32px
 		font-size: 15px
 		max-width: 144px
 		min-width: 104px
@@ -1565,14 +1565,11 @@ h4.ptt40
 	padding-top: 120px
 
 .pad-a
-	color: #575757
 	p, small, cite, h6, h5, h4, h3, h2
 		margin-top: 6px
 		margin-bottom: 1.2rem
 	p, small
 		line-height: 1.45
-	h6
-		color: #696969
 	h1
 		font-weight: 600
 	h3
@@ -1584,8 +1581,6 @@ h4.ptt40
 	h5.mtop
 		margin-top: 32px
 	@media screen and (max-width: 575px)
-		padding-left: 24px
-		padding-right: 24px
 		small
 			font-size: 0.85rem
 		cite
@@ -1597,7 +1592,6 @@ h4.ptt40
 			text-style: italic
 		p
 			font-size: 1rem
-			color: #878787
 		h6
 			font-size: 1.2rem
 			letter-spacing: -0.2px
@@ -1616,11 +1610,9 @@ h4.ptt40
 		h2
 			font-size: 2.4rem
 		h1
-			font-size: 3.6rem
+			font-size: 3.5rem
 			letter-spacing: -2px
 	@media screen and (max-width: 767px) and (min-width: 576px)
-		padding-left: 32px
-		padding-right: 32px
 		small
 			font-size: 0.85rem
 		cite
@@ -1649,14 +1641,11 @@ h4.ptt40
 		h2
 			font-size: 2.8rem
 		h1
-			font-size: 4.2rem
+			font-size: 5.6rem
 			letter-spacing: -1.75px
 	@media screen and (max-width: 899px) and (min-width: 768px)
-		padding-left: 64px
-		padding-right: 64px
 		p
 			font-size: 1rem
-			color: #878787
 		small
 			font-size: 0.8rem
 		cite
@@ -1681,13 +1670,11 @@ h4.ptt40
 		h2
 			font-size: 3.6rem
 		h1
-			font-size: 5.6rem
+			font-size: 6.4rem
 			letter-spacing: -3px
 	@media screen and (min-width: 900px)
-		padding: 120px 80px
 		p
 			font-size: 1rem
-			color: #878787
 		small
 			font-size: 0.85rem
 		cite
@@ -1951,6 +1938,7 @@ h4.ptt40
 	@media screen and (min-width: 900px)
 		img
 			height: 200px
+			margin-bottom: 16px
 		iframe
 			height: 160px
 		video
@@ -1958,7 +1946,7 @@ h4.ptt40
 		h6
 			font-size: 1.08rem
 			font-weight: 600
-			margin: 16px 0 8px 0
+			margin: 0 0 8px 0
 		h5
 			font-size: 1.6rem
 			margin: 0
@@ -1978,6 +1966,7 @@ h4.ptt40
 	@media screen and (max-width: 899px) and (min-width: 768px)
 		img
 			height: 144px
+			margin-bottom: 16px
 		iframe
 			height: 120px
 		video
@@ -1985,7 +1974,7 @@ h4.ptt40
 		h6
 			font-size: 1.08rem
 			font-weight: 600
-			margin: 16px 0 8px 0
+			margin: 0 0 8px 0
 		p, pre
 			font-size: 0.825rem
 		cite
@@ -1996,6 +1985,7 @@ h4.ptt40
 	@media screen and (max-width: 767px) and (min-width: 576px)
 		img
 			height: 160px
+			margin-bottom: 16px
 		iframe
 			height: 144px
 		video
@@ -2003,7 +1993,7 @@ h4.ptt40
 		h6
 			font-size: 1.06rem
 			font-weight: 600
-			margin: 12px 0 8px 0
+			margin: 0 0 8px 0
 		p, pre
 			font-size: 0.8rem
 			margin-top: 2px
@@ -2015,6 +2005,7 @@ h4.ptt40
 	@media screen and (max-width: 575px)
 		img
 			height: 220px
+			margin-bottom: 16px
 		.m-2
 			margin-bottom: 16px
 		iframe
@@ -2024,7 +2015,7 @@ h4.ptt40
 		h6
 			font-size: 1.04rem
 			font-weight: 600
-			margin: 24px 0 8px 0
+			margin: 0 0 8px 0
 		p, pre
 			font-size: 0.8rem
 			margin-bottom: 16px
@@ -2453,4 +2444,349 @@ h4.ptt40
 		padding: 24px
 		h4
 			font-size: 2.3rem
-			
+
+.container
+	display: grid
+	grid-auto-flow: row
+	.header
+		display: inline-grid
+		grid-area: header
+	.para
+		display: inline-grid
+		grid-area: para
+
+.cols4
+	display: grid
+	grid-auto-flow: row
+	grid-area: cols4
+
+.container-2
+	display: grid
+	grid-auto-flow: row
+	.header-2
+		grid-area: header-2
+
+.cols-3
+	display: grid
+	grid-area: cols-3
+	grid-auto-flow: row
+
+.container-3
+	display: grid
+	grid-auto-flow: column
+	grid-template-areas: "header-3" "para-1" "cols-4-2"
+	.header-3
+		grid-area: header-3
+	.para-1
+		grid-area: para-1
+
+.cols-4-2
+	display: grid
+	grid-auto-flow: row
+	grid-area: cols-4-2
+
+.container-4
+	display: grid
+	grid-auto-flow: row
+	grid-template-areas: "header-4" "cols-6"
+	.header-4
+		grid-area: header-4
+
+.cols-6
+	display: grid
+	grid-auto-flow: row
+	grid-area: cols-6
+
+.container-5
+	display: grid
+	grid-auto-flow: row
+	grid-template-areas: "header-5" "cols-15"
+	.header-5
+		grid-area: header-5
+
+.cols-15
+	display: grid
+	grid-auto-flow: column
+	grid-area: cols-15
+
+@media screen and (min-width: 900px)
+
+	.section-pads
+		padding: 32px 80px
+
+	.ishfull100
+		height: 100vh
+
+	.container 
+		display: grid 
+		grid-template-columns: 1fr 
+		grid-template-rows: auto auto auto 
+		gap: 0px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "header" "para" "cols4"
+		
+	.cols4 
+		display: grid 
+		grid-template-columns: 1fr 1fr 1fr 1fr 
+		grid-template-rows: 1fr 
+		gap: 0px 32px 
+		grid-auto-flow: row 
+		grid-template-areas: ". . . ." 
+		grid-area: cols4 
+
+	.container-2
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto
+		gap: 0px 0px
+		grid-template-areas: "header-2" "cols-3"
+
+	.cols-3
+		grid-template-columns: 1fr 1fr 1fr
+		grid-template-rows: 1fr
+		gap: 0px 32px
+		grid-template-areas: ". . ."
+
+	.container-3
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto auto
+		gap: 0px 0px
+
+	.cols-4-2
+		grid-template-columns: 1fr 1fr 1fr 1fr
+		grid-template-rows: 1fr
+		gap: 0px 32px
+		grid-template-areas: ". . . ."
+
+	.container-4
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto
+		gap: 0px 0px
+
+	.cols-6
+		grid-template-columns: 1fr 1fr 1fr
+		grid-template-rows: 1fr 1fr
+		gap: 32px 32px
+		grid-template-areas:	". . ." ". . ."
+
+	.container-5
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto
+		gap: 0px 0px
+
+	.cols-15
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+		grid-template-rows: 1fr 1fr 1fr
+		gap: 8px 32px
+		grid-template-areas: ". . . . ." ". . . . ." ". . . . ."
+
+
+@media screen and (max-width: 899px) and (min-width: 768px)
+
+	.section-pads
+		padding: 12px 48px
+
+	.ishfull100
+		height: 100vh
+
+	.container 
+		display: grid 
+		grid-template-columns: 1fr 
+		grid-template-rows: max-content max-content max-content 
+		gap: 0px 0px 
+		grid-auto-flow: column 
+		grid-template-areas: "header" "para" "cols4"
+		
+	.cols4 
+		display: grid 
+		grid-template-columns: 1fr 1fr 1fr 1fr 
+		grid-template-rows: 1fr 
+		gap: 0px 32px 
+		grid-auto-flow: row 
+		grid-template-areas: ". . . ." 
+		grid-area: cols4 
+
+	.container-2
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto
+		gap: 0px 0px
+		grid-template-areas: "header-2" "cols-3"
+
+	.cols-3
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto auto
+		gap: 32px 0px
+		grid-template-areas: "." "." "."
+
+	.container-3
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto auto
+		gap: 0px 0px
+
+	.cols-4-2
+		grid-template-columns: 1fr 1fr 1fr 1fr
+		grid-template-rows: 1fr
+		gap: 0px 32px
+		grid-template-areas: ". . . ."
+
+	.container-4
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto
+		gap: 0px 0px
+
+	.cols-6
+		grid-template-columns: 1fr 1fr 1fr
+		grid-template-rows: 1fr 1fr
+		gap: 32px 32px
+		grid-template-areas:	". . ." ". . ."
+
+	.container-5
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto
+		gap: 0px 0px
+
+	.cols-15
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+		grid-template-rows: 1fr 1fr 1fr
+		gap: 8px 32px
+		grid-template-areas: ". . . . ." ". . . . ." ". . . . ."
+
+
+@media screen and (max-width: 767px) and (min-width: 576px)
+
+	.section-pads
+		padding: 12px 48px
+
+	.ishfull100
+		height: 100%
+
+	.container 
+		display: grid 
+		grid-template-columns: 1fr 
+		grid-template-rows: auto auto auto 
+		gap: 0px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "header" "para" "cols4"
+		
+	.cols4 
+		display: grid 
+		grid-template-columns: 1fr 1fr 
+		grid-template-rows: 50% 50%
+		gap: 0px 24px 
+		grid-auto-flow: row 
+		grid-template-areas: ". ." ". ." 
+		grid-area: cols4 
+
+	.container-2
+		grid-template-columns: 1fr
+		grid-template-rows: 20% 80%
+		gap: 0px 0px
+		grid-template-areas: "header-2" "cols-3"
+
+	.cols-3
+		grid-template-columns: 1fr
+		grid-template-rows: 1fr 1fr 1fr
+		gap: 8px 0px
+		grid-template-areas: "." "." "."
+
+	.container-3
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto auto
+		gap: 0px 0px
+
+	.cols-4-2
+		grid-template-columns: 1fr 1fr
+		grid-template-rows: auto auto
+		gap: 12px 24px
+		grid-template-areas: ". ." ". ."
+
+	.container-4
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto
+		gap: 0px 0px
+
+	.cols-6
+		grid-template-columns: 1fr 1fr
+		grid-template-rows: 1fr 1fr 1fr
+		gap: 24px 24px
+		grid-template-areas:	". ." ". ." ". ."
+
+	.container-5
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto
+		gap: 0px 0px
+
+	.cols-15
+		grid-template-columns: 1fr 1fr 1fr
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr
+		gap: 8px 24px
+		grid-template-areas: ". . ." ". . ." ". . ." ". . ." ". . ."
+
+@media screen and (max-width: 575px)
+
+	.section-pads
+		padding: 12px 25px
+
+	.ishfull100
+		height: 100%
+
+	.container 
+		display: grid 
+		grid-template-columns: 1fr 
+		grid-template-rows: auto auto auto
+		gap: 0px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "header" "para" "cols4"
+		
+	.cols4 
+		display: grid 
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto auto auto 
+		gap: 8px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "." "." "." "." 
+		grid-area: cols4 
+
+	.container-2
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto
+		gap: 0px 0px
+		grid-template-areas: "header-2" "cols-3"
+
+	.cols-3
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto auto
+		gap: 8px 0px
+		grid-template-areas: "." "." "."
+
+	.container-3
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto auto
+		gap: 0px 0px
+
+	.cols-4-2
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto auto auto
+		gap: 24px 0px
+		grid-template-areas: "." "." "." "."
+
+	.container-4
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto
+		gap: 0px 0px
+
+	.cols-6
+		grid-template-columns: 1fr
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr
+		gap: 24px 24px
+		grid-template-areas:	"." "." "." "." "." "."
+
+	.container-5
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto
+		gap: 0px 0px
+
+	.cols-15
+		grid-template-columns: 1fr 1fr
+		grid-template-rows: auto auto auto auto auto auto auto auto
+		gap: 0 24px
+		grid-template-areas: ". ." ". ." ". ." ". ." ". ." ". ." ". ."
