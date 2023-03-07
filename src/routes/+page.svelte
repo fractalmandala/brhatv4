@@ -1,13 +1,7 @@
 <script lang="ts">
 import supabase from '$lib/db';
-import { reveal } from 'svelte-reveal';
 import Brands from '$lib/components/globals/AllBrands.svelte'
-import BrhatUpdates from '$lib/components/pagecomps/BrhatUpdates.svelte'
 import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte';
-import BrhadMrdanga from '$lib/components/vidplaylists/BrhadMrdanga.svelte';
-import HindiKavita from '$lib/components/vidplaylists/HindiKavita.svelte';
-import IKSVids from '$lib/components/vidplaylists/IKSVids.svelte';
-import OtherVids from '$lib/components/vidplaylists/OtherVids.svelte';
 let y:number = 1;
 let ih: number
 let oh: number
@@ -98,6 +92,7 @@ async function getOther() {
 <Accordion />
 
 <div class="pad-a">
+
 	<div class="section-pads ishfull100 container">
   	<div class="header">
 		<h1>Bṛhat is a <br><span class="soft">Culture Engine</span></h1>
@@ -139,7 +134,7 @@ async function getOther() {
 		</div>
 	</div>
 
-<div class="section-pads ishfull100 container-2">
+	<div class="section-pads ishfull100 container-2">
   <div class="header-2 the-title">
 		<h2><span class="soft">New </span>and Recent</h2>
 	</div>
@@ -161,9 +156,9 @@ async function getOther() {
 			<pre>{error}</pre>
 			{/await}
 	</div>
-</div>
+	</div>
 
-<div class="section-pads ishfull100 container-3">
+	<div class="section-pads ishfull100 container-3">
   <div class="header-3 the-title">
 		<h2>Explore <span class="red"> Visual Content</span></h2>
 	</div>
@@ -268,9 +263,9 @@ async function getOther() {
 				{/await}
 			{/if}		
 	</div>
-</div>
+	</div>
 
-<div class="section-pads container-4">
+	<div class="section-pads container-4">
   <div class="header-4 the-title">
 			<h2>Essays at <span class="soft"> Dhīti</span></h2>
 	</div>
@@ -295,9 +290,9 @@ async function getOther() {
 			<pre>{error}</pre>
 			{/await}
 	</div>
-</div>
+	</div>
 
-<div class="section-pads container-5">
+	<div class="section-pads container-5">
   <div class="the-title header-5">
 		<h2>Bṛhat <span class="soft"> Open</span> Library</h2>
 	</div>
@@ -316,8 +311,9 @@ async function getOther() {
 			<pre>{error}</pre>
 			{/await}	
 	</div>
+	</div>
 </div>
-</div>
+<Brands></Brands>
 
 <style>
 

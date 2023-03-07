@@ -319,8 +319,8 @@ function toggleMenu(){
 }
 
 @media screen and (max-width: 899px) and (min-width: 768px) {
-	#motif { height: 40px; width: 40px; padding-bottom: 2px;}
-	#type { margin-left: 8px; width: 72px; padding-top: 4px;}
+	#motif { height: 44px; width: 44px; }
+	#type { margin-left: 8px; width: 84px; }
 	.menu-side nav { margin-top: 16px; }
 	.closebutton svg { width: 24px; height: 24px;}
 	.header-main { 
@@ -351,10 +351,10 @@ function toggleMenu(){
 }
 
 @media screen and (max-width: 767px) and (min-width: 576px) {
-	#motif { height: 40px; width: 40px; padding-bottom: 2px;}
-	#type { margin-left: 8px; width: 72px; padding-top: 4px;}
+	#motif { height: 44px; width: 44px; }
+	#type { margin-left: 8px; width: 86.54px;}
 	.menu-side nav { margin-top: 16px; }
-	.closebutton svg { width: 24px; height: 24px;}
+	.closebutton svg { width: 28px; height: 28px;}
 	.header-main { 
 		padding: 0 16px;
 		align-items: center;
@@ -384,17 +384,17 @@ function toggleMenu(){
 }
 
 @media screen and (max-width: 575px) {
-	#motif { height: 40px; width: 40px; padding-bottom: 2px;}
-	#type { margin-left: 8px; width: 72px; padding-top: 4px;}
+	#motif { height: 44px; width: 44px;}
+	#type { margin-left: 8px;width: 82.54px;}
 	.menu-side nav { margin-top: 16px; }
-	.closebutton svg { width: 24px; height: 24px;}
+	.closebutton svg { width: 28px; height: 29px;}
 	.header-main { 
 		padding: 0 16px;
 		align-items: center;
 		justify-content: space-between;
 		width: 100vw;
-		height: 56px;
-		margin-bottom: 64px;
+		height: 64px;
+		margin-bottom: -64px;
 	}
 	.logoarea {
 		align-items: center;

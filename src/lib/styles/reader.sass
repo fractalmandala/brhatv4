@@ -1021,7 +1021,6 @@ a
 		display: flex
 		flex-direction: column
 	@media screen and (min-width: 900px)
-		padding-left: 20px
 		.cols1
 			width: 64%
 			margin-bottom: 20px
@@ -1044,131 +1043,117 @@ a
 			width: 100%
 			margin-bottom: 16px
 
-.pad-a
-	.document
+.document
+	p, blockquote, ul li, ol li, b, em, strong
+		color: #696969
+	b, strong
+		color: #272727
+	h2
+		text-transform: uppercase
+		font-weight: 600
+		margin-top: 0
+		margin-bottom: 32px
+		border-bottom: 1px solid #e1e1e1
+		transition: all 0.14s var(--cubed)
+		padding-bottom: 24px
+		border-left: none
+		color: #878787
 		@media screen and (min-width: 900px)
-			padding-left: 64px
-			padding-right: 15vw
+			font-size: 48px
+		@media screen and (max-width: 899px)
+			font-size: 40px
+		@media screen and (max-width: 767px)
+			font-size: 32px
+		@media screen and (max-width: 575px)
+			font-size: 24px
+			letter-spacing: -0.5px
+	h6
+		font-family: 'Tiro Devanagari Sanskrit', serif
+		color: #474747
+		font-weight: 600
+		letter-spacing: 0
+		text-align: center
+		background: #f1f1f1
+		padding: 16px
+		@media screen and (max-width: 575px)
+			font-size: 18px
+			margin-top: 20px
+			margin-bottom: 20px
+			margin-left: 0
+			padding: 12px 8px
+			text-align: left
+		@media screen and (max-width: 767px) and (min-width: 576px)
+			font-size: 21px
+			margin-top: 20px
+			margin-bottom: 20px
+			margin-left: 5%
 		@media screen and (max-width: 899px) and (min-width: 768px)
-			padding-left: 0
-			padding-right: 32px
-		p, blockquote, ul li, ol li, b, em, strong
-			color: #696969
-		b, strong
-			color: #272727
-		h2
-			text-transform: uppercase
-			font-weight: 600
-			margin-top: 0
-			margin-bottom: 32px
-			border-bottom: 1px solid #e1e1e1
-			transition: all 0.14s var(--cubed)
-			padding-bottom: 24px
-			border-left: none
-			color: #878787
-			@media screen and (min-width: 900px)
-				font-size: 48px
-			@media screen and (max-width: 899px)
-				font-size: 40px
-			@media screen and (max-width: 767px)
-				font-size: 32px
-			@media screen and (max-width: 575px)
-				font-size: 24px
-				letter-spacing: -0.5px
-		h6
-			font-family: 'Tiro Devanagari Sanskrit', serif
-			color: #474747
-			font-weight: 600
-			letter-spacing: 0
-			text-align: center
-			background: #f1f1f1
-			padding: 16px
-			@media screen and (max-width: 575px)
-				font-size: 18px
-				margin-top: 20px
-				margin-bottom: 20px
-				margin-left: 0
-				width: 96% !important
-				padding: 12px 8px
-				text-align: left
-			@media screen and (max-width: 767px) and (min-width: 576px)
-				font-size: 21px
-				margin-top: 20px
-				margin-bottom: 20px
-				margin-left: 5%
-				width: 70%
-			@media screen and (max-width: 899px) and (min-width: 768px)
-				font-size: 21px
-				margin-top: 20px
-				margin-bottom: 20px
-				margin-left: 5%
-				width: 70%
-			@media screen and (min-width: 900px)
-				font-size: 21px
-				margin-top: 20px
-				margin-bottom: 20px
-				margin-left: 5%
-				width: 70%
-		h3
-			border-bottom: 1px solid #a0a0a0
-		h4
-			font-weight: bold
-			@media screen and (max-width: 575px)
-				font-size: 27px
-				margin-top: 32px
-			@media screen and (max-width: 767px)
-				font-size: 30px
-				margin-top: 40px
-			@media screen and (max-width: 899px)
-				font-size: 24px
-				margin-top: 40px
-			@media screen and (min-width: 900px)
-				font-size: 2.1rem
-				margin-top: 40px
-		h5
-			font-weight: 600
-			letter-spacing: -0.1px
-			@media screen and (max-width: 575px)
-				font-size: 19px
-			@media screen and (max-width: 899px)
-				font-size: 19px
-			@media screen and (min-width: 900px)
-				font-size: 22px
-		blockquote
-			font-style: italic
-			margin-bottom: 0
-			padding-bottom: 0
-			border-left-width: 3px
-			border-left-style: solid
-			padding-left: 16px
-			@media screen and (min-width: 900px)
-				font-size: 18px
-			@media screen and (max-width: 899px)
-				font-size: 16px
-				color: #a0a0a0
-			@media screen and (max-width: 575px)
-				margin-left: 0
-				margin-right: 16px
-		p, ul li, ol li
-			@media screen and (max-width: 575px)
-				font-size: 16px
-			@media screen and (max-width: 767px)
-				font-size: 16px
-			@media screen and (max-width: 899px)
-				font-size: 16px
-			@media screen and (min-width: 900px)
-				font-size: 16px
-		small
-			font-size: 12px
-		cite
-			font-size: 12px
-			text-style: normal
-			margin-top: 0
-			padding-top: 0
-			font-weight: 400
-	
-.cols3.pd16, .cols2.pd16
-	padding-left: 16px
+			font-size: 21px
+			margin-top: 20px
+			margin-bottom: 20px
+			margin-left: 5%
+		@media screen and (min-width: 900px)
+			font-size: 21px
+			margin-top: 20px
+			margin-bottom: 20px
+			margin-left: 5%
+	h4
+		font-weight: bold
+		@media screen and (max-width: 575px)
+			font-size: 27px
+			margin-top: 32px
+		@media screen and (max-width: 767px)
+			font-size: 30px
+			margin-top: 40px
+		@media screen and (max-width: 899px)
+			font-size: 24px
+			margin-top: 40px
+		@media screen and (min-width: 900px)
+			font-size: 2.1rem
+			margin-top: 40px
+	h5
+		font-weight: 600
+		letter-spacing: -0.1px
+		@media screen and (max-width: 575px)
+			font-size: 19px
+		@media screen and (max-width: 899px)
+			font-size: 19px
+		@media screen and (min-width: 900px)
+			font-size: 22px
+	blockquote
+		font-style: italic
+		margin-bottom: 0
+		padding-bottom: 0
+		border-left-width: 3px
+		border-left-style: solid
+		padding-left: 16px
+		@media screen and (min-width: 900px)
+			font-size: 18px
+		@media screen and (max-width: 899px)
+			font-size: 16px
+		@media screen and (max-width: 575px)
+			margin-left: 0
+			margin-right: 16px
+	p, ul li, ol li
+		@media screen and (max-width: 575px)
+			font-size: 16px
+		@media screen and (max-width: 767px)
+			font-size: 16px
+		@media screen and (max-width: 899px)
+			font-size: 16px
+		@media screen and (min-width: 900px)
+			font-size: 16px
+	small
+		font-size: 12px
+	cite
+		font-size: 12px
+		text-style: normal
+		margin-top: 0
+		padding-top: 0
+		font-weight: 400
+
+.cos3.pd16, .cols2.pd16
+	pdding-left: 16px
 	padding-right: 16px
 
 .gp2.pt24

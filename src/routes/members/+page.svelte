@@ -1,324 +1,463 @@
-<script lang="ts">
+<script>
 import supabase from '$lib/db'
-let currentList = 'list-1';
-function switchList(newList: string) {
-	currentList = newList;
-}
+import { onMount } from 'svelte'
+import tippy, { animateFill } from 'tippy.js'
+import 'tippy.js/dist/tippy.css'
+import 'tippy.js/animations/scale.css'
+import 'tippy.js/dist/backdrop.css';
+import { reveal } from 'svelte-reveal'
+import { fly } from 'svelte/transition'
+import { quadIn } from 'svelte/easing'
 
-export async function updateOne(){
-	const { data, error } = await supabase
-	.from('brhat-updates')
-	.select()
-	.limit(3)
-  if (error) throw new Error(error.message)
-	return data
-}
+let isInLink = false
 
-async function dhiti() {
-	const { data, error } = await supabase
-		.from('brhat-dhiti')
-		.select()
-		.order('id', { ascending: false })
-		.limit(6);
-	if (error) throw new Error(error.message);
-	return data;
-}
+onMount(async() => {
+	tippy ('.expansion', {
+		content: 'Click to Expand/Retract',
+		arrow: false,
+		theme: 'dark',
+		animation: 'scale',
+	})
+})
 
-async function getBooks() {
-	const { data, error } = await supabase
-		.from('brhat-openlibrary')
-		.select()
-		.order('Sno', { ascending: false })
-		.limit(15);
-	if (error) throw new Error(error.message);
-	return data;
+function toggleInLink(){
+	isInLink = !isInLink
 }
-
-async function getMrdanga() {
-  const { data, error } = await supabase
-  .from('brhat-youtube')
+async function advisors() {
+const { data, error } = await supabase
+  .from('brhat-advisory')
   .select()
-	.eq('type','mrdanga')
-  .order('id',{ascending: false})
-  .limit(4)
+  .order('id')
   if (error) throw new Error(error.message)
   return data
 }
 
-async function getKavita() {
-  const { data, error } = await supabase
-  .from('brhat-youtube')
+async function partners() {
+const { data, error } = await supabase
+  .from('brhat-about')
   .select()
-	.eq('type','hindi')
-  .order('id',{ascending: false})
-  .limit(4)
+	.eq('type','partner')
+  .order('sequence')
+  if (error) throw new Error(error.message)
+  return data
+}
+async function team() {
+const { data, error } = await supabase
+  .from('brhat-team')
+  .select()
+  .order('sequence')
   if (error) throw new Error(error.message)
   return data
 }
 
-async function getIKS() {
-  const { data, error } = await supabase
-  .from('brhat-youtube')
-  .select()
-	.eq('type','iks')
-  .order('id',{ascending: false})
-  .limit(4)
-  if (error) throw new Error(error.message)
-  return data
-}
-
-async function getOther() {
-  const { data, error } = await supabase
-  .from('brhat-youtube')
-  .select()
-	.eq('type','sangam')
-  .order('id',{ascending: false})
-  .limit(4)
-  if (error) throw new Error(error.message)
-  return data
-}
 </script>
 
+<div class="box-c back-image l0"></div>
+
 <div class="pad-a">
-	<div class="section-pads ishfull100 container">
+
+	<!--introduction to brhat-->
+	<div class="section-pads container">
   	<div class="header">
-		<h1>Bṛhat is a <br><span class="soft">Culture Engine</span></h1>
-		</div>
-  	<div class="para">
+			<h1>Bṛhat is a <br><span class="red m-top-zero">Culture Engine</span></h1>
 			<h6 class="wide75">
 				To power creatives, research and design rooted in the Indian civilizational consciousness. We
 				convert individual, institutional and collective intent into action, across 3 dimensions.
 			</h6>
 		</div>
-  	<div class="cols4">
+  	<div class="rowof3">
 			<div class="ww1 card">
-				<h6 class="strong">
-					Civilization is Culture in Action
-				</h6>
-				<p class="w400 grey">
-					The civilizational moment needs rooting in Dharma - of this there is no doubt. Thus a core part of our work is culture creatives that draw from the deep pool of Dhārmika heritage.
+				<h6 class="strong">Create</h6>
+				<p>
+					- visual and literary stories;<br>
+					- design thinking and methods;<br>
+					- research output on education and ecology;<br>
+					- culture-rooted thought models
 				</p>
 			</div>
 			<div class="ww1 card">
-				<h6 class="strong">
-					It Needs Culture-Compatible Policy
-				</h6>
-				<p class="w400 grey">
-					Radical reorientations are needed in education and ecology. To this end, our focus will be on generating policy currency for culture through frameworks, curriculum and more.
+				<h6 class="strong">Curate</h6>
+				<p>
+						- heritage experience journeys;<br>
+						- culture-fit in mass media;<br>
+						- NEP-relevant IKS curriculum;<br>
+						- culture rooting in product design and thinking
 				</p>
 			</div>
 			<div class="ww1 card">
-				<h6 class="strong">
-					The Work is Inter-Generational
-				</h6>
-				<p class="w400 grey">
-					It needs leadership with cultural-cognition to carry the Agni. This cognition needs to permeate even brand and organisation - essential quarters for the overton window shift.
+				<h6 class="strong">Consult</h6>
+				<p>
+					- NEP-IKS implementation;<br>
+					- policy thinking on education and ecology;<br>
+					- organizational structure and leadership frameworks
 				</p>
-			</div>
-			<div class="ww1 endcol">
-				<button class="mainbutton"><a href="/about">Know More</a></button>
 			</div>
 		</div>
 	</div>
 
-<div class="section-pads ishfull100 container-2">
-  <div class="header-2 the-title">
-		<h2><span class="soft">New </span>and Recent</h2>
-	</div>
-  <div class="cols-3">	
-		{#await updateOne()}
-			<small>.</small>
-			{:then data}
-				{#each data as item}
-					<div class="boxc-r3 card soft">
-						<img src={item.image} alt={item.sequence} />
-						<div class="boxc">
-							<h6>{item.heading}</h6>
-							<p>{item.text.slice(0,200)}</p>
-							<button class="cardbutton"><a href={item.link} target="_blank" rel="noreferrer">{item.buttontext}</a></button>
-						</div>
-					</div>
-				{/each}
-			{:catch error}
-			<pre>{error}</pre>
-			{/await}
-	</div>
-</div>
-
-<div class="section-pads ishfull100 container-3">
-  <div class="header-3 the-title">
-		<h2>Explore <span class="red"> Visual Content</span></h2>
-	</div>
-  <div class="para-1">
-		<h6 class="wide75">
-				Our visual content ranges from explorations of rasa and bhāva, to articulations of an
-				IKS-implementation strategy for modern India. Select playlists below, or visit our <a
-					href="https://youtube.com/@brhat"
-					target="_blank"
-					class="red"
-					rel="noreferrer">YouTube channel</a
-				>
+	<!--three convictions-->
+	<div class="section-pads container-2">
+  	<div class="header-onlytitle">
+			<h6 class="wide75">
+				An engine is an instrument for transformation, and this engine is to build the self-perpetuating civilizational moment. How does one go about doing that? At Bṛhat, we're acutely aware of three constraints:
+			</h6>			
+		</div>
+  	<div class="rowof3">
+				<div class="ww1 card">
+					<h6 class="strong">
+					Civilization is Culture in Action
+					</h6>
+					<p>
+					The civilizational moment needs rooting in Dharma - of this there is no doubt. Thus a core part of our work is culture creatives that draw from the deep pool of Dhārmika heritage.
+					</p>
+				</div>
+				<div class="ww1 card">
+					<h6 class="strong">
+					It Needs Culture-Compatible Policy
+					</h6>
+					<p>
+					Radical reorientations are needed in education and ecology. To this end, our focus will be on generating policy currency for culture through frameworks, curriculum and more.
+					</p>
+				</div>
+				<div class="ww1 card">
+					<h6 class="strong">
+					The Work is Inter-Generational
+					</h6>
+					<p>
+					It needs leadership with cultural-cognition to carry the Agni. This cognition needs to permeate even brand and organisation - essential quarters for the overton window shift.
+					</p>
+				</div>
+		</div>
+  	<div class="bodybottom">
+			<h6 class="wide75">
+				But the severest constraint of them all is Time, and more specifically – <span class="soft">Moment.</span>
 			</h6>
-			<button class="mainbutton">
-				<select on:change={(event) => switchList(event?.target?.value ?? 'list-1')}>
-				<option class="w500" value="list-1" on:click={() => switchList('list-1')} on:keydown={() => switchList('list-1')}>Bṛhadmṛdaṅga</option>
-				<option class="w500" value="list-2" on:click={() => switchList('list-2')} on:keydown={() => switchList('list-2')}>Hindi Kavitā</option>
-				<option class="w500" value="list-3" on:click={() => switchList('list-3')} on:keydown={() => switchList('list-3')}>IKS</option>
-				<option class="w500" value="list-4" on:click={() => switchList('list-4')} on:keydown={() => switchList('list-4')}>Others</option>
-			</select></button>
+			<h5>
+				The time for a Culture Engine is now, because we are in the midst of a civilizational moment. What is a civilizational moment? How rare or regular are such moments? How must we respond to them?
+			</h5>
+			<h6 class="wide75">
+				Read more on the need we see, why we think this is the time to address it, and about our self-identity.
+			</h6>
+		</div>	
 	</div>
-  <div class="cols-4-2">
-			{#if currentList === 'list-1'}
-				{#await getMrdanga()}
-				<small>...</small>
-				{:then data}
-				{#each data as item}
-				<div class="box-video card">
-					<iframe
-					class="m-1"
-					width=100%
-					height=80%
-					src="https://www.youtube.com/embed/{item.videoid}"
-					title={item.name}
-					>
-					</iframe>
-					<p><a href="https://www.youtube.com/watch?v={item.videoid}" target="_blank" rel="noreferrer">{@html item.name}</a></p>
-				</div>
-				{/each}
-				{:catch error}
-				<pre>{error}</pre>
-				{/await}
-			{:else if currentList === 'list-2'}
-				{#await getKavita()}
-				<small>...</small>
-				{:then data}
-				{#each data as item}
-				<div class="box-video card">
-					<iframe
-					class="m-1"
-					width=100%
-					height=80%
-					src="https://www.youtube.com/embed/{item.videoid}"
-					title={item.name}
-					>
-					</iframe>
-					<p><a href="https://www.youtube.com/watch?v={item.videoid}" target="_blank" rel="noreferrer">{@html item.name}</a></p>
-				</div>
-				{/each}
-				{:catch error}
-				<pre>{error}</pre>
-				{/await}					
-			{:else if currentList === 'list-3'}
-				{#await getIKS()}
-				<small>...</small>
-				{:then data}
-				{#each data as item}
-				<div class="box-video card">
-					<iframe
-					class="m-1"
-					width=100%
-					height=80%
-					src="https://www.youtube.com/embed/{item.videoid}"
-					title={item.name}
-					>
-					</iframe>
-					<p><a href="https://www.youtube.com/watch?v={item.videoid}" target="_blank" rel="noreferrer">{@html item.name}</a></p>
-				</div>
-				{/each}
-				{:catch error}
-				<pre>{error}</pre>
-				{/await}
-			{:else if currentList === 'list-4'}
-				{#await getOther()}
-				<small>...</small>
-				{:then data}
-				{#each data as item}
-				<div class="box-video card">
-					<iframe
-					class="m-1"
-					width=100%
-					height=80%
-					src="https://www.youtube.com/embed/{item.videoid}"
-					title={item.name}
-					>
-					</iframe>
-					<p><a href="https://www.youtube.com/watch?v={item.videoid}" target="_blank" rel="noreferrer">{@html item.name}</a></p>
-				</div>
-				{/each}
-				{:catch error}
-				<pre>{error}</pre>
-				{/await}
-			{/if}		
-	</div>
-</div>
 
-<div class="section-pads container-4">
-  <div class="header-4 the-title">
-			<h2>Essays at <span class="soft"> Dhīti</span></h2>
+
+	<!--links to subsections-->
+	<div class="section-pads x6 for-links">
+		<h2><a href="/about/docs/svatahsiddha">svataḥsiddha</a></h2>
+		<h2><a href="/about/docs/anatomy">anatomy of a civilizational moment</a></h2>
+		<h2><a href="/about/docs/whatkrishnameanstous">what śrī kṛṣṇa means to us</a></h2>
+		<h2><a href="/about/docs/namelogo">nāmarūpa - name and logo</a></h2>
+		<h2><a href="/about/docs/values">pratijñā - values</a></h2>
+		<h2><a href="/about/#advisors">advisors</a></h2>
+		<h2><a href="/about/#partners">partners</a></h2>
+		<h2><a href="/about/#team">team</a></h2>
+		<div class="in-links expansion" on:click={toggleInLink} on:keydown={toggleInLink}>
+			<h2 class="point">Areas</h2>
+					{#if isInLink}
+					<p transition:fly={{ duration: 200, x: -120, y: 0, easing: quadIn }}><a href="/about/areas/culturecreatives">Culture Creatives</a></p>
+					<p transition:fly={{ duration: 200, delay: 40, x: -120, y: 0, easing: quadIn }}><a href="/about/areas/policyresearch">Policy Research</a></p>
+					<p transition:fly={{ duration: 200, delay: 80, x: -120, y: 0, easing: quadIn }}><a href="/about/areas/leadershipdevelopment">Leadership Development</a></p>
+					{/if}
+		</div>
 	</div>
-  <div class="cols-6">
-			{#await dhiti()}
-			<small>...</small>
-			{:then data}
+
+
+	<!--advisors-->
+	<div class="section-pads container-4">
+  	<div class="header-4 the-title">
+			<h2>
+				Advisors
+			</h2>
+		</div>
+  	<div class="rowof4">
+				{#await advisors()}
+				<small>...</small>
+				{:then data}
 				{#each data as item}
-					<div class="boxc card">
-						<img
-							src={item.image}
-							alt={item.title}/>
-							<cite class="str">{item.category}<br>{item.tags}</cite>
-							<h6 class="w600">
-							<a href={item.link}>{item.title}</a>
-						</h6>
-						<p>{item.excerpt.slice(0, 200)}...<a href={item.link} class="readmore">Read More</a></p>
-						<cite>{item.author}</cite>
+					<div class="ww1 card advisorbox">
+						<img src={item.image} alt={item.name} />
+						<h6>{item.name}</h6>
+						<p>{item.title}</p>
 					</div>
 				{/each}
-			{:catch error}
-			<pre>{error}</pre>
-			{/await}
+				{:catch error}
+				<pre>{error}</pre>
+				{/await}
+		</div>
 	</div>
-</div>
 
-<div class="section-pads container-5">
-  <div class="the-title header-5">
-		<h2>Bṛhat <span class="soft"> Open</span> Library</h2>
+
+	<!--partners-->
+	<div class="section-pads container-3">
+  	<div class="header-4 the-title">
+			<h2>Partners</h2>
+		</div>
+  	<div class="rowof7">
+				{#await partners()}
+				<small>...</small>
+					{:then data}
+						{#each data as item}
+						<div class="partners">
+							<a href={item.link} target="_blank" rel="noreferrer"><img src={item.image} alt={item.name} /></a>
+						</div>
+						{/each}
+					{:catch error}
+				<pre>{error}</pre>
+				{/await}
+		</div>
 	</div>
-  <div class="cols-15">
-			{#await getBooks()}
-			<small>...</small>
-			{:then data}
-					{#each data as item, i}
-						<div
-							class="ww1 book card">
-							<h6><a href="/openlibrary/books/{item.slug}">{item.Text}</a></h6>
-							<p>{item.author}</p>
+
+
+	<!--team-->
+	<div class="section-pads container-5">
+  	<div class="header-4 the-title">
+			<h2>Team</h2>
+		</div>
+  	<div class="rowof12">
+				{#await team()}
+				<small>...</small>
+				{:then data}
+					{#each data as item}
+						<div class="ww1 team card">
+							<img src={item.image} alt={item.name} />
+							<h6>{item.name}</h6>
+							<cite class="soft">{item.title}</cite>
+							<p>{item.bio}</p>
 						</div>
 					{/each}
-			{:catch error}
-			<pre>{error}</pre>
-			{/await}	
+				{:catch error}
+				<pre>{error}</pre>
+				{/await}
+		</div>
 	</div>
+
 </div>
-</div>
-
-<style>
 
 
-.header { align-items: center; }
+<style lang="sass">
 
-.para { align-items: center; }
+.container 
+	display: grid 
+	grid-template-columns: 1fr 
+	grid-template-rows: max-content 1fr 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "header" "rowof3" 
+	.header 
+		grid-area: header 
+	.rowof3 
+		display: grid 
+		grid-auto-flow: row 
+		grid-area: rowof3 
+	@media screen and (min-width: 900px)
+		height: 100vh
+		.rowof3
+			grid-template-columns: 1fr 1fr 1fr 
+			grid-template-rows: 1fr 
+			gap: 0px 32px 
+			grid-template-areas: ". . ." 
+			padding: 32px 0
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		.rowof3
+			grid-template-columns: 1fr 1fr 1fr 
+			grid-template-rows: 1fr
+			gap: 0px 32px 
+			grid-template-areas: ". . ." 
+			padding: 32px 0
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		.rowof3
+			grid-template-columns: 1fr 
+			grid-template-rows: 1fr 1fr 1fr
+			gap: 24px 0px 
+			grid-template-areas: "." "." "." 
+			padding: 24px 0
+	@media screen and (max-width: 575px)
+		.rowof3
+			grid-template-columns: 1fr 
+			grid-template-rows: 1fr 1fr 1fr
+			gap: 24px 0px 
+			grid-template-areas: "." "." "." 
+			padding: 24px 0
 
-.container-5 { padding-bottom: 64px;}
-@media screen and (max-width: 899px) and (min-width: 576px) {
-	.cols-3 .boxc-r3 img {
-		object-fit: cover;
-		width: 216px;
-		height: 216px;
-	}
-	.cols-3 .boxc-r3 { gap: 32px; text-align: left; }
-	.cols-3 .boxc-r3 .boxc { align-items: flex-start; justify-content: flex-start;}
-	.cols-3 .boxc-r3 .boxc .cardbutton { width: 40%; margin-right: 60%;}
 
-}
+.container-4 
+	display: grid 
+	grid-template-columns: 1fr 
+	grid-template-rows: auto 1fr 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "header-4" "rowof4" 
+	.header-4 
+		grid-area: header-4 
+	.rowof4 
+		display: grid 
+		grid-auto-flow: row 
+		grid-area: rowof4 
+	@media screen and (min-width: 900px)
+		.rowof4
+			grid-template-columns: 1fr 1fr 1fr 1fr 
+			grid-template-rows: 1fr 
+			gap: 0px 32px 
+			grid-template-areas: ". . . ."
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		.rowof4
+			grid-template-columns: 1fr 1fr 1fr 1fr 
+			grid-template-rows: 1fr 
+			gap: 0px 32px 
+			grid-template-areas: ". . . ."
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		.rowof4
+			grid-template-columns: 1fr 1fr
+			grid-template-rows: 1fr 1fr
+			gap: 0px 24px 
+			grid-template-areas: ". ." ". ."
+	@media screen and (max-width: 575px) 
+		.rowof4
+			grid-template-columns: 1fr
+			grid-template-rows: 1fr 1fr 1fr 1fr
+			gap: 24px 24px 
+			grid-template-areas: "." "." "." "."
+
+.container-2
+	display: grid 
+	grid-template-columns: 1fr 
+	grid-template-rows: auto auto auto 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "header-onlytitle" "rowof3" "bodybottom" 
+	.header-onlytitle 
+		grid-area: header-onlytitle 
+	.rowof3 
+		display: grid 
+		grid-auto-flow: row 
+		grid-area: rowof3 
+	.bodybottom 
+		grid-area: bodybottom 
+	@media screen and (min-width: 900px)
+		.rowof3
+			grid-template-columns: 1fr 1fr 1fr 
+			grid-template-rows: 1fr 
+			grid-template-areas: ". . ." 
+			gap: 0px 32px 
+			padding: 32px 0
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		.rowof3
+			grid-template-columns: 1fr 1fr 1fr 
+			grid-template-rows: 1fr 
+			grid-template-areas: ". . ." 
+			gap: 0px 32px 
+			padding: 32px 0
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		.rowof3
+			grid-template-columns: 1fr
+			grid-template-rows: 1fr 1fr 1fr
+			grid-template-areas: "." "." "." 
+			gap: 0px 24px 
+			padding: 24px 0
+	@media screen and (max-width: 575px)
+		.rowof3
+			grid-template-columns: 1fr 
+			grid-template-rows: 1fr 1fr 1fr
+			grid-template-areas: "." "." "." 
+			gap: 0px 24px 
+			padding: 24px 0
+
+.container-3
+	display: grid 
+	grid-template-columns: 1fr 
+	grid-template-rows: auto 1fr 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "header-4" "rowof7" 
+	.header-4 
+		grid-area: header-4 
+	.rowof7 
+		display: grid 
+		grid-auto-flow: row 
+		grid-area: rowof7
+		.partners
+			img
+				object-fit: contain
+				width: 100%
+	@media screen and (min-width: 900px)
+		.rowof7
+			grid-template-areas: ". . . . . . ." 
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 
+			grid-template-rows: 1fr 
+			gap: 0px 32px 
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		.rowof7
+			grid-template-areas: ". . . . . . ." 
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 
+			grid-template-rows: 1fr 
+			gap: 0px 32px 
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		.rowof7
+			grid-template-areas: ". . ." ". . ." ". . ." 
+			grid-template-columns: 1fr 1fr 1fr
+			grid-template-rows: 1fr 1fr 1fr
+			gap: 24px 24px 
+	@media screen and (max-width: 575px)
+		.rowof7
+			grid-template-areas: ". . ." ". . ." ". . ." 
+			grid-template-columns: 1fr 1fr 1fr
+			grid-template-rows: 1fr 1fr 1fr
+			gap: 24px 24px 
+
+.container-5
+	display: grid 
+	grid-template-columns: 1fr 
+	grid-template-rows: auto 1fr 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "header-4" "rowof12" 
+	.header-4 
+		grid-area: header-4 
+	.rowof12 
+		display: grid 
+		grid-auto-flow: row 
+		grid-area: rowof12 
+		.team
+			img
+				object-fit: cover
+				width: 200px
+	@media screen and (min-width: 900px)
+		.rowof12
+			grid-template-columns: 1fr 1fr 1fr 1fr
+			grid-template-rows: 1fr 1fr 1fr
+			gap: 24px 32px 
+			grid-template-areas: ". . . ." ". . . ." ". . . ."
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		.rowof12
+			grid-template-columns: 1fr 1fr 1fr
+			grid-template-rows: 1fr 1fr 1fr 1fr
+			gap: 24px 32px 
+			grid-template-areas: ". . ." ". . ." ". . ." ". . ."
+			.team
+				img
+					width: 160px
+					height: 160px
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		.rowof12
+			grid-template-columns: 1fr 1fr
+			grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr
+			gap: 24px 24px 
+			grid-template-areas: ". ." ". ." ". ." ". ." ". ." ". ."
+			.team
+				img
+					width: 144px
+					height: 144px
+	@media screen and (max-width: 575px)
+		.rowof12
+			grid-template-columns: 1fr
+			grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+			gap: 24px 0px
+			grid-template-areas: "." "." "." "." "." "." "." "." "." "." "." "."
+			.team
+				img
+					width: 120px
+					height: 120px
+
 
 </style>
