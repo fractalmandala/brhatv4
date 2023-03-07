@@ -93,7 +93,7 @@ async function getOther() {
 
 <div class="pad-a">
 
-	<div class="section-pads ishfull100 container">
+	<div class="section-pads ishfull100 container-11">
   	<div class="header">
 		<h1>Bṛhat is a <br><span class="soft">Culture Engine</span></h1>
 		</div>
@@ -134,7 +134,7 @@ async function getOther() {
 		</div>
 	</div>
 
-	<div class="section-pads ishfull100 container-2">
+	<div class="section-pads ishfull100 container-22">
   <div class="header-2 the-title">
 		<h2><span class="soft">New </span>and Recent</h2>
 	</div>
@@ -158,7 +158,7 @@ async function getOther() {
 	</div>
 	</div>
 
-	<div class="section-pads ishfull100 container-3">
+	<div class="section-pads ishfull100 container-33">
   <div class="header-3 the-title">
 		<h2>Explore <span class="red"> Visual Content</span></h2>
 	</div>
@@ -265,7 +265,7 @@ async function getOther() {
 	</div>
 	</div>
 
-	<div class="section-pads container-4">
+	<div class="section-pads container-44">
   <div class="header-4 the-title">
 			<h2>Essays at <span class="soft"> Dhīti</span></h2>
 	</div>
@@ -292,7 +292,7 @@ async function getOther() {
 	</div>
 	</div>
 
-	<div class="section-pads container-5">
+	<div class="section-pads container-55">
   <div class="the-title header-5">
 		<h2>Bṛhat <span class="soft"> Open</span> Library</h2>
 	</div>
@@ -322,7 +322,7 @@ async function getOther() {
 
 .para { align-items: center; }
 
-.container-5 { padding-bottom: 64px;}
+.container-55 { padding-bottom: 64px;}
 @media screen and (max-width: 899px) and (min-width: 576px) {
 	.cols-3 .boxc-r3 img {
 		object-fit: cover;

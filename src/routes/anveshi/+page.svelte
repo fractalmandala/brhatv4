@@ -18,7 +18,7 @@ async function getVids() {
   .select()
 	.eq('type','anveshi')
   .order('id',{ascending: false})
-  .limit(4)
+  .limit(8)
   if (error) throw new Error(error.message)
   return data
 }
@@ -39,26 +39,32 @@ export async function allChapters() {
 	<img src="/images/herocovers/brhatanveshi.webp" alt="hero" style="transform: translateY({y/4}px)"/> 
 </div>
 
+<div class="pad-a">
 
-	<div class="pad-a">
-		<div class="boxc x1">
+	<div class="section-pads container-1">
+  	<div class="headerentry">
 			<h2 class="wide75">
-				<span class="anv">Bṛhat Anveṣī </span>is a travel program
+				<span class="anv">Bṛhat Anveṣī </span><br>is a travel program
 			</h2>
 			<h6 class="wide75">
 				to contemporize ancient Indian tradition by guiding travel groups through hitherto <span class="anv">rarely explored sacred kṣetras of India.</span>
 			</h6>
-			<img class="temple" src="/images/anveshi/temple.png" alt="the temple" />
 		</div>
+  	<div class="fillerentry">
+			<img class="temple" src="/images/anveshi/newtravel.png" alt="the temple" />
+		</div>
+	</div>
 
-		<div class="the-title y-full">
+	<div class="section-pads container-2">
+  	<div class="header-2 the-title">
 			<h2>Chapters</h2>
-			<div class="traybox x2">
-				{#await allChapters()}
+		</div>
+  	<div class="rowof3">
+			{#await allChapters()}
 				<small>loading chapters...</small>
 				{:then data}
 				{#each data as item}
-				<div class="ww3 card">
+				<div class="ww1 card">
 					<img src={item.image} alt={item.name}>
 					<h6><a href={item.link}>{item.name}</a></h6>
 					<p>{item.content.slice(0,250)}<a class="anv wbold" href={item.link}>...Read More</a></p>
@@ -71,20 +77,26 @@ export async function allChapters() {
 				{:catch error}
 				<pre>{error}</pre>
 				{/await}
-			</div>
 		</div>
+	</div>
 
-		<div class="the-title y-full" id="traveldiaries">
+	<div class="section-pads container-3">
+  	<div class="header-3 the-title">
 			<h2>Travel Diaries</h2>
 			<h6 class="wide75">
 				Anveṣī Diaries is a collection of traveller images, trip videos, testimonials and writings from our trips. To submit your own experience, please write to anveshi@brhat.in
 			</h6>
-			<div class="traybox x4 allwrap">
+		</div>
+  	<div class="imagess">
+    	<div class="subtitle31">
+				<h4>Art by Ashish Kundalia</h4>
+			</div>
+    	<div class="imagesgrid">
 				{#await allImages()}
 					<small>...</small>
 						{:then data}
 							{#each data as item}
-								<div class="ww4 card">
+								<div class="ww1 card">
 									<img src={item.image} alt={item.id} />
 								</div>
 							{/each}
@@ -92,12 +104,17 @@ export async function allChapters() {
 					<pre>{error}</pre>
 				{/await}
 			</div>
-			<div class="traybox wrap x5">
-				{#await getVids()}
+  	</div>
+  	<div class="videos">
+   		<div class="videossubtitle">
+				<h4>Video Testimonials</h4>
+			</div>
+    	<div class="videosrow">
+								{#await getVids()}
 					<small>loading chapters...</small>
 						{:then data}
 							{#each data as item}
-								<div class="ww4 card">
+								<div class="ww1 card">
 									<iframe
   									class="m-2"
   									width=100%
@@ -112,12 +129,16 @@ export async function allChapters() {
 					<pre>{error}</pre>
 				{/await}
 			</div>
-		</div>
+  	</div>
+	</div>
 
-		<div class="the-title y-full" id="aboutanveshi">
+	<div class="section-pads container-4">
+  	<div class="header-4 the-title">
 			<h2>Who is Bṛhat Anveṣī?</h2>
-				<p class="wide75">
-					A human being is born to search: for truth; for beauty; for meaning in life. Kaśmīra Śaiva darśana tells us that, vimarṣa – Śiva reflecting upon himself – is one of the highest goals of existence itself. According to another school of thought, Nature nudged evolution to a point where a species would emerge capable of reflecting upon itself and the mysteries of the cosmos, life and existence.
+		</div>
+  	<div class="body-4">
+			<p class="wide75">
+				A human being is born to search: for truth; for beauty; for meaning in life. Kaśmīra Śaiva darśana tells us that, vimarṣa – Śiva reflecting upon himself – is one of the highest goals of existence itself. According to another school of thought, Nature nudged evolution to a point where a species would emerge capable of reflecting upon itself and the mysteries of the cosmos, life and existence.
 				</p>
 				<p class="wide75">
 					Without getting deep into darśana, the point is that, humans are born to search, born for anveṣaṇa. The word anveṣaṇa means discovering, seeking, or searching, and the one who searches is called – anveṣī – the discoverer. This element of discovery has mainly two dimensions – inner and outer. And the two are connected. The favorite theme of literature is wanderlust/ fernweh – the innate urge of humans to go out and discover the world.
@@ -137,62 +158,329 @@ export async function allChapters() {
 				<h5 class="wide75">
 					We seek to satisfy the wanderlust in you in a way which will leave you not just intellectually satisfied but will also elevate your understanding and knowledge. <span class="anv">When discovering together such, we are Bṛhat Anveṣī.</span>
 				</h5>
-
+				
+				<svg width="100%" height="100%" viewBox="0 0 600 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<g id="logo-anv">
+						<rect width="100%" height="100%" fill="white" class="svg-elem-1"></rect>
+						<g id="anv-anvrest">
+						<path id="anv-b" fill-rule="evenodd" clip-rule="evenodd" d="M136.918 106.087C139.08 107.07 141.431 107.561 143.971 107.561C147.809 107.561 151.187 106.66 154.106 104.858C157.025 103.055 159.295 100.597 160.916 97.4839C162.592 94.3161 163.43 90.7383 163.43 86.7511C163.43 82.7094 162.592 79.1045 160.916 75.9364C159.295 72.7686 157.025 70.3108 154.106 68.563C151.187 66.7604 147.809 65.8591 143.971 65.8591C141.485 65.8591 139.161 66.3236 136.999 67.252C136.1 67.6152 135.263 68.0443 134.485 68.5395V47.0154H120.378V106.742H134.161V104.419C134.999 105.051 135.918 105.607 136.918 106.087ZM145.431 93.7972C144.295 94.5072 142.971 94.8622 141.458 94.8622C139.944 94.8622 138.593 94.5345 137.404 93.879C136.215 93.169 135.296 92.2132 134.647 91.0115C133.999 89.7554 133.675 88.3079 133.675 86.6692C133.675 85.0853 133.999 83.6924 134.647 82.4907C135.296 81.2894 136.188 80.3333 137.323 79.6232C138.512 78.9132 139.863 78.5584 141.377 78.5584C142.89 78.5584 144.242 78.9132 145.431 79.6232C146.62 80.3333 147.539 81.3165 148.187 82.5727C148.836 83.7743 149.16 85.1398 149.16 86.6692C149.16 88.2531 148.836 89.6734 148.187 90.9296C147.539 92.1312 146.62 93.0872 145.431 93.7972Z" fill="#272727" class="svg-elem-2"></path>
+						<path id="anv-h" fill-rule="evenodd" clip-rule="evenodd" d="M230.243 84.1295V106.742H244.35V80.8523C244.35 77.9029 243.702 75.3083 242.405 73.0689C241.161 70.8295 239.351 69.0817 236.972 67.8256C234.648 66.5146 231.891 65.8591 228.703 65.8591C225.621 65.8591 222.919 66.5146 220.595 67.8256C219.903 68.1993 219.254 68.6216 218.649 69.0923V47.0154H204.542V106.742H218.649V84.1295C218.649 82.8733 218.892 81.8081 219.378 80.9342C219.866 80.0603 220.54 79.3774 221.406 78.8861C222.325 78.3945 223.351 78.1487 224.486 78.1487C226.162 78.1487 227.541 78.6948 228.621 79.7871C229.703 80.8249 230.243 82.2723 230.243 84.1295Z" fill="#272727" class="svg-elem-3"></path>
+						<path id="anv-a" fill-rule="evenodd" clip-rule="evenodd" d="M258.538 104.858C261.403 106.66 264.673 107.561 268.349 107.561C270.834 107.561 273.106 107.097 275.16 106.168C276.443 105.589 277.576 104.881 278.564 104.046V106.742H292.429V66.6783H278.564V69.3362C277.576 68.4923 276.443 67.7977 275.16 67.2519C273.106 66.3235 270.834 65.859 268.349 65.859C264.673 65.859 261.403 66.7603 258.538 68.5629C255.674 70.3107 253.43 72.7685 251.809 75.9363C250.187 79.1044 249.376 82.7093 249.376 86.751C249.376 90.7383 250.187 94.316 251.809 97.4839C253.43 100.597 255.674 103.055 258.538 104.858ZM276.944 92.5682C275.536 94.0974 273.673 94.8621 271.348 94.8621C269.889 94.8621 268.565 94.5069 267.375 93.7969C266.187 93.0869 265.267 92.1311 264.619 90.9294C263.97 89.6733 263.646 88.2531 263.646 86.669C263.646 85.1397 263.97 83.7742 264.619 82.5725C265.322 81.3164 266.24 80.3331 267.375 79.6231C268.565 78.9131 269.916 78.5582 271.43 78.5582C272.944 78.5582 274.265 78.9131 275.403 79.6231C276.59 80.3331 277.511 81.2893 278.159 82.4906C278.806 83.6922 279.131 85.0851 279.131 86.669C279.131 89.0723 278.402 91.0388 276.944 92.5682Z" fill="#272727" class="svg-elem-4"></path>
+						<path id="anv-t" fill-rule="evenodd" clip-rule="evenodd" d="M306.09 78.5585V106.742H320.198V78.5585H328.955V66.6786H320.198V50.1288H306.09V66.6786H297.336V78.5585H306.09Z" fill="#272727" class="svg-elem-5"></path>
+						<path id="anv-an a" d="M331.01 106.26L345.198 66.3819H362.453L376.568 106.26H362.381L360.314 98.9248H346.625L344.486 106.26H331.01ZM349.263 89.6676H357.747L353.612 75.9952L349.263 89.6676Z" fill="#272727" class="svg-elem-6"></path>
+						<path id="anv-n" d="M420.817 66.3819V106.26H405.061L395.364 87.8161L392.369 81.4784H392.228L392.656 91.7326V106.26H379.537V66.3819H395.293L404.918 84.6829L407.984 91.1629H408.127L407.699 80.9087V66.3819H420.817Z" fill="#272727" class="svg-elem-7"></path>
+						<path id="anv-v" d="M470.451 66.3819L455.622 106.26H438.51L423.538 66.3819H438.938L444.5 84.3268L447.352 95.1507H447.422L450.203 84.398L455.836 66.3819H470.451Z" fill="#272727" class="svg-elem-8"></path>
+						<path id="anv-e" d="M473.186 106.26V66.3819H508.264V76.1377H487.303V81.6208H503.63V90.8781H487.303V96.5038H508.478V106.26H473.186Z" fill="#272727" class="svg-elem-9"></path>
+						<path id="anv-s" fill-rule="evenodd" clip-rule="evenodd" d="M519.169 105.619C522.212 106.426 525.776 106.829 529.863 106.829C533.762 106.829 537.135 106.26 539.988 105.12C542.84 103.981 545.05 102.367 546.618 100.278C548.186 98.1418 548.971 95.6494 548.971 92.8011C548.971 90.6647 548.496 88.8844 547.545 87.4602C546.641 85.9886 545.311 84.8255 543.552 83.971C541.841 83.069 539.75 82.4281 537.278 82.0483L531.29 81.0514C530.148 80.8139 529.151 80.6241 528.295 80.4816C527.44 80.2918 526.75 80.0543 526.227 79.7696C525.753 79.4372 525.514 79.01 525.514 78.4877C525.514 77.7283 525.894 77.0873 526.655 76.5651C527.463 75.9954 528.699 75.7105 530.362 75.7105C532.169 75.7105 533.762 75.8768 535.139 76.2091C536.518 76.4938 537.849 76.9924 539.133 77.7044C540.462 78.4166 541.912 79.3898 543.482 80.6241L549.113 71.5091C547.403 70.2274 545.619 69.1592 543.766 68.3047C541.912 67.4502 539.893 66.833 537.706 66.4533C535.567 66.026 533.072 65.8124 530.22 65.8124C526.322 65.8124 522.947 66.3583 520.096 67.4502C517.244 68.5422 515.034 70.1088 513.466 72.15C511.898 74.1915 511.113 76.6364 511.113 79.4847C511.113 81.7634 511.611 83.7099 512.61 85.3239C513.655 86.9381 515.129 88.2435 517.03 89.2404C518.978 90.19 521.308 90.8546 524.017 91.2343L530.006 92.0889C530.91 92.1838 531.693 92.3501 532.36 92.5874C533.072 92.7772 533.618 93.0384 533.999 93.3707C534.379 93.6555 534.569 94.0591 534.569 94.5813C534.569 95.056 534.379 95.4833 533.999 95.863C533.666 96.1953 533.143 96.4565 532.43 96.6463C531.718 96.7888 530.814 96.8599 529.72 96.8599C526.964 96.8599 524.469 96.5039 522.235 95.7919C520.048 95.0323 518.004 93.8217 516.104 92.1601L510.614 101.346C513.275 103.34 516.127 104.764 519.169 105.619Z" fill="#272727" class="svg-elem-10"></path>
+						<path id="anv-i" d="M571 53.7068V62.1809H550.752V53.7068H571ZM568.076 66.3823V106.26H553.674V66.3823H568.076Z" fill="#272727" class="svg-elem-11"></path>
+						</g>
+						<g id="anv-anvreds">
+						<path id="anv-ellip" d="M175.762 128.927C179.742 128.927 182.968 125.692 182.968 121.704C182.968 117.714 179.742 114.48 175.762 114.48C171.781 114.48 168.554 117.714 168.554 121.704C168.554 125.692 171.781 128.927 175.762 128.927Z" fill="#FE4A49" class="svg-elem-12"></path>
+						<path id="anv-ellip2" d="M530.818 128.927C534.8 128.927 538.026 125.692 538.026 121.704C538.026 117.714 534.8 114.48 530.818 114.48C526.839 114.48 523.612 117.714 523.612 121.704C523.612 125.692 526.839 128.927 530.818 128.927Z" fill="#FE4A49" class="svg-elem-13"></path>
+						<path id="anv-r" fill-rule="evenodd" clip-rule="evenodd" d="M168.554 107.573V66.6702H182.956V69.2741C185.594 66.9804 189.015 65.8336 193.22 65.8336C195.15 65.8336 196.806 66.0846 198.184 66.5865C199.619 67.0883 200.833 67.8689 201.826 68.9284L193.468 80.2208C193.026 79.7189 192.391 79.3282 191.564 79.0496C190.792 78.7151 189.909 78.5478 188.915 78.5478C187.039 78.5478 185.577 79.1333 184.528 80.3043C183.48 81.4195 182.956 83.0925 182.956 85.3231V87.1213L182.873 97.0128C182.873 107.573 172.974 107.573 168.554 107.573Z" fill="#FE4A49" class="svg-elem-14"></path>
+						</g>
+						<g id="anv-temple">
+						<path id="Vector" d="M97.3767 76.9994C97.3284 76.9515 97.2629 76.9244 97.1945 76.9243H76.7903V84.6317H97.4522V77.1799C97.4522 77.1122 97.425 77.0472 97.3767 76.9994Z" fill="#FE4A49" class="svg-elem-15"></path>
+						<path id="Vector_2" d="M63.7231 84.6316H70.9051L70.9058 83.7259C70.9058 82.7833 70.5275 81.8793 69.8539 81.2128C69.1804 80.5464 68.267 80.1719 67.3144 80.1719C66.362 80.1719 65.4486 80.5464 64.7749 81.2128C64.1015 81.8793 63.7231 82.7833 63.7231 83.7259V84.6316Z" fill="#FE4A49" class="svg-elem-16"></path>
+						<path id="Vector_3" d="M63.1179 79.5733C64.2307 78.4718 65.7396 77.8521 67.3137 77.8501C68.8876 77.8522 70.3971 78.472 71.5097 79.5736C72.6225 80.6751 73.2483 82.1684 73.2498 83.726V84.6317H74.4449V76.9243H59.6448V84.6317H61.3776V83.726C61.3791 82.1683 62.005 80.6748 63.1179 79.5733Z" fill="#FE4A49" class="svg-elem-17"></path>
+						<path id="Vector_4" d="M59.6443 39.2459H61.5886V35.1412H59.6443V39.2459Z" fill="#FE4A49" class="svg-elem-18"></path>
+						<path id="Vector_5" d="M62.5372 43.6944C63.2894 42.6845 64.348 41.9389 65.5585 41.5662H59.6443V48.0854H61.377V47.1799C61.3785 45.9254 61.7849 44.7041 62.5372 43.6944Z" fill="#FE4A49" class="svg-elem-19"></path>
+						<path id="Vector_6" d="M74.4444 48.0854V41.5662H69.0679C70.2784 41.9389 71.337 42.6845 72.0892 43.6944C72.8414 44.7041 73.2479 45.9254 73.2494 47.1799V48.0854H74.4444Z" fill="#FE4A49" class="svg-elem-20"></path>
+						<path id="Vector_7" d="M72.1133 35.1412V39.2459H74.4443V35.1412H72.1133Z" fill="#FE4A49" class="svg-elem-21"></path>
+						<path id="Vector_8" d="M63.7231 48.0854H70.9045L70.9058 47.1798C70.9058 46.2373 70.5275 45.3334 69.8539 44.6669C69.1804 44.0004 68.267 43.626 67.3144 43.626C66.362 43.626 65.4486 44.0004 64.7749 44.6669C64.1015 45.3334 63.7231 46.2373 63.7231 47.1798V48.0854Z" fill="#FE4A49" class="svg-elem-22"></path>
+						<path id="Vector_9" d="M63.7231 56.9251H70.9045L70.9058 56.0194C70.9058 55.0767 70.5275 54.1728 69.8539 53.5063C69.1804 52.8398 68.267 52.4654 67.3144 52.4654C66.362 52.4654 65.4486 52.8398 64.7749 53.5063C64.1015 54.1728 63.7231 55.0767 63.7231 56.0194V56.9251Z" fill="#FE4A49" class="svg-elem-23"></path>
+						<path id="Vector_10" d="M63.7231 65.7645H70.9045L70.9058 64.8588C70.9058 63.9163 70.5275 63.0123 69.8539 62.3458C69.1804 61.6794 68.267 61.3049 67.3144 61.3049C66.362 61.3049 65.4486 61.6794 64.7749 62.3458C64.1015 63.0123 63.7231 63.9163 63.7231 64.8588V65.7645Z" fill="#FE4A49" class="svg-elem-24"></path>
+						<path id="Vector_11" d="M63.7231 74.604H70.9045L70.9058 73.6986C70.9058 72.756 70.5275 71.852 69.8539 71.1856C69.1804 70.5191 68.267 70.1447 67.3144 70.1447C66.362 70.1447 65.4486 70.5191 64.7749 71.1856C64.1015 71.852 63.7231 72.756 63.7231 73.6986V74.604Z" fill="#FE4A49" class="svg-elem-25"></path>
+						<path id="Vector_12" d="M74.444 68.0848H69.0691C70.2794 68.4577 71.3377 69.2034 72.0895 70.2133C72.8415 71.2232 73.2477 72.4443 73.249 73.6987V74.604H74.444V68.0848Z" fill="#FE4A49" class="svg-elem-26"></path>
+						<path id="Vector_13" d="M73.2494 64.8588V65.7645H74.4442V59.2454H69.0679C70.2784 59.6179 71.337 60.3634 72.0892 61.3732C72.8414 62.3831 73.2479 63.6043 73.2494 64.8588Z" fill="#FE4A49" class="svg-elem-27"></path>
+						<path id="Vector_14" d="M73.2494 56.0193V56.925H74.4444V50.4057H69.0679C70.2784 50.7782 71.337 51.5238 72.0892 52.5337C72.8414 53.5436 73.2479 54.7647 73.2494 56.0193Z" fill="#FE4A49" class="svg-elem-28"></path>
+						<path id="Vector_15" d="M62.5385 52.5337C63.2907 51.5238 64.3493 50.7782 65.5598 50.4057H59.6455V56.925H61.3783V56.0193C61.3798 54.7647 61.7863 53.5436 62.5385 52.5337Z" fill="#FE4A49" class="svg-elem-29"></path>
+						<path id="Vector_16" d="M62.5385 61.3732C63.2907 60.3634 64.3493 59.6179 65.5598 59.2454H59.6455V65.7645H61.3783V64.8588C61.3798 63.6043 61.7863 62.3831 62.5385 61.3732Z" fill="#FE4A49" class="svg-elem-30"></path>
+						<path id="Vector_17" d="M62.5384 70.2129C63.2906 69.2031 64.3492 68.4575 65.5598 68.0848H59.6455V74.6041H61.3783V73.6987C61.3797 72.4441 61.7862 71.2228 62.5384 70.2129Z" fill="#FE4A49" class="svg-elem-31"></path>
+						<path id="Vector_18" d="M94.7094 74.604V68.4716C94.7094 68.3689 94.6681 68.2707 94.5948 68.1981C94.5215 68.1256 94.4221 68.0848 94.3185 68.0848H76.7903V74.604H94.7094Z" fill="#FE4A49" class="svg-elem-32"></path>
+						<path id="Vector_19" d="M92.5613 59.3587C92.488 59.286 92.3886 59.2454 92.285 59.2454H76.79V65.7645H92.6758V59.6321C92.6758 59.5295 92.6346 59.4311 92.5613 59.3587Z" fill="#FE4A49" class="svg-elem-33"></path>
+						<path id="Vector_20" d="M89.817 50.519C89.7437 50.4464 89.6443 50.4057 89.5407 50.4057H76.7903V56.925H89.9314V50.7924C89.9314 50.6899 89.8902 50.5915 89.817 50.519Z" fill="#FE4A49" class="svg-elem-34"></path>
+						<path id="Vector_21" d="M83.7182 32.3721C83.6885 32.4431 83.6731 32.5192 83.6731 32.5961V39.2459H84.8561V32.5961C84.8561 32.5192 84.8408 32.4431 84.811 32.3721C84.7814 32.301 84.7378 32.2366 84.6828 32.1822C84.6279 32.1279 84.5627 32.0847 84.4909 32.0553C84.4192 32.0259 84.3423 32.0107 84.2646 32.0107C84.187 32.0107 84.11 32.0259 84.0383 32.0553C83.9665 32.0847 83.9013 32.1279 83.8464 32.1822C83.7914 32.2366 83.7478 32.301 83.7182 32.3721Z" fill="#FE4A49" class="svg-elem-35"></path>
+						<path id="Vector_22" d="M87.0083 41.6795C86.9351 41.607 86.8357 41.5662 86.732 41.5662H76.7903V48.0854H87.1227V41.953C87.1227 41.8504 87.0816 41.7521 87.0083 41.6795Z" fill="#FE4A49" class="svg-elem-36"></path>
+						<path id="Vector_23" d="M76.7903 39.2459H81.3283V35.1412H76.7903V39.2459Z" fill="#FE4A49" class="svg-elem-37"></path>
+						<path id="Vector_24" d="M68.9139 32.9002C68.367 32.3587 67.6253 32.054 66.8516 32.053C66.0778 32.0537 65.3362 32.3582 64.789 32.8996C64.2418 33.4411 63.9341 34.1754 63.9333 34.9412V39.2459H65.8223V35.0488C65.8223 34.7411 65.9458 34.4459 66.1656 34.2283C66.3855 34.0107 66.6836 33.8886 66.9946 33.8886C67.3056 33.8886 67.6038 34.0107 67.8236 34.2283C68.0435 34.4459 68.167 34.7411 68.167 35.0488V39.2459H69.7693V34.9414C69.7686 34.1757 69.461 33.4416 68.9139 32.9002Z" fill="#FE4A49" class="svg-elem-38"></path>
+						<path id="Vector_25" d="M57.3004 35.1415H52.7324L52.7329 39.246H57.3004V35.1415Z" fill="#FE4A49" class="svg-elem-39"></path>
+						<path id="Vector_26" d="M49.2471 32.3688C49.2181 32.441 49.2038 32.5184 49.2052 32.5961V39.2459H50.3883V32.5961C50.3898 32.5184 50.3755 32.441 50.3465 32.3688C50.3173 32.2966 50.274 32.2307 50.2189 32.1753C50.1638 32.1198 50.0981 32.0756 50.0256 32.0456C49.9531 32.0155 49.8754 32 49.7968 32C49.7182 32 49.6403 32.0155 49.5678 32.0456C49.4953 32.0756 49.4296 32.1198 49.3745 32.1753C49.3196 32.2307 49.2761 32.2966 49.2471 32.3688Z" fill="#FE4A49" class="svg-elem-40"></path>
+						<path id="Vector_27" d="M47.0529 41.6795C46.9797 41.7521 46.9385 41.8504 46.9385 41.953V48.0854H57.301V41.5662H47.3293C47.2256 41.5662 47.1263 41.607 47.0529 41.6795Z" fill="#FE4A49" class="svg-elem-41"></path>
+						<path id="Vector_28" d="M44.245 50.519C44.1718 50.5915 44.1306 50.6899 44.1306 50.7924V56.925H57.3003V50.4057H44.5214C44.4178 50.4057 44.3184 50.4464 44.245 50.519Z" fill="#FE4A49" class="svg-elem-42"></path>
+						<path id="Vector_29" d="M41.5006 59.3587C41.4273 59.4311 41.3861 59.5295 41.3861 59.6321L41.3857 65.7645H57.301V59.2454H41.7769C41.6733 59.2454 41.5739 59.286 41.5006 59.3587Z" fill="#FE4A49" class="svg-elem-43"></path>
+						<path id="Vector_30" d="M39.4669 68.1981C39.3936 68.2707 39.3525 68.3689 39.3525 68.4716L39.3521 74.604H57.3012V68.0848H39.7432C39.6396 68.0848 39.5402 68.1256 39.4669 68.1981Z" fill="#FE4A49" class="svg-elem-44"></path>
+						<path id="Vector_31" d="M30.9541 88.5536V90.1555L103.107 90.1548V88.5519C103.107 88.1274 102.937 87.7202 102.633 87.42C102.33 87.1198 101.919 86.9512 101.49 86.9512H50.5635C50.2525 86.9512 49.9544 86.8289 49.7345 86.6113C49.5146 86.3937 49.3911 86.0987 49.3911 85.791C49.3911 85.4833 49.5146 85.1882 49.7345 84.9706C49.9544 84.7531 50.2525 84.6309 50.5635 84.6309H57.3008V76.9235H36.8662C36.7978 76.9236 36.7323 76.9507 36.684 76.9986C36.6357 77.0465 36.6086 77.1114 36.6087 77.1792V84.6316H40.7937C41.1046 84.6316 41.4028 84.7538 41.6227 84.9714C41.8425 85.1889 41.9661 85.484 41.9661 85.7917C41.9661 86.0994 41.8425 86.3945 41.6227 86.612C41.4028 86.8297 41.1046 86.9519 40.7937 86.9519H32.573C32.3604 86.9519 32.1499 86.9934 31.9535 87.0737C31.7571 87.1542 31.5786 87.2723 31.4283 87.421C31.2779 87.5697 31.1587 87.7463 31.0773 87.9406C30.996 88.135 30.9541 88.3433 30.9541 88.5536Z" fill="#FE4A49" class="svg-elem-45"></path>
+						<path id="Vector_32" d="M100.061 117.904V92.4758H97.0479V117.904H100.061Z" fill="#FE4A49" class="svg-elem-46"></path>
+						<path id="Vector_33" d="M94.7031 117.904V92.4758H85.7966V117.904H94.7031Z" fill="#FE4A49" class="svg-elem-47"></path>
+						<path id="Vector_34" d="M83.4519 117.904V92.4758H80.4387V117.904H83.4519Z" fill="#FE4A49" class="svg-elem-48"></path>
+						<path id="Vector_35" d="M62.4149 117.904H71.5631V106.788C71.567 106.191 71.4517 105.599 71.2235 105.046C70.9954 104.494 70.6592 103.991 70.234 103.568C69.8089 103.144 69.3033 102.808 68.7463 102.579C68.1894 102.349 67.5921 102.231 66.989 102.231C66.3857 102.231 65.7885 102.349 65.2315 102.579C64.6747 102.808 64.1691 103.144 63.744 103.568C63.3189 103.991 62.9825 104.494 62.7544 105.046C62.5263 105.599 62.4109 106.191 62.4149 106.788V117.904Z" fill="#FE4A49" class="svg-elem-49"></path>
+						<path id="Vector_36" d="M62.0986 101.948C63.3956 100.664 65.1544 99.9413 66.9889 99.9389C68.8236 99.9412 70.5824 100.664 71.8795 101.948C73.1767 103.231 73.9061 104.972 73.9079 106.788V117.904H78.0939V92.4758H55.4355V117.904H60.0701V106.788C60.072 104.972 60.8014 103.232 62.0986 101.948Z" fill="#FE4A49" class="svg-elem-50"></path>
+						<path id="Vector_37" d="M53.0909 117.904V92.4752L50.0779 92.4758V117.904H53.0909Z" fill="#FE4A49" class="svg-elem-51"></path>
+						<path id="Vector_38" d="M47.7331 117.904V92.4752L39.3621 92.4758V117.904H47.7331Z" fill="#FE4A49" class="svg-elem-52"></path>
+						<path id="Vector_39" d="M37.0174 117.904V92.4752L34.0046 92.4758V117.904H37.0174Z" fill="#FE4A49" class="svg-elem-53"></path>
+						<path id="Vector_40" d="M29.3223 122.503H104.494V120.225H29.3223V122.503Z" fill="#FE4A49" class="svg-elem-54"></path>
+						<path id="Vector_41" d="M97.3767 76.9994C97.3284 76.9515 97.2629 76.9244 97.1945 76.9243H76.7903V84.6317H97.4522V77.1799C97.4522 77.1122 97.425 77.0472 97.3767 76.9994Z" stroke="#272727" class="svg-elem-55"></path>
+						<path id="Vector_42" d="M63.7231 84.6316H70.9051L70.9058 83.7259C70.9058 82.7833 70.5275 81.8793 69.8539 81.2128C69.1804 80.5464 68.267 80.1719 67.3144 80.1719C66.362 80.1719 65.4486 80.5464 64.7749 81.2128C64.1015 81.8793 63.7231 82.7833 63.7231 83.7259V84.6316Z" stroke="#272727" class="svg-elem-56"></path>
+						<path id="Vector_43" d="M63.1179 79.5733C64.2307 78.4718 65.7396 77.8521 67.3137 77.8501C68.8876 77.8522 70.3971 78.472 71.5097 79.5736C72.6225 80.6751 73.2483 82.1684 73.2498 83.726V84.6317H74.4449V76.9243H59.6448V84.6317H61.3776V83.726C61.3791 82.1683 62.005 80.6748 63.1179 79.5733Z" stroke="#272727" class="svg-elem-57"></path>
+						<path id="Vector_44" d="M59.6443 39.2459H61.5886V35.1412H59.6443V39.2459Z" stroke="#272727" class="svg-elem-58"></path>
+						<path id="Vector_45" d="M62.5372 43.6944C63.2894 42.6845 64.348 41.9389 65.5585 41.5662H59.6443V48.0854H61.377V47.1799C61.3785 45.9254 61.7849 44.7041 62.5372 43.6944Z" stroke="#272727" class="svg-elem-59"></path>
+						<path id="Vector_46" d="M74.4444 48.0854V41.5662H69.0679C70.2784 41.9389 71.337 42.6845 72.0892 43.6944C72.8414 44.7041 73.2479 45.9254 73.2494 47.1799V48.0854H74.4444Z" stroke="#272727" class="svg-elem-60"></path>
+						<path id="Vector_47" d="M72.1133 35.1412V39.2459H74.4443V35.1412H72.1133Z" stroke="#272727" class="svg-elem-61"></path>
+						<path id="Vector_48" d="M63.7231 48.0854H70.9045L70.9058 47.1798C70.9058 46.2373 70.5275 45.3334 69.8539 44.6669C69.1804 44.0004 68.267 43.626 67.3144 43.626C66.362 43.626 65.4486 44.0004 64.7749 44.6669C64.1015 45.3334 63.7231 46.2373 63.7231 47.1798V48.0854Z" stroke="#272727" class="svg-elem-62"></path>
+						<path id="Vector_49" d="M63.7231 56.9251H70.9045L70.9058 56.0194C70.9058 55.0767 70.5275 54.1728 69.8539 53.5063C69.1804 52.8398 68.267 52.4654 67.3144 52.4654C66.362 52.4654 65.4486 52.8398 64.7749 53.5063C64.1015 54.1728 63.7231 55.0767 63.7231 56.0194V56.9251Z" stroke="#272727" class="svg-elem-63"></path>
+						<path id="Vector_50" d="M63.7231 65.7645H70.9045L70.9058 64.8588C70.9058 63.9163 70.5275 63.0123 69.8539 62.3458C69.1804 61.6794 68.267 61.3049 67.3144 61.3049C66.362 61.3049 65.4486 61.6794 64.7749 62.3458C64.1015 63.0123 63.7231 63.9163 63.7231 64.8588V65.7645Z" stroke="#272727" class="svg-elem-64"></path>
+						<path id="Vector_51" d="M63.7231 74.604H70.9045L70.9058 73.6986C70.9058 72.756 70.5275 71.852 69.8539 71.1856C69.1804 70.5191 68.267 70.1447 67.3144 70.1447C66.362 70.1447 65.4486 70.5191 64.7749 71.1856C64.1015 71.852 63.7231 72.756 63.7231 73.6986V74.604Z" stroke="#272727" class="svg-elem-65"></path>
+						<path id="Vector_52" d="M74.444 68.0848H69.0691C70.2794 68.4577 71.3377 69.2034 72.0895 70.2133C72.8415 71.2232 73.2477 72.4443 73.249 73.6987V74.604H74.444V68.0848Z" stroke="#272727" class="svg-elem-66"></path>
+						<path id="Vector_53" d="M73.2494 64.8588V65.7645H74.4442V59.2454H69.0679C70.2784 59.6179 71.337 60.3634 72.0892 61.3732C72.8414 62.3831 73.2479 63.6043 73.2494 64.8588Z" stroke="#272727" class="svg-elem-67"></path>
+						<path id="Vector_54" d="M73.2494 56.0193V56.925H74.4444V50.4057H69.0679C70.2784 50.7782 71.337 51.5238 72.0892 52.5337C72.8414 53.5436 73.2479 54.7647 73.2494 56.0193Z" stroke="#272727" class="svg-elem-68"></path>
+						<path id="Vector_55" d="M62.5385 52.5337C63.2907 51.5238 64.3493 50.7782 65.5598 50.4057H59.6455V56.925H61.3783V56.0193C61.3798 54.7647 61.7863 53.5436 62.5385 52.5337Z" stroke="#272727" class="svg-elem-69"></path>
+						<path id="Vector_56" d="M62.5385 61.3732C63.2907 60.3634 64.3493 59.6179 65.5598 59.2454H59.6455V65.7645H61.3783V64.8588C61.3798 63.6043 61.7863 62.3831 62.5385 61.3732Z" stroke="#272727" class="svg-elem-70"></path>
+						<path id="Vector_57" d="M62.5384 70.2129C63.2906 69.2031 64.3492 68.4575 65.5598 68.0848H59.6455V74.6041H61.3783V73.6987C61.3797 72.4441 61.7862 71.2228 62.5384 70.2129Z" stroke="#272727" class="svg-elem-71"></path>
+						<path id="Vector_58" d="M94.7094 74.604V68.4716C94.7094 68.3689 94.6681 68.2707 94.5948 68.1981C94.5215 68.1256 94.4221 68.0848 94.3185 68.0848H76.7903V74.604H94.7094Z" stroke="#272727" class="svg-elem-72"></path>
+						<path id="Vector_59" d="M92.5613 59.3587C92.488 59.286 92.3886 59.2454 92.285 59.2454H76.79V65.7645H92.6758V59.6321C92.6758 59.5295 92.6346 59.4311 92.5613 59.3587Z" stroke="#272727" class="svg-elem-73"></path>
+						<path id="Vector_60" d="M89.817 50.519C89.7437 50.4464 89.6443 50.4057 89.5407 50.4057H76.7903V56.925H89.9314V50.7924C89.9314 50.6899 89.8902 50.5915 89.817 50.519Z" stroke="#272727" class="svg-elem-74"></path>
+						<path id="Vector_61" d="M83.7182 32.3721C83.6885 32.4431 83.6731 32.5192 83.6731 32.5961V39.2459H84.8561V32.5961C84.8561 32.5192 84.8408 32.4431 84.811 32.3721C84.7814 32.301 84.7378 32.2366 84.6828 32.1822C84.6279 32.1279 84.5627 32.0847 84.4909 32.0553C84.4192 32.0259 84.3423 32.0107 84.2646 32.0107C84.187 32.0107 84.11 32.0259 84.0383 32.0553C83.9665 32.0847 83.9013 32.1279 83.8464 32.1822C83.7914 32.2366 83.7478 32.301 83.7182 32.3721Z" stroke="#272727" class="svg-elem-75"></path>
+						<path id="Vector_62" d="M87.0083 41.6795C86.9351 41.607 86.8357 41.5662 86.732 41.5662H76.7903V48.0854H87.1227V41.953C87.1227 41.8504 87.0816 41.7521 87.0083 41.6795Z" stroke="#272727" class="svg-elem-76"></path>
+						<path id="Vector_63" d="M76.7903 39.2459H81.3283V35.1412H76.7903V39.2459Z" stroke="#272727" class="svg-elem-77"></path>
+						<path id="Vector_64" d="M68.9139 32.9002C68.367 32.3587 67.6253 32.054 66.8516 32.053C66.0778 32.0537 65.3362 32.3582 64.789 32.8996C64.2418 33.4411 63.9341 34.1754 63.9333 34.9412V39.2459H65.8223V35.0488C65.8223 34.7411 65.9458 34.4459 66.1656 34.2283C66.3855 34.0107 66.6836 33.8886 66.9946 33.8886C67.3056 33.8886 67.6038 34.0107 67.8236 34.2283C68.0435 34.4459 68.167 34.7411 68.167 35.0488V39.2459H69.7693V34.9414C69.7686 34.1757 69.461 33.4416 68.9139 32.9002Z" stroke="#272727" class="svg-elem-78"></path>
+						<path id="Vector_65" d="M57.3004 35.1415H52.7324L52.7329 39.246H57.3004V35.1415Z" stroke="#272727" class="svg-elem-79"></path>
+						<path id="Vector_66" d="M49.2471 32.3688C49.2181 32.441 49.2038 32.5184 49.2052 32.5961V39.2459H50.3883V32.5961C50.3898 32.5184 50.3755 32.441 50.3465 32.3688C50.3173 32.2966 50.274 32.2307 50.2189 32.1753C50.1638 32.1198 50.0981 32.0756 50.0256 32.0456C49.9531 32.0155 49.8754 32 49.7968 32C49.7182 32 49.6403 32.0155 49.5678 32.0456C49.4953 32.0756 49.4296 32.1198 49.3745 32.1753C49.3196 32.2307 49.2761 32.2966 49.2471 32.3688Z" stroke="#272727" class="svg-elem-80"></path>
+						<path id="Vector_67" d="M47.0529 41.6795C46.9797 41.7521 46.9385 41.8504 46.9385 41.953V48.0854H57.301V41.5662H47.3293C47.2256 41.5662 47.1263 41.607 47.0529 41.6795Z" stroke="#272727" class="svg-elem-81"></path>
+						<path id="Vector_68" d="M44.245 50.519C44.1718 50.5915 44.1306 50.6899 44.1306 50.7924V56.925H57.3003V50.4057H44.5214C44.4178 50.4057 44.3184 50.4464 44.245 50.519Z" stroke="#272727" class="svg-elem-82"></path>
+						<path id="Vector_69" d="M41.5006 59.3587C41.4273 59.4311 41.3861 59.5295 41.3861 59.6321L41.3857 65.7645H57.301V59.2454H41.7769C41.6733 59.2454 41.5739 59.286 41.5006 59.3587Z" stroke="#272727" class="svg-elem-83"></path>
+						<path id="Vector_70" d="M39.4669 68.1981C39.3936 68.2707 39.3525 68.3689 39.3525 68.4716L39.3521 74.604H57.3012V68.0848H39.7432C39.6396 68.0848 39.5402 68.1256 39.4669 68.1981Z" stroke="#272727" class="svg-elem-84"></path>
+						<path id="Vector_71" d="M30.9541 88.5536V90.1555L103.107 90.1548V88.5519C103.107 88.1274 102.937 87.7202 102.633 87.42C102.33 87.1198 101.919 86.9512 101.49 86.9512H50.5635C50.2525 86.9512 49.9544 86.8289 49.7345 86.6113C49.5146 86.3937 49.3911 86.0987 49.3911 85.791C49.3911 85.4833 49.5146 85.1882 49.7345 84.9706C49.9544 84.7531 50.2525 84.6309 50.5635 84.6309H57.3008V76.9235H36.8662C36.7978 76.9236 36.7323 76.9507 36.684 76.9986C36.6357 77.0465 36.6086 77.1114 36.6087 77.1792V84.6316H40.7937C41.1046 84.6316 41.4028 84.7538 41.6227 84.9714C41.8425 85.1889 41.9661 85.484 41.9661 85.7917C41.9661 86.0994 41.8425 86.3945 41.6227 86.612C41.4028 86.8297 41.1046 86.9519 40.7937 86.9519H32.573C32.3604 86.9519 32.1499 86.9934 31.9535 87.0737C31.7571 87.1542 31.5786 87.2723 31.4283 87.421C31.2779 87.5697 31.1587 87.7463 31.0773 87.9406C30.996 88.135 30.9541 88.3433 30.9541 88.5536Z" stroke="#272727" class="svg-elem-85"></path>
+						<path id="Vector_72" d="M100.061 117.904V92.4758H97.0479V117.904H100.061Z" stroke="#272727" class="svg-elem-86"></path>
+						<path id="Vector_73" d="M94.7031 117.904V92.4758H85.7966V117.904H94.7031Z" stroke="#272727" class="svg-elem-87"></path>
+						<path id="Vector_74" d="M83.4519 117.904V92.4758H80.4387V117.904H83.4519Z" stroke="#272727" class="svg-elem-88"></path>
+						<path id="Vector_75" d="M62.4149 117.904H71.5631V106.788C71.567 106.191 71.4517 105.599 71.2235 105.046C70.9954 104.494 70.6592 103.991 70.234 103.568C69.8089 103.144 69.3033 102.808 68.7463 102.579C68.1894 102.349 67.5921 102.231 66.989 102.231C66.3857 102.231 65.7885 102.349 65.2315 102.579C64.6747 102.808 64.1691 103.144 63.744 103.568C63.3189 103.991 62.9825 104.494 62.7544 105.046C62.5263 105.599 62.4109 106.191 62.4149 106.788V117.904Z" stroke="#272727" class="svg-elem-89"></path>
+						<path id="Vector_76" d="M62.0986 101.948C63.3956 100.664 65.1544 99.9413 66.9889 99.9389C68.8236 99.9412 70.5824 100.664 71.8795 101.948C73.1767 103.231 73.9061 104.972 73.9079 106.788V117.904H78.0939V92.4758H55.4355V117.904H60.0701V106.788C60.072 104.972 60.8014 103.232 62.0986 101.948Z" stroke="#272727" class="svg-elem-90"></path>
+						<path id="Vector_77" d="M53.0909 117.904V92.4752L50.0779 92.4758V117.904H53.0909Z" stroke="#272727" class="svg-elem-91"></path>
+						<path id="Vector_78" d="M47.7331 117.904V92.4752L39.3621 92.4758V117.904H47.7331Z" stroke="#272727" class="svg-elem-92"></path>
+						<path id="Vector_79" d="M37.0174 117.904V92.4752L34.0046 92.4758V117.904H37.0174Z" stroke="#272727" class="svg-elem-93"></path>
+						<path id="Vector_80" d="M29.3223 122.503H104.494V120.225H29.3223V122.503Z" stroke="#272727" class="svg-elem-94"></path>
+						</g>
+					</g>
+				</svg>
+						
 		</div>
-
-		<div class="the-title y-full" id="faqs">
-			<h2>FAQ</h2>
-			<FAQ></FAQ>
-		</div>
-
 	</div>
 
+	<div class="section-pads container-5">
+  	<div class="header-5 the-title">
+			<h2>FAQs</h2>
+		</div>
+  	<div class="body-5">
+			<FAQ></FAQ>
+		</div>
+	</div>
+
+</div>
 
 
-<style>
+<style lang="sass">
 
-a:hover { color: var(--anv);}
+.x0
+	overflow-y: hidden
+	@media screen and (min-width: 900px)
+		height: 100vh
+		img
+			object-fit: cover
+			height: 100vh
+	@media screen and (max-width: 899px) and (min-width: 768px)
+		img
+			object-fit: cover
+			height: 100vh
+	@media screen and (max-width: 767px) and (min-width: 576px)
+		img
+			height: 100%
+			object-fit: cover
+	@media screen and (max-width: 575px)
+		img
+			height: 60vh
+			object-fit: cover
 
-.x0 { overflow-y: hidden;}
-.temple { object-fit: contain;}
+.container-1 
+	display: grid 
+	grid-auto-flow: row 
+	.headerentry 
+		grid-area: headerentry 
+	.fillerentry 
+		grid-area: fillerentry 
+		img
+			height: 100%
+			width: 100%
+			object-fit: cover
+			object-position: center left
+	@media screen and (min-width: 768px)
+		grid-template-columns: 1fr 1fr 
+		grid-template-rows: 1fr 
+		gap: 0px 32px 
+		grid-template-areas: "headerentry fillerentry" 
+	@media screen and (max-width: 767px)
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto
+		gap: 24px 0
+		grid-template-areas: "headerentry" "fillerentry"
+		.fillerentry
+			img
+				padding: 24px
 
-@media screen and (min-width: 900px) {
-	.temple { height: 160px; margin-right: auto; margin-top: 32px;}
-	.x0 { height: 100vh;}
-	.x0 img { object-fit: cover; height: 100vh;}
-	.x1 { height: 70vh;}
 
-	.x4 img { object-fit: cover; height: 200px;}
-	.x5 { margin-top: 24px;}
-	.x5 .ww4 { height: 200px;}
+.container-2 
+	display: grid 
+	grid-auto-flow: row 
+	grid-template-areas: "header-2" "rowof3" 
+	.header-2 
+		grid-area: header-2 
+	.rowof3 
+		display: grid 
+		grid-auto-flow: row 
+		grid-area: rowof3 
+	@media screen and (min-width: 768px)
+		grid-template-columns: 1fr 
+		grid-template-rows: auto 1fr 
+		gap: 0px 0px 
+		.rowof3
+			grid-template-columns: 1fr 1fr 1fr 
+			grid-template-rows: 1fr 
+			gap: 0px 32px 
+			grid-template-areas: ". . ." 
+	@media screen and (max-width: 767px)
+		grid-template-columns: 1fr
+		grid-template-rows: auto 1fr 
+		gap: 0px 0px
+		.rowof3
+			grid-template-columns: 1fr
+			grid-template-rows: auto auto auto 
+			gap: 24px 0px 
+			grid-template-areas: "." "." "."
 
-}
+.container-3 
+	display: grid 
+	grid-auto-flow: row 
+	grid-template-areas: "header-3" "imagess" "videos" 
+	.header-3 
+		grid-area: header-3 
+	.imagess 
+		display: grid 
+		grid-auto-flow: row 
+		grid-area: imagess 
+		.subtitle31 
+			grid-area: subtitle31 
+			padding-bottom: 8px
+		.imagesgrid 
+			display: grid 
+			grid-auto-flow: row 
+			grid-area: imagesgrid 
+	.videos 
+		display: grid 
+		grid-auto-flow: row 
+		grid-area: videos 
+		.videossubtitle 
+			grid-area: videossubtitle 
+			padding-top: 32px
+			padding-bottom: 8px
+		.videosrow 
+			display: grid 
+			grid-auto-flow: row 
+			grid-area: videosrow 
+	@media screen and (min-width: 768px)
+		grid-template-columns: 1fr 
+		grid-template-rows: auto 1fr 1fr 
+		gap: 0px 0px 
+		.imagess
+			grid-template-columns: 1fr 
+			grid-template-rows: auto 1fr 
+			gap: 0px 0px 
+			grid-template-areas: "subtitle31" "imagesgrid"
+			.imagesgrid
+				grid-template-columns: 1fr 1fr 1fr 1fr 
+				grid-template-rows: 1fr 1fr 
+				gap: 32px 32px 
+				grid-template-areas: ". . . ." ". . . ." 
+		.videos
+			grid-template-columns: 1fr 
+			grid-template-rows: auto 1fr 
+			gap: 0px 0px 
+			grid-template-areas: "videossubtitle" "videosrow" 
+			.videosrow
+				grid-template-columns: 1fr 1fr 1fr 1fr 
+				grid-template-rows: 1fr 1fr 
+				gap: 0px 32px 
+				grid-template-areas: ". . . ." ". . . ." 
+	@media screen and (max-width: 767px)
+		grid-template-columns: 1fr 
+		grid-template-rows: auto auto auto 
+		gap: 0px 0px 
+		.imagess
+			grid-template-columns: 1fr 
+			grid-template-rows: auto auto 
+			gap: 0px 0px 
+			grid-template-areas: "subtitle31" "imagesgrid"
+			.imagesgrid
+				grid-template-columns: 1fr 1fr 1fr 1fr 
+				grid-template-rows: 1fr 1fr 
+				gap: 24px 24px 
+				grid-template-areas: ". . . ." ". . . ."
+				@media screen and (max-width: 575px)
+					grid-template-columns: 1fr 1fr
+					grid-template-rows: auto auto auto auto
+					gap: 24px 24px 
+					grid-template-areas: ". ." ". ." ". ." ". ."
+		.videos
+			grid-template-columns: 1fr 
+			grid-template-rows: auto auto 
+			gap: 24px 0px 
+			grid-template-areas: "videossubtitle" "videosrow" 
+			.videosrow
+				grid-template-columns: 1fr 1fr
+				grid-template-rows: 1fr 1fr 1fr 1fr
+				gap: 24px 24px 
+				grid-template-areas: ". ." ". ." ". ." ". ." 
 
-@media screen and (max-width: 899px) and (min-width: 768px) {
-	.temple { height: 160px; margin-right: auto; margin-top: 32px;}
-	.x0 img { object-fit: cover; height: 100vh;}
-	.x4 img { object-fit: cover; height: 160px;}
-	.x5 { margin-top: 24px;}
+.container-4 
+	display: grid 
+	grid-auto-flow: row 
+	.header-4 
+		grid-area: header-4 
+	.body-4 
+		grid-area: body-4 
+	@media screen and (min-width: 768px)
+		grid-template-columns: 1fr 
+		grid-template-rows: auto 1fr 
+		gap: 0px 0px 
+		grid-template-areas: "header-4" "body-4"
+		.body-4 svg
+			width: 480px
+			height: 128px
+	@media screen and (max-width: 767px)
+		grid-template-columns: 1fr 
+		grid-template-rows: auto auto 
+		gap: 0px 0px 
+		grid-template-areas: "header-4" "body-4"
+		.body-4 svg
+			width: 300px
+			height: 91px
+		
 
-}
+.container-5
+	display: grid 
+	grid-auto-flow: row
+	grid-template-columns: 1fr 
+	grid-template-rows: auto auto 
+	padding-bottom: 64px
+	grid-template-areas: "header-5" "body-5" 
+	gap: 0px 0px 
+	.header-5 
+		grid-area: header-5
+	.body-5
+		grid-area: body-5
+		
 
-@media screen and (max-width: 767px) and (min-width: 576px) {
-	.temple { height: 160px; margin-right: auto; margin-top: 32px;}
-	.x0 { height: 100vh;}
-	.x0 img { height: 100%; object-fit: cover;}
-	.x4 img { object-fit: cover; height: 160px;}
-	.x5 { margin-top: 24px;}
-	
-}
 
-@media screen and (max-width: 575px) {
-	.temple { height: 120px; margin-right: auto; margin-top: 32px;}
-	.x0 { height: 60vh;}
-	.x0 img { height: 60vh; object-fit: cover;}
-	.x4 img { object-fit: cover; height: 120px;}
-	.x4 .ww4 { width: calc(50% - 12px); margin-bottom: 16px;}
-	
-}
+
 </style>
 
 
