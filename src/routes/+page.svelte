@@ -1,6 +1,6 @@
 <script lang="ts">
 import supabase from '$lib/db';
-import Brands from '$lib/components/globals/AllBrands.svelte'
+import Brands from '$lib/components/globals/NewBrands.svelte'
 import Accordion from '$lib/components/pagecomps/HomeAccordion.svelte';
 let y:number = 1;
 let ih: number
