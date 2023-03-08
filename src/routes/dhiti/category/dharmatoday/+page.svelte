@@ -1,6 +1,5 @@
 <script lang="ts">
 import { onMount } from 'svelte';
-import Selection from '$lib/components/books/Selection.svelte'
 let xaxis: number = 0;
 let selectedCategory = 7
 let showLinks: boolean = true;
@@ -36,9 +35,9 @@ export const Latest = async() => {
 	// Sort the posts in descending order by date
 	// @ts-ignore
 	allPosts.sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date))
-
+	const featuredPosts = allPosts.filter((post) => post.meta.category === "Dharma Today")
 // Return only the first 4 items
-	return allPosts.slice(0, 1)
+	return featuredPosts.slice(0, 1)
 
 }
 
@@ -61,9 +60,9 @@ export const Second = async() => {
 	// Sort the posts in descending order by date
 	// @ts-ignore
 	allPosts.sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date))
-
+	const featuredPosts = allPosts.filter((post) => post.meta.category === "Dharma Today")
 // Return only the first 4 items
-	return allPosts.slice(1, 2)
+	return featuredPosts.slice(1, 2)
 
 }
 
@@ -86,11 +85,13 @@ export const Sidebar = async() => {
 	// Sort the posts in descending order by date
 	// @ts-ignore
 	allPosts.sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date))
-
+	const featuredPosts = allPosts.filter((post) => post.meta.category === "Dharma Today")
 // Return only the first 4 items
-	return allPosts.slice(2, 6)
+	return featuredPosts.slice(2, 6)
 
 }
+
+
 
 export const Featured = async() => {
 	const allPostFiles = import.meta.glob('/src/routes/dhiti/*.md')

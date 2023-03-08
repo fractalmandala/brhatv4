@@ -1,9 +1,9 @@
 ---
 title: Ecological Consciousness - The root of Indic Environmentalism
-author: Anshuman Pandey
+author: Anshuman Panda
 category: Svayambodha
 date: "2023-01-16"
-image: 
+image: /images/dhitiheroes/ecoconsciousness.webp
 ---
 
 <div class="hindi">
