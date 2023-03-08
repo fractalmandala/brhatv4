@@ -425,7 +425,7 @@ export const Featured = async() => {
 
 @media screen and (max-width: 767px)
 	.container
-		height: calc(100vh - 64px)
+		height: 100%
 		margin-top: 64px
 		width: 100vw
 		background: white
@@ -436,6 +436,16 @@ export const Featured = async() => {
 		position: sticky
 		top: 0
 		left: 0
+	.mainarea 
+		display: grid 
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto auto
+		gap: 32px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "page" "sidebar1" "sidebar2" 
+		grid-area: mainarea 
+		padding: 24px
+		min-height: 100%
 	.topstrip
 		position: fixed
 		display: grid
