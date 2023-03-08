@@ -15,7 +15,7 @@ const config = {
 	extensions: ['.svelte', '.md', '.svx'],
 	kit: {
 		adapter: adapter({
-			edge: true
+			runtime: 'edge'
 		}),
 	
 	},
