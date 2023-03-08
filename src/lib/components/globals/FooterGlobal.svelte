@@ -1,7 +1,3 @@
-<script>
-import ToTop from '$lib/components/globals/ToTop.svelte'
-</script>
-
 <div class="footer">
   <div class="totop">
 		<div class="to-top">
@@ -182,14 +178,16 @@ button:hover { background-image: url('/images/icons/go-up-red.png'); transform: 
 
 
 @media screen and (min-width: 900px) {
-#logoimage { width: 200px;}
+	.footer { height: max-content;}
+
+	#logoimage { width: 200px;}
 	#icons-row { margin: 16px 0 32px 0; gap: 24px;}
 	button { width: 24px; height: 64px; }
 	.to-top { margin: 0; height: 64px; }
 	.footer { min-height: 100vh; background: var(--beau); padding: 0 128px;}
 	.mainbox {
-		grid-template-columns: 320px 1fr;
-  	grid-template-rows: 1fr;
+		grid-template-columns: 300px 1fr;
+  	grid-template-rows: auto;
   	gap: 0px 0px;
   	grid-template-areas:
     	"logoarea linksarea";
@@ -201,11 +199,14 @@ button:hover { background-image: url('/images/icons/go-up-red.png'); transform: 
 	}
 	.linksarea {
 		grid-template-columns: 1fr 1fr 1fr 1fr;
-  	grid-template-rows: 1fr 1fr;
+  	grid-template-rows: auto auto;
   	gap: 0px 32px;
  		grid-template-areas:
     	"linkbox1 linkbox2 linkbox3 linkbox4"
     	"linkbox5 linkbox6 linkbox7 linkbox8";
+	}
+	.logoarea {
+		width: 300px
 	}
 
 	.link p { padding-bottom: 8px;}
@@ -297,7 +298,7 @@ button { width: 24px; height: 64px;}
 	.linksarea {
 		grid-template-columns: 1fr 1fr;
   	grid-template-rows: auto auto auto auto;
-  	gap: 0px 0px;
+  	gap: 0px 32px;
  		grid-template-areas:
     	"linkbox1 linkbox2"
 			"linkbox3 linkbox4"
@@ -306,7 +307,6 @@ button { width: 24px; height: 64px;}
 	}
 button { width: 24px; height: 64px;}
 	.to-top { margin: 0 0 0 0; height: 64px; display: flex; justify-content: center; align-items: center; }
-	.link { padding-left: 16px;}
 	.link p { padding-bottom: 8px;}
 	.link h6 { padding-bottom: 12px;}
 	.link{ padding-bottom: 24px;}

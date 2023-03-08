@@ -54,7 +54,6 @@ function toggle3(){
 	}
 }
 
-
 export async function chamba(){
 	const { data, error } = await supabase
 	.from('brhat-anveshi')
@@ -95,40 +94,7 @@ function toggleItin(index:any){
 
 </script>
 
-<div class="pad-a rrr">
-	<GrandContainer>
-		<p slot="sectionname"><span class="chambs">Chamba </span>Chapter</p>
-		<div slot="mobilenav" class="mobmob">
-			<div class="flier" in:fly={{ duration: 300, delay: 200, x: 0, y: -160}} out:fly={{ duration: 200, delay: 0, x: 0, y: -160}}>
-				<ShareSocial2></ShareSocial2>
-			</div>
-			<h6 in:fly={{ duration: 300, delay: 200, x: 0, y: -160}} out:fly={{ duration: 200, delay: 0, x: 0, y: -160}} on:click={toggle1} on:keydown={toggle1}>Chamba Chapter</h6>
-				<p class="islink" on:click={toggle2} on:keydown={toggle2} in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}>Itinerary</p>
-				<p class="islink" on:click={toggle3} on:keydown={toggle3} in:fly={{ duration: 300, delay: 220, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}>Temples</p>
-			<div class="block"></div>
-			<h6 in:fly={{ duration: 300, delay: 200, x: 0, y: -160}} out:fly={{ duration: 200, delay: 0, x: 0, y: -160}}><a href="/anveshi">Bṛhat Anveṣī</a></h6>
-				<p in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/anveshi/chapter/karnataka">Karnataka</a></p>
-				<p in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/anveshi/chapter/odisha">Odisha</a></p>
-				<p in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/anveshi/chapter/chamba">Chamba</a></p>
-				<p in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/anveshi/#traveldiaries">Travel Diaries</a></p>
-				<p in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/anveshi/#faq">FAQs</a></p>
-				<p in:fly={{ duration: 300, delay: 200, x: -64, y: 0}} out:fly={{ duration: 200, delay: 0, x: -64, y: 0}}><a href="/anveshi/#aboutanveshi">About</a></p>
-		</div>
-		<div slot="desknav" class="deskdesk">
-			<ShareSocial></ShareSocial>
-				<h6 class="pointer" on:click={toggle1} on:keydown={toggle1}>Chamba Chapter</h6>
-					<p class="islink" on:click={toggle2} on:keydown={toggle2}>Itinerary</p>
-					<p class="islink" on:click={toggle3} on:keydown={toggle3}>Temples</p>
-				<h6><a href="/anveshi">Bṛhat Anveṣī</a></h6>
-				<p><a href="/anveshi/chapter/karnataka">Karnataka</a></p>
-				<p><a href="/anveshi/chapter/odisha">Odisha</a></p>
-				<p><a href="/anveshi/chapter/chamba">Chamba</a></p>
-				<p><a href="/anveshi/#traveldiaries">Travel Diaries</a></p>
-				<p><a href="/anveshi/#faq">FAQs</a></p>
-				<p><a href="/anveshi/#aboutanveshi">About</a></p>
-		</div>
-	</GrandContainer>
-	<div class="x-x-2">
+<div class="x-x-2">
 		{#if panel1}
 		<div class="traybox wrap xiv">
 			<div class="ww2 the-title">
@@ -275,180 +241,9 @@ function toggleItin(index:any){
 		{/if}
 		
 	</div>
-</div>
 
 
 
 
 
-<style>
 
-
-.pointer:hover { color: var(--chambs);}
-
-.block {
-	height: 32px;
-	display: flex;
-}
-
-a:hover {
-	color: #E4A503;
-}
-.islink:hover {
-	color: #E4A503;
-}
-.islink { cursor: pointer;}
-
-.iconcard p {
-	color: var(--chambs)
-;}
-
-
-#date img, #duration img, #price img { object-fit: contain; width: 48px;transform-origin: center center; transition: all 0.23s var(--cubea); }
-
-
-#date, #duration, #price { height: 100%; justify-content: space-between;}
-	#navbuttons { column-gap: 32px;}
-	.swiper-button {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: 24px;
-		width: 24px;
-	}
-	.swiper-button svg {
-		height: 24px;
-		width: 24px;
-		cursor: pointer;
-	}
-	.swiper-button svg path, .swiper-button svg { transition: all 0.08s var(--cubea);}
-	.swiper-button svg:hover path {
-		fill: #e4a503;
-	}
-	.swiper-button svg:hover {
-		transform: scale(0.9);
-	}
-
-	.xiv .ww2 h1 {
-		background: var(--chambs);
-		color: white;
-		z-index: 1;
-	}
-
-.bound h6 { color: var(--chambs);}
-
-#element-2 .card h6 {  cursor: pointer;}
-.x2 pre { margin-bottom: 32px;}
-
-.x3 { position: relative;}
-#navbuttons {
-	position: absolute;
-}
-
-
-@media screen and (min-width: 900px) {
-	.templeimage img {
-		object-fit: cover;
-		height: 280px;
-		width: 100%;
-	}
-
-	.x3 { padding-bottom: 40px;}
-
-
-	#element-2 .card h6 { margin-top: 0;}
-	#navbuttons { bottom: 0; left: 0; align-items: center; width: 100%; justify-content: space-between;}
- .icons-row { gap: 48px;}
-	.x3 { height: max-content;}
-	.bound h6 {
-		font-size: 1.08rem;
-		font-weight: 600;
-		margin: 16px 0 8px 0;
-	}
-	.bound p {
-		font-size: 0.875rem;
-	}
-
-
-}
-
-@media screen and (max-width: 899px) and (min-width: 768px) {
-	.templeimage img {
-		object-fit: cover;
-		height: 320px;
-		width: 100%;
-	}
-
-	#navbuttons { bottom: 0; left: 0; align-items: center; width: 100%; justify-content: space-between;}
-
-	.icons-row { gap: 48px; margin-bottom: 32px; padding-left: 16px;}
-	#element-2 .card h6 { margin-top: 0;}
-	.bound { padding-bottom: 32px;}
-	.bound h6 {
-		font-size: 1.08rem;
-		font-weight: 600;
-		margin: 16px 0 8px 0;
-	}
-	.bound p {
-		font-size: 0.825rem;
-	}
-	.x3 .traybox { flex-wrap: wrap;}
-	.x3 .traybox .ww2 { width: 100%; }
-}
-
-@media screen and (max-width: 767px) and (min-width: 576px){
-	.templeimage img {
-		object-fit: cover;
-		height: 320px;
-		width: 100%;
-	}
-
-	.icons-row { width: 100%; }
-		#navbuttons { bottom: 0; left: 0; width: 100%; justify-content: center;}
-
-
-	.iconcard { width: 33%;}
-	#element-2 .card h6 { margin-top: 0;}
-.bound { padding-bottom: 32px;}
-	.bound h6 {
-		font-size: 1.06rem;
-		font-weight: 600;
-		margin: 12px 0 8px 0;
-	}
-	.bound p {
-		font-size: 0.8rem;
-		margin-top: 2px;
-	}
-}
-
-@media screen and (max-width: 575px) {
-	.templeimage img {
-		object-fit: cover;
-		height: 320px;
-		width: 100%;
-	}
-	
-	#date img, #duration img, #price img { width: 40px;}
-	.x3 { height: max-content; padding-bottom: 32px;}
-
-	.icons-row { width: 100%; justify-content: center; gap: 24px; margin-bottom: 24px; margin-top: 24px;}
-		#navbuttons { bottom: 0; left: 0; width: 100%; justify-content: center;}
-	.iconcard { width: 20%;}
-	#element-2 .card h6 { margin-top: 0;}
-.bound { padding-bottom: 32px;}
-	.bound h6 {
-		font-size: 1.04rem;
-		font-weight: 600;
-		margin: 24px 0 8px 0;
-	}
-	.bound p {
-		font-size: 0.8rem;
-		margin-top: 0px;
-		margin-bottom: 16px;
-	}
-
-
-}
-
-
-</style>

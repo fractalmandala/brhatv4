@@ -86,6 +86,9 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 
 <style lang="sass">
 
+.xx0
+	z-index: 1000
+
 #icon-twitter a, #icon-facebook a, #icon-youtube a, #icon-linkedin a, #icon-instagram a
 	img
 		object-fit: contain
@@ -236,6 +239,7 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 	.xx0
 		padding: 0 24px
 		height: 100%
+		z-index: 1000
 	.ww2-s
 		width: 100%
 	.ww2-xr
@@ -275,6 +279,8 @@ import ToTop from '$lib/components/globals/ToTop.svelte'
 		order: 4
 
 @media screen and (min-width: 992px)
+	.xx0
+		z-index: 1000
 	.ww2-xr
 		gap: 48px
 		padding-left: 104px
