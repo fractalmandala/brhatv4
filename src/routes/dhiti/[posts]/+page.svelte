@@ -42,192 +42,123 @@ function shareOnWhatsApp(url, text) {
 
 <svelte:window bind:scrollY={y} bind:outerWidth={vw}/>
 
-<div class="flexbox-c l0"> 
-	<div class="in-col">
-		<small class="block">{data.date} <span class="grey2"> {data.tags}</span></small>
-	</div>
-	<h1 use:reveal={{ transition: "fly", x: 400 }}>{data.title}</h1>
-	<div class="pixel-line"></div>
-	<div class="stayingstrip">
-		<div class="postinfo in-row">
-			<p class="soft">{data.author}</p>
-		</div>
-		<div class="thinbar in-row">
-			<div class="flexbox-c icon-box" id="icon-twitter" on:click={() => window.open(shareOnTwitter("https://example.com", "Check out this page!"))} on:keydown={() => window.open(shareOnTwitter("https://example.com", "Check out this page!"))}>
+<div class="container">
+  <div class="titlesection">
+		<small class="block">{data.date} <br><span class="grey2"> {data.tags}</span></small>
+		<h1>{data.title}</h1>
+		<p>{data.author}</p>
+		<div class="boxr postshare">
+			<div class="boxc icon-box" id="icon-twitter" on:click={() => window.open(shareOnTwitter("https://example.com", "Check out this page!"))} on:keydown={() => window.open(shareOnTwitter("https://example.com", "Check out this page!"))}>
 				<img src="/images/icons/twitter-red.png" alt="twitter icon" />
 			</div>
-			<div class="flexbox-c icon-box" id="icon-facebook" on:click={() => window.open(shareOnFacebook("https://example.com"))} on:keydown={() => window.open(shareOnFacebook("https://example.com"))}>
+			<div class="boxc icon-box" id="icon-facebook" on:click={() => window.open(shareOnFacebook("https://example.com"))} on:keydown={() => window.open(shareOnFacebook("https://example.com"))}>
 				<img src="/images/icons/facebook-red.png" alt="facebook icon" />
 			</div>
-			<div class="flexbox-c icon-box" id="icon-linkedin" on:click={() => window.open(shareOnLinkedIn("https://example.com"))} on:keydown={() => window.open(shareOnLinkedIn("https://example.com"))}>
+			<div class="boxc icon-box" id="icon-linkedin" on:click={() => window.open(shareOnLinkedIn("https://example.com"))} on:keydown={() => window.open(shareOnLinkedIn("https://example.com"))}>
 				<img src="/images/icons/linkedin-red.png" alt="linkedin icon" />
 			</div>
-			<div class="flexbox-c icon-box" id="icon-whatsapp" on:click={() => window.open(shareOnWhatsApp("https://example.com"))} on:keydown={() => window.open(shareOnWhatsApp("https://example.com"))}>
+			<div class="boxc icon-box" id="icon-whatsapp" on:click={() => window.open(shareOnWhatsApp("https://example.com"))} on:keydown={() => window.open(shareOnWhatsApp("https://example.com"))}>
 				<img src="/images/icons/red-whatsapp.png" alt="whatsapp icon" />
 			</div>
 		</div>
 	</div>
-</div>
-<div class="flexbox-c imgbox l00" style="transform: translateY({-y/4}px)">
-	<div class="in-col holdingimage">
+  <div class="imagesection">
 		<img src="{data.image}" alt="data" style="transform: translateY({-y/6}px)"/>
 	</div>
-</div>
-<div class="flexbox-c x2" style="transform: translateY({-y/8}px)">
-	<div class="flexbox-r tray">
-		<div class="categorypop">
-			<p class="home wbold upper grey"><a href="/dhiti">Dhīti</a></p>
-			<p class="categorylabel w600 grey2 upper">{data.category}</p>
+  <div class="mainbody">
+    <div class="side1">
+			<p><a href="/dhiti">Dhīti</a></p>
+			<p>{data.category}</p>
 		</div>
-		<div class="dhiti-post play">
+    <div class="side2"></div>
+    <div class="blogpost">
 			<svelte:component this={data.content} />
 		</div>
-	</div> 
+  </div>
+  <div class="endstrip"></div>
 </div>
 
+<style lang="sass">
 
-<style>
-.categorylabel {
-	font-size: 12px;
-	padding-top: 12px;
-	border-top: 1px solid var(--soft);
-}
-.categorypop p {
-	line-height: 1.1;
-}
-.icon-box img {
-	filter: saturate(0.1);
-	opacity: 0.5;
-	transition: all 0.04s var(--cubee);
-	cursor: pointer;
-}
-.icon-box img:hover { 
-	filter: saturate(1);
-	opacity: 1;
-}
-.l0 .in-col .grey2 { border-left: 2px solid var(--soft); margin-left: 8px; padding-left: 8px;}
+.container 
+	display: grid 
+	grid-template-columns: 1fr 
+	grid-template-rows: auto auto auto auto 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "titlesection" "imagesection" "mainbody" "endstrip" 
 
-.l0 h1 { color: #212121; letter-spacing: -3px; font-weight: 700; line-height: 1.05;}
+.titlesection 
+	grid-area: titlesection
 
-@media screen and (min-width: 768px) {
-	.l0 h1 {
-		font-size: 88px;
-		margin-bottom: 24px;
-	}
-	.x2 { height: 100%; padding-bottom: 80px;}
-	.l00 { height: 100vh; overflow: hidden; justify-content: center; }
-	.holdingimage {
-		height: 70vh;
-		width: 100%;
-		overflow: hidden;
-	}
-	.holdingimage img {
-		object-fit: cover;
-		width: 100%;
-		height: 100vh;
-	}
-	.block {
-		color: #878787;
-		margin-bottom: 48px;
-	}
-	.tray { gap: 0; height: 100%; overflow: hidden;}
-	.l0 {
-		margin: 0 32px 24px 64px;
-		padding-top: 120px;
-		height: 100vh;
-    overflow: hidden;
-		justify-content: center;
-	}
-	.l0 small { font-weight: 500; padding-top: 8px; padding-bottom: 8px;}
-	.l0 .in-row small { text-transform: capitalize;}
-	.icon-box img { width: 27px; height: 27px;}
-	.pixel-line {
-		height: 2px;
-		width: 32%;
-		background: #d7d7d7;
-	}
-	.stayingstrip {
-		justify-content: flex-start;
-		align-items: flex-start;
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		padding: 2px 32px 2px 0;
-		height: 56px;
-		margin-top: 16px;
-		position: sticky !important;
-		background: white;
-		top: 0;
-		left: 0;
-	}
-	.stayingstrip>.in-row {
-		align-items: center;
-		gap: 32px;
-	}
-	.postinfo { width: max-content; margin-bottom: 12px; }
-	.thinbar {
-		justify-content: flex-start;
-		align-items: center;
-		width: max-content;
-	}
-	.stayingstrip>.in-row p {
-		line-height: 1;
-		margin-top: 12px;
-		font-size: 20px;
-	}
-	.categorypop {
-		display: flex;
-		flex-direction: column;
-		width: 160px;
-		padding: 16px 8px 16px 40px;
-		height: 600px;
-		position: sticky;
-		top: 0;
-		left: 0;
-	}
-	.home {
-		margin: 0;
-		padding-bottom: 8px;
-	}
-	.tray {
-		height: 100%;
-	}
-}
+.imagesection
+	grid-area: imagesection
 
-@media screen and (max-width: 767px) {
-	.l0 { 
-		height: 100%;
-		padding: 160px 32px 48px 32px;
-	}
-	.l0 h1 {
-		color: #212121;
-		letter-spacing: -1.2px;
-		font-weight: 700;
-		line-height: 1.1;
-		font-size: 36px;
-		margin-top: 16px;
-		margin-bottom: 24px;
-	}
-	.block { font-weight: 600;}
-	.l0 small .grey2 { font-weight: 400;}
-	.thinbar { gap: 16px;}
-	.icon-box img { width: 27px; height: 27px;}
-	.l00 {
-		height: 50vh;
-	}
-	.holdingimage { 
-		height: 50vh;
-		overflow-y: hidden;
-	}
-	.holdingimage img {
-		object-fit: cover;
-		width: 100%;
-		height: 60vh;
-	}
-	.categorypop { display: none;}
-	.x2 { margin-top: -64px; height: 100%;}
-	.tray { height: 100%;}
-}
+.mainbody 
+	display: grid 
+	grid-auto-flow: row 
+	grid-area: mainbody 
+
+.side1 
+	grid-area: side1 
+.side2 
+	grid-area: side2 
+.blogpost 
+	grid-area: blogpost 
+.endstrip 
+	grid-area: endstrip 
+
+.icon-box img
+	filter: saturate(0.01)
+	opacity: 0.7
+	transition: all 0.13s var(--cubed)
+	transform-origin: center center
+	&:hover
+		filter: saturate(1)
+		opacity: 1
+		transform: scale(1.2)
+
+
+@media screen and (min-width: 992px)
+	.titlesection
+		height: 100vh
+		display: flex
+		flex-direction: column
+		justify-content: center
+		padding: 0 64px
+		h1
+			font-family: 'Newsreader', serif
+			font-weight: bold	 
+			font-size: 5rem
+			letter-spacing: 0px
+		.block
+			text-transform: uppercase
+			font-weight: bold
+			font-size: 12px
+			margin-bottom: 16px
+			color: #878787
+		p
+			font-size: 16px
+			font-weight: bold
+			color: var(--tree)
+		.icon-box img
+			height: 24px
+			width: 24px
+		.postshare
+			gap: 16px
+	.mainbody 
+		grid-template-columns: 160px 1fr 400px 
+		grid-template-rows: 1fr 
+		gap: 0px 0px 
+		grid-template-areas: "side1 blogpost side2"
+		padding: 64px 32px
+
+	.imagesection
+		width: 100vw
+		height: 70vh
+		overflow: hidden
+		img
+			object-fit: cover
+			width: 100%
+	
 </style>
-
-

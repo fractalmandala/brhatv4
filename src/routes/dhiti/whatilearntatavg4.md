@@ -7,9 +7,9 @@ date: "2023-03-01"
 image: /images/dhitiheroes/57.webp
 ---
 
-##### Sri gurubhyo namaha!
+### śrī gurubhyo namaha!
 
-#### WHAT I LEARNT IN TIME
+#### What I Learnt in Time
 
 From the little time spent at the gurukulam, I have tried my best to be an ātmārāmā not an indriyārāmā. Someone who revels in herself and not in the sense objects. This is easier said than done and is only possible when we do regular study of the texts which tell us why the latter is anathema.
 
