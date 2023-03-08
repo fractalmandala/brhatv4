@@ -134,7 +134,7 @@ async function getOther() {
 		</div>
 	</div>
 
-	<div class="section-pads ishfull100 container-22">
+	<div class="section-pads container-22">
   <div class="header-2 the-title">
 		<h2><span class="soft">New </span>and Recent</h2>
 	</div>

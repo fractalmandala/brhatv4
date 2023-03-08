@@ -1,0 +1,659 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,200;1,6..72,300;1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700;1,6..72,800&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@01&display=swap')
+
+
+.sidebar1 a, .page a, .sidebar2 a 
+	&:hover
+		color: var(--tree)
+
+.container
+	.mainarea
+		.sidebar1, .page, .sidebar2
+			.dhiti h5, .latest h4, .second h5, .feat h5
+				letter-spacing: -0.1px
+
+@media screen and (min-width: 992px)
+	.latest
+		border-bottom: 1px solid #e7e7e7
+		img
+			object-fit: cover
+			width: 100%
+			height: 240px
+			margin-bottom: 16px
+		h4
+			font-size: 28px
+			line-height: 1.2
+			margin-top: 0
+			margin-bottom: 12px
+			font-weight: 600
+		p
+			margin-top: 0
+			color: #878787
+			margin-bottom: 8px
+		small
+			text-transform: uppercase
+			background: #b7b7b7
+			color: white
+			font-size: 12px
+			font-weight: bold
+			padding: 2px 6px
+			letter-spacing: 1px
+		.latestrow
+			gap: 40px
+	.second
+		gap: 24px
+		h5
+			margin: 0
+			line-height: 1.2
+			font-size: 18px
+			font-weight: 600
+		p, small
+			margin: 0
+		p
+			font-size: 14px
+			padding-bottom: 6px
+			color: #878787
+		small
+			font-size: 10px
+			padding: 0
+			line-height: 1
+			text-transform: capitalize
+			color: #a7a7a7
+		.secondrow
+			gap: 48px
+		.secondimage
+			img
+				object-fit: cover
+				height: 104px
+				width: 200px
+	.feat
+		p, h5, small
+			margin: 0
+		h5
+			font-size: 16px
+			font-weight: 600
+			line-height: 1.24
+			color: #575757
+			padding-bottom: 6px
+		small
+			font-size: 10px
+			text-transform: uppercase
+			font-weight: bold
+			letter-spacing: 1px
+			color: #a7a7a7
+		p
+			font-size: 12px
+			padding-top: 0px
+	.dhiti
+		p, h5, small
+			margin: 0 !important
+		h5
+			font-size: 16px
+			font-weight: 600
+			line-height: 1.23
+			color: #474747
+			padding-bottom: 8px
+			padding-top: 0
+			margin-top: 0
+		small
+			font-size: 10px
+			text-transform: capitalize
+			font-weight: 400
+			color: #a0a0a0
+			line-height: 1
+			padding: 0
+		p
+			font-size: 12px
+			text-transform: uppercase
+			font-weight: 500
+			color: #878787
+		.metadata
+			width: calc(100% - 112px)
+		.dhitiimage
+			height: 64px
+			background-size: cover
+			background-position: center center
+			background-repeat: no-repeat
+			width: 88px
+			margin: 0 0 10px 0
+	.postdata
+		gap: 16px		
+	.container 
+		display: grid 
+		grid-auto-flow: row 
+		min-height: calc(100vh - 72px)
+	.topstrip 
+		grid-area: topstrip 
+		height: 48px
+		display: flex
+	.mainarea 
+		display: grid 
+		grid-template-columns: 320px 1fr 280px 
+		grid-template-rows: auto 
+		gap: 0px 64px 
+		grid-auto-flow: row 
+		grid-template-areas: "sidebar1 page sidebar2" 
+		grid-area: mainarea 
+		padding: 32px 40px 32px 40px
+		width: 100vw
+	.sidebar1 
+		display: grid 
+		grid-template-columns: 1fr 
+		grid-template-rows: auto auto auto auto 
+		gap: 16px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "." "." "." "." 
+		grid-area: sidebar1 
+		overflow-y: scroll
+	.page 
+		display: grid 
+		grid-template-columns: 1fr 
+		grid-template-rows: auto auto 
+		gap: 16px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "latest" "second" 
+		grid-area: page 
+	.sidebar2 
+		display: grid 
+		grid-template-columns: 1fr 
+		grid-template-rows: max-content auto auto auto auto auto auto 
+		gap: 0px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "." "." "." "." "." "." "." 
+		grid-area: sidebar2 
+		overflow-y: scroll
+		>h5
+			margin-top: 0
+			margin-bottom: 16px
+			font-size: 16px
+			font-weight: 600
+			text-transform: uppercase
+			color: var(--tree)
+			padding: 0
+	.container
+		height: auto
+		margin-top: 64px
+		background: white
+		grid-template-columns: 1fr 
+		grid-template-rows: 48px 1fr 
+		gap: 0px 0px 
+		grid-template-areas: "topstrip" "mainarea" 
+		position: sticky
+		top: 0
+		left: 0
+		overflow-y: scroll
+		width: 100vw
+	.topstrip
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		border-bottom: 1px solid #d7d7d7
+		.categories
+			display: flex
+			flex-direction: row
+			justify-content: center
+			align-items: center
+			gap: 32px
+			p
+				text-transform: uppercase
+				font-size: 14px
+				margin: 0
+				font-weight: bold
+				border-left: 1px solid #d7d7d7
+				border-right: 1px solid #d7d7d7
+				padding: 0 12px
+	.menuiconarea
+		display: none
+	.sidebar1row
+		display: flex
+		flex-direction: row
+		gap: 16px
+	.second
+		h5
+			padding-bottom: 8px
+			font-weight: 600
+
+@media screen and (max-width: 991px) and (min-width: 768px)
+	.container
+		height: 100%
+		margin-top: 64px
+		width: 100vw
+		background: white
+		grid-template-columns: 1fr
+		grid-template-rows: 48px auto
+		gap: 0px 0px
+		grid-template-areas: "topstrip" "mainarea"
+		position: sticky
+		top: 0
+		left: 0
+	.topstrip
+		flex-direction: column
+		justify-content: center
+		align-items: stretch
+		padding-right: 24px
+		padding-left: 24px
+		border-bottom: 1px solid #d7d7d7
+		padding-bottom: 0
+		height: 48px
+		.categories	
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			align-items: center
+			height: 48px
+			margin-bottom: 0
+			p
+				text-transform: uppercase
+				font-size: 14px
+				margin: 0
+				font-weight: bold
+				padding-bottom: 0
+	.mainarea 
+		display: grid 
+		grid-template-columns: 280px auto 
+		grid-template-rows: auto auto
+		gap: 0px 32px 
+		grid-auto-flow: row 
+		grid-template-areas: "sidebar1 page" "sidebar2 sidebar2" 
+		grid-area: mainarea 
+		padding: 32px
+		.sidebar1
+			grid-area: sidebar1
+			.dhiti
+				margin-bottom: 24px
+				.dhitiimage
+					background-size: cover
+					background-position: center center
+					background-repeat: no-repeat
+					height: 96px
+					width: 96px
+				.metadata
+					padding-left: 16px
+					width: calc(100% - 96px)
+					h5
+						font-size: 15px
+						line-height: 1.2
+						margin: 0
+					p
+						margin: 4px 0 2px 0
+						font-size: 14px
+						font-weight: 400
+						color: #878787
+					.sidebar1row
+						flex-direction: row
+						display: flex
+						column-gap: 16px
+						row-gap: 0
+						flex-wrap: wrap
+					small
+						font-size: 10px
+						text-transform: uppercase
+						font-weight: 500
+						color: #a7a7a7
+						margin: 0
+						padding: 0
+		.page
+			display: grid 
+			grid-template-columns: 100% 
+			grid-template-rows: auto auto 
+			gap: 16px 0px 
+			grid-auto-flow: row 
+			grid-template-areas: "latest" "second" 
+			grid-area: page 
+		.latest
+			margin: 0 32px 0 0
+			width: 100%
+			grid-area: latest
+			h4, small, p
+				margin: 0
+			h4
+				font-size: 25px
+				margin: 0
+				line-height: 1.2
+				padding-bottom: 8px
+				grid-area: latest
+			p
+				font-size: 16px
+				color: #878787
+			img
+				width: 100%
+				object-fit: cover
+				height: 300px
+				margin-bottom: 16px
+			small
+				font-size: 10px
+				color: #a7a7a7
+				text-transform: uppercase
+			.latestrow
+				gap: 16px
+		.sidebar2
+			grid-area: sidebar2
+			width: 100%
+			padding-top: 24px
+			margin-top: 24px
+			border-top: 1px solid #d7d7d7
+			>h5
+				font-size: 24px
+				text-transform: uppercase
+				color: var(--tree)
+				margin: 0
+				padding-bottom: 16px
+			.feat
+				margin-bottom: 16px
+				h5
+					font-size: 18px
+					color: #272727
+					margin: 0
+					font-weight: 600
+				p, small
+					margin: 0
+					color: #a7a7a7
+					font-size: 12px
+					text-transform: capitalize
+		
+		
+.second
+	@media screen and (min-width: 768px) and (max-width: 991px)
+		grid-area: second
+		gap: 16px
+		grid-area: second
+		display: flex
+		flex-direction: row
+		padding: 0
+		margin: 0
+		h5, p, small
+			margin: 0
+		h5
+			font-size: 15px
+			line-height: 1.2
+			padding-bottom: 6px
+		p
+			padding: 0
+			font-size: 14px
+			color: #878787
+		small
+			font-size: 10px
+			text-transform: uppercase
+			color: #a7a7a7
+		.secondimage
+			width: 160px
+			height: 120px
+			img
+				object-fit: cover
+		.secondrow
+			column-gap: 16px
+			row-gap: 2px
+			flex-wrap: wrap
+						
+
+@media screen and (max-width: 767px)
+	.container
+		height: 100%
+		margin-top: 64px
+		width: 100vw
+		background: white
+		grid-template-columns: 1fr 
+		grid-template-rows: 1fr 48px 
+		gap: 0px 0px 
+		grid-template-areas: "mainarea" "topstrip"
+		position: sticky
+		top: 0
+		left: 0
+	.mainarea 
+		display: grid 
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto auto
+		gap: 32px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "page" "sidebar1" "sidebar2" 
+		grid-area: mainarea 
+		padding: 32px
+		min-height: 100%
+		.sidebar1
+			width: 100%
+			padding-bottom: 16px
+			border-bottom: 1px solid #d7d7d7
+			margin-bottom: 16px
+			grid-area: sidebar1
+		.page
+			grid-area: page
+		.sidebar2
+			grid-area: sidebar2
+	.topstrip
+		position: fixed
+		display: grid
+		grid-template-columns: 1fr
+		grid-template-rows: 48px
+		gap: 0px 0px
+		grid-template-areas: "menuiconarea"
+		bottom: 0
+		left: 0
+		height: 48px
+		background: rgba(0,0,0,0.8)
+		backdrop-filter: blur(4px)
+		width: 100vw
+		grid-area: topstrip
+		transition: all 0.17s var(--cubec)
+	.menuiconarea
+		display: flex
+		flex-direction: column
+		grid-area: menuiconarea
+		align-items: center
+		justify-content: center
+	.topstrip.fullHeight
+		position: fixed
+		display: grid
+		grid-template-columns: 1fr
+		grid-template-rows: 1fr 48px
+		gap: 0px 0px
+		grid-template-areas: "categories" "menuiconarea"
+		bottom: 0
+		left: 0
+		height: calc(100vh - 64px)
+		background: rgba(0,0,0,0.8)
+		backdrop-filter: blur(4px)
+		width: 100vw
+		transition: all 0.17s var(--cubec)
+		.categories
+			grid-area: categories
+			padding: 32px
+			p
+				color: white
+				font-size: 24px
+	.latest
+		height: max-content
+		border-bottom: 1px solid #e7e7e7
+		padding-bottom: 16px
+		margin-bottom: 16px
+		img
+			object-fit: cover
+			width: 100%
+			height: 240px
+			margin-bottom: 16px
+		h4
+			font-size: 24px
+			line-height: 1.2
+			margin-top: 0
+			margin-bottom: 8px
+			font-weight: 600
+		p
+			margin-top: 0
+			color: #878787
+			margin-bottom: 8px
+		small
+			text-transform: uppercase
+			background: #b7b7b7
+			color: white
+			font-size: 12px
+			font-weight: bold
+			padding: 2px 6px
+			letter-spacing: 1px
+		.latestrow
+			gap: 40px
+	.second
+		gap: 16px
+		h5
+			margin: 0
+			line-height: 1.2
+			font-size: 16px
+			font-weight: 600
+		p, small
+			margin: 0
+		p
+			font-size: 12px
+			padding-bottom: 2px
+			padding-top: 4px
+			color: #878787
+		small
+			font-size: 10px
+			padding: 0
+			line-height: 1
+			text-transform: capitalize
+			color: #a7a7a7
+		.secondrow
+			gap: 24px
+		.secondimage
+		img
+			object-fit: cover
+			height: 88px
+			width: 128px
+	.dhiti
+		display: flex
+		flex-direction: row
+		margin-bottom: 24px
+		p, h5, small
+			margin: 0
+		h5
+			font-size: 16px
+			font-weight: 600
+			line-height: 1.23
+			color: #272727
+		small
+			font-size: 10px
+			text-transform: capitalize
+			font-weight: 400
+			color: #a0a0a0
+			line-height: 1
+		p
+			font-size: 12px
+			padding-bottom: 2px
+			padding-top: 4px
+			color: #878787
+			text-transform: capitalize
+			font-weight: 400
+		.dhitiimage
+			height: 88px
+			background-size: cover
+			background-position: center center
+			background-repeat: no-repeat
+			width: 128px
+			margin-bottom: 8px
+		.metadata
+			width: calc(100% - 128px)
+			flex-direction: column
+			padding-left: 16px
+		.sidebar1row
+			display: flex
+			flex-direction: row
+			gap: 24px
+	.sidebar2
+		width: 100%
+		>h5
+			font-size: 24px
+			text-transform: uppercase
+			color: var(--tree)
+			margin: 0
+			padding-bottom: 16px
+		.feat
+			margin-bottom: 16px
+			h5
+				font-size: 18px
+				color: #272727
+				margin: 0
+				font-weight: 600
+			p, small
+				margin: 0
+				color: #a7a7a7
+				font-size: 12px
+				text-transform: capitalize
+		
+
+.categories
+	position: relative
+
+.searchfill
+	display: flex
+	position: absolute
+	top: 0
+	right: 0
+	flex-direction: row
+	width: 100%
+	background: white
+	height: 100%
+	align-items: center
+	justify-content: center
+	svg
+		width: 20px
+		height: 20px
+		object-fit: contain
+		&:hover
+			path
+				fill: #fe4a49
+	@media screen and (max-width: 767px)
+		bottom: 0
+		display: none
+
+.a-full-guy
+	display: flex
+	flex-direction: column
+	width: 100vw
+	height: 100vh
+	position: fixed
+	top: 0
+	left: 0
+
+
+@media screen and (min-width: 768px)
+	.a-full-guy
+		padding-top: 112px
+		align-items: center
+	.searchcloser
+		display: flex
+		flex-direction: row
+		width: 30%
+		justify-content: flex-end
+		align-items: center
+		transition: all 0.23s ease
+		padding-top: 88px
+		padding-right: 40px
+		height: 48px
+		margin-bottom: -48px
+		z-index: 10
+		svg
+			width: 15px
+			height: 15px
+			path
+				fill: #676767
+			&:hover
+				path
+					fill: #fe4a49
+
+@media screen and (max-width: 767px)
+	.a-full-guy
+		padding-top: 120px
+		align-items: center
+	.searchcloser
+		display: flex
+		flex-direction: row
+		justify-content: flex-end
+		padding-right: 32px
+		width: 100%
+		transition: all 0.23s ease
+		z-index: 10
+		svg
+			width: 20px
+			height: 20px
+			path
+				fill: white
+	
+		

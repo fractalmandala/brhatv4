@@ -1,14 +1,18 @@
 <script lang="ts">
 import { onMount } from 'svelte';
-import Selection from '$lib/components/books/Selection.svelte'
+import { scale } from 'svelte/transition'
+import DhitiSearch from '$lib/components/reuse/DhitiSearch.svelte'
 let xaxis: number = 0;
-let selectedCategory = 7
+let isSearch:boolean = false
 let showLinks: boolean = true;
 let onMobile: boolean = false;
 let fullHeight = false
 function toggleMobileLinks() {
   onMobile = !onMobile;
 	fullHeight = !fullHeight
+}
+function toggleSearch(){
+	isSearch = !isSearch
 }
 onMount(() => {
   if (xaxis < 768) {
@@ -130,7 +134,7 @@ export const Featured = async() => {
   		<p><a href="/dhiti/category/bodhas">Two Bodhas</a></p>
   		<p><a href="/dhiti/category/featured">Featured</a></p>
   		<p><a href="/dhiti">All</a></p>
-			<p class="w400">Search</p>	
+			<p class="point" on:click={toggleSearch} on:keydown={toggleSearch}>Search</p>	
 		</div>
 		<div class="menuiconarea">
 			<div class="svgicon" on:click={toggleMobileLinks} on:keydown={toggleMobileLinks}>
@@ -159,14 +163,16 @@ export const Featured = async() => {
 						<div class="boxc dhitiimage" style="background-image: url('{post.meta.image}')">
 						</div>
 						<div class="boxc metadata">
+							<h5>
+ 								<a href={post.path}>{post.meta.title}</a>
+							</h5>
 							<p>{post.meta.author}</p>
-							<small>{post.meta.category}</small>
-							<small>{post.meta.tags}</small>
+							<div class="sidebar1row">
+								<small>{post.meta.category}</small>
+								<small>{post.meta.tags}</small>
+							</div>
 						</div>
 					</div>
-					<h5>
- 						<a href={post.path}>{post.meta.title}</a>
-					</h5>
 				</div>
 			{/each}
 		</div>
@@ -193,7 +199,7 @@ export const Featured = async() => {
 				{#each data as item}
 				<div class="boxr second">
 					<div class="secondimage boxc">
-						<img src={item.meta.image} alt={item.meta.title} />
+						<img class="insidesecond" src={item.meta.image} alt={item.meta.title} />
 					</div>
 					<div class="seconddetails boxc">
 						<h5><a href={item.path}>{item.meta.title}</a></h5>
@@ -224,257 +230,14 @@ export const Featured = async() => {
 		</div>
   </div>
 </div>
+{#if isSearch}
+<div class="a-full-guy">
+<div class="searchcloser" transition:scale>
+	<svg width="100%" height="100%" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" on:click={toggleSearch} on:keydown={toggleSearch}>
+		<path id="Vector" d="M19.9917 16L31.1648 4.82695C31.695 4.29762 31.9933 3.57931 31.994 2.83006C31.9946 2.0808 31.6976 1.36197 31.1683 0.831702C30.639 0.301432 29.9207 0.00315709 29.1714 0.00249539C28.4222 0.0018337 27.7033 0.298839 27.1731 0.828174L16 12.0012L4.82695 0.828174C4.29668 0.297903 3.57748 0 2.82756 0C2.07765 0 1.35844 0.297903 0.828174 0.828174C0.297903 1.35844 0 2.07765 0 2.82756C0 3.57748 0.297903 4.29668 0.828174 4.82695L12.0012 16L0.828174 27.1731C0.297903 27.7033 0 28.4225 0 29.1724C0 29.9224 0.297903 30.6416 0.828174 31.1718C1.35844 31.7021 2.07765 32 2.82756 32C3.57748 32 4.29668 31.7021 4.82695 31.1718L16 19.9988L27.1731 31.1718C27.7033 31.7021 28.4225 32 29.1724 32C29.9224 32 30.6416 31.7021 31.1718 31.1718C31.7021 30.6416 32 29.9224 32 29.1724C32 28.4225 31.7021 27.7033 31.1718 27.1731L19.9917 16Z" fill="#474747"/>
+	</svg>
+</div>
+<DhitiSearch></DhitiSearch>
+</div>
 
-<style lang="sass">
-
-.sidebar1 a, .page a, .sidebar2 a 
-	&:hover
-		color: var(--tree)
-
-.latest
-	height: max-content
-	border-bottom: 1px solid #e7e7e7
-	img
-		object-fit: cover
-		width: 100%
-		height: 240px
-		margin-bottom: 16px
-	h4
-		font-size: 32px
-		line-height: 1.2
-		margin-top: 0
-		margin-bottom: 12px
-		font-weight: bold
-	p
-		margin-top: 0
-		color: #878787
-		margin-bottom: 8px
-	small
-		text-transform: uppercase
-		background: #b7b7b7
-		color: white
-		font-size: 12px
-		font-weight: bold
-		padding: 2px 6px
-		letter-spacing: 1px
-	.latestrow
-		gap: 40px
-
-.second
-	gap: 24px
-	h5
-		margin: 0
-		line-height: 1.2
-		font-size: 21px
-		letter-spacing: -0.4px
-	p, small
-		margin: 0
-	p
-		font-size: 14px
-		padding-bottom: 6px
-		color: #878787
-	small
-		font-size: 10px
-		padding: 0
-		line-height: 1
-		text-transform: capitalize
-		color: #a7a7a7
-	.secondrow
-		gap: 48px
-
-.secondimage
-	img
-		object-fit: cover
-		height: 104px
-		width: 200px
-
-.feat
-	p, h5, small
-		margin: 0
-	h5
-		font-size: 16px
-		font-weight: 600
-		letter-spacing: -0.4px
-		line-height: 1.24
-		color: #575757
-		padding-bottom: 6px
-	small
-		font-size: 10px
-		text-transform: uppercase
-		font-weight: bold
-		letter-spacing: 1px
-		color: #a7a7a7
-	p
-		font-size: 12px
-		padding-top: 0px
-
-.dhiti
-	height: max-content
-	p, h5, small
-		margin: 0
-	h5
-		font-size: 16px
-		font-weight: 600
-		letter-spacing: -0.4px
-		line-height: 1.23
-		color: #474747
-	small
-		font-size: 10px
-		text-transform: capitalize
-		font-weight: 400
-		color: #a0a0a0
-	p
-		font-size: 12px
-		text-transform: uppercase
-		font-weight: 500
-		color: #878787
-
-.dhitiimage
-	height: 64px
-	background-size: cover
-	background-position: center center
-	background-repeat: no-repeat
-	width: 96px
-	margin-bottom: 8px
-
-.postdata
-	gap: 16px
-		
-
-.container 
-	display: grid 
-	grid-auto-flow: row 
-.topstrip 
-	grid-area: topstrip 
-	height: 48px
-	display: flex
-.mainarea 
-	display: grid 
-	grid-template-columns: 320px 1fr 280px 
-	grid-template-rows: 1fr 
-	gap: 0px 80px 
-	grid-auto-flow: row 
-	grid-template-areas: "sidebar1 page sidebar2" 
-	grid-area: mainarea 
-	padding: 32px 64px
-.sidebar1 
-	display: grid 
-	grid-template-columns: 1fr 
-	grid-template-rows: auto auto auto auto 
-	gap: 24px 0px 
-	grid-auto-flow: row 
-	grid-template-areas: "." "." "." "." 
-	grid-area: sidebar1 
-	width: 320px
-	overflow-y: scroll
-.page 
-	display: grid 
-	grid-template-columns: 1fr 
-	grid-template-rows: auto auto 
-	gap: 16px 0px 
-	grid-auto-flow: row 
-	grid-template-areas: "latest" "second" 
-	grid-area: page 
-.sidebar2 
-	display: grid 
-	grid-template-columns: 1fr 
-	grid-template-rows: max-content auto auto auto auto auto auto 
-	gap: 24px 0px 
-	grid-auto-flow: row 
-	grid-template-areas: "." "." "." "." "." "." "." 
-	grid-area: sidebar2 
-	width: 280px 
-	overflow-y: scroll
-	>h5
-		margin-top: 0
-		margin-bottom: 0px
-
-@media screen and (min-width: 900px)
-	.container
-		height: calc(100vh - 64px)
-		margin-top: 64px
-		background: white
-		grid-template-columns: 1fr 
-		grid-template-rows: 48px 1fr 
-		gap: 0px 0px 
-		grid-template-areas: "topstrip" "mainarea" 
-		position: sticky
-		top: 0
-		left: 0
-	.topstrip
-		flex-direction: column
-		justify-content: center
-		align-items: flex-end
-		padding-right: 32px
-		border-bottom: 1px solid #d7d7d7
-		.categories
-			display: flex
-			flex-direction: row
-			justify-content: flex-end
-			align-items: center
-			gap: 16px
-			p
-				text-transform: uppercase
-				font-size: 14px
-				margin: 0
-				font-weight: bold
-	.menuiconarea
-		display: none
-
-@media screen and (max-width: 767px)
-	.container
-		height: calc(100vh - 64px)
-		margin-top: 64px
-		width: 100vw
-		background: white
-		grid-template-columns: 1fr 
-		grid-template-rows: 1fr 48px 
-		gap: 0px 0px 
-		grid-template-areas: "mainarea" "topstrip"
-		position: sticky
-		top: 0
-		left: 0
-	.topstrip
-		position: fixed
-		display: grid
-		grid-template-columns: 1fr
-		grid-template-rows: 48px
-		gap: 0px 0px
-		grid-template-areas: "menuiconarea"
-		bottom: 0
-		left: 0
-		height: 48px
-		background: rgba(0,0,0,0.8)
-		backdrop-filter: blur(4px)
-		width: 100vw
-		grid-area: topstrip
-		transition: all 0.17s var(--cubec)
-	.menuiconarea
-		display: flex
-		flex-direction: column
-		grid-area: menuiconarea
-		align-items: center
-		justify-content: center
-	.topstrip.fullHeight
-		position: fixed
-		display: grid
-		grid-template-columns: 1fr
-		grid-template-rows: 1fr 48px
-		gap: 0px 0px
-		grid-template-areas: "categories" "menuiconarea"
-		bottom: 0
-		left: 0
-		height: calc(100vh - 64px)
-		background: rgba(0,0,0,0.8)
-		backdrop-filter: blur(4px)
-		width: 100vw
-		transition: all 0.17s var(--cubec)
-		.categories
-			grid-area: categories
-			padding: 32px
-			p
-				color: white
-				font-size: 24px
-
-
-</style>
+{/if}

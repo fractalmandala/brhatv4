@@ -160,7 +160,7 @@ function toggleMenu(){
 </div>
 {#if isMenu}
 <div class="boxc menu-side" in:fly="{{duration: 300, delay: 0, x: 400, y: 0, easing: circOut}}" out:fly="{{duration: 200, delay: 100, x: 400, y: 0, easing: circOut}}" data-lenis-prevent>
-	<div class="boxc topstrip">
+	<div class="boxc topstripx">
 		<svg width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" on:click={toggleMenu} on:keydown={toggleMenu}>
 			<g id="close">
 			<path id="Vector" d="M45.3002 9.29995L38.7002 2.69995L24.0002 17.7L9.30019 2.69995L2.7002 9.29995L17.7002 24L2.7002 38.7L9.30019 45.3L24.0002 30.3L38.7002 45.3L45.3002 38.7L30.3002 24L45.3002 9.29995Z" fill="white"/>
@@ -263,7 +263,7 @@ function toggleMenu(){
 	transform-origin: center center;
 }
 .menu-side { position: relative;z-index: 950; }
-.topstrip { position: absolute; top: 20px; right: 0px; position: sticky; }
+.topstripx { position: absolute; top: 20px; right: 0px; position: sticky; }
 .closebutton { cursor: pointer; z-index: 999;}
 .closebutton svg:hover #top { animation: topmover 0.08s var(--cubee) forwards;}
 .closebutton svg:hover #low { animation: lowmover 0.08s var(--cubee) forwards;}
@@ -302,13 +302,13 @@ function toggleMenu(){
 		align-items: center;
 	}
 	.menu-side { background: var(--beau); height: 100vh; overflow-y: scroll; width: 36vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 0 40px 32px 40px; overflow-x: hidden;}
-	.topstrip { height: 64px; justify-content: center; align-items: flex-end;}
-	.topstrip svg { width: 28px; height: 28px; transform-origin: center center;}
-	.topstrip svg path { fill: #474747; transform-origin: center center;}
-	.topstrip svg:hover path { fill: #fe4a49;}
-	.topstrip svg:hover { transform: rotate(180deg);}
+	.topstripx { height: 64px; justify-content: center; align-items: flex-end;}
+	.topstripx svg { width: 28px; height: 28px; transform-origin: center center;}
+	.topstripx svg path { fill: #474747; transform-origin: center center;}
+	.topstripx svg:hover path { fill: #fe4a49;}
+	.topstripx svg:hover { transform: rotate(180deg);}
 	.closebutton svg:hover path { fill: #fe4a49;}
-	.topstrip svg:hover path { transform: rotate(90deg);}
+	.topstripx svg:hover path { transform: rotate(90deg);}
 
 	.menu-linker {
 		margin-bottom: 0;
@@ -335,13 +335,13 @@ function toggleMenu(){
 		align-items: center;
 	}
 	.menu-side { background: var(--beau); height: 100vh; overflow-y: scroll; width: 50vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 0 32px; overflow-x: hidden;}
-	.topstrip { height: 64px; justify-content: center; align-items: flex-end;}
-	.topstrip svg { width: 24px; height: 24px; transform-origin: center center;}
-	.topstrip svg path { fill: #474747; transform-origin: center center;}
-	.topstrip svg:hover path { fill: #fe4a49;}
-	.topstrip svg:hover { transform: rotate(180deg);}
+	.topstripx { height: 64px; justify-content: center; align-items: flex-end;}
+	.topstripx svg { width: 24px; height: 24px; transform-origin: center center;}
+	.topstripx svg path { fill: #474747; transform-origin: center center;}
+	.topstripx svg:hover path { fill: #fe4a49;}
+	.topstripx svg:hover { transform: rotate(180deg);}
 	.closebutton svg:hover path { fill: #fe4a49;}
-	.topstrip svg:hover path { transform: rotate(90deg);}
+	.topstripx svg:hover path { transform: rotate(90deg);}
 	.menu-linker {
 		margin-bottom: 0;
 		margin-top: 0;
@@ -367,13 +367,13 @@ function toggleMenu(){
 		align-items: center;
 	}
 	.menu-side { background: var(--beau); height: 100vh; overflow-y: scroll; width: 100vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 0 32px; overflow-x: hidden;}
-	.topstrip { height: 64px; justify-content: center; align-items: flex-end;}
-	.topstrip svg { width: 24px; height: 24px; transform-origin: center center;}
-	.topstrip svg path { fill: #474747; transform-origin: center center;}
-	.topstrip svg:hover path { fill: #fe4a49;}
-	.topstrip svg:hover { transform: rotate(180deg);}
+	.topstripx { height: 64px; justify-content: center; align-items: flex-end;}
+	.topstripx svg { width: 24px; height: 24px; transform-origin: center center;}
+	.topstripx svg path { fill: #474747; transform-origin: center center;}
+	.topstripx svg:hover path { fill: #fe4a49;}
+	.topstripx svg:hover { transform: rotate(180deg);}
 	.closebutton svg:hover path { fill: #fe4a49;}
-	.topstrip svg:hover path { transform: rotate(90deg);}
+	.topstripx svg:hover path { transform: rotate(90deg);}
 	.menu-linker {
 		margin-bottom: 0;
 		margin-top: 0;
@@ -400,13 +400,13 @@ function toggleMenu(){
 		align-items: center;
 	}
 	.menu-side { background: var(--beau); height: 100vh; overflow-y: scroll; width: 100vw; position: fixed; top: 0; bottom: 0; right: 0; padding: 0 32px; overflow-x: hidden;}
-	.topstrip { height: 64px; justify-content: center; align-items: flex-end;}
-	.topstrip svg { width: 24px; height: 24px; transform-origin: center center;}
-	.topstrip svg path { fill: #474747; transform-origin: center center;}
-	.topstrip svg:hover path { fill: #fe4a49;}
-	.topstrip svg:hover { transform: rotate(180deg);}
+	.topstripx { height: 64px; justify-content: center; align-items: flex-end;}
+	.topstripx svg { width: 24px; height: 24px; transform-origin: center center;}
+	.topstripx svg path { fill: #474747; transform-origin: center center;}
+	.topstripx svg:hover path { fill: #fe4a49;}
+	.topstripx svg:hover { transform: rotate(180deg);}
 	.closebutton svg:hover path { fill: #fe4a49;}
-	.topstrip svg:hover path { transform: rotate(90deg);}
+	.topstripx svg:hover path { transform: rotate(90deg);}
 	.menu-linker {
 		margin-bottom: 0;
 		margin-top: 0;
