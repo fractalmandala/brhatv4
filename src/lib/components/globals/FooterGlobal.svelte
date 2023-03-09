@@ -101,7 +101,7 @@
 	{ 
 		display: grid;
   	grid-template-columns: 1fr;
-  	grid-template-rows: 64px 1fr 128px;
+  	grid-template-rows: 64px auto 128px;
   	gap: 0px 0px;
   	grid-auto-flow: row;
   	grid-template-areas:
@@ -124,6 +124,7 @@
 	display: grid;
 	grid-auto-flow: row;
   grid-area: mainbox;
+	height: 100%;
 }
 
 .logoarea { 
@@ -194,7 +195,7 @@ button:hover { background-image: url('/images/icons/go-up-red.png'); transform: 
 		border-top: 1px solid #414141;
 		border-bottom: 1px solid #414141;
 		padding: 64px 0 32px 0;
-		height: calc(100vh - 196px);
+		height: 100%;
 		
 	}
 	.linksarea {

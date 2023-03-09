@@ -9,22 +9,22 @@ import LogMan from '$lib/components/logos/LogMan.svelte'
 </script>
 
 <div class="container">
-  <div class="leftcol">
-    <div class="lefttop">
+  <div class="leftcol bdr">
+    <div class="lefttop boxer">
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
 			<span class="typ4"></span>
 			<LogMrd></LogMrd>
 		</div>
-    <div class="leftmid">
+    <div class="leftmid boxer">
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
 			<span class="typ4"></span>
 			<LogFm></LogFm>
 		</div>
-    <div class="leftbot">
+    <div class="leftbot boxer">
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
@@ -32,11 +32,11 @@ import LogMan from '$lib/components/logos/LogMan.svelte'
 			<LogBol></LogBol>
 		</div>
   </div>
-  <div class="midcol">
-    <div class="midtop"></div>
-    <div class="midmid">
+  <div class="midcol bdr">
+		<div class="midtop"></div>
+    <div class="midmid motif">
 			<div class="logo-svg-box box-of-motif">
-				<svg width="458" height="458" viewBox="0 0 458 458" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<svg width="100%" height="100%" viewBox="0 0 458 458" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<g id="segmente">
 				<g id="edges">
 				<path id="edge8" d="M74.0209 93.0473H67.1123V67.0342L93.0587 67.1108L93.038 74.0205L74.0209 73.9634V93.0473Z" fill="#FE4A49"/>
@@ -206,7 +206,7 @@ import LogMan from '$lib/components/logos/LogMan.svelte'
 				</svg>
 			</div>
 		</div>
-    <div class="midbot">
+    <div class="midbot boxer2">
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
@@ -214,22 +214,22 @@ import LogMan from '$lib/components/logos/LogMan.svelte'
 			<LogMan></LogMan>
 		</div>
   </div>
-  <div class="rightcol">
-    <div class="righttop">
+  <div class="rightcol bdr">
+    <div class="righttop boxer">
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
 			<span class="typ4"></span>
 			<LogDr></LogDr>	
 		</div>
-    <div class="rightmid">
+    <div class="rightmid boxer">
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
 			<span class="typ4"></span>
 			<LogAnv></LogAnv>
 		</div>
-    <div class="rightbot">
+    <div class="rightbot boxer">
 			<span class="typ1"></span>
 			<span class="typ2"></span>
 			<span class="typ3"></span>
@@ -243,16 +243,18 @@ import LogMan from '$lib/components/logos/LogMan.svelte'
 
 .container 
 	display: grid 
-	grid-template-columns: 1fr 40% 1fr 
-	grid-template-rows: 1fr 
-	gap: 0px 0px 
+	grid-template-columns: auto auto auto 
+	grid-template-rows: auto 
+	gap: 0px 128px 
 	grid-auto-flow: row 
+	align-items: center
+	justify-items: center
 	grid-template-areas: "leftcol midcol rightcol"
 	background: linear-gradient(132.9deg, rgba(23,23,23,1) 10.69%, rgba(24, 28, 30, 1) 84.91%)
 .leftcol 
 	display: grid 
-	grid-template-columns: 1fr 
-	grid-template-rows: 1fr 1fr 1fr 
+	grid-template-columns: auto 
+	grid-template-rows: auto auto auto
 	gap: 0px 0px 
 	grid-auto-flow: row 
 	grid-template-areas: "lefttop" "leftmid" "leftbot" 
@@ -265,14 +267,16 @@ import LogMan from '$lib/components/logos/LogMan.svelte'
 	grid-area: leftbot 
 .midcol 
 	display: grid 
-	grid-template-columns: 1fr 
-	grid-template-rows: 1fr 40% 1fr 
+	grid-template-columns: auto 
+	grid-template-rows: auto auto auto
 	gap: 0px 0px 
 	grid-auto-flow: row 
 	grid-template-areas: "midtop" "midmid" "midbot" 
-	grid-area: midcol 
-.midtop 
-	grid-area: midtop 
+	grid-area: midcol
+	align-items: center
+	align-content: center
+.midtop
+	grid-area: midtop
 .midmid 
 	grid-area: midmid 
 .midbot 
@@ -280,7 +284,7 @@ import LogMan from '$lib/components/logos/LogMan.svelte'
 .rightcol 
 	display: grid 
 	grid-template-columns: 1fr 
-	grid-template-rows: 1fr 1fr 1fr 
+	grid-template-rows: auto auto auto
 	gap: 0px 0px 
 	grid-auto-flow: row 
 	grid-template-areas: "righttop" "rightmid" "rightbot" 
@@ -292,9 +296,66 @@ import LogMan from '$lib/components/logos/LogMan.svelte'
 .rightbot 
 	grid-area: rightbot 
 
-@media screen and (min-width: 900px)
+@media screen and (min-width: 992px)
 	.container
 		height: 100vh
+		padding-left: 80px
+		padding-right: 80px
+	.boxer
+		padding: 0 20%
+		height: 200px
+		display: grid
+		align-content: center
+		justify-content: center
+	.boxer2
+		display: flex
+		flex-direction: column
+		align-items: center
+		padding: 0 20%
+		justify-content: center
+		height: 100px
+		margin-top: 80px
+	.motif
+		display: grid
+		align-content: center
+		justify-content: center
+	.box-of-motif svg
+		height: 360px
+		width: 360px
+	.midtop
+		height: 192px
+
+@media screen and (max-width: 767px)
+	.container
+		display: grid 
+		grid-template-columns: 1fr 
+		grid-template-rows: auto auto auto 
+		gap: 0px 0px 
+		grid-auto-flow: row 
+		align-items: center
+		justify-items: center
+		grid-template-areas: "leftcol" "rightcol" "midcol"
+		height: 100%
+	.midcol
+		.motif
+			display: none
+	.leftcol, .rightcol
+		gap: 32px 0
+		margin-top: 16px
+		margin-bottom: 16px
+	.boxer
+		padding: 0 20%
+		display: grid
+		align-content: center
+		justify-content: center
+		height: 100px
+	.boxer2
+		padding: 0 15% 0 0
+		height: max-content
+		margin: 40px 0
+		dispay: flex
+		justify-content: center
+		align-items: center
 
 
 </style>

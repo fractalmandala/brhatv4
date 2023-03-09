@@ -40,6 +40,9 @@ function toggleLD(){
 
 <style lang="sass">
 
+.gencol a
+	font-family: 'Spline Sans', sans-serif
+
 .genrow
 	display: flex
 	transition: all 0.53s cubic-bezier(0.875, 0.145, 0.555, 0.905)
