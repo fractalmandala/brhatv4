@@ -2,6 +2,7 @@
 title: Dharma is Design
 image: '/images/rid/panel4.webp'
 prev: '/rta/intro'
+next: '/rta/designatbrhat'
 ---
 
 #### Design
