@@ -1,0 +1,391 @@
+
+.point
+	&:hover
+		color: #fe4a49
+
+.instructorbox 
+	display: grid 
+	grid-template-columns: 30% 1fr 
+	grid-template-rows: 1fr 
+	gap: 0px 24px 
+	grid-auto-flow: row 
+	grid-template-areas: "instructorphoto instructorbio" 
+.instructorphoto 
+	grid-area: instructorphoto 
+	img
+		object-fit: contain
+		width: 100%
+.instructorbio 
+	grid-area: instructorbio 
+	pre
+		font-size: 1rem !important
+
+.content p
+	margin: 0
+
+.statusstrip p
+	text-transform: uppercase
+	padding: 2px 10px
+	margin: 0
+	color: white
+	font-weight: bold
+	font-size: 1.12rem
+	background-color: #878787
+
+.statusstrip.blue p
+	text-transform: uppercase
+	padding: 2px 10px
+	margin: 0
+	color: white
+	font-weight: bold
+	font-size: 1.12rem
+	background-color: var(--drash)
+
+.container-wd-sidebar 
+	display: grid 
+	grid-template-columns: 360px auto
+	grid-template-rows: 1fr 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "sidebar-area area-main" 
+.area-main 
+	display: grid 
+	grid-template-columns: 1fr 
+	grid-template-rows: auto auto 96px 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "imagebox" "bodybox" "buttonbox" 
+	grid-area: area-main 
+	padding-bottom: 64px
+	padding-right: 32px
+.imagebox 
+	grid-area: imagebox
+	height: 60vh
+	display: grid
+	grid-template-columns: 1fr
+	grid-template-rows: auto auto
+	grid-template-areas: "pagetitle" "pagesubtitle"
+	align-content: end
+	.pagetitle
+		grid-area: pagetitle
+		h1
+			color: white
+			padding: 16px
+			background-color: rgba(0,0,0,0.8)
+			font-size: 4rem
+			width: max-content
+	.pagesubtitle
+		grid-area: pagesubtitle
+		h5
+			color: white
+			padding: 8px
+			background-color: rgba(135,135,135,0.7)
+			width: max-content
+.bodybox 
+	grid-area: bodybox 
+	display: grid
+	grid-template-columns: 1fr
+	grid-template-rows: auto auto
+	gap: 24px 0px
+	grid-template-areas: "iconrowof3" "bodybody"
+.iconrowof3
+	grid-area: iconrowof3
+	display: grid
+	grid-template-columns: auto auto auto
+	grid-template-rows: auto
+	gap: 0px 48px
+	grid-template-areas: ". . ."
+	justify-items: start
+	justify-content: start
+	margin-top: 24px
+.bodybody
+	display: grid
+	grid-template-columns: 1fr
+	grid-template-rows: auto auto
+	gap: 24px 0px
+	grid-template-areas: "statusstrip" "bodystrip"
+	grid-area: bodybody
+	h4
+		text-transform: uppercase
+		color: #878787
+		margin-top: 24px
+		margin-bottom: 12px
+		border-bottom: 1px solid var(--drash)
+.statusstrip
+	grid-area: statusstrip
+	display: grid
+	grid-template-columns: auto auto
+	grid-template-rows: auto
+	gap: 0px 48px
+	grid-template-areas: ". ."
+	justify-items: start
+	justify-content: start
+.bodystrip
+	grid-area: bodystrip
+.buttonbox 
+	display: grid
+	grid-area: buttonbox 
+	grid-template-columns: auto auto auto auto
+	grid-template-rows: auto
+	gap: 0px 24px
+	grid-template-areas: "b1 b2 b3 b4"
+	grid-area: buttonbox
+	justify-items: start
+	justify-content: start
+	margin: 24px 0
+.b1
+	grid-area: b1
+.b2
+	grid-area: b2
+.b3
+	grid-area: b3
+.b4
+	grid-area: b4
+
+.iconcard
+	display: flex
+	align-items: center
+	flex-direction: column
+	text-align: center
+
+.iconcard p
+	background-color: #878787
+	padding: 0
+	color: white
+	font-size: 14px
+	font-weight: 600
+	margin-top: 8px
+	width: max-content
+	text-align: center
+	padding: 2px 10px
+
+.iconcard img
+	margin-bottom: 16px
+	margin: auto
+	width: 80px
+
+.iconcard small
+	color: var(--drash)
+	padding-top: 16px
+
+.sidebarlinks 
+	display: grid 
+	grid-template-columns: 1fr 
+	grid-template-rows: 1fr 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "linkssection" 
+	grid-area: sidebarlinks 
+	align-items: start
+	align-content: start
+	.blocking
+		height: 32px
+	h6
+		text-transform: uppercase
+		font-size: 1rem
+		font-weight: 600
+		margin: 32px 0 10px 0
+		color: #a7a7a7
+	p
+		margin: 2px 0
+		font-size: 0.9rem
+	small
+		font-size: 12px
+
+@media screen and (min-width: 900px)
+	.sidebar-area 
+		grid-area: sidebar-area 
+		padding-left: 32px
+		position: sticky
+		top: 0
+		height: max-content
+		width: 360px
+	.bodybody pre
+		font-size: 1.25rem
+
+@media screen and (max-width: 899px)
+	.container-wd-sidebar 
+		display: grid 
+		grid-template-columns: auto 
+		grid-template-rows: auto 48px
+		gap: 0px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "area-main" "sidebar-area"
+		padding-top: 64px
+	.area-main 
+		display: grid 
+		grid-template-columns: auto
+		grid-template-rows: auto auto 96px 
+		gap: 0px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "imagebox" "bodybox" "buttonbox" 
+		grid-area: area-main 
+		padding-right: 0
+		.buttonbox
+			grid-template-columns: auto auto
+			grid-template-rows: auto auto
+			grid-template-areas: "b1 b2" "b3 b4"
+			padding-right: 24px
+			padding-left: 24px
+			.mainbutton
+				margin: 12px 0 0 0
+		.bodybox
+			grid-template-columns: auto
+			.iconrowof3
+				padding-left: 24px
+				padding-right: 24px
+				gap: 0px 16px
+				justify-content: center
+				margin-bottom: 0
+			.bodybody
+				grid-template-columns: auto
+				padding-right: 24px
+				padding-left: 24px
+				.statusstrip
+					grid-area: statusstrip
+					display: grid
+					grid-template-columns: auto
+					grid-template-rows: auto auto
+					gap: 12px 0px
+					grid-template-areas: "." "."
+					justify-items: start
+					justify-content: start
+					p
+						font-size: 1rem
+		.imagebox 
+			grid-area: imagebox
+			height: 40vh
+			display: grid
+			grid-template-columns: auto
+			grid-template-rows: auto auto
+			grid-template-areas: "pagetitle" "pagesubtitle"
+			background-size: cover
+			background-position: center center
+			align-content: end
+			padding-bottom: 80px
+			.pagetitle
+				grid-area: pagetitle
+				h1
+					color: white
+					padding: 16px
+					background-color: rgba(0,0,0,0.6)
+					font-size: 2.6rem
+					margin: 0
+			.pagesubtitle
+				grid-area: pagesubtitle
+				h5
+					margin: 0
+		.iconcard img
+			object-fit: contain
+			width: 48px
+			height: 48px
+		.iconcard
+			p
+				font-size: 12px
+			small
+				font-size: 10px
+	.instructorbox 
+		display: grid 
+		grid-template-columns: 1fr 
+		grid-template-rows: auto auto 
+		gap: 24px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "instructorphoto" "instructorbio" 
+		.instructorphoto img
+			height: 200px
+	.sidebar-area
+		grid-template-columns: 1fr 
+		grid-template-rows: 1fr 48px 
+		grid-template-areas: "sidebarlinks" "menuiconarea"
+		padding: 0 24px
+		height: 48px
+		width: 100vw
+		padding-left: 0
+		bottom: 0
+		position: fixed
+		background: rgba(23,23,23,0.6)
+		backdrop-filter: blur(2px)
+		z-index: 399
+		align-items: center
+		justify-content: center
+		align-content: center
+		justify-items: center
+		transition: all 0.23s ease
+		.socialicons
+			display: none
+		.menuiconarea
+			display: flex
+			width: 100%
+			height: 48px
+			justify-content: center
+			align-items: center
+			grid-area: menuiconarea
+			position: fixed
+			bottom: 0
+			.svgicon
+				svg
+					object-fit: contain
+					width: 28px
+					height: 28px
+					#onlystroke, #onlystroke2
+						stroke: white
+					#strokeandfill
+						stroke: white
+						fill: white
+					#onlyfill
+						fill: white
+		.sidebarlinks
+			position: fixed
+			top: 64px
+			height: calc(100vh - 112px)
+			left: 0
+			width: 100vw
+			padding: 32px
+			z-index: 800
+			grid-area: sidebarlinks
+	.sidebar-area.fullHeight
+		height: 100vh
+		background: rgba(255,255,255,0.88)
+		backdrop-filter: blur(5px)
+		transition: all 0.23s ease
+		position: fixed
+		.menuiconarea
+			.svgicon
+				svg
+					#onlystroke, #onlystroke2
+						stroke: #272727
+					#strokeandfill
+						stroke: #272727
+						fill: #272727
+					#onlyfill
+						fill: #272727
+		.sidebarlinks
+			h6
+				text-transform: uppercase
+				margin: 0
+				font-weight: 600
+				padding-top: 24px
+				padding-bottom: 6px
+				font-size: 20px
+			p
+				margin: 0
+				font-size: 18px
+				padding: 3px 0
+			.blocking
+				height: 16px
+
+.socialicons 
+	grid-area: socialicons 
+
+.menuiconarea 
+	grid-area: menuiconarea
+
+.content h6
+	text-transform: capitalize
+	cursor: pointer
+
+.content p, .takeaways pre
+	color: #878787
+
+.takeaways pre, .content pre
+	font-size: 14px
