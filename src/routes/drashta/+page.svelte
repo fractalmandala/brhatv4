@@ -21,8 +21,8 @@ export async function allCourses() {
 
 <div class="pad-a">
 
-
-		<div class="boxc x1 back-image">
+	<div class="section-pads container-1">
+  	<div class="bodyarea">
 			<h2>
 				<span class="drash">Bṛhat Draṣṭā </span> is an offering in deep learning 
 			</h2>
@@ -30,17 +30,21 @@ export async function allCourses() {
 				It offers courses on some of the greatest ancient and contemporary philosophers <span class="drash">(draṣṭās)</span> and schools of thoughts <span class="drash">(darśanas).</span>
 			</h6>
 		</div>
+  	<div class="image">
+			<img src="/images/drashta/adrashta.png" alt="a drashta"/>
+		</div>
+	</div>
 
-		<div class="the-title y-full">
-			<h2>
-				Courses
-			</h2>
-				<div class="traybox wrap x2">
+	<div class="section-pads container-2">
+  	<div class="heading2 the-title">
+			<h2>Courses</h2>
+		</div>
+  	<div class="rowof4-2">
 			{#await allCourses()}
 			<small>loading chapters...</small>
 				{:then data}
 					{#each data as item}
-					<div class="ww4 card">
+					<div class="ww1 card">
 						<img src={item.image} alt={item.name}>
 						<h6><a href={item.link}>{item.name}</a></h6>
 						<p>{item.content.slice(0,250)}<a class="drash wbold" href={item.link}>...Read More</a></p>
@@ -54,10 +58,10 @@ export async function allCourses() {
 			<pre>{error}</pre>
 			{/await}
 		</div>
-		</div>
+	</div>
 
 
-		<div class="the-title y-full">
+		<div class="the-title section-pads y-full">
 			<h2>
 				Draṣṭās
 			</h2>
@@ -79,7 +83,7 @@ export async function allCourses() {
 		</div>
 
 
-		<div class="the-title y-full" id="x4">
+		<div class="the-title y-full section-pads" id="x4">
 			<h2>
 				Darśanas
 			</h2>
@@ -101,7 +105,7 @@ export async function allCourses() {
 		</div>
 
 
-		<div class="the-title y-full">
+		<div class="the-title y-full section-pads">
 			<h2>
 				Firekeepers of Civilization
 			</h2>
@@ -119,59 +123,85 @@ export async function allCourses() {
 
 </div>
 
-<style>
+<style lang="sass">
 
-.x1 {
-	background-image: url('/images/drashta/adrashta.png')
-}
+.container-1 
+	display: grid 
+	grid-template-columns: 1fr 1fr 
+	grid-template-rows: 1fr 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "bodyarea image" 
+.bodyarea 
+	grid-area: bodyarea
+	display: grid
+	align-items: center
+.image 
+	display: grid 
+	grid-template-columns: 1fr 
+	grid-template-rows: 1fr 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "." 
+	grid-area: image 
 
-.card h6 a:hover {
-	color: var(--drash);
-}
-.x0 { overflow-y: hidden;}
-	.x0 { height: 100vh;}
-	.x0 img { object-fit: cover; height: 100vh;}
+.container-2 
+	display: grid 
+	grid-template-columns: 1fr 
+	grid-template-rows: auto 1fr 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "heading2" "rowof4-2" 
+.heading2 
+	grid-area: heading2 
+.rowof4-2 
+	display: grid 
+	grid-template-columns: 1fr 1fr 1fr 1fr 
+	grid-template-rows: 1fr 
+	gap: 0px 32px 
+	grid-auto-flow: row 
+	grid-template-areas: ". . . ." 
+	grid-area: rowof4-2
 
-	.x2 .cols4 img {
-		height: 160px;
-	}
-@media screen and (min-width: 900px) {
-	.x1 { height: 100vh; justify-content: center; }
-	.x2 { height: 100%;}
-	.x4 .boxc { text-align: right; padding-left: 25%;}
-	#x4 h2 { text-align: right;}
-	.x1 h2, .x1 h6 { width: 50%;}
-}
+@media screen and (max-width: 991px)
+	.rowof4-2 
+		display: grid 
+		grid-template-columns: 1fr 1fr 
+		grid-template-rows: auto auto 
+		gap: 0px 32px 
+		grid-auto-flow: row 
+		grid-template-areas: ". ." ". ." 
+		grid-area: rowof4-2 
 
-@media screen and (max-width: 899px) and (min-width: 768px) {
-.x1 h2, .x1 h6 { width: 50%;}
-	
+@media screen and (max-width: 767px)
+	.x0
+		height: 100vh
+		img
+			height: 100%
+			object-fit: cover
+	.container-1
+		display: grid 
+		grid-template-columns: 100%
+		grid-template-rows: auto auto
+		gap: 0px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "bodyarea" "image" 
+	.bodyarea 
+		grid-area: bodyarea
+		display: grid
+		align-items: center
+	.image
+		height: 300px
+		img
+			object-fit: contain
+			height: 300px
+	.rowof4-2 
+		display: grid 
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto auto auto 
+		gap: 24px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "." "." "." "." 
+		grid-area: rowof4-2 
 
-	.x3 { height: 100vh; width: 100%; gap: 24px; background: white;}
-
-}
-
-@media screen and (max-width: 767px) and (min-width: 576px) {
-	.x1 { height: 70vh;}
-	.x1 h2, .x1 h6 { width: 50%;}
-	
-	
-	
-
-
-}
-
-@media screen and (max-width: 575px) {
-
-
-	.x1 { height: 70vh; background-size: 100vw 50vw; }
-	.x1 h6 { width: 50%;}
-	.x2 .card { margin-bottom: 24px;}
-
-
-
-
-}
 </style>
-
-
