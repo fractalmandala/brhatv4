@@ -1,7 +1,6 @@
 <script lang="ts">
 import { onMount } from 'svelte';
 import ShareSocial from '$lib/components/globals/ShareSocial.svelte';
-import ResponsiveSide from '$lib/components/globals/ResponsiveSide.svelte'
 import '$lib/styles/mandalastyling.sass'
 let xaxis: number = 0;
 let onMobile: boolean = false;
@@ -84,8 +83,9 @@ $: showLinks = onMobile || xaxis >= 767;
 	@media screen and (min-width: 992px)
 		grid-template-areas: "sidebar-area mainpage-area" 
 		grid-template-columns: 320px auto 
-		grid-template-rows: 1fr 
-		min-height: 100vh
+		grid-template-rows: auto 
+		height: 100%
+		position: relative
 	@media screen and (max-width: 991px) and (min-width: 768px)
 		grid-template-areas: "mainpage-area" "sidebar-area"
 		grid-template-columns: 280px auto
@@ -108,11 +108,11 @@ $: showLinks = onMobile || xaxis >= 767;
 		padding-top: 120px
 		width: 320px
 		padding-left: 40px
-		position: fixed
+		position: sticky !important
 		left: 0
-		top: 64px
+		top: 0
 		z-index: 0
-		height: calc(100vh - 64px)
+		height: 400px
 		.sidebarlinks 
 			display: grid 
 			grid-template-columns: 1fr 
@@ -236,7 +236,7 @@ $: showLinks = onMobile || xaxis >= 767;
 	grid-auto-flow: row 
 	grid-template-areas: "." 
 	grid-area: mainpage-area
-	min-height: 100vh
+	height: 100%
 	
 @media screen and (min-width: 992px)
 	.mainpage-area

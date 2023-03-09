@@ -2,24 +2,27 @@
 import { reveal } from 'svelte-reveal';
 </script>
 
-<div class="pad-b back-image y-full l100">
+
+
+<div class="back-image y-full l100">
 	<div class="screen">
-		<h1 class="orange">There is a place...</h1>
-		<h6 class="white">
+		<h2 class="orange">There is a place...</h2>
+		<h5 class="white">
 				It lies outside of space and time as we know it,<br>
 				but many of us have been there.<br>
 				It lies in that cultural mid-space so distant yet ever palpable.
-		</h6>
+		</h5>
 	</div>
 </div>
 
-<div class="pad-b">
+<div class="pad-a">
+
 
 	<div class="traybox wrap s2">
 		<div class="ww2 im-col">
 			<img src="/images/scrolls/anc1.webp" alt="part1" use:reveal={{ transition: "slide" }}/>
 		</div>
-		<div class="ww2 non-im-col">
+		<div class="ww2 non-im-col section-right">
 			<h6> 
 				Hive mind. Race memory. Blood bond.<br>
 				We may call it many things, but we know it best when we see it,<br>
@@ -32,7 +35,7 @@ import { reveal } from 'svelte-reveal';
 	</div>
 
 	<div class="traybox wrap s3">
-		<div class="ww2 non-im-col">
+		<div class="ww2 non-im-col section-left">
 			<h6>
 				For countless times before have you been here, and a countless times I.<br><br>
 				You there, in one incarnation you were a master of mantra. 
@@ -50,7 +53,7 @@ import { reveal } from 'svelte-reveal';
 		<div class="ww2 im-col">
 			<img src="/images/scrolls/anc4.webp" alt="part4" use:reveal={{ transition: "slide" }}/>
 		</div>
-		<div class="ww2 non-im-col">
+		<div class="ww2 non-im-col section-right">
 			<h6> 
 				And you? A pioneer of tilled grain you were. Your hard, seasoned hands fed a civilization.<br><br>
 				Another among us was quite a daredevil,<br>
@@ -61,9 +64,8 @@ import { reveal } from 'svelte-reveal';
 			</h5>
 		</div>
 	</div>
-</div>
 
-	<div class="pad-b back-image s5"> 
+	<div class="back-image s5 section-pads"> 
 		<h2>
 			We can access this place,
 		</h2>
@@ -78,8 +80,7 @@ import { reveal } from 'svelte-reveal';
 		</h6>
 	</div>
 
-<div class="pad-a">
-	<div class="for-links">
+	<div class="for-links section-pads">
 		<h2><a href="/aryavarta/#about">About - The Bhārata that Once Was</a></h2>
 		<h2><a href="/aryavarta/chapter/01">Chapter 1: Kaśyapa's Lament</a></h2>
 		<h2><a href="/aryavarta/chapter/02">Chapter 2: Sūta and Sudā</a></h2>
@@ -136,7 +137,7 @@ import { reveal } from 'svelte-reveal';
 				border-radius: 50% 0 0 50%
 	@media screen and (max-width: 899px) and (min-width: 768px)
 		align-items: center
-		height: 90vh
+		height: 100%
 		.non-im-col
 			justify-content: center
 			padding: 16px 32px
@@ -145,8 +146,8 @@ import { reveal } from 'svelte-reveal';
 			img
 				border-radius: 50% 0 0 50%
 	@media screen and (max-width: 767px) and (min-width: 576px)
-		height: 100vh
-		padding: 24px
+		height: 100%
+		padding: 32px
 		.non-im-col
 			justify-content: center
 			height: calc(40vh - 24px)
@@ -158,7 +159,7 @@ import { reveal } from 'svelte-reveal';
 				object-fit: cover
 	@media screen and (max-width: 575px)
 		height: 100vh
-		padding: 24px
+		padding: 32px
 		.non-im-col
 			justify-content: center
 			height: calc(40vh - 24px)
@@ -175,24 +176,26 @@ import { reveal } from 'svelte-reveal';
 		align-items: center
 		.non-im-col
 			justify-content: center
-			padding: 16px 32px
+			padding-top: 16px
+			paddin-bottom: 16px
 			height: max-content
 		.im-col
 			img
 				border-radius: 0 50% 50% 0
 	@media screen and (max-width: 899px) and (min-width: 768px)
 		align-items: center
-		height: 90vh
+		height: 100%
 		.non-im-col
 			justify-content: center
-			padding: 16px 32px
+			padding-top: 16px
+			paddin-bottom: 16px
 			height: max-content
 		.im-col
 			img
 				border-radius: 0 50% 50% 0
 	@media screen and (max-width: 767px) and (min-width: 576px)
-		height: 100vh
-		padding: 24px
+		height: 100%
+		padding: 32px
 		.non-im-col
 			justify-content: center
 			height: calc(40vh - 24px)
@@ -204,7 +207,7 @@ import { reveal } from 'svelte-reveal';
 				object-fit: cover
 	@media screen and (max-width: 575px)
 		height: 100vh
-		padding: 24px
+		padding: 32px
 		.non-im-col
 			justify-content: center
 			height: calc(40vh - 24px)
@@ -218,34 +221,43 @@ import { reveal } from 'svelte-reveal';
 
 .s5
 	@media screen and (min-width: 900px)
-		height: max-content
+		height: 100%
 		justify-content: center
-		padding: 64px 0
 		margin: 128px 0 0 0
 		h2
 			color: white
 			margin: 0
 			padding: 0
-		padding-left: 64px
+		h6
+			margin-bottom: 0
+			margin-top: 24px
 	@media screen and (max-width: 899px) and (min-width: 768px)
 		height: max-content
 		justify-content: center
-		padding-bottom: 64px
-		padding-top: 64px
+		padding-top: 16px
+		paddin-bottom: 16px
 		margin: 128px 0 0 0
+		height: 100%
 		h2
 			color: white
 			margin: 0
 			padding: 0
 		padding-left: 64px
 	@media screen and (max-width: 767px) and (min-width: 576px)
-		padding: 32px
+		padding-top: 16px
+		paddin-bottom: 16px
+		height: 100%
 	@media screen and (max-width: 575px)
-		padding: 24px
+		padding-top: 16px
+		paddin-bottom: 16px
+		height: 100%
 
 
 .for-links
 	padding-bottom: 64px
 	padding-top: 0
+	margin-top: 64px
+	@media screen and (max-width: 575px)
+		margin-top: 32px
 
 </style>
