@@ -33,6 +33,7 @@ body, html, *
 	--beautrans: linear-gradient(132.9deg, rgba(23,23,23,0.98) 10.69%, rgba(24, 28, 30, 0.99) 84.91%)
 	--green: #10D56E
 	--lime: #4BF41D
+	--newlime: #538733
 	--soft: #FB6F66
 	--strong: #B0413E
 	--yell: #FF9F1C
@@ -45,6 +46,9 @@ body, html, *
 	--chambs: #e4a503
 	--karn: #FFD335
 	--odi: #DE8634
+
+.newlime
+	color: var(--newlime)
 
 pre
 	overflow-x: auto
@@ -2226,19 +2230,15 @@ h4.ptt40
 					font-size: 3.4rem
 
 
-.myblogtext
+.bodyofblog
 	p
 		color: #212121 !important
 	blockquote
-		border-left: 4px solid #10D56C
+		border-left: 4px solid var(--newlime)
 	
 
 @media screen and (min-width: 900px)
-	.myblogtext
-		padding-left: 10vw
-		padding-top: 4vw
-		padding-bottom: 4vw
-		padding-right: 20vw
+	.bodyofblog
 		p
 			font-size: 1.18rem
 		blockquote
@@ -2246,49 +2246,52 @@ h4.ptt40
 		h4
 			font-size: 2.8rem
 			margin: 64px 0 24px -32px
-			border-left: 8px solid #10D56C
+			border-left: 8px solid var(--newlime)
 			padding-left: 32px
+			line-height: 1.1
 		h6
 			font-size: 1rem
 
 @media screen and (max-width: 899px) and (min-width: 768px)
-	.myblogtext
-		padding-left: 8vw
-		padding-top: 4vw
-		padding-bottom: 4vw
-		padding-right: 12vw
+	.bodyofblog
 		p
 			font-size: 1.08rem
 		blockquote
 			padding-left: 24px
 		h4
-			font-size: 2.8rem
-			margin: 64px 0 24px -32px
-			border-left: 8px solid #10D56C
+			font-size: 2.4rem
+			margin: 64px 0 24px -16px
+			border-left: 8px solid var(--newlime)
 			padding-left: 32px
+			line-height: 1.1
 		h6
 			font-size: 1rem
 			
 @media screen and (max-width: 767px)
-	.myblogtext
-		padding: 24px
+	.bodyofblog
 		p
 			font-size: 1.08rem
 		blockquote
 			padding-left: 24px
 		h4
-			font-size: 2.8rem
-			margin: 64px 0 24px -24px
-			border-left: 8px solid #10D56C
+			font-size: 2.3rem
+			margin: 64px 0 24px -12px
+			border-left: 8px solid var(--newlime)
 			padding-left: 24px
+			line-height: 1.1 !important
 		h6
 			font-size: 1rem
 
 @media screen and (max-width: 575px)
-	.myblogtext
-		padding: 24px
+	.bodyofblog
 		h4
-			font-size: 2.3rem
+			font-size: 2rem
+			line-height: 1.1
+			margin: 64px 0 24px -32px
+		h5
+			margin: 4px 0 20px 0
+		blockquote
+			margin-left: 0
 
 .container-11
 	display: grid

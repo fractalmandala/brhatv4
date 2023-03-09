@@ -5,43 +5,87 @@
  export let data
 </script>
 
-
-<div class="boxr wrap">
-	<div class="ww2 noimg">
-	<h2>{data.title}</h2>
-	</div>
-	<div class="ww2 img">
-		<img src={data.image} alt={data.title} />
+<div class="containerblog">
+  <div class="titleandimage">
+    <div class="titlearea" style="background-image: url('{data.image}')">
+			<h2>{data.title}</h2>
+		</div>
+  </div>
+  <div class="bodyofblog">
+		<svelte:component this={data.content} />
 	</div>
 </div>
-<div class="myblogtext">
-<svelte:component this={data.content} />
-</div>
 
-<style lang='sass'>
-.ww2
-	height: 80vh
-	justify-content: center
-	img
-		object-fit: cover
-		height: 100%
 
-@media screen and (max-width: 575px)
-	.img
-		order: 1
-		height: 40vh
-		margin-top: 40px
-	.noimg
-		order: 2
-		justify-content: flex-start
-		padding: 0 24px
-		width: 100%
-		height: max-content
-		h2
-			margin-top: 24px
-			font-size: 3rem !important
+
+<style lang="sass">
+
+img
+	object-fit: cover
+	width: 100%
+	height: calc(100vh - 64px)
+
+.containerblog 
+	display: grid 
+	grid-template-columns: 1fr 
+	grid-template-rows: auto auto 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "titleandimage" "bodyofblog" 
+.titleandimage 
+	display: grid 
+	grid-template-columns: 1fr 
+	grid-template-rows: 1fr 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "titlearea" 
+	grid-area: titleandimage
+	height: calc(100vh - 64px)
+	padding: 32px 32px 32px 0
+.titlearea 
+	grid-area: titlearea
+	display: grid
+	align-items: end
+	background-position: center center
+	background-size: cover
+	background-repeat: no-repeat
+	h2
+		background-color: rgba(0,0,0,0.8)
+		color: white
+		padding: 8px
+.bodyofblog 
+	grid-area: bodyofblog 
+
+@media screen and (min-width: 992px)
+	.bodyofblog
+		padding: 64px 256px 64px 64px
+
+@media screen and (max-width: 991px) and (min-width: 768px)
+	.bodyofblog
+		padding: 64px 0 0 0
+	.titleandimage
+		padding: 0
+		height: 50vh
+		background-position: center center
+		background-size: cover
+		background-repeat: no-repeat
+
+@media screen and (max-width: 767px)
+	.bodyofblog
+		padding: 32px 0 0 0 
+	.titleandimage 
+		display: grid 
+		grid-template-columns: 1fr 
+		grid-template-rows: 1fr 
+		gap: 0px 0px 
+		grid-auto-flow: row 
+		grid-template-areas: "titlearea" 
+		grid-area: titleandimage
+		background-position: center center
+		background-size: cover
+		background-repeat: no-repeat
+		height: 50vh
+		padding: 0
 
 
 </style>
-
-

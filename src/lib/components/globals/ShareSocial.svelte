@@ -53,11 +53,12 @@ function shareOnWhatsApp(url:string, text:string) {
 .boxc img { 
 	width: 20px;
 	height: 20px;
-	filter: saturate(0.1);
+	filter: saturate(0.01);
 	transition: all 0.08s var(--cubeb);
 	cursor: pointer;
+	opacity: 0.5;
 }
-.boxc img:hover { filter: saturate(1); transform: scale(1.2);}
+.boxc img:hover { filter: saturate(1); transform: scale(1.2); opacity: 1}
 .boxr { gap: 20px;}
 small { display: none;}
 }
