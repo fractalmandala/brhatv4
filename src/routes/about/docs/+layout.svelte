@@ -23,7 +23,6 @@ $: showLinks = onMobile || xaxis >= 767;
 <svelte:window bind:innerWidth={xaxis} bind:scrollY={y} bind:innerHeight={ih} bind:outerHeight={oh}/>
 <div class="an-area">
   <div class="sidebar-area" class:fullHeight={fullHeight}>
-		{y}<br>{ih}<br>{ih}
 	  <div class="menuiconarea">
 			<div class="svgicon" on:click={toggleMobileLinks} on:keydown={toggleMobileLinks}>
 				{#if onMobile}
