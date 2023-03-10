@@ -520,6 +520,8 @@ function toggleKanda(index:number){
 		color: #676767
 
 @media screen and (min-width: 1024px)
+	.nonsearch
+		display: none
 	.readerbox
 		min-height: 100vh
 		padding: 120px 64px 64px 64px
@@ -608,6 +610,7 @@ function toggleKanda(index:number){
 		grid-template-rows: auto auto 
 		gap: 0px 0px 
 		grid-template-areas: "readersidebar" "boxarea" 
+		min-height: 100vh
 	.readerlinks h5
 		font-size: 18px
 	.readerlinks p
@@ -669,6 +672,8 @@ function toggleKanda(index:number){
 	.selectionmenu.heighter
 		height: 100vh
 		transition: all 0.14s var(--cubec)
+		h6
+			display: block
 		.form
 			.boxc
 				display: flex
