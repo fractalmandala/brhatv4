@@ -208,7 +208,7 @@ function toggleMenu(){
 			<h6><a href="/anveshi/diaries">Travel Diaries</a></h6>
 			<h6><a href="/anveshi/faq">FAQs</a></h6>
 	</div>
-	<div class="boxc menu-linker on:click={toggleMenu} on:keydown={toggleMenu}">
+	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>
 		<h5><a href="/mrdanga">Bṛhadmṛdaṅga</a></h5>
 	</div>
 	<div class="boxc menu-linker" on:click={toggleMenu} on:keydown={toggleMenu}>

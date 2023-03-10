@@ -313,24 +313,40 @@ async function getOther() {
 	</div>
 </div>
 
-<style>
+<style lang="sass">
 
+.header 
+	align-items: center 
+.para 
+	align-items: center 
+.container-55 
+	padding-bottom: 64px 
 
-.header { align-items: center; }
+.container-22
+	.boxc-r3
+		height: 100%
+		.boxc 
+			align-items: flex-start 
+			justify-content: space-between
+			height: 100%
 
-.para { align-items: center; }
+@media screen and (max-width: 899px) and (min-width: 576px) 
+	.container-22
+		.cols-3
+			.boxc-r3 img
+				object-fit: cover 
+				width: 216px 
+				height: 216px 
+		.cols-3 
+			.boxc-r3 
+				gap: 32px 
+				text-align: left 
+			.boxc 
+				align-items: flex-start 
+				justify-content: space-between
+				.cardbutton 
+					width: 40% 
+					margin-right: 60% 
 
-.container-55 { padding-bottom: 64px;}
-@media screen and (max-width: 899px) and (min-width: 576px) {
-	.cols-3 .boxc-r3 img {
-		object-fit: cover;
-		width: 216px;
-		height: 216px;
-	}
-	.cols-3 .boxc-r3 { gap: 32px; text-align: left; }
-	.cols-3 .boxc-r3 .boxc { align-items: flex-start; justify-content: flex-start;}
-	.cols-3 .boxc-r3 .boxc .cardbutton { width: 40%; margin-right: 60%;}
-
-}
 
 </style>

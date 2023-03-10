@@ -35,7 +35,7 @@ $: dataArray = data.data || []
 <div class="scrollsbox">
   <div class="scenetext">
 		<h5 class="orange">{item.id}</h5>
-		<p class="w400">{item.text}</p>
+		<pre>{item.text}</pre>
 	</div>
   <div class="sceneimage">
 		<img src={item.image} alt={item.id} />

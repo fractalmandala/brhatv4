@@ -155,7 +155,8 @@
 
 .x0
 	background-image: url('/images/herocovers/mrdanga-hero.webp')
-	height: 100vh
+	height: calc(100vh - 64px)
+	margin-top: 64px
 
 .container1 
 	display: grid 

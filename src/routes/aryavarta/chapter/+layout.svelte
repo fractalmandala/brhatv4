@@ -22,7 +22,7 @@ $: showLinks = onMobile || xaxis >= 767;
 
 
 <div class="an-area">
-	<div class="sidebar-area" class:fullHeight={fullHeight} data-lenis-prevent>
+	<div class="sidebar-area-full" class:fullHeight={fullHeight} data-lenis-prevent>
 			<div class="menuiconarea">
 		<div class="svgicon" on:click={toggleMobileLinks} on:keydown={toggleMobileLinks}>
 			{#if onMobile}
@@ -81,17 +81,17 @@ $: showLinks = onMobile || xaxis >= 767;
 	grid-auto-flow: row 
 	height: 100%
 	z-index: 0
-	grid-template-areas: "mainpage-area" "sidebar-area"
+	grid-template-areas: "mainpage-area" "sidebar-area-full"
 	grid-template-columns: 1fr
 	grid-template-rows: auto auto
 	min-height: 100vh
 	
 
-.sidebar-area 
+.sidebar-area-full 
 	display: grid 
 	gap: 0px 0px 
 	grid-auto-flow: row 
-	grid-area: sidebar-area 
+	grid-area: sidebar-area-full 
 	left: 0
 	height: 100%
 	grid-template-columns: 1fr 
@@ -140,7 +140,7 @@ $: showLinks = onMobile || xaxis >= 767;
 		padding: 32px
 		z-index: 800
 
-.sidebar-area.fullHeight
+.sidebar-area-full.fullHeight
 	height: 100vh
 	background: rgba(255,255,255,1)
 	transition: all 0.23s ease
