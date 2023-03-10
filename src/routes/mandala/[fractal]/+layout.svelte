@@ -219,8 +219,7 @@ $: showLinks = onMobile || xaxis >= 767;
 				margin: 0
 				font-size: 18px
 				padding: 3px 0
-			.blocking
-				height: 16px
+
 
 .socialicons 
 	grid-area: socialicons 

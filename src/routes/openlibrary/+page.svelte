@@ -204,7 +204,7 @@ export async function getHis(){
 		</div>
 		{#if selectedImage}
   	<div class="book" in:fly={{ delay: 100, duration: 100, x: 500, y: 0, easing: quadOut}} out:fly={{ delay: 0, duration: 80, x: 500, y: 0, easing: quadOut}}>
-			<div class="point closebook" on:click={nuller}>
+			<div class="point closebook" on:click={nuller} on:keydown={nuller}>
 				<p>CLOSE</p>
 			</div>
 			<div class="bookdata">

@@ -35,6 +35,6 @@ Thus is our logo.
 <style>
 
 	img { object-fit: contain; width: 200px;}
-	blockquote { border-color: #fe4a49;}
+
 
 </style>

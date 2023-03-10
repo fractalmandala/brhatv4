@@ -20,7 +20,3 @@ Through Bṛhat, we attempt to bring the public policy and popular culture close
 With a culturally and civilizationally rooted approach to public policy, we aim to produce knowledge that reflects and sympathizes with our experiences, and how these experiences can be molded, changed, formed, and transformed, for the betterment of our civilization, society, and community.
 
 Such knowledge production is essential to transform cultural practices and challenge the ‘received wisdom’ around how Indian civilization and its matters have generally been approached and acted upon. From this standpoint, we delve into the nature and politics of knowledge. We believe that if our traditional configurations of learning are re-instituted and re-constituted, it will transform the way the public policies are formed, enacted, and implemented.
-
-<style>
-	blockquote { border-color: #fe4a49;}
-</style>

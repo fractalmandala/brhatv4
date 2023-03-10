@@ -4,7 +4,6 @@
 	import supabase from '$lib/db'
 	import { fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
-	import { reveal } from 'svelte-reveal'
 	import { Swiper, SwiperSlide } from 'swiper/svelte'
 	import { Keyboard, Navigation } from 'swiper'
 	import 'swiper/css'

@@ -33,6 +33,4 @@ The infusion of this cultural wisdom in personal life will lead to psychological
 <style>
 .image { object-fit: contain; width: 30%; margin-bottom: 32px;}
 
-blockquote { border-color: #fe4a49;}
-
 </style>

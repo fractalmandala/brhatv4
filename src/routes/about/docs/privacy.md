@@ -50,6 +50,3 @@ For users that register on our website (if any), we also store the personal info
 #### Contacting Us
 If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us at: contact@brhat.in
 
-<style>
-	blockquote { border-color: #fe4a49;}
-</style>
