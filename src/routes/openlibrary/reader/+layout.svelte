@@ -289,6 +289,7 @@ function toggleKanda(index:number){
 					</select>
 				</div>
 			</form>
+			<h6>Select number of <span class="rama">Kāṇḍa > Sarga > Verse > Pāda</span> in sequence to navigate to that pāda's page.</h6>
 		</div>
     <div class="renderarea">
 			{#if loadingStore}
@@ -395,7 +396,7 @@ function toggleKanda(index:number){
 		width: 30%
 		padding: 8px
 
-.searchbox
+.searchbox, .selectionmenu
 	h6
 		margin: 0
 		font-weight: 400
@@ -492,7 +493,7 @@ function toggleKanda(index:number){
 
 @media screen and (max-width: 767px)
 	.readerbox
-		padding: 96px 24px 64px 24px
+		padding: 96px 32px 64px 32px
 		grid-template-columns: 1fr 
 		grid-template-rows: auto auto 
 		gap: 0px 0px 
@@ -508,11 +509,17 @@ function toggleKanda(index:number){
 			width: 64%
 		button
 			width: calc(36% - 8px)
+	.selectionmenu
+		padding: 16px 16px 16px 16px
+		border-bottom: 1px solid #d7d7d7
+		border-top: 1px solid #d7d7d7
+		margin-top: 16px
+		h6
+			margin: 0
+			padding-top: 8px
 	.form
 		gap: 24px
 		flex-wrap: wrap
-		padding: 32px 16px
-		border-bottom: 1px solid #d7d7d7
 		.boxc
 			width: calc(50% - 12px)
 		label, select, option
