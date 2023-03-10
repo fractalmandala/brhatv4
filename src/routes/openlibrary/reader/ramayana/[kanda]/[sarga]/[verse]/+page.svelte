@@ -2,10 +2,8 @@
 export let data:any
 </script>
 
-<div class="flexbox-c">
-{#if data && data.length>0}
+<div class="boxc">
 	{#each data as item}
-		<p>{item.pada}</p>
+		<p>{item.slug}</p>
 	{/each}
-{/if}
 </div>

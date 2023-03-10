@@ -21,9 +21,10 @@ let padas:any = []
 
 export async function getSargas(){
 	const { data, error } = await supabase
-	.from('db-ramayana')
+	.from('db-ramayanaindex')
 	.select()
 	.eq('kanda',`${selectKanda}`)
+	.eq('type','kandasarga')
 	.order('id')
 	if (error) throw new Error(error.message)
 	sargas = data
@@ -31,10 +32,11 @@ export async function getSargas(){
 
 export async function getVerses(){
 	const { data, error } = await supabase
-	.from('db-ramayana')
+	.from('db-ramayanaindex')
 	.select()
 	.eq('kanda',`${selectKanda}`)
 	.eq('sarga',`${selectSarga}`)
+	.eq('type','sargaverse')
 	.order('id')
 	if (error) throw new Error(error.message)
 	verses = data
@@ -42,23 +44,25 @@ export async function getVerses(){
 
 export async function getPadas(){
 	const { data, error } = await supabase
-	.from('db-ramayana')
+	.from('db-ramayanaindex')
 	.select()
 	.eq('kanda',`${selectKanda}`)
 	.eq('sarga',`${selectSarga}`)
 	.eq('verse',`${selectVerse}`)
+	.eq('type','verseslug')
 	.order('id')
 	if (error) throw new Error(error.message)
 	padas = data
 }
 
 function gotoPada(){
-	window.location.href=`/openlibrary/reader/ramayana/${selectKanda}/${selectSarga}/${selectVerse}/${selectPada}`
+	window.location.href=`/openlibrary/reader/ramayana/${selectPada}`
 }
 </script>
 
-<div class="flexbox-r">
-	<div class="in-col">
+
+<div class="boxr form">
+	<div class="boxc">
 		<label for="kanda">Kāṇḍa</label>
 		<select id="kanda" bind:value={selectKanda} on:change={getSargas}>
 			{#each kandas as kanda}
@@ -66,7 +70,7 @@ function gotoPada(){
 			{/each}
 		</select>
 	</div>
-	<div class="in-col">
+	<div class="boxc">
 		<label for="sarga">Sarga</label>
 		<select id="sarga" bind:value={selectSarga} on:change={getVerses}>
 			{#each sargas as sarga}
@@ -74,7 +78,7 @@ function gotoPada(){
 			{/each}
 		</select>
 	</div>
-	<div class="in-col">
+	<div class="boxc">
 		<label for="verse">Verse</label>
 		<select id="verse" bind:value={selectVerse} on:change={getPadas}>
 			{#each verses as verse}
@@ -82,40 +86,35 @@ function gotoPada(){
 			{/each}
 		</select>
 	</div>
-	<div class="in-col">
+	<div class="boxc">
 		<label for="pada">Pāda</label>
 		<select id="pada" bind:value={selectPada} on:change={gotoPada}>
 			{#each padas as pada}
-			<option value={pada.pada}>{pada.pada}</option>
+			<option value={pada.slug}>{pada.slug}</option>
 			{/each}
 		</select>
 	</div>
 </div>
 
-<style>
-.flexbox-r {
-	width: 100%;
-	justify-content: flex-start;
-	gap: 32px;
-}
+<style lang="sass">
 
-.flexbox-r label {
-	text-transform: uppercase;
-	font-size: 12px;
-	font-weight: 600;
-	color: #878787;
-	margin-bottom: 8px;
-}
+.form
+	gap: 64px
+	height: max-content
+	label, select, option
+		font-family: 'Spline Sans', sans-serif
+	label
+		font-size: 12px
+		text-transform: uppercase
+		color: #b7b7b7
+		margin-bottom: 8px
+	select
+		border: 1px solid #d7d7d7
+		padding: 8px
+		border-radius: 2px
+		color: #878787
+		box-shadow: var(--plainshadow)
+	.boxc
+		width: 25%
 
-.flexbox-r select {
-	border: 1px solid #d7d7d7;
-	border-radius: 4px;
-	height: 24px;
-}
-
-@media screen and (min-width: 900px) {
-	.flexbox-r .in-col {
-		width: 25%;
-	}
-}
 </style>
