@@ -35,7 +35,7 @@ export async function Dictionary(){
 		margin: 0
 		font-size: 14px
 		padding: 8px 0 4px 0
-		color: #878787
+		color: #272727
 		line-height: 1.28
 
 </style>

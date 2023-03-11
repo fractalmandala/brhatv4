@@ -160,7 +160,7 @@ async function getOther() {
 
 	<div class="section-pads container-22">
   <div class="header-2 the-title">
-		<h2><span class="soft">New </span>and Recent</h2>
+		<h2>What's <span class="soft">New </span></h2>
 	</div>
   <div class="cols-3">	
 		{#await updateOne()}

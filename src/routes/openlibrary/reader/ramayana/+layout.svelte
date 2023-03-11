@@ -1,9 +1,14 @@
 <script lang="ts">
 import { onMount } from 'svelte'
 import supabase from '$lib/db'
+import tippy from 'tippy.js'
 import { get } from 'svelte/store'
 import { writable } from 'svelte/store'
 import { slide } from 'svelte/transition'
+import '$lib/styles/ramayanastyling.sass'
+import 'tippy.js/dist/tippy.css'
+import 'tippy.js/animations/scale.css'
+import 'tippy.js/dist/backdrop.css';
 let expand: boolean[] = [false, false, false, false, false, false, false];
 let loadingStore = false
 let heighter:any
@@ -11,11 +16,12 @@ const searchStore = writable('')
 const resultsStore = writable([])
 let showResults = false
 let input:any
-let selectKanda:any
+let selectKanda:any = ''
 let selectSarga:any
 let selectVerse:any
 let selectPada:any
-
+let shortSelect:boolean = true
+let readerHelp:boolean = false
 
 let kandas = [
 	{ value: 1, label: '1' },
@@ -32,7 +38,22 @@ let padas:any = []
 
 onMount(() => {
 	input.focus()
+	tippy ('#selectionhelp', {
+		content: 'Selection works only in sequence, one after the other.',
+		arrow: false,
+		theme: 'dark',
+		inertia: true,
+		placement: 'bottom'
+	})
 })
+
+function showReaderHelp(){
+	readerHelp = !readerHelp
+}
+
+function shortenSelect(){
+	shortSelect = !shortSelect
+}
 
 function toggleHeighter(){
 	heighter = !heighter
@@ -99,6 +120,7 @@ export async function getPadas(){
 
 function gotoPada(){
 	window.location.href=`/openlibrary/reader/ramayana/kanda/${selectPada}`
+	selectKanda = ''
 }
 
 
@@ -192,7 +214,8 @@ function toggleKanda(index:number){
 <div class="readerbox">
   <div class="readersidebar">
 		<div class="readerlinks">
-			<h5><a href="/openlibrary/reader/ramayana">Vālmīki Rāmāyaṇa</a></h5>
+			<h5><a href="/openlibrary/reader/ramayana">Vālmīki Rāmāyaṇa*</a></h5>
+			<h4 class="rama point" on:click={showReaderHelp} on:keydown={showReaderHelp}>*How to Use this Rāmāyaṇa Reader</h4>
 			<div class="l1box nonsearch" on:click={() => toggleKanda(1)} on:keydown={() => toggleKanda(1)}>
 				{#await kanda1()}
 				<small>.</small>
@@ -326,9 +349,33 @@ function toggleKanda(index:number){
 					<h6>Enter any search term, in IAST, regular English or देवनागरी</h6>
 			</div>
 		</div>
+		<div class="searchisresults" data-lenis-prevent>
+			{#if loadingStore}
+				<p>Searching...</p>
+				{/if}
+				{#if showResults}
+				{#if $resultsStore.length>0}
+				<p class="closelink" on:click={closeResults} on:keydown={closeResults}>CLOSE</p>
+					{#each $resultsStore as item, delay}
+					<div class="boxc resultitem" in:slide={{ delay: delay + 49}} out:slide={{ delay: 0}}>
+						<div class="boxc resultitemindex">
+							<h6>{item.slug}</h6>
+						</div>
+						<div class="boxc resultitemdata"><a href="/openlibrary/reader/ramayana/{item.slug}" on:click={closeResults} on:keydown={closeResults}>
+							<p>{item.iast}</p>
+							<div class="hindi">
+								<p>{item.devanagari}</p>
+							</div></a>
+						</div>
+					</div>
+					{/each}
+				{/if}
+			{/if}
+		</div>
 	</div>
   <div class="boxarea">
-		<div class="selectionmenu" class:heighter={heighter}>
+		<div class="selectionmenu" id="selectionhelp" class:heighter={heighter}>
+			{#if shortSelect}
 			<form class="boxr form">
 				<div class="informlink" on:click={toggleHeighter} on:keydown={toggleHeighter}>
 					{#if heighter}
@@ -376,346 +423,209 @@ function toggleKanda(index:number){
 					</select>
 				</div>
 			</form>
-			<h6>Select number of <span class="rama">Kāṇḍa > Sarga > Verse > Pāda</span> in sequence to navigate to that pāda's page.</h6>
+			<h6 class="mobileh6">Select number of <span class="rama">Kāṇḍa > Sarga > Verse > Pāda</span> in sequence to navigate to that pāda's page.</h6>
+			{/if}
+			{#if heighter}
+			<div class="mobilesearch">
+				<input type="text" placeholder="Search"
+						bind:this={input}
+						on:input={(e) => searchStore.set(e.target.value)} 
+  					on:keydown={(e) => {
+    					if (e.key === 'Enter') {
+      					searchWord();
+    					}
+ 						}}
+						/>
+				<button class="readerbutton ramayana" on:click={searchWord} on:keydown={searchWord} on:click={shortenSelect} on:keydown={shortenSelect}>Search</button>
+				<h6>Enter any search term, in IAST, regular English or देवनागरी</h6>
+					<div class="mobileisresults"on:click={closeResults} on:keydown={closeResults}>
+						{#if loadingStore}
+							<p>Searching...</p>
+						{/if}
+						{#if showResults}
+							{#if $resultsStore.length>0}
+							<p class="closelinkmobile" on:click={closeResults} on:keydown={closeResults} on:click={shortenSelect} on:keydown={shortenSelect}>CLOSE</p>
+								{#each $resultsStore as item, delay}
+								<div class="boxc resultitemmobile" in:slide={{ delay: delay + 49}} out:slide={{ delay: 0}}>
+									<div class="boxc resultitemindexmobile">
+										<h6>{item.slug}</h6>
+									</div>
+									<div class="boxc resultitemdatamobile"><a href="/openlibrary/reader/ramayana/kanda/{item.slug}" on:click={closeResults} on:keydown={closeResults} on:click={shortenSelect} on:keydown={shortenSelect} on:click={toggleHeighter} on:keydown={toggleHeighter}>
+										<p>{item.iast}</p>
+										<div class="hindi">
+											<p>{item.devanagari}</p>
+										</div></a>
+									</div>
+								</div>
+								{/each}
+							{/if}
+						{/if}
+					</div>
+				</div>
+			{/if}
 		</div>
     <div class="renderarea">
 			<div class="searchitems">
-				{#if loadingStore}
-				<p>Searching...</p>
-				{/if}
-				{#if showResults}
-				{#if $resultsStore.length>0}
-				<p class="closelink" on:click={closeResults} on:keydown={closeResults}>CLOSE</p>
-					{#each $resultsStore as item, delay}
-					<div class="boxr resultitem" in:slide={{ delay: delay + 49}} out:slide={{ delay: 0}}>
-						<div class="boxc resultitemindex">
-							<h6>Kanda {item.kanda} | Sarga {item.sarga} | Verse {item.verse} | Pāda {item.pada}</h6>
-						</div>
-						<div class="boxc resultitemdata"><a href="/openlibrary/reader/ramayana/{item.slug}" on:click={closeResults} on:keydown={closeResults}>
-							<p>{item.iast}</p>
-							<div class="hindi">
-								<p>{item.devanagari}</p>
-							</div></a>
-						</div>
-					</div>
-					{/each}
-				{/if}
-				{/if}
 			</div>
-			<div class="pageitems">
+			<div class="pageitems" id="wordscaution">
 				<slot></slot>
 			</div>
 		</div>
   </div>
 </div>
+{#if readerHelp}
+<div class="reader-helper" transition:slide data-lenis-prevent>
+	<h6 class="point" on:click={showReaderHelp} on:click={showReaderHelp}>CLOSE</h6>
+	<p class="wide75">
+		Namaste. Welcome to the Rāmāyaṇa reader for course participants of Bṛhat Draṣṭā's Vālmīki Rāmāyaṇa course with Shri Ami Ganatra.
+		To help you navigate and explore the reader, we've split it into 4 sections:
+	</p>
+	<div class="grid-in-helper">
+		<div class="gridbox1">
+			<h5>Search Function</h5>
+			<p>Notice the search bar on the left side of the screen if you are on desktop, or on clicking the icon with 3 dots at the bottom of your screen if you are on mobile.<br><br>
+			Enter any word into it- in regular English, in IAST, or in Devanāgarī, and it will show you a list of pādas containing the word. Click on any pāda to navigate to its respective page. <span class="rama">Try it now with the word "Rama"!</span>
+			</p>
+		</div>
+		<div class="gridbox2">
+			<h5>Navigation Links</h5>
+			<p>
+			The navigation links in your browser's address bar are conveniently indexed. Take a look at the part in the link after "kanda/."<br><br>
+			It is a simple index in the form of (kandaNumber)/(sargaNumber)/(verseNumber)/(pada).<br><br>
+			So, go to "/kanda/1" to go to the page of Kāṇḍa 1, or to "/kanda/5/6" to reach Kāṇḍa 5, Sarga 6, or to "/kanda/3/5/1/ab" to find Kāṇḍa 3, Sarga 5, Verse 1, Pāda AB, and so on!
+			</p>
+		</div>
+		<div class="gridbox3">
+			<h5>Selection Menu</h5>
+			<p>On desktop, at the top of each page; or on mobile on clicking the icon with 3 dots at the bottom, you will find a selection menu to go to any specific pāda. In it, selected Kāṇḍa, then Sarga, then Verse and then Pāda in that sequence, to reach the specific page.</p>
+		</div>
+		<div class="gridbox4">
+			<h5>Page Results</h5>
+			<p>
+				The final and detailed page is at pāda level, for example at /kanda/1/1/1/ab where "ab" represents the pāda.<br><br>
+				The page of any Kāṇḍa displays its respective Sargas, of any Sargas shows its Verses, and of any Verse displays the pādas. They are all linked to navigate from one to another.<br><br>
+				Each the final pāda pages, find each pāda split into its constituent words, and the dictionary meaning of each word.
+			</p>
+		</div>
+	</div>
+	<h5 class="start" on:click={showReaderHelp} on:keydown={showReaderHelp}><a href="/openlibrary/reader/ramayana/kanda/1/1/1/ab">Begin at Kāṇḍa 1, Sarga 1, Verse 1, Pāda 1</a></h5>
+</div>
+{/if}
 
 <style lang="sass">
 
-.readerbox 
-	display: grid 
-	grid-template-columns: 300px auto 
-	grid-template-rows: 1fr 
-	gap: 0px 0px 
-	grid-auto-flow: row 
-	grid-template-areas: "readersidebar boxarea" 
-.readersidebar 
-	grid-area: readersidebar
-	.readerlinks
-		h5
-			margin: 0 0 8px 0
-			font-weight: 600
-			text-transform: uppercase
-			color: #676767
-			border-bottom: 1px solid #d7d7d7
-			border-left-color: transparent
-			transition: all 0.09s var(--cubed)
-			border-left-style: solid
-			cursor: pointer
-			&:hover
-				border-left-color: var(--rama)
-			a
-				&:hover
-					color: var(--rama)
-		p
-			margin: 0
-			font-weight: 400
-			text-transform: uppercase
-			padding: 8px 32px
-			border-bottom: 1px solid #d7d7d7
-			transition: all 0.07s var(--cubea)
-			cursor: pointer
-			&:hover
-				background: var(--rama)
-				color: white
-	.readerexpand
-		background: #272727
-.boxarea 
-	display: grid 
-	grid-template-columns: 1fr 
-	grid-template-rows: auto 1fr 
-	gap: 0px 0px 
-	grid-auto-flow: row 
-	grid-template-areas: "selectionmenu" "renderarea" 
-	grid-area: boxarea 
-.selectionmenu 
-	grid-area: selectionmenu 
-.renderarea 
-	grid-area: renderarea 
-	display: grid
-	grid-template-columns: 1fr
-	grid-template-rows: auto auto
-	gap: 0px 0px
-	grid-auto-flow: row
-	grid-template-areas: "searchitems" "pageitems"
-.searchitems
-	grid-area: searchitems
-.pageitems
-	grid-area: pageitems
-
-.gridbox
-	display: grid
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr
-	grid-template-rows: auto
-	grid-template-areas: ". . . ."
-	gap: 8px 16px
-	grid-auto-flow: row
-	background: #f7f7f7
-	border-radius: 4px
-	small
-		margin: 0
-		text-align: center
-
-.l1box
-	input[type=text]
-		padding: 8px
-		border-bottom: 1px solid var(--rama)
-		border-top: none
-		border-left: none
-		border-right: none
-		border-radius: 2px
-	button
-		background: var(--rama)
-		border: 1px solid var(--rama)
-		color: white
-		border-radius: 2px
-		width: 30%
-		padding: 8px
-
-.searchbox, .selectionmenu
-	h6
-		margin: 0
-		font-weight: 400
-		color: #878787
-		padding-top: 8px
-
-.closelink
-	color: #878787
-	cursor: pointer
-
-.resultitem
-	p, small, h6
-		margin: 0
-	h6
-		text-transform: uppercase
+.start
+	margin-top: 32px
+	a
 		color: var(--rama)
-	small
-		color: #676767
+		&:hover
+			color: var(--rama)
+			text-decoration: underline
+
+.reader-helper
+	position: fixed
+	display: flex
+	flex-direction: column
+	top: 80px
+	right: 64px
+	width: calc(100% - 128px)
+	height: calc(100vh - 100px)
+	z-index: 10
+	background: white
+	border: 1px solid var(--rama)
+	box-shadow: var(--plainshadow)
+	padding: 16px 64px
+	h4
+		font-size: 32px
+	h5
+		font-size: 24px
+		color: #878787
+		margin-bottom: 8px
+	h6
+		font-size: 14px
+		margin: 0
+		padding-bottom: 16px
+	p
+		font-size: 14px
+		color: #474747
+		margin-top: 0
+
+.gridbox1
+	grid-area: gridbox1
+	border: 1px solid #d7d7d7
+	border-radius: 4px
+	padding: 0 16px
+.gridbox2
+	grid-area: gridbox2
+	border: 1px solid #d7d7d7
+	border-radius: 4px
+	padding: 0 16px
+.gridbox3
+	grid-area: gridbox3
+	border: 1px solid #d7d7d7
+	border-radius: 4px
+	padding: 0 16px
+.gridbox4
+	grid-area: gridbox4
+	border: 1px solid #d7d7d7
+	border-radius: 4px
+	padding: 0 16px
 
 @media screen and (min-width: 1024px)
-	.nonsearch
+	.mobilesearch
 		display: none
-	.readerbox
-		min-height: 100vh
-		padding: 120px 64px 64px 64px
-		gap: 0 64px
-	.readersidebar h5
-		padding: 4px
-		border-left-width: 8px
-	.form
-		gap: 64px
-		label, select, option
-			font-family: 'Spline Sans', sans-serif
-		label
-			font-size: 12px
-			text-transform: uppercase
-			color: #b7b7b7
-			margin-bottom: 8px
-		select
-			border: 1px solid #d7d7d7
-			padding: 8px
-			border-radius: 2px
-			color: #878787
-			box-shadow: var(--plainshadow)
-		.boxc
-			width: 25%
-	.helpersmall
-		padding: 16px 0 4px 16px
-		margin: 0
-		font-weight: 400
-		font-size: 14px
-		border-bottom: 1px solid #d7d7d7
-		color: #e4a503
-	.gridbox
-		padding: 16px
-		box-shadow: 4px 3px 6px #e1e1e1
-		transition: all 0.18s var(--cubea)
-		&:hover
-			box-shadow: none
-	.searchbox
-		padding-left: 32px
+	.grid-in-helper
+		display: grid
+		grid-template-columns: 1fr 1fr
+		grid-template-rows: auto auto
+		grid-template-areas: "gridbox1 gridbox2" "gridbox3 gridbox4"
+		grid-auto-flow: row
+		gap: 16px 32px
 		margin-top: 16px
-	.searchitems
-		height: max-content
-	.renderarea
-		padding-top: 24px
-		padding-left: 24px
-		padding-right: 24px
-		border: 1px solid #d7d7d7
-		margin-top: 32px
-		align-content: start
-	.resultitem
-		transition: all 0.11s var(--cubeb)
-		padding: 8px 16px
-		.resultitemindex
-			width: 15%
 		p
-			font-size: 1rem
-			color: #878787
-		.hindi p
-			font-size: 1.28rem
-			color: #272727
-		h6
-			padding: 8px 0 8px 0
-			margin: 0
-		small
-			padding-top: 16px
 			font-size: 12px
-		&:hover
-			background: #f7f7f7
-			box-shadow: 4px 3px 6px #e1e1e1
-	.closelink
-		background: #676767
-		color: white
-		padding: 4px 8px
-		font-size: 14px
-		width: max-content
-		border-radius: 4px
 
-@media screen and (min-width: 768px)
-	.informlink
-		display: none
-
-@media screen and (max-width: 767px)
-	.readerbox
-		padding: 96px 32px 64px 32px
-		grid-template-columns: 1fr 
-		grid-template-rows: auto auto 
-		gap: 0px 0px 
-		grid-template-areas: "readersidebar" "boxarea" 
-		min-height: 100vh
-	.readerlinks h5
-		font-size: 18px
-	.readerlinks p
-		font-size: 16px
-		padding: 6px !important
-	.searchbox
-		margin-top: 16px
-		input[type=text]
-			width: 64%
-		button
-			width: calc(36% - 8px)
-	.selectionmenu
-		padding: 16px 16px 16px 16px
-		border-bottom: 1px solid #d7d7d7
-		border-top: 1px solid #d7d7d7
-		position: fixed
-		bottom: 0
-		left: 0
-		background: rgba(0,0,0,0.8)
+@media screen and (max-width: 1023px)
+	.mobileisresults
+		height: 55vh
+		overflow-y: scroll
+		margin-top: 32px
+		.closelinkmobile
+			color: white
+			cursor: pointer
+		.resultitemmobile
+			h6, p
+				color: white
+				margin: 0
+			margin-bottom: 12px
+	.reader-helper
 		width: 100%
-		height: 48px
-		transition: all 0.14s var(--cubec)
-		h6
-			margin: 0
-			padding-top: 8px
-			display: none
-		.form
-			.boxc
-				display: none
-			.informlink
-				display: flex
-				position: fixed
-				justify-content: center
-				align-items: center
-				width: 100%
-				bottom: 0
-				height: 48px
-				svg
-					height: 24px
-					width: 24px
-	.form
-		gap: 24px
-		flex-direction: column
-		.boxc
-			width: calc(50% - 12px)
-		label, select, option
-			font-family: 'Spline Sans', sans-serif
-		label
-			font-size: 12px
-			text-transform: uppercase
-			color: #b7b7b7
-			margin-bottom: 8px
-		select
-			border: 1px solid #d7d7d7
-			padding: 8px
-			border-radius: 2px
-			color: #878787
-			box-shadow: none
-	.selectionmenu.heighter
-		height: 100vh
-		transition: all 0.14s var(--cubec)
-		h6
-			display: block
-		.form
-			.boxc
-				display: flex
-	.renderarea
-		margin-top: 32px
-	.nonsearch
-		display: none
-	.resultitem
-		flex-direction: column
-		border-bottom: 1px solid #d7d7d7
-		padding-bottom: 8px
-		margin-bottom: 16px
-		.hindi p
-			font-size: 24px
-			color: #272727
+		right: 0
+		left: 0
+		top: 64px
+		padding: 32px
+		height: calc(100vh - 64px)
+		overflow-y: scroll
+	.grid-in-helper
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto auto auto
+		grid-template-areas: "gridbox1" "gridbox2" "gridbox3" "gridbox4"
+		display: grid
+		gap: 24px 0
+		h5
+			font-size: 18px
+			font-weight: 600
 		p
-			color: #878787
-			font-size: 14px	
-		h6
-			margin-bottom: 8px
-	.closelink
-		font-size: 14px
-		background: #676767
-		color: white
-		width: max-content
-		padding: 4px
-		margin-bottom: 32px
-	.gridbox
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 
-		grid-template-rows: auto
-		grid-template-areas: ". . . ."
-		gap: 8px 16px
-		padding: 16px
-		margin-bottom: 16px
-	.helpersmall
-		padding: 16px 0 4px 16px
-		margin: 0
-		font-weight: 400
-		font-size: 14px
-		border-bottom: 1px solid #d7d7d7
-		color: #e4a503
+			font-size: 12px
+	.start
+		font-size: 20px !important
+	.gridbox1
+		grid-area: gridbox1
+	.gridbox2
+		grid-area: gridbox2
+	.gridbox3
+		grid-area: gridbox3
+	.gridbox4
+		grid-area: gridbox4
 
 </style>

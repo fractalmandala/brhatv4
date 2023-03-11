@@ -237,6 +237,17 @@ const { data, error } = await supabase
 
 <style lang="sass">
 
+.l0
+	height: 100vh
+	background-image: url('/images/herocovers/about-parambika.png')
+	@media screen and (max-width: 767px)
+		height: 50vh
+		margin-top: 64px
+
+@media screen and (max-width: 767px)
+	.container
+		padding-top: 48px
+
 .container 
 	display: grid 
 	grid-template-columns: 1fr 

@@ -1,0 +1,746 @@
+
+
+.readerbox 
+	display: grid 
+	grid-template-columns: 300px auto 
+	grid-template-rows: 1fr 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "readersidebar boxarea" 
+.readersidebar 
+	grid-area: readersidebar
+	.readerlinks
+		h4
+			font-weight: 600
+		h5
+			margin: 0 0 8px 0
+			font-weight: 600
+			font-size: 20px
+			letter-spacing: 0
+			text-transform: uppercase
+			color: #676767
+			border-bottom: 1px solid #d7d7d7
+			border-left-color: transparent
+			transition: all 0.09s var(--cubed)
+			border-left-style: solid
+			cursor: pointer
+			&:hover
+				border-left-color: var(--rama)
+			a
+				&:hover
+					color: var(--rama)
+		p
+			margin: 0
+			font-weight: 400
+			text-transform: uppercase
+			padding: 8px 32px
+			border-bottom: 1px solid #d7d7d7
+			transition: all 0.07s var(--cubea)
+			cursor: pointer
+			&:hover
+				background: var(--rama)
+				color: white
+	.readerexpand
+		background: #272727
+.boxarea 
+	display: grid 
+	grid-template-columns: 1fr 
+	grid-template-rows: auto 1fr 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "selectionmenu" "renderarea" 
+	grid-area: boxarea 
+.selectionmenu 
+	grid-area: selectionmenu 
+.renderarea 
+	grid-area: renderarea 
+	display: grid
+	grid-template-columns: 1fr
+	grid-template-rows: auto auto
+	gap: 0px 0px
+	grid-auto-flow: row
+	grid-template-areas: "searchitems" "pageitems"
+.searchitems
+	grid-area: searchitems
+.pageitems
+	grid-area: pageitems
+
+.gridbox
+	display: grid
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+	grid-template-rows: auto
+	grid-template-areas: ". . . ."
+	gap: 8px 16px
+	grid-auto-flow: row
+	background: #f7f7f7
+	border-radius: 4px
+	small
+		margin: 0
+		text-align: center
+
+.l1box
+	input[type=text]
+		padding: 8px
+		border-bottom: 1px solid var(--rama)
+		border-top: none
+		border-left: none
+		border-right: none
+		border-radius: 2px
+		width: calc(60% - 16px)
+	button
+		background: var(--rama)
+		border: 1px solid var(--rama)
+		color: white
+		border-radius: 2px
+		width: 40%
+		padding: 8px
+
+.searchbox, .selectionmenu
+	h6
+		margin: 0
+		font-weight: 400
+		color: #878787
+		padding-top: 8px
+
+.closelink
+	color: #878787
+	cursor: pointer
+
+.resultitem
+	p, small, h6
+		margin: 0
+	h6
+		text-transform: uppercase
+		color: var(--rama)
+	small
+		color: #676767
+
+
+.expansiondrop 
+	display: grid 
+	grid-template-columns: 1fr 
+	grid-template-rows: auto auto 
+	gap: 0px 0px 
+	grid-auto-flow: row 
+	grid-template-areas: "dropdownarea" "captioner" 
+	align-items: center
+	align-content: center
+.dropdownarea 
+	display: grid 
+	grid-template-columns: auto 24px 
+	grid-template-rows: auto
+	gap: 0px 16px 
+	grid-auto-flow: row 
+	grid-template-areas: "dropheader dropicon" 
+	grid-area: dropdownarea 
+	align-items: center
+	align-content: center
+	justify-items: start
+	justify-content: start
+.dropheader 
+	grid-area: dropheader
+	height: 24px
+	display: flex
+	align-items: center
+	flex-direction: row
+	h4
+		margin: 0
+		padding: 0
+.dropicon 
+	grid-area: dropicon 
+	width: 16px
+	height: 16px
+	svg
+		width: 16px
+		height: 16px
+		#pushdown
+			fill: var(--rama)
+.captioner 
+	grid-area: captioner 
+
+
+.meaning
+	font-family: 'Spline Sans', sans-serif
+
+.std-small
+	text-transform: uppercase
+
+.bread-crumb
+	border-bottom: 1px solid #f1f1f1
+	cite
+		color: #878787
+		font-size: 12px
+		text-transform: uppercase
+	a
+		&:hover
+			color: var(--rama)
+
+.navigationbuttonsrow
+	gap: 8px
+
+.navigationbuttonsrow
+	&:hover
+		.pagination
+			transform: scale(0.8)
+			&:hover
+				transform: scale(1.2)
+
+.pagination
+	border: 1px solid #b7b7b7
+	background: none
+	padding: 4px 12px
+	font-size: 12px
+	color: #b7b7b7
+	border-radius: 2px
+	margin-bottom: 24px
+	margin-top: 24px
+	transform-origin: center center
+	&:hover
+		background: var(--rama)
+		border: 1px solid var(--rama)
+		color: white
+	a
+		&:hover
+			color: white
+
+.results
+	.hindi
+		padding-top: 16px
+		margin-top: 16px
+		h3
+			margin: 0
+		h5
+			color: #676767
+			font-weight: 600
+			margin: 0
+h4
+	font-size: 20px
+	font-weight: 600
+	letter-spacing: -0.4px
+		
+		
+.lemmas
+	display: grid
+	grid-auto-flow: row
+	grid-template-columns: 1fr
+	grid-template-rows: auto
+	grid-template-areas: "."
+	gap: 0px 0px
+	h5, small, p, h6
+		margin: 0
+
+.lemmaextended
+	display: grid
+	grid-template-columns: 10% 1fr
+	grid-template-rows: auto
+	grid-template-areas: "extend1 extend2"
+	grid-auto-flow: row
+	gap: 16px 32px
+.extend1
+	grid-area: extend1
+.extend2
+	grid-area: extend2
+
+@media screen and (min-width: 1024px)
+	h5
+		font-weight: 600
+		font-size: 32px
+	small
+		color: #878787
+		font-size: 12px
+	.lemmas
+		border-top: 1px solid #d7d7d7
+		margin-top: 12px
+		padding: 24px
+	.lemmaextended
+		grid-template-columns: 24% 1fr
+		margin-top: 16px
+		border-bottom: 1px solid #d7d7d7
+		padding-bottom: 12px
+		h6
+			font-weight: 400
+			font-size: 14px
+			color: #878787
+			padding-bottom: 8px
+			text-transform: uppercase
+		p
+			font-weight: 600
+			font-size: 21px
+		.extend2 small
+			font-size: 10px
+		.extend2
+			.boxc p
+				font-weight: 400 !important
+		.insmall pre
+			font-size: 12px
+			text-transform: uppercase
+			color: #878787
+	.withborder
+		border-left: 4px solid var(--rama)
+		padding-left: 16px
+		margin-bottom: 12px
+	.meaning p
+		font-weight: 400
+		font-size: 14px
+	.meaning
+		font-size: 18px
+		font-weight: 400
+		color: #676767
+		width: 100%
+		margin-bottom: 8px
+	.dropheader h4
+		font-size: 20px
+	.bread-crumb
+		gap: 16px
+
+@media screen and (max-width: 1023px)
+	.boxarea
+		align-content: start
+		align-items: start
+		padding-top: 0
+		display: grid
+	.bread-crumb
+		padding-top: 0
+		margin-top: 0
+		gap: 8px
+	.readerbox
+		padding: 96px 32px 64px 32px
+		grid-template-columns: 1fr 
+		grid-template-rows: auto auto
+		gap: 0px 0px 
+		grid-template-areas: "readersidebar" "boxarea" 
+		min-height: 100vh
+		align-content: start
+		align-items: start
+	.readersidebar
+		height: max-content
+		padding-top: 0
+		.l1box
+			display: none		
+	.readerlinks h4
+		font-size: 16px
+	.readerlinks h5
+		font-size: 18px
+	.readerlinks p
+		font-size: 16px
+		padding: 6px !important
+	.searchbox
+		display: none
+	.searchisresults
+		display: none
+	.selectionmenu
+		padding: 16px
+		position: fixed
+		bottom: 0
+		left: 0
+		background: var(--rama)
+		width: 100%
+		height: 48px
+		transition: all 0.14s var(--cubec)
+		h6
+			margin: 0
+			padding-top: 8px
+			display: none
+		.form
+			.boxc
+				select
+					width: 100%
+			.boxc
+				display: none
+			.informlink
+				display: flex
+				position: fixed
+				justify-content: center
+				align-items: center
+				width: calc(100% - 32px)
+				bottom: 0
+				height: 48px
+				svg
+					height: 24px
+					width: 24px
+	.form
+		gap: 24px
+		flex-direction: column
+		.boxc
+			width: calc(50% - 12px)
+		label, select, option
+			font-family: 'Spline Sans', sans-serif
+		label
+			font-size: 12px
+			text-transform: uppercase
+			color: #b7b7b7
+			margin-bottom: 8px
+		select
+			border: 1px solid #d7d7d7
+			padding: 8px
+			border-radius: 2px
+			color: #878787
+			box-shadow: none
+	.selectionmenu.heighter
+		min-height: 100vh
+		transition: all 0.14s var(--cubec)
+		display: grid
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto auto
+		grid-template-areas: "form" "mobileh6" "mobilesearch"
+		grid-auto-flow: row
+		padding: 96px 32px 0 32px
+		align-content: start
+		justify-items: center
+		justify-content: center
+		background: rgba(0,0,0,0.9)
+		.mobileh6
+			grid-area: mobileh6
+			margin-top: 8px
+		.mobilesearch
+			grid-area: mobilesearch
+			margin-top: 32px
+			width: 100%
+			input[type=text]
+				padding: 8px
+				width: 69%
+			button
+				padding: 8px
+				width: 30%
+				background: var(--rama)
+				border: 1px solid var(--rama)
+				color: white
+		h6
+			display: block
+		.form
+			grid-area: form
+			justify-items: center
+			display: grid
+			width: 100%
+			.boxc
+				width: 100%
+				display: flex
+				select
+					width: 100%
+	.renderarea
+		margin-top: 16px
+	.nonsearch
+		display: none
+	.resultitem
+		flex-direction: column
+		border-bottom: 1px solid #d7d7d7
+		padding-bottom: 8px
+		margin-bottom: 16px
+		.hindi p
+			font-size: 24px
+			color: #272727
+		p
+			color: #878787
+			font-size: 14px	
+		h6
+			margin-bottom: 8px
+	.closelink
+		font-size: 14px
+		background: #676767
+		color: white
+		width: max-content
+		padding: 4px
+		margin-bottom: 32px
+	.gridbox
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 
+		grid-template-rows: auto
+		grid-template-areas: ". . . ."
+		gap: 8px 16px
+		padding: 16px
+		margin-bottom: 16px
+	.helpersmall
+		padding: 16px 0 4px 16px
+		margin: 0
+		font-weight: 400
+		font-size: 14px
+		border-bottom: 1px solid #d7d7d7
+		color: #e4a503
+	.lemmas
+		border-top: 1px solid #d7d7d7
+		margin-top: 12px
+		padding-top: 16px
+		grid-template-columns: 1fr
+		grid-template-rows: auto
+		grid-template-areas: "."
+		gap: 12px 32px
+		.lemmaextended
+			display: grid
+			grid-template-columns: 1fr
+			grid-template-rows: auto auto
+			grid-template-areas: "extend1" "extend2"
+			grid-auto-flow: row
+			gap: 4px 32px
+			border-bottom: 1px solid #d7d7d7
+			padding-bottom: 8px
+			h6
+				font-weight: 400
+				font-size: 14px
+				color: #878787
+				padding-bottom: 8px
+				text-transform: uppercase
+			p
+				font-weight: 600
+				font-size: 21px
+			.insmall
+				margin: 0
+				pre
+					font-size: 12px
+					color: #878787
+			.extend2
+				margin: 0
+				.boxc
+					p
+						margin: 6px 0 0 0 !important
+						padding-top: 4px !important
+						font-weight: 400 !important
+						font-size: 14px !important
+			.extend2 cite
+				font-size: 10px
+				color: #b7b7b7
+			.extend1 small
+				font-size: 10px
+				font-weight: bold
+				color: #878787
+		.withborder
+			border-left: 4px solid var(--rama)
+			padding-left: 16px
+			margin-bottom: 12px
+		.meaning p
+			font-weight: 400
+			font-size: 14px
+		.meaning
+			font-size: 12px
+			font-weight: 400
+			color: #676767
+			width: 100%
+			margin-bottom: 8px
+	.dropheader h4
+		font-size: 20px
+
+@media screen and (min-width: 1024px)
+	.nonsearch
+		display: none
+	.readerbox
+		min-height: 100vh
+		padding: 120px 64px 64px 64px
+		gap: 0 64px
+	.readersidebar
+		h4
+			font-size: 1rem
+		padding: 4px
+		border-left-width: 8px
+		display: grid
+		grid-template-columns: 1fr
+		grid-template-rows: auto auto
+		gap: 16px 0px
+		grid-auto-flow: row
+		grid-template-areas: "readerlinks" "searchisresults"
+	.readerlinks
+		grid-area: readerlinks
+	.searchisresults
+		grid-area: searchisresults
+		padding-top: 8px
+		padding-bottom: 32px
+		margin-top: 24px
+		overflow-y: scroll
+		height: 60vh
+	.form
+		gap: 64px
+		label, select, option
+			font-family: 'Spline Sans', sans-serif
+		label
+			font-size: 12px
+			text-transform: uppercase
+			color: #b7b7b7
+			margin-bottom: 8px
+		select
+			border: 1px solid #d7d7d7
+			padding: 8px
+			border-radius: 2px
+			color: #878787
+			box-shadow: var(--plainshadow)
+		.boxc
+			width: 25%
+	.helpersmall
+		padding: 16px 0 4px 16px
+		margin: 0
+		font-weight: 400
+		font-size: 14px
+		border-bottom: 1px solid #d7d7d7
+		color: #e4a503
+	.gridbox
+		padding: 16px
+		box-shadow: 4px 3px 6px #e1e1e1
+		transition: all 0.18s var(--cubea)
+		&:hover
+			box-shadow: none
+	.searchbox
+		margin-top: 16px
+	.searchitems
+		height: max-content
+	.renderarea
+		padding-top: 24px
+		padding-left: 24px
+		padding-right: 24px
+		border: 1px solid #d7d7d7
+		margin-top: 32px
+		align-content: start
+	.resultitem
+		transition: all 0.11s var(--cubeb)
+		border-bottom: 1px solid #d7d7d7
+		padding-bottom: 8px
+		margin-bottom: 4px
+		p
+			font-size: 0.875rem
+			color: #878787
+		.hindi p
+			font-size: 1rem
+			color: #272727
+		h6
+			padding: 8px 0 8px 0
+			margin: 0
+		small
+			padding-top: 16px
+			font-size: 12px
+	.closelink
+		background: #676767
+		color: white
+		padding: 1px 8px
+		font-size: 14px
+		width: max-content
+		border-radius: 4px
+
+@media screen and (min-width: 1024px)
+	.informlink
+		display: none
+
+.sargacontainer
+	padding-bottom: 32px
+
+.sargacontainer h5
+	font-size: 24px
+
+.sargacontainer h6
+	text-transform: uppercase
+	color: var(--rama)
+	cursor: pointer
+
+.sargaverses
+	display: grid
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+	grid-template-rows: auto
+	grid-auto-flow: row
+	grid-template-areas: ". . . . . . . . . ."
+	text-align: center
+	row-gap: 24px
+	a
+		&:hover
+			color: white
+	p
+		&:hover
+			background: var(--rama)
+			color: white
+
+.extend2 cite
+	font-size: 12px
+	margin: 0
+	color: #b7b7b7
+	text-transform: uppercase
+
+.boxkanda
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+	grid-template-rows: auto
+	grid-auto-flow: row
+	grid-template-areas: ". . . . . . . . . ."
+	display: grid
+	
+.eachverseofsarga
+	display: flex
+	flex-direction: column
+	row-gap: 24px
+	p, h6, small
+	margin-top: 32px
+		margin: 0
+	p
+		font-size: 24px
+		color: #474747
+	h6
+		font-size: 16px
+		font-weight: 400
+		color: #878787
+	.boxc
+		border-bottom: 1px solid #d7d7d7
+		padding-bottom: 12px
+		&:hover
+			.hindi p
+				color: var(--rama)
+		small, p, h6
+			margin: 0
+		h6
+			text-transform: lowercase
+		small
+			text-transform: uppercase
+			font-size: 10px
+			color: #b7b7b7
+		.hindi
+			margin-top: 4px
+
+.versepadabox
+	position: relative
+	display: flex
+	flex-direction: row
+	align-items: center
+	text-align: center
+	justify-content: center
+	gap: 8px
+	&:hover
+		background: var(--rama)
+		p
+			color: white
+	a
+		&:hover
+			color: white
+	p
+		margin: 0
+		font-size: 16px
+		text-align: center
+	svg
+		width: 16px
+		height: 16px
+
+.padasinsideverse
+	position: absolute
+	top: 0
+	left: 48px
+	background: white
+	z-index: 10
+	width: 100%
+
+@media screen and (max-width: 1023px)
+	.sargacontainer h5
+		font-size: 24px
+		margin: 0
+		padding-bottom: 0
+		color: #676767
+	.sargacontainer
+		padding-top: 24px
+		padding-bottom: 32px
+	.sargaverses
+		gap: 8px 8px
+		padding: 16px
+		border: 1px solid #d7d7d7
+		border-radius: 4px
+		margin-top: 16px
+		p
+			font-size: 16px
+			color: #878787
+	.eachverseofsarga
+		row-gap: 12px
+		margin-top: 12px
+		.boxc
+			.hindi p
+				font-size: 20px
+			h6
+				font-size: 14px
+		
+		
