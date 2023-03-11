@@ -1,9 +1,0 @@
-<script lang="ts">
-export let data:any
-</script>
-
-<div class="flexbox-c">
-	{#each data as item}
-	<p>{item.sarga}</p>
-	{/each}
-</div>

@@ -1,10 +1,10 @@
 import supabase  from '$lib/db'
 
-export async function load({params}:{params: { kanda:any, sarga:any, verse:any, pada:any}}){
+export async function load({params}:{params: { sarga:any, verse:any, pada:any}}){
 	const { data, error } = await supabase
 	.from('db-ramayana')
 	.select()
-	.eq('kanda',`${params.kanda}`)
+	.eq('kanda','3')
 	.eq('sarga',`${params.sarga}`)
 	.eq('verse',`${params.verse}`)
 	.eq('pada',`${params.pada}`)

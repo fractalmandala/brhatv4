@@ -1,6 +1,5 @@
 <script>
 import supabase from '$lib/db'
-import { reveal } from 'svelte-reveal'
 /**
 	 * @type {any}
 	 */
@@ -15,14 +14,13 @@ export async function Dictionary(){
 }
 </script>
 
-<div class="flexbox-c">
+<div class="boxc">
 {#await Dictionary()}
 <small>...</small>
 {:then data}
 {#each data as item}
-<div class="in-col">
-	<h6 class="w500 m-bot-zero m-top-zero" use:reveal>{item.word}</h6>
-	<p class="m-bot-zero" use:reveal>{item.meanings}</p>
+<div class="boxc">
+	<p>{item.meanings}</p>
 </div>
 {/each}
 {:catch error}
@@ -30,6 +28,14 @@ export async function Dictionary(){
 {/await}
 </div>
 
-<style>
-.in-col { padding: 12px 0; height: max-content; overflow-y: scroll;}
+<style lang="sass">
+
+.boxc
+	p
+		margin: 0
+		font-size: 14px
+		padding: 8px 0 4px 0
+		color: #878787
+		line-height: 1.28
+
 </style>

@@ -16,6 +16,7 @@ let selectSarga:any
 let selectVerse:any
 let selectPada:any
 
+
 let kandas = [
 	{ value: 1, label: '1' },
 	{ value: 2, label: '2' },
@@ -97,7 +98,7 @@ export async function getPadas(){
 }
 
 function gotoPada(){
-	window.location.href=`/openlibrary/reader/ramayana/${selectPada}`
+	window.location.href=`/openlibrary/reader/ramayana/kanda/${selectPada}`
 }
 
 
