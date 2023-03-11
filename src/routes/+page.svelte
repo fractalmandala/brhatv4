@@ -30,6 +30,31 @@ async function dhiti() {
 	return data;
 }
 
+export const Latest = async() => {
+	const allPostFiles = import.meta.glob('/src/routes/dhiti/*.md')
+	const iterablePostFiles = Object.entries(allPostFiles)
+	const allPosts = await Promise.all(
+		iterablePostFiles.map(async ([path, resolver]) => {
+			// @ts-ignore
+			const { metadata } = await resolver()
+			const postPath = path.slice(11,-3)
+
+			return {
+				meta: metadata,
+				path: postPath,
+			}
+		})
+	)
+
+	// Sort the posts in descending order by date
+	// @ts-ignore
+	allPosts.sort((a, b) => new Date(b.meta.date) - new Date(a.meta.date))
+
+// Return only the first 4 items
+	return allPosts.slice(0, 6)
+
+}
+
 async function getBooks() {
 	const { data, error } = await supabase
 		.from('brhat-openlibrary')
@@ -269,24 +294,20 @@ async function getOther() {
 			<h2>Essays at <span class="soft"> Dhīti</span></h2>
 	</div>
   <div class="cols-6">
-			{#await dhiti()}
+			{#await Latest()}
 			<small>...</small>
 			{:then data}
 				{#each data as item}
 					<div class="boxc card">
-						<img
-							src={item.image}
-							alt={item.title}/>
-							<cite class="str">{item.category}<br>{item.tags}</cite>
-							<h6 class="w600">
-							<a href={item.link}>{item.title}</a>
-						</h6>
-						<p>{item.excerpt.slice(0, 200)}...<a href={item.link} class="readmore">Read More</a></p>
-						<cite>{item.author}</cite>
+					<img class="latestimage" src={item.meta.image} alt={item.meta.title}/>
+					<h5><a href={item.path}>{item.meta.title}</a></h5>
+					<p>{item.meta.author}</p>
+					<div class="boxr latestrow">
+						<cite>{item.meta.category}</cite>
+						<cite>{item.meta.tags}</cite>
 					</div>
+				</div>
 				{/each}
-			{:catch error}
-			<pre>{error}</pre>
 			{/await}
 	</div>
 	</div>
@@ -313,6 +334,7 @@ async function getOther() {
 	</div>
 </div>
 
+
 <style lang="sass">
 
 .header 
@@ -329,6 +351,24 @@ async function getOther() {
 			align-items: flex-start 
 			justify-content: space-between
 			height: 100%
+
+.cols-15
+	.book
+		h6, p
+			margin: 0
+
+.cols-6
+	.card
+		h5
+			font-size: 1.28rem
+			padding-left: 0
+		p, cite
+			margin: 0
+		p
+			padding-top: 8px
+
+.latestrow
+	gap: 16px
 
 @media screen and (max-width: 899px) and (min-width: 576px) 
 	.container-22

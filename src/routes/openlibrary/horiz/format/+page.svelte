@@ -7,7 +7,7 @@
   let tables: any[] = [];
 
   onMount(async () => {
-    const response = await fetch(`/ramayana/0000-Kanda-1_Sarga-1-1067.conllu`);
+    const response = await fetch(`https://rnfvzaelmwbbvfbsppir.supabase.co/storage/v1/object/public/openlibrary/cn-ramayana/k5/0324-Kanda-5_Sarga-1-3220.conllu`);
     const data = await response.text();
     const rows = data.split('\n');
 
@@ -69,6 +69,7 @@
 
     tables = [...tables, tableHTML];
   });
+
 </script>
 
  <div class="c-c-c-c istop">

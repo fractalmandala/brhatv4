@@ -46,6 +46,7 @@ const searchWord = async() => {
 		.from('db-ramayana')
 		.select()
 		.textSearch('ftsmain', searchTerm)
+		.order('id')
 		if (error) throw new Error(error.message)
 		results = results.concat(data)
 	// @ts-ignore

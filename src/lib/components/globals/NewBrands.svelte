@@ -325,37 +325,8 @@ import LogMan from '$lib/components/logos/LogMan.svelte'
 	.midtop
 		height: 192px
 
-@media screen and (max-width: 767px)
+@media screen and (max-width: 1023px)
 	.container
-		display: grid 
-		grid-template-columns: 1fr 
-		grid-template-rows: auto auto auto 
-		gap: 0px 0px 
-		grid-auto-flow: row 
-		align-items: center
-		justify-items: center
-		grid-template-areas: "leftcol" "rightcol" "midcol"
-		height: 100%
-	.midcol
-		.motif
-			display: none
-	.leftcol, .rightcol
-		gap: 32px 0
-		margin-top: 16px
-		margin-bottom: 16px
-	.boxer
-		padding: 0 20%
-		display: grid
-		align-content: center
-		justify-content: center
-		height: 100px
-	.boxer2
-		padding: 0 15% 0 0
-		height: max-content
-		margin: 40px 0
-		dispay: flex
-		justify-content: center
-		align-items: center
-
+		display: none
 
 </style>
