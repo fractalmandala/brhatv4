@@ -1,6 +1,7 @@
 <div class="readingroom pad-a">
 	<div class="boxc for-links">
 		<h2><a href="/openlibrary/reader/ramayana">Vālmīki Rāmāyaṇa</a></h2>
+		<h2><a href="/openlibrary/reader/rigveda">Ṛgveda Samhitā</a></h2>
 	</div>
 </div>
 

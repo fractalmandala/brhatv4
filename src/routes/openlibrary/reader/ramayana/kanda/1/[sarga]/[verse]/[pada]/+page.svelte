@@ -59,7 +59,7 @@ onMount(() => {
 	<button class="pagination"><a href="/openlibrary/reader/ramayana/kanda/{data.previousslug}">PREV</a></button>
 	<button class="pagination"><a href="/openlibrary/reader/ramayana/kanda/{data.nextslug}">NEXT</a></button>
 </div>
-	<div class="expansiondrop">
+<div class="expansiondrop">
   <div class="dropdownarea wordscaution" on:click={toggleExpand} on:keydown={toggleExpand}>
     <div class="dropheader point">
 			<h4>Words of this Pāda</h4>

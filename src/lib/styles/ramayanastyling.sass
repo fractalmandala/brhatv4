@@ -207,7 +207,7 @@
 	.hindi
 		padding-top: 16px
 		margin-top: 16px
-		h3
+		h3, h3 pre
 			margin: 0
 		h5
 			color: #676767
@@ -218,7 +218,16 @@ h4
 	font-weight: 600
 	letter-spacing: -0.4px
 		
-		
+.results
+	.hindi h3
+		line-height: 1.32
+		pre
+			font-size: 48px		
+			font-weight: 600
+			line-height: 1.32
+			@media screen and (max-width: 1023px)
+				font-size: 32px
+
 .lemmas
 	display: grid
 	grid-auto-flow: row
@@ -661,7 +670,6 @@ h4
 	flex-direction: column
 	row-gap: 24px
 	p, h6, small
-	margin-top: 32px
 		margin: 0
 	p
 		font-size: 24px

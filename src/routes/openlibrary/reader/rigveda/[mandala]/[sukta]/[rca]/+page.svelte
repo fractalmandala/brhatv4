@@ -1,67 +1,80 @@
-<script>
- /**
-	 * @type {{ suktacorrected: any; rca: any; mandala: any; msr: any; devanagari: any; iast: any; griffith: any; rshi: any; chanda: any; devata: any; padapatha: any; }}
-	 */
-  export let data
+<script lang="ts">
+export let data:any
 </script>
 
-<div class="breadcrumb">
-	<a href="/openlibrary/reader/rigveda/{data.mandala}">maṇḍala {data.mandala} </a><span class="divider"> | </span><a href="/openlibrary/reader/rigveda/{data.mandala}/{data.suktacorrected}">sūkta {data.suktacorrected} </a><span class="divider"> | </span>ṛca {data.rca}
+<div class="boxr bread-crumb">
+	<cite><a href="/openlibrary/reader/rigveda/{data.mandala}">maṇḍala {data.mandala} </a><span class="divider"> | </span><a href="/openlibrary/reader/rigveda/{data.mandala}/{data.suktacorrected}">sūkta {data.suktacorrected} </a><span class="divider"> | </span> <span class="rama"><b>ṛca {data.rca}</b></span></cite>
 </div>
-<div class="inner-tab">
-	<div class="hin-og"><pre>{data.devanagari.replace(/\। /g, "\n")}</pre></div>
-	<div class="eng-iast"><pre>{data.iast.replace(/\| /g, "\n")}</pre></div>
-	<div class="page-liner"></div>
-	<div class="stickers">Griffith's English Translation</div>
-	<div class="eng-trans">{data.griffith}</div>
-	<div class="a-row">
-		<div class="data-meta"><span class="stickers">Draṣṭā</span><br><span class="equal">{data.rshi}</span></div>
-		<div class="data-meta"><span class="stickers">Chanda</span><br><span class="equal">{data.chanda}</span></div>
-		<div class="data-meta"><span class="stickers">Devatā</span><br><span class="equal">{data.devata}</span></div>
+<div class="boxc results">
+	<div class="hindi">
+		<h3><pre>{data.devanagari.replace(/\। /g, "\n")}</pre></h3>
+		<h5>{data.iast.replace(/\| /g, "\n")}</h5>
 	</div>
-	<div class="eng-trans" id="second-trans">{data.padapatha}</div>
+	<div class="boxc moreresults">
+		<h6>Griffith's English Translation:</h6>
+		<p>{data.griffith}</p>
+		<h6>Pada Pāṭha:</h6>
+		<p>{data.padapatha}</p>
+		<div class="boxr">
+			<div class="boxc">
+				<h6>Draṣṭā</h6>
+				<p>{data.rshi}</p>
+			</div>
+			<div class="boxc">
+				<h6>Chanda</h6>
+				<p>{data.chanda}</p>
+			</div>
+			<div class="boxc">
+				<h6>Devatā</h6>
+				<p>{data.devata}</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="boxr navigationbuttonsrow">
+	<button class="pagination"><a href="/openlibrary/reader/ramayana/kanda/{data.previousslug}">PREV</a></button>
+	<button class="pagination"><a href="/openlibrary/reader/ramayana/kanda/{data.nextslug}">NEXT</a></button>
 </div>
 
 <style lang="sass">
 
-.hin-og
-	font-size: 2em
-	margin-top: 1em
-	font-family: 'Halant', serif
-	font-weight: 600
-	pre
-		font-family: 'Noto Serif Devangari',serif
+.hindi h5
+	padding-top: 16px
 
-.eng-iast
-	font-size: 1.6em
-	font-weight: 400
-	letter-spacing: -1px
+.moreresults
+	padding-top: 16px
+	margin-top: 32px
+	h5
+		margin: 0
+		font-weight: 400
+		font-size: 1.2rem
+		padding-top: 16px
+		padding-bottom: 16px
+	h6
+		margin: 0
+		text-transform: uppercase
+		border-top: 1px solid #d7d7d7
+		font-weight: 400
+		color: #b7b7b7
+		padding-top: 16px
+	p
+		font-size: 18px
+	.boxr
+		border-top: 1px solid #d7d7d7
+		gap: 32px
+		h6
+			border-top: none
+			color: var(--rama)
+		p
+			font-size: 14px
 
-.eng-trans
-	font-weight: 400
-	font-size: 1.2em
-	margin-top: 0.5em
+.navigationbuttonsrow
+	display: none
 
-#second-trans
-	margin-top: 2em
-
-.stickers
-	font-size: 12px
-	text-transform: uppercase
-	font-weight: bold
-	letter-spacing: 1px
-	color: #878787
-
-.equal
-	font-weight: 400
-	font-size: 1.2em
-	margin-top: 0.5em
-
-@media screen and (min-width: 900px) 
-	.hin-og
-		margin-bottom: 0
-	.eng-iast
-		margin-top: 0
-		margin-bottom: 0.5em
+@media screen and (max-width: 1023px)
+	.moreresults
+		p
+			line-height: 1.28
+			padding-top: 8px
 
 </style>
