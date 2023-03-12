@@ -82,7 +82,7 @@ onMount(() => {
 </div>
 {#if isExpand}
 <div class="lemmas">
-	{#if lems}
+	{#if lems && lems.length > 0}
 		{#each lems as item, i}
 			<div class="lemmaextended" in:fly={{ delay: i + 40}} out:fly>
 				<div class="extend1 boxc">
@@ -99,6 +99,10 @@ onMount(() => {
 				</div>
 			</div>
 		{/each}
+	{:else}
+	<div class="lemmaextended">
+		<small>(If blank, the data is currently missing. We are working on ensuring maximum data parsing.)</small>
+	</div>
 	{/if}
 </div>
 {/if}

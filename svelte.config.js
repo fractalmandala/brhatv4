@@ -17,7 +17,6 @@ const config = {
 		adapter: adapter({
 			runtime: 'edge'
 		}),
-	
 	},
 }
 

@@ -475,7 +475,7 @@ function toggleKanda(index:number){
 </div>
 {#if readerHelp}
 <div class="reader-helper" transition:slide data-lenis-prevent>
-	<h6 class="point" on:click={showReaderHelp} on:click={showReaderHelp}>CLOSE</h6>
+	<h6 class="point rama" on:click={showReaderHelp} on:click={showReaderHelp}>CLOSE</h6>
 	<p class="wide75">
 		Namaste. Welcome to the Rāmāyaṇa reader for course participants of Bṛhat Draṣṭā's Vālmīki Rāmāyaṇa course with Shri Ami Ganatra.
 		To help you navigate and explore the reader, we've split it into 4 sections:
@@ -534,7 +534,7 @@ function toggleKanda(index:number){
 	background: white
 	border: 1px solid var(--rama)
 	box-shadow: var(--plainshadow)
-	padding: 16px 64px
+	padding: 32px 64px
 	h4
 		font-size: 32px
 	h5
@@ -599,13 +599,14 @@ function toggleKanda(index:number){
 				margin: 0
 			margin-bottom: 12px
 	.reader-helper
-		width: 100%
 		right: 0
 		left: 0
 		top: 64px
 		padding: 32px
 		height: calc(100vh - 64px)
 		overflow-y: scroll
+		box-shadow: none
+		width: auto
 	.grid-in-helper
 		grid-template-columns: 1fr
 		grid-template-rows: auto auto auto auto
@@ -627,5 +628,9 @@ function toggleKanda(index:number){
 		grid-area: gridbox3
 	.gridbox4
 		grid-area: gridbox4
+
+.searchbox button
+	&:hover
+		transform: scale(0.9)
 
 </style>
