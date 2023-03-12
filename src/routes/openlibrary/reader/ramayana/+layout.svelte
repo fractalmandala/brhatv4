@@ -477,7 +477,7 @@ function toggleKanda(index:number){
 <div class="reader-helper" transition:slide data-lenis-prevent>
 	<h6 class="point rama" on:click={showReaderHelp} on:click={showReaderHelp}>CLOSE</h6>
 	<p class="wide75">
-		Namaste. Welcome to the Rāmāyaṇa reader for course participants of Bṛhat Draṣṭā's Vālmīki Rāmāyaṇa course with Shri Ami Ganatra.
+		Namaste. Welcome to the Rāmāyaṇa reader for course participants of Bṛhat Draṣṭā's Vālmīki Rāmāyaṇa course with Ami Ganatra ji.
 		To help you navigate and explore the reader, we've split it into 4 sections:
 	</p>
 	<div class="grid-in-helper">
