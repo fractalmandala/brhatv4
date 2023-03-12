@@ -4,7 +4,7 @@ author: Samyak Dixit
 category: Culture and Policy
 tags: tradition
 date: "2023-02-25"
-image: /images/dhitiheroes/fairdream2.png
+image: /images/dhitiheroes/fairdream2.webp
 ---
 
 #### An Old Dream

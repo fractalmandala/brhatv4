@@ -1,4 +1,5 @@
 <script lang="ts">
+import PdfViewer from 'svelte-pdf';
 export let data: { author: any; Description: any; Type: any; Text: any; Extract: any; }
 </script>
 

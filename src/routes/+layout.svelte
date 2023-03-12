@@ -73,7 +73,11 @@ onMount(async() => {
 <style lang="sass">
 
 .full-page
+	width: 100vw
 	height: 100%
+	overflow-x: hidden
+	display: flex
+	flex-direction: column
 
 .poppinghelp
 	right: 16px

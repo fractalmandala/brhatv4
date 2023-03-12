@@ -23,16 +23,16 @@ function toggleLD(){
 </script>
 
 <svelte:window bind:scrollY={x} />
-<div class="genrow low">
-	<div class="gencol col1 img1 col-of-accordion" id="col1" on:mouseenter={toggleCC} on:mouseleave={toggleCC}>
+<div class="accordionrow low">
+	<div class="accordioncol col1 img1 col-of-accordion" id="col1" on:mouseenter={toggleCC} on:mouseleave={toggleCC}>
 		<img src="/images/corpimages/creative-culture-1024-1.webp" alt="cc" style="filter: saturate({sat1}); transition: filter 0.4s ease;"/>
 		<a href="/about/areas/culturecreatives">Culture Creatives</a>
 	</div>
-	<div class="gencol col2 img2 col-of-accordion" id="col2" on:mouseenter={togglePR} on:mouseleave={togglePR}>
+	<div class="accordioncol col2 img2 col-of-accordion" id="col2" on:mouseenter={togglePR} on:mouseleave={togglePR}>
   	<img src="/images/corpimages/research-policy-1024-1.webp" alt="pr" style="filter: saturate({sat2}); transition: filter 0.4s ease;"/>
 		<a href="/about/areas/policyresearch">Policy Research</a>
 	</div>
-	<div class="gencol col3 img3 col-of-accordion" id="col3" on:mouseenter={toggleLD} on:mouseleave={toggleLD}>
+	<div class="accordioncol col3 img3 col-of-accordion" id="col3" on:mouseenter={toggleLD} on:mouseleave={toggleLD}>
   	<img src="/images/corpimages/develop-leader-1024-1.webp" alt="ld" style="filter: saturate({sat3}); transition: filter 0.4s ease;"/>
 		<a href="/about/areas/leadershipdevelopment">Leadership Development</a>
 	</div>
@@ -40,10 +40,10 @@ function toggleLD(){
 
 <style lang="sass">
 
-.gencol a
-	font-family: 'Spline Sans', sans-serif
+.accordioncol a
+	font-family: 'Inter Tight', sans-serif
 
-.genrow
+.accordionrow
 	display: flex
 	transition: all 0.53s cubic-bezier(0.875, 0.145, 0.555, 0.905)
 	align-items: center
@@ -54,7 +54,7 @@ function toggleLD(){
 .low
 	background-color: white
 
-.gencol
+.accordioncol
 	display: flex
 	flex-direction: column
 	position: relative
@@ -74,7 +74,7 @@ function toggleLD(){
 
 @media screen and (min-width: 900px)
 
-	.genrow
+	.accordionrow
 		flex-direction: row
 		width: 100vw
 		height: 100vh
@@ -83,7 +83,7 @@ function toggleLD(){
 		padding: 0 2px
 		overflow: hidden
 
-	.gencol
+	.accordioncol
 		width: calc(33.33% - 1.4px)
 		height: 100vh
 		img
@@ -94,8 +94,10 @@ function toggleLD(){
 			text-align: left
 			position: absolute
 			font-weight: bold
-			font-size: 20px
+			font-size: 1.6rem
 			color: transparent
+			text-transform: uppercase
+			letter-spacing: 1px
 			bottom: 64px
 			left: 0
 			width: 80%
@@ -110,16 +112,16 @@ function toggleLD(){
 				&:hover
 					padding: 8px 8px 8px 16px
 
-	.genrow
+	.accordionrow
 		&:hover
-			.gencol
+			.accordioncol
 				width: calc(25% - 2px)
 				&:hover
 					width: 50%
 
 @media screen and (max-width: 899px) and (min-width: 768px)
 
-	.genrow
+	.accordionrow
 		flex-direction: row
 		width: 100vw
 		height: 100vh
@@ -127,7 +129,7 @@ function toggleLD(){
 		gap: 2px
 		padding: 0 2px
 
-	.gencol
+	.accordioncol
 		width: calc(33.33% - 1.34px)
 		height: 100vh
 		img
@@ -154,16 +156,16 @@ function toggleLD(){
 				&:hover
 					padding: 8px 8px 8px 16px
 
-	.genrow
+	.accordionrow
 		&:hover
-			.gencol
+			.accordioncol
 				width: 15%
 				&:hover
 					width: 70%
 
 @media screen and (max-width: 767px) and (min-width: 576px) 
 
-	.genrow
+	.accordionrow
 		flex-direction: row
 		width: 100vw
 		height: 100vh
@@ -171,7 +173,7 @@ function toggleLD(){
 		gap: 2px
 		padding: 0 2px
 
-	.gencol
+	.accordioncol
 		width: calc(33.33% - 1.34px)
 		height: 100%
 		img
@@ -198,27 +200,27 @@ function toggleLD(){
 				&:hover
 					padding: 8px 8px 8px 16px
 
-	.genrow
+	.accordionrow
 		&:hover
-			.gencol
+			.accordioncol
 				width: 15%
 				&:hover
 					width: 70%
 
 @media screen and (max-width: 575px) 
 
-	.genrow
+	.accordionrow
 		flex-direction: column
 		width: 100%
 		height: 100vh
 		padding-top: 56px
 		&:hover
-			.gencol
+			.accordioncol
 				height: 20%
 				&:hover
 					height: 60%
 
-	.gencol
+	.accordioncol
 		flex-direction: column
 		width: 100%
 		height: 33%

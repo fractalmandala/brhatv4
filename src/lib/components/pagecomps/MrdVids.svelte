@@ -49,9 +49,6 @@
 	}
 </script>
 
-<h1>Caminandes: Llamigos</h1>
-<p>From <a href="https://studio.blender.org/films">Blender Studio</a>. CC-BY</p>
-
 <div>
 	<video
 		poster="https://sveltejs.github.io/assets/caminandes-llamigos.jpg"

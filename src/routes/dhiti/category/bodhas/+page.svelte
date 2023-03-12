@@ -1,14 +1,18 @@
 <script lang="ts">
 import { onMount } from 'svelte';
-import Selection from '$lib/components/books/Selection.svelte'
+import { scale } from 'svelte/transition'
+import DhitiSearch from '$lib/components/reuse/DhitiSearch.svelte'
 let xaxis: number = 0;
-let selectedCategory = 7
+let isSearch:boolean = false
 let showLinks: boolean = true;
 let onMobile: boolean = false;
 let fullHeight = false
 function toggleMobileLinks() {
   onMobile = !onMobile;
 	fullHeight = !fullHeight
+}
+function toggleSearch(){
+	isSearch = !isSearch
 }
 onMount(() => {
   if (xaxis < 768) {
@@ -132,7 +136,7 @@ export const Featured = async() => {
   		<p><a href="/dhiti/category/bodhas">Two Bodhas</a></p>
   		<p><a href="/dhiti/category/featured">Featured</a></p>
   		<p><a href="/dhiti">All</a></p>
-			<p class="w400">Search</p>	
+			<p class="point" on:click={toggleSearch} on:keydown={toggleSearch}>Search</p>	
 		</div>
 		<div class="menuiconarea">
 			<div class="svgicon" on:click={toggleMobileLinks} on:keydown={toggleMobileLinks}>
@@ -228,3 +232,13 @@ export const Featured = async() => {
 		</div>
   </div>
 </div>
+{#if isSearch}
+<div class="a-full-guy">
+<div class="searchcloser" transition:scale>
+	<svg width="100%" height="100%" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" on:click={toggleSearch} on:keydown={toggleSearch}>
+		<path id="Vector" d="M19.9917 16L31.1648 4.82695C31.695 4.29762 31.9933 3.57931 31.994 2.83006C31.9946 2.0808 31.6976 1.36197 31.1683 0.831702C30.639 0.301432 29.9207 0.00315709 29.1714 0.00249539C28.4222 0.0018337 27.7033 0.298839 27.1731 0.828174L16 12.0012L4.82695 0.828174C4.29668 0.297903 3.57748 0 2.82756 0C2.07765 0 1.35844 0.297903 0.828174 0.828174C0.297903 1.35844 0 2.07765 0 2.82756C0 3.57748 0.297903 4.29668 0.828174 4.82695L12.0012 16L0.828174 27.1731C0.297903 27.7033 0 28.4225 0 29.1724C0 29.9224 0.297903 30.6416 0.828174 31.1718C1.35844 31.7021 2.07765 32 2.82756 32C3.57748 32 4.29668 31.7021 4.82695 31.1718L16 19.9988L27.1731 31.1718C27.7033 31.7021 28.4225 32 29.1724 32C29.9224 32 30.6416 31.7021 31.1718 31.1718C31.7021 30.6416 32 29.9224 32 29.1724C32 28.4225 31.7021 27.7033 31.1718 27.1731L19.9917 16Z" fill="#474747"/>
+	</svg>
+</div>
+<DhitiSearch></DhitiSearch>
+</div>
+{/if}
