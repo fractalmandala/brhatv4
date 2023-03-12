@@ -35,6 +35,15 @@ const prevPage = () => {
 }
 </script>
 <div class="boxc pageboxramayana">
+<div class="boxr bread-crumb">
+	<cite><a href="/openlibrary/reader/ramayana/kanda/1">Kāṇḍa 1</a></cite>
+	<cite><a href="/openlibrary/reader/ramayana/kanda/2">Kāṇḍa 2</a></cite>
+	<cite><a href="/openlibrary/reader/ramayana/kanda/3">Kāṇḍa 3</a></cite>
+	<cite><a href="/openlibrary/reader/ramayana/kanda/4">Kāṇḍa 4</a></cite>
+	<cite><a href="/openlibrary/reader/ramayana/kanda/5">Kāṇḍa 5</a></cite>
+	<cite><a href="/openlibrary/reader/ramayana/kanda/6">Kāṇḍa 6</a></cite>
+	<cite><a href="/openlibrary/reader/ramayana/kanda/7">Kāṇḍa 7</a></cite>
+</div>
 	<div class="boxc welcometopage">
 		<h5>Simple Rāmāyaṇa Pagination:</h5>
 		<p>(please read the <span class="rama">*How To </span>to utilize this reader fully)</p>
@@ -59,6 +68,19 @@ const prevPage = () => {
 </div>
 
 <style lang="sass">
+
+.bread-crumb
+	padding-left: 0 !important
+	margin-left: 0
+	cite
+		font-size: 14px
+		padding: 2px 6px
+		&:hover
+			background: var(--rama)
+			color: white
+		a
+			&:hover
+				color: white
 
 .pageboxramayana
 	padding-bottom: 32px
